@@ -1,0 +1,32 @@
+id: linux-essentials-lesson-1
+course_id: linux-essentials
+title: Permissions in five minutes
+title_sw: Ruhusa katika dakika tano
+estimated_minutes: 5
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/OS/LX/01/6
+exam_domain: Linux Professional Institute LPIC-1
+exercises:
+  - id: lx-q1
+    type: MULTIPLE_CHOICE
+    prompt: What does chmod 755 file.sh typically grant the owner?
+    options:
+      - id: a
+        text: Read only
+      - id: b
+        text: Read, write, and execute
+      - id: c
+        text: Write only
+      - id: d
+        text: No permissions
+    correct_answer: b
+    hint: 7 means rwx.
+    explanation: 755 is rwx for owner, rx for group and others.
+    xp_reward: 50
+  - id: lx-q2
+    type: FILL_BLANK
+    prompt: The command to print the current working directory is ___.
+    correct_answer: pwd
+    hint: Print working directory.
+    explanation: pwd shows where you are in the filesystem.
+    xp_reward: 40

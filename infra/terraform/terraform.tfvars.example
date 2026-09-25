@@ -1,0 +1,7 @@
+# Copy this file to terraform.tfvars (gitignored) or pass -backend-config.
+
+aws_region   = "af-south-1"
+environment  = "staging"
+project_name = "cyberlearn"
+github_org   = "your-org"
+github_repo  = "cyberlearn"

@@ -1,0 +1,62 @@
+id: web-security-lesson-1
+course_id: web-security
+title: Injection thinking
+title_sw: Kufikiri kuhusu injection
+estimated_minutes: 6
+license: CC-BY-SA-4.0
+exam_domain: OWASP Top 10
+exercises:
+  - id: web-q1
+    type: MULTIPLE_CHOICE
+    prompt: Which control best prevents SQL injection?
+    options:
+      - id: a
+        text: Concatenating user input into the query
+      - id: b
+        text: Parameterized queries / prepared statements
+      - id: c
+        text: Hiding the error messages only
+      - id: d
+        text: Using GET instead of POST
+    correct_answer: b
+    hint: Never treat user data as SQL code.
+    explanation: Bound parameters keep data separate from the query.
+    xp_reward: 60
+  - id: web-q2
+    type: MATCH_PAIRS
+    prompt: Match the OWASP issue to a one-line description.
+    pairs:
+      - left:
+          id: xss
+          text: XSS
+        right:
+          id: xss-desc
+          text: Untrusted HTML runs in the browser
+      - left:
+          id: csrf
+          text: CSRF
+        right:
+          id: csrf-desc
+          text: Browser sends a forged authenticated request
+    correct_answer:
+      - xss=xss-desc
+      - csrf=csrf-desc
+    hint: One attacks the page, one rides an existing session.
+    explanation: XSS executes in the victim browser; CSRF abuses cookies on another request.
+    xp_reward: 50
+  - id: web-q3
+    type: SCENARIO
+    prompt: A login form reflects the username back as raw HTML. A tester enters <script>alert(1)</script> and an alert appears. What is this?
+    options:
+      - id: a
+        text: Stored XSS
+      - id: b
+        text: Reflected XSS
+      - id: c
+        text: CSRF
+      - id: d
+        text: SQL injection
+    correct_answer: b
+    hint: The payload came from the request and bounced back.
+    explanation: Reflected XSS occurs when the payload is in the request and immediately rendered.
+    xp_reward: 60

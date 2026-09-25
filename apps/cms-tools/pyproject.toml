@@ -1,0 +1,24 @@
+[project]
+name = "cyberlearn-cms-tools"
+version = "0.1.0"
+description = "Curriculum validation and ingestion CLI for CyberLearn (OLX, YAML, CBET, licenses)"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1",
+    "pyyaml>=6.0",
+    "pydantic>=2.7",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=5",
+]
+
+[project.scripts]
+cyberlearn-content = "src.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

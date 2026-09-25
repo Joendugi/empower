@@ -1,0 +1,46 @@
+id: digital-safety-101-lesson-1
+course_id: digital-safety-101
+title: Passwords and phishing
+title_sw: Nywila na ulaghai
+estimated_minutes: 6
+license: CC-BY-SA-4.0
+exercises:
+  - id: ds-q1
+    type: MULTIPLE_CHOICE
+    prompt: Which password is strongest for a shared family phone in Kenya?
+    options:
+      - id: a
+        text: password123
+      - id: b
+        text: Nairo@Mombasa-2026!
+      - id: c
+        text: 12345678
+      - id: d
+        text: qwerty
+    correct_answer: b
+    hint: Longer passphrases with mixed words beat short common passwords.
+    explanation: A long unique passphrase is harder to guess and survives credential stuffing.
+    xp_reward: 50
+  - id: ds-q2
+    type: FILL_BLANK
+    prompt: A fake SMS that asks you to tap a link and enter M-Pesa PIN is called ___.
+    correct_answer: phishing
+    hint: It tries to fish for secrets.
+    explanation: Phishing is social engineering that tricks you into giving credentials or money.
+    xp_reward: 50
+  - id: ds-q3
+    type: SCENARIO
+    prompt: "You get a WhatsApp from 'Safaricom Support' saying your line will be closed in 10 minutes unless you send a PUK. What should you do?"
+    options:
+      - id: a
+        text: Send the PUK immediately so you keep the number
+      - id: b
+        text: Ignore it and confirm via the official Safaricom app or *144#
+      - id: c
+        text: Forward the PIN to a friend to check
+      - id: d
+        text: Reply with your ID number
+    correct_answer: b
+    hint: Telcos do not demand secrets over WhatsApp.
+    explanation: Always verify through official channels. Urgency is a classic social-engineering tactic.
+    xp_reward: 60

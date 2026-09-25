@@ -1,0 +1,18 @@
+{{- /*
+  pdb.yaml — PodDisruptionBudget for the CyberLearn Gamification Service.
+  Ensures at least `minAvailable` pods remain running during voluntary
+  disruptions such as node drains, cluster upgrades, or rolling deployments.
+  This is a soft guarantee — involuntary disruptions (hardware failure) are
+  NOT constrained by a PDB.
+*/ -}}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "gamification-service.fullname" . }}
+  labels:
+    {{- include "gamification-service.labels" . | nindent 4 }}
+spec:
+  minAvailable: {{ .Values.podDisruptionBudget.minAvailable }}
+  selector:
+    matchLabels:
+      {{- include "gamification-service.selectorLabels" . | nindent 6 }}

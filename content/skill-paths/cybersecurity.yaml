@@ -1,0 +1,57 @@
+id: cybersecurity
+title: Cybersecurity Practitioner
+title_sw: Mtaalamu wa Usalama wa Mtandao
+description: Defensive security from digital safety through networks, Linux, web vulnerabilities, and Kenyan cyber law.
+certification_target: CompTIA Security+ · eJPT foundations
+track: cybersecurity
+nodes:
+  - id: digital-safety-101
+    title: Digital Safety 101
+    title_sw: Usalama wa Kidijitali 101
+    description: Passwords, phishing, social engineering, safe browsing.
+    icon: "🔐"
+    prerequisites: []
+    lesson_ids:
+      - digital-safety-101-lesson-1
+  - id: network-fundamentals
+    title: Network Fundamentals
+    title_sw: Misingi ya Mitandao
+    description: OSI model, TCP/IP, subnetting, Wireshark basics.
+    icon: "🌐"
+    cdacc_unit_id: CU/ICT/CS/CR/01/6
+    exam_domain: CompTIA Security+ 1.0
+    prerequisites:
+      - digital-safety-101
+    lesson_ids:
+      - osi-model-intro
+  - id: linux-essentials
+    title: Linux Essentials
+    title_sw: Misingi ya Linux
+    description: File system, permissions, bash scripting, package management.
+    icon: "🐧"
+    cdacc_unit_id: CU/ICT/OS/LX/01/6
+    exam_domain: Linux Professional Institute LPIC-1
+    prerequisites:
+      - network-fundamentals
+    lesson_ids:
+      - linux-essentials-lesson-1
+  - id: web-security
+    title: Web Security Fundamentals
+    title_sw: Misingi ya Usalama wa Wavuti
+    description: SQL injection, XSS, CSRF, authentication flaws.
+    icon: "🕸️"
+    exam_domain: OWASP Top 10
+    prerequisites:
+      - linux-essentials
+    lesson_ids:
+      - web-security-lesson-1
+  - id: cyber-law-kenya
+    title: Cyber law & ethics
+    title_sw: Sheria na maadili
+    description: Computer Misuse and Cybercrimes Act, KE-CIRT, and authorised testing.
+    icon: "⚖️"
+    exam_domain: CMCA 2018
+    prerequisites:
+      - web-security
+    lesson_ids:
+      - cyber-law-kenya-1

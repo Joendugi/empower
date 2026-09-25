@@ -1,0 +1,125 @@
+id: osi-model-intro
+course_id: network-fundamentals
+title: The OSI Model
+title_sw: Mfumo wa OSI
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CS/CR/01/6
+exam_domain: CompTIA Security+ 1.0
+exercises:
+  - id: q1
+    type: MULTIPLE_CHOICE
+    prompt: How many layers does the OSI model have?
+    options:
+      - id: a
+        text: 4 layers
+      - id: b
+        text: 5 layers
+      - id: c
+        text: 7 layers
+      - id: d
+        text: 12 layers
+    correct_answer: c
+    hint: Think Please Do Not Throw Sausage Pizza Away
+    explanation: The OSI model has 7 layers from Physical through Application.
+    xp_reward: 50
+  - id: q2
+    type: FILL_BLANK
+    prompt: The ___ protocol operates at Layer 4 and provides reliable, ordered delivery of data.
+    correct_answer: TCP
+    hint: It uses a 3-way handshake.
+    explanation: TCP is connection-oriented and guarantees delivery and ordering.
+    xp_reward: 60
+  - id: q3
+    type: TERMINAL_SIM
+    prompt: Use the ping command to test connectivity to 8.8.8.8
+    correct_answer: ping 8.8.8.8
+    hint: Type ping followed by the IP address
+    explanation: ping uses ICMP at Layer 3 to test reachability.
+    xp_reward: 70
+    terminal_responses:
+      "ping 8.8.8.8": "PING 8.8.8.8 (8.8.8.8): 56 data bytes\n64 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=12.3 ms"
+      "ls": "bin  boot  etc  home  tmp"
+      "whoami": "learner"
+      "pwd": "/home/learner"
+      "help": "Available commands: ping, ls, whoami, pwd, ifconfig"
+      "ifconfig": "eth0: inet 192.168.1.100  netmask 255.255.255.0"
+  - id: q4
+    type: DRAG_DROP
+    prompt: Order the OSI layers from Layer 1 (bottom) to Layer 4.
+    drag_items:
+      - id: physical
+        text: Physical
+      - id: data-link
+        text: Data Link
+      - id: network
+        text: Network
+      - id: transport
+        text: Transport
+    correct_answer:
+      - physical
+      - data-link
+      - network
+      - transport
+    hint: Cables first, then frames, then packets, then segments.
+    explanation: Layer 1 Physical, 2 Data Link, 3 Network, 4 Transport.
+    xp_reward: 60
+  - id: q5
+    type: MATCH_PAIRS
+    prompt: Match each layer to the PDU it handles.
+    pairs:
+      - left:
+          id: l2
+          text: Data Link
+        right:
+          id: frame
+          text: Frame
+      - left:
+          id: l3
+          text: Network
+        right:
+          id: packet
+          text: Packet
+      - left:
+          id: l4
+          text: Transport
+        right:
+          id: segment
+          text: Segment
+    correct_answer:
+      - l2=frame
+      - l3=packet
+      - l4=segment
+    hint: Packets live where IP lives.
+    explanation: Frames at L2, packets at L3, segments at L4.
+    xp_reward: 60
+  - id: q6
+    type: DIAGRAM_LABEL
+    prompt: Label the packet path from host to router.
+    diagram_slots:
+      - id: host
+        label: Host
+        x: 12
+        y: 40
+      - id: switch
+        label: Switch
+        x: 50
+        y: 40
+      - id: router
+        label: Router
+        x: 88
+        y: 40
+    options:
+      - id: host
+        text: Host
+      - id: switch
+        text: Switch
+      - id: router
+        text: Router
+    correct_answer:
+      - host=host
+      - switch=switch
+      - router=router
+    hint: End device, then LAN, then gateway.
+    explanation: Hosts talk through a switch; the router is the default gateway.
+    xp_reward: 50

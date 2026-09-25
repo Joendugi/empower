@@ -1,0 +1,6 @@
+apiVersion: v2
+name: gamification-service
+description: CyberLearn Gamification Service — XP, streaks, badges, FSRS, leaderboard
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

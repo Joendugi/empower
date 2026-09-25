@@ -1,0 +1,135 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────────────
+# CyberLearn — Local Development Environment
+#
+# Start everything:   docker compose up
+# Just backing svcs:  docker compose up -d postgres redis
+# API only:           docker compose up -d postgres redis api
+# Logs:               docker compose logs -f api
+# ─────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cyberlearn
+      POSTGRES_USER: cyberlearn
+      POSTGRES_PASSWORD: devpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cyberlearn"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # ── Redis ───────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  # ── Gamification API ────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    env_file:
+      - ./apps/api/.env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://cyberlearn:devpassword@postgres:5432/cyberlearn
+      REDIS_URL: redis://redis:6379/0
+      ENVIRONMENT: development
+      CONTENT_DIR: /content
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./apps/api:/app
+      - ./content:/content
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ── Celery Worker ───────────────────────────────────────────────────
+  celery-worker:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    env_file:
+      - ./apps/api/.env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://cyberlearn:devpassword@postgres:5432/cyberlearn
+      REDIS_URL: redis://redis:6379/0
+      CONTENT_DIR: /content
+    volumes:
+      - ./apps/api:/app
+      - ./content:/content
+    command: celery -A app.workers.celery_app worker --loglevel=info --concurrency=2
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  # ── Celery Beat (scheduler) ─────────────────────────────────────────
+  celery-beat:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    env_file:
+      - ./apps/api/.env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://cyberlearn:devpassword@postgres:5432/cyberlearn
+      REDIS_URL: redis://redis:6379/0
+      CONTENT_DIR: /content
+    volumes:
+      - ./apps/api:/app
+      - ./content:/content
+    command: celery -A app.workers.celery_app beat --loglevel=info
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  # ── PWA Dev Server ──────────────────────────────────────────────────
+  pwa:
+    build:
+      context: ./apps/pwa
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./apps/pwa:/app
+      - /app/node_modules  # exclude node_modules from host mount
+    command: pnpm dev --host 0.0.0.0
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local

@@ -1,0 +1,82 @@
+version: "3.9"
+
+# Production-style stack: PWA (nginx) + FastAPI + Postgres + Redis
+#   docker compose -f docker-compose.prod.yml up --build
+# Then open http://localhost:8080
+#
+# Required secrets (compose refuses to start with the old defaults):
+#   SECRET_KEY, POSTGRES_PASSWORD, ADMIN_STAFF_KEY
+# Point DATABASE_URL at a new Empower Supabase project to skip local Postgres data.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cyberlearn
+      POSTGRES_USER: cyberlearn
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cyberlearn"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://cyberlearn:${POSTGRES_PASSWORD}@postgres:5432/cyberlearn}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      ENVIRONMENT: production
+      CONTENT_DIR: /content
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY}
+      ADMIN_STAFF_KEY: ${ADMIN_STAFF_KEY:?Set ADMIN_STAFF_KEY}
+      SUPABASE_URL: ${SUPABASE_URL:-}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  pwa:
+    build:
+      context: .
+      dockerfile: apps/pwa/Dockerfile
+      args:
+        VITE_API_URL: /api/v1
+        VITE_DEPLOYMENT_MODE: cloud
+        VITE_MEDIA_CDN_URL: ${VITE_MEDIA_CDN_URL:-}
+        VITE_ADMIN_STAFF_HASH: ${VITE_ADMIN_STAFF_HASH:-}
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:-}
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:

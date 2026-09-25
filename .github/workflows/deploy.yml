@@ -1,0 +1,142 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: staging
+        type: choice
+        options: [staging, production]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-push:
+    name: Build & Push API Image
+    runs-on: ubuntu-latest
+    outputs:
+      image-tag: ${{ steps.meta.outputs.tags }}
+      sha-tag: ${{ github.sha }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: af-south-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push API image
+        id: meta
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: cyberlearn/gamification-service
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -f apps/api/Dockerfile \
+                       -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+                       -t $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+                       .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+          echo "tags=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+  deploy-staging:
+    name: Deploy → Staging
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    environment:
+      name: staging
+      url: https://staging.cyberlearn.ke
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: af-south-1
+
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --name cyberlearn-staging --region af-south-1
+
+      - name: Run DB migrations
+        env:
+          IMAGE: ${{ steps.login-ecr.outputs.registry }}
+        run: |
+          ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+          IMAGE=$ACCOUNT.dkr.ecr.af-south-1.amazonaws.com/cyberlearn/gamification-service:${{ github.sha }}
+          kubectl run alembic-migrate-${{ github.sha }} \
+            --image=$IMAGE \
+            --restart=Never \
+            --env-from=secret/gamification-service-secret \
+            --command -- alembic upgrade head
+          kubectl wait pod/alembic-migrate-${{ github.sha }} --for=condition=Completed --timeout=120s
+          kubectl delete pod/alembic-migrate-${{ github.sha }}
+
+      - name: Helm upgrade (staging)
+        run: |
+          ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+          helm upgrade --install gamification-service \
+            infra/helm/gamification-service/ \
+            --namespace cyberlearn \
+            --create-namespace \
+            --set image.repository=$ACCOUNT.dkr.ecr.af-south-1.amazonaws.com/cyberlearn/gamification-service \
+            --set image.tag=${{ github.sha }} \
+            --set autoscaling.minReplicas=1 \
+            --set autoscaling.maxReplicas=3 \
+            --wait --timeout=5m
+
+  deploy-production:
+    name: Deploy → Production
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    environment:
+      name: production
+      url: https://cyberlearn.ke
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: af-south-1
+
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --name cyberlearn-production --region af-south-1
+
+      - name: Run DB migrations
+        run: |
+          ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+          IMAGE=$ACCOUNT.dkr.ecr.af-south-1.amazonaws.com/cyberlearn/gamification-service:${{ github.sha }}
+          kubectl run alembic-migrate-${{ github.sha }} \
+            --image=$IMAGE \
+            --restart=Never \
+            --env-from=secret/gamification-service-secret \
+            --command -- alembic upgrade head
+          kubectl wait pod/alembic-migrate-${{ github.sha }} --for=condition=Completed --timeout=180s
+          kubectl delete pod/alembic-migrate-${{ github.sha }}
+
+      - name: Helm upgrade (production)
+        run: |
+          ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+          helm upgrade --install gamification-service \
+            infra/helm/gamification-service/ \
+            --namespace cyberlearn \
+            --set image.repository=$ACCOUNT.dkr.ecr.af-south-1.amazonaws.com/cyberlearn/gamification-service \
+            --set image.tag=${{ github.sha }} \
+            --wait --timeout=10m

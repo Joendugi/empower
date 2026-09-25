@@ -1,0 +1,46 @@
+id: tvet-ict-technician
+title: TVET ICT Technician
+title_sw: Fundi wa ICT wa TVET
+description: CDACC-aligned technical skills for Kenyan TVET colleges — workshop safety, hardware, operating systems, and computer networks.
+certification_target: CDACC ICT Technician Level 5/6
+track: tvet
+nodes:
+  - id: workshop-safety
+    title: Workshop safety
+    title_sw: Usalama wa warsha
+    description: PPE, electrical isolation, ESD, and incident response in the ICT workshop.
+    icon: "🦺"
+    cdacc_unit_id: CU/ICT/OS/01/5
+    prerequisites: []
+    lesson_ids:
+      - tvet-workshop-safety-1
+  - id: computer-hardware
+    title: Computer hardware
+    title_sw: Vifaa vya kompyuta
+    description: Identify CPU, RAM, storage, and PSU. Follow a POST-based fault path.
+    icon: "🖥️"
+    cdacc_unit_id: CU/ICT/CR/01/5
+    prerequisites:
+      - workshop-safety
+    lesson_ids:
+      - tvet-computer-hardware-1
+  - id: operating-systems
+    title: Operating systems
+    title_sw: Mifumo ya uendeshaji
+    description: Windows and Linux support, least privilege, disks, and troubleshooting tools.
+    icon: "💿"
+    cdacc_unit_id: CU/ICT/OS/LX/01/5
+    prerequisites:
+      - computer-hardware
+    lesson_ids:
+      - tvet-operating-systems-1
+  - id: computer-networks
+    title: Computer networks
+    title_sw: Mitandao ya kompyuta
+    description: Cabling, switches, routers, IPv4, and first-line LAN faults.
+    icon: "🔌"
+    cdacc_unit_id: CU/ICT/CS/CR/01/6
+    prerequisites:
+      - operating-systems
+    lesson_ids:
+      - tvet-computer-networks-1
