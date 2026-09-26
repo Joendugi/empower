@@ -1,22 +1,35 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { getLesson, getSkillPaths } from '@/content';
+import { 
+  ArrowLeft, 
+  Layers, 
+  MapPin, 
+  BookOpen, 
+  Play, 
+  CheckCircle2, 
+  ShieldCheck, 
+  Sparkles 
+} from 'lucide-react';
+import { getSkillPaths } from '@/content';
 import AppHeader from '@/components/ui/AppHeader';
 import BottomNav from '@/components/ui/BottomNav';
 import CourseOutline from '@/components/curriculum/CourseOutline';
+import InteractiveRoadmap from '@/components/curriculum/InteractiveRoadmap';
 import { courseIcon, courseLessonCount } from '@/lib/courseMeta';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useAnalyticsStore } from '@/store/analyticsStore';
 import { useLearnerStore } from '@/store/learnerStore';
-import { resolveLesson, useLibraryStore } from '@/store/libraryStore';
+import { useLibraryStore } from '@/store/libraryStore';
 import { useT } from '@/i18n';
 
 export default function CoursePage() {
   const t = useT();
   const navigate = useNavigate();
   const { pathId } = useParams<{ pathId: string }>();
+  const [viewMode, setViewMode] = useState<'roadmap' | 'syllabus'>('roadmap');
+
   const language = useLearnerStore((state) => state.language);
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
@@ -32,10 +45,10 @@ export default function CoursePage() {
   if (!path) {
     return (
       <div className="min-h-dvh bg-primary-dark text-white grid place-items-center px-6">
-        <div className="text-center">
+        <div className="card text-center max-w-sm !p-8 border-white/[0.08]">
           <h1 className="text-xl font-bold">{t('courseMissing')}</h1>
           <Link to="/learn/skill-tree" className="btn-primary mt-6 inline-flex">
-            {t('chooseCourseTitle')}
+            <ArrowLeft className="w-4 h-4" /> {t('chooseCourseTitle')}
           </Link>
         </div>
       </div>
@@ -62,103 +75,158 @@ export default function CoursePage() {
   };
 
   return (
-    <div className="min-h-dvh bg-primary-dark pb-24 text-white">
+    <div className="min-h-dvh bg-primary-dark pb-28 text-white bg-grid-pattern">
       <AppHeader home="/learn/skill-tree" />
-      <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
-        <Link to="/learn/skill-tree" className="text-sm text-muted hover:text-white">
-          ← {t('chooseCourseTitle')}
+
+      <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
+        <Link 
+          to="/learn/skill-tree" 
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted hover:text-white transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" /> {t('chooseCourseTitle')}
         </Link>
-        <div className="card space-y-4">
-          <p className="text-4xl">{courseIcon(path)}</p>
-          <span
-            className={clsx(
-              'text-[11px] font-semibold px-2 py-0.5 rounded-full',
-              isTrades ? 'bg-amber-500/15 text-amber-200' : isTvet ? 'bg-blue-500/15 text-blue-300' : 'bg-accent/10 text-accent'
-            )}
-          >
-            {trackLabel}
-          </span>
-          <h1 className="text-3xl font-bold">{title}</h1>
-          <p className="text-muted leading-relaxed">{description}</p>
-          {path.certificationTarget && <p className="text-sm text-accent">{path.certificationTarget}</p>}
-          <p className="text-sm text-muted">
-            {path.nodes.length} {t('modules')} · {courseLessonCount(path)} {t('lessons')}
-            {progress.done > 0 ? ` · ${progress.percent}%` : ''}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
+
+        {/* Hero Course Overview Card */}
+        <div className="card !p-6 sm:!p-8 border-white/[0.08] relative overflow-hidden backdrop-blur-xl">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 rounded-2xl bg-surface-light border border-white/[0.1] flex items-center justify-center text-3xl shrink-0 shadow-inner">
+                {courseIcon(path)}
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span
+                    className={clsx(
+                      'text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border',
+                      isTrades
+                        ? 'bg-amber-500/15 text-amber-300 border-amber-500/25'
+                        : isTvet
+                          ? 'bg-blue-500/15 text-blue-300 border-blue-500/25'
+                          : 'bg-accent/15 text-accent border-accent/25'
+                    )}
+                  >
+                    {trackLabel}
+                  </span>
+                  {chosen && (
+                    <span className="badge-accent text-[10px]">
+                      <CheckCircle2 className="w-3 h-3" /> Enrolled
+                    </span>
+                  )}
+                </div>
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">{title}</h1>
+              </div>
+            </div>
+
+            <div className="flex sm:flex-col items-center sm:items-end justify-between gap-2 shrink-0">
+              <span className="text-xs text-muted flex items-center gap-1">
+                <Layers className="w-3.5 h-3.5" />
+                {path.nodes.length} {t('modules')} · {courseLessonCount(path)} {t('lessons')}
+              </span>
+              {progress.done > 0 && (
+                <span className="text-sm font-extrabold text-accent">
+                  {progress.percent}% Complete
+                </span>
+              )}
+            </div>
+          </div>
+
+          <p className="text-xs sm:text-sm text-muted-light mt-4 leading-relaxed max-w-2xl">{description}</p>
+
+          {path.certificationTarget && (
+            <p className="text-xs text-accent mt-2 font-mono flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 shrink-0" />
+              {path.certificationTarget}
+            </p>
+          )}
+
+          {/* Progress Bar */}
+          {progress.done > 0 && (
+            <div className="xp-bar mt-4">
+              <div className="xp-bar-fill" style={{ width: `${progress.percent}%` }} />
+            </div>
+          )}
+
+          {/* Actions */}
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
             {!chosen && (
-              <button type="button" className="btn-primary" onClick={choose}>
+              <button type="button" className="btn-secondary py-3 text-xs font-semibold" onClick={choose}>
                 {t('chooseThisCourse')}
               </button>
             )}
-            <button type="button" className={chosen ? 'btn-primary' : 'btn-secondary'} onClick={start} disabled={!firstLesson}>
+            <button
+              type="button"
+              className="btn-primary py-3 text-xs font-bold"
+              onClick={start}
+              disabled={!firstLesson}
+            >
+              <Play className="w-4 h-4 fill-current" />
               {progress.done > 0 ? t('continueCourse') : t('startChosenCourse')}
             </button>
           </div>
-          {chosen && <p className="text-xs text-success">{t('courseChosen')}</p>}
         </div>
 
-        {path.nodes.some((node) => node.weekNumber) || path.id.startsWith('custom-') ? (
-          <CourseOutline
-            path={path}
-            completedLessonIds={completedLessonIds}
-            onOpenWeek={(lessonId) => {
-              choose();
-              navigate(`/learn/lesson/${lessonId}`);
-            }}
-          />
+        {/* View Mode Switcher (Roadmap vs Syllabus) */}
+        <div className="flex items-center justify-between pt-2">
+          <h2 className="text-lg font-bold text-white flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-accent" />
+            Learning Journey
+          </h2>
+          <div className="p-1 rounded-xl bg-surface border border-white/[0.08] flex gap-1">
+            <button
+              type="button"
+              onClick={() => setViewMode('roadmap')}
+              className={clsx(
+                'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all',
+                viewMode === 'roadmap'
+                  ? 'bg-accent text-primary-dark shadow-glow'
+                  : 'text-muted hover:text-white'
+              )}
+            >
+              <MapPin className="w-3.5 h-3.5" />
+              Roadmap
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode('syllabus')}
+              className={clsx(
+                'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all',
+                viewMode === 'syllabus'
+                  ? 'bg-accent text-primary-dark shadow-glow'
+                  : 'text-muted hover:text-white'
+              )}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              Syllabus
+            </button>
+          </div>
+        </div>
+
+        {/* Main Content: Interactive Roadmap vs Outline */}
+        {viewMode === 'roadmap' ? (
+          <div className="card !p-4 border-white/[0.08] bg-surface/50 backdrop-blur-xl">
+            <InteractiveRoadmap
+              path={path}
+              completedLessonIds={completedLessonIds}
+              onOpenLesson={(lessonId) => {
+                choose();
+                navigate(`/learn/lesson/${lessonId}`);
+              }}
+            />
+          </div>
         ) : (
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">{t('courseUnits')}</h2>
-          {path.nodes.map((node, index) => {
-            const nodeTitle = language === 'sw' && node.titleSw ? node.titleSw : node.title;
-            const prereqMet = (node.prerequisites ?? []).every((id) => {
-              const required = path.nodes.find((item) => item.id === id);
-              if (!required?.lessonIds.length) return true;
-              return required.lessonIds.every((lessonId) => completedLessonIds.includes(lessonId));
-            });
-            const locked = Boolean(node.prerequisites?.length) && !prereqMet;
-            return (
-              <article key={node.id} className={clsx('card', locked && 'opacity-55')}>
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">{locked ? '🔒' : node.icon ?? courseIcon(path)}</span>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="font-semibold">
-                      <span className="text-muted font-normal mr-2">{index + 1}.</span>
-                      {nodeTitle}
-                    </h3>
-                    <p className="text-sm text-muted mt-1">{node.description}</p>
-                    {!locked && (
-                      <ul className="mt-3 space-y-1.5">
-                        {node.lessonIds.map((id, lessonIndex) => {
-                          const lesson = resolveLesson(id) ?? getLesson(id);
-                          const lessonTitle =
-                            language === 'sw' && lesson?.titleSw ? lesson.titleSw : lesson?.title ?? id;
-                          const done = completedLessonIds.includes(id);
-                          return (
-                            <li key={id}>
-                              <Link
-                                to={`/learn/lesson/${id}`}
-                                onClick={choose}
-                                className="text-sm text-accent hover:underline inline-flex items-baseline gap-2"
-                              >
-                                <span className="text-muted">{done ? '✓' : `${lessonIndex + 1}.`}</span>
-                                <span>{lessonTitle}</span>
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                    {locked && <p className="text-xs text-muted mt-2">{t('locked')}</p>}
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </section>
+          <div className="space-y-4">
+            <CourseOutline
+              path={path}
+              completedLessonIds={completedLessonIds}
+              onOpenWeek={(lessonId) => {
+                choose();
+                navigate(`/learn/lesson/${lessonId}`);
+              }}
+            />
+          </div>
         )}
       </main>
+
       <BottomNav />
     </div>
   );
