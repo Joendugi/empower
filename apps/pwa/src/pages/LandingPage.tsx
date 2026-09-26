@@ -11,7 +11,6 @@ import {
   Layers, 
   Award, 
   ArrowRight, 
-  BookOpen, 
   CheckCircle2,
   GraduationCap,
   Lock,
@@ -19,7 +18,6 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { catalogueStats } from '@/content';
-import { publicProgrammes } from '@/content/publicStudies';
 import { useT } from '@/i18n';
 import BrandMark from '@/components/ui/BrandMark';
 import ProfileButton from '@/components/ui/ProfileButton';
@@ -62,9 +60,6 @@ export default function LandingPage() {
             <Link to="/educator" className="text-muted hover:text-white hidden md:inline transition-colors">
               Become an educator
             </Link>
-            <Link to="/study" className="text-muted hover:text-white hidden sm:inline transition-colors">
-              {t('studyLibrary')}
-            </Link>
             <ProfileButton />
             {!signedIn ? (
               <Link to="/login" className="btn-primary !py-2 !px-4 text-xs">
@@ -101,18 +96,18 @@ export default function LandingPage() {
               </h1>
 
               <p className="mt-6 text-base sm:text-lg text-muted-light max-w-2xl leading-relaxed">
-                Empower brings semester-depth TVET, technical trades, ICT, and cybersecurity training to learners everywhere. Study structured notes, explore interactive workshop diagrams, and build a verified skills portfolio.
+                Empower brings semester-depth TVET, technical trades, ICT, and cybersecurity training to learners everywhere. Study structured modules, explore interactive workshop diagrams, and build a verified skills portfolio.
               </p>
 
               {/* CTAs */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3.5 max-w-lg">
-                <Link to="/study" className="btn-primary py-3.5 px-6 text-sm">
-                  <BookOpen className="w-4 h-4" />
-                  {t('studyBrowse')}
-                </Link>
-                <Link to="/login" className="btn-secondary py-3.5 px-6 text-sm">
+                <Link to="/login" className="btn-primary py-3.5 px-6 text-sm">
                   <GraduationCap className="w-4 h-4" />
-                  Sign up to save progress
+                  Start Learning
+                </Link>
+                <Link to="/login?next=%2Feducator" className="btn-secondary py-3.5 px-6 text-sm">
+                  <Sparkles className="w-4 h-4" />
+                  Educator Portal
                 </Link>
               </div>
 
@@ -152,7 +147,7 @@ export default function LandingPage() {
 
                 <ol className="mt-6 space-y-5">
                   {[
-                    { step: '01', title: 'Understand', desc: 'Read detailed notes tied to occupational standards and local trade practice.', icon: BookOpen },
+                    { step: '01', title: 'Understand', desc: 'Read detailed notes tied to occupational standards and local trade practice.', icon: Layers },
                     { step: '02', title: 'Watch & Inspect', desc: 'See workshop demonstrations, exploded diagrams, and trainer explanations.', icon: Layers },
                     { step: '03', title: 'Practise & Test', desc: 'Answer scenarios, solve interactive challenges, and record practical evidence.', icon: CheckCircle2 },
                     { step: '04', title: 'Progress & Certify', desc: 'Unlock the next unit, earn XP, and keep a portable record of completed skills.', icon: Award },
@@ -177,8 +172,8 @@ export default function LandingPage() {
 
                 <div className="mt-6 pt-5 border-t border-white/[0.08] flex items-center justify-between text-xs text-muted">
                   <span>Standardised CDACC / NITA mapping</span>
-                  <Link to="/study" className="text-accent hover:underline flex items-center gap-1 font-semibold">
-                    Explore notes <ChevronRight className="w-3.5 h-3.5" />
+                  <Link to="/login" className="text-accent hover:underline flex items-center gap-1 font-semibold">
+                    Get started <ChevronRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -233,47 +228,6 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Public Study Programmes Grid */}
-        <section className="border-t border-white/[0.08] bg-surface/20 py-20">
-          <div className="max-w-7xl mx-auto px-5">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t('studyWebKicker')}</p>
-                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white">{t('studyWebTitle')}</h2>
-                <p className="text-muted-light mt-3 max-w-2xl text-sm sm:text-base leading-relaxed">{t('studyWebBody')}</p>
-              </div>
-              <Link to="/study" className="btn-secondary shrink-0 text-xs">
-                {t('studyBrowse')} <ChevronRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {publicProgrammes.map((programme) => (
-                <li key={programme.id}>
-                  <Link
-                    to={`/study?p=${programme.id}`}
-                    className="card-interactive group block h-full p-6 border-white/[0.08]"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-accent/20 transition-all">
-                      {programme.icon}
-                    </div>
-                    <h3 className="font-bold text-lg text-white group-hover:text-accent transition-colors">{programme.title}</h3>
-                    <p className="text-xs sm:text-sm text-muted mt-2 line-clamp-2 leading-relaxed">{programme.description}</p>
-                    <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs">
-                      <span className="text-accent font-semibold">
-                        {programme.count} {t('studyUnits')}
-                      </span>
-                      <span className="text-muted group-hover:text-white flex items-center gap-1 transition-colors">
-                        Study notes <ChevronRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
 
@@ -376,9 +330,6 @@ export default function LandingPage() {
             <span>{t('cdaccAligned')}</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/study" className="hover:text-white transition-colors">
-              {t('studyLibrary')}
-            </Link>
             <Link to="/educator" className="hover:text-white transition-colors">
               Educators
             </Link>
