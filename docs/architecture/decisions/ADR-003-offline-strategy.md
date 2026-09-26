@@ -1,8 +1,8 @@
-# ADR-002: Service Worker + IndexedDB Offline Strategy
+# ADR-003: Service Worker + IndexedDB Offline Strategy
 
 | Field | Value |
 |-------|-------|
-| **ID** | ADR-002 |
+| **ID** | ADR-003 |
 | **Date** | 2026-09-20 |
 | **Status** | **Accepted** |
 | **Deciders** | CTO, Platform Lead, Frontend Lead |

@@ -17,7 +17,7 @@ import app.models  # noqa: F401 — register models on Base.metadata
 from app.config import settings
 from app.database import AsyncSessionLocal, Base, engine
 from app.migrate import run_alembic_upgrade
-from app.routers import analytics, auth, badges, content, leaderboard, moderation, ops, review, streaks, studio, submissions, xp
+from app.routers import analytics, auth, badges, certificates, content, leaderboard, moderation, ops, review, streaks, studio, submissions, xp
 from app.security import assert_secure_settings
 from app.services.published_catalog import load_published_snapshot
 
@@ -28,12 +28,15 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     started_redis = False
     if getattr(app.state, "redis", None) is None:
         if settings.redis_enabled:
-            app.state.redis = aioredis.from_url(
+            from app.cache import RedisCacheAdapter
+
+            raw = aioredis.from_url(
                 settings.REDIS_URL,
                 encoding="utf-8",
                 decode_responses=True,
                 max_connections=20,
             )
+            app.state.redis = RedisCacheAdapter(raw)
             started_redis = True
         else:
             from app.cache import MemoryCache
@@ -103,6 +106,7 @@ def create_app(**state: Any) -> FastAPI:
     app.include_router(xp.router, prefix="/api/v1", tags=["XP"])
     app.include_router(streaks.router, prefix="/api/v1", tags=["Streaks"])
     app.include_router(badges.router, prefix="/api/v1", tags=["Badges"])
+    app.include_router(certificates.router, prefix="/api/v1", tags=["Certificates"])
     app.include_router(leaderboard.router, prefix="/api/v1", tags=["Leaderboard"])
     app.include_router(review.router, prefix="/api/v1", tags=["Review"])
     app.include_router(content.router, prefix="/api/v1", tags=["Content"])

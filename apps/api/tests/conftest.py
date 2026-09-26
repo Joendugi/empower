@@ -47,6 +47,11 @@ class FakeRedis:
     async def get(self, key: str) -> str | None:
         return self._kv.get(key)
 
+    async def incr(self, key: str) -> int:
+        value = int(self._kv.get(key) or "0") + 1
+        self._kv[key] = str(value)
+        return value
+
     async def aclose(self) -> None:
         return None
 
