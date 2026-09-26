@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { 
   SunMedium, 
   Droplets, 
@@ -14,7 +15,9 @@ import {
   Compass,
   Wrench,
   Zap,
-  ShieldAlert
+  ShieldAlert,
+  Clock,
+  X
 } from 'lucide-react';
 import { catalogueStats, getSkillPaths } from '@/content';
 import { useT } from '@/i18n';
@@ -24,6 +27,20 @@ import { useLearnerStore } from '@/store/learnerStore';
 
 export default function LandingPage() {
   const t = useT();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  const [inactivityNotice, setInactivityNotice] = useState(() => 
+    searchParams.get('logged_out') === 'inactivity' || Boolean((location.state as { loggedOutDueToInactivity?: boolean } | null)?.loggedOutDueToInactivity)
+  );
+
+  const dismissNotice = () => {
+    setInactivityNotice(false);
+    if (searchParams.get('logged_out')) {
+      searchParams.delete('logged_out');
+      setSearchParams(searchParams, { replace: true });
+    }
+  };
+
   const signedIn = Boolean(useLearnerStore((state) => state.token));
   const stats = catalogueStats();
   const paths = getSkillPaths().slice(0, 6);
@@ -39,6 +56,26 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-dvh bg-primary-dark text-white bg-grid-pattern selection:bg-accent/30 selection:text-white">
+      {/* Auto-logout Inactivity Notice Banner */}
+      {inactivityNotice && (
+        <div className="bg-amber-500/15 border-b border-amber-500/30 px-5 py-3 text-amber-200 text-xs sm:text-sm flex items-center justify-between gap-3 backdrop-blur-xl sticky top-0 z-40 animate-fadeIn">
+          <div className="flex items-center gap-2.5 max-w-7xl mx-auto flex-1">
+            <Clock className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>
+              <strong className="text-white">Session Timed Out:</strong> You were automatically logged out to the landing page due to inactivity. All your progress has been securely saved.
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={dismissNotice}
+            className="text-amber-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Dismiss notification"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {/* Navigation Header */}
       <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08]">
         <div className="flex items-center justify-between px-5 py-3.5 max-w-7xl mx-auto">

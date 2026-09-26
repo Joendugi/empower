@@ -34,6 +34,22 @@ describe('session security', () => {
         now,
       })
     ).toBe(false);
+    expect(
+      isSessionFresh({
+        expiresAt: now + 10000,
+        lastActiveAt: now - 16 * 60 * 1000, // 16 minutes ago (exceeds 15 min idle)
+        deviceId: null,
+        now,
+      })
+    ).toBe(false);
+    expect(
+      isSessionFresh({
+        expiresAt: now + 10000,
+        lastActiveAt: now - 5 * 60 * 1000, // 5 minutes ago (valid)
+        deviceId: null,
+        now,
+      })
+    ).toBe(true);
   });
 });
 

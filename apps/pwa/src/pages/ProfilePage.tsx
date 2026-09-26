@@ -9,7 +9,8 @@ import {
   Sparkles, 
   CheckCircle2, 
   QrCode,
-  LogOut
+  LogOut,
+  Clock
 } from 'lucide-react';
 import AppHeader from '@/components/ui/AppHeader';
 import BottomNav from '@/components/ui/BottomNav';
@@ -94,8 +95,8 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        {/* Settings: Language & Sound Effects */}
-        <div className="grid sm:grid-cols-2 gap-4">
+        {/* Settings: Language & Sound Effects & Inactivity Protection */}
+        <div className="grid sm:grid-cols-3 gap-4">
           <section className="card space-y-3 border-white/[0.08]">
             <h2 className="text-xs font-bold uppercase tracking-wider text-muted">{t('language')}</h2>
             <LanguagePicker />
@@ -122,6 +123,20 @@ export default function ProfilePage() {
               </div>
               <span className="text-[10px] font-mono uppercase font-bold">{soundOn ? 'ON' : 'OFF'}</span>
             </button>
+          </section>
+
+          <section className="card space-y-3 border-white/[0.08] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-muted">Auto-Logout</h2>
+                <span className="badge-accent text-[9px] font-mono font-bold">15 MIN</span>
+              </div>
+              <p className="text-xs text-muted mt-1">Automatic logout to landing page after 15 minutes of inactivity.</p>
+            </div>
+            <div className="flex items-center gap-2 text-xs text-accent font-medium bg-accent/10 border border-accent/20 px-2.5 py-1.5 rounded-xl">
+              <Clock className="w-3.5 h-3.5 shrink-0" />
+              <span>Protects shared devices</span>
+            </div>
           </section>
         </div>
 

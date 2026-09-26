@@ -4,6 +4,7 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import SyncBar from '@/components/ui/SyncBar';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import { useBackgroundRuntime } from '@/hooks/useBackgroundRuntime';
+import { useAutoLogout } from '@/hooks/useAutoLogout';
 import { useHydrated } from '@/hooks/useHydrated';
 import { useLearnerStore } from '@/store/learnerStore';
 import { refreshMe } from '@/lib/session';
@@ -29,6 +30,7 @@ export default function App() {
   const hydrated = useHydrated();
   const token = useLearnerStore((s) => s.token);
   useBackgroundRuntime();
+  useAutoLogout();
 
   useEffect(() => {
     if (!hydrated || !token) return;

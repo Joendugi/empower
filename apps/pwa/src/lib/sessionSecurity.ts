@@ -1,6 +1,7 @@
 export const DEVICE_KEY = 'empower-device-id';
 export const LOCAL_SESSION_MS = 7 * 24 * 60 * 60 * 1000;
-export const IDLE_SESSION_MS = 12 * 60 * 60 * 1000;
+export const IDLE_SESSION_MS = 15 * 60 * 1000; // 15 minutes of inactivity before auto-logout
+export const INACTIVITY_TIMEOUT_MS = IDLE_SESSION_MS;
 
 export type AuthSource = 'local' | 'cloud';
 

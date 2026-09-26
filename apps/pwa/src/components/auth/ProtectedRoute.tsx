@@ -26,6 +26,9 @@ export default function ProtectedRoute({ children }: { children?: ReactNode }) {
   }
 
   if (!token || isGuest || !valid) {
+    if (token && !valid) {
+      return <Navigate to="/?logged_out=inactivity" replace />;
+    }
     const next = `${location.pathname}${location.search}`;
     return <Navigate to={`/login?next=${encodeURIComponent(next)}`} replace />;
   }
