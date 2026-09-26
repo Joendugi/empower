@@ -6,11 +6,12 @@ import AppHeader from '@/components/ui/AppHeader';
 import BottomNav from '@/components/ui/BottomNav';
 import CourseOutline from '@/components/curriculum/CourseOutline';
 import { courseIcon, courseLessonCount } from '@/lib/courseMeta';
+import { MAX_ACTIVE_COURSES } from '@/lib/activeCourses';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useAnalyticsStore } from '@/store/analyticsStore';
 import { useLearnerStore } from '@/store/learnerStore';
-import { resolveLesson, useLibraryStore } from '@/store/libraryStore';
+import { resolveLesson } from '@/store/libraryStore';
 import { useT } from '@/i18n';
 
 export default function CoursePage() {
@@ -21,6 +22,8 @@ export default function CoursePage() {
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
   const choosePath = useLearnerStore((state) => state.choosePath);
+  const leavePath = useLearnerStore((state) => state.leavePath);
+  const canChoosePath = useLearnerStore((state) => state.canChoosePath);
   const customPaths = useCurriculumStore((state) => state.paths);
   const path = getSkillPaths().find((item) => item.id === pathId);
   void customPaths;
@@ -44,6 +47,7 @@ export default function CoursePage() {
 
   const progress = programmeProgress(path, completedLessonIds);
   const chosen = chosenPathIds.includes(path.id);
+  const slotsFull = !canChoosePath(path.id);
   const title = language === 'sw' && path.titleSw ? path.titleSw : path.title;
   const description = language === 'sw' && path.descriptionSw ? path.descriptionSw : path.description;
   const firstLesson = progress.nextLessonId ?? path.nodes[0]?.lessonIds[0];
@@ -51,15 +55,14 @@ export default function CoursePage() {
   const isTrades = path.track === 'trades';
   const trackLabel = isTrades ? t('tradesTrack') : isTvet ? t('tvetTrack') : t('cyberTrack');
 
-  const choose = () => {
-    choosePath(path.id);
-    useLibraryStore.getState().selectProgramme(path.id);
-  };
+  const choose = () => choosePath(path.id);
 
   const start = () => {
-    choose();
+    if (!chosen && !choosePath(path.id)) return;
     if (firstLesson) navigate(`/learn/lesson/${firstLesson}`);
   };
+
+  const leave = () => leavePath(path.id);
 
   return (
     <div className="min-h-dvh bg-primary-dark pb-24 text-white">
@@ -85,17 +88,31 @@ export default function CoursePage() {
             {path.nodes.length} {t('modules')} · {courseLessonCount(path)} {t('lessons')}
             {progress.done > 0 ? ` · ${progress.percent}%` : ''}
           </p>
+          <p className="text-xs text-muted">
+            {t('activeCoursesLabel')}: {chosenPathIds.length}/{MAX_ACTIVE_COURSES}
+          </p>
           <div className="flex flex-col sm:flex-row gap-3">
             {!chosen && (
-              <button type="button" className="btn-primary" onClick={choose}>
+              <button type="button" className="btn-primary" onClick={choose} disabled={slotsFull}>
                 {t('chooseThisCourse')}
               </button>
             )}
-            <button type="button" className={chosen ? 'btn-primary' : 'btn-secondary'} onClick={start} disabled={!firstLesson}>
+            {chosen && (
+              <button type="button" className="btn-secondary" onClick={leave}>
+                {t('leaveCourse')}
+              </button>
+            )}
+            <button
+              type="button"
+              className={chosen ? 'btn-primary' : 'btn-secondary'}
+              onClick={start}
+              disabled={!firstLesson || (!chosen && slotsFull)}
+            >
               {progress.done > 0 ? t('continueCourse') : t('startChosenCourse')}
             </button>
           </div>
           {chosen && <p className="text-xs text-success">{t('courseChosen')}</p>}
+          {slotsFull && <p className="text-xs text-amber-200">{t('courseSlotsFull')}</p>}
         </div>
 
         {path.nodes.some((node) => node.weekNumber) || path.id.startsWith('custom-') ? (
@@ -103,7 +120,7 @@ export default function CoursePage() {
             path={path}
             completedLessonIds={completedLessonIds}
             onOpenWeek={(lessonId) => {
-              choose();
+              if (!chosen && !choosePath(path.id)) return;
               navigate(`/learn/lesson/${lessonId}`);
             }}
           />
@@ -139,7 +156,11 @@ export default function CoursePage() {
                             <li key={id}>
                               <Link
                                 to={`/learn/lesson/${id}`}
-                                onClick={choose}
+                                onClick={(event) => {
+                                  if (!chosen && !choosePath(path.id)) {
+                                    event.preventDefault();
+                                  }
+                                }}
                                 className="text-sm text-accent hover:underline inline-flex items-baseline gap-2"
                               >
                                 <span className="text-muted">{done ? '✓' : `${lessonIndex + 1}.`}</span>
