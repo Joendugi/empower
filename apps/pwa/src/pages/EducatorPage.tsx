@@ -4,6 +4,7 @@ import { useLearnerStore } from '@/store/learnerStore';
 import { useModerationStore } from '@/store/moderationStore';
 import BrandMark from '@/components/ui/BrandMark';
 import { useT } from '@/i18n';
+import RubricBuilder from '@/components/educator/RubricBuilder';
 
 const field =
   'w-full rounded-xl bg-primary-dark border border-surface-light px-3 py-3 text-white placeholder:text-muted';
@@ -156,6 +157,10 @@ export default function EducatorPage() {
             <Link to="/curriculum" className="btn-primary inline-flex">
               {t('studioOpen')}
             </Link>
+            <div className="mt-4 pt-4 border-t border-surface-light">
+              <p className="text-xs text-muted mb-3">Create a practical assessment checklist for workshop sign-offs:</p>
+              <RubricBuilder lessonId="" />
+            </div>
           </section>
         )}
 

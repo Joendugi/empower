@@ -18,7 +18,7 @@ from app.config import settings
 from app.database import AsyncSessionLocal, Base, engine
 from app.middleware import TimeoutRateLimitMiddleware
 from app.migrate import run_alembic_upgrade
-from app.routers import analytics, auth, badges, certificates, content, leaderboard, moderation, ops, review, streaks, studio, submissions, xp
+from app.routers import analytics, auth, badges, certificates, content, discussions, leaderboard, lti, moderation, ops, review, rubrics, streaks, studio, submissions, xp
 from app.security import assert_secure_settings
 from app.services.published_catalog import load_published_snapshot
 
@@ -118,6 +118,9 @@ def create_app(**state: Any) -> FastAPI:
     app.include_router(moderation.router, prefix="/api/v1", tags=["Moderation"])
     app.include_router(analytics.router, prefix="/api/v1", tags=["Analytics"])
     app.include_router(ops.router, prefix="/api/v1", tags=["Ops"])
+    app.include_router(discussions.router, prefix="/api/v1", tags=["Discussions"])
+    app.include_router(rubrics.router, prefix="/api/v1", tags=["Rubrics"])
+    app.include_router(lti.router, tags=["LTI"])
 
     def _health() -> dict[str, str]:
         return {"status": "ok", "version": "0.1.0", "environment": settings.ENVIRONMENT}

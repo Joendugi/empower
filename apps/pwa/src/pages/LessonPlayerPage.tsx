@@ -26,6 +26,7 @@ import ScenarioLabCard from '@/components/lessons/ScenarioLabCard';
 import WeekPreview from '@/components/curriculum/WeekPreview';
 import { triggerConfettiBurst, triggerLevelUpCelebration } from '@/lib/confetti';
 import { playSuccessChime, playIncorrectChime, playLevelUpFanfare } from '@/lib/soundEffects';
+import DiscussionBoard from '@/components/curriculum/DiscussionBoard';
 
 export default function LessonPlayerPage() {
   const { lessonId } = useParams<{ lessonId: string }>();
@@ -297,6 +298,10 @@ function LessonComplete({
             <span>{t('continueLearning')}</span>
           </button>
         </div>
+      </div>
+
+      <div className="w-full max-w-md mt-6">
+        <DiscussionBoard lessonId={lesson.id} />
       </div>
     </div>
   );
