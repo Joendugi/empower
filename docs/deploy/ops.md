@@ -31,6 +31,10 @@ Writes timestamped `pg_dump` files under `backups/` (gitignored). Point `SUPABAS
 
 Default production cache is in-process MemoryCache (`REDIS_URL=off`). If you use Upstash, rotate the password in the Upstash console after any paste into chat, then replace `REDIS_URL` locally. Do not reuse a leaked token.
 
+## Supabase TLS on Windows
+
+If Python fails the pooler handshake with `CERTIFICATE_VERIFY_FAILED`, install/update `certifi` and ensure `apps/api` uses it (already wired in `database.py`). As a **local-only** escape hatch set `SUPABASE_SSL_INSECURE=true` in `apps/api/.env` — never enable that in production.
+
 ## Open edX
 
 Not in the launch stack. See ADR-002.

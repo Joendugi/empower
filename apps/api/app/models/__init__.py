@@ -1,3 +1,4 @@
+from app.models.auth_challenge import AuthChallenge
 from app.models.badge import Badge
 from app.models.fsrs_card import FSRSCard
 from app.models.learner import Learner
@@ -29,4 +30,5 @@ __all__ = [
     "CurriculumProposalRow",
     "AnalyticsEventRow",
     "ErrorEventRow",
+    "AuthChallenge",
 ]

@@ -13,6 +13,7 @@ export function useBackgroundRuntime() {
     if (!hydrated) return;
     useLearnerStore.getState().touchSession();
     void useLibraryStore.getState().hydrate();
+    void import('@/content').then((mod) => mod.hydratePublicCatalogue()).catch(() => undefined);
     void registerBackgroundSync();
     scheduleCloudSync();
   }, [hydrated, token]);

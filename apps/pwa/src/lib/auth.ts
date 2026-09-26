@@ -8,6 +8,7 @@ import {
   upsertLocalAccount,
   type AuthPayload,
 } from '@/lib/localAccounts';
+import { useLearnerStore } from '@/store/learnerStore';
 import { usePlatformStore } from '@/store/platformStore';
 
 export type AuthMode = 'login' | 'register';
@@ -60,6 +61,8 @@ export async function authenticate(input: AuthPayload & { mode: AuthMode }): Pro
 
   try {
     const path = input.mode === 'login' ? '/auth/login' : '/auth/register';
+    const completedLessonIds =
+      input.mode === 'register' ? useLearnerStore.getState().completedLessonIds : undefined;
     const body =
       input.mode === 'login'
         ? { email, password }
@@ -68,6 +71,7 @@ export async function authenticate(input: AuthPayload & { mode: AuthMode }): Pro
             password,
             displayName: payload.displayName,
             preferredLanguage: payload.preferredLanguage,
+            completedLessonIds,
           };
     const remote = await api<TokenResponse>(path, { method: 'POST', body: JSON.stringify(body) });
     await upsertLocalAccount({

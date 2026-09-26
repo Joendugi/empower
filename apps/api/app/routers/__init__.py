@@ -1,8 +1,9 @@
-from app.routers import analytics, auth, badges, content, leaderboard, moderation, ops, review, streaks, studio, submissions, xp
+from app.routers import analytics, auth, badges, certificates, content, leaderboard, moderation, ops, review, streaks, studio, submissions, xp
 
 __all__ = [
     "auth",
     "badges",
+    "certificates",
     "content",
     "leaderboard",
     "review",
