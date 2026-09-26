@@ -6,7 +6,7 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.111",
     "uvicorn[standard]>=0.29",
-    "sqlalchemy>=2.0",
+    "sqlalchemy[asyncio]>=2.0",
     "alembic>=1.13",
     "asyncpg>=0.29",
     "aiosqlite>=0.20",
@@ -48,6 +48,8 @@ ignore = ["B008"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
 testpaths = ["tests"]
 
 [tool.mypy]

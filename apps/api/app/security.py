@@ -31,7 +31,7 @@ def assert_secure_settings() -> None:
 
 
 def staff_digest(value: str) -> str:
-    payload = f"{STAFF_HASH_PREFIX}:{value.strip()}".encode("utf-8")
+    payload = f"{STAFF_HASH_PREFIX}:{value.strip()}".encode()
     return hashlib.sha256(payload).hexdigest()
 
 

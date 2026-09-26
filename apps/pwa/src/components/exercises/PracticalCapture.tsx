@@ -43,7 +43,6 @@ export default function PracticalCapture({ exercise, lessonId, onAnswer }: Pract
       if (previewUrl) URL.revokeObjectURL(previewUrl);
       if (timerRef.current) window.clearInterval(timerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const stopStream = () => {
