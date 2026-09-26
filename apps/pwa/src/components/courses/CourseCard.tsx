@@ -24,33 +24,38 @@ export default function CourseCard({
   const isTrades = path.track === 'trades';
   const trackLabel = isTrades ? t('tradesTrack') : isTvet ? t('tvetTrack') : t('cyberTrack');
   const lessons = courseLessonCount(path);
+  const accent = isTrades ? '#f0c14e' : isTvet ? '#5b9dff' : '#00d4aa';
 
   return (
-    <article className="card h-full flex flex-col">
-      <div className="flex items-start justify-between gap-3">
+    <article className="programme-tile" style={{ ['--tile-accent' as string]: accent }}>
+      <div className="flex items-start justify-between gap-3 pl-2">
         <span className="text-3xl" aria-hidden>
           {courseIcon(path)}
         </span>
         <span
           className={clsx(
-            'text-[11px] font-semibold px-2 py-0.5 rounded-full',
-            isTrades ? 'bg-amber-500/15 text-amber-200' : isTvet ? 'bg-blue-500/15 text-blue-300' : 'bg-accent/10 text-accent'
+            'text-[11px] font-semibold px-2 py-0.5 rounded-md border',
+            isTrades
+              ? 'border-amber-400/30 text-amber-200 bg-amber-500/10'
+              : isTvet
+                ? 'border-blue-400/30 text-blue-200 bg-blue-500/10'
+                : 'border-accent/30 text-accent bg-accent/10'
           )}
         >
           {trackLabel}
         </span>
       </div>
-      <h3 className="font-semibold text-white mt-3">{title}</h3>
-      <p className="text-sm text-muted mt-2 leading-relaxed line-clamp-3 flex-1">{description}</p>
-      <p className="text-xs text-muted mt-3">
+      <h3 className="font-display font-semibold text-white text-lg mt-3 pl-2">{title}</h3>
+      <p className="text-sm text-muted mt-2 leading-relaxed line-clamp-3 flex-1 pl-2">{description}</p>
+      <p className="text-xs text-muted mt-3 pl-2">
         {path.nodes.length} {t('modules')} · {lessons} {t('lessons')}
         {progress && progress.done > 0 ? ` · ${progress.percent}%` : ''}
       </p>
       {path.certificationTarget && (
-        <p className="text-xs text-accent mt-2 line-clamp-2">{path.certificationTarget}</p>
+        <p className="text-xs text-accent mt-2 line-clamp-2 pl-2">{path.certificationTarget}</p>
       )}
       {progress && progress.done > 0 && (
-        <div className="xp-bar mt-3">
+        <div className="xp-bar mt-3 ml-2">
           <div className="xp-bar-fill" style={{ width: `${progress.percent}%` }} />
         </div>
       )}

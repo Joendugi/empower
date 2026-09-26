@@ -13,6 +13,7 @@ import { useCurriculumStore } from '@/store/curriculumStore';
 import { useLearnerStore } from '@/store/learnerStore';
 import { resolveLesson } from '@/store/libraryStore';
 import { useT } from '@/i18n';
+import { MAX_ACTIVE_COURSES } from '@/lib/activeCourses';
 
 export default function SkillTreePage() {
   const t = useT();
@@ -58,14 +59,14 @@ export default function SkillTreePage() {
   const openCourse = (pathId: string) => navigate(`/learn/course/${pathId}`);
 
   return (
-    <div className="min-h-dvh bg-primary-dark pb-24 text-white">
+    <div className="min-h-dvh pb-24 text-white">
       <AppHeader />
       <main className="max-w-6xl mx-auto px-4 pt-6">
         <div className="mb-5">
           <XPBar totalXp={xp} />
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('catalogueKicker')}</p>
-        <h1 className="text-2xl sm:text-3xl font-bold mt-1">{t('chooseCourseTitle')}</h1>
+        <p className="section-kicker">{t('catalogueKicker')}</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold mt-2 tracking-tight">{t('chooseCourseTitle')}</h1>
         <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">{t('chooseCourseBody')}</p>
 
         <div className="mt-5 max-w-xl">
@@ -108,7 +109,12 @@ export default function SkillTreePage() {
 
         {mine.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-lg font-semibold mb-3">{t('myCourses')}</h2>
+            <h2 className="text-lg font-semibold mb-3">
+              {t('myCourses')}{' '}
+              <span className="text-sm font-normal text-muted">
+                ({chosenPathIds.length}/{MAX_ACTIVE_COURSES} {t('activeCoursesLabel').toLowerCase()})
+              </span>
+            </h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {mine.map((path) => (
                 <li key={path.id}>
@@ -122,6 +128,9 @@ export default function SkillTreePage() {
                 </li>
               ))}
             </ul>
+            {chosenPathIds.length >= MAX_ACTIVE_COURSES && (
+              <p className="text-xs text-muted mt-3">{t('courseSlotsFull')}</p>
+            )}
           </section>
         )}
 

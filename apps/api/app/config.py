@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     SUPABASE_URL: str = ""
     SUPABASE_ANON_KEY: str = ""
     SUPABASE_DB_URL: str = ""
+    # Set true only on broken local Windows CA stores. Prefer installing certifi.
+    SUPABASE_SSL_INSECURE: bool = False
 
     # Redis — set to "off" if you only need Postgres/Supabase for readiness
     REDIS_URL: str = "redis://localhost:6379/0"

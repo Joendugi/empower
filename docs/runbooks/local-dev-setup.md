@@ -45,6 +45,22 @@ pnpm dev
 #   pnpm --filter @cyberlearn/pwa dev
 ```
 
+### Docker not available
+
+If `docker` is missing from PATH, use SQLite instead of compose Postgres/Redis:
+
+```bash
+cd apps/api
+python -m venv .venv && source .venv/bin/activate   # Windows: .\.venv\Scripts\activate
+pip install -e ".[dev]"
+set DATABASE_URL=sqlite+aiosqlite:///./dev.db        # bash: export ...
+set REDIS_URL=off
+set SUPABASE_DB_URL=
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Then `pnpm --filter @cyberlearn/pwa dev` from the repo root. See [cloud-and-local.md](../deploy/cloud-and-local.md) for Supabase TLS notes.
+
 ## Verify Everything Is Working
 
 ```bash
