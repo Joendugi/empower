@@ -22,6 +22,8 @@ def db_url() -> str:
 async def main() -> None:
     url = db_url()
     ctx = ssl.create_default_context(cafile=certifi.where())
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
     conn = await asyncpg.connect(dsn=url.replace("postgresql+asyncpg://", "postgresql://"), ssl=ctx, timeout=20)
     learners = await conn.fetchval("select count(*) from public.learners")
     tables = await conn.fetchval(
