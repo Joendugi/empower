@@ -5,29 +5,38 @@ import { useLearnerStore } from '@/store/learnerStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useSyncStore } from '@/store/syncStore';
 
+async function syncActiveCoursePacks() {
+  await useLibraryStore.getState().hydrate();
+  const chosen = useLearnerStore.getState().chosenPathIds;
+  useLibraryStore.getState().syncActiveProgrammes(chosen);
+}
+
 export function useBackgroundRuntime() {
   const hydrated = useHydrated();
   const token = useLearnerStore((state) => state.token);
+  const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
 
   useEffect(() => {
     if (!hydrated) return;
     useLearnerStore.getState().touchSession();
-    void useLibraryStore.getState().hydrate();
+    void syncActiveCoursePacks();
     void registerBackgroundSync();
     scheduleCloudSync();
-  }, [hydrated, token]);
+  }, [hydrated, token, chosenPathIds]);
 
   useEffect(() => {
     if (!hydrated) return;
     const touch = () => useLearnerStore.getState().touchSession();
     const onOnline = () => {
       useSyncStore.getState().setStatus('syncing');
+      void syncActiveCoursePacks();
       scheduleCloudSync();
     };
     const onOffline = () => useSyncStore.getState().setStatus('offline');
     const onVisible = () => {
       if (document.visibilityState === 'visible') {
         touch();
+        void syncActiveCoursePacks();
         scheduleCloudSync();
       }
     };

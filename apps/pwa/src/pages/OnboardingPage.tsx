@@ -9,7 +9,6 @@ import { getSkillPaths } from '@/content';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useLearnerStore, type LearnerGoal, type LearnerRole } from '@/store/learnerStore';
-import { useLibraryStore } from '@/store/libraryStore';
 import { useT } from '@/i18n';
 import type { StringKey } from '@/i18n/strings';
 
@@ -24,7 +23,6 @@ export default function OnboardingPage() {
   const displayName = useLearnerStore((state) => state.displayName);
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const completeOnboarding = useLearnerStore((state) => state.completeOnboarding);
-  const choosePath = useLearnerStore((state) => state.choosePath);
   const customPaths = useCurriculumStore((state) => state.paths);
   const paths = useMemo(() => getSkillPaths(), [customPaths]);
 
@@ -60,8 +58,6 @@ export default function OnboardingPage() {
   const totalSteps = 6;
 
   const finish = (course: SkillPath) => {
-    choosePath(course.id);
-    useLibraryStore.getState().selectProgramme(course.id);
     completeOnboarding({ role, goal, track, pathId: course.id });
     navigate(`/learn/course/${course.id}`);
   };

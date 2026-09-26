@@ -91,10 +91,14 @@ export const strings = {
     chooseThisCourse: 'Choose this course',
     chooseCourseTitle: 'Choose a course',
     chooseCourseBody:
-      'Pick the programme you want to train in. Opening a card lets you read the units first. You start lessons only after you choose that course.',
+      'You can keep up to two active courses at a time — including trades and jobseeker pathways. Opening a card lets you read the units first. Start lessons after you choose that course.',
     openCourse: 'Open course',
     startChosenCourse: 'Start the first lesson',
-    courseChosen: 'This is your chosen course.',
+    courseChosen: 'This is one of your active courses.',
+    courseSlotsFull:
+      'You already have 2 active courses. Leave one from My courses before choosing another.',
+    leaveCourse: 'Leave this course',
+    activeCoursesLabel: 'Active courses',
     courseUnits: 'Units in this course',
     courseMissing: 'That course is not in the catalogue.',
     myCourses: 'My courses',
@@ -103,9 +107,10 @@ export const strings = {
     onboardKicker: 'Get ready',
     onboardWelcome: 'Welcome to Empower',
     onboardWelcomeBody:
-      'This short setup matches you to a TVET or trade course. You will choose language, who you are, what you want, and one course. Lessons stay behind that choice so you are not dropped into the wrong workshop.',
+      'This short setup matches you to a TVET, trade, or cybersecurity course. You will choose language, who you are, what you want, and one starter course. You can add a second active course later. Lessons stay behind that choice so you are not dropped into the wrong workshop.',
     onboardPoint1: 'Semester-depth notes aligned to CDACC, NITA, and Security+ practice.',
-    onboardPoint2: 'You choose a course first. Then you open units and start a lesson.',
+    onboardPoint2:
+      'Choose one starter course first (trades and job pathways included). You can hold up to two active courses later.',
     onboardPoint3: 'Quizzes, evidence, and certificates need this account.',
     onboardPoint4: 'English and Kiswahili stay available. Change them any time in Profile.',
     onboardLanguageTitle: 'Which language should we teach in?',
@@ -473,10 +478,14 @@ export const strings = {
     chooseThisCourse: 'Chagua kozi hii',
     chooseCourseTitle: 'Chagua kozi',
     chooseCourseBody:
-      'Chagua programu unayotaka. Kadi inafungua vitengo kwanza. Unaanzia somo baada ya kuchagua kozi hiyo.',
+      'Unaweza kuwa na kozi mbili tu zinazofanya kazi kwa wakati mmoja — ikiwa ni ufundi na njia za kutafuta kazi. Kadi inafungua vitengo kwanza. Anza somo baada ya kuchagua kozi hiyo.',
     openCourse: 'Fungua kozi',
     startChosenCourse: 'Anza somo la kwanza',
-    courseChosen: 'Hii ndiyo kozi uliyochagua.',
+    courseChosen: 'Hii ni mojawapo ya kozi zako zinazofanya kazi.',
+    courseSlotsFull:
+      'Tayari una kozi 2 zinazofanya kazi. Acha moja kutoka Kozi zangu kabla ya kuchagua nyingine.',
+    leaveCourse: 'Acha kozi hii',
+    activeCoursesLabel: 'Kozi zinazofanya kazi',
     courseUnits: 'Vitengo vya kozi hii',
     courseMissing: 'Kozi hiyo haipo kwenye orodha.',
     myCourses: 'Kozi zangu',
@@ -485,9 +494,10 @@ export const strings = {
     onboardKicker: 'Jitayarishe',
     onboardWelcome: 'Karibu Empower',
     onboardWelcomeBody:
-      'Usanidi huu unakuunganisha na kozi ya TVET au ufundi. Utachagua lugha, wewe ni nani, unachotaka, na kozi moja. Masomo yanakuja baada ya chaguo hilo.',
+      'Usanidi huu unakuunganisha na kozi ya TVET, ufundi, au usalama wa mtandao. Utachagua lugha, wewe ni nani, unachotaka, na kozi moja ya kuanzia. Unaweza kuongeza kozi ya pili baadaye. Masomo yanakuja baada ya chaguo hilo.',
     onboardPoint1: 'Maelezo ya semester yaliyounganishwa na CDACC, NITA, na Security+.',
-    onboardPoint2: 'Chagua kozi kwanza. Kisha fungua vitengo na uanze somo.',
+    onboardPoint2:
+      'Chagua kozi moja kwanza (ufundi na njia za kazi zinajumuishwa). Baadaye unaweza kuwa na kozi mbili zinazofanya kazi.',
     onboardPoint3: 'Mitihani, ushahidi, na vyeti vinahitaji akaunti hii.',
     onboardPoint4: 'Kiingereza na Kiswahili vipo. Badilisha baadaye kwenye wasifu.',
     onboardLanguageTitle: 'Tufundishe kwa lugha gani?',

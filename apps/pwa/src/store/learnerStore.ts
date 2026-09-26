@@ -12,10 +12,12 @@ import {
 } from '@/lib/sessionSecurity';
 import { CLOUD_COOKIE_TOKEN, clearSessionToken, readSessionToken, writeSessionToken } from '@/lib/tokenVault';
 import { clearAdminGrant } from '@/lib/adminAccess';
+import { canAddActivePath, trimActivePathIds } from '@/lib/activeCourses';
 import { usePlatformStore } from '@/store/platformStore';
 
 export type LearnerRole = 'student' | 'artisan' | 'jobseeker' | 'community' | 'trainer';
 export type LearnerGoal = 'certificate' | 'work' | 'enterprise' | 'community' | 'exam';
+export { MAX_ACTIVE_COURSES, trimActivePathIds } from '@/lib/activeCourses';
 
 interface LearnerState {
   token: string | null;
@@ -50,7 +52,9 @@ interface LearnerState {
   markLessonComplete: (lessonId: string) => void;
   setLanguage: (language: 'en' | 'sw') => void;
   setDisplayName: (displayName: string) => void;
-  choosePath: (pathId: string) => void;
+  canChoosePath: (pathId: string) => boolean;
+  choosePath: (pathId: string) => boolean;
+  leavePath: (pathId: string) => void;
   completeOnboarding: (input: {
     role: LearnerRole;
     goal: LearnerGoal;
@@ -63,6 +67,18 @@ interface LearnerState {
   lockSession: () => void;
   downgradeToLocal: () => boolean;
   reset: () => void;
+}
+
+function mirrorLibrarySelect(pathId: string) {
+  void import('@/store/libraryStore').then(({ useLibraryStore }) => {
+    useLibraryStore.getState().selectProgramme(pathId);
+  });
+}
+
+function mirrorLibraryDeselect(pathId: string) {
+  void import('@/store/libraryStore').then(({ useLibraryStore }) => {
+    useLibraryStore.getState().deselectProgramme(pathId);
+  });
 }
 
 export function xpToLevel(xp: number): number {
@@ -175,28 +191,43 @@ export const useLearnerStore = create<LearnerState>()(
         set({ displayName: next });
       },
 
+      canChoosePath: (pathId) => canAddActivePath(get().chosenPathIds, pathId),
+
       choosePath: (pathId) => {
-        import('@/store/analyticsStore').then(({ useAnalyticsStore }) => {
-          useAnalyticsStore.getState().record('course_choose', { pathId });
-        }).catch(() => undefined);
-        set((state) => ({
-          chosenPathIds: state.chosenPathIds.includes(pathId)
-            ? state.chosenPathIds
-            : [...state.chosenPathIds, pathId],
-        }));
+        const state = get();
+        if (state.chosenPathIds.includes(pathId)) {
+          mirrorLibrarySelect(pathId);
+          return true;
+        }
+        if (!canAddActivePath(state.chosenPathIds, pathId)) {
+          return false;
+        }
+        import('@/store/analyticsStore')
+          .then(({ useAnalyticsStore }) => {
+            useAnalyticsStore.getState().record('course_choose', { pathId });
+          })
+          .catch(() => undefined);
+        set({ chosenPathIds: [...state.chosenPathIds, pathId] });
+        mirrorLibrarySelect(pathId);
+        return true;
       },
 
-      completeOnboarding: ({ role, goal, track, pathId }) =>
+      leavePath: (pathId) => {
         set((state) => ({
+          chosenPathIds: state.chosenPathIds.filter((id) => id !== pathId),
+        }));
+        mirrorLibraryDeselect(pathId);
+      },
+
+      completeOnboarding: ({ role, goal, track, pathId }) => {
+        set({
           learnerRole: role,
           learnerGoal: goal,
           preferredTrack: track,
           onboardingCompleted: true,
-          chosenPathIds:
-            pathId && !state.chosenPathIds.includes(pathId)
-              ? [...state.chosenPathIds, pathId]
-              : state.chosenPathIds,
-        })),
+        });
+        if (pathId) get().choosePath(pathId);
+      },
 
       restartOnboarding: () => set({ onboardingCompleted: false }),
 
@@ -272,7 +303,7 @@ export const useLearnerStore = create<LearnerState>()(
     }),
     {
       name: 'cyberlearn-learner',
-      version: 4,
+      version: 5,
       partialize: (state) => ({
         learnerId: state.learnerId,
         displayName: state.displayName,
@@ -319,11 +350,15 @@ export const useLearnerStore = create<LearnerState>()(
         if (version < 4) {
           state.token = null;
         }
+        if (version < 5) {
+          state.chosenPathIds = trimActivePathIds(state.chosenPathIds ?? []);
+        }
         return state;
       },
       onRehydrateStorage: () => (state) => {
         if (!state) return;
         state.token = readSessionToken();
+        state.chosenPathIds = trimActivePathIds(state.chosenPathIds ?? []);
       },
     }
   )
