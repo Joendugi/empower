@@ -36,16 +36,8 @@ export default function AppHeader({
       <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08] shadow-sm transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
           {/* Brand mark & logo */}
-          <Link to={home} className="flex items-center gap-3 shrink-0 group">
-            <BrandMark size="sm" />
-            <div className="hidden sm:block">
-              <span className="font-bold text-white text-base tracking-tight group-hover:text-accent transition-colors">
-                {t('brand')}
-              </span>
-              <span className="block text-[10px] uppercase font-mono tracking-wider text-muted">
-                TVET & Skills Platform
-              </span>
-            </div>
+          <Link to={home} className="flex items-center shrink-0">
+            <BrandMark size="sm" showText />
           </Link>
 
           {/* Center search button or custom children */}

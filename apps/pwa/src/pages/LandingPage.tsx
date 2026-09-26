@@ -7,17 +7,16 @@ import {
   Recycle, 
   Hammer, 
   Sparkles, 
-  ShieldCheck, 
   Layers, 
-  Award, 
   ArrowRight, 
-  CheckCircle2,
   GraduationCap,
-  Lock,
-  KeyRound,
-  ChevronRight
+  Play,
+  Compass,
+  Wrench,
+  Zap,
+  ShieldAlert
 } from 'lucide-react';
-import { catalogueStats } from '@/content';
+import { catalogueStats, getSkillPaths } from '@/content';
 import { useT } from '@/i18n';
 import BrandMark from '@/components/ui/BrandMark';
 import ProfileButton from '@/components/ui/ProfileButton';
@@ -27,6 +26,7 @@ export default function LandingPage() {
   const t = useT();
   const signedIn = Boolean(useLearnerStore((state) => state.token));
   const stats = catalogueStats();
+  const paths = getSkillPaths().slice(0, 6);
 
   const impactAreas = [
     { icon: SunMedium, color: 'text-amber-400 bg-amber-400/10 border-amber-400/20', title: 'Clean energy', body: 'Solar PV installation, electrical safety, inverters, and battery maintenance.' },
@@ -42,17 +42,13 @@ export default function LandingPage() {
       {/* Navigation Header */}
       <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08]">
         <div className="flex items-center justify-between px-5 py-3.5 max-w-7xl mx-auto">
-          <div className="flex items-center gap-3">
-            <BrandMark size="sm" />
-            <div>
-              <p className="font-bold tracking-tight text-white">{t('brand')}</p>
-              <p className="text-[10px] uppercase font-mono tracking-wider text-muted">{t('institution')}</p>
-            </div>
-          </div>
+          <Link to="/" className="flex items-center gap-3">
+            <BrandMark size="sm" showText />
+          </Link>
 
           <nav className="flex items-center gap-4 text-xs font-medium">
-            <a href="#security" className="text-muted hover:text-white hidden md:inline transition-colors">
-              Security
+            <a href="#courses" className="text-muted hover:text-white hidden md:inline transition-colors">
+              Courses
             </a>
             <a href="#impact" className="text-muted hover:text-white hidden md:inline transition-colors">
               Skills for society
@@ -76,8 +72,7 @@ export default function LandingPage() {
 
       <main>
         {/* Hero Section with African TVET School Background Image */}
-        <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
-          {/* African TVET School Background Image */}
+        <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-45 pointer-events-none"
             style={{ backgroundImage: "url('/images/tvet-school-hero.jpg')" }}
@@ -96,25 +91,19 @@ export default function LandingPage() {
               </h1>
 
               <p className="mt-6 text-base sm:text-lg text-muted-light max-w-2xl leading-relaxed">
-                Empower brings semester-depth TVET, technical trades, ICT, and cybersecurity training to learners everywhere. Study structured modules, explore interactive workshop diagrams, and build a verified skills portfolio.
+                Empower brings semester-depth TVET, technical trades, ICT, and cybersecurity training to learners everywhere. Explore interactive workshop roadmaps, master practical competencies, and build a verified portfolio.
               </p>
 
-              {/* CTAs */}
+              {/* Immediate CTAs */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3.5 max-w-lg">
-                <Link to="/login" className="btn-primary py-3.5 px-6 text-sm">
+                <Link to="/learn/skill-tree" className="btn-primary py-3.5 px-6 text-sm">
                   <GraduationCap className="w-4 h-4" />
-                  Start Learning
+                  Explore All Courses
                 </Link>
-                <Link to="/login?next=%2Feducator" className="btn-secondary py-3.5 px-6 text-sm">
+                <Link to="/login" className="btn-secondary py-3.5 px-6 text-sm">
                   <Sparkles className="w-4 h-4" />
-                  Educator Portal
+                  {signedIn ? 'My Account' : 'Open Account'}
                 </Link>
-              </div>
-
-              {/* Security & Access Callout */}
-              <div className="mt-5 flex items-center gap-2 text-xs text-muted-light bg-surface/70 border border-white/[0.08] backdrop-blur-md px-3.5 py-2 rounded-xl max-w-lg">
-                <ShieldCheck className="w-4 h-4 text-accent shrink-0" />
-                <span>Protected resource access: Sign in with a verified account to access full curriculum & tests.</span>
               </div>
 
               {/* Live Metric Stats Cards */}
@@ -134,46 +123,51 @@ export default function LandingPage() {
               </dl>
             </div>
 
-            {/* Interactive Feature Showcase Card */}
+            {/* Quick Course Launch Spotlight */}
             <div className="relative">
-              <div className="card !p-7 border-accent/30 shadow-2xl shadow-accent/10 relative overflow-hidden backdrop-blur-xl">
+              <div className="card !p-6 border-accent/30 shadow-2xl shadow-accent/10 backdrop-blur-xl">
                 <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
                   <div className="flex items-center gap-2">
-                    <Award className="w-4 h-4 text-accent" />
-                    <p className="text-xs text-accent font-bold uppercase tracking-widest">A week on Empower</p>
+                    <Compass className="w-4 h-4 text-accent" />
+                    <p className="text-xs text-accent font-bold uppercase tracking-widest">Featured TVET Tracks</p>
                   </div>
-                  <span className="badge-accent text-[11px]">Structured Standard</span>
+                  <span className="badge-accent text-[11px]">Instant Access</span>
                 </div>
 
-                <ol className="mt-6 space-y-5">
+                <div className="mt-5 space-y-3">
                   {[
-                    { step: '01', title: 'Understand', desc: 'Read detailed notes tied to occupational standards and local trade practice.', icon: Layers },
-                    { step: '02', title: 'Watch & Inspect', desc: 'See workshop demonstrations, exploded diagrams, and trainer explanations.', icon: Layers },
-                    { step: '03', title: 'Practise & Test', desc: 'Answer scenarios, solve interactive challenges, and record practical evidence.', icon: CheckCircle2 },
-                    { step: '04', title: 'Progress & Certify', desc: 'Unlock the next unit, earn XP, and keep a portable record of completed skills.', icon: Award },
+                    { id: 'motor-vehicle-mechanics', title: 'Motor Vehicle Mechanics', tag: 'Automotive', icon: Wrench, color: 'text-amber-400 bg-amber-400/10' },
+                    { id: 'solar-energy', title: 'Solar PV & Electrical Systems', tag: 'Clean Energy', icon: Zap, color: 'text-cyan-400 bg-cyan-400/10' },
+                    { id: 'secplus-concepts', title: 'Cybersecurity & Network Defense', tag: 'Security', icon: ShieldAlert, color: 'text-emerald-400 bg-emerald-400/10' },
                   ].map((item) => {
-                    const StepIcon = item.icon;
+                    const Icon = item.icon;
                     return (
-                      <li key={item.step} className="flex gap-4 items-start group">
-                        <span className="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-tr from-accent/20 to-surface-light text-accent border border-accent/30 grid place-items-center font-extrabold text-sm shadow-inner group-hover:scale-105 transition-transform">
-                          {item.step}
-                        </span>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h2 className="font-bold text-white text-base group-hover:text-accent transition-colors">{item.title}</h2>
-                            <StepIcon className="w-3.5 h-3.5 text-muted group-hover:text-accent transition-colors" />
+                      <Link
+                        key={item.id}
+                        to={`/learn/course/${item.id}`}
+                        className="flex items-center justify-between p-3.5 rounded-xl bg-surface/70 border border-white/[0.08] hover:border-accent/40 hover:bg-surface-light transition-all group"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${item.color} shrink-0`}>
+                            <Icon className="w-5 h-5" />
                           </div>
-                          <p className="text-xs sm:text-sm text-muted mt-1 leading-relaxed">{item.desc}</p>
+                          <div>
+                            <p className="text-xs text-muted font-medium">{item.tag}</p>
+                            <h3 className="font-bold text-sm text-white group-hover:text-accent transition-colors">{item.title}</h3>
+                          </div>
                         </div>
-                      </li>
+                        <div className="w-8 h-8 rounded-lg bg-accent/10 text-accent flex items-center justify-center group-hover:bg-accent group-hover:text-primary-dark transition-all">
+                          <Play className="w-3.5 h-3.5 fill-current" />
+                        </div>
+                      </Link>
                     );
                   })}
-                </ol>
+                </div>
 
-                <div className="mt-6 pt-5 border-t border-white/[0.08] flex items-center justify-between text-xs text-muted">
-                  <span>Standardised CDACC / NITA mapping</span>
-                  <Link to="/login" className="text-accent hover:underline flex items-center gap-1 font-semibold">
-                    Get started <ChevronRight className="w-3.5 h-3.5" />
+                <div className="mt-5 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs">
+                  <span className="text-muted">No waitlist required</span>
+                  <Link to="/learn/skill-tree" className="text-accent hover:underline flex items-center gap-1 font-semibold">
+                    View all {stats.programmes} tracks <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -181,58 +175,57 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Security Features & Account Access Section */}
-        <section id="security" className="border-t border-white/[0.08] bg-surface/40 py-16">
+        {/* Instant Course Directory Section */}
+        <section id="courses" className="border-t border-white/[0.08] py-16">
           <div className="max-w-7xl mx-auto px-5">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/25 text-accent text-xs font-semibold mb-3">
-                <Lock className="w-3.5 h-3.5" />
-                <span className="tracking-wide uppercase">Protected Resource Architecture</span>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Curriculum Directory</p>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                  Start Any Course with One Click
+                </h2>
+                <p className="text-muted text-xs sm:text-sm mt-1">
+                  Click any trade track to inspect the interactive learning roadmap.
+                </p>
               </div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-white">
-                Account-Controlled Access & Security
-              </h2>
-              <p className="text-muted-light mt-3 text-sm sm:text-base leading-relaxed">
-                All certified courseware, interactive practical assessments, and workshop evidence submissions are protected through cryptographic account authentication.
-              </p>
+              <Link to="/learn/skill-tree" className="btn-secondary !py-2 !px-4 text-xs shrink-0 inline-flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5" /> Browse Full Catalogue
+              </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="card !p-6 border-white/[0.08]">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
-                  <KeyRound className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-lg text-white">Verified Account Gating</h3>
-                <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                  Only authenticated learner and educator accounts can access full lesson exercises, autograding rubrics, and certification tracking.
-                </p>
-              </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {paths.map((p) => (
+                <div key={p.id} className="card !p-5 border-white/[0.08] hover:border-accent/40 flex flex-col justify-between transition-all group">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/25">
+                        {p.track}
+                      </span>
+                      <span className="text-xs text-muted">
+                        {p.nodes.length} modules
+                      </span>
+                    </div>
+                    <h3 className="font-bold text-base text-white group-hover:text-accent transition-colors">{p.title}</h3>
+                    <p className="text-xs text-muted mt-2 line-clamp-2 leading-relaxed">{p.description}</p>
+                  </div>
 
-              <div className="card !p-6 border-white/[0.08]">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
-                  <ShieldCheck className="w-6 h-6" />
+                  <div className="mt-5 pt-4 border-t border-white/[0.08] flex items-center justify-between">
+                    <Link
+                      to={`/learn/course/${p.id}`}
+                      className="btn-primary !py-2 !px-4 text-xs font-bold w-full justify-center"
+                    >
+                      <Play className="w-3 h-3 fill-current" />
+                      Open Course Roadmap
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="font-bold text-lg text-white">Token Vault & Circuit Safety</h3>
-                <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                  Session tokens are encrypted in the local secure vault with challenge-response protection against session hijacking.
-                </p>
-              </div>
-
-              <div className="card !p-6 border-white/[0.08]">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
-                  <Sparkles className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-lg text-white">Role-Based Access Control</h3>
-                <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                  Distinct permission levels for Learners, TVET Trainers, Curriculum Editors, and Institutional Administrators.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Impact Areas */}
-        <section id="impact" className="border-t border-white/[0.08] py-20">
+        <section id="impact" className="border-t border-white/[0.08] py-20 bg-surface/20">
           <div className="max-w-7xl mx-auto px-5">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Skills for society</p>
@@ -261,44 +254,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Audience breakdown */}
-        <section className="border-t border-white/[0.08] bg-surface/20 py-16">
-          <div className="max-w-7xl mx-auto px-5 grid md:grid-cols-3 gap-6">
-            <div className="card !p-6 border-blue-500/20 bg-gradient-to-b from-blue-500/[0.06] to-transparent">
-              <div className="flex items-center gap-2 text-blue-400 text-xs uppercase tracking-wider font-semibold">
-                <GraduationCap className="w-4 h-4" />
-                For learners
-              </div>
-              <h2 className="text-xl font-bold mt-3 text-white">A protected learning portal</h2>
-              <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                Create an account to access structured curriculum, track streak, complete assessments, and submit workshop evidence.
-              </p>
-            </div>
-
-            <div className="card !p-6 border-amber-500/20 bg-gradient-to-b from-amber-500/[0.06] to-transparent">
-              <div className="flex items-center gap-2 text-amber-400 text-xs uppercase tracking-wider font-semibold">
-                <Sparkles className="w-4 h-4" />
-                For educators
-              </div>
-              <h2 className="text-xl font-bold mt-3 text-white">Teach with evidence</h2>
-              <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                Author semester modules, outline notes, video walkthroughs, and autograded questions with real-time preview before publishing.
-              </p>
-            </div>
-
-            <div className="card !p-6 border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.06] to-transparent">
-              <div className="flex items-center gap-2 text-emerald-400 text-xs uppercase tracking-wider font-semibold">
-                <ShieldCheck className="w-4 h-4" />
-                Quality assurance
-              </div>
-              <h2 className="text-xl font-bold mt-3 text-white">Admin validation before release</h2>
-              <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
-                Content stays in a review queue until learning outcomes, depth, references, and assessment quality pass validation.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Callout */}
         <section className="max-w-5xl mx-auto px-5 py-20 text-center">
           <div className="card !p-10 border-accent/40 bg-gradient-to-b from-accent/[0.08] to-surface relative overflow-hidden shadow-2xl shadow-accent/10">
@@ -306,14 +261,14 @@ export default function LandingPage() {
               Build a skill. Serve a community. Create work.
             </h2>
             <p className="text-muted-light mt-3 max-w-xl mx-auto text-sm sm:text-base">
-              Join thousands of learners mastering practical TVET trades, or apply to contribute verified technical curriculum.
+              Join learners mastering practical TVET trades, or apply to contribute verified technical curriculum.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
               <Link to="/login" className="btn-primary py-3 px-6 text-sm">
-                Create learner account
+                Create free account
               </Link>
-              <Link to="/login?next=%2Feducator" className="btn-secondary py-3 px-6 text-sm">
-                Educator application
+              <Link to="/learn/skill-tree" className="btn-secondary py-3 px-6 text-sm">
+                Explore Curriculum
               </Link>
             </div>
           </div>
@@ -325,7 +280,6 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
           <div className="flex items-center gap-4 flex-wrap">
             <span className="font-semibold text-white">{t('brand')}</span>
-            <span className="flex items-center gap-1"><CheckCircle2 className="w-3.5 h-3.5 text-accent" /> Protected Resource Access</span>
             <span>{t('swahiliEnglish')}</span>
             <span>{t('cdaccAligned')}</span>
           </div>

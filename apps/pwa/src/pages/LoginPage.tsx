@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { ShieldCheck, Lock, KeyRound, Sparkles } from 'lucide-react';
+import { Lock, KeyRound, Sparkles } from 'lucide-react';
 import type { TokenResponse } from '@cyberlearn/types';
 import { authenticate, probeApiHealth } from '@/lib/auth';
 import { CLOUD_COOKIE_TOKEN } from '@/lib/tokenVault';
@@ -102,27 +102,21 @@ export default function LoginPage() {
 
       <div className="relative z-10 w-full max-w-md">
         {/* Brand Header */}
-        <Link to="/" className="mb-6 text-center flex flex-col items-center group">
-          <BrandMark size="lg" />
-          <span className="text-2xl font-extrabold text-white mt-3 tracking-tight group-hover:text-accent transition-colors">
-            {t('brand')}
-          </span>
-          <span className="text-xs uppercase font-mono tracking-wider text-muted mt-0.5">
-            {t('institution')}
-          </span>
+        <Link to="/" className="mb-6 flex justify-center group">
+          <BrandMark size="lg" showText />
         </Link>
 
-        {/* Security Feature Badge */}
+        {/* Auth Card */}
         <div className="card !p-7 border-white/[0.12] shadow-2xl backdrop-blur-2xl">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="badge-accent text-[11px] font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Protected Resource Access
+              <Sparkles className="w-3.5 h-3.5" />
+              TVET Learning Portal
             </span>
           </div>
 
           <h2 className="text-center text-xl font-bold text-white mb-1">
-            {mode === 'login' ? t('signInTitle') : 'Create Protected Account'}
+            {mode === 'login' ? t('signInTitle') : t('register')}
           </h2>
           <p className="text-center text-xs text-accent font-medium mb-4">{statusLabel}</p>
 

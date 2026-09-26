@@ -32,6 +32,7 @@ export default function CoursePage() {
   const [viewMode, setViewMode] = useState<'roadmap' | 'syllabus'>('roadmap');
 
   const language = useLearnerStore((state) => state.language);
+  const signedIn = Boolean(useLearnerStore((state) => state.token));
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
   const choosePath = useLearnerStore((state) => state.choosePath);
@@ -165,6 +166,23 @@ export default function CoursePage() {
             </button>
             <CourseDownloadButton path={path} className="shrink-0" />
           </div>
+
+          {!signedIn && (
+            <div className="mt-4 p-3.5 rounded-xl bg-accent/[0.08] border border-accent/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-accent shrink-0" />
+                <p className="text-xs text-muted-light">
+                  <strong className="text-white">Guest Mode:</strong> You can start this course right now! Open a free account anytime to sync progress & earn verifiable certificates.
+                </p>
+              </div>
+              <Link 
+                to={`/login?next=${encodeURIComponent(`/learn/course/${path.id}`)}`}
+                className="btn-secondary !py-1.5 !px-3 text-xs font-semibold whitespace-nowrap shrink-0"
+              >
+                Open Account
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* View Mode Switcher (Roadmap vs Syllabus) */}

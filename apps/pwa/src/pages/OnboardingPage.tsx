@@ -1,6 +1,13 @@
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { clsx } from 'clsx';
+import { 
+  GraduationCap, 
+  Sparkles, 
+  Play, 
+  ArrowRight,
+  UserPlus
+} from 'lucide-react';
 import type { ProgrammeTrack, SkillPath } from '@cyberlearn/types';
 import CourseCard from '@/components/courses/CourseCard';
 import LanguagePicker from '@/components/ui/LanguagePicker';
@@ -10,232 +17,154 @@ import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useLearnerStore, type LearnerGoal, type LearnerRole } from '@/store/learnerStore';
 import { useLibraryStore } from '@/store/libraryStore';
-import { useT } from '@/i18n';
-import type { StringKey } from '@/i18n/strings';
-
-const ROLES: LearnerRole[] = ['student', 'artisan', 'jobseeker', 'community', 'trainer'];
-const GOALS: LearnerGoal[] = ['certificate', 'work', 'enterprise', 'community', 'exam'];
-const TRACKS: Array<ProgrammeTrack | 'all'> = ['all', 'trades', 'tvet', 'cybersecurity'];
 
 export default function OnboardingPage() {
-  const t = useT();
   const navigate = useNavigate();
   const language = useLearnerStore((state) => state.language);
-  const displayName = useLearnerStore((state) => state.displayName);
+  const signedIn = Boolean(useLearnerStore((state) => state.token));
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const completeOnboarding = useLearnerStore((state) => state.completeOnboarding);
   const choosePath = useLearnerStore((state) => state.choosePath);
   const customPaths = useCurriculumStore((state) => state.paths);
   const paths = useMemo(() => getSkillPaths(), [customPaths]);
 
-  const [step, setStep] = useState(0);
-  const [role, setRole] = useState<LearnerRole>('student');
-  const [goal, setGoal] = useState<LearnerGoal>('certificate');
-  const [track, setTrack] = useState<ProgrammeTrack | 'all'>('all');
-  const [pathId, setPathId] = useState<string | null>(null);
+  const [selectedTrack, setSelectedTrack] = useState<ProgrammeTrack | 'all'>('all');
+  const [selectedPathId, setSelectedPathId] = useState<string | null>(paths[0]?.id ?? null);
+  const [role] = useState<LearnerRole>('student');
+  const [goal] = useState<LearnerGoal>('certificate');
 
-  const suggested = useMemo(() => {
-    return paths.filter((path) => {
-      if (track !== 'all' && path.track !== track) return false;
-      if (goal === 'exam') return path.track === 'tvet' || path.track === 'cybersecurity';
-      if (goal === 'enterprise') return path.id === 'digital-enterprise' || path.track === 'trades';
-      if (goal === 'community') {
-        return [
-          'solar-energy',
-          'community-health-support',
-          'caregiving-assistance',
-          'waste-recycling',
-          'water-sanitation-hygiene',
-          'agriculture',
-          'plumbing',
-        ].includes(path.id);
-      }
-      if (goal === 'work') return path.track === 'trades' || path.track === 'tvet';
-      return true;
-    });
-  }, [goal, paths, track]);
-  const visibleCourses = suggested.length ? suggested : paths;
+  const filteredPaths = useMemo(() => {
+    if (selectedTrack === 'all') return paths;
+    return paths.filter((p) => p.track === selectedTrack);
+  }, [paths, selectedTrack]);
 
-  const selected = paths.find((path) => path.id === pathId);
-  const totalSteps = 6;
+  const selected = paths.find((p) => p.id === selectedPathId) ?? paths[0];
 
-  const finish = (course: SkillPath) => {
+  const handleLaunchCourse = (course: SkillPath) => {
     choosePath(course.id);
     useLibraryStore.getState().selectProgramme(course.id);
-    completeOnboarding({ role, goal, track, pathId: course.id });
+    completeOnboarding({ role, goal, track: course.track ?? 'all', pathId: course.id });
     navigate(`/learn/course/${course.id}`);
   };
 
-  const next = () => setStep((value) => Math.min(value + 1, totalSteps - 1));
-  const back = () => setStep((value) => Math.max(value - 1, 0));
-
   return (
-    <div className="min-h-dvh bg-primary-dark text-white">
-      <header className="px-4 py-4 border-b border-surface-light">
-        <div className="max-w-3xl mx-auto flex items-center gap-3">
-          <BrandMark size="sm" />
-          <div className="flex-1">
-            <p className="text-xs text-muted">
-              {t('onboardStep')} {step + 1} / {totalSteps}
-            </p>
-            <div className="xp-bar mt-2">
-              <div className="xp-bar-fill" style={{ width: `${((step + 1) / totalSteps) * 100}%` }} />
-            </div>
+    <div className="min-h-dvh bg-primary-dark text-white bg-grid-pattern pb-16">
+      {/* Header */}
+      <header className="px-5 py-4 border-b border-white/[0.08] bg-primary-dark/80 backdrop-blur-xl sticky top-0 z-30">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+          <Link to="/" className="flex items-center gap-3">
+            <BrandMark size="sm" showText />
+          </Link>
+          <div className="flex items-center gap-3">
+            <LanguagePicker />
+            {!signedIn && (
+              <Link to="/login" className="btn-secondary !py-1.5 !px-3 text-xs inline-flex items-center gap-1.5">
+                <UserPlus className="w-3.5 h-3.5" /> Sign In
+              </Link>
+            )}
           </div>
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
-        {step === 0 && (
-          <section className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('onboardKicker')}</p>
-            <h1 className="text-3xl font-bold">
-              {displayName ? `${t('onboardWelcome')}, ${displayName}` : t('onboardWelcome')}
+      <main className="max-w-6xl mx-auto px-5 py-8 space-y-8">
+        {/* Top Hero: Instant Course Selection */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/25 text-accent text-xs font-semibold mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Fast-Track Onboarding</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Select Your TVET Course Track
             </h1>
-            <p className="text-muted leading-relaxed">{t('onboardWelcomeBody')}</p>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {[t('onboardPoint1'), t('onboardPoint2'), t('onboardPoint3'), t('onboardPoint4')].map((item) => (
-                <li key={item} className="card text-sm leading-relaxed">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+            <p className="text-muted-light mt-1.5 text-sm sm:text-base max-w-xl">
+              Choose any trade or engineering discipline to open its interactive roadmap and start learning right away.
+            </p>
+          </div>
 
-        {step === 1 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardLanguageTitle')}</h1>
-            <p className="text-muted leading-relaxed">{t('onboardLanguageBody')}</p>
-            <LanguagePicker />
-          </section>
-        )}
-
-        {step === 2 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardRoleTitle')}</h1>
-            <p className="text-muted leading-relaxed">{t('onboardRoleBody')}</p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {ROLES.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => setRole(item)}
-                  className={clsx(
-                    'card text-left',
-                    role === item ? 'border-accent' : 'hover:border-accent/40'
-                  )}
-                >
-                  <h2 className="font-semibold">{t(`role_${item}` as StringKey)}</h2>
-                  <p className="text-sm text-muted mt-1">{t(`role_${item}_body` as StringKey)}</p>
-                </button>
-              ))}
+          {/* Quick Active Selection Launch Button */}
+          {selected && (
+            <div className="flex flex-col sm:flex-row gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => handleLaunchCourse(selected)}
+                className="btn-primary py-3 px-6 text-sm font-bold shadow-glow"
+              >
+                <Play className="w-4 h-4 fill-current" />
+                Start {selected.title}
+              </button>
             </div>
-          </section>
-        )}
-
-        {step === 3 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardGoalTitle')}</h1>
-            <p className="text-muted leading-relaxed">{t('onboardGoalBody')}</p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {GOALS.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => setGoal(item)}
-                  className={clsx(
-                    'card text-left',
-                    goal === item ? 'border-accent' : 'hover:border-accent/40'
-                  )}
-                >
-                  <h2 className="font-semibold">{t(`goal_${item}` as StringKey)}</h2>
-                  <p className="text-sm text-muted mt-1">{t(`goal_${item}_body` as StringKey)}</p>
-                </button>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {step === 4 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardTrackTitle')}</h1>
-            <p className="text-muted leading-relaxed">{t('onboardTrackBody')}</p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {TRACKS.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => setTrack(item)}
-                  className={clsx(
-                    'card text-left',
-                    track === item ? 'border-accent' : 'hover:border-accent/40'
-                  )}
-                >
-                  <h2 className="font-semibold">{item === 'all' ? t('allProgrammes') : t(item === 'trades' ? 'tradesTrack' : item === 'tvet' ? 'tvetTrack' : 'cyberTrack')}</h2>
-                  <p className="text-sm text-muted mt-1">
-                    {item === 'all'
-                      ? t('onboardTrackAll')
-                      : item === 'trades'
-                        ? t('tradesCardBody')
-                        : item === 'tvet'
-                          ? t('tvetCardBody')
-                          : t('cyberCardBody')}
-                  </p>
-                </button>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {step === 5 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardCourseTitle')}</h1>
-            <p className="text-muted leading-relaxed">{t('onboardCourseBody')}</p>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {visibleCourses.map((path) => (
-                <li key={path.id}>
-                  <CourseCard
-                    path={path}
-                    language={language}
-                    progress={programmeProgress(path, completedLessonIds)}
-                    chosen={path.id === pathId}
-                    onOpen={() => setPathId(path.id)}
-                  />
-                </li>
-              ))}
-            </ul>
-            {selected && (
-              <div className="card border-accent/40">
-                <p className="text-xs uppercase tracking-wider text-accent">{t('courseChosen')}</p>
-                <h2 className="font-semibold mt-1">{language === 'sw' && selected.titleSw ? selected.titleSw : selected.title}</h2>
-                <p className="text-sm text-muted mt-2">{t('onboardReadyBody')}</p>
-              </div>
-            )}
-          </section>
-        )}
-
-        <div className="flex flex-col sm:flex-row gap-3 pt-2">
-          {step > 0 && (
-            <button type="button" className="btn-secondary" onClick={back}>
-              {t('back')}
-            </button>
-          )}
-          {step < 5 ? (
-            <button type="button" className="btn-primary flex-1" onClick={next}>
-              {t('onboardContinue')}
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="btn-primary flex-1"
-              disabled={!selected}
-              onClick={() => selected && finish(selected)}
-            >
-              {t('onboardFinish')}
-            </button>
           )}
         </div>
+
+        {/* Track Filter Tabs */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-white/[0.08]">
+          {[
+            { id: 'all', label: 'All Programmes' },
+            { id: 'trades', label: 'Technical Trades' },
+            { id: 'tvet', label: 'Engineering & TVET' },
+            { id: 'cybersecurity', label: 'Cybersecurity & ICT' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setSelectedTrack(tab.id as ProgrammeTrack | 'all')}
+              className={clsx(
+                'px-4 py-2 rounded-xl text-xs font-semibold transition-all shrink-0',
+                selectedTrack === tab.id
+                  ? 'bg-accent text-primary-dark shadow-glow'
+                  : 'bg-surface/60 text-muted hover:text-white hover:bg-surface-light border border-white/[0.08]'
+              )}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Course Grid: Instant Direct Launch */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {filteredPaths.map((path) => {
+            const isSelected = path.id === selectedPathId;
+            return (
+              <div
+                key={path.id}
+                onClick={() => setSelectedPathId(path.id)}
+                className={clsx(
+                  'cursor-pointer transition-all',
+                  isSelected && 'ring-2 ring-accent rounded-2xl'
+                )}
+              >
+                <CourseCard
+                  path={path}
+                  language={language}
+                  progress={programmeProgress(path, completedLessonIds)}
+                  chosen={isSelected}
+                  onOpen={() => handleLaunchCourse(path)}
+                />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Quick Account Prompt if not signed in */}
+        {!signedIn && (
+          <div className="card !p-6 border-accent/30 bg-gradient-to-r from-accent/[0.08] via-surface to-surface flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
+                <GraduationCap className="w-6 h-6" />
+              </div>
+              <div>
+                <h2 className="font-bold text-base text-white">Save Your Streak & Certification Progress</h2>
+                <p className="text-xs text-muted mt-0.5">
+                  You can explore courses immediately. Create an account anytime to sync achievements across devices.
+                </p>
+              </div>
+            </div>
+            <Link to="/login" className="btn-secondary !py-2.5 !px-5 text-xs font-semibold shrink-0 whitespace-nowrap">
+              Create Free Account <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        )}
       </main>
     </div>
   );
