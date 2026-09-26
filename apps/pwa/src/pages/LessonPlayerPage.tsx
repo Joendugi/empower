@@ -25,6 +25,7 @@ import type { GradeResult } from '@/components/exercises/types';
 import ScenarioLabCard from '@/components/lessons/ScenarioLabCard';
 import WeekPreview from '@/components/curriculum/WeekPreview';
 import { triggerConfettiBurst, triggerLevelUpCelebration } from '@/lib/confetti';
+import { playSuccessChime, playIncorrectChime, playLevelUpFanfare } from '@/lib/soundEffects';
 
 export default function LessonPlayerPage() {
   const { lessonId } = useParams<{ lessonId: string }>();
@@ -81,9 +82,11 @@ export default function LessonPlayerPage() {
     const result = await gradeExercise(lesson.id, currentExercise, answer);
     if (result.isCorrect) {
       setXpEarned((value) => value + result.xpAwarded);
+      playSuccessChime();
       triggerConfettiBurst({ particleCount: 25, spread: 45 });
     } else {
       setIncorrectCount((c) => c + 1);
+      playIncorrectChime();
     }
     window.setTimeout(async () => {
       if (currentIndex + 1 >= lesson.exercises.length) {
@@ -92,6 +95,7 @@ export default function LessonPlayerPage() {
           setXpEarned((value) => value + complete.xpAwarded);
         }
         setFinished(true);
+        playLevelUpFanfare();
         triggerLevelUpCelebration();
       } else {
         setCurrentIndex((i) => i + 1);

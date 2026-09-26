@@ -16,6 +16,7 @@ import AppHeader from '@/components/ui/AppHeader';
 import BottomNav from '@/components/ui/BottomNav';
 import CourseOutline from '@/components/curriculum/CourseOutline';
 import InteractiveRoadmap from '@/components/curriculum/InteractiveRoadmap';
+import CourseDownloadButton from '@/components/offline/CourseDownloadButton';
 import { courseIcon, courseLessonCount } from '@/lib/courseMeta';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
@@ -147,7 +148,7 @@ export default function CoursePage() {
           )}
 
           {/* Actions */}
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             {!chosen && (
               <button type="button" className="btn-secondary py-3 text-xs font-semibold" onClick={choose}>
                 {t('chooseThisCourse')}
@@ -155,13 +156,14 @@ export default function CoursePage() {
             )}
             <button
               type="button"
-              className="btn-primary py-3 text-xs font-bold"
+              className="btn-primary py-3 text-xs font-bold flex-1"
               onClick={start}
               disabled={!firstLesson}
             >
               <Play className="w-4 h-4 fill-current" />
               {progress.done > 0 ? t('continueCourse') : t('startChosenCourse')}
             </button>
+            <CourseDownloadButton path={path} className="shrink-0" />
           </div>
         </div>
 
