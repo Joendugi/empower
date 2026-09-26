@@ -58,12 +58,15 @@ class FakeRedis:
 
 @pytest.fixture
 async def app() -> AsyncGenerator[Any, None]:
+    # Dispose pooled connections so asyncpg is not bound to a prior event loop.
+    await engine.dispose()
     application = create_app(redis=FakeRedis())
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield application
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
+    await engine.dispose()
 
 
 @pytest.fixture

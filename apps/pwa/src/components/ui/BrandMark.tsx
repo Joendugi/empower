@@ -13,8 +13,9 @@ export default function BrandMark({
     <span
       className={clsx(
         box,
-        'inline-flex items-center justify-center rounded-2xl bg-accent text-primary font-black tracking-tight shadow-[0_0_24px_rgba(0,212,170,0.25)]'
+        'inline-flex items-center justify-center rounded-2xl bg-accent text-primary-dark font-display font-extrabold tracking-tight'
       )}
+      aria-hidden
     >
       E
     </span>

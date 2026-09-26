@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none" role="img" aria-label="Workshop floor with tools and a workbench">
+  <defs>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12182a"/>
+      <stop offset="55%" stop-color="#0c101c"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4aa" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#00d4aa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4664"/>
+      <stop offset="100%" stop-color="#1a2236"/>
+    </linearGradient>
+    <radialGradient id="spark" cx="70%" cy="42%" r="35%">
+      <stop offset="0%" stop-color="#7dffd4" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#00d4aa" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00d4aa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#floor)"/>
+  <ellipse cx="1120" cy="380" rx="520" ry="300" fill="url(#spark)"/>
+  <!-- roof beams -->
+  <path d="M0 180 H1600" stroke="#243049" stroke-width="3"/>
+  <path d="M120 0 V220" stroke="#243049" stroke-width="8"/>
+  <path d="M480 0 V200" stroke="#243049" stroke-width="8"/>
+  <path d="M840 0 V210" stroke="#243049" stroke-width="8"/>
+  <path d="M1200 0 V190" stroke="#243049" stroke-width="8"/>
+  <path d="M1480 0 V230" stroke="#243049" stroke-width="8"/>
+  <!-- light beam -->
+  <path d="M980 40 L1500 900 L1180 900 Z" fill="url(#beam)" opacity="0.55"/>
+  <!-- back wall panels -->
+  <rect x="80" y="220" width="520" height="280" rx="8" fill="#151c2d" stroke="#2a354d"/>
+  <rect x="120" y="260" width="180" height="120" rx="4" fill="#0e1422" stroke="#00d4aa" stroke-opacity="0.35"/>
+  <rect x="330" y="260" width="220" height="120" rx="4" fill="#0e1422" stroke="#31405c"/>
+  <rect x="120" y="400" width="430" height="60" rx="4" fill="#101828" stroke="#31405c"/>
+  <!-- workbench -->
+  <path d="M180 620 H980 L1000 700 H160 Z" fill="url(#metal)" stroke="#3d4d6d"/>
+  <rect x="230" y="700" width="40" height="120" fill="#1b2438"/>
+  <rect x="860" y="700" width="40" height="120" fill="#1b2438"/>
+  <!-- tools on bench -->
+  <rect x="280" y="560" width="220" height="28" rx="4" fill="#243149" stroke="#00d4aa" stroke-opacity="0.5"/>
+  <path d="M560 575 H720" stroke="#c9d2e3" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="740" cy="575" r="22" fill="#2a364f" stroke="#00d4aa"/>
+  <path d="M780 540 L860 610" stroke="#8b96ad" stroke-width="8" stroke-linecap="round"/>
+  <!-- welding cart -->
+  <rect x="1120" y="480" width="180" height="240" rx="10" fill="#172033" stroke="#3a4a68"/>
+  <circle cx="1160" cy="740" r="28" fill="#101726" stroke="#4a5b7a"/>
+  <circle cx="1260" cy="740" r="28" fill="#101726" stroke="#4a5b7a"/>
+  <path d="M1210 500 V420" stroke="#00d4aa" stroke-width="6"/>
+  <path d="M1210 420 C1280 400, 1340 460, 1380 520" stroke="#7dffd4" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <!-- floor grid -->
+  <path d="M0 820 H1600" stroke="#1c2538" stroke-width="2"/>
+  <path d="M0 860 H1600" stroke="#182032" stroke-width="2"/>
+  <g stroke="#1a2336" stroke-width="1" opacity="0.7">
+    <path d="M200 820 V900"/><path d="M400 820 V900"/><path d="M600 820 V900"/>
+    <path d="M800 820 V900"/><path d="M1000 820 V900"/><path d="M1200 820 V900"/><path d="M1400 820 V900"/>
+  </g>
+</svg>

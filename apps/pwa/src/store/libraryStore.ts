@@ -2,6 +2,7 @@ import type { Lesson, SkillPath } from '@cyberlearn/types';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { getSkillPaths } from '@/content';
+import { canAddActivePath, trimActivePathIds } from '@/lib/activeCourses';
 import {
   findPathForLesson,
   listSavedPacks,
@@ -18,7 +19,9 @@ interface LibraryState {
   lessons: Record<string, Lesson>;
   hydrated: boolean;
   hydrate: () => Promise<void>;
-  selectProgramme: (pathId: string) => void;
+  selectProgramme: (pathId: string) => boolean;
+  deselectProgramme: (pathId: string) => void;
+  syncActiveProgrammes: (pathIds: string[]) => void;
   pinLesson: (lessonId: string) => void;
   prefetchLesson: (lessonId: string) => void;
 }
@@ -104,6 +107,7 @@ export const useLibraryStore = create<LibraryState>()(
         set((state) => ({
           packs: { ...packs, ...state.packs },
           lessons: { ...lessons, ...state.lessons },
+          selectedIds: trimActivePathIds(state.selectedIds),
           hydrated: true,
         }));
         for (const pathId of get().selectedIds) {
@@ -117,13 +121,37 @@ export const useLibraryStore = create<LibraryState>()(
 
       selectProgramme: (pathId) => {
         const path = getSkillPaths().find((item) => item.id === pathId);
-        if (!path) return;
-        set((state) => ({
-          selectedIds: state.selectedIds.includes(pathId)
-            ? state.selectedIds
-            : [...state.selectedIds, pathId],
-        }));
+        if (!path) return false;
+        const state = get();
+        if (state.selectedIds.includes(pathId)) {
+          void downloadPath(path);
+          return true;
+        }
+        if (!canAddActivePath(state.selectedIds, pathId)) {
+          return false;
+        }
+        set({ selectedIds: [...state.selectedIds, pathId] });
         void downloadPath(path);
+        return true;
+      },
+
+      deselectProgramme: (pathId) => {
+        set((state) => ({
+          selectedIds: state.selectedIds.filter((id) => id !== pathId),
+        }));
+      },
+
+      syncActiveProgrammes: (pathIds) => {
+        const active = trimActivePathIds(pathIds);
+        set({ selectedIds: active });
+        for (const pathId of active) {
+          const path = getSkillPaths().find((item) => item.id === pathId);
+          if (!path) continue;
+          const current = get().packs[pathId];
+          if (!current || current.status !== 'ready') {
+            void downloadPath(path);
+          }
+        }
       },
 
       pinLesson: (lessonId) => {
@@ -138,7 +166,19 @@ export const useLibraryStore = create<LibraryState>()(
     }),
     {
       name: 'empower-library',
-      partialize: (state) => ({ selectedIds: state.selectedIds }),
+      version: 2,
+      partialize: (state) => ({ selectedIds: trimActivePathIds(state.selectedIds) }),
+      migrate: (persisted) => {
+        const state = (persisted ?? {}) as Partial<LibraryState>;
+        return {
+          ...state,
+          selectedIds: trimActivePathIds(state.selectedIds ?? []),
+        };
+      },
+      onRehydrateStorage: () => (state) => {
+        if (!state) return;
+        state.selectedIds = trimActivePathIds(state.selectedIds ?? []);
+      },
     }
   )
 );

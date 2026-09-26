@@ -2,11 +2,12 @@ import { useOfflineSync } from '@/hooks/useOfflineSync';
 import { clsx } from 'clsx';
 import { useT } from '@/i18n';
 
-export default function OfflineBanner() {
+export default function OfflineBanner({ forceOffline = false }: { forceOffline?: boolean }) {
   const { isOnline, queueLength, hasPendingSync } = useOfflineSync();
   const t = useT();
+  const offline = forceOffline || !isOnline;
 
-  if (isOnline && !hasPendingSync) return null;
+  if (!offline && !hasPendingSync) return null;
 
   return (
     <div
@@ -14,14 +15,14 @@ export default function OfflineBanner() {
       aria-live="polite"
       className={clsx(
         'w-full px-4 py-2 text-sm font-medium text-center transition-all duration-300',
-        !isOnline
+        offline
           ? 'bg-warning/20 text-warning border-b border-warning/30'
           : 'bg-accent/20 text-accent border-b border-accent/30'
       )}
     >
-      {!isOnline ? (
+      {offline ? (
         <span>
-          {t('offline')}
+          {t('reconnectBanner')}
           {queueLength > 0 && (
             <span className="ml-1 opacity-75">
               ({queueLength} {t('willSync')})

@@ -101,3 +101,28 @@ pnpm dev
 ```
 
 The Vite proxy sends `/api` to `http://localhost:8000`. If the API is not running, campus mode still registers and signs in from `localStorage`.
+
+### Without Docker (SQLite fallback)
+
+If Docker is not installed or not on `PATH`, skip compose and run the API against a local SQLite file:
+
+```bash
+cd apps/api
+python -m venv .venv
+# Windows: .\.venv\Scripts\activate
+source .venv/bin/activate
+pip install -e ".[dev]"
+export DATABASE_URL=sqlite+aiosqlite:///./dev.db
+export SUPABASE_DB_URL=
+export REDIS_URL=off
+export ENVIRONMENT=development
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+In another terminal: `pnpm --filter @cyberlearn/pwa dev`.
+
+Tables are created on startup for SQLite in development. Prefer Postgres via Docker when you need production-like sync.
+
+### Supabase TLS on Windows
+
+Use a **new** Empower Supabase project URI in `SUPABASE_DB_URL`. The API builds an SSL context with `certifi`. If your local CA store is broken and handshake fails with `CERTIFICATE_VERIFY_FAILED`, set `SUPABASE_SSL_INSECURE=true` only on that machine, then fix/reinstall CAs and turn it off.

@@ -76,28 +76,35 @@ export default function LoginPage() {
     }
   };
 
+  const browserOnline = typeof navigator === 'undefined' ? true : navigator.onLine;
   const statusLabel =
     deploymentMode === 'offline'
       ? t('authStatusOffline')
       : cloudUp
         ? t('authStatusCloud')
         : cloudUp === false
-          ? t('authStatusLocal')
+          ? browserOnline
+            ? t('authStatusCloudDown')
+            : t('authStatusLocal')
           : t('authStatusChecking');
 
   return (
-    <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6">
-      <div className="absolute top-4 right-4">
+    <div className="relative min-h-dvh flex flex-col items-center justify-center px-6 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,212,170,0.16),transparent_45%)]" />
+      <div className="absolute top-4 right-4 z-10">
         <ProfileButton />
       </div>
-      <Link to="/" className="mb-8 text-center inline-flex flex-col items-center">
+      <Link to="/" className="relative z-10 mb-8 text-center inline-flex flex-col items-center animate-rise-in">
         <BrandMark size="lg" />
-        <span className="text-xl font-bold text-white mt-3">{t('brand')}</span>
+        <span className="font-display text-3xl font-extrabold tracking-tight text-white mt-4">{t('brand')}</span>
         <span className="text-xs text-muted mt-1">{t('institution')}</span>
       </Link>
 
-      <form className="w-full max-w-xs space-y-3" onSubmit={(e) => void onSubmit(e)}>
-        <h2 className="text-center text-lg font-semibold text-white mb-2">{t('signInTitle')}</h2>
+      <form
+        className="relative z-10 w-full max-w-sm space-y-3 rounded-3xl border border-surface-light/70 bg-surface/60 p-5 shadow-panel backdrop-blur-md animate-rise-in-delay"
+        onSubmit={(e) => void onSubmit(e)}
+      >
+        <h2 className="font-display text-center text-xl font-bold text-white mb-1">{t('signInTitle')}</h2>
         <p className="text-center text-xs text-accent">{statusLabel}</p>
         {storedEmail && params.get('next') ? (
           <p className="text-center text-xs text-warning">{t('sessionExpired')}</p>

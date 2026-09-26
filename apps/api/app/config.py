@@ -35,6 +35,7 @@ class Settings(BaseSettings):
     SUPABASE_URL: str = ""
     SUPABASE_ANON_KEY: str = ""
     SUPABASE_DB_URL: str = ""
+    # Set true only on broken local Windows CA stores. Prefer installing certifi.
     SUPABASE_SSL_INSECURE: bool = False
 
     # Cache — "off" uses free in-process MemoryCache. Redis/Upstash is optional.
@@ -73,7 +74,7 @@ class Settings(BaseSettings):
         return value
 
     @model_validator(mode="after")
-    def apply_supabase_database_url(self) -> "Settings":
+    def apply_supabase_database_url(self) -> Settings:
         if self.SUPABASE_DB_URL.strip() and "sqlite" not in self.DATABASE_URL:
             source = self.SUPABASE_DB_URL.strip()
         else:

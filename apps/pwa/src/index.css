@@ -4,10 +4,14 @@
 
 @layer base {
   :root {
-    --color-bg: #0d0d1a;
-    --color-surface: #1e1e3a;
-    --color-text: #e8e8f0;
-    --color-muted: #6b7280;
+    --color-bg: #0b1220;
+    --color-surface: #162235;
+    --color-surface-light: #243553;
+    --color-text: #e8eef7;
+    --color-muted: #8b97ab;
+    --color-accent: #00d4aa;
+    --font-display: 'Bricolage Grotesque', Figtree, sans-serif;
+    --font-body: Figtree, 'Segoe UI', sans-serif;
   }
 
   * {
@@ -22,39 +26,59 @@
 
   body {
     margin: 0;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-body);
     background-color: var(--color-bg);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% -10%, rgba(0, 212, 170, 0.12), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 0% 100%, rgba(36, 80, 120, 0.18), transparent 50%);
+    background-attachment: fixed;
     color: var(--color-text);
-    min-height: 100dvh; /* dynamic viewport height for mobile */
+    min-height: 100dvh;
     overflow-x: hidden;
   }
 
-  /* Ensure interactive elements feel native on mobile */
-  button, input, select, textarea {
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
     font-family: inherit;
   }
 
-  /* Scrollbars — dark theme */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #1a1a2e; }
-  ::-webkit-scrollbar-thumb { background: #3a3a5c; border-radius: 3px; }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #121a2b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #31445f;
+    border-radius: 3px;
+  }
 }
 
 @layer components {
   .card {
-    @apply bg-surface rounded-2xl p-4 border border-surface-light;
+    @apply bg-surface/90 rounded-2xl p-4 border border-surface-light/80 shadow-sm;
   }
 
   .btn-primary {
-    @apply bg-accent text-primary font-semibold py-3 px-6 rounded-xl
-           transition-all duration-150 active:scale-95 hover:bg-accent-light
+    @apply bg-accent text-primary-dark font-semibold py-3 px-6 rounded-xl
+           transition-all duration-200 active:scale-[0.98] hover:bg-accent-light
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-secondary {
-    @apply bg-surface text-white font-semibold py-3 px-6 rounded-xl border border-surface-light
-           transition-all duration-150 active:scale-95 hover:bg-surface-light
-           disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-primary-dark/50 text-white font-semibold py-3 px-6 rounded-xl border border-surface-light
+           transition-all duration-200 active:scale-[0.98] hover:bg-surface-light/40 hover:border-accent/40
+           disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm;
   }
 
   .exercise-option {
@@ -77,11 +101,46 @@
   }
 
   .xp-bar-fill {
-    @apply h-full bg-gradient-to-r from-xp to-yellow-400 rounded-full
+    @apply h-full bg-gradient-to-r from-xp to-yellow-300 rounded-full
            transition-all duration-500 ease-out;
   }
 
   .media-stage {
     @apply flex flex-col items-center justify-center gap-3 min-h-[140px] rounded-xl bg-primary-dark/80 border border-surface-light;
+  }
+
+  .programme-tile {
+    @apply relative h-full flex flex-col rounded-2xl border border-surface-light/70 bg-surface/70 p-4
+           transition-all duration-200 hover:border-accent/45 hover:-translate-y-0.5;
+  }
+
+  .unit-row {
+    @apply block w-full rounded-xl border border-surface-light/70 bg-transparent px-4 py-3
+           transition-colors duration-150 hover:border-accent/45 hover:bg-surface/40;
+  }
+
+  .segmented {
+    @apply inline-flex flex-wrap rounded-xl border border-surface-light/70 bg-primary-dark/40 p-1 gap-1;
+  }
+
+  .segmented-item {
+    @apply px-3 py-1.5 rounded-lg text-sm text-muted transition-colors;
+  }
+
+  .segmented-item--active {
+    @apply bg-surface text-white font-semibold;
+  }
+
+  .programme-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--tile-accent, #00d4aa);
+  }
+
+  .section-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
   }
 }
