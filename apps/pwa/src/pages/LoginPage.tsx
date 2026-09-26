@@ -76,13 +76,16 @@ export default function LoginPage() {
     }
   };
 
+  const browserOnline = typeof navigator === 'undefined' ? true : navigator.onLine;
   const statusLabel =
     deploymentMode === 'offline'
       ? t('authStatusOffline')
       : cloudUp
         ? t('authStatusCloud')
         : cloudUp === false
-          ? t('authStatusLocal')
+          ? browserOnline
+            ? t('authStatusCloudDown')
+            : t('authStatusLocal')
           : t('authStatusChecking');
 
   return (
