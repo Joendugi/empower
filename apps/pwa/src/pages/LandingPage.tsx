@@ -84,15 +84,11 @@ export default function LandingPage() {
         <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
           {/* African TVET School Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity scale-105 pointer-events-none"
+            className="absolute inset-0 bg-cover bg-center opacity-45 pointer-events-none"
             style={{ backgroundImage: "url('/images/tvet-school-hero.jpg')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/95 to-primary-dark/80 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-primary-dark/80 pointer-events-none" />
-
-          {/* Ambient Glow Orbs */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-accent/15 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute top-1/3 right-10 w-[300px] h-[250px] bg-emerald-500/10 rounded-full blur-[90px] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/85 to-primary-dark/65 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-primary-dark/70 pointer-events-none" />
 
           <div className="relative max-w-7xl mx-auto px-5 grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-16 items-center">
             <div>

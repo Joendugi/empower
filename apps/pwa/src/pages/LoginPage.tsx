@@ -90,10 +90,10 @@ export default function LoginPage() {
     <div className="min-h-dvh bg-primary-dark text-white flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden bg-grid-pattern">
       {/* African TVET School Workshop Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity scale-105 pointer-events-none"
+        className="absolute inset-0 bg-cover bg-center opacity-35 pointer-events-none"
         style={{ backgroundImage: "url('/images/tvet-school-hero.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/90 to-primary-dark/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/85 to-primary-dark/70 pointer-events-none" />
 
       {/* Top Profile Icon */}
       <div className="absolute top-4 right-4 z-20">
