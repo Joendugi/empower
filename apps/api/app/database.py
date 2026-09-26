@@ -23,7 +23,18 @@ else:
     engine_kwargs["pool_size"] = 10
     engine_kwargs["max_overflow"] = 20
     if settings.is_supabase:
-        supabase_args: dict[str, object] = {"ssl": True}
+        import ssl
+
+        try:
+            import certifi
+
+            ssl_context = ssl.create_default_context(cafile=certifi.where())
+        except ImportError:
+            ssl_context = ssl.create_default_context()
+        if settings.SUPABASE_SSL_INSECURE:
+            ssl_context.check_hostname = False
+            ssl_context.verify_mode = ssl.CERT_NONE
+        supabase_args: dict[str, object] = {"ssl": ssl_context}
         if settings.uses_supabase_pooler:
             supabase_args["statement_cache_size"] = 0
         engine_kwargs["connect_args"] = supabase_args

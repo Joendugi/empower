@@ -75,6 +75,12 @@ export async function runCloudSync(): Promise<void> {
   try {
     await flushQueue();
     await pullCloudProgress();
+    try {
+      const { syncOfficeCloud } = await import('@/lib/officeSync');
+      await syncOfficeCloud();
+    } catch {
+      /* Office/analytics sync is best-effort and must not block progress flush. */
+    }
     await refreshPending();
     useSyncStore.getState().markSynced();
   } catch (error) {

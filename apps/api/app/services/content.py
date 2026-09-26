@@ -9,6 +9,12 @@ import yaml
 
 from app.config import settings
 from app.services.grading import answer_hash, answer_hashes, normalize_answer
+from app.services.published_catalog import (
+    get_overlay_exercise,
+    get_overlay_path,
+    get_overlay_public_lesson,
+    list_overlay_paths,
+)
 
 
 def _content_root() -> Path:
@@ -128,25 +134,27 @@ def _catalog() -> dict[str, Any]:
 
 
 def list_skill_paths() -> list[dict[str, Any]]:
-    return list(_catalog()["paths"].values())
+    bundled = {path["id"]: path for path in _catalog()["paths"].values()}
+    for path in list_overlay_paths():
+        bundled[path["id"]] = path
+    return list(bundled.values())
 
 
 def get_skill_path(path_id: str) -> dict[str, Any] | None:
-    return _catalog()["paths"].get(path_id)
+    return _catalog()["paths"].get(path_id) or get_overlay_path(path_id)
 
 
 def get_public_lesson(lesson_id: str) -> dict[str, Any] | None:
-    return _catalog()["lessons"].get(lesson_id)
+    return _catalog()["lessons"].get(lesson_id) or get_overlay_public_lesson(lesson_id)
 
 
 def get_raw_exercise(lesson_id: str, exercise_id: str) -> dict[str, Any] | None:
     lesson = _catalog()["raw_lessons"].get(lesson_id)
-    if not lesson:
-        return None
-    for exercise in lesson.get("exercises", []):
-        if exercise.get("id") == exercise_id:
-            return exercise
-    return None
+    if lesson:
+        for exercise in lesson.get("exercises", []):
+            if exercise.get("id") == exercise_id:
+                return exercise
+    return get_overlay_exercise(lesson_id, exercise_id)
 
 
 def list_lesson_ids_for_path() -> dict[str, list[str]]:

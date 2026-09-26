@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from datetime import date
 
-import redis.asyncio as aioredis
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import Field
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.cache import CacheBackend
 from app.database import get_db
 from app.deps import get_current_learner, get_redis
 from app.models.fsrs_card import FSRSCard
@@ -91,7 +91,7 @@ async def submit_review_result(
     result: ReviewResult,
     learner: Learner = Depends(get_current_learner),
     db: AsyncSession = Depends(get_db),
-    redis: aioredis.Redis = Depends(get_redis),
+    redis: CacheBackend = Depends(get_redis),
 ) -> ReviewResultResponse:
     card = await db.scalar(
         select(FSRSCard).where(

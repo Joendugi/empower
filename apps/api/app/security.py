@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import hmac
+from urllib.parse import urlparse
 
 from fastapi import Response
 
@@ -28,6 +29,14 @@ def assert_secure_settings() -> None:
     staff = settings.ADMIN_STAFF_KEY.strip()
     if len(staff) < 12:
         raise RuntimeError("ADMIN_STAFF_KEY must be set to 12+ characters in production")
+    if not settings.CORS_ORIGINS:
+        raise RuntimeError("CORS_ORIGINS must be set in production")
+    if any(origin.strip() == "*" for origin in settings.CORS_ORIGINS):
+        raise RuntimeError("CORS_ORIGINS must not include * in production")
+    if settings.redis_enabled:
+        parsed = urlparse(settings.REDIS_URL)
+        if not parsed.password:
+            raise RuntimeError("REDIS_URL must include a password in production")
 
 
 def staff_digest(value: str) -> str:

@@ -5,11 +5,11 @@ import math
 from datetime import date
 from typing import Any
 
-import redis.asyncio as aioredis
 from fastapi import APIRouter, Depends, Header, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.cache import CacheBackend
 from app.database import get_db
 from app.deps import get_current_learner, get_redis
 from app.models.fsrs_card import FSRSCard
@@ -131,7 +131,7 @@ async def create_submission(
     x_idempotency_key: str | None = Header(default=None, alias="X-Idempotency-Key"),
     learner: Learner = Depends(get_current_learner),
     db: AsyncSession = Depends(get_db),
-    redis: aioredis.Redis = Depends(get_redis),
+    redis: CacheBackend = Depends(get_redis),
 ) -> SubmissionRead:
     if x_idempotency_key:
         existing = await db.scalar(select(Submission).where(Submission.idempotency_key == x_idempotency_key))
@@ -205,7 +205,7 @@ async def complete_lesson(
     x_idempotency_key: str | None = Header(default=None, alias="X-Idempotency-Key"),
     learner: Learner = Depends(get_current_learner),
     db: AsyncSession = Depends(get_db),
-    redis: aioredis.Redis = Depends(get_redis),
+    redis: CacheBackend = Depends(get_redis),
 ) -> LessonCompleteRead:
     lesson = get_public_lesson(lesson_id)
     if not lesson:

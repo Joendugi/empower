@@ -47,12 +47,59 @@ export function isLocalUserToken(token: string | null | undefined): boolean {
   return Boolean(token?.startsWith(LOCAL_USER_PREFIX));
 }
 
-async function hashPassword(email: string, password: string): Promise<string> {
-  const data = new TextEncoder().encode(`empower-v1:${email}:${password}`);
-  const digest = await crypto.subtle.digest('SHA-256', data);
-  return Array.from(new Uint8Array(digest))
+const PBKDF2_PREFIX = 'empower-v2:pbkdf2:sha256';
+const PBKDF2_ITERATIONS = 210_000;
+
+function bytesToHex(bytes: Uint8Array) {
+  return Array.from(bytes)
     .map((byte) => byte.toString(16).padStart(2, '0'))
     .join('');
+}
+
+function hexToBytes(hex: string) {
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < bytes.length; i += 1) {
+    bytes[i] = Number.parseInt(hex.slice(i * 2, i * 2 + 2), 16);
+  }
+  return bytes;
+}
+
+async function hashPasswordV1(email: string, password: string): Promise<string> {
+  const data = new TextEncoder().encode(`empower-v1:${email}:${password}`);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return bytesToHex(new Uint8Array(digest));
+}
+
+export async function hashPassword(email: string, password: string, saltHex?: string): Promise<string> {
+  const salt = saltHex ? hexToBytes(saltHex) : crypto.getRandomValues(new Uint8Array(16));
+  const material = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(`${email}:${password}`),
+    'PBKDF2',
+    false,
+    ['deriveBits']
+  );
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt, iterations: PBKDF2_ITERATIONS, hash: 'SHA-256' },
+    material,
+    256
+  );
+  return `${PBKDF2_PREFIX}:${PBKDF2_ITERATIONS}:${bytesToHex(salt)}:${bytesToHex(new Uint8Array(bits))}`;
+}
+
+function parseV2Hash(value: string) {
+  const parts = value.split(':');
+  if (parts.length !== 6 || !value.startsWith(`${PBKDF2_PREFIX}:`)) return null;
+  return { iterations: parts[3], salt: parts[4], digest: parts[5] };
+}
+
+async function passwordsMatch(account: LocalAccount, password: string): Promise<boolean> {
+  const parsed = parseV2Hash(account.passwordHash);
+  if (parsed) {
+    const computed = await hashPassword(account.email, password, parsed.salt);
+    return computed === account.passwordHash;
+  }
+  return (await hashPasswordV1(account.email, password)) === account.passwordHash;
 }
 
 function readAccounts(): LocalAccount[] {
@@ -146,9 +193,11 @@ export async function loginLocal(email: string, password: string): Promise<Token
   if (!account) {
     throw new LocalAuthError(401, 'Invalid email or password');
   }
-  const passwordHash = await hashPassword(account.email, password);
-  if (passwordHash !== account.passwordHash) {
+  if (!(await passwordsMatch(account, password))) {
     throw new LocalAuthError(401, 'Invalid email or password');
+  }
+  if (!parseV2Hash(account.passwordHash)) {
+    account.passwordHash = await hashPassword(account.email, password);
   }
   account.lastLoginAt = new Date().toISOString();
   const accounts = readAccounts().map((item) => (item.id === account.id ? account : item));

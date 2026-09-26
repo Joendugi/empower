@@ -32,8 +32,22 @@ export async function gradeExercise(
   exercise: Exercise,
   answer: string | string[]
 ): Promise<SubmissionResult> {
-  const localCorrect = await isAnswerCorrect(answer, exercise.correctAnswer, exercise.answerHashes);
   const store = useLearnerStore.getState();
+  const canCloud = store.token && !isLocalToken(store.token) && !cloudRecentlyDown();
+  if (canCloud) {
+    try {
+      const result = await api<SubmissionResult>('/submissions', {
+        method: 'POST',
+        body: JSON.stringify({ lessonId, exerciseId: exercise.id, answer }),
+      });
+      if (result.isCorrect) store.applyXp(result.totalXp, result.level);
+      return result;
+    } catch {
+      /* Offline hashes only — do not trust leftover plaintext keys. */
+    }
+  }
+
+  const localCorrect = await isAnswerCorrect(answer, undefined, exercise.answerHashes);
   const xpAwarded = localCorrect ? exercise.xpReward : 0;
   const totalXp = store.xp + xpAwarded;
   const optimistic: SubmissionResult = {
