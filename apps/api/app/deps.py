@@ -1,23 +1,24 @@
 from __future__ import annotations
 
-import redis.asyncio as aioredis
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.cache import CacheBackend
 from app.config import settings
 from app.database import get_db
 from app.models.learner import Learner
+from app.security import staff_key_matches
 from app.services.auth import decode_access_token
 
 _bearer = HTTPBearer(auto_error=False)
 
 
-def get_redis(request: Request) -> aioredis.Redis:
-    redis = getattr(request.app.state, "redis", None)
-    if redis is None:
-        raise RuntimeError("Redis pool not initialised — app not started yet")
-    return redis
+def get_redis(request: Request) -> CacheBackend:
+    cache = getattr(request.app.state, "redis", None)
+    if cache is None:
+        raise RuntimeError("Cache not initialised — app not started yet")
+    return cache
 
 
 async def get_current_learner(
@@ -70,3 +71,10 @@ def assert_self(learner: Learner, learner_id: str) -> None:
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Cannot act on another learner",
         )
+
+
+def require_staff(request: Request) -> None:
+    key = request.headers.get("X-Staff-Key") or request.headers.get("x-staff-key") or ""
+    if staff_key_matches(key):
+        return
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Not found")

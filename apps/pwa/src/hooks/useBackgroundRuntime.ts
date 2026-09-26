@@ -22,6 +22,7 @@ export function useBackgroundRuntime(enabled = true) {
     if (!ready) return;
     useLearnerStore.getState().touchSession();
     void syncActiveCoursePacks();
+    void import('@/content').then((mod) => mod.hydratePublicCatalogue()).catch(() => undefined);
     void registerBackgroundSync();
     scheduleCloudSync();
   }, [ready, token, chosenPathIds]);
@@ -42,17 +43,32 @@ export function useBackgroundRuntime(enabled = true) {
         scheduleCloudSync();
       }
     };
+    const report = (message: string, path?: string) => {
+      void import('@/lib/api').then(({ api }) =>
+        api('/ops/errors', {
+          method: 'POST',
+          body: JSON.stringify({ message: message.slice(0, 500), path }),
+        }).catch(() => undefined)
+      );
+    };
+    const onError = (event: ErrorEvent) => report(event.message, window.location.pathname);
+    const onRejection = (event: PromiseRejectionEvent) =>
+      report(event.reason instanceof Error ? event.reason.message : String(event.reason), window.location.pathname);
     window.addEventListener('pointerdown', touch, { passive: true });
     window.addEventListener('keydown', touch);
     window.addEventListener('online', onOnline);
     window.addEventListener('offline', onOffline);
     document.addEventListener('visibilitychange', onVisible);
+    window.addEventListener('error', onError);
+    window.addEventListener('unhandledrejection', onRejection);
     return () => {
       window.removeEventListener('pointerdown', touch);
       window.removeEventListener('keydown', touch);
       window.removeEventListener('online', onOnline);
       window.removeEventListener('offline', onOffline);
       document.removeEventListener('visibilitychange', onVisible);
+      window.removeEventListener('error', onError);
+      window.removeEventListener('unhandledrejection', onRejection);
     };
   }, [ready]);
 }

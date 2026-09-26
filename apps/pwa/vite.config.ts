@@ -3,6 +3,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const buildId = process.env.VITE_BUILD_ID || process.env.npm_package_version || String(Date.now());
+
 export default defineConfig({
   plugins: [
     react(),
@@ -24,23 +26,27 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Cache lesson JSON content for 7 days (offline lessons)
+        cacheId: `empower-${buildId}`,
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
+        navigateFallbackDenylist: [/^\/api\//, /^\/health/, /^\/ready/, /^\/office/],
         runtimeCaching: [
           {
             urlPattern: /\/api\/v1\/lessons\//,
-            handler: 'StaleWhileRevalidate',
+            handler: 'NetworkFirst',
             options: {
-              cacheName: 'lesson-content',
-              expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 7 },
+              cacheName: `lesson-content-${buildId}`,
+              expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 },
+              networkTimeoutSeconds: 4,
             },
           },
-          // API GET calls: try network, fall back to cache
           {
             urlPattern: /\/api\/v1\/(skill-paths|badges|leaderboard)/,
             handler: 'NetworkFirst',
             options: {
-              cacheName: 'api-data',
-              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 },
+              cacheName: `api-data-${buildId}`,
+              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 12 },
               networkTimeoutSeconds: 5,
             },
           },

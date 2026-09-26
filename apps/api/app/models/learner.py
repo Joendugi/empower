@@ -18,6 +18,7 @@ class Learner(Base):
     preferred_language: Mapped[str] = mapped_column(String(5), nullable=False, default="en")
     password_hash: Mapped[str | None] = mapped_column(String(255), nullable=True)
     is_guest: Mapped[bool] = mapped_column(default=False, nullable=False)
+    email_verified: Mapped[bool] = mapped_column(default=False, nullable=False)
     total_xp: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     level: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     created_at: Mapped[datetime] = mapped_column(

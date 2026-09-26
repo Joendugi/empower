@@ -32,8 +32,22 @@ export async function gradeExercise(
   exercise: Exercise,
   answer: string | string[]
 ): Promise<SubmissionResult> {
-  const localCorrect = await isAnswerCorrect(answer, exercise.correctAnswer, exercise.answerHashes);
   const store = useLearnerStore.getState();
+  const canCloud = store.token && !isLocalToken(store.token) && !cloudRecentlyDown();
+  if (canCloud) {
+    try {
+      const result = await api<SubmissionResult>('/submissions', {
+        method: 'POST',
+        body: JSON.stringify({ lessonId, exerciseId: exercise.id, answer }),
+      });
+      if (result.isCorrect) store.applyXp(result.totalXp, result.level);
+      return result;
+    } catch {
+      /* Offline hashes only — do not trust leftover plaintext keys. */
+    }
+  }
+
+  const localCorrect = await isAnswerCorrect(answer, undefined, exercise.answerHashes);
   const xpAwarded = localCorrect ? exercise.xpReward : 0;
   const totalXp = store.xp + xpAwarded;
   const optimistic: SubmissionResult = {
@@ -80,8 +94,38 @@ export async function completeLesson(lessonId: string) {
     payload: { lessonId },
   })
     .then(() => scheduleCloudSync())
+    .then(() => claimReadyCertificates(lessonId))
     .catch(() => undefined);
   return { xpAwarded, accuracy: 0, totalXp, level, badges: ['first_lesson'] };
+}
+
+async function claimReadyCertificates(lessonId: string) {
+  const store = useLearnerStore.getState();
+  if (!store.token || isLocalToken(store.token) || cloudRecentlyDown()) return;
+  const { getSkillPaths } = await import('@/content');
+  for (const path of getSkillPaths()) {
+    const lessonIds = path.nodes.flatMap((node) => node.lessonIds);
+    if (!lessonIds.includes(lessonId)) continue;
+    if (!lessonIds.every((id) => store.completedLessonIds.includes(id) || id === lessonId)) continue;
+    try {
+      const cert = await api<{ id: string; badgeType: string; earnedAt: string }>('/certificates/claim', {
+        method: 'POST',
+        body: JSON.stringify({
+          pathId: path.id,
+          pathTitle: path.title,
+          lessonIds,
+        }),
+      });
+      store.addBadge({
+        id: cert.id,
+        learnerId: store.learnerId ?? 'local',
+        badgeType: cert.badgeType,
+        earnedAt: cert.earnedAt,
+      });
+    } catch {
+      /* claim is best-effort after sync */
+    }
+  }
 }
 
 export async function refreshMe() {

@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import math
 
-import redis.asyncio as aioredis
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.cache import CacheBackend
 from app.database import get_db
 from app.deps import get_current_learner, get_redis
 from app.models.learner import Learner
@@ -32,14 +32,14 @@ class XPSummary(CamelModel):
     xp_to_next_level: int
 
 
-async def publish_leaderboard(redis: aioredis.Redis, learner: Learner) -> None:
-    await redis.zadd(LEADERBOARD_KEY, {learner.id: learner.total_xp})
+async def publish_leaderboard(cache: CacheBackend, learner: Learner) -> None:
+    await cache.zadd(LEADERBOARD_KEY, {learner.id: float(learner.total_xp)})
 
 
 @router.get("/xp/me", response_model=XPSummary)
 async def get_my_xp(
     learner: Learner = Depends(get_current_learner),
-    redis: aioredis.Redis = Depends(get_redis),
+    redis: CacheBackend = Depends(get_redis),
 ) -> XPSummary:
     await publish_leaderboard(redis, learner)
     return XPSummary(

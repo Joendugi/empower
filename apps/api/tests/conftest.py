@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import os
 
-os.environ.setdefault("DATABASE_URL", "sqlite+aiosqlite:///:memory:")
+os.environ["DATABASE_URL"] = "sqlite+aiosqlite:///:memory:"
+os.environ["SUPABASE_DB_URL"] = ""
 os.environ.setdefault("ENVIRONMENT", "development")
 os.environ.setdefault("SECRET_KEY", "test-secret-key-not-for-production")
-os.environ.setdefault("REDIS_URL", "redis://localhost:6379/0")
+os.environ.setdefault("REDIS_URL", "off")
 
 from collections.abc import AsyncGenerator, Mapping
 from typing import Any
@@ -45,6 +46,11 @@ class FakeRedis:
 
     async def get(self, key: str) -> str | None:
         return self._kv.get(key)
+
+    async def incr(self, key: str) -> int:
+        value = int(self._kv.get(key) or "0") + 1
+        self._kv[key] = str(value)
+        return value
 
     async def aclose(self) -> None:
         return None

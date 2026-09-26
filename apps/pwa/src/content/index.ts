@@ -44,6 +44,7 @@ import {
   cyberThreatsLessons,
 } from './cyberSemester';
 import { useCurriculumStore } from '@/store/curriculumStore';
+import { toPublicLesson } from '@/lib/publicLesson';
 
 export const allLessons: Lesson[] = [
   tvetWorkshopSafety,
@@ -82,6 +83,43 @@ export const allLessons: Lesson[] = [
 export const lessonsById: Record<string, Lesson> = Object.fromEntries(
   allLessons.map((lesson) => [lesson.id, lesson])
 );
+
+let publicLessonsById: Record<string, Lesson> | null = null;
+let publicHydrate: Promise<void> | null = null;
+
+/** Strip plaintext answer keys after hashing — call once at app start. */
+export async function hydratePublicCatalogue(): Promise<void> {
+  if (publicLessonsById) return;
+  if (!publicHydrate) {
+    publicHydrate = Promise.all(allLessons.map((lesson) => toPublicLesson(lesson))).then((lessons) => {
+      publicLessonsById = Object.fromEntries(lessons.map((lesson) => [lesson.id, lesson]));
+    });
+  }
+  await publicHydrate;
+}
+
+function withoutPlaintextAnswers(lesson: Lesson): Lesson {
+  return {
+    ...lesson,
+    exercises: lesson.exercises.map(({ correctAnswer: _omit, ...exercise }) => exercise),
+  };
+}
+
+export function getSkillPaths(): SkillPath[] {
+  return [...builtInSkillPaths, ...useCurriculumStore.getState().paths];
+}
+
+export function getLesson(id: string): Lesson | undefined {
+  const custom = useCurriculumStore.getState().lessons[id];
+  if (custom) {
+    return custom.exercises.some((item) => item.correctAnswer !== undefined)
+      ? withoutPlaintextAnswers(custom)
+      : custom;
+  }
+  if (publicLessonsById?.[id]) return publicLessonsById[id];
+  const raw = lessonsById[id];
+  return raw ? withoutPlaintextAnswers(raw) : undefined;
+}
 
 export const tvetIctPath: SkillPath = {
   id: 'tvet-ict-technician',
@@ -313,14 +351,6 @@ export const cybersecurityPath: SkillPath = {
 };
 
 export const builtInSkillPaths: SkillPath[] = [tvetIctPath, cybersecurityPath, ...tradePaths];
-
-export function getSkillPaths(): SkillPath[] {
-  return [...builtInSkillPaths, ...useCurriculumStore.getState().paths];
-}
-
-export function getLesson(id: string): Lesson | undefined {
-  return useCurriculumStore.getState().lessons[id] ?? lessonsById[id];
-}
 
 export function getNextLessonId(lessonId: string): string | undefined {
   for (const path of getSkillPaths()) {
