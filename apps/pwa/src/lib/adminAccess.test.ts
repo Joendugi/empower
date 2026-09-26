@@ -1,9 +1,10 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { hashSecret, hasAdminGrant, tryStaffUnlock } from '@/lib/adminAccess';
 
 describe('admin office access', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     sessionStorage.clear();
+    vi.stubEnv('VITE_ADMIN_STAFF_HASH', await hashSecret('dev-office-key-change-me'));
   });
 
   it('hashes staff secrets instead of storing them', async () => {

@@ -90,36 +90,44 @@ export const useModerationStore = create<ModerationState>()(
     (set) => ({
       applications: [],
       proposals: [],
-      submitApplication: (application) =>
+      submitApplication: (application) => {
         set((state) => ({
           applications: [
             ...state.applications.filter((item) => item.email.toLowerCase() !== application.email.toLowerCase()),
             { ...application, id: id('educator'), status: 'pending', submittedAt: new Date().toISOString() },
           ],
-        })),
-      reviewApplication: (applicationId, status, reviewerNote) =>
+        }));
+        void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
+      },
+      reviewApplication: (applicationId, status, reviewerNote) => {
         set((state) => ({
           applications: state.applications.map((item) =>
             item.id === applicationId
               ? { ...item, status, reviewerNote, reviewedAt: new Date().toISOString() }
               : item
           ),
-        })),
-      submitProposal: (proposal) =>
+        }));
+        void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
+      },
+      submitProposal: (proposal) => {
         set((state) => ({
           proposals: [
             ...state.proposals,
             { ...proposal, id: id('proposal'), status: 'pending', submittedAt: new Date().toISOString() },
           ],
-        })),
-      reviewProposal: (proposalId, status, reviewerNote) =>
+        }));
+        void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
+      },
+      reviewProposal: (proposalId, status, reviewerNote) => {
         set((state) => ({
           proposals: state.proposals.map((item) =>
             item.id === proposalId
               ? { ...item, status, reviewerNote, reviewedAt: new Date().toISOString() }
               : item
           ),
-        })),
+        }));
+        void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
+      },
     }),
     { name: 'empower-moderation' }
   )

@@ -12,10 +12,9 @@ logger = logging.getLogger(__name__)
 
 class EdxClient:
     """
-    Thin Open edX LMS client.
+    Optional Open edX client. Launch does not ship Open edX (ADR-002).
 
-    When EDX_API_KEY is empty the client is disabled and all calls no-op.
-    Wire EDX_LMS_URL to a Tutor-deployed LMS when that stack is running.
+    When EDX_API_KEY is empty the client stays disabled and all calls no-op.
     """
 
     def __init__(self) -> None:

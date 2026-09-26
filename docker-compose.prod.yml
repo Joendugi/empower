@@ -2,11 +2,13 @@ version: "3.9"
 
 # Production-style stack: PWA (nginx) + FastAPI + Postgres + Redis
 #   docker compose -f docker-compose.prod.yml up --build
-# Then open http://localhost:8080
 #
-# Required secrets (compose refuses to start with the old defaults):
+# Required secrets:
 #   SECRET_KEY, POSTGRES_PASSWORD, ADMIN_STAFF_KEY
-# Point DATABASE_URL at a new Empower Supabase project to skip local Postgres data.
+# Cache: default is the free in-process MemoryCache (REDIS_URL=off).
+# Optional hosted Redis protocol: Upstash free tier, or `docker compose --profile redis`.
+# TLS: put fullchain.pem and privkey.pem in ./certs (or TLS_CERT_DIR).
+# The API port is not published — browsers only reach nginx.
 
 services:
   postgres:
@@ -25,12 +27,13 @@ services:
     restart: unless-stopped
 
   redis:
+    profiles: ["redis"]
     image: redis:7-alpine
-    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru --requirepass ${REDIS_PASSWORD:?Set REDIS_PASSWORD}
     volumes:
       - redis_data:/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -42,17 +45,17 @@ services:
       dockerfile: apps/api/Dockerfile
     environment:
       DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://cyberlearn:${POSTGRES_PASSWORD}@postgres:5432/cyberlearn}
-      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      REDIS_URL: ${REDIS_URL:-off}
       ENVIRONMENT: production
       CONTENT_DIR: /content
       SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY}
       ADMIN_STAFF_KEY: ${ADMIN_STAFF_KEY:?Set ADMIN_STAFF_KEY}
       SUPABASE_URL: ${SUPABASE_URL:-}
-      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+      SUPABASE_DB_URL: ${SUPABASE_DB_URL:-}
+      PUBLIC_HOST: ${PUBLIC_HOST:-empower.local}
+      CORS_ORIGINS: ${CORS_ORIGINS:-https://empower.local}
     depends_on:
       postgres:
-        condition: service_healthy
-      redis:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
@@ -69,10 +72,16 @@ services:
         VITE_API_URL: /api/v1
         VITE_DEPLOYMENT_MODE: cloud
         VITE_MEDIA_CDN_URL: ${VITE_MEDIA_CDN_URL:-}
-        VITE_ADMIN_STAFF_HASH: ${VITE_ADMIN_STAFF_HASH:-}
+        VITE_ADMIN_STAFF_HASH: ${VITE_ADMIN_STAFF_HASH:?Set VITE_ADMIN_STAFF_HASH}
         VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:-}
+        VITE_BUILD_ID: ${VITE_BUILD_ID:-0.1.0}
+    environment:
+      PUBLIC_HOST: ${PUBLIC_HOST:-empower.local}
     ports:
-      - "8080:80"
+      - "${PWA_HTTP_PORT:-8080}:80"
+      - "443:443"
+    volumes:
+      - ${TLS_CERT_DIR:-./certs}:/etc/nginx/certs:ro
     depends_on:
       - api
     restart: unless-stopped

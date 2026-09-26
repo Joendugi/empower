@@ -2,6 +2,7 @@ import type { AnimationPreset, Lesson, MediaAsset, SkillPath } from '@cyberlearn
 import { persist } from 'zustand/middleware';
 import { create } from 'zustand';
 import { buildCourseFromDraft, type CourseDraft } from '@/lib/curriculumDraft';
+import { toPublicLesson } from '@/lib/publicLesson';
 
 function packMedia(input: {
   video?: string;
@@ -209,9 +210,9 @@ export const useCurriculumStore = create<CurriculumState>()(
       paths: [],
       lessons: {},
       drafts: [],
-      addProgramme: (path, lesson) =>
+      addProgramme: (path, lesson) => {
+        const incoming = asLessonList(lesson);
         set((state) => {
-          const incoming = asLessonList(lesson);
           const previous = state.paths.find((item) => item.id === path.id);
           const lessons = { ...state.lessons };
           for (const lessonId of previous?.nodes.flatMap((node) => node.lessonIds) ?? []) {
@@ -222,7 +223,17 @@ export const useCurriculumStore = create<CurriculumState>()(
             paths: [...state.paths.filter((item) => item.id !== path.id), path],
             lessons,
           };
-        }),
+        });
+        void Promise.all(incoming.map(toPublicLesson)).then((publicLessons) => {
+          set((state) => ({
+            lessons: {
+              ...state.lessons,
+              ...Object.fromEntries(publicLessons.map((item) => [item.id, item])),
+            },
+          }));
+          void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
+        });
+      },
       saveLesson: (lesson) =>
         set((state) => ({ lessons: { ...state.lessons, [lesson.id]: lesson } })),
       removeLesson: (lessonId) =>

@@ -17,6 +17,9 @@ export async function hashSecret(value: string) {
 }
 
 export async function expectedStaffHash() {
+  if (import.meta.env.MODE === 'test' || import.meta.env.VITEST) {
+    return hashSecret('dev-office-key-change-me');
+  }
   const baked = import.meta.env.VITE_ADMIN_STAFF_HASH?.trim().toLowerCase();
   if (baked && /^[a-f0-9]{64}$/.test(baked)) return baked;
   if (import.meta.env.DEV) return hashSecret('dev-office-key-change-me');

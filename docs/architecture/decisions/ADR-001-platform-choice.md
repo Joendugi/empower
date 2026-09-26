@@ -1,6 +1,6 @@
 # ADR-001: Use Headless Open edX + Custom React PWA
 
-**Status:** Accepted
+**Status:** Superseded by [ADR-002](ADR-002-drop-open-edx-from-launch.md)
 **Date:** September 2026
 **Deciders:** CyberLearn Engineering Team
 

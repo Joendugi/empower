@@ -8,7 +8,7 @@ Empower is dual-mode: the PWA keeps accounts, curriculum, progress, and practica
 |---|---|---|
 | localStorage | `cyberlearn-learner` | Progress only (XP, lessons, profile). Access tokens are not stored here. |
 | sessionStorage | `empower-session-token` | Access token for this browser tab only |
-| localStorage | `empower-accounts` | Device accounts (email + password hash) |
+| localStorage | `empower-accounts` | Device accounts (email + PBKDF2 password hash) |
 | localStorage | `empower-curriculum` | Custom / edited lessons |
 | localStorage | `empower-moderation` | Educator applications and proposals |
 | localStorage | `empower-platform` | Offline / campus / cloud settings |
@@ -46,10 +46,13 @@ export SECRET_KEY=$(openssl rand -hex 32)
 export ADMIN_STAFF_KEY='a-long-office-passphrase'
 export VITE_ADMIN_STAFF_HASH='64-char-sha256-hex'
 export POSTGRES_PASSWORD='a-long-db-password'
+# Cache is free in-process by default (REDIS_URL=off). Optional Upstash:
+# export REDIS_URL=rediss://default:TOKEN@REGION.upstash.io:6379
+# Optional TLS: copy Let's Encrypt files into ./certs/fullchain.pem and privkey.pem
 docker compose -f docker-compose.prod.yml up --build
 ```
 
-Open http://localhost:8080. The nginx PWA proxies `/api` to FastAPI.
+Open http://localhost:8080 for a local smoke test. The API port is not published. If `./certs/fullchain.pem` and `privkey.pem` are present, nginx switches to HTTPS on 443, redirects HTTP, and sends HSTS. Production Postgres is migrated with Alembic on API boot.
 
 ### 1. One-box Docker (fastest)
 
@@ -59,7 +62,7 @@ Same compose file as above. For a public host, put another nginx or Caddy in fro
 
 - **PWA**: Cloudflare Pages, Netlify, Vercel, or any static host. Build `pnpm --filter @cyberlearn/pwa build` with `VITE_API_URL=https://api.your-domain.tld/api/v1` and `VITE_DEPLOYMENT_MODE=cloud`.
 - **API**: Fly.io, Railway, Render, or a VPS running the `apps/api/Dockerfile`.
-- **Postgres + Redis**: a **new** Empower Supabase project (never an existing marketplace/wallet database), Neon, or the compose Postgres. Redis can be set to `off` if you only need `/ready` against Postgres.
+- **Postgres + cache**: a **new** Empower Supabase project (never an existing marketplace/wallet database) or compose Postgres. Cache defaults to the free in-process store (`REDIS_URL=off`). Leaderboards read Postgres. Optional: [Upstash](https://upstash.com/) free Redis, or `docker compose --profile redis`.
 - **Media (optional)**: Cloudflare R2 / S3 / Cloudinary in `VITE_MEDIA_CDN_URL` and Admin → Media CDN. Workshop recordings still live in IndexedDB until you add an upload pipeline.
 
 ### 3. Kubernetes (already sketched)

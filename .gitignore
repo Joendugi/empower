@@ -55,3 +55,11 @@ logs/
 
 # Docker
 docker-compose.override.yml
+
+# TLS material — never commit live certificates
+certs/
+*.pem
+
+# Database dumps
+backups/
+*.db

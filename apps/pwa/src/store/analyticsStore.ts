@@ -22,7 +22,7 @@ export const useAnalyticsStore = create<AnalyticsState>()(
   persist(
     (set) => ({
       events: [],
-      record: (type, input) =>
+      record: (type, input) => {
         set((state) => ({
           events: [
             ...state.events.slice(-(MAX_EVENTS - 1)),
@@ -34,7 +34,9 @@ export const useAnalyticsStore = create<AnalyticsState>()(
               at: new Date().toISOString(),
             },
           ],
-        })),
+        }));
+        void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
+      },
     }),
     { name: 'empower-analytics' }
   )

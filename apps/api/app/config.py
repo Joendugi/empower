@@ -1,9 +1,18 @@
 from __future__ import annotations
 
 from pathlib import Path
+from urllib.parse import urlparse
 
 from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def normalize_redis_url(url: str) -> str:
+    value = url.strip()
+    parsed = urlparse(value)
+    if parsed.hostname and parsed.hostname.endswith(".upstash.io") and parsed.scheme == "redis":
+        return "rediss://" + value[len("redis://") :]
+    return value
 
 
 def normalize_database_url(url: str) -> str:
@@ -26,8 +35,9 @@ class Settings(BaseSettings):
     SUPABASE_URL: str = ""
     SUPABASE_ANON_KEY: str = ""
     SUPABASE_DB_URL: str = ""
+    SUPABASE_SSL_INSECURE: bool = False
 
-    # Redis — set to "off" if you only need Postgres/Supabase for readiness
+    # Cache — "off" uses free in-process MemoryCache. Redis/Upstash is optional.
     REDIS_URL: str = "redis://localhost:6379/0"
 
     # Security
@@ -37,6 +47,8 @@ class Settings(BaseSettings):
     AUTH_COOKIE_NAME: str = "empower_session"
     AUTH_COOKIE_SECURE: bool = False
     ADMIN_STAFF_KEY: str = ""
+    TRUSTED_HOSTS: list[str] = []
+    PUBLIC_HOST: str = ""
 
     # Environment
     ENVIRONMENT: str = "development"  # development | staging | production
@@ -48,9 +60,9 @@ class Settings(BaseSettings):
         "http://localhost:8080",
     ]
 
-    @field_validator("CORS_ORIGINS", mode="before")
+    @field_validator("CORS_ORIGINS", "TRUSTED_HOSTS", mode="before")
     @classmethod
-    def parse_cors_origins(cls, value: object) -> object:
+    def parse_host_list(cls, value: object) -> object:
         if isinstance(value, str):
             text = value.strip()
             if text.startswith("["):
@@ -62,8 +74,17 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def apply_supabase_database_url(self) -> "Settings":
-        source = self.SUPABASE_DB_URL.strip() or self.DATABASE_URL
+        if self.SUPABASE_DB_URL.strip() and "sqlite" not in self.DATABASE_URL:
+            source = self.SUPABASE_DB_URL.strip()
+        else:
+            source = self.DATABASE_URL
         self.DATABASE_URL = normalize_database_url(source)
+        self.REDIS_URL = normalize_redis_url(self.REDIS_URL)
+        host = self.PUBLIC_HOST.strip().removeprefix("https://").removeprefix("http://").strip("/")
+        if host:
+            origin = f"https://{host}"
+            if origin not in self.CORS_ORIGINS:
+                self.CORS_ORIGINS = [*self.CORS_ORIGINS, origin]
         return self
 
     @property
@@ -87,6 +108,16 @@ class Settings(BaseSettings):
     @property
     def cookie_secure(self) -> bool:
         return self.is_production or self.AUTH_COOKIE_SECURE
+
+    @property
+    def allowed_hosts(self) -> list[str]:
+        hosts = {"localhost", "127.0.0.1"}
+        hosts.update(item for item in self.TRUSTED_HOSTS if item)
+        for origin in self.CORS_ORIGINS:
+            parsed = urlparse(origin if "://" in origin else f"https://{origin}")
+            if parsed.hostname:
+                hosts.add(parsed.hostname)
+        return sorted(hosts)
 
     # Open edX integration
     EDX_LMS_URL: str = "http://localhost:8080"
