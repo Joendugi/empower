@@ -5,29 +5,40 @@ import { useLearnerStore } from '@/store/learnerStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useSyncStore } from '@/store/syncStore';
 
-export function useBackgroundRuntime() {
+async function syncActiveCoursePacks() {
+  await useLibraryStore.getState().hydrate();
+  const chosen = useLearnerStore.getState().chosenPathIds;
+  useLibraryStore.getState().syncActiveProgrammes(chosen);
+}
+
+/** Background sync / pack hydrate — only after the web internet gate admits the session. */
+export function useBackgroundRuntime(enabled = true) {
   const hydrated = useHydrated();
   const token = useLearnerStore((state) => state.token);
+  const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
+  const ready = hydrated && enabled;
 
   useEffect(() => {
-    if (!hydrated) return;
+    if (!ready) return;
     useLearnerStore.getState().touchSession();
-    void useLibraryStore.getState().hydrate();
+    void syncActiveCoursePacks();
     void registerBackgroundSync();
     scheduleCloudSync();
-  }, [hydrated, token]);
+  }, [ready, token, chosenPathIds]);
 
   useEffect(() => {
-    if (!hydrated) return;
+    if (!ready) return;
     const touch = () => useLearnerStore.getState().touchSession();
     const onOnline = () => {
       useSyncStore.getState().setStatus('syncing');
+      void syncActiveCoursePacks();
       scheduleCloudSync();
     };
     const onOffline = () => useSyncStore.getState().setStatus('offline');
     const onVisible = () => {
       if (document.visibilityState === 'visible') {
         touch();
+        void syncActiveCoursePacks();
         scheduleCloudSync();
       }
     };
@@ -43,5 +54,5 @@ export function useBackgroundRuntime() {
       window.removeEventListener('offline', onOffline);
       document.removeEventListener('visibilitychange', onVisible);
     };
-  }, [hydrated]);
+  }, [ready]);
 }
