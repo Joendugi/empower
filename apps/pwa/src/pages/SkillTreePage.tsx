@@ -13,6 +13,7 @@ import { useCurriculumStore } from '@/store/curriculumStore';
 import { useLearnerStore } from '@/store/learnerStore';
 import { resolveLesson } from '@/store/libraryStore';
 import { useT } from '@/i18n';
+import { MAX_ACTIVE_COURSES } from '@/lib/activeCourses';
 
 export default function SkillTreePage() {
   const t = useT();
@@ -108,7 +109,12 @@ export default function SkillTreePage() {
 
         {mine.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-lg font-semibold mb-3">{t('myCourses')}</h2>
+            <h2 className="text-lg font-semibold mb-3">
+              {t('myCourses')}{' '}
+              <span className="text-sm font-normal text-muted">
+                ({chosenPathIds.length}/{MAX_ACTIVE_COURSES} {t('activeCoursesLabel').toLowerCase()})
+              </span>
+            </h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {mine.map((path) => (
                 <li key={path.id}>
@@ -122,6 +128,9 @@ export default function SkillTreePage() {
                 </li>
               ))}
             </ul>
+            {chosenPathIds.length >= MAX_ACTIVE_COURSES && (
+              <p className="text-xs text-muted mt-3">{t('courseSlotsFull')}</p>
+            )}
           </section>
         )}
 
