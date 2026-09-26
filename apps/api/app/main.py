@@ -16,6 +16,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 import app.models  # noqa: F401 — register models on Base.metadata
 from app.config import settings
 from app.database import AsyncSessionLocal, Base, engine
+from app.middleware import TimeoutRateLimitMiddleware
 from app.migrate import run_alembic_upgrade
 from app.routers import analytics, auth, badges, certificates, content, leaderboard, moderation, ops, review, streaks, studio, submissions, xp
 from app.security import assert_secure_settings
@@ -84,6 +85,8 @@ def create_app(**state: Any) -> FastAPI:
     for key, value in state.items():
         setattr(app.state, key, value)
 
+    # Outer middlewares run first on the way in (Starlette order).
+    app.add_middleware(TimeoutRateLimitMiddleware)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.CORS_ORIGINS,

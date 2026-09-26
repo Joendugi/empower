@@ -22,6 +22,13 @@ function envMode(): DeploymentMode {
   return 'campus';
 }
 
+/** Keep client aborts inside the API REQUEST_TIMEOUT_SECONDS budget. */
+export function clampRequestTimeoutMs(value: number): number {
+  if (!Number.isFinite(value)) return 8000;
+  return Math.min(25_000, Math.max(2000, Math.round(value)));
+}
+
+
 export const defaultPlatformSettings: PlatformSettings = {
   deploymentMode: envMode(),
   apiBaseUrl: import.meta.env.VITE_API_URL || '/api/v1',
@@ -44,7 +51,12 @@ export const usePlatformStore = create<PlatformState>()(
   persist(
     (set) => ({
       ...defaultPlatformSettings,
-      update: (patch) => set(patch),
+      update: (patch) =>
+        set(
+          patch.requestTimeoutMs === undefined
+            ? patch
+            : { ...patch, requestTimeoutMs: clampRequestTimeoutMs(patch.requestTimeoutMs) }
+        ),
       reset: () => set(defaultPlatformSettings),
     }),
     {
@@ -56,16 +68,19 @@ export const usePlatformStore = create<PlatformState>()(
           return {
             ...defaultPlatformSettings,
             ...state,
-            requestTimeoutMs:
-              !state.requestTimeoutMs || state.requestTimeoutMs < 2000
-                ? 8000
-                : state.requestTimeoutMs,
+            requestTimeoutMs: clampRequestTimeoutMs(state.requestTimeoutMs ?? 8000),
             deploymentMode: state.deploymentMode ?? defaultPlatformSettings.deploymentMode,
           };
         }
         const { adminPin: _removed, ...safe } = state as PlatformSettings & { adminPin?: string };
         void _removed;
-        return { ...defaultPlatformSettings, ...safe };
+        return {
+          ...defaultPlatformSettings,
+          ...safe,
+          requestTimeoutMs: clampRequestTimeoutMs(
+            safe.requestTimeoutMs ?? defaultPlatformSettings.requestTimeoutMs
+          ),
+        };
       },
     }
   )

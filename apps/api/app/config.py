@@ -126,9 +126,13 @@ class Settings(BaseSettings):
     # Lesson YAML (repo-root /content by default)
     CONTENT_DIR: str = str(Path(__file__).resolve().parents[3] / "content")
 
-    # Rate limiting (requests per minute per learner)
+    # Rate limiting + timeouts
     AI_HINT_DAILY_LIMIT: int = 10  # free tier
     LAB_HOURS_DAILY_LIMIT: float = 2.0  # hours per learner per day
+    REQUEST_TIMEOUT_SECONDS: float = 25.0
+    RATE_LIMIT_PER_MINUTE: int = 120
+    RATE_LIMIT_AUTH_PER_MINUTE: int = 20
+    RATE_LIMIT_WRITE_PER_MINUTE: int = 60
 
     model_config = SettingsConfigDict(
         env_file=".env",

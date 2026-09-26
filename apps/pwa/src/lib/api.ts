@@ -66,14 +66,19 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
 
   try {
     const controller = new AbortController();
-    const timer = window.setTimeout(() => controller.abort(), platform.requestTimeoutMs);
-    const res = await fetch(`${apiBase}${path}`, {
-      ...init,
-      headers,
-      credentials: 'include',
-      signal: controller.signal,
-    });
-    window.clearTimeout(timer);
+    const timeoutMs = Math.min(25_000, Math.max(2000, platform.requestTimeoutMs || 8000));
+    const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+    let res: Response;
+    try {
+      res = await fetch(`${apiBase}${path}`, {
+        ...init,
+        headers,
+        credentials: 'include',
+        signal: controller.signal,
+      });
+    } finally {
+      window.clearTimeout(timer);
+    }
 
     if (res.status === 401 && token && token !== OFFLINE_TOKEN && !isLocalToken(token) && !isAuthPath(path)) {
       useLearnerStore.getState().downgradeToLocal();

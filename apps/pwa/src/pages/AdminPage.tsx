@@ -740,7 +740,7 @@ function ArchitectureSettings() {
       deploymentMode: settings.deploymentMode,
       apiBaseUrl: settings.apiBaseUrl.trim() || defaultPlatformSettings.apiBaseUrl,
       mediaCdnUrl: settings.mediaCdnUrl.trim(),
-      requestTimeoutMs: Math.max(2000, settings.requestTimeoutMs),
+      requestTimeoutMs: settings.requestTimeoutMs,
       httpsMediaOnly: settings.httpsMediaOnly,
       allowedMediaHosts: settings.allowedMediaHosts,
       requireWatchBeforeContinue: settings.requireWatchBeforeContinue,
@@ -774,6 +774,8 @@ function ArchitectureSettings() {
         <input
           type="number"
           min={2000}
+          max={25000}
+          step={500}
           className={fieldClass}
           value={settings.requestTimeoutMs}
           onChange={(event) => settings.update({ requestTimeoutMs: Number(event.target.value) || 8000 })}
