@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { User } from 'lucide-react';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useT } from '@/i18n';
 
@@ -18,11 +19,15 @@ export default function ProfileButton() {
   return (
     <Link
       to="/profile"
-      className="w-9 h-9 rounded-full bg-accent/15 border border-accent/40 text-accent text-xs font-semibold grid place-items-center shrink-0"
+      className="relative w-9 h-9 rounded-full bg-gradient-to-tr from-accent/20 to-surface-light border border-accent/40 text-accent text-xs font-bold flex items-center justify-center shrink-0 hover:scale-105 hover:border-accent hover:shadow-[0_0_15px_rgba(0,212,170,0.3)] transition-all"
       aria-label={t('profile')}
       title={t('profile')}
     >
-      {token ? initials(displayName, email) : '☺'}
+      {token ? (
+        <span>{initials(displayName, email)}</span>
+      ) : (
+        <User className="w-4 h-4 text-muted hover:text-white transition-colors" />
+      )}
     </Link>
   );
 }

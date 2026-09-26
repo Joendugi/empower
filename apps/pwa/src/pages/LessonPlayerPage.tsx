@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ArrowLeft, 
+  Sparkles, 
+  Trophy, 
+  ArrowRight, 
+  Clock, 
+  BookOpen, 
+  Layers 
+} from 'lucide-react';
 import type { Lesson } from '@cyberlearn/types';
 import { getLesson, getNextLessonId } from '@/content';
 import { useCurriculumStore } from '@/store/curriculumStore';
@@ -15,6 +24,7 @@ import { useT } from '@/i18n';
 import type { GradeResult } from '@/components/exercises/types';
 import ScenarioLabCard from '@/components/lessons/ScenarioLabCard';
 import WeekPreview from '@/components/curriculum/WeekPreview';
+import { triggerConfettiBurst, triggerLevelUpCelebration } from '@/lib/confetti';
 
 export default function LessonPlayerPage() {
   const { lessonId } = useParams<{ lessonId: string }>();
@@ -33,6 +43,7 @@ export default function LessonPlayerPage() {
     const nextId = getNextLessonId(lessonId);
     if (nextId) useLibraryStore.getState().prefetchLesson(nextId);
   }, [lessonId, lesson?.courseId]);
+
   const requireWatch = usePlatformStore((s) => s.requireWatchBeforeContinue);
   const [stage, setStage] = useState<'briefing' | 'exercise'>('briefing');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,10 +55,13 @@ export default function LessonPlayerPage() {
   if (!lesson) {
     return (
       <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 text-center">
-        <h1 className="text-xl font-bold text-white">{t('lessonMissing')}</h1>
-        <Link to="/learn/skill-tree" className="btn-primary mt-6">
-          {t('back')}
-        </Link>
+        <div className="card max-w-md w-full !p-8 text-center border-white/[0.08]">
+          <h1 className="text-xl font-bold text-white mb-2">{t('lessonMissing')}</h1>
+          <p className="text-xs text-muted mb-6">The requested module content could not be found or loaded.</p>
+          <Link to="/learn/skill-tree" className="btn-primary w-full text-sm">
+            <ArrowLeft className="w-4 h-4" /> {t('back')}
+          </Link>
+        </div>
       </div>
     );
   }
@@ -67,6 +81,7 @@ export default function LessonPlayerPage() {
     const result = await gradeExercise(lesson.id, currentExercise, answer);
     if (result.isCorrect) {
       setXpEarned((value) => value + result.xpAwarded);
+      triggerConfettiBurst({ particleCount: 25, spread: 45 });
     } else {
       setIncorrectCount((c) => c + 1);
     }
@@ -77,10 +92,11 @@ export default function LessonPlayerPage() {
           setXpEarned((value) => value + complete.xpAwarded);
         }
         setFinished(true);
+        triggerLevelUpCelebration();
       } else {
         setCurrentIndex((i) => i + 1);
       }
-    }, result.isCorrect ? 900 : 1200);
+    }, result.isCorrect ? 800 : 1100);
     return result;
   };
 
@@ -89,31 +105,57 @@ export default function LessonPlayerPage() {
   }
 
   return (
-    <div className="min-h-dvh bg-primary-dark flex flex-col">
-      <header className="flex items-center gap-3 px-4 py-3 border-b border-surface-light">
-        <Link to="/learn/skill-tree" className="text-muted hover:text-white text-sm">
-          ← {t('back')}
-        </Link>
-        <div className="flex-1">
-          <div className="xp-bar">
-            <motion.div className="xp-bar-fill" animate={{ width: `${progress}%` }} transition={{ duration: 0.4 }} />
+    <div className="min-h-dvh bg-primary-dark flex flex-col bg-grid-pattern">
+      {/* Top Header bar with progress */}
+      <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08] px-4 py-3">
+        <div className="max-w-4xl mx-auto flex items-center gap-3">
+          <Link 
+            to="/learn/skill-tree" 
+            className="p-1.5 rounded-lg text-muted hover:text-white hover:bg-white/[0.06] transition-colors"
+            title={t('back')}
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
+
+          <div className="flex-1">
+            <div className="xp-bar">
+              <motion.div 
+                className="xp-bar-fill" 
+                animate={{ width: `${progress}%` }} 
+                transition={{ duration: 0.4 }} 
+              />
+            </div>
           </div>
+
+          <span className="text-xs font-mono font-medium text-muted px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06]">
+            {stage === 'briefing' && hasIntro ? t('briefing') : `${currentIndex + 1} / ${lesson.exercises.length}`}
+          </span>
+
+          {xpEarned > 0 && (
+            <span className="inline-flex items-center gap-1 text-xs text-yellow-400 font-bold bg-yellow-400/10 border border-yellow-400/30 px-2 py-0.5 rounded-full shadow-glow-xp animate-bounce-once">
+              <Sparkles className="w-3 h-3" />
+              +{xpEarned} XP
+            </span>
+          )}
         </div>
-        <span className="text-xs text-muted whitespace-nowrap">
-          {stage === 'briefing' && hasIntro ? t('briefing') : `${currentIndex + 1}/${lesson.exercises.length}`}
-        </span>
-        {xpEarned > 0 && <span className="text-xs text-xp font-semibold">+{xpEarned} XP</span>}
       </header>
-      <div className="px-4 pt-4 pb-2 max-w-2xl mx-auto w-full">
-        <p className="text-[11px] uppercase tracking-wide text-accent font-semibold">
-          {lesson.examDomain ?? lesson.cdaccUnitId ?? t('lesson')}
-        </p>
-        <h1 className="text-xl font-bold text-white mt-1">{title}</h1>
-        <p className="text-xs text-muted mt-1">
-          {lesson.estimatedMinutes} {t('minutes')}
-        </p>
+
+      {/* Lesson Title & Topic Banner */}
+      <div className="px-4 pt-5 pb-2 max-w-3xl mx-auto w-full">
+        <div className="flex items-center gap-2">
+          <span className="badge-accent text-[10px] uppercase font-mono tracking-wider">
+            {lesson.examDomain ?? lesson.cdaccUnitId ?? t('lesson')}
+          </span>
+          <span className="text-xs text-muted flex items-center gap-1 font-medium">
+            <Clock className="w-3.5 h-3.5" />
+            {lesson.estimatedMinutes} {t('minutes')}
+          </span>
+        </div>
+        <h1 className="text-xl sm:text-2xl font-extrabold text-white mt-2 tracking-tight">{title}</h1>
       </div>
-      <main className="flex-1 px-4 pb-8 pt-2 max-w-2xl mx-auto w-full">
+
+      {/* Main interactive stage */}
+      <main className="flex-1 px-4 pb-12 pt-2 max-w-3xl mx-auto w-full">
         <AnimatePresence mode="wait">
           {stage === 'briefing' && hasIntro ? (
             <motion.section
@@ -121,13 +163,16 @@ export default function LessonPlayerPage() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
-              className="card space-y-4"
+              className="card space-y-5 border-white/[0.08]"
             >
               {lesson.outline || lesson.weekNumber ? (
                 <WeekPreview lesson={lesson} compact onMediaComplete={() => setMediaReady(true)} />
               ) : (
                 <>
-                  <h2 className="text-sm font-semibold text-muted">{t('studyNotes')}</h2>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-wider">
+                    <BookOpen className="w-4 h-4" />
+                    <h2>{t('studyNotes')}</h2>
+                  </div>
                   {briefing
                     ? briefing.split(/\n\n+/).map((para, index) => (
                         <p key={index} className="text-white/90 leading-relaxed text-[15px]">
@@ -138,19 +183,28 @@ export default function LessonPlayerPage() {
                   <MediaBlock assets={lessonMedia} onComplete={() => setMediaReady(true)} />
                 </>
               )}
+
               <ScenarioLabCard lesson={lesson} />
-              <button
-                type="button"
-                className="btn-primary w-full"
-                disabled={!canStart}
-                onClick={() => setStage('exercise')}
-              >
-                {canStart
-                  ? lesson.exercises.some((item) => item.type === 'MULTIPLE_CHOICE' || item.type === 'FILL_BLANK')
-                    ? t('startAutograde')
-                    : t('startExercises')
-                  : t('mediaWatchFirst')}
-              </button>
+
+              <div className="pt-2">
+                <button
+                  type="button"
+                  className="btn-primary w-full py-3.5 text-sm"
+                  disabled={!canStart}
+                  onClick={() => setStage('exercise')}
+                >
+                  {canStart ? (
+                    <>
+                      {lesson.exercises.some((item) => item.type === 'MULTIPLE_CHOICE' || item.type === 'FILL_BLANK')
+                        ? t('startAutograde')
+                        : t('startExercises')}
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  ) : (
+                    t('mediaWatchFirst')
+                  )}
+                </button>
+              </div>
             </motion.section>
           ) : (
             <motion.div
@@ -159,6 +213,7 @@ export default function LessonPlayerPage() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.25 }}
+              className="card !p-6 border-white/[0.08] shadow-2xl"
             >
               <ExerciseRouter
                 exercise={currentExercise}
@@ -185,32 +240,59 @@ function LessonComplete({
   const t = useT();
   const navigate = useNavigate();
   const nextId = getNextLessonId(lesson.id);
-  const accuracy = Math.round(((lesson.exercises.length - incorrectCount) / lesson.exercises.length) * 100);
+  const totalQuestions = Math.max(1, lesson.exercises.length);
+  const accuracy = Math.max(0, Math.round(((totalQuestions - incorrectCount) / totalQuestions) * 100));
+
   return (
-    <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 text-center">
-      <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">{t('moduleComplete')}</p>
-      <h2 className="text-3xl font-bold text-white mb-2">{t('lessonComplete')}</h2>
-      <p className="text-muted mb-8 max-w-sm">{lesson.title}</p>
-      <div className="flex gap-6 mb-10">
-        <div className="text-center">
-          <div className="text-3xl font-bold text-xp">+{xpEarned}</div>
-          <div className="text-xs text-muted">XP</div>
+    <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 py-12 text-center bg-grid-pattern relative overflow-hidden">
+      {/* Ambient Celebration Glow */}
+      <div className="absolute top-1/3 w-[500px] h-[300px] bg-accent/20 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="relative card !p-8 sm:!p-10 border-accent/40 max-w-md w-full shadow-2xl shadow-accent/15 backdrop-blur-2xl">
+        <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-accent to-emerald-400 text-primary-dark mx-auto flex items-center justify-center mb-6 shadow-glow">
+          <Trophy className="w-8 h-8" />
         </div>
-        <div className="w-px bg-surface-light" />
-        <div className="text-center">
-          <div className="text-3xl font-bold text-success">{accuracy}%</div>
-          <div className="text-xs text-muted">{t('accuracy')}</div>
+
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-bold uppercase tracking-widest mb-3 border border-accent/30">
+          <Sparkles className="w-3.5 h-3.5" />
+          {t('moduleComplete')}
         </div>
-      </div>
-      <div className="w-full max-w-xs space-y-3">
-        {nextId && (
-          <button className="btn-primary w-full" onClick={() => navigate(`/learn/lesson/${nextId}`)}>
-            {t('nextLesson')}
+
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">{t('lessonComplete')}</h2>
+        <p className="text-xs sm:text-sm text-muted mb-8 line-clamp-2">{lesson.title}</p>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 gap-3 mb-8">
+          <div className="p-4 rounded-2xl bg-surface-light/60 border border-white/[0.08] text-center">
+            <div className="text-3xl font-black text-yellow-400">+{xpEarned}</div>
+            <div className="text-xs font-semibold text-muted uppercase tracking-wider mt-1">XP Earned</div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-surface-light/60 border border-white/[0.08] text-center">
+            <div className="text-3xl font-black text-emerald-400">{accuracy}%</div>
+            <div className="text-xs font-semibold text-muted uppercase tracking-wider mt-1">{t('accuracy')}</div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="space-y-3">
+          {nextId && (
+            <button 
+              className="btn-primary w-full py-3 text-sm" 
+              onClick={() => navigate(`/learn/lesson/${nextId}`)}
+            >
+              <span>{t('nextLesson')}</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          )}
+          <button 
+            className={nextId ? 'btn-secondary w-full py-3 text-sm' : 'btn-primary w-full py-3 text-sm'} 
+            onClick={() => navigate('/learn/skill-tree')}
+          >
+            <Layers className="w-4 h-4" />
+            <span>{t('continueLearning')}</span>
           </button>
-        )}
-        <button className={nextId ? 'btn-secondary w-full' : 'btn-primary w-full'} onClick={() => navigate('/learn/skill-tree')}>
-          {t('continueLearning')}
-        </button>
+        </div>
       </div>
     </div>
   );

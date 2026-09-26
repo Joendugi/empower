@@ -1,4 +1,4 @@
-import type { AuthLearner, SubmissionResult, TokenResponse } from '@cyberlearn/types';
+import type { AuthLearner, SubmissionResult, TokenResponse, BadgeType } from '@cyberlearn/types';
 import { api } from '@/lib/api';
 import { enqueue } from '@/lib/idbQueue';
 import { isAnswerCorrect } from '@/lib/hash';
@@ -119,7 +119,7 @@ async function claimReadyCertificates(lessonId: string) {
       store.addBadge({
         id: cert.id,
         learnerId: store.learnerId ?? 'local',
-        badgeType: cert.badgeType,
+        badgeType: cert.badgeType as BadgeType,
         earnedAt: cert.earnedAt,
       });
     } catch {
