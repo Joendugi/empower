@@ -1,10 +1,12 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import InternetRequired from '@/components/ui/InternetRequired';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import SyncBar from '@/components/ui/SyncBar';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import { useBackgroundRuntime } from '@/hooks/useBackgroundRuntime';
 import { useHydrated } from '@/hooks/useHydrated';
+import { useInternetGate } from '@/hooks/useInternetGate';
 import { useLearnerStore } from '@/store/learnerStore';
 import { refreshMe } from '@/lib/session';
 import { scheduleCloudSync } from '@/lib/syncEngine';
@@ -27,17 +29,23 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 export default function App() {
   const hydrated = useHydrated();
+  const { status: internetStatus, retry: retryInternet } = useInternetGate();
   const token = useLearnerStore((s) => s.token);
+  const internetReady = internetStatus === 'online';
   useBackgroundRuntime();
 
   useEffect(() => {
-    if (!hydrated || !token) return;
+    if (!hydrated || !internetReady || !token) return;
     void refreshMe().catch(() => undefined);
     scheduleCloudSync();
-  }, [hydrated, token]);
+  }, [hydrated, internetReady, token]);
 
-  if (!hydrated) {
+  if (!hydrated || internetStatus === 'checking') {
     return <LoadingSpinner fullScreen />;
+  }
+
+  if (internetStatus === 'offline') {
+    return <InternetRequired onRetry={() => void retryInternet()} />;
   }
 
   return (

@@ -65,6 +65,11 @@ export const strings = {
     leaderboard: 'Leaderboard',
     learn: 'Learn',
     offline: "You're offline — lessons still work.",
+    internetRequiredTitle: 'Internet connection required',
+    internetRequiredBody:
+      'Empower on the web needs a live internet connection to open. Connect to Wi‑Fi or mobile data, then try again.',
+    internetChecking: 'Checking connection…',
+    internetRetry: 'Try again',
     willSync: 'will sync when reconnected',
     syncing: 'Syncing in the background…',
     syncReady: 'Progress saved on this device',
@@ -447,6 +452,11 @@ export const strings = {
     leaderboard: 'Ubao wa viongozi',
     learn: 'Jifunze',
     offline: 'Huna mtandao — masomo bado yanaenda.',
+    internetRequiredTitle: 'Mtandao unahitajika',
+    internetRequiredBody:
+      'Empower kwenye wavuti inahitaji muunganisho wa intaneti ili kufunguka. Unganisha Wi‑Fi au data, kisha jaribu tena.',
+    internetChecking: 'Inakagua muunganisho…',
+    internetRetry: 'Jaribu tena',
     willSync: 'itasawazishwa utakapounganishwa',
     syncing: 'Inasawazisha chinichini…',
     syncReady: 'Maendeleo yamehifadhiwa kwenye kifaa hiki',
