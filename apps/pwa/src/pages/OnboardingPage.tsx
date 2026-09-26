@@ -66,15 +66,16 @@ export default function OnboardingPage() {
   const back = () => setStep((value) => Math.max(value - 1, 0));
 
   return (
-    <div className="min-h-dvh bg-primary-dark text-white">
-      <header className="px-4 py-4 border-b border-surface-light">
+    <div className="min-h-dvh text-white">
+      <header className="px-4 py-4 border-b border-surface-light/60">
         <div className="max-w-3xl mx-auto flex items-center gap-3">
           <BrandMark size="sm" />
-          <div className="flex-1">
-            <p className="text-xs text-muted">
+          <div className="flex-1 min-w-0">
+            <p className="font-display font-semibold tracking-tight">{t('brand')}</p>
+            <p className="text-xs text-muted mt-0.5">
               {t('onboardStep')} {step + 1} / {totalSteps}
             </p>
-            <div className="xp-bar mt-2">
+            <div className="xp-bar mt-2 h-1.5">
               <div className="xp-bar-fill" style={{ width: `${((step + 1) / totalSteps) * 100}%` }} />
             </div>
           </div>
@@ -83,33 +84,38 @@ export default function OnboardingPage() {
 
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
         {step === 0 && (
-          <section className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('onboardKicker')}</p>
-            <h1 className="text-3xl font-bold">
+          <section key="welcome" className="space-y-5 animate-rise-in">
+            <p className="section-kicker">{t('onboardKicker')}</p>
+            <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight">
               {displayName ? `${t('onboardWelcome')}, ${displayName}` : t('onboardWelcome')}
             </h1>
-            <p className="text-muted leading-relaxed">{t('onboardWelcomeBody')}</p>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {[t('onboardPoint1'), t('onboardPoint2'), t('onboardPoint3'), t('onboardPoint4')].map((item) => (
-                <li key={item} className="card text-sm leading-relaxed">
-                  {item}
-                </li>
-              ))}
+            <p className="text-muted leading-relaxed max-w-xl">{t('onboardWelcomeBody')}</p>
+            <ul className="space-y-3 border-y border-surface-light/60 py-4">
+              {[t('onboardPoint1'), t('onboardPoint2'), t('onboardPoint3'), t('onboardPoint4')].map(
+                (item, index) => (
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed">
+                    <span className="font-display text-accent tabular-nums shrink-0">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-ink/90">{item}</span>
+                  </li>
+                )
+              )}
             </ul>
           </section>
         )}
 
         {step === 1 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardLanguageTitle')}</h1>
+          <section key="lang" className="space-y-4 animate-rise-in">
+            <h1 className="font-display text-3xl font-bold tracking-tight">{t('onboardLanguageTitle')}</h1>
             <p className="text-muted leading-relaxed">{t('onboardLanguageBody')}</p>
             <LanguagePicker />
           </section>
         )}
 
         {step === 2 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardRoleTitle')}</h1>
+          <section key="role" className="space-y-4 animate-rise-in">
+            <h1 className="font-display text-3xl font-bold tracking-tight">{t('onboardRoleTitle')}</h1>
             <p className="text-muted leading-relaxed">{t('onboardRoleBody')}</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {ROLES.map((item) => (
@@ -118,11 +124,11 @@ export default function OnboardingPage() {
                   type="button"
                   onClick={() => setRole(item)}
                   className={clsx(
-                    'card text-left',
-                    role === item ? 'border-accent' : 'hover:border-accent/40'
+                    'unit-row text-left',
+                    role === item && 'border-accent bg-surface/50'
                   )}
                 >
-                  <h2 className="font-semibold">{t(`role_${item}` as StringKey)}</h2>
+                  <h2 className="font-display font-semibold">{t(`role_${item}` as StringKey)}</h2>
                   <p className="text-sm text-muted mt-1">{t(`role_${item}_body` as StringKey)}</p>
                 </button>
               ))}
@@ -131,8 +137,8 @@ export default function OnboardingPage() {
         )}
 
         {step === 3 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardGoalTitle')}</h1>
+          <section key="goal" className="space-y-4 animate-rise-in">
+            <h1 className="font-display text-3xl font-bold tracking-tight">{t('onboardGoalTitle')}</h1>
             <p className="text-muted leading-relaxed">{t('onboardGoalBody')}</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {GOALS.map((item) => (
@@ -141,11 +147,11 @@ export default function OnboardingPage() {
                   type="button"
                   onClick={() => setGoal(item)}
                   className={clsx(
-                    'card text-left',
-                    goal === item ? 'border-accent' : 'hover:border-accent/40'
+                    'unit-row text-left',
+                    goal === item && 'border-accent bg-surface/50'
                   )}
                 >
-                  <h2 className="font-semibold">{t(`goal_${item}` as StringKey)}</h2>
+                  <h2 className="font-display font-semibold">{t(`goal_${item}` as StringKey)}</h2>
                   <p className="text-sm text-muted mt-1">{t(`goal_${item}_body` as StringKey)}</p>
                 </button>
               ))}
@@ -154,8 +160,8 @@ export default function OnboardingPage() {
         )}
 
         {step === 4 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardTrackTitle')}</h1>
+          <section key="track" className="space-y-4 animate-rise-in">
+            <h1 className="font-display text-3xl font-bold tracking-tight">{t('onboardTrackTitle')}</h1>
             <p className="text-muted leading-relaxed">{t('onboardTrackBody')}</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {TRACKS.map((item) => (
@@ -164,11 +170,15 @@ export default function OnboardingPage() {
                   type="button"
                   onClick={() => setTrack(item)}
                   className={clsx(
-                    'card text-left',
-                    track === item ? 'border-accent' : 'hover:border-accent/40'
+                    'unit-row text-left',
+                    track === item && 'border-accent bg-surface/50'
                   )}
                 >
-                  <h2 className="font-semibold">{item === 'all' ? t('allProgrammes') : t(item === 'trades' ? 'tradesTrack' : item === 'tvet' ? 'tvetTrack' : 'cyberTrack')}</h2>
+                  <h2 className="font-display font-semibold">
+                    {item === 'all'
+                      ? t('allProgrammes')
+                      : t(item === 'trades' ? 'tradesTrack' : item === 'tvet' ? 'tvetTrack' : 'cyberTrack')}
+                  </h2>
                   <p className="text-sm text-muted mt-1">
                     {item === 'all'
                       ? t('onboardTrackAll')
@@ -185,8 +195,8 @@ export default function OnboardingPage() {
         )}
 
         {step === 5 && (
-          <section className="space-y-4">
-            <h1 className="text-3xl font-bold">{t('onboardCourseTitle')}</h1>
+          <section key="course" className="space-y-4 animate-rise-in">
+            <h1 className="font-display text-3xl font-bold tracking-tight">{t('onboardCourseTitle')}</h1>
             <p className="text-muted leading-relaxed">{t('onboardCourseBody')}</p>
             <ul className="grid sm:grid-cols-2 gap-3">
               {visibleCourses.map((path) => (
@@ -202,16 +212,18 @@ export default function OnboardingPage() {
               ))}
             </ul>
             {selected && (
-              <div className="card border-accent/40">
-                <p className="text-xs uppercase tracking-wider text-accent">{t('courseChosen')}</p>
-                <h2 className="font-semibold mt-1">{language === 'sw' && selected.titleSw ? selected.titleSw : selected.title}</h2>
-                <p className="text-sm text-muted mt-2">{t('onboardReadyBody')}</p>
-              </div>
+              <p className="text-sm text-muted border-t border-surface-light/60 pt-4">
+                <span className="text-accent font-semibold">{t('courseChosen')}</span>
+                {' · '}
+                {language === 'sw' && selected.titleSw ? selected.titleSw : selected.title}
+                {' — '}
+                {t('onboardReadyBody')}
+              </p>
             )}
           </section>
         )}
 
-        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+        <div className="flex flex-col sm:flex-row gap-3 pt-2 pb-10">
           {step > 0 && (
             <button type="button" className="btn-secondary" onClick={back}>
               {t('back')}

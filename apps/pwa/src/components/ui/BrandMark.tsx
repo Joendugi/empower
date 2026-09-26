@@ -13,7 +13,7 @@ export default function BrandMark({
     <span
       className={clsx(
         box,
-        'inline-flex items-center justify-center rounded-2xl bg-accent text-primary-dark font-display font-extrabold tracking-tight shadow-[0_10px_30px_rgba(0,212,170,0.28)]'
+        'inline-flex items-center justify-center rounded-2xl bg-accent text-primary-dark font-display font-extrabold tracking-tight'
       )}
       aria-hidden
     >

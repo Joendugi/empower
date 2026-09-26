@@ -24,8 +24,8 @@ export default function CourseOutline({
 
   return (
     <section className="space-y-3">
-      <h2 className="text-lg font-semibold">{t('courseOutline')}</h2>
-      <ol className="space-y-3">
+      <h2 className="font-display text-lg font-semibold">{t('courseOutline')}</h2>
+      <ol className="space-y-2">
         {path.nodes.map((node, index) => {
           const week = node.weekNumber ?? index + 1;
           const lessonId = node.lessonIds[0];
@@ -48,8 +48,8 @@ export default function CourseOutline({
             <li key={node.id}>
               <article
                 className={clsx(
-                  'card space-y-3',
-                  locked && 'opacity-55',
+                  'unit-row space-y-3',
+                  locked && 'opacity-55 hover:border-surface-light/70',
                   active && 'border-accent/50'
                 )}
               >
@@ -58,10 +58,10 @@ export default function CourseOutline({
                     <p className="text-[11px] uppercase tracking-[0.16em] text-accent font-semibold">
                       {t('weekLabel')} {week}
                     </p>
-                    <h3 className="font-semibold mt-1">{lesson?.title ?? node.title}</h3>
+                    <h3 className="font-display font-semibold mt-1">{lesson?.title ?? node.title}</h3>
                   </div>
-                  <span className="text-2xl" aria-hidden>
-                    {locked ? '🔒' : done ? '✓' : node.icon ?? '📘'}
+                  <span className="text-[11px] uppercase tracking-wider text-muted shrink-0 mt-1">
+                    {locked ? t('locked') : done ? 'Done' : ''}
                   </span>
                 </div>
                 {items.length > 0 && (
@@ -76,11 +76,14 @@ export default function CourseOutline({
                   {quizCount ? ` · ${quizCount} ${t('autogradedItems')}` : ''}
                 </p>
                 {!locked && lessonId && onOpenWeek && (
-                  <button type="button" className="btn-secondary !py-2 text-sm" onClick={() => onOpenWeek(lessonId, week)}>
+                  <button
+                    type="button"
+                    className="btn-secondary !py-2 text-sm"
+                    onClick={() => onOpenWeek(lessonId, week)}
+                  >
                     {actionLabel ?? t('openWeek')}
                   </button>
                 )}
-                {locked && <p className="text-xs text-muted">{t('locked')}</p>}
               </article>
             </li>
           );

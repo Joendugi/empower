@@ -21,18 +21,20 @@ export default function XPBar({ totalXp, className = '' }: XPBarProps) {
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      {/* Level badge */}
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-xp flex items-center justify-center">
-        <span className="text-primary font-bold text-sm">{currentLevel}</span>
+      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-xp/90 flex items-center justify-center">
+        <span className="text-primary-dark font-display font-bold text-sm tabular-nums">
+          {currentLevel}
+        </span>
       </div>
 
-      {/* Progress bar */}
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         <div className="flex justify-between text-xs text-muted mb-1">
-          <span>{totalXp.toLocaleString()} XP</span>
-          <span>Lvl {currentLevel + 1}: {xpNextLevel.toLocaleString()} XP</span>
+          <span className="tabular-nums">{totalXp.toLocaleString()} XP</span>
+          <span className="tabular-nums">
+            Lvl {currentLevel + 1}: {xpNextLevel.toLocaleString()}
+          </span>
         </div>
-        <div className="xp-bar">
+        <div className="xp-bar h-2">
           <motion.div
             className="xp-bar-fill"
             initial={{ width: 0 }}

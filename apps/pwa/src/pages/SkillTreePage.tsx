@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { clsx } from 'clsx';
 import type { ProgrammeTrack } from '@cyberlearn/types';
 import { getLesson, getSkillPaths } from '@/content';
@@ -7,10 +7,9 @@ import CourseCard from '@/components/courses/CourseCard';
 import AppHeader from '@/components/ui/AppHeader';
 import SearchField from '@/components/ui/SearchField';
 import BottomNav from '@/components/ui/BottomNav';
-import XPBar from '@/components/gamification/XPBar';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
-import { useLearnerStore } from '@/store/learnerStore';
+import { useLearnerStore, xpToLevel } from '@/store/learnerStore';
 import { resolveLesson } from '@/store/libraryStore';
 import { useT } from '@/i18n';
 import { MAX_ACTIVE_COURSES } from '@/lib/activeCourses';
@@ -30,6 +29,7 @@ export default function SkillTreePage() {
   const customPaths = useCurriculumStore((state) => state.paths);
   const paths = useMemo(() => getSkillPaths(), [customPaths]);
   const needle = query.trim().toLowerCase();
+  const level = xpToLevel(xp);
 
   const matches = (path: (typeof paths)[number]) => {
     if (track !== 'all' && path.track !== track) return false;
@@ -62,14 +62,20 @@ export default function SkillTreePage() {
     <div className="min-h-dvh pb-24 text-white">
       <AppHeader />
       <main className="max-w-6xl mx-auto px-4 pt-6">
-        <div className="mb-5">
-          <XPBar totalXp={xp} />
+        <p className="section-kicker animate-rise-in">{t('catalogueKicker')}</p>
+        <div className="mt-2 flex flex-wrap items-end justify-between gap-3 animate-rise-in">
+          <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight">
+            {t('chooseCourseTitle')}
+          </h1>
+          <p className="text-xs text-muted tabular-nums">
+            Lvl {level} · {xp.toLocaleString()} XP
+          </p>
         </div>
-        <p className="section-kicker">{t('catalogueKicker')}</p>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold mt-2 tracking-tight">{t('chooseCourseTitle')}</h1>
-        <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">{t('chooseCourseBody')}</p>
+        <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed animate-rise-in-delay">
+          {t('chooseCourseBody')}
+        </p>
 
-        <div className="mt-5 max-w-xl">
+        <div className="mt-5 max-w-xl animate-rise-in-delay">
           <SearchField
             value={query}
             onChange={(value) => {
@@ -82,7 +88,7 @@ export default function SkillTreePage() {
           />
         </div>
 
-        <div className="flex flex-wrap gap-2 mt-4 mb-8">
+        <div className="segmented mt-4 mb-8 animate-rise-in-late" role="group" aria-label={t('allProgrammes')}>
           {(
             [
               ['all', t('allProgrammes')],
@@ -95,12 +101,7 @@ export default function SkillTreePage() {
               key={id}
               type="button"
               onClick={() => selectTrack(id)}
-              className={clsx(
-                'px-3 py-1.5 rounded-full text-sm border transition-colors',
-                track === id
-                  ? 'bg-accent text-primary border-accent font-semibold'
-                  : 'border-surface-light text-muted hover:text-white'
-              )}
+              className={clsx('segmented-item', track === id && 'segmented-item--active')}
             >
               {label}
             </button>
@@ -109,7 +110,7 @@ export default function SkillTreePage() {
 
         {mine.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-lg font-semibold mb-3">
+            <h2 className="font-display text-lg font-semibold mb-3">
               {t('myCourses')}{' '}
               <span className="text-sm font-normal text-muted">
                 ({chosenPathIds.length}/{MAX_ACTIVE_COURSES} {t('activeCoursesLabel').toLowerCase()})
@@ -135,9 +136,11 @@ export default function SkillTreePage() {
         )}
 
         <section>
-          <h2 className="text-lg font-semibold mb-3">{mine.length ? t('browseCourses') : t('chooseCourseTitle')}</h2>
+          <h2 className="font-display text-lg font-semibold mb-3">
+            {mine.length ? t('browseCourses') : t('chooseCourseTitle')}
+          </h2>
           {browse.length === 0 && mine.length === 0 ? (
-            <p className="card text-muted">{t('noSearchResults')}</p>
+            <p className="text-muted py-6">{t('noSearchResults')}</p>
           ) : (
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {browse.map((path) => (
@@ -153,15 +156,6 @@ export default function SkillTreePage() {
             </ul>
           )}
         </section>
-
-        <Link
-          to="/curriculum"
-          className="card mt-10 mb-4 block hover:border-accent/40"
-        >
-          <p className="text-xs uppercase tracking-wider text-accent">{t('studioKicker')}</p>
-          <h2 className="font-semibold mt-1">{t('studioTitle')}</h2>
-          <p className="text-sm text-muted mt-2 leading-relaxed">{t('studioHelp')}</p>
-        </Link>
       </main>
       <BottomNav />
     </div>

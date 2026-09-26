@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { publicProgrammes } from '@/content/publicStudies';
 import { useT } from '@/i18n';
 import BrandMark from '@/components/ui/BrandMark';
+import CourseMark from '@/components/ui/CourseMark';
 import ProfileButton from '@/components/ui/ProfileButton';
+import { programmeMark } from '@/lib/courseMeta';
 import { useLearnerStore } from '@/store/learnerStore';
 
 export default function LandingPage() {
@@ -79,9 +81,10 @@ export default function LandingPage() {
                     className="programme-tile block"
                     style={{ ['--tile-accent' as string]: '#00d4aa' }}
                   >
-                    <span className="text-3xl" aria-hidden>
-                      {programme.icon}
-                    </span>
+                    <CourseMark
+                      mark={programmeMark(programme.id, programme.title)}
+                      accent="#00d4aa"
+                    />
                     <h3 className="font-display font-semibold text-lg mt-3">{programme.title}</h3>
                     <p className="text-sm text-muted mt-2 line-clamp-2 leading-relaxed">{programme.description}</p>
                     <p className="text-xs text-accent mt-4 font-medium">

@@ -38,13 +38,12 @@ const config: Config = {
         '3xl': '2rem',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(0,212,170,0.18), 0 18px 50px rgba(0,0,0,0.35)',
+        panel: '0 12px 40px rgba(0,0,0,0.28)',
       },
       animation: {
         'bounce-once': 'bounce 0.5s ease-in-out',
         shake: 'shake 0.4s ease-in-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'streak-glow': 'streakGlow 2s ease-in-out infinite',
         'rise-in': 'riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
         'rise-in-delay': 'riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both',
         'rise-in-late': 'riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both',
@@ -55,10 +54,6 @@ const config: Config = {
           '0%, 100%': { transform: 'translateX(0)' },
           '20%, 60%': { transform: 'translateX(-8px)' },
           '40%, 80%': { transform: 'translateX(8px)' },
-        },
-        streakGlow: {
-          '0%, 100%': { boxShadow: '0 0 5px #ff6b35' },
-          '50%': { boxShadow: '0 0 20px #ff6b35, 0 0 40px #ff6b35' },
         },
         riseIn: {
           '0%': { opacity: '0', transform: 'translateY(18px)' },

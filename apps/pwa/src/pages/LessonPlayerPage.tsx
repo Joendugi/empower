@@ -43,7 +43,7 @@ export default function LessonPlayerPage() {
 
   if (!lesson) {
     return (
-      <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 text-center">
+      <div className="min-h-dvh flex flex-col items-center justify-center px-6 text-center">
         <h1 className="text-xl font-bold text-white">{t('lessonMissing')}</h1>
         <Link to="/learn/skill-tree" className="btn-primary mt-6">
           {t('back')}
@@ -108,7 +108,7 @@ export default function LessonPlayerPage() {
         <p className="text-[11px] uppercase tracking-wide text-accent font-semibold">
           {lesson.examDomain ?? lesson.cdaccUnitId ?? t('lesson')}
         </p>
-        <h1 className="text-xl font-bold text-white mt-1">{title}</h1>
+        <h1 className="font-display text-xl font-bold text-white mt-1 tracking-tight">{title}</h1>
         <p className="text-xs text-muted mt-1">
           {lesson.estimatedMinutes} {t('minutes')}
         </p>
@@ -121,13 +121,13 @@ export default function LessonPlayerPage() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
-              className="card space-y-4"
+              className="space-y-6"
             >
               {lesson.outline || lesson.weekNumber ? (
                 <WeekPreview lesson={lesson} compact onMediaComplete={() => setMediaReady(true)} />
               ) : (
-                <>
-                  <h2 className="text-sm font-semibold text-muted">{t('studyNotes')}</h2>
+                <div className="space-y-4">
+                  <h2 className="font-display text-sm font-semibold text-muted">{t('studyNotes')}</h2>
                   {briefing
                     ? briefing.split(/\n\n+/).map((para, index) => (
                         <p key={index} className="text-white/90 leading-relaxed text-[15px]">
@@ -136,7 +136,7 @@ export default function LessonPlayerPage() {
                       ))
                     : null}
                   <MediaBlock assets={lessonMedia} onComplete={() => setMediaReady(true)} />
-                </>
+                </div>
               )}
               <ScenarioLabCard lesson={lesson} />
               <button
@@ -187,22 +187,16 @@ function LessonComplete({
   const nextId = getNextLessonId(lesson.id);
   const accuracy = Math.round(((lesson.exercises.length - incorrectCount) / lesson.exercises.length) * 100);
   return (
-    <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 text-center">
-      <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">{t('moduleComplete')}</p>
-      <h2 className="text-3xl font-bold text-white mb-2">{t('lessonComplete')}</h2>
-      <p className="text-muted mb-8 max-w-sm">{lesson.title}</p>
-      <div className="flex gap-6 mb-10">
-        <div className="text-center">
-          <div className="text-3xl font-bold text-xp">+{xpEarned}</div>
-          <div className="text-xs text-muted">XP</div>
-        </div>
-        <div className="w-px bg-surface-light" />
-        <div className="text-center">
-          <div className="text-3xl font-bold text-success">{accuracy}%</div>
-          <div className="text-xs text-muted">{t('accuracy')}</div>
-        </div>
-      </div>
-      <div className="w-full max-w-xs space-y-3">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-6 text-center">
+      <p className="section-kicker mb-3">{t('moduleComplete')}</p>
+      <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-2 animate-rise-in">
+        {t('lessonComplete')}
+      </h2>
+      <p className="text-muted mb-3 max-w-sm animate-rise-in-delay">{lesson.title}</p>
+      <p className="text-sm text-muted mb-10 animate-rise-in-late">
+        +{xpEarned} XP · {accuracy}% {t('accuracy').toLowerCase()}
+      </p>
+      <div className="w-full max-w-xs space-y-3 animate-rise-in-late">
         {nextId && (
           <button className="btn-primary w-full" onClick={() => navigate(`/learn/lesson/${nextId}`)}>
             {t('nextLesson')}

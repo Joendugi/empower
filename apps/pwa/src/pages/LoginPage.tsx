@@ -101,7 +101,7 @@ export default function LoginPage() {
       </Link>
 
       <form
-        className="relative z-10 w-full max-w-sm space-y-3 rounded-3xl border border-surface-light/70 bg-surface/60 p-5 shadow-glow backdrop-blur-md animate-rise-in-delay"
+        className="relative z-10 w-full max-w-sm space-y-3 rounded-3xl border border-surface-light/70 bg-surface/60 p-5 shadow-panel backdrop-blur-md animate-rise-in-delay"
         onSubmit={(e) => void onSubmit(e)}
       >
         <h2 className="font-display text-center text-xl font-bold text-white mb-1">{t('signInTitle')}</h2>

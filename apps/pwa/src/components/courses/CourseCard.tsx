@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 import type { SkillPath } from '@cyberlearn/types';
-import { courseIcon, courseLessonCount } from '@/lib/courseMeta';
+import CourseMark from '@/components/ui/CourseMark';
+import { courseLessonCount, courseMark } from '@/lib/courseMeta';
 import type { ProgrammeProgress } from '@/lib/progress';
 import { useT } from '@/i18n';
 
@@ -29,9 +30,7 @@ export default function CourseCard({
   return (
     <article className="programme-tile" style={{ ['--tile-accent' as string]: accent }}>
       <div className="flex items-start justify-between gap-3 pl-2">
-        <span className="text-3xl" aria-hidden>
-          {courseIcon(path)}
-        </span>
+        <CourseMark mark={courseMark(path)} accent={accent} />
         <span
           className={clsx(
             'text-[11px] font-semibold px-2 py-0.5 rounded-md border',
