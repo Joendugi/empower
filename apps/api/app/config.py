@@ -63,7 +63,7 @@ class Settings(BaseSettings):
         return value
 
     @model_validator(mode="after")
-    def apply_supabase_database_url(self) -> "Settings":
+    def apply_supabase_database_url(self) -> Settings:
         source = self.SUPABASE_DB_URL.strip() or self.DATABASE_URL
         self.DATABASE_URL = normalize_database_url(source)
         return self
