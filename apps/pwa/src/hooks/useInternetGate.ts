@@ -67,7 +67,7 @@ export function useInternetGate() {
       return;
     }
     void verify({ admitOnSuccess: true });
-  }, [skipGate, apiBaseUrl]); // eslint-disable-line react-hooks/exhaustive-deps -- cold-start / mode change only
+  }, [skipGate, apiBaseUrl]);
 
   useEffect(() => {
     const onOnline = () => {
