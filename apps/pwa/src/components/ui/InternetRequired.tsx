@@ -27,8 +27,8 @@ export default function InternetRequired({
         <div className="flex justify-center">
           <BrandMark size="lg" />
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('brand')}</p>
-        <h1 className="text-2xl sm:text-3xl font-bold text-balance">
+        <p className="font-display text-3xl font-extrabold tracking-tight">{t('brand')}</p>
+        <h1 className="font-display text-2xl sm:text-3xl font-bold text-balance">
           {checking ? t('internetChecking') : t('internetRequiredTitle')}
         </h1>
         <p className="text-muted leading-relaxed">

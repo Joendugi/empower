@@ -59,14 +59,14 @@ export default function SkillTreePage() {
   const openCourse = (pathId: string) => navigate(`/learn/course/${pathId}`);
 
   return (
-    <div className="min-h-dvh bg-primary-dark pb-24 text-white">
+    <div className="min-h-dvh pb-24 text-white">
       <AppHeader />
       <main className="max-w-6xl mx-auto px-4 pt-6">
         <div className="mb-5">
           <XPBar totalXp={xp} />
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('catalogueKicker')}</p>
-        <h1 className="text-2xl sm:text-3xl font-bold mt-1">{t('chooseCourseTitle')}</h1>
+        <p className="section-kicker">{t('catalogueKicker')}</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold mt-2 tracking-tight">{t('chooseCourseTitle')}</h1>
         <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">{t('chooseCourseBody')}</p>
 
         <div className="mt-5 max-w-xl">
