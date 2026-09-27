@@ -49,7 +49,7 @@ export default function StudyLibraryPage() {
   const showUnits = Boolean(selectedProgramme || needle);
 
   return (
-    <div className="min-h-dvh bg-primary-dark text-white bg-grid-pattern">
+    <div className="min-h-dvh bg-primary-dark text-white">
       <AppHeader
         trailing={
           !signedIn ? (
@@ -66,7 +66,7 @@ export default function StudyLibraryPage() {
 
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Security & Access Status Banner */}
-        <div className="mb-6 card !p-4 bg-gradient-to-r from-surface to-surface-light border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="mb-6 card !p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-start sm:items-center gap-3">
             <div className="p-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent shrink-0">
               {signedIn ? <UserCheck className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
@@ -93,7 +93,7 @@ export default function StudyLibraryPage() {
         </div>
 
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t('studyWebKicker')}</p>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white">{t('studyWebTitle')}</h1>
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mt-2 text-white">{t('studyWebTitle')}</h1>
         <p className="text-muted-light mt-3 max-w-3xl leading-relaxed text-sm sm:text-base">{t('studyWebBody')}</p>
 
         {/* Search and Filters */}

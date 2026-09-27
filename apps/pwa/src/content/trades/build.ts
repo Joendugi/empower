@@ -147,6 +147,7 @@ export function buildTradeProgramme(spec: TradeProgramme): { lessons: Lesson[]; 
   const path: SkillPath = {
     id: spec.id,
     track: 'trades',
+    contentVersion: '1',
     title: spec.title,
     titleSw: spec.titleSw,
     description: spec.description,

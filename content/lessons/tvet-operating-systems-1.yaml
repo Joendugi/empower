@@ -1,0 +1,77 @@
+id: tvet-operating-systems-1
+course_id: operating-systems
+title: Operating systems for technicians
+title_sw: Mifumo ya uendeshaji kwa mafundi
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/OS/LX/01/5
+exam_domain: CDACC ICT Technician — Systems Support
+exercises:
+  - id: tvet-os-q1
+    type: MULTIPLE_CHOICE
+    prompt: Why should a workshop technician avoid daily work as Administrator or root?
+    options:
+      - id: a
+        text: It makes the PC boot faster
+      - id: b
+        text: Malware and mistakes then inherit full system rights
+      - id: c
+        text: Microsoft Office will not install otherwise
+      - id: d
+        text: RAM cannot be upgraded
+    correct_answer: b
+    hint: Least privilege is a core TVET and security control.
+    explanation: A compromised or mistaken admin session can wipe disks, dump passwords, and disable AV. Use a standard account plus elevation when needed.
+    xp_reward: 50
+  - id: tvet-os-q2
+    type: FILL_BLANK
+    prompt: On Linux, the command that prints the current directory is ___.
+    correct_answer: pwd
+    hint: Print working directory.
+    explanation: pwd shows where you are; ls lists files; cd changes directory.
+    xp_reward: 50
+  - id: tvet-os-q3
+    type: MATCH_PAIRS
+    prompt: Match the tool to the job.
+    pairs:
+      - left:
+          id: taskmgr
+          text: Task Manager
+        right:
+          id: processes
+          text: Inspect Windows processes and startup
+      - left:
+          id: diskmgmt
+          text: Disk Management
+        right:
+          id: volumes
+          text: Create and format volumes
+      - left:
+          id: eventvwr
+          text: Event Viewer
+        right:
+          id: logs
+          text: Read system and application logs
+    correct_answer:
+      - taskmgr=processes
+      - diskmgmt=volumes
+      - eventvwr=logs
+    hint: Slow PC vs new partition vs crash history.
+    explanation: Task Manager is live resource use; Disk Management is storage layout; Event Viewer is historical errors.
+    xp_reward: 60
+  - id: tvet-os-q4
+    type: SCENARIO
+    prompt: "A campus PC is full. Users dump downloads on the C: drive. What is the professional fix?"
+    options:
+      - id: a
+        text: Delete the Windows folder
+      - id: b
+        text: Move user data to a data partition or shared drive and educate users
+      - id: c
+        text: Disable the page file forever
+      - id: d
+        text: Install a second BIOS
+    correct_answer: b
+    hint: Do not destroy the OS to free space.
+    explanation: Technicians relocate data, clean temp files carefully, and set policies. Deleting system folders creates a bigger outage.
+    xp_reward: 60

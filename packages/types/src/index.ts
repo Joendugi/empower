@@ -202,6 +202,7 @@ export interface SkillPath {
   nodes: SkillNode[];
   certificationTarget?: string;
   track?: ProgrammeTrack;
+  contentVersion?: string;
 }
 
 // ── Leaderboard ───────────────────────────────────────────

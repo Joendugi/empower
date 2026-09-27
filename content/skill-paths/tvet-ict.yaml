@@ -4,6 +4,7 @@ title_sw: Fundi wa ICT wa TVET
 description: CDACC-aligned technical skills for Kenyan TVET colleges — workshop safety, hardware, operating systems, and computer networks.
 certification_target: CDACC ICT Technician Level 5/6
 track: tvet
+content_version: "1"
 nodes:
   - id: workshop-safety
     title: Workshop safety

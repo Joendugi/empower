@@ -1,0 +1,68 @@
+id: "digital-enterprise"
+title: "Digital enterprise & cooperative commerce"
+title_sw: "Biashara ya kidijitali na ushirika"
+description: "Help artisans sell safely: costing, mobile-money controls, product photography, customer records, and cooperative fulfilment."
+description_sw: "Gharama, M-Pesa salama, picha za bidhaa, rekodi za wateja, na mauzo ya ushirika."
+certification_target: "Digital entrepreneurship foundation"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "digital-enterprise-costing"
+    title: "Week 1 — Costing, pricing, records, and mobile-money controls"
+    title_sw: "Wiki 1 — Gharama, bei, rekodi, na M-Pesa"
+    description: "Price labour and overhead honestly; reconcile payments without sharing PINs or OTPs."
+    icon: "📱"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites: []
+    lesson_ids:
+      - "digital-enterprise-costing-lesson"
+  - id: "digital-enterprise-market"
+    title: "Week 2 — Product media, truthful marketing, and cooperative fulfilment"
+    title_sw: "Wiki 2 — Picha, matangazo ya kweli, na ushirika"
+    description: "Create useful product listings, protect client privacy, and organise reliable shared production."
+    icon: "📱"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites:
+      - "digital-enterprise-costing"
+    lesson_ids:
+      - "digital-enterprise-market-lesson"
+  - id: "digital-enterprise-management"
+    title: "Week 3 — Business model, operations, people, and customer systems"
+    title_sw: "Wiki 3 — Business model na usimamizi"
+    description: "Turn a craft into a managed business with clear customers, workflow, stock control, roles, and service standards."
+    icon: "📱"
+    exam_domain: "Entrepreneurship — business management"
+    prerequisites:
+      - "digital-enterprise-market"
+    lesson_ids:
+      - "digital-enterprise-management-lesson"
+  - id: "digital-enterprise-bookkeeping"
+    title: "Week 4 — Bookkeeping, profit, cash flow, and break-even"
+    title_sw: "Wiki 4 — Vitabu, faida, cash flow, na break-even"
+    description: "Read an income statement and cash forecast, reconcile records, calculate margin, and find the break-even point."
+    icon: "📱"
+    exam_domain: "Financial literacy — records and cash flow"
+    prerequisites:
+      - "digital-enterprise-management"
+    lesson_ids:
+      - "digital-enterprise-bookkeeping-lesson"
+  - id: "digital-enterprise-loans"
+    title: "Week 5 — Loans: true cost, affordability, collateral, and debt traps"
+    title_sw: "Wiki 5 — Mikopo na gharama yake"
+    description: "Compare reducing-balance and flat-rate loans, calculate total repayment, test debt-service ability, and read the contract."
+    icon: "📱"
+    exam_domain: "Financial literacy — responsible borrowing"
+    prerequisites:
+      - "digital-enterprise-bookkeeping"
+    lesson_ids:
+      - "digital-enterprise-loans-lesson"
+  - id: "digital-enterprise-investment"
+    title: "Week 6 — Investment, compounding, diversification, and fraud checks"
+    title_sw: "Wiki 6 — Uwekezaji na hatari"
+    description: "Build reserves, compare regulated investments, understand return after inflation and fees, and reject scams."
+    icon: "📱"
+    exam_domain: "Financial literacy — saving and investment"
+    prerequisites:
+      - "digital-enterprise-loans"
+    lesson_ids:
+      - "digital-enterprise-investment-lesson"

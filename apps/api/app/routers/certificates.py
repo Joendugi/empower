@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import Response
 from pydantic import Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -14,8 +15,15 @@ from app.models.learner import Learner
 from app.models.submission import LessonCompletion
 from app.schemas import CamelModel
 from app.services.badges import award_badge
-from app.services.certificates import attach_open_badge, open_badge_assertion
+from app.services.certificates import (
+    attach_open_badge,
+    certificate_verify_url,
+    finalize_open_badge,
+    issuer_profile,
+    open_badge_assertion,
+)
 from app.services.content import get_skill_path
+from app.services.pdf import build_certificate_pdf
 
 router = APIRouter()
 
@@ -125,12 +133,68 @@ async def claim_certificate(
         badge_type,
         open_badges_json=json.dumps(assertion, ensure_ascii=False),
     )
-    attach_open_badge(badge, assertion)
+    stored = assertion
+    if badge.open_badges_json:
+        try:
+            stored = json.loads(badge.open_badges_json)
+        except json.JSONDecodeError:
+            stored = assertion
+    stored = finalize_open_badge(stored, badge.id)
+    attach_open_badge(badge, stored)
     await db.flush()
     return CertificateRead(
         id=badge.id,
         badge_type=badge.badge_type,
         path_id=payload.path_id,
         earned_at=badge.earned_at.isoformat(),
-        open_badge=assertion,
+        open_badge=stored,
+    )
+
+
+@router.get("/issuer")
+async def get_issuer() -> dict:
+    return issuer_profile()
+
+
+async def _load_certificate(certificate_id: str, db: AsyncSession) -> Badge:
+    badge = await db.get(Badge, certificate_id)
+    if badge is None or not (badge.badge_type or "").startswith("cert:"):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Certificate not found")
+    return badge
+
+
+def _assertion_for(badge: Badge) -> dict:
+    if not badge.open_badges_json:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Certificate not found")
+    try:
+        assertion = json.loads(badge.open_badges_json)
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Certificate not found") from exc
+    return finalize_open_badge(assertion, badge.id)
+
+
+@router.get("/certificates/{certificate_id}")
+async def verify_certificate(certificate_id: str, db: AsyncSession = Depends(get_db)) -> dict:
+    badge = await _load_certificate(certificate_id, db)
+    return _assertion_for(badge)
+
+
+@router.get("/certificates/{certificate_id}/pdf")
+async def download_certificate_pdf(certificate_id: str, db: AsyncSession = Depends(get_db)) -> Response:
+    badge = await _load_certificate(certificate_id, db)
+    assertion = _assertion_for(badge)
+    subject = assertion.get("credentialSubject") or {}
+    achievement = subject.get("achievement") or {}
+    pdf = build_certificate_pdf(
+        learner_name=str(subject.get("name") or "Learner"),
+        path_title=str(achievement.get("name") or assertion.get("name") or "Certificate"),
+        issued=str(assertion.get("issuanceDate") or badge.earned_at.isoformat()),
+        certificate_id=badge.id,
+        verify_url=str((assertion.get("empower") or {}).get("verifyUrl") or certificate_verify_url(badge.id)),
+    )
+    filename = f"empower-{badge.id[:8]}.pdf"
+    return Response(
+        content=pdf,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'inline; filename="{filename}"'},
     )

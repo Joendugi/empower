@@ -34,8 +34,8 @@ export default function StudyArticlePage() {
   const next = index >= 0 && index < siblings.length - 1 ? siblings[index + 1] : undefined;
 
   return (
-    <div className="min-h-dvh bg-primary-dark text-white bg-grid-pattern">
-      <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08]">
+    <div className="min-h-dvh bg-primary-dark text-white">
+      <header className="sticky top-0 z-30 bg-primary-dark border-b border-white/[0.08]">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
           <Link
             to={`/study?p=${study.programmeId}`}
@@ -72,7 +72,7 @@ export default function StudyArticlePage() {
               {study.minutes} {t('minutes')}
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-tight">
             {study.title}
           </h1>
           <p className="text-sm sm:text-base text-muted-light mt-3 leading-relaxed">
@@ -115,7 +115,7 @@ export default function StudyArticlePage() {
         </section>
 
         {/* Account-Gated Practical Laboratory & Assessment CTA */}
-        <div className="card !p-8 border-accent/30 bg-gradient-to-br from-surface to-surface-light relative overflow-hidden shadow-xl">
+        <div className="card !p-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/10 border border-accent/25 text-accent text-xs font-semibold mb-2">

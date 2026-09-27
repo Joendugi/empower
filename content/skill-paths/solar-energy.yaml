@@ -1,0 +1,28 @@
+id: "solar-energy"
+title: "Solar PV installation & maintenance"
+title_sw: "Ufungaji na matengenezo ya solar"
+description: "Clean-energy skills for homes, schools, clinics, and micro-enterprises: site survey, array safety, batteries, commissioning, and maintenance."
+description_sw: "Solar kwa nyumba, shule, kliniki, na biashara: survey, betri, usalama, na matengenezo."
+certification_target: "TVET / EPRA-aligned solar PV foundation"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "solar-energy-survey"
+    title: "Week 1 — Site survey, demand, and solar resource"
+    title_sw: "Wiki 1 — Survey, matumizi, na jua"
+    description: "Measure loads and shading before sizing panels or batteries."
+    icon: "☀️"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites: []
+    lesson_ids:
+      - "solar-energy-survey-lesson"
+  - id: "solar-energy-install"
+    title: "Week 2 — DC safety, batteries, commissioning, and maintenance"
+    title_sw: "Wiki 2 — Usalama wa DC, betri, commissioning"
+    description: "Isolate DC, protect strings, torque terminals, and prove performance before handover."
+    icon: "☀️"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites:
+      - "solar-energy-survey"
+    lesson_ids:
+      - "solar-energy-install-lesson"

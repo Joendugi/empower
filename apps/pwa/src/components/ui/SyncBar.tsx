@@ -29,7 +29,7 @@ export default function SyncBar() {
       role="status"
       aria-live="polite"
       className={clsx(
-        'w-full px-4 py-1 text-xs font-medium flex items-center justify-center gap-2 transition-all duration-300 border-b backdrop-blur-md',
+        'w-full px-4 py-1 text-xs font-medium flex items-center justify-center gap-2 border-b',
         offline
           ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
           : isError

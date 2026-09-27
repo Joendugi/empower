@@ -1,0 +1,28 @@
+id: "caregiving-assistance"
+title: "Caregiving & home assistance"
+title_sw: "Ulezi na msaada wa nyumbani"
+description: "Dignified assistance for older people, persons with disabilities, and recovering clients: movement, hygiene, nutrition, records, and escalation."
+description_sw: "Msaada wenye heshima: movement, usafi, lishe, rekodi, na rufaa."
+certification_target: "Caregiving / home-based care foundation"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "caregiving-assistance-dignity"
+    title: "Week 1 — Dignity, consent, safeguarding, and boundaries"
+    title_sw: "Wiki 1 — Heshima, ridhaa, na ulinzi"
+    description: "Support choice and privacy while recognising neglect, abuse, and professional boundaries."
+    icon: "🤝"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites: []
+    lesson_ids:
+      - "caregiving-assistance-dignity-lesson"
+  - id: "caregiving-assistance-mobility"
+    title: "Week 2 — Safe mobility, personal care, nutrition, and records"
+    title_sw: "Wiki 2 — Movement salama, usafi, na lishe"
+    description: "Assist without lifting dangerously; prevent pressure injury, dehydration, and medication errors."
+    icon: "🤝"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites:
+      - "caregiving-assistance-dignity"
+    lesson_ids:
+      - "caregiving-assistance-mobility-lesson"

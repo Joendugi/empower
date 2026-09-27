@@ -1,0 +1,41 @@
+id: "carpentry"
+title: "Carpentry & joinery"
+title_sw: "Useremala"
+description: "Setting out timber, machine safety, joints, then hanging and moisture movement."
+description_sw: "Kuweka alama, usalama wa mashine, viungo, na unyevu."
+certification_target: "CDACC / NITA — Carpentry & joinery"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "carpentry-setout-wood"
+    title: "Measuring, face marks, and hand tools"
+    title_sw: "Kipimo, face marks, na zana"
+    description: "Measure twice. Face side and face edge are the datums for every joint."
+    icon: "🪚"
+    cdacc_unit_id: "CU/CRP/CR/01/5"
+    exam_domain: "Setting out"
+    prerequisites: []
+    lesson_ids:
+      - "carpentry-setout-wood-lesson"
+  - id: "carpentry-machines"
+    title: "Workshop machines and joints"
+    title_sw: "Mashine za warsha na viungo"
+    description: "Guards, push sticks, then housing, mortise and tenon, and glue-up."
+    icon: "🪚"
+    cdacc_unit_id: "CU/CRP/CR/02/5"
+    exam_domain: "Machines & joints"
+    prerequisites:
+      - "carpentry-setout-wood"
+    lesson_ids:
+      - "carpentry-machines-lesson"
+  - id: "carpentry-hanging"
+    title: "Hanging, ironmongery, and movement"
+    title_sw: "Kuning’iniza, ironmongery, na kupanuka"
+    description: "Hinge gain, clearances, locks, and what rain does to unseasoned doors."
+    icon: "🪚"
+    cdacc_unit_id: "CU/CRP/CR/03/5"
+    exam_domain: "Site joinery"
+    prerequisites:
+      - "carpentry-machines"
+    lesson_ids:
+      - "carpentry-hanging-lesson"

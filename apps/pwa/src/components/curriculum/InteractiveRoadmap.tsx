@@ -76,13 +76,9 @@ export default function InteractiveRoadmap({
       >
         <defs>
           <linearGradient id="activeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#00d4aa" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#2ed573" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#e85d04" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#c2410c" stopOpacity="0.95" />
           </linearGradient>
-          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
         </defs>
 
         {nodes.map((n, i) => {
@@ -104,7 +100,6 @@ export default function InteractiveRoadmap({
                 strokeWidth={isCompletedSegment ? 4 : 3}
                 strokeDasharray={isCompletedSegment ? undefined : '6,6'}
                 strokeLinecap="round"
-                filter={isCompletedSegment ? 'url(#glow)' : undefined}
               />
             </g>
           );
@@ -133,7 +128,7 @@ export default function InteractiveRoadmap({
                     initial={{ y: -8, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ repeat: Infinity, repeatType: 'reverse', duration: 1.2 }}
-                    className="absolute -top-7 px-2.5 py-0.5 rounded-full bg-accent text-primary-dark text-[10px] font-black tracking-wider uppercase shadow-glow flex items-center gap-1 z-20"
+                    className="absolute -top-7 px-2.5 py-0.5 rounded-md bg-accent text-white text-[10px] font-semibold tracking-wider uppercase flex items-center gap-1 z-20"
                   >
                     <Sparkles className="w-3 h-3" />
                     START
@@ -152,15 +147,15 @@ export default function InteractiveRoadmap({
                   }}
                   disabled={item.locked}
                   className={clsx(
-                    'relative flex items-center justify-center rounded-3xl transition-all duration-300 font-bold',
+                    'relative flex items-center justify-center rounded-md transition-colors duration-150 font-semibold',
                     item.isMilestone ? 'w-20 h-20' : 'w-16 h-16',
                     item.done
-                      ? 'bg-gradient-to-tr from-accent to-emerald-400 text-primary-dark shadow-[0_0_25px_rgba(0,212,170,0.4)] border-2 border-white/40'
+                      ? 'bg-accent text-white border border-accent'
                       : isActive
-                        ? 'bg-surface text-accent border-4 border-accent shadow-glow animate-pulse-slow'
+                        ? 'bg-surface text-accent border-2 border-accent'
                         : item.locked
                           ? 'bg-surface-light/60 text-muted/50 border border-white/[0.05] cursor-not-allowed'
-                          : 'bg-surface-light text-white border border-white/[0.15] hover:border-accent/50 shadow-lg',
+                          : 'bg-surface-light text-white border border-white/[0.15] hover:border-accent/50',
                     isSelected && 'ring-4 ring-accent/40'
                   )}
                   title={item.lesson?.title ?? item.node.title}
@@ -174,7 +169,7 @@ export default function InteractiveRoadmap({
                   ) : isActive ? (
                     <Play className="w-6 h-6 fill-current translate-x-0.5" />
                   ) : (
-                    <span className="text-sm font-black">{week}</span>
+                    <span className="text-sm font-semibold">{week}</span>
                   )}
 
                   {/* Level / Check Indicator Pill */}
@@ -224,13 +219,13 @@ export default function InteractiveRoadmap({
             exit={{ opacity: 0, y: 40 }}
             className="fixed bottom-20 inset-x-4 max-w-lg mx-auto z-40"
           >
-            <div className="glass-dock rounded-3xl !p-6 border border-accent/40 shadow-2xl backdrop-blur-2xl">
+            <div className="bg-surface rounded-lg !p-6 border border-white/[0.1]">
               <div className="flex items-start justify-between gap-3 pb-3 border-b border-white/[0.08]">
                 <div>
                   <span className="badge-accent text-[10px] uppercase font-mono tracking-wider">
                     {t('weekLabel')} {selected.node.weekNumber ?? selected.index + 1}
                   </span>
-                  <h3 className="font-extrabold text-lg text-white mt-1">
+                  <h3 className="font-semibold text-lg text-white mt-1">
                     {selected.lesson?.title ?? selected.node.title}
                   </h3>
                 </div>

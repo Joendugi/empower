@@ -1,0 +1,41 @@
+id: "refrigeration"
+title: "Refrigeration & air conditioning"
+title_sw: "Ufundi wa friji na AC"
+description: "Cooling cycle, recovery law, leak finding, and charge — not guesswork topping-up."
+description_sw: "Mzunguko wa baridi, recovery, uvujaji, na charge sahihi."
+certification_target: "CDACC / NITA — Refrigeration & air conditioning"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "refrigeration-cycle"
+    title: "Vapour-compression cycle and components"
+    title_sw: "Mzunguko wa vapour-compression"
+    description: "Compressor, condenser, expansion device, evaporator — and what each does to pressure and heat."
+    icon: "❄️"
+    cdacc_unit_id: "CU/RAC/CR/01/5"
+    exam_domain: "Cooling cycle"
+    prerequisites: []
+    lesson_ids:
+      - "refrigeration-cycle-lesson"
+  - id: "refrigeration-recovery"
+    title: "Refrigerant law, recovery, and nitrogen"
+    title_sw: "Sheria ya gesi, recovery, na nitrogen"
+    description: "Do not vent. Recover. Pressure-test with nitrogen, not oxygen."
+    icon: "❄️"
+    cdacc_unit_id: "CU/RAC/CR/02/5"
+    exam_domain: "Environment & safety"
+    prerequisites:
+      - "refrigeration-cycle"
+    lesson_ids:
+      - "refrigeration-recovery-lesson"
+  - id: "refrigeration-service"
+    title: "Leak, charge, and performance checks"
+    title_sw: "Uvujaji, charge, na utendaji"
+    description: "Weigh-in charge, superheat/subcooling at craft level, and airflow."
+    icon: "❄️"
+    cdacc_unit_id: "CU/RAC/CR/03/5"
+    exam_domain: "Service diagnosis"
+    prerequisites:
+      - "refrigeration-recovery"
+    lesson_ids:
+      - "refrigeration-service-lesson"

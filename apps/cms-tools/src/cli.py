@@ -6,7 +6,7 @@ import click
 from rich.console import Console
 from rich.table import Table
 
-from src.validator import validate_lesson_file
+from src.validator import validate_catalogue, validate_lesson_file
 
 console = Console()
 
@@ -60,5 +60,18 @@ def validate_command(path: Path) -> None:
         console.print(f"\n[green]All {len(files)} files passed validation ({total_warnings} warnings).[/green]")
 
 
+@main.command("validate-catalogue")
+@click.argument("path", type=click.Path(exists=True, path_type=Path))
+def validate_catalogue_command(path: Path) -> None:
+    """Fail if a featured id or path lesson_ids entry is missing from content/."""
+    res = validate_catalogue(path)
+    if res.errors:
+        for error in res.errors:
+            console.print(f"[red]{error}[/red]")
+        sys.exit(1)
+    console.print(f"[green]Catalogue OK ({len(res.warnings)} warnings).[/green]")
+
+
 if __name__ == "__main__":
     main()
+

@@ -25,6 +25,7 @@ const OnboardingPage = lazy(() => import('@/pages/OnboardingPage'));
 const CoursePage = lazy(() => import('@/pages/CoursePage'));
 const CurriculumStudioPage = lazy(() => import('@/pages/CurriculumStudioPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+const VerifyCertificatePage = lazy(() => import('@/pages/VerifyCertificatePage'));
 
 export default function App() {
   const hydrated = useHydrated();
@@ -51,17 +52,35 @@ export default function App() {
           <Route path="/study" element={<StudyLibraryPage />} />
           <Route path="/study/:slug" element={<StudyArticlePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/verify/:certificateId" element={<VerifyCertificatePage />} />
+          <Route path="/verify" element={<VerifyCertificatePage />} />
+          <Route path="/learn" element={<Navigate to="/learn/skill-tree" replace />} />
+          <Route path="/learn/skill-tree" element={<SkillTreePage />} />
+          <Route path="/learn/course/:pathId" element={<CoursePage />} />
           <Route
-            path="/learn"
-            element={<ProtectedRoute />}
-          >
-            <Route index element={<Navigate to="/learn/skill-tree" replace />} />
-            <Route path="skill-tree" element={<SkillTreePage />} />
-            <Route path="course/:pathId" element={<CoursePage />} />
-            <Route path="lesson/:lessonId" element={<LessonPlayerPage />} />
-            <Route path="review" element={<ReviewPage />} />
-            <Route path="leaderboard" element={<LeaderboardPage />} />
-          </Route>
+            path="/learn/lesson/:lessonId"
+            element={
+              <ProtectedRoute>
+                <LessonPlayerPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/learn/review"
+            element={
+              <ProtectedRoute>
+                <ReviewPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/learn/leaderboard"
+            element={
+              <ProtectedRoute>
+                <LeaderboardPage />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/onboard"
             element={

@@ -127,7 +127,10 @@ def _catalog() -> dict[str, Any]:
             "title": raw["title"],
             "titleSw": raw.get("title_sw") or raw.get("titleSw"),
             "description": raw.get("description"),
+            "descriptionSw": raw.get("description_sw") or raw.get("descriptionSw"),
             "certificationTarget": raw.get("certification_target") or raw.get("certificationTarget"),
+            "track": raw.get("track"),
+            "contentVersion": str(raw.get("content_version") or raw.get("contentVersion") or "1"),
             "nodes": nodes,
         }
     return {"lessons": lessons, "raw_lessons": raw_lessons, "paths": paths, "lesson_paths": lesson_paths}

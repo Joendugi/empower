@@ -1,0 +1,70 @@
+id: "vehicle-anatomy"
+title: "Vehicle anatomy studio"
+title_sw: "Anatomia ya gari"
+description: "Browser study of how a car is built: chassis, engine, cooling, drivetrain, brakes, and electrics — the same systems car-anatomy sites label in cutaways."
+description_sw: "Soma anatomia ya gari kwenye kivinjari: chasi, injini, baridi, drivetrain, breki, na umeme."
+certification_target: "CDACC Automotive · vehicle systems literacy"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "vehicle-anatomy-overview"
+    title: "Whole-car map: body, cabin, chassis"
+    title_sw: "Ramani ya gari: body, cabin, chasi"
+    description: "Read a car like a cutaway: what hangs on the frame and what the body only covers."
+    icon: "🦴"
+    cdacc_unit_id: "CU/AUT/CR/01/5"
+    exam_domain: "Vehicle architecture"
+    prerequisites: []
+    lesson_ids:
+      - "vehicle-anatomy-overview-lesson"
+  - id: "vehicle-anatomy-engine"
+    title: "Engine cutaway: air, fuel, spark, bottom end"
+    title_sw: "Cutaway ya injini"
+    description: "Block, head, crank, pistons, valvetrain — how a four-stroke actually moves."
+    icon: "🦴"
+    cdacc_unit_id: "CU/AUT/CR/02/5"
+    exam_domain: "Internal combustion engine"
+    prerequisites:
+      - "vehicle-anatomy-overview"
+    lesson_ids:
+      - "vehicle-anatomy-engine-lesson"
+  - id: "vehicle-anatomy-cooling"
+    title: "Cooling and lubrication loops"
+    title_sw: "Mizunguko ya baridi na mafuta"
+    description: "Radiator, pump, thermostat, jackets, oil film — two liquids, two jobs."
+    icon: "🦴"
+    exam_domain: "Cooling and lubrication"
+    prerequisites:
+      - "vehicle-anatomy-engine"
+    lesson_ids:
+      - "vehicle-anatomy-cooling-lesson"
+  - id: "vehicle-anatomy-drivetrain"
+    title: "Drivetrain: clutch, gears, shafts, differential"
+    title_sw: "Drivetrain: clutch, gia, shafts, diff"
+    description: "How crank torque becomes wheel rotation in FWD, RWD, and 4WD."
+    icon: "🦴"
+    exam_domain: "Driveline"
+    prerequisites:
+      - "vehicle-anatomy-cooling"
+    lesson_ids:
+      - "vehicle-anatomy-drivetrain-lesson"
+  - id: "vehicle-anatomy-brakes"
+    title: "Stop and steer: hydraulics, discs, suspension"
+    title_sw: "Simama na elekeza: hydraulics, discs, suspension"
+    description: "Pedal to pad, plus the corner that keeps the tyre on the road."
+    icon: "🦴"
+    exam_domain: "Brakes and chassis corners"
+    prerequisites:
+      - "vehicle-anatomy-drivetrain"
+    lesson_ids:
+      - "vehicle-anatomy-brakes-lesson"
+  - id: "vehicle-anatomy-electrical"
+    title: "Electrical nervous system: battery, alternator, loads"
+    title_sw: "Mfumo wa umeme: betri, alternator, loads"
+    description: "How cranking power and running power are two different jobs."
+    icon: "🦴"
+    exam_domain: "Vehicle electrical"
+    prerequisites:
+      - "vehicle-anatomy-brakes"
+    lesson_ids:
+      - "vehicle-anatomy-electrical-lesson"

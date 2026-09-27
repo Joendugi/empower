@@ -4,7 +4,25 @@ import json
 from datetime import UTC, datetime
 from typing import Any
 
+from app.config import settings
 from app.models.badge import Badge
+
+
+def issuer_profile() -> dict[str, Any]:
+    return {
+        "type": ["Profile"],
+        "id": f"{settings.public_api_origin()}/api/v1/issuer",
+        "name": "Empower",
+        "url": settings.public_app_origin(),
+    }
+
+
+def certificate_json_url(certificate_id: str) -> str:
+    return f"{settings.public_api_origin()}/api/v1/certificates/{certificate_id}"
+
+
+def certificate_verify_url(certificate_id: str) -> str:
+    return f"{settings.public_app_origin()}/verify/{certificate_id}"
 
 
 def open_badge_assertion(
@@ -24,11 +42,7 @@ def open_badge_assertion(
         ],
         "type": ["VerifiableCredential", "OpenBadgeCredential"],
         "name": name,
-        "issuer": {
-            "type": ["Profile"],
-            "id": "https://empower.local/issuer",
-            "name": "Empower",
-        },
+        "issuer": issuer_profile(),
         "issuanceDate": issued,
         "credentialSubject": {
             "type": ["AchievementSubject"],
@@ -42,8 +56,22 @@ def open_badge_assertion(
                 "criteria": {"narrative": f"Learner finished programme requirements for {name}."},
             },
         },
-        "empower": {"pathId": path_id, "badgeType": badge_type},
+        "empower": {
+            "pathId": path_id,
+            "badgeType": badge_type,
+            "verifyUrl": None,
+        },
     }
+
+
+def finalize_open_badge(assertion: dict[str, Any], certificate_id: str) -> dict[str, Any]:
+    payload = dict(assertion)
+    payload["id"] = certificate_json_url(certificate_id)
+    payload["issuer"] = issuer_profile()
+    empower = dict(payload.get("empower") or {})
+    empower["verifyUrl"] = certificate_verify_url(certificate_id)
+    payload["empower"] = empower
+    return payload
 
 
 def attach_open_badge(badge: Badge, assertion: dict[str, Any]) -> Badge:

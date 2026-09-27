@@ -33,7 +33,7 @@ export default function AppHeader({
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08] shadow-sm transition-all">
+      <header className="sticky top-0 z-30 bg-primary-dark border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
           {/* Brand mark & logo */}
           <Link to={home} className="flex items-center shrink-0">
@@ -48,7 +48,7 @@ export default function AppHeader({
               <button
                 type="button"
                 onClick={() => setPaletteOpen(true)}
-                className="w-full flex items-center justify-between gap-2 px-3.5 py-1.5 rounded-xl bg-surface/80 border border-white/[0.08] text-muted hover:text-white hover:border-accent/40 hover:bg-surface-light/80 transition-all text-sm group shadow-inner"
+                className="w-full flex items-center justify-between gap-2 px-3.5 py-1.5 rounded-md bg-surface border border-white/[0.08] text-muted hover:text-white hover:border-white/20 hover:bg-surface-light transition-colors text-sm group"
               >
                 <div className="flex items-center gap-2">
                   <Search className="w-4 h-4 text-muted group-hover:text-accent transition-colors" />

@@ -1,4 +1,4 @@
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { 
@@ -32,7 +32,8 @@ import { useLearnerStore } from '@/store/learnerStore';
 import { useSyncStore } from '@/store/syncStore';
 import { useT } from '@/i18n';
 import type { StringKey } from '@/i18n/strings';
-import type { SkillPath } from '@cyberlearn/types';
+import type { BadgeType, SkillPath } from '@cyberlearn/types';
+import { api } from '@/lib/api';
 
 export default function ProfilePage() {
   const t = useT();
@@ -45,6 +46,7 @@ export default function ProfilePage() {
     streak,
     longestStreak,
     token,
+    badges,
     completedLessonIds,
     reset,
     setDisplayName,
@@ -61,6 +63,23 @@ export default function ProfilePage() {
   const [saved, setSaved] = useState(false);
   const [soundOn, setSoundOn] = useState(() => isSoundEnabled());
   const [viewCertPath, setViewCertPath] = useState<SkillPath | null>(null);
+
+  useEffect(() => {
+    if (!token || isLocalToken(token)) return;
+    void api<Array<{ id: string; badgeType: string; earnedAt: string }>>('/certificates/me')
+      .then((rows) => {
+        const store = useLearnerStore.getState();
+        for (const row of rows) {
+          store.addBadge({
+            id: row.id,
+            learnerId: store.learnerId ?? 'local',
+            badgeType: row.badgeType as BadgeType,
+            earnedAt: row.earnedAt,
+          });
+        }
+      })
+      .catch(() => undefined);
+  }, [token]);
 
   const progress = useMemo(() => allProgrammeProgress(completedLessonIds), [completedLessonIds]);
   const certificates = progress.filter((item) => item.complete);
@@ -94,14 +113,14 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="min-h-dvh bg-primary-dark pb-28 text-white bg-grid-pattern">
+    <div className="min-h-dvh bg-primary-dark pb-28 text-white">
       <AppHeader home={signedIn ? '/learn/skill-tree' : '/'} />
       
       <main className="max-w-4xl mx-auto px-4 pt-6 space-y-6">
         {/* User Identity Header Card */}
-        <section className="card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-white/[0.08] backdrop-blur-xl">
+        <section className="card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-accent/20 to-surface-light border border-accent/40 text-accent text-2xl font-black grid place-items-center shrink-0 shadow-glow">
+            <div className="w-16 h-16 rounded-md bg-surface-light border border-white/10 text-white text-2xl font-semibold grid place-items-center shrink-0">
               {(displayName ?? email ?? t('profile')).slice(0, 1).toUpperCase()}
             </div>
             <div className="min-w-0">
@@ -158,7 +177,7 @@ export default function ProfilePage() {
                     className={clsx(
                       'flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap',
                       active
-                        ? 'bg-accent text-primary-dark shadow-glow'
+                        ? 'bg-accent text-white'
                         : 'text-muted hover:text-white hover:bg-surface-light/60'
                     )}
                   >
@@ -174,7 +193,7 @@ export default function ProfilePage() {
               <div className="space-y-6">
                 {/* Active Learning Fast-Resume Banner */}
                 {primaryTrack && primaryTrack.nextLessonId && (
-                  <div className="card !p-5 border-accent/40 bg-gradient-to-r from-accent/[0.12] via-surface to-surface flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="card !p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-accent/20 border border-accent/30 text-accent flex items-center justify-center shrink-0">
                         <Play className="w-5 h-5 fill-current" />
@@ -189,7 +208,7 @@ export default function ProfilePage() {
                     </div>
                     <Link
                       to={`/learn/lesson/${primaryTrack.nextLessonId}`}
-                      className="btn-primary !py-2.5 !px-5 text-xs font-bold shadow-glow shrink-0 flex items-center gap-1.5"
+                      className="btn-primary !py-2.5 !px-5 text-xs shrink-0 flex items-center gap-1.5"
                     >
                       <span>Continue Lesson</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -208,15 +227,15 @@ export default function ProfilePage() {
 
                   <div className="grid grid-cols-3 gap-3 pt-2 border-t border-white/[0.06] text-center">
                     <div className="p-3 rounded-xl bg-surface-light/40 border border-white/[0.04]">
-                      <span className="font-black text-lg text-white">{xp.toLocaleString()}</span>
+                      <span className="font-semibold text-lg text-white">{xp.toLocaleString()}</span>
                       <span className="block text-[10px] text-muted uppercase mt-0.5">{t('totalXp')}</span>
                     </div>
                     <div className="p-3 rounded-xl bg-surface-light/40 border border-white/[0.04]">
-                      <span className="font-black text-lg text-orange-400">{longestStreak}d</span>
+                      <span className="font-semibold text-lg text-accent">{longestStreak}d</span>
                       <span className="block text-[10px] text-muted uppercase mt-0.5">{t('longestStreak')}</span>
                     </div>
                     <div className="p-3 rounded-xl bg-surface-light/40 border border-white/[0.04]">
-                      <span className="font-black text-lg text-accent">{completedLessonIds.length}</span>
+                      <span className="font-semibold text-lg text-accent">{completedLessonIds.length}</span>
                       <span className="block text-[10px] text-muted uppercase mt-0.5">{t('lessons')} Done</span>
                     </div>
                   </div>
@@ -357,7 +376,7 @@ export default function ProfilePage() {
                           <button
                             type="button"
                             onClick={() => setViewCertPath(item.path)}
-                            className="btn-primary !py-2.5 !px-5 text-xs shrink-0 flex items-center gap-2 font-bold shadow-glow"
+                            className="btn-primary !py-2.5 !px-5 text-xs shrink-0 flex items-center gap-2"
                           >
                             <QrCode className="w-4 h-4" /> View & Print Certificate
                           </button>
@@ -549,6 +568,7 @@ export default function ProfilePage() {
           onClose={() => setViewCertPath(null)}
           learnerName={displayName || 'Learner'}
           path={viewCertPath}
+          certificateId={badges.find((badge) => badge.badgeType === `cert:${viewCertPath.id}`)?.id}
         />
       )}
 

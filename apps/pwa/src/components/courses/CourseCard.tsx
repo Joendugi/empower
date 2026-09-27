@@ -31,7 +31,7 @@ export default function CourseCard({
     <article className="card-interactive h-full flex flex-col justify-between !p-6 border-white/[0.08] group">
       <div>
         <div className="flex items-start justify-between gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-surface-light border border-white/[0.08] flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-accent/15 group-hover:border-accent/30 transition-all shadow-inner">
+          <div className="w-12 h-12 rounded-md bg-surface-light border border-white/[0.08] flex items-center justify-center text-2xl group-hover:bg-accent/15 group-hover:border-accent/30 transition-colors">
             {courseIcon(path)}
           </div>
           <span

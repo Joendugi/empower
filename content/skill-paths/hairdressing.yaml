@@ -1,0 +1,41 @@
+id: "hairdressing"
+title: "Hairdressing & beauty"
+title_sw: "Urembo na nywele"
+description: "Hygiene and consultation, chemical safety, then finishing and aftercare."
+description_sw: "Usafi, kemikali, na aftercare."
+certification_target: "CDACC / NITA — Hairdressing & beauty"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "hairdressing-hygiene"
+    title: "Hygiene, consultation, and professional conduct"
+    title_sw: "Usafi, ushauri, na maadili"
+    description: "Infection control, client record, and when to refuse a service."
+    icon: "💇"
+    cdacc_unit_id: "CU/HBT/CR/01/5"
+    exam_domain: "Salon hygiene"
+    prerequisites: []
+    lesson_ids:
+      - "hairdressing-hygiene-lesson"
+  - id: "hairdressing-chemicals"
+    title: "Colour, relaxer, and chemical safety"
+    title_sw: "Rangi, relaxer, na kemikali"
+    description: "Patch test, mix ratios, timing, PPE, and never mixing unknown products."
+    icon: "💇"
+    cdacc_unit_id: "CU/HBT/CR/02/5"
+    exam_domain: "Chemical services"
+    prerequisites:
+      - "hairdressing-hygiene"
+    lesson_ids:
+      - "hairdressing-chemicals-lesson"
+  - id: "hairdressing-finish-salon"
+    title: "Cutting finish, styling heat, and aftercare"
+    title_sw: "Kumalizia kukata, heat, na aftercare"
+    description: "Balance, heat protection, and telling the client how to look after the work."
+    icon: "💇"
+    cdacc_unit_id: "CU/HBT/CR/03/5"
+    exam_domain: "Finish & aftercare"
+    prerequisites:
+      - "hairdressing-chemicals"
+    lesson_ids:
+      - "hairdressing-finish-salon-lesson"

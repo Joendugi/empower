@@ -1,0 +1,96 @@
+id: "vehicle-anatomy-electrical-lesson"
+course_id: "vehicle-anatomy"
+title: "Electrical nervous system: battery, alternator, loads"
+title_sw: "Mfumo wa umeme: betri, alternator, loads"
+briefing: "Think of the electrical system as a nervous system on a cutaway layer: battery (stored energy), starter (cranking load), alternator (running generation), distribution (cables, fusible links, boxes), controllers (ECU, body modules), and loads (lamps, pumps, ignition, infotainment).\n\nThe battery must crank and buffer. The alternator must cover running loads plus recharge. A “dead battery” after night parking can be a parasitic draw or a charging fault — measure voltage and current; do not guess.\n\nEarths are half the circuit. A painted earth or a chewed loom at the hatch hinge is a living anatomy lesson. Fuses protect wires, not your schedule: a repeated fuse is a short, not a market for a bigger fuse.\n\nStarting path: ignition/enable → starter relay → solenoid → pinion to ring gear. Charging path: belt → alternator → output cable → battery positive, with the ECU sometimes commanding the field.\n\nNever work live on an SRS airbag circuit. Disconnect and wait as the data says. Anatomy includes what you must not probe."
+briefing_sw: "Betri inahifadhi. Starter inazungusha. Alternator inazalisha injini ikiwaka. Earth ni nusu ya mzunguko. Fuse inalinda waya, si kazi yako."
+estimated_minutes: 26
+license: "CC-BY-SA-4.0"
+exam_domain: "Vehicle electrical"
+exercises:
+  - id: "vehicle-anatomy-electrical-q1"
+    type: "MULTIPLE_CHOICE"
+    prompt: "While the engine runs, the main source of electrical energy should be the:"
+    options:
+      - id: "a"
+        text: "Phone charger"
+      - id: "b"
+        text: "Alternator"
+      - id: "c"
+        text: "Handbrake switch"
+      - id: "d"
+        text: "Radiator cap"
+    correct_answer: "b"
+    hint: "Generator."
+    explanation: "Alternator (or DC-DC on some hybrids). The battery buffers."
+    xp_reward: 50
+  - id: "vehicle-anatomy-electrical-q2"
+    type: "MULTIPLE_CHOICE"
+    prompt: "A fuse that blows again after you “upgrade” the rating is telling you:"
+    options:
+      - id: "a"
+        text: "The car wants more current"
+      - id: "b"
+        text: "There is still a short or overload — fix the circuit"
+      - id: "c"
+        text: "To fit steel wool"
+      - id: "d"
+        text: "To disconnect the earths forever"
+    correct_answer: "b"
+    hint: "Protection."
+    explanation: "The fuse is a designed weak point. Find the fault."
+    xp_reward: 50
+  - id: "vehicle-anatomy-electrical-fb1"
+    type: "FILL_BLANK"
+    prompt: "The machine that converts belt rotation into charging current is the ___."
+    correct_answer: "alternator"
+    hint: "Generator on the front of the engine."
+    explanation: "Alternator. Belt, pulley, regulator, and output cable are part of the same anatomy."
+    xp_reward: 50
+  - id: "vehicle-anatomy-electrical-diagram"
+    type: "DIAGRAM_LABEL"
+    prompt: "Label the charging and cranking parts."
+    options:
+      - id: "batt"
+        text: "Battery"
+      - id: "alt"
+        text: "Alternator"
+      - id: "start"
+        text: "Starter"
+    diagram_slots:
+      - id: "batt"
+        label: "Battery"
+        x: 16
+        y: 64
+      - id: "alt"
+        label: "Alternator"
+        x: 36
+        y: 32
+      - id: "start"
+        label: "Starter"
+        x: 42
+        y: 70
+    diagram_kind: "electrical"
+    correct_answer:
+      - "batt=batt"
+      - "alt=alt"
+      - "start=start"
+    hint: "Store, generate, crank."
+    explanation: "Battery stores, alternator generates, starter cranks."
+    xp_reward: 50
+  - id: "vehicle-anatomy-electrical-scenario"
+    type: "SCENARIO"
+    prompt: "Cranks slowly, lights dim, 11.2 V at rest. Anatomy-first action?"
+    options:
+      - id: "a"
+        text: "Replace the gearbox"
+      - id: "b"
+        text: "Test/charge/replace the battery and prove the charging circuit before more parts"
+      - id: "c"
+        text: "Bypass every fuse with wire"
+      - id: "d"
+        text: "Add coolant to the cells"
+    correct_answer: "b"
+    hint: "Stored energy first."
+    explanation: "Low rest voltage is a battery or parasitic story. Prove charge next."
+    xp_reward: 60

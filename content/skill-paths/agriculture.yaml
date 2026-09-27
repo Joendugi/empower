@@ -1,0 +1,41 @@
+id: "agriculture"
+title: "Agriculture & agribusiness"
+title_sw: "Kilimo na biashara ya kilimo"
+description: "Soil and husbandry, agrochemical safety, then records and marketing of the harvest."
+description_sw: "Udongo, dawa, na kumbukumbu za biashara."
+certification_target: "CDACC / NITA — Agriculture & agribusiness"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "agriculture-husbandry"
+    title: "Soil, water, and crop husbandry"
+    title_sw: "Udongo, maji, na mazao"
+    description: "pH, fertiliser sense, rotation, and not drowning a seedbed."
+    icon: "🌾"
+    cdacc_unit_id: "CU/AGR/CR/01/5"
+    exam_domain: "Crop production"
+    prerequisites: []
+    lesson_ids:
+      - "agriculture-husbandry-lesson"
+  - id: "agriculture-chemicals-farm"
+    title: "Agrochemicals, PPE, and spraying"
+    title_sw: "Dawa, PPE, na kunyunyiza"
+    description: "Original containers, no wind toward a school, and never a soda-bottle store."
+    icon: "🌾"
+    cdacc_unit_id: "CU/AGR/CR/02/5"
+    exam_domain: "Pesticide safety"
+    prerequisites:
+      - "agriculture-husbandry"
+    lesson_ids:
+      - "agriculture-chemicals-farm-lesson"
+  - id: "agriculture-business"
+    title: "Records, costs, and selling the crop"
+    title_sw: "Kumbukumbu, gharama, na soko"
+    description: "Agribusiness is numbers: inputs, yields, spoilage, and a market, not only planting."
+    icon: "🌾"
+    cdacc_unit_id: "CU/AGR/CR/03/5"
+    exam_domain: "Agribusiness"
+    prerequisites:
+      - "agriculture-chemicals-farm"
+    lesson_ids:
+      - "agriculture-business-lesson"

@@ -116,6 +116,8 @@ jobs:
         run: |
           pip install -e ".[dev]"
           pytest tests/ -v
+      - name: Validate catalogue
+        run: cyberlearn-content validate-catalogue ${{ github.workspace }}/content
 
   # ── Build ────────────────────────────────────────────────────────────
   build:

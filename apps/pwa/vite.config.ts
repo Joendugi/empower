@@ -1,4 +1,5 @@
 /// <reference types="vitest/config" />
+import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -15,8 +16,8 @@ export default defineConfig({
         name: 'Empower',
         short_name: 'Empower',
         description: 'Polytechnic trades, TVET, and cybersecurity for Kenya.',
-        theme_color: '#1a1a2e',
-        background_color: '#0d0d1a',
+        theme_color: '#111111',
+        background_color: '#111111',
         display: 'standalone',
         orientation: 'portrait',
         start_url: '/',
@@ -75,6 +76,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@cyberlearn/ui': fileURLToPath(new URL('../../packages/ui/src/index.ts', import.meta.url)),
     },
   },
   server: {

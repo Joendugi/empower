@@ -14,6 +14,7 @@ export interface PublicStudy {
   summary: string;
   body: string;
   sources: string[];
+  lessonId: string;
   lessonPath: string;
   anatomyKind?: AnatomyKind;
   tradeKit: TradeKit;
@@ -59,6 +60,7 @@ function sourcesFor(programme: TradeProgramme, mod: TradeModule) {
 }
 
 function toStudy(programme: TradeProgramme, mod: TradeModule): PublicStudy {
+  const lessonId = `${programme.id}-${mod.slug}-lesson`;
   return {
     slug: `${programme.id}-${mod.slug}`,
     programmeId: programme.id,
@@ -70,7 +72,8 @@ function toStudy(programme: TradeProgramme, mod: TradeModule): PublicStudy {
     summary: mod.description,
     body: mod.briefing,
     sources: sourcesFor(programme, mod),
-    lessonPath: `/learn/lesson/${programme.id}-${mod.slug}-lesson`,
+    lessonId,
+    lessonPath: `/learn/lesson/${lessonId}`,
     anatomyKind: programme.id === 'vehicle-anatomy' ? anatomyKinds[mod.slug] : undefined,
     tradeKit: kitByProgramme[programme.id] ?? 'workshop',
   };

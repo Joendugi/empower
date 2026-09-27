@@ -103,3 +103,20 @@ async def test_claim_certificate_when_weeks_complete(client: AsyncClient) -> Non
     listed = await client.get("/api/v1/certificates/me")
     assert listed.status_code == 200
     assert any(item["badgeType"] == "cert:demo-path" for item in listed.json())
+
+    cert_id = claimed.json()["id"]
+    client.headers.pop("Authorization", None)
+    public = await client.get(f"/api/v1/certificates/{cert_id}")
+    assert public.status_code == 200
+    assertion = public.json()
+    assert assertion["id"].endswith(f"/certificates/{cert_id}")
+    assert assertion["credentialSubject"]["name"] == "Cert Learner"
+    assert assertion["empower"]["verifyUrl"].endswith(f"/verify/{cert_id}")
+
+    pdf = await client.get(f"/api/v1/certificates/{cert_id}/pdf")
+    assert pdf.status_code == 200
+    assert pdf.headers["content-type"].startswith("application/pdf")
+    assert pdf.content.startswith(b"%PDF")
+
+    missing = await client.get("/api/v1/certificates/not-a-real-cert")
+    assert missing.status_code == 404

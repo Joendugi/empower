@@ -45,6 +45,10 @@ import {
 } from './cyberSemester';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { toPublicLesson } from '@/lib/publicLesson';
+import generatedCatalogue from './generated/catalogue.json';
+
+const yamlSkillPaths = (generatedCatalogue.paths ?? []) as SkillPath[];
+const yamlLessons = (generatedCatalogue.lessons ?? []) as Lesson[];
 
 export const allLessons: Lesson[] = [
   tvetWorkshopSafety,
@@ -81,7 +85,7 @@ export const allLessons: Lesson[] = [
 ];
 
 export const lessonsById: Record<string, Lesson> = Object.fromEntries(
-  allLessons.map((lesson) => [lesson.id, lesson])
+  [...allLessons, ...yamlLessons].map((lesson) => [lesson.id, lesson])
 );
 
 let publicLessonsById: Record<string, Lesson> | null = null;
@@ -91,7 +95,7 @@ let publicHydrate: Promise<void> | null = null;
 export async function hydratePublicCatalogue(): Promise<void> {
   if (publicLessonsById) return;
   if (!publicHydrate) {
-    publicHydrate = Promise.all(allLessons.map((lesson) => toPublicLesson(lesson))).then((lessons) => {
+    publicHydrate = Promise.all(Object.values(lessonsById).map((lesson) => toPublicLesson(lesson))).then((lessons) => {
       publicLessonsById = Object.fromEntries(lessons.map((lesson) => [lesson.id, lesson]));
     });
   }
@@ -105,14 +109,43 @@ function withoutPlaintextAnswers(lesson: Lesson): Lesson {
   };
 }
 
+function lessonCount(path: SkillPath) {
+  return path.nodes.reduce((sum, node) => sum + node.lessonIds.length, 0);
+}
+
+function versionWins(incoming: SkillPath, existing: SkillPath) {
+  if (incoming.contentVersion && existing.contentVersion) {
+    return incoming.contentVersion >= existing.contentVersion && lessonCount(incoming) >= lessonCount(existing);
+  }
+  return lessonCount(incoming) >= lessonCount(existing);
+}
+
 export function getSkillPaths(): SkillPath[] {
-  return [...builtInSkillPaths, ...useCurriculumStore.getState().paths];
+  const store = useCurriculumStore.getState();
+  const cloud = store.cloudPaths ?? [];
+  const custom = store.paths ?? [];
+  const byId = new Map<string, SkillPath>();
+  for (const path of yamlSkillPaths.length ? yamlSkillPaths : builtInSkillPaths) byId.set(path.id, path);
+  for (const path of builtInSkillPaths) {
+    const existing = byId.get(path.id);
+    if (!existing || lessonCount(path) > lessonCount(existing)) byId.set(path.id, path);
+  }
+  for (const path of cloud) {
+    const existing = byId.get(path.id);
+    if (existing && !versionWins(path, existing)) continue;
+    byId.set(path.id, path);
+  }
+  for (const path of custom) {
+    if (!path.id.startsWith('custom-')) continue;
+    byId.set(path.id, path);
+  }
+  return [...byId.values()];
 }
 
 export function getLesson(id: string): Lesson | undefined {
   const custom = useCurriculumStore.getState().lessons[id];
   if (custom) {
-    return custom.exercises.some((item) => item.correctAnswer !== undefined)
+    return custom.exercises?.some((item) => item.correctAnswer !== undefined)
       ? withoutPlaintextAnswers(custom)
       : custom;
   }
@@ -121,9 +154,17 @@ export function getLesson(id: string): Lesson | undefined {
   return raw ? withoutPlaintextAnswers(raw) : undefined;
 }
 
+export async function getLessonAsync(id: string): Promise<Lesson | undefined> {
+  const local = getLesson(id);
+  if (local) return local;
+  const fetched = await useCurriculumStore.getState().fetchLesson(id);
+  return fetched ?? undefined;
+}
+
 export const tvetIctPath: SkillPath = {
   id: 'tvet-ict-technician',
   track: 'tvet',
+  contentVersion: '1',
   title: 'TVET ICT Technician',
   titleSw: 'Fundi wa ICT wa TVET',
   description:
@@ -237,6 +278,7 @@ export const tvetIctPath: SkillPath = {
 export const cybersecurityPath: SkillPath = {
   id: 'cybersecurity',
   track: 'cybersecurity',
+  contentVersion: '1',
   title: 'Cybersecurity Practitioner',
   titleSw: 'Mtaalamu wa usalama wa mtandao',
   description:

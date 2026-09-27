@@ -1,0 +1,28 @@
+id: "water-sanitation-hygiene"
+title: "Water, sanitation & hygiene (WASH)"
+title_sw: "Maji, usafi wa mazingira na afya"
+description: "Safe-water chains, household treatment, sanitation inspection, handwashing stations, and community maintenance."
+description_sw: "Maji salama, treatment, ukaguzi wa vyoo, handwashing, na matengenezo ya jamii."
+certification_target: "WASH community technician foundation"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "water-sanitation-hygiene-safe-water"
+    title: "Week 1 — Safe-water chain from source to cup"
+    title_sw: "Wiki 1 — Maji salama kutoka chanzo hadi kikombe"
+    description: "Protect the source, transport cleanly, treat correctly, store covered, and prevent recontamination."
+    icon: "💧"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites: []
+    lesson_ids:
+      - "water-sanitation-hygiene-safe-water-lesson"
+  - id: "water-sanitation-hygiene-sanitation"
+    title: "Week 2 — Sanitation inspection and handwashing facilities"
+    title_sw: "Wiki 2 — Ukaguzi wa vyoo na handwashing"
+    description: "Keep excreta away from people and water; build maintainable handwashing and report unsafe pits."
+    icon: "💧"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites:
+      - "water-sanitation-hygiene-safe-water"
+    lesson_ids:
+      - "water-sanitation-hygiene-sanitation-lesson"

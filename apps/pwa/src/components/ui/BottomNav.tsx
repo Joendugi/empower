@@ -15,33 +15,28 @@ export default function BottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-3 inset-x-0 z-30 flex justify-center px-4 pointer-events-none">
-      <nav className="pointer-events-auto w-full max-w-md glass-dock rounded-2xl p-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.5)] border border-white/[0.12]">
-        <div className="grid grid-cols-4 gap-1">
-          {items.map((item) => {
-            const active = location.pathname.startsWith(item.to);
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={clsx(
-                  'relative flex flex-col items-center justify-center py-2 px-1 rounded-xl text-[11px] font-semibold transition-all duration-200',
-                  active
-                    ? 'text-accent bg-accent/15 shadow-[0_0_15px_rgba(0,212,170,0.15)] font-bold'
-                    : 'text-muted hover:text-white hover:bg-white/[0.04]'
-                )}
-              >
-                {active && (
-                  <span className="absolute -top-1 w-6 h-1 rounded-full bg-accent shadow-[0_0_8px_rgba(0,212,170,0.8)]" />
-                )}
-                <Icon className={clsx('w-5 h-5 mb-1 transition-transform', active ? 'scale-110' : '')} />
-                <span>{item.label}</span>
-              </Link>
-            );
-          })}
-        </div>
-      </nav>
-    </div>
+    <nav className="fixed bottom-0 inset-x-0 z-30 border-t border-white/[0.08] bg-primary-dark">
+      <div className="mx-auto max-w-md grid grid-cols-4">
+        {items.map((item) => {
+          const active = location.pathname.startsWith(item.to);
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={clsx(
+                'flex flex-col items-center justify-center py-2.5 px-1 text-[11px] font-medium border-t-2 transition-colors',
+                active
+                  ? 'text-white border-accent'
+                  : 'text-muted border-transparent hover:text-white'
+              )}
+            >
+              <Icon className="w-5 h-5 mb-1" />
+              <span>{item.label}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
   );
 }

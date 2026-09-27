@@ -1,0 +1,84 @@
+id: tvet-computer-hardware-1
+course_id: computer-hardware
+title: Identify and replace core components
+title_sw: Tambua na badilisha sehemu kuu
+estimated_minutes: 9
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CR/01/5
+exam_domain: CDACC ICT Technician — Computer Repair
+exercises:
+  - id: tvet-hw-q1
+    type: MATCH_PAIRS
+    prompt: Match each component to its role.
+    pairs:
+      - left:
+          id: ram
+          text: RAM
+        right:
+          id: volatile
+          text: Volatile working memory
+      - left:
+          id: ssd
+          text: SSD
+        right:
+          id: storage
+          text: Persistent storage
+      - left:
+          id: psu
+          text: PSU
+        right:
+          id: power
+          text: Converts AC to DC rails
+      - left:
+          id: cpu
+          text: CPU
+        right:
+          id: execute
+          text: Executes instructions
+    correct_answer:
+      - ram=volatile
+      - ssd=storage
+      - psu=power
+      - cpu=execute
+    hint: Think forget on power-off vs keep files.
+    explanation: RAM loses data at power-off. Storage keeps the OS and user files. The PSU feeds DC to the board; the CPU executes code.
+    xp_reward: 60
+  - id: tvet-hw-q2
+    type: MULTIPLE_CHOICE
+    prompt: A PC powers fans but never beeps or shows a logo. Which check is most useful next?
+    options:
+      - id: a
+        text: Reinstall Microsoft Office
+      - id: b
+        text: Reseat RAM and confirm motherboard power connectors
+      - id: c
+        text: Buy a new monitor immediately
+      - id: d
+        text: Format the SSD
+    correct_answer: b
+    hint: No POST usually means power, CPU, or memory — not applications.
+    explanation: If the machine never posts, start with 24-pin/8-pin power, CPU seating, and RAM. Software cannot run yet.
+    xp_reward: 50
+  - id: tvet-hw-q3
+    type: FILL_BLANK
+    prompt: The firmware that initialises hardware before the operating system loads is the ___.
+    correct_answer: BIOS
+    hint: UEFI is the modern equivalent; either name is used in many TVET papers. We accept BIOS here.
+    explanation: BIOS/UEFI runs power-on self-test and then hands control to the bootloader.
+    xp_reward: 50
+  - id: tvet-hw-q4
+    type: SCENARIO
+    prompt: A college lab PC suddenly shuts down under load and smells hot. PSU rails were never tested. What should you do?
+    options:
+      - id: a
+        text: Keep running Prime95 to confirm
+      - id: b
+        text: Replace RAM first because it is cheapest
+      - id: c
+        text: Stop the test, check ventilation and measure PSU voltages before swapping parts
+      - id: d
+        text: Install a second operating system
+    correct_answer: c
+    hint: Heat plus shutdown points to power or cooling.
+    explanation: Technicians measure 12V/5V/3.3V, clean dust, and confirm the CPU cooler is seated before gambling on random replacements.
+    xp_reward: 60

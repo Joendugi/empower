@@ -1,0 +1,5 @@
+# Landing featured programmes. CI fails if an id is missing from skill-paths.
+path_ids:
+  - automotive
+  - solar-energy
+  - cybersecurity

@@ -1,0 +1,97 @@
+id: "vehicle-anatomy-engine-lesson"
+course_id: "vehicle-anatomy"
+title: "Engine cutaway: air, fuel, spark, bottom end"
+title_sw: "Cutaway ya injini"
+briefing: "The engine is a pump that burns a mixture and turns heat into crank rotation. Vocational maps split: top end (head, valves, cam, intake, exhaust, ignition or injectors) and bottom end (block, pistons, rods, crank, sump).\n\nFour-stroke order: intake, compression, power, exhaust. Spark-ignition (petrol) lights a compressed mix. Compression-ignition (diesel) injects into hot air. Wrong fuel, wrong glow/spark, or no air (blocked filter / collapsed hose) all look like “no power”.\n\nAir path: filter → meter/MAF if fitted → throttle or diesel intake → manifold → valve → cylinder. Exhaust: valve → manifold → turbo if fitted → after-treatment → silencer. A boost leak after a turbo is a power complaint with a black or clean tailpipe depending on fueling.\n\nBottom-end noises and oil pressure are not “add thicker oil and release”. Low pressure, mayonnaise, coolant in oil, or white smoke send you to the cooling and sealing lesson next — the systems share the head gasket and jackets.\n\nAlways isolate: fuel delivery, spark/glow, compression, timing, air. Anatomy prevents swapping a coil when the timing chain has jumped."
+briefing_sw: "Injini ni pampu ya moto. Top end: kichwa, valves, intake, exhaust. Bottom end: block, pistoni, crank. Four-stroke: intake, compression, power, exhaust. Tenganisha hewa, mafuta, cheche, compression."
+estimated_minutes: 30
+license: "CC-BY-SA-4.0"
+cdacc_unit_id: "CU/AUT/CR/02/5"
+exam_domain: "Internal combustion engine"
+exercises:
+  - id: "vehicle-anatomy-engine-q1"
+    type: "MULTIPLE_CHOICE"
+    prompt: "The crankshaft lives in the:"
+    options:
+      - id: "a"
+        text: "Fuse box"
+      - id: "b"
+        text: "Cylinder head cover only"
+      - id: "c"
+        text: "Bottom end of the block"
+      - id: "d"
+        text: "Radiator tank"
+    correct_answer: "c"
+    hint: "Rotating assembly."
+    explanation: "Pistons and rods turn the crank in the block. The head holds valves."
+    xp_reward: 50
+  - id: "vehicle-anatomy-engine-q2"
+    type: "MULTIPLE_CHOICE"
+    prompt: "A diesel that will not start after sitting in the cold is missing heat for:"
+    options:
+      - id: "a"
+        text: "Compression ignition of injected fuel"
+      - id: "b"
+        text: "A petrol spark plug"
+      - id: "c"
+        text: "The radio mute"
+      - id: "d"
+        text: "Power steering fluid colour"
+    correct_answer: "a"
+    hint: "No spark plugs on a diesel."
+    explanation: "Glow plugs / compression heat. Petrol needs a spark; diesel needs hot air."
+    xp_reward: 50
+  - id: "vehicle-anatomy-engine-fb1"
+    type: "FILL_BLANK"
+    prompt: "The four strokes are intake, compression, power, and ___."
+    correct_answer: "exhaust"
+    hint: "Spent gas leaves."
+    explanation: "Intake–compression–power–exhaust."
+    xp_reward: 50
+  - id: "vehicle-anatomy-engine-diagram"
+    type: "DIAGRAM_LABEL"
+    prompt: "Place the labels on this engine cutaway."
+    options:
+      - id: "head"
+        text: "Cylinder head"
+      - id: "block"
+        text: "Block / pistons"
+      - id: "crank"
+        text: "Crankshaft"
+    diagram_slots:
+      - id: "head"
+        label: "Cylinder head"
+        x: 48
+        y: 28
+      - id: "block"
+        label: "Block / pistons"
+        x: 48
+        y: 52
+      - id: "crank"
+        label: "Crankshaft"
+        x: 48
+        y: 76
+    diagram_kind: "engine"
+    correct_answer:
+      - "head=head"
+      - "block=block"
+      - "crank=crank"
+    hint: "Top end, bottom end, rotating assembly."
+    explanation: "Head above, pistons in the block, crank at the bottom."
+    xp_reward: 50
+  - id: "vehicle-anatomy-engine-scenario"
+    type: "SCENARIO"
+    prompt: "A 1.5 petrol has a misfire on cylinder 2. Anatomy-first checks?"
+    options:
+      - id: "a"
+        text: "Replace the gearbox"
+      - id: "b"
+        text: "Spark/injector, compression/leak-down, then timing — on that hole"
+      - id: "c"
+        text: "Fit a larger battery only"
+      - id: "d"
+        text: "Bypass the radiator"
+    correct_answer: "b"
+    hint: "One cylinder."
+    explanation: "Localise to the hole before you replace a used engine."
+    xp_reward: 60

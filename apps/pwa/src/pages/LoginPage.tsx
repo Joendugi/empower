@@ -87,7 +87,7 @@ export default function LoginPage() {
           : t('authStatusChecking');
 
   return (
-    <div className="min-h-dvh bg-primary-dark text-white flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden bg-grid-pattern">
+    <div className="min-h-dvh bg-primary-dark text-white flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
       {/* African TVET School Workshop Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-35 pointer-events-none"
@@ -107,7 +107,7 @@ export default function LoginPage() {
         </Link>
 
         {/* Auth Card */}
-        <div className="card !p-7 border-white/[0.12] shadow-2xl backdrop-blur-2xl">
+        <div className="card !p-7">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="badge-accent text-[11px] font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
@@ -151,7 +151,7 @@ export default function LoginPage() {
                   Educator accounts submit credentials for admin review before publishing curriculum.
                 </p>
                 <input
-                  className="w-full rounded-xl bg-surface/90 border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent/60 placeholder:text-muted"
+                  className="w-full rounded-md bg-surface border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent placeholder:text-muted"
                   placeholder={t('displayName')}
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
@@ -162,7 +162,7 @@ export default function LoginPage() {
 
             <div className="space-y-3">
               <input
-                className="w-full rounded-xl bg-surface/90 border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent/60 placeholder:text-muted"
+                className="w-full rounded-md bg-surface border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent placeholder:text-muted"
                 placeholder={t('email')}
                 type="email"
                 autoComplete="username"
@@ -171,7 +171,7 @@ export default function LoginPage() {
                 required
               />
               <input
-                className="w-full rounded-xl bg-surface/90 border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent/60 placeholder:text-muted"
+                className="w-full rounded-md bg-surface border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent placeholder:text-muted"
                 placeholder={t('password')}
                 type="password"
                 autoComplete={mode === 'login' ? 'current-password' : 'new-password'}

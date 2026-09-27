@@ -49,6 +49,7 @@ class Settings(BaseSettings):
     ADMIN_STAFF_KEY: str = ""
     TRUSTED_HOSTS: list[str] = []
     PUBLIC_HOST: str = ""
+    PUBLIC_APP_URL: str = ""
 
     # Environment
     ENVIRONMENT: str = "development"  # development | staging | production
@@ -111,6 +112,22 @@ class Settings(BaseSettings):
     @property
     def cookie_secure(self) -> bool:
         return self.is_production or self.AUTH_COOKIE_SECURE
+
+    def public_api_origin(self) -> str:
+        host = self.PUBLIC_HOST.strip()
+        if host.startswith("http://") or host.startswith("https://"):
+            return host.rstrip("/")
+        if host:
+            return f"https://{host}"
+        return "http://localhost:8000"
+
+    def public_app_origin(self) -> str:
+        app = self.PUBLIC_APP_URL.strip().rstrip("/")
+        if app:
+            return app
+        if self.PUBLIC_HOST.strip():
+            return self.public_api_origin()
+        return "http://localhost:5173"
 
     @property
     def allowed_hosts(self) -> list[str]:

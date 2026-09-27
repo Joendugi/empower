@@ -32,12 +32,19 @@ export default function CertificateModal({
 
   if (!isOpen) return null;
 
+  const issued = /^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(certificateId);
+  const verifyPath = issued ? `/verify/${certificateId}` : `/verify?cert=${certificateId}`;
+
   const handlePrint = () => {
+    if (issued) {
+      window.open(`/api/v1/certificates/${certificateId}/pdf`, '_blank', 'noopener');
+      return;
+    }
     window.print();
   };
 
   const handleShare = async () => {
-    const url = `${window.location.origin}/verify?cert=${certificateId}`;
+    const url = `${window.location.origin}${verifyPath}`;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -55,8 +62,8 @@ export default function CertificateModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary-dark/85 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-surface border border-white/[0.12] rounded-3xl shadow-2xl overflow-hidden flex flex-col my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary-dark/90 overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-surface border border-white/[0.12] rounded-lg overflow-hidden flex flex-col my-8">
         {/* Modal Top Bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-primary-dark/50">
           <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-wider">
@@ -69,7 +76,7 @@ export default function CertificateModal({
               onClick={handlePrint}
               className="btn-secondary !py-1.5 !px-3 text-xs flex items-center gap-1.5"
             >
-              <Printer className="w-3.5 h-3.5" /> Print / Save PDF
+              <Printer className="w-3.5 h-3.5" /> {issued ? 'Download PDF' : 'Print / Save PDF'}
             </button>
             <button
               type="button"
@@ -91,11 +98,8 @@ export default function CertificateModal({
         {/* Certificate Canvas / Printable Body */}
         <div 
           ref={certRef}
-          className="p-8 sm:p-10 bg-[#0d0f18] text-white border-8 border-double border-accent/30 m-4 rounded-2xl relative overflow-hidden print:m-0 print:border-4 print:text-black print:bg-white"
+          className="p-8 sm:p-10 bg-primary-dark text-white border border-white/10 m-4 rounded-md relative overflow-hidden print:m-0 print:border print:text-black print:bg-white"
         >
-          {/* Subtle Guilloche Watermark / Decorative Corner Rings */}
-          <div className="absolute top-0 left-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-32 h-32 bg-yellow-400/5 rounded-full blur-3xl pointer-events-none" />
 
           {/* Header */}
           <div className="text-center space-y-2">
@@ -113,7 +117,7 @@ export default function CertificateModal({
 
           {/* Recipient Name */}
           <div className="text-center my-6 py-3 border-y border-white/[0.08]">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight bg-gradient-to-r from-accent via-teal-200 to-emerald-400 bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
               {learnerName || 'Learner'}
             </h2>
             <p className="text-xs text-muted-light mt-1">
@@ -155,7 +159,7 @@ export default function CertificateModal({
 
             {/* Certification Seal */}
             <div className="text-right space-y-0.5">
-              <div className="w-12 h-12 rounded-full border-2 border-yellow-400/40 bg-yellow-400/10 text-yellow-400 ml-auto flex items-center justify-center font-bold text-xs shadow-glow-xp">
+              <div className="w-12 h-12 rounded-md border border-white/20 bg-surface-light text-white ml-auto flex items-center justify-center font-semibold text-xs">
                 ★ SEAL ★
               </div>
               <p className="text-[9px] font-mono text-muted mt-1">Academic Registrar</p>

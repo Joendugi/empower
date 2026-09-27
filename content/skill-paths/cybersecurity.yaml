@@ -4,6 +4,7 @@ title_sw: Mtaalamu wa Usalama wa Mtandao
 description: Defensive security from digital safety through networks, Linux, web vulnerabilities, and Kenyan cyber law.
 certification_target: CompTIA Security+ · eJPT foundations
 track: cybersecurity
+content_version: "1"
 nodes:
   - id: digital-safety-101
     title: Digital Safety 101

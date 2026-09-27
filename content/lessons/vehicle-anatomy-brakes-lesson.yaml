@@ -1,0 +1,96 @@
+id: "vehicle-anatomy-brakes-lesson"
+course_id: "vehicle-anatomy"
+title: "Stop and steer: hydraulics, discs, suspension"
+title_sw: "Simama na elekeza: hydraulics, discs, suspension"
+briefing: "Brakes convert motion to heat. The pedal moves a booster (vacuum or electric) then a tandem master cylinder. Fluid in two circuits (diagonal or front/rear split) goes through lines, often an ABS modulator, to calipers (disc) or wheel cylinders (drum). Pads clamp a disc; shoes expand in a drum. A leaking hose or boiling old fluid is a long pedal.\n\nABS does not create grip; it limits lock so you can still steer. If the ABS light is on, you still have foundation brakes — but the anatomy of the modulator and sensors is now in play.\n\nThe same corner holds the hub, bearing, disc, caliper bracket, steering arm, spring, and damper. A warped disc complaint is often a hub face or a sticking slide. A pull under braking can be a seized caliper, a collapsed hose, or alignment after a bent arm.\n\nSteering: rack (or box), track rods, and geometry (toe, camber, caster). Suspension: spring supports the mass; damper controls the oscillation. Anatomy sites draw them together because a tyre only works when it is pointing and loaded correctly."
+briefing_sw: "Pedal → booster → master → mistari → caliper au drum. ABS haizai grip. Koner moja ina disc, bearing, spring, damper, na steering arm."
+estimated_minutes: 28
+license: "CC-BY-SA-4.0"
+exam_domain: "Brakes and chassis corners"
+exercises:
+  - id: "vehicle-anatomy-brakes-q1"
+    type: "MULTIPLE_CHOICE"
+    prompt: "A tandem master cylinder is used so that:"
+    options:
+      - id: "a"
+        text: "One leak can still leave a second circuit"
+      - id: "b"
+        text: "The radio stays on"
+      - id: "c"
+        text: "The engine idles higher"
+      - id: "d"
+        text: "The differential locks"
+    correct_answer: "a"
+    hint: "Split circuit."
+    explanation: "Legal dual-circuit design. A single leak must not empty the whole system."
+    xp_reward: 50
+  - id: "vehicle-anatomy-brakes-q2"
+    type: "MULTIPLE_CHOICE"
+    prompt: "ABS is designed to:"
+    options:
+      - id: "a"
+        text: "Always shorten stopping on ice below foundation brakes"
+      - id: "b"
+        text: "Limit lock so the driver can still steer"
+      - id: "c"
+        text: "Replace pads automatically"
+      - id: "d"
+        text: "Cool the radiator"
+    correct_answer: "b"
+    hint: "Steer while braking."
+    explanation: "Anti-lock. On some surfaces stopping distance can grow; control is the point."
+    xp_reward: 50
+  - id: "vehicle-anatomy-brakes-fb1"
+    type: "FILL_BLANK"
+    prompt: "Disc brakes use a ___ to squeeze the pads."
+    correct_answer: "caliper"
+    hint: "Clamp."
+    explanation: "Caliper. Slides and piston seals are service items."
+    xp_reward: 50
+  - id: "vehicle-anatomy-brakes-diagram"
+    type: "DIAGRAM_LABEL"
+    prompt: "Label the hydraulic path to the corner."
+    options:
+      - id: "master"
+        text: "Master cylinder"
+      - id: "caliper"
+        text: "Caliper + disc"
+      - id: "susp"
+        text: "Spring / damper"
+    diagram_slots:
+      - id: "master"
+        label: "Master cylinder"
+        x: 34
+        y: 20
+      - id: "caliper"
+        label: "Caliper + disc"
+        x: 80
+        y: 64
+      - id: "susp"
+        label: "Spring / damper"
+        x: 78
+        y: 26
+    diagram_kind: "brakes"
+    correct_answer:
+      - "master=master"
+      - "caliper=caliper"
+      - "susp=susp"
+    hint: "Pressure starts at the master; clamp is at the disc."
+    explanation: "Master, caliper, and the corner that holds the tyre down."
+    xp_reward: 50
+  - id: "vehicle-anatomy-brakes-scenario"
+    type: "SCENARIO"
+    prompt: "Long pedal after a hose job, no warning lamp. First anatomy check?"
+    options:
+      - id: "a"
+        text: "Bleed and inspect for a leak or leftover air in the open circuit"
+      - id: "b"
+        text: "Fit a new gearbox"
+      - id: "c"
+        text: "Charge the air-con only"
+      - id: "d"
+        text: "Remove the thermostat"
+    correct_answer: "a"
+    hint: "Hydraulics."
+    explanation: "Open the system, you own the bleed. Then look for a drip you created."
+    xp_reward: 60

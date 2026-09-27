@@ -1,0 +1,64 @@
+id: tvet-workshop-safety-1
+course_id: workshop-safety
+title: Workshop and electrical safety
+title_sw: Usalama wa warsha na umeme
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/OS/01/5
+exam_domain: CDACC ICT Technician — Occupational Safety
+exercises:
+  - id: tvet-safe-q1
+    type: MULTIPLE_CHOICE
+    prompt: What should you do first before opening a desktop PSU-side cover?
+    options:
+      - id: a
+        text: Touch the motherboard to discharge yourself
+      - id: b
+        text: Unplug the PC and hold the power button to drain residual charge
+      - id: c
+        text: Spray water on the PSU to cool it
+      - id: d
+        text: Increase the room humidity with a kettle
+    correct_answer: b
+    hint: Power isolation comes before tools.
+    explanation: Unplug mains, then hold the case power button so capacitors discharge. Only then open the chassis.
+    xp_reward: 50
+  - id: tvet-safe-q2
+    type: FILL_BLANK
+    prompt: A wrist strap that connects you to the computer chassis is used to prevent ___.
+    correct_answer: ESD
+    hint: It is also called static electricity damage.
+    explanation: Electrostatic discharge (ESD) can silently destroy RAM, NICs, and motherboard chips.
+    xp_reward: 50
+  - id: tvet-safe-q3
+    type: SCENARIO
+    prompt: A learner smells burning plastic from a lab PC. What is the correct first action?
+    options:
+      - id: a
+        text: Keep troubleshooting so you do not lose the practical marks
+      - id: b
+        text: Pour water on the machine
+      - id: c
+        text: Switch off at the wall, unplug, and report to the instructor
+      - id: d
+        text: Cover the PC with a cloth and continue
+    correct_answer: c
+    hint: Life and fire safety beat the exam clock.
+    explanation: Isolate power, do not use water on electrical fires, and escalate. CDACC workshops treat this as an incident, not a race.
+    xp_reward: 60
+  - id: tvet-safe-q4
+    type: MULTIPLE_CHOICE
+    prompt: Which fire extinguisher class is appropriate for a live electrical cabinet?
+    options:
+      - id: a
+        text: Class A water
+      - id: b
+        text: Class B foam only
+      - id: c
+        text: CO₂ or dry powder rated for electrical fires
+      - id: d
+        text: Wet chemical for kitchens only
+    correct_answer: c
+    hint: Water conducts electricity.
+    explanation: CO₂ or dry powder are used on electrical fires. Water can electrocute the technician.
+    xp_reward: 50

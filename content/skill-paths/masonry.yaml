@@ -1,0 +1,41 @@
+id: "masonry"
+title: "Masonry & building technology"
+title_sw: "Uashi na teknolojia ya ujenzi"
+description: "Setting out, mortar and first course, then wall quality and weather protection."
+description_sw: "Setting out, chokaa, kozi ya kwanza, na ubora wa ukuta."
+certification_target: "CDACC / NITA — Masonry & building technology"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "masonry-setout"
+    title: "Site safety and setting out"
+    title_sw: "Usalama wa site na setting out"
+    description: "PPE, working platforms, profiles, and getting the building on the lines."
+    icon: "🧱"
+    cdacc_unit_id: "CU/MAS/CR/01/5"
+    exam_domain: "Setting out"
+    prerequisites: []
+    lesson_ids:
+      - "masonry-setout-lesson"
+  - id: "masonry-first-course"
+    title: "Mortar, bond, and the first course"
+    title_sw: "Chokaa, bond, na kozi ya kwanza"
+    description: "Mix as specified, bed the first course true, and keep perpends aligned."
+    icon: "🧱"
+    cdacc_unit_id: "CU/MAS/CR/02/5"
+    exam_domain: "Brick/block work"
+    prerequisites:
+      - "masonry-setout"
+    lesson_ids:
+      - "masonry-first-course-lesson"
+  - id: "masonry-quality"
+    title: "Plumb, line, curing, and weather"
+    title_sw: "Plumb, line, curing, na hali ya hewa"
+    description: "Rise in lifts, protect green work from rain, and finish joints."
+    icon: "🧱"
+    cdacc_unit_id: "CU/MAS/CR/03/5"
+    exam_domain: "Quality of work"
+    prerequisites:
+      - "masonry-first-course"
+    lesson_ids:
+      - "masonry-quality-lesson"

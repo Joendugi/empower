@@ -1,0 +1,41 @@
+id: "body-works"
+title: "Motor vehicle body works"
+title_sw: "Kukarabati mwili wa gari"
+description: "Panel prep, filler, and spray-booth safety for body repair craft."
+description_sw: "Maandalizi ya panel, filler, na usalama wa rangi."
+certification_target: "CDACC / NITA — Motor vehicle body works"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "body-works-prep"
+    title: "Panel beating, cleanliness, and filler"
+    title_sw: "Panel beating, usafi, na filler"
+    description: "Metal finish first. Filler is thin layers on keyed, degreased metal."
+    icon: "🚐"
+    cdacc_unit_id: "CU/ABR/CR/01/5"
+    exam_domain: "Metal & filler"
+    prerequisites: []
+    lesson_ids:
+      - "body-works-prep-lesson"
+  - id: "body-works-paint"
+    title: "Masking, primer, and spray-booth rules"
+    title_sw: "Masking, primer, na booth"
+    description: "2K vapour needs a real respirator and a booth — not a cloth mask by the welder."
+    icon: "🚐"
+    cdacc_unit_id: "CU/ABR/CR/02/5"
+    exam_domain: "Paint safety"
+    prerequisites:
+      - "body-works-prep"
+    lesson_ids:
+      - "body-works-paint-lesson"
+  - id: "body-works-finish"
+    title: "Flatting, polish, and handing back the job"
+    title_sw: "Flatting, polish, na kukabidhi kazi"
+    description: "De-nib, polish, refit trim, and inspect in good light."
+    icon: "🚐"
+    cdacc_unit_id: "CU/ABR/CR/03/5"
+    exam_domain: "Finishing & QC"
+    prerequisites:
+      - "body-works-paint"
+    lesson_ids:
+      - "body-works-finish-lesson"

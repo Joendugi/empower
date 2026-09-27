@@ -19,7 +19,7 @@ export default function ProfileButton() {
   return (
     <Link
       to="/profile"
-      className="relative w-9 h-9 rounded-full bg-gradient-to-tr from-accent/20 to-surface-light border border-accent/40 text-accent text-xs font-bold flex items-center justify-center shrink-0 hover:scale-105 hover:border-accent hover:shadow-[0_0_15px_rgba(0,212,170,0.3)] transition-all"
+      className="relative w-9 h-9 rounded-md bg-surface-light border border-white/15 text-white text-xs font-semibold flex items-center justify-center shrink-0 hover:border-white/30 hover:bg-surface-lighter transition-colors"
       aria-label={t('profile')}
       title={t('profile')}
     >

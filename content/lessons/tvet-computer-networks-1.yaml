@@ -1,0 +1,77 @@
+id: tvet-computer-networks-1
+course_id: computer-networks
+title: Cables, IP addressing, and LAN devices
+title_sw: Nyaya, anwani za IP, na vifaa vya LAN
+estimated_minutes: 10
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CS/CR/01/6
+exam_domain: CDACC ICT Technician — Computer Networks
+exercises:
+  - id: tvet-net-q1
+    type: MULTIPLE_CHOICE
+    prompt: Which device is primarily responsible for forwarding frames inside one LAN?
+    options:
+      - id: a
+        text: Router
+      - id: b
+        text: Switch
+      - id: c
+        text: Modem only
+      - id: d
+        text: Printer
+    correct_answer: b
+    hint: Think MAC addresses, not internet links.
+    explanation: Switches learn MAC addresses and forward Ethernet frames. Routers make IP decisions between networks.
+    xp_reward: 50
+  - id: tvet-net-q2
+    type: FILL_BLANK
+    prompt: The connector used on a typical Cat6 Ethernet patch cord is ___.
+    correct_answer: RJ45
+    hint: Eight pins, plastic clip.
+    explanation: RJ45 terminates twisted-pair Ethernet. Poor crimps cause intermittent lab failures.
+    xp_reward: 50
+  - id: tvet-net-q3
+    type: MATCH_PAIRS
+    prompt: Match the address type to what it identifies.
+    pairs:
+      - left:
+          id: mac
+          text: MAC address
+        right:
+          id: nic
+          text: A specific network interface
+      - left:
+          id: ipv4
+          text: IPv4 address
+        right:
+          id: hostnet
+          text: A host on an IP network
+      - left:
+          id: port
+          text: TCP port
+        right:
+          id: service
+          text: An application service on a host
+    correct_answer:
+      - mac=nic
+      - ipv4=hostnet
+      - port=service
+    hint: Hardware vs network vs process.
+    explanation: MAC is L2 identity, IP is L3 location, ports distinguish services such as 80/443.
+    xp_reward: 60
+  - id: tvet-net-q4
+    type: SCENARIO
+    prompt: A new office PC has IP 192.168.1.50 but cannot reach the internet. The default gateway is blank. What should you configure?
+    options:
+      - id: a
+        text: The MAC address of Google
+      - id: b
+        text: The LAN router IP as default gateway, plus DNS
+      - id: c
+        text: A public IP on every printer
+      - id: d
+        text: Disable the switch
+    correct_answer: b
+    hint: No gateway means no path off the LAN.
+    explanation: The default gateway is the router that NAT/firewalls traffic to the WAN. DNS then resolves names such as safaricom.co.ke.
+    xp_reward: 60

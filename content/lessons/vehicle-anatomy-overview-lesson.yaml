@@ -1,0 +1,97 @@
+id: "vehicle-anatomy-overview-lesson"
+course_id: "vehicle-anatomy"
+title: "Whole-car map: body, cabin, chassis"
+title_sw: "Ramani ya gari: body, cabin, chasi"
+briefing: "Car-anatomy sites start with a map, not a single bolt. A vehicle is a carrying structure plus systems hung on it. The chassis (or subframe + body-in-white on a unibody car) is the skeleton: rails, cross-members, and mounting points that locate the engine, suspension, steering, and fuel tank. The body/cabin is the occupant cell and crash structure. Doors, glass, and trim are not the frame.\n\nUnibody cars combine body and structure. Body-on-frame pickups still have a ladder frame you can point to. Either way, loads travel: engine torque into mounts, braking into knuckles and subframe, pothole loads into springs and then the body. If a mount or rail is rusted, “just replace the part” is not a diagnosis.\n\nWalk a car the way a cutaway is layered: engine bay (power + cooling + charging), cabin (controls, HVAC, restraints), floor (exhaust, fuel, brake/fuel lines), corners (hub, bearing, brake, spring, damper, steering arm), rear (tank, spare, driveline).\n\nKenya workshop habit: look for accident pull, wet battery trays, crushed sills, and missing undertrays before you chase a noise. The map tells you which system can make that symptom.\n\nSources: vocational vehicle-systems units (body/frame, suspension, driveline, steering, fuel, intake/exhaust, lubrication, coolant, electrical, brakes, wheels) and standard service-technician component maps."
+briefing_sw: "Chasi ni mifupa. Body ni seli ya abiria. Tembea gari kama cutaway: engine bay, cabin, floor, pembe, nyuma. Kutu au ajali kwenye rail si “badilisha sehemu tu.”"
+estimated_minutes: 28
+license: "CC-BY-SA-4.0"
+cdacc_unit_id: "CU/AUT/CR/01/5"
+exam_domain: "Vehicle architecture"
+exercises:
+  - id: "vehicle-anatomy-overview-q1"
+    type: "MULTIPLE_CHOICE"
+    prompt: "On a unibody hatchback the “chassis” you load is mostly:"
+    options:
+      - id: "a"
+        text: "Only the plastic bumper"
+      - id: "b"
+        text: "The body-in-white rails, floors, and subframes that carry the units"
+      - id: "c"
+        text: "The radio fascia"
+      - id: "d"
+        text: "The spare wheel alone"
+    correct_answer: "b"
+    hint: "Skeleton plus mounts."
+    explanation: "Unibody structure locates every major unit. Bumpers are cover and crash energy, not the carrying frame."
+    xp_reward: 50
+  - id: "vehicle-anatomy-overview-q2"
+    type: "MULTIPLE_CHOICE"
+    prompt: "A cutaway “layer” that is not a powertrain layer is:"
+    options:
+      - id: "a"
+        text: "Engine and gearbox"
+      - id: "b"
+        text: "Occupant cabin and restraints"
+      - id: "c"
+        text: "Driveshafts and differential"
+      - id: "d"
+        text: "Clutch or torque converter"
+    correct_answer: "b"
+    hint: "People, not torque."
+    explanation: "Anatomy sites separate cabin/electrical layers from driveline layers."
+    xp_reward: 50
+  - id: "vehicle-anatomy-overview-fb1"
+    type: "FILL_BLANK"
+    prompt: "The main carrying structure of a vehicle is the ___."
+    correct_answer: "chassis"
+    hint: "French term used in vocational books."
+    explanation: "Chassis / carrying unit. Body sits on or is integrated with it."
+    xp_reward: 50
+  - id: "vehicle-anatomy-overview-diagram"
+    type: "DIAGRAM_LABEL"
+    prompt: "Label the whole-car cutaway the way an anatomy site layers the vehicle."
+    options:
+      - id: "engine"
+        text: "Engine bay"
+      - id: "cabin"
+        text: "Occupant cell"
+      - id: "chassis"
+        text: "Chassis / rails"
+    diagram_slots:
+      - id: "engine"
+        label: "Engine bay"
+        x: 22
+        y: 36
+      - id: "cabin"
+        label: "Occupant cell"
+        x: 50
+        y: 40
+      - id: "chassis"
+        label: "Chassis / rails"
+        x: 50
+        y: 78
+    diagram_kind: "overview"
+    correct_answer:
+      - "engine=engine"
+      - "cabin=cabin"
+      - "chassis=chassis"
+    hint: "Power up front, people in the middle, structure underneath."
+    explanation: "Engine bay, cabin, and carrying structure are three different layers."
+    xp_reward: 50
+  - id: "vehicle-anatomy-overview-scenario"
+    type: "SCENARIO"
+    prompt: "A matatu has a pull to the left and a crumpled front rail. First anatomy question?"
+    options:
+      - id: "a"
+        text: "Replace both tyres and hope"
+      - id: "b"
+        text: "Ask which structure and which corner geometry were moved, then measure"
+      - id: "c"
+        text: "Add a heavier spring on the right"
+      - id: "d"
+        text: "Disconnect the battery forever"
+    correct_answer: "b"
+    hint: "Map first."
+    explanation: "Pull after impact is geometry and structure, not a mystery alignment “click”."
+    xp_reward: 60

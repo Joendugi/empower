@@ -1,0 +1,96 @@
+id: "vehicle-anatomy-cooling-lesson"
+course_id: "vehicle-anatomy"
+title: "Cooling and lubrication loops"
+title_sw: "Mizunguko ya baridi na mafuta"
+briefing: "Combustion heat would seize the engine without two loops. Coolant carries heat from jackets in the block and head to the radiator. Air through the core (ram air + fans) dumps that heat. The thermostat holds temperature until the engine is warm, then opens. The pump (belt or electric) moves the liquid. An expansion tank gives the system a place to grow and a place to bleed.\n\nPressure (cap rating) raises the boiling point. Test only to spec. Plastic tanks on aluminium cores fail at the crimp; copper/brass can be soldered. Blocked tubes make cold vertical stripes on a hot core.\n\nOil is a film, not just a level on the dipstick. The pump picks up from the sump, through a pickup screen, to galleries, bearings, and often a cooler or filter bypass. Low level, aeration, or a blocked pickup is a bearing death sentence. Coolant in oil or oil in coolant is a shared-wall failure: gasket, cracked head, or cracked block.\n\nBleed after any open repair. An air lock at the head or heater matrix looks like a “bad thermostat”. Fans and shrouds are part of the anatomy — a missing shroud is a highway overheat waiting in Nairobi traffic."
+briefing_sw: "Coolant inachukua joto kwenda radiator. Thermostat inafungua baada ya joto. Pump inasukuma. Mafuta ni filamu kwenye bearings. Hewa kwenye mfumo inaiga thermostat mbaya."
+estimated_minutes: 28
+license: "CC-BY-SA-4.0"
+exam_domain: "Cooling and lubrication"
+exercises:
+  - id: "vehicle-anatomy-cooling-q1"
+    type: "MULTIPLE_CHOICE"
+    prompt: "The part that keeps coolant in the engine until it is warm is the:"
+    options:
+      - id: "a"
+        text: "Alternator"
+      - id: "b"
+        text: "Thermostat"
+      - id: "c"
+        text: "Handbrake cable"
+      - id: "d"
+        text: "Pollen filter"
+    correct_answer: "b"
+    hint: "Temperature valve."
+    explanation: "Thermostat. Stuck closed overheats; stuck open never warms and wastes fuel."
+    xp_reward: 50
+  - id: "vehicle-anatomy-cooling-q2"
+    type: "MULTIPLE_CHOICE"
+    prompt: "Oil’s primary job at the crank bearings is:"
+    options:
+      - id: "a"
+        text: "To paint the sump gold"
+      - id: "b"
+        text: "A pressurised film that prevents metal-to-metal contact"
+      - id: "c"
+        text: "To fill the radiator"
+      - id: "d"
+        text: "To lock the differential"
+    correct_answer: "b"
+    hint: "Hydrodynamic film."
+    explanation: "Pressure and viscosity make the film. Level and pump health matter."
+    xp_reward: 50
+  - id: "vehicle-anatomy-cooling-fb1"
+    type: "FILL_BLANK"
+    prompt: "Heat leaves the coolant as air passes through the ___."
+    correct_answer: "radiator"
+    hint: "Core at the nose."
+    explanation: "Radiator core + fans + shroud."
+    xp_reward: 50
+  - id: "vehicle-anatomy-cooling-diagram"
+    type: "DIAGRAM_LABEL"
+    prompt: "Label the cooling loop."
+    options:
+      - id: "rad"
+        text: "Radiator + fans"
+      - id: "stat"
+        text: "Thermostat"
+      - id: "jackets"
+        text: "Block jackets"
+    diagram_slots:
+      - id: "rad"
+        label: "Radiator + fans"
+        x: 18
+        y: 42
+      - id: "stat"
+        label: "Thermostat"
+        x: 58
+        y: 26
+      - id: "jackets"
+        label: "Block jackets"
+        x: 74
+        y: 54
+    diagram_kind: "cooling"
+    correct_answer:
+      - "rad=rad"
+      - "stat=stat"
+      - "jackets=jackets"
+    hint: "Heat exchanger at the nose, valve in the engine, jackets in the metal."
+    explanation: "Radiator rejects heat; thermostat times flow; jackets collect it."
+    xp_reward: 50
+  - id: "vehicle-anatomy-cooling-scenario"
+    type: "SCENARIO"
+    prompt: "After a hose change the dash gauge climbs in traffic. First anatomy move?"
+    options:
+      - id: "a"
+        text: "Fit a hotter thermostat immediately"
+      - id: "b"
+        text: "Bleed, confirm level/cap, fans, then flow — before parts roulette"
+      - id: "c"
+        text: "Remove the thermostat forever"
+      - id: "d"
+        text: "Add engine oil to the tank"
+    correct_answer: "b"
+    hint: "Air and flow."
+    explanation: "Open cooling systems trap air. Bleed and prove fans before you buy a pump."
+    xp_reward: 60

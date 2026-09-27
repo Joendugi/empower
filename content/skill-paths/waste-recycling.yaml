@@ -1,0 +1,28 @@
+id: "waste-recycling"
+title: "Waste management & recycling"
+title_sw: "Usimamizi wa taka na recycling"
+description: "Community collection, sorting, composting, material recovery, hazardous-waste boundaries, and circular micro-enterprise."
+description_sw: "Ukusanyaji, kutenganisha, compost, recycling, na biashara ya circular economy."
+certification_target: "Environmental literacy / waste recovery foundation"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "waste-recycling-sort"
+    title: "Week 1 — Waste audit, segregation, and collection safety"
+    title_sw: "Wiki 1 — Ukaguzi na kutenganisha taka"
+    description: "Separate organics, recyclables, residuals, medical, e-waste, and hazardous materials at source."
+    icon: "♻️"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites: []
+    lesson_ids:
+      - "waste-recycling-sort-lesson"
+  - id: "waste-recycling-recover"
+    title: "Week 2 — Compost, material recovery, and circular enterprise"
+    title_sw: "Wiki 2 — Compost, recovery, na biashara"
+    description: "Control compost moisture and contamination; prepare clean materials for buyers and price the operation honestly."
+    icon: "♻️"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites:
+      - "waste-recycling-sort"
+    lesson_ids:
+      - "waste-recycling-recover-lesson"

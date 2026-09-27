@@ -1,0 +1,64 @@
+id: cyber-law-kenya-1
+course_id: cyber-law-kenya
+title: Kenya cyber law and professional ethics
+title_sw: Sheria ya mtandao Kenya na maadili
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CS/CR/01/6
+exam_domain: Kenya CMCA 2018 · Professional ethics
+exercises:
+  - id: law-q1
+    type: MULTIPLE_CHOICE
+    prompt: Which activity is lawful for a CyberLearn practical?
+    options:
+      - id: a
+        text: Port-scanning a random shop's public IP
+      - id: b
+        text: Testing a lab VM you were assigned, inside the documented scope
+      - id: c
+        text: Guessing a classmate's email password
+      - id: d
+        text: Defacing a school site to prove a finding
+    correct_answer: b
+    hint: Permission and scope first.
+    explanation: Unauthorised access is an offence even if your intent is "learning". Use sanctioned labs.
+    xp_reward: 50
+  - id: law-q2
+    type: FILL_BLANK
+    prompt: Kenya's national computer incident response team is commonly abbreviated KE-___.
+    correct_answer: CIRT
+    hint: Computer Incident Response Team.
+    explanation: KE-CIRT/CC coordinates national cyber incident handling under the Communications Authority ecosystem.
+    xp_reward: 50
+  - id: law-q3
+    type: SCENARIO
+    prompt: During attachment you find an open county dashboard with citizen IDs. What should you do?
+    options:
+      - id: a
+        text: Download the database to your USB "as evidence" and post screenshots
+      - id: b
+        text: Stop, screenshot the URL only if policy allows, and report through your supervisor
+      - id: c
+        text: Sell the finding to a WhatsApp group
+      - id: d
+        text: Leave a taunt message so they notice
+    correct_answer: b
+    hint: Do not exfiltrate personal data.
+    explanation: Responsible disclosure goes through authority. Copying IDs can itself be unlawful processing.
+    xp_reward: 60
+  - id: law-q4
+    type: MULTIPLE_CHOICE
+    prompt: Why do professional codes of ethics matter as much as technical skill?
+    options:
+      - id: a
+        text: They replace the need for firewalls
+      - id: b
+        text: Technicians hold privileged access and can harm people if they misuse it
+      - id: c
+        text: Ethics questions never appear in exams
+      - id: d
+        text: They only apply to lawyers
+    correct_answer: b
+    hint: Access is power.
+    explanation: ICT and security staff see payroll, health, and exam data. Competence without ethics is a threat.
+    xp_reward: 50

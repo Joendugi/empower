@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { 
@@ -37,10 +37,11 @@ export default function CoursePage() {
   const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
   const choosePath = useLearnerStore((state) => state.choosePath);
   const customPaths = useCurriculumStore((state) => state.paths);
-  const path = getSkillPaths().find((item) => item.id === pathId);
-  void customPaths;
+  const cloudPaths = useCurriculumStore((state) => state.cloudPaths);
+  const path = useMemo(() => getSkillPaths().find((item) => item.id === pathId), [pathId, customPaths, cloudPaths]);
 
   useEffect(() => {
+    void useCurriculumStore.getState().syncCurriculum();
     if (pathId) useAnalyticsStore.getState().record('course_open', { pathId });
   }, [pathId]);
 
@@ -71,13 +72,22 @@ export default function CoursePage() {
     useLibraryStore.getState().selectProgramme(path.id);
   };
 
-  const start = () => {
+  const openLesson = (lessonId: string) => {
     choose();
-    if (firstLesson) navigate(`/learn/lesson/${firstLesson}`);
+    const dest = `/learn/lesson/${lessonId}`;
+    if (!signedIn) {
+      navigate(`/login?next=${encodeURIComponent(dest)}`);
+      return;
+    }
+    navigate(dest);
+  };
+
+  const start = () => {
+    if (firstLesson) openLesson(firstLesson);
   };
 
   return (
-    <div className="min-h-dvh bg-primary-dark pb-28 text-white bg-grid-pattern">
+    <div className="min-h-dvh bg-primary-dark pb-28 text-white">
       <AppHeader home="/learn/skill-tree" />
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
@@ -89,7 +99,7 @@ export default function CoursePage() {
         </Link>
 
         {/* Hero Course Overview Card */}
-        <div className="card !p-6 sm:!p-8 border-white/[0.08] relative overflow-hidden backdrop-blur-xl">
+        <div className="card !p-6 sm:!p-8">
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 rounded-2xl bg-surface-light border border-white/[0.1] flex items-center justify-center text-3xl shrink-0 shadow-inner">
@@ -115,7 +125,7 @@ export default function CoursePage() {
                     </span>
                   )}
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">{title}</h1>
+                <h1 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">{title}</h1>
               </div>
             </div>
 
@@ -125,7 +135,7 @@ export default function CoursePage() {
                 {path.nodes.length} {t('modules')} · {courseLessonCount(path)} {t('lessons')}
               </span>
               {progress.done > 0 && (
-                <span className="text-sm font-extrabold text-accent">
+                <span className="text-sm font-semibold text-accent">
                   {progress.percent}% Complete
                 </span>
               )}
@@ -172,7 +182,7 @@ export default function CoursePage() {
               <div className="flex items-center gap-2.5">
                 <Sparkles className="w-4 h-4 text-accent shrink-0" />
                 <p className="text-xs text-muted-light">
-                  <strong className="text-white">Guest Mode:</strong> You can start this course right now! Open a free account anytime to sync progress & earn verifiable certificates.
+                  <strong className="text-white">Browse freely.</strong> Sign in to start a graded lesson, save XP, and earn certificates.
                 </p>
               </div>
               <Link 
@@ -198,7 +208,7 @@ export default function CoursePage() {
               className={clsx(
                 'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all',
                 viewMode === 'roadmap'
-                  ? 'bg-accent text-primary-dark shadow-glow'
+                  ? 'bg-accent text-white'
                   : 'text-muted hover:text-white'
               )}
             >
@@ -211,7 +221,7 @@ export default function CoursePage() {
               className={clsx(
                 'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all',
                 viewMode === 'syllabus'
-                  ? 'bg-accent text-primary-dark shadow-glow'
+                  ? 'bg-accent text-white'
                   : 'text-muted hover:text-white'
               )}
             >
@@ -223,14 +233,11 @@ export default function CoursePage() {
 
         {/* Main Content: Interactive Roadmap vs Outline */}
         {viewMode === 'roadmap' ? (
-          <div className="card !p-4 border-white/[0.08] bg-surface/50 backdrop-blur-xl">
+          <div className="card !p-4">
             <InteractiveRoadmap
               path={path}
               completedLessonIds={completedLessonIds}
-              onOpenLesson={(lessonId) => {
-                choose();
-                navigate(`/learn/lesson/${lessonId}`);
-              }}
+              onOpenLesson={openLesson}
             />
           </div>
         ) : (
@@ -238,10 +245,7 @@ export default function CoursePage() {
             <CourseOutline
               path={path}
               completedLessonIds={completedLessonIds}
-              onOpenWeek={(lessonId) => {
-                choose();
-                navigate(`/learn/lesson/${lessonId}`);
-              }}
+              onOpenWeek={openLesson}
             />
           </div>
         )}

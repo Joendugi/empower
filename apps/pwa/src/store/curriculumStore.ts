@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware';
 import { create } from 'zustand';
 import { buildCourseFromDraft, type CourseDraft } from '@/lib/curriculumDraft';
 import { toPublicLesson } from '@/lib/publicLesson';
+import { isReservedProgrammeId, safeCustomProgrammeId } from '@/content/reservedIds';
 
 function packMedia(input: {
   video?: string;
@@ -32,8 +33,11 @@ function packMedia(input: {
 
 interface CurriculumState {
   paths: SkillPath[];
+  cloudPaths: SkillPath[];
   lessons: Record<string, Lesson>;
   drafts: CourseDraft[];
+  syncStatus: 'idle' | 'loading' | 'success' | 'error';
+  lastSyncedAt: number | null;
   addProgramme: (path: SkillPath, lesson: Lesson | Lesson[]) => void;
   removeProgramme: (pathId: string) => void;
   saveLesson: (lesson: Lesson) => void;
@@ -41,6 +45,8 @@ interface CurriculumState {
   saveDraft: (draft: CourseDraft) => void;
   removeDraft: (draftId: string) => void;
   publishDraft: (draftId: string) => { path: SkillPath; lessons: Lesson[] } | null;
+  syncCurriculum: () => Promise<void>;
+  fetchLesson: (lessonId: string) => Promise<Lesson | null>;
 }
 
 function slug(value: string) {
@@ -208,10 +214,52 @@ export const useCurriculumStore = create<CurriculumState>()(
   persist(
     (set, get) => ({
       paths: [],
+      cloudPaths: [],
       lessons: {},
       drafts: [],
+      syncStatus: 'idle',
+      lastSyncedAt: null,
+      syncCurriculum: async () => {
+        try {
+          set({ syncStatus: 'loading' });
+          const { api } = await import('@/lib/api');
+          const paths = await api<SkillPath[]>('/skill-paths');
+          if (Array.isArray(paths) && paths.length > 0) {
+            set({ cloudPaths: paths, syncStatus: 'success', lastSyncedAt: Date.now() });
+          } else {
+            set({ syncStatus: 'success' });
+          }
+        } catch {
+          set({ syncStatus: 'error' });
+        }
+      },
+      fetchLesson: async (lessonId: string) => {
+        try {
+          const { api } = await import('@/lib/api');
+          const lesson = await api<Lesson>(`/lessons/${lessonId}`);
+          if (lesson && lesson.id) {
+            set((state) => ({
+              lessons: { ...state.lessons, [lesson.id]: lesson },
+            }));
+            const { useLibraryStore } = await import('@/store/libraryStore');
+            useLibraryStore.setState((s) => ({
+              lessons: { ...s.lessons, [lesson.id]: lesson },
+            }));
+            return lesson;
+          }
+          return null;
+        } catch {
+          return null;
+        }
+      },
       addProgramme: (path, lesson) => {
         const incoming = asLessonList(lesson);
+        if (isReservedProgrammeId(path.id)) {
+          path = { ...path, id: safeCustomProgrammeId(path.id) };
+          incoming.forEach((item) => {
+            item.courseId = path.id;
+          });
+        }
         set((state) => {
           const previous = state.paths.find((item) => item.id === path.id);
           const lessons = { ...state.lessons };
@@ -281,13 +329,16 @@ export const useCurriculumStore = create<CurriculumState>()(
     }),
     {
       name: 'empower-curriculum',
-      version: 2,
+      version: 3,
       migrate: (persisted) => {
         const state = (persisted ?? {}) as Partial<CurriculumState>;
         return {
           paths: state.paths ?? [],
+          cloudPaths: state.cloudPaths ?? [],
           lessons: state.lessons ?? {},
           drafts: state.drafts ?? [],
+          syncStatus: 'idle',
+          lastSyncedAt: null,
         };
       },
     }

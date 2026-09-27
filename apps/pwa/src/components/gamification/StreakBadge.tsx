@@ -13,10 +13,9 @@ export default function StreakBadge({ streak, className = '' }: StreakBadgeProps
   return (
     <div
       className={clsx(
-        'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold transition-all shadow-sm',
-        isHot && 'animate-streak-glow border-orange-500 shadow-[0_0_15px_rgba(255,107,53,0.4)]',
+        'inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium',
         isActive
-          ? 'bg-gradient-to-r from-orange-500/20 to-amber-500/20 text-orange-400 border border-orange-500/30'
+          ? 'bg-accent/10 text-accent border border-accent/30'
           : 'bg-surface text-muted border border-white/[0.08]',
         className
       )}

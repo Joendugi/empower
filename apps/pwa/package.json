@@ -5,8 +5,9 @@
   "type": "module",
   "description": "CyberLearn learner shell — React PWA with offline support and gamification",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "generate-catalogue": "python ../../scripts/generate_catalogue.py",
+    "dev": "python ../../scripts/generate_catalogue.py && vite",
+    "build": "python ../../scripts/generate_catalogue.py && tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest run",
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "@cyberlearn/types": "workspace:*",
+    "@cyberlearn/ui": "workspace:*",
     "@tanstack/react-query": "^5.0.0",
     "canvas-confetti": "^1.9.4",
     "clsx": "^2.1.0",

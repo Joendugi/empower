@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { Zap } from 'lucide-react';
 
 export default function BrandMark({
   size = 'md',
@@ -14,44 +13,35 @@ export default function BrandMark({
   className?: string;
 }) {
   const box = {
-    sm: 'w-8 h-8 rounded-xl',
-    md: 'w-10 h-10 rounded-2xl',
-    lg: 'w-14 h-14 rounded-2xl',
+    sm: 'w-8 h-8 rounded-md',
+    md: 'w-10 h-10 rounded-md',
+    lg: 'w-12 h-12 rounded-md',
   }[size];
 
-  const iconSize = {
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-7 h-7',
+  const letter = {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg',
   }[size];
 
   const mark = (
-    <div className={clsx('flex items-center gap-3', className)}>
+    <div className={clsx('flex items-center gap-2.5', className)}>
       <div
         className={clsx(
           box,
-          'relative flex items-center justify-center bg-gradient-to-br from-accent via-teal-400 to-emerald-500 p-[1px] shadow-glow-sm hover:shadow-glow transition-all duration-300 group'
+          'flex items-center justify-center bg-accent text-white font-semibold'
         )}
       >
-        <div className="w-full h-full bg-primary-dark/90 backdrop-blur-md rounded-[inherit] flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="flex items-center justify-center font-black text-accent tracking-tighter">
-            <span className="text-base sm:text-lg font-black bg-gradient-to-b from-white via-accent-light to-accent bg-clip-text text-transparent">
-              E
-            </span>
-            <Zap className={clsx(iconSize, 'text-accent absolute -right-1 -top-1 opacity-40 group-hover:opacity-80 transition-opacity transform rotate-12')} />
-          </div>
-        </div>
+        <span className={clsx(letter, 'leading-none')}>E</span>
       </div>
 
       {showText && (
         <div className="flex flex-col">
-          <span className="font-extrabold tracking-tight text-white text-base sm:text-lg leading-tight flex items-center gap-1">
-            EMPOWER
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <span className="font-semibold tracking-tight text-white text-sm sm:text-base leading-tight">
+            Empower
           </span>
-          <span className="text-[10px] uppercase font-mono tracking-widest text-muted">
-            TVET & Technical Skills
+          <span className="text-[10px] uppercase font-mono tracking-wider text-muted">
+            TVET &amp; trades
           </span>
         </div>
       )}
@@ -60,7 +50,7 @@ export default function BrandMark({
 
   if (!to) return mark;
   return (
-    <Link to={to} className="inline-flex items-center group">
+    <Link to={to} className="inline-flex items-center">
       {mark}
     </Link>
   );

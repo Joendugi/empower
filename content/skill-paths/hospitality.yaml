@@ -1,0 +1,41 @@
+id: "hospitality"
+title: "Food production & hospitality"
+title_sw: "Upishi na ukarimu"
+description: "Food hygiene and the danger zone, kitchen fire and knives, then service recovery."
+description_sw: "Usafi wa chakula, moto jikoni, na huduma."
+certification_target: "CDACC / NITA — Food production & hospitality"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "hospitality-hygiene-food"
+    title: "Food hygiene and temperature control"
+    title_sw: "Usafi wa chakula na joto"
+    description: "Danger zone, raw vs cooked, and cooling leftovers like a professional."
+    icon: "🍳"
+    cdacc_unit_id: "CU/FBP/CR/01/5"
+    exam_domain: "Food hygiene"
+    prerequisites: []
+    lesson_ids:
+      - "hospitality-hygiene-food-lesson"
+  - id: "hospitality-kitchen-safety"
+    title: "Knives, fire, and kitchen hazards"
+    title_sw: "Visu, moto, na hatari jikoni"
+    description: "Fat fires, carry knives down, and never a wet floor plus a run."
+    icon: "🍳"
+    cdacc_unit_id: "CU/FBP/CR/02/5"
+    exam_domain: "Kitchen safety"
+    prerequisites:
+      - "hospitality-hygiene-food"
+    lesson_ids:
+      - "hospitality-kitchen-safety-lesson"
+  - id: "hospitality-service"
+    title: "Service, mise en place, and complaints"
+    title_sw: "Huduma, mise en place, na malalamiko"
+    description: "Prepare, greet, serve, and recover when something is wrong."
+    icon: "🍳"
+    cdacc_unit_id: "CU/FBP/CR/03/5"
+    exam_domain: "Food service"
+    prerequisites:
+      - "hospitality-kitchen-safety"
+    lesson_ids:
+      - "hospitality-service-lesson"

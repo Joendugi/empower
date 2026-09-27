@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { clsx } from 'clsx';
 import type { ProgrammeTrack } from '@cyberlearn/types';
@@ -27,7 +27,12 @@ export default function SkillTreePage() {
   const track: ProgrammeTrack | 'all' =
     requested === 'tvet' || requested === 'cybersecurity' || requested === 'trades' ? requested : 'all';
   const customPaths = useCurriculumStore((state) => state.paths);
-  const paths = useMemo(() => getSkillPaths(), [customPaths]);
+  const cloudPaths = useCurriculumStore((state) => state.cloudPaths);
+  const paths = useMemo(() => getSkillPaths(), [customPaths, cloudPaths]);
+
+  useEffect(() => {
+    void useCurriculumStore.getState().syncCurriculum();
+  }, []);
   const needle = query.trim().toLowerCase();
 
   const matches = (path: (typeof paths)[number]) => {

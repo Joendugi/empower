@@ -34,9 +34,32 @@ export default function LessonPlayerPage() {
   const language = useLearnerStore((s) => s.language);
   const customLessons = useCurriculumStore((s) => s.lessons);
   const cachedLessons = useLibraryStore((s) => s.lessons);
-  const lesson = lessonId
+  const [remoteLesson, setRemoteLesson] = useState<Lesson | null>(null);
+  const [fetchingRemote, setFetchingRemote] = useState(false);
+
+  const localLesson = lessonId
     ? (cachedLessons[lessonId] ?? resolveLesson(lessonId) ?? getLesson(lessonId) ?? customLessons[lessonId])
     : undefined;
+
+  const lesson = localLesson ?? remoteLesson ?? undefined;
+
+  useEffect(() => {
+    if (!lessonId || localLesson) return;
+    let cancelled = false;
+    setFetchingRemote(true);
+    void useCurriculumStore
+      .getState()
+      .fetchLesson(lessonId)
+      .then((l) => {
+        if (!cancelled && l) setRemoteLesson(l);
+      })
+      .finally(() => {
+        if (!cancelled) setFetchingRemote(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [lessonId, localLesson]);
 
   useEffect(() => {
     if (!lessonId) return;
@@ -53,6 +76,15 @@ export default function LessonPlayerPage() {
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [finished, setFinished] = useState(false);
   const [mediaReady, setMediaReady] = useState(false);
+
+  if (fetchingRemote && !lesson) {
+    return (
+      <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 text-center">
+        <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="text-sm text-muted">Loading module content...</p>
+      </div>
+    );
+  }
 
   if (!lesson) {
     return (
@@ -110,9 +142,9 @@ export default function LessonPlayerPage() {
   }
 
   return (
-    <div className="min-h-dvh bg-primary-dark flex flex-col bg-grid-pattern">
+    <div className="min-h-dvh bg-primary-dark flex flex-col">
       {/* Top Header bar with progress */}
-      <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08] px-4 py-3">
+      <header className="sticky top-0 z-30 bg-primary-dark border-b border-white/[0.08] px-4 py-3">
         <div className="max-w-4xl mx-auto flex items-center gap-3">
           <Link 
             to="/learn/skill-tree" 
@@ -137,7 +169,7 @@ export default function LessonPlayerPage() {
           </span>
 
           {xpEarned > 0 && (
-            <span className="inline-flex items-center gap-1 text-xs text-yellow-400 font-bold bg-yellow-400/10 border border-yellow-400/30 px-2 py-0.5 rounded-full shadow-glow-xp animate-bounce-once">
+            <span className="inline-flex items-center gap-1 text-xs text-accent font-medium bg-accent/10 border border-accent/30 px-2 py-0.5 rounded-md">
               <Sparkles className="w-3 h-3" />
               +{xpEarned} XP
             </span>
@@ -156,7 +188,7 @@ export default function LessonPlayerPage() {
             {lesson.estimatedMinutes} {t('minutes')}
           </span>
         </div>
-        <h1 className="text-xl sm:text-2xl font-extrabold text-white mt-2 tracking-tight">{title}</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold text-white mt-2 tracking-tight">{title}</h1>
       </div>
 
       {/* Main interactive stage */}
@@ -249,12 +281,9 @@ function LessonComplete({
   const accuracy = Math.max(0, Math.round(((totalQuestions - incorrectCount) / totalQuestions) * 100));
 
   return (
-    <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 py-12 text-center bg-grid-pattern relative overflow-hidden">
-      {/* Ambient Celebration Glow */}
-      <div className="absolute top-1/3 w-[500px] h-[300px] bg-accent/20 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="relative card !p-8 sm:!p-10 border-accent/40 max-w-md w-full shadow-2xl shadow-accent/15 backdrop-blur-2xl">
-        <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-accent to-emerald-400 text-primary-dark mx-auto flex items-center justify-center mb-6 shadow-glow">
+    <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 py-12 text-center">
+      <div className="relative card !p-8 sm:!p-10 max-w-md w-full">
+        <div className="w-16 h-16 rounded-md bg-accent text-white mx-auto flex items-center justify-center mb-6">
           <Trophy className="w-8 h-8" />
         </div>
 
@@ -263,18 +292,18 @@ function LessonComplete({
           {t('moduleComplete')}
         </div>
 
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">{t('lessonComplete')}</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">{t('lessonComplete')}</h2>
         <p className="text-xs sm:text-sm text-muted mb-8 line-clamp-2">{lesson.title}</p>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 gap-3 mb-8">
           <div className="p-4 rounded-2xl bg-surface-light/60 border border-white/[0.08] text-center">
-            <div className="text-3xl font-black text-yellow-400">+{xpEarned}</div>
+            <div className="text-3xl font-semibold text-accent">+{xpEarned}</div>
             <div className="text-xs font-semibold text-muted uppercase tracking-wider mt-1">XP Earned</div>
           </div>
 
           <div className="p-4 rounded-2xl bg-surface-light/60 border border-white/[0.08] text-center">
-            <div className="text-3xl font-black text-emerald-400">{accuracy}%</div>
+            <div className="text-3xl font-semibold text-white">{accuracy}%</div>
             <div className="text-xs font-semibold text-muted uppercase tracking-wider mt-1">{t('accuracy')}</div>
           </div>
         </div>

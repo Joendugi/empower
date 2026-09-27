@@ -48,9 +48,9 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-dvh bg-primary-dark text-white bg-grid-pattern pb-16">
+    <div className="min-h-dvh bg-primary-dark text-white pb-16">
       {/* Header */}
-      <header className="px-5 py-4 border-b border-white/[0.08] bg-primary-dark/80 backdrop-blur-xl sticky top-0 z-30">
+      <header className="px-5 py-4 border-b border-white/[0.08] bg-primary-dark sticky top-0 z-30">
         <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3">
             <BrandMark size="sm" showText />
@@ -74,7 +74,7 @@ export default function OnboardingPage() {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Fast-Track Onboarding</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               Select Your TVET Course Track
             </h1>
             <p className="text-muted-light mt-1.5 text-sm sm:text-base max-w-xl">
@@ -88,7 +88,7 @@ export default function OnboardingPage() {
               <button
                 type="button"
                 onClick={() => handleLaunchCourse(selected)}
-                className="btn-primary py-3 px-6 text-sm font-bold shadow-glow"
+                className="btn-primary py-3 px-6 text-sm"
               >
                 <Play className="w-4 h-4 fill-current" />
                 Start {selected.title}
@@ -112,7 +112,7 @@ export default function OnboardingPage() {
               className={clsx(
                 'px-4 py-2 rounded-xl text-xs font-semibold transition-all shrink-0',
                 selectedTrack === tab.id
-                  ? 'bg-accent text-primary-dark shadow-glow'
+                  ? 'bg-accent text-white'
                   : 'bg-surface/60 text-muted hover:text-white hover:bg-surface-light border border-white/[0.08]'
               )}
             >
@@ -148,7 +148,7 @@ export default function OnboardingPage() {
 
         {/* Quick Account Prompt if not signed in */}
         {!signedIn && (
-          <div className="card !p-6 border-accent/30 bg-gradient-to-r from-accent/[0.08] via-surface to-surface flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="card !p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0">
                 <GraduationCap className="w-6 h-6" />

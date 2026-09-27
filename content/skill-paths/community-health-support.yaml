@@ -1,0 +1,28 @@
+id: "community-health-support"
+title: "Community health support"
+title_sw: "Msaada wa afya ya jamii"
+description: "Ethical first-line community support: hygiene, vital signs, referral, health promotion, safeguarding, and confidential records."
+description_sw: "Usafi, vipimo, rufaa, elimu ya afya, ulinzi, na siri za mgonjwa."
+certification_target: "Community health support foundation — not a clinical licence"
+track: "trades"
+content_version: "1"
+nodes:
+  - id: "community-health-support-hygiene"
+    title: "Week 1 — Infection prevention and safe home visits"
+    title_sw: "Wiki 1 — Kuzuia maambukizi"
+    description: "Hand hygiene, PPE, cleaning, sharps boundaries, consent, and confidentiality."
+    icon: "🩺"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites: []
+    lesson_ids:
+      - "community-health-support-hygiene-lesson"
+  - id: "community-health-support-screen-refer"
+    title: "Week 2 — Basic observations, referral, and health promotion"
+    title_sw: "Wiki 2 — Vipimo, rufaa, na elimu"
+    description: "Measure accurately, recognise danger signs, refer, and communicate without diagnosing."
+    icon: "🩺"
+    exam_domain: "Community-supporting trade practice"
+    prerequisites:
+      - "community-health-support-hygiene"
+    lesson_ids:
+      - "community-health-support-screen-refer-lesson"

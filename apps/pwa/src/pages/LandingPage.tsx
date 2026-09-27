@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { 
   SunMedium, 
@@ -20,10 +20,12 @@ import {
   X
 } from 'lucide-react';
 import { catalogueStats, getSkillPaths } from '@/content';
+import { featuredSkillPaths } from '@/content/featured';
 import { useT } from '@/i18n';
 import BrandMark from '@/components/ui/BrandMark';
 import ProfileButton from '@/components/ui/ProfileButton';
 import { useLearnerStore } from '@/store/learnerStore';
+import { useCurriculumStore } from '@/store/curriculumStore';
 
 export default function LandingPage() {
   const t = useT();
@@ -43,7 +45,13 @@ export default function LandingPage() {
 
   const signedIn = Boolean(useLearnerStore((state) => state.token));
   const stats = catalogueStats();
-  const paths = getSkillPaths().slice(0, 6);
+  const cloudPaths = useCurriculumStore((state) => state.cloudPaths);
+  const paths = useMemo(() => getSkillPaths().slice(0, 6), [cloudPaths]);
+  const featured = useMemo(() => featuredSkillPaths(3), [cloudPaths]);
+
+  useEffect(() => {
+    void useCurriculumStore.getState().syncCurriculum();
+  }, []);
 
   const impactAreas = [
     { icon: SunMedium, color: 'text-amber-400 bg-amber-400/10 border-amber-400/20', title: 'Clean energy', body: 'Solar PV installation, electrical safety, inverters, and battery maintenance.' },
@@ -55,10 +63,10 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-dvh bg-primary-dark text-white bg-grid-pattern selection:bg-accent/30 selection:text-white">
+    <div className="min-h-dvh bg-primary-dark text-white selection:bg-accent/30 selection:text-white">
       {/* Auto-logout Inactivity Notice Banner */}
       {inactivityNotice && (
-        <div className="bg-amber-500/15 border-b border-amber-500/30 px-5 py-3 text-amber-200 text-xs sm:text-sm flex items-center justify-between gap-3 backdrop-blur-xl sticky top-0 z-40 animate-fadeIn">
+        <div className="bg-amber-500/15 border-b border-amber-500/30 px-5 py-3 text-amber-200 text-xs sm:text-sm flex items-center justify-between gap-3 sticky top-0 z-40">
           <div className="flex items-center gap-2.5 max-w-7xl mx-auto flex-1">
             <Clock className="w-4 h-4 text-amber-400 shrink-0" />
             <span>
@@ -77,7 +85,7 @@ export default function LandingPage() {
       )}
 
       {/* Navigation Header */}
-      <header className="sticky top-0 z-30 bg-primary-dark/85 backdrop-blur-xl border-b border-white/[0.08]">
+      <header className="sticky top-0 z-30 bg-primary-dark border-b border-white/[0.08]">
         <div className="flex items-center justify-between px-5 py-3.5 max-w-7xl mx-auto">
           <Link to="/" className="flex items-center gap-3">
             <BrandMark size="sm" showText />
@@ -119,11 +127,9 @@ export default function LandingPage() {
 
           <div className="relative max-w-7xl mx-auto px-5 grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-16 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] text-balance">
                 Practical education for{' '}
-                <span className="bg-gradient-to-r from-accent via-teal-300 to-emerald-400 bg-clip-text text-transparent">
-                  work, enterprise,
-                </span>{' '}
+                <span className="text-accent">work, enterprise,</span>{' '}
                 and stronger communities.
               </h1>
 
@@ -147,22 +153,22 @@ export default function LandingPage() {
               <dl className="mt-8 grid grid-cols-3 gap-3.5 max-w-lg">
                 <div className="card !p-4 text-center border-white/[0.08] hover:border-accent/40 transition-colors">
                   <dt className="text-[11px] font-medium text-muted uppercase tracking-wider">{t('programmes')}</dt>
-                  <dd className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5">{stats.programmes}</dd>
+                  <dd className="text-2xl sm:text-3xl font-semibold text-white mt-1.5">{stats.programmes}</dd>
                 </div>
                 <div className="card !p-4 text-center border-white/[0.08] hover:border-accent/40 transition-colors">
                   <dt className="text-[11px] font-medium text-muted uppercase tracking-wider">{t('modules')}</dt>
-                  <dd className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5">{stats.modules}</dd>
+                  <dd className="text-2xl sm:text-3xl font-semibold text-white mt-1.5">{stats.modules}</dd>
                 </div>
                 <div className="card !p-4 text-center border-white/[0.08] hover:border-accent/40 transition-colors">
                   <dt className="text-[11px] font-medium text-muted uppercase tracking-wider">{t('lessons')}</dt>
-                  <dd className="text-2xl sm:text-3xl font-extrabold text-accent mt-1.5">{stats.lessons}</dd>
+                  <dd className="text-2xl sm:text-3xl font-semibold text-accent mt-1.5">{stats.lessons}</dd>
                 </div>
               </dl>
             </div>
 
             {/* Quick Course Launch Spotlight */}
             <div className="relative">
-              <div className="card !p-6 border-accent/30 shadow-2xl shadow-accent/10 backdrop-blur-xl">
+              <div className="card !p-6">
                 <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
                   <div className="flex items-center gap-2">
                     <Compass className="w-4 h-4 text-accent" />
@@ -172,12 +178,14 @@ export default function LandingPage() {
                 </div>
 
                 <div className="mt-5 space-y-3">
-                  {[
-                    { id: 'motor-vehicle-mechanics', title: 'Motor Vehicle Mechanics', tag: 'Automotive', icon: Wrench, color: 'text-amber-400 bg-amber-400/10' },
-                    { id: 'solar-energy', title: 'Solar PV & Electrical Systems', tag: 'Clean Energy', icon: Zap, color: 'text-cyan-400 bg-cyan-400/10' },
-                    { id: 'secplus-concepts', title: 'Cybersecurity & Network Defense', tag: 'Security', icon: ShieldAlert, color: 'text-emerald-400 bg-emerald-400/10' },
-                  ].map((item) => {
-                    const Icon = item.icon;
+                  {featured.map((item) => {
+                    const meta =
+                      item.track === 'trades'
+                        ? { tag: 'Technical trades', icon: Wrench, color: 'text-amber-400 bg-amber-400/10' }
+                        : item.track === 'tvet'
+                          ? { tag: 'TVET', icon: Zap, color: 'text-cyan-400 bg-cyan-400/10' }
+                          : { tag: 'Security', icon: ShieldAlert, color: 'text-emerald-400 bg-emerald-400/10' };
+                    const Icon = meta.icon;
                     return (
                       <Link
                         key={item.id}
@@ -185,11 +193,11 @@ export default function LandingPage() {
                         className="flex items-center justify-between p-3.5 rounded-xl bg-surface/70 border border-white/[0.08] hover:border-accent/40 hover:bg-surface-light transition-all group"
                       >
                         <div className="flex items-center gap-3">
-                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${item.color} shrink-0`}>
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${meta.color} shrink-0`}>
                             <Icon className="w-5 h-5" />
                           </div>
                           <div>
-                            <p className="text-xs text-muted font-medium">{item.tag}</p>
+                            <p className="text-xs text-muted font-medium">{meta.tag}</p>
                             <h3 className="font-bold text-sm text-white group-hover:text-accent transition-colors">{item.title}</h3>
                           </div>
                         </div>
@@ -218,7 +226,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Curriculum Directory</p>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-1">
                   Start Any Course with One Click
                 </h2>
                 <p className="text-muted text-xs sm:text-sm mt-1">
@@ -266,7 +274,7 @@ export default function LandingPage() {
           <div className="max-w-7xl mx-auto px-5">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Skills for society</p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 text-white">
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mt-2 text-white">
                 Train for the work every community needs
               </h2>
               <p className="text-muted-light mt-3 text-sm sm:text-base leading-relaxed">
@@ -293,8 +301,8 @@ export default function LandingPage() {
 
         {/* CTA Callout */}
         <section className="max-w-5xl mx-auto px-5 py-20 text-center">
-          <div className="card !p-10 border-accent/40 bg-gradient-to-b from-accent/[0.08] to-surface relative overflow-hidden shadow-2xl shadow-accent/10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="card !p-10">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-white">
               Build a skill. Serve a community. Create work.
             </h2>
             <p className="text-muted-light mt-3 max-w-xl mx-auto text-sm sm:text-base">

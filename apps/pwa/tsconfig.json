@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@cyberlearn/types": ["../../packages/types/src"]
+      "@cyberlearn/types": ["../../packages/types/src"],
+      "@cyberlearn/ui": ["../../packages/ui/src"]
     }
   },
   "include": ["src"],

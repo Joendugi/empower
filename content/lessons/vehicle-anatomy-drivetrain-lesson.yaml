@@ -1,0 +1,96 @@
+id: "vehicle-anatomy-drivetrain-lesson"
+course_id: "vehicle-anatomy"
+title: "Drivetrain: clutch, gears, shafts, differential"
+title_sw: "Drivetrain: clutch, gia, shafts, diff"
+briefing: "The drivetrain is everything after the crank flange: flywheel or flexplate, clutch or torque converter, gearbox, then shafts to a differential that splits torque to the wheels and allows them to turn at different speeds in a corner.\n\nFWD: transaxle in the engine bay, short driveshafts with CV joints to the front hubs. RWD: gearbox, propshaft with U-joints, rear axle/diff, then half-shafts. 4WD/AWD adds a transfer case or coupling and a second axle.\n\nGear ratios multiply torque. A slipping clutch smells and revs without road speed. A failed CV clicks on lock. A worn U-joint clunks on take-up. A locked diff or a broken spider gear is a corner hop or a bang.\n\nDo not confuse drivetrain vibration with engine misfire: road-speed vs engine-speed is the anatomy test. Support the engine/gearbox on the correct mounts before you chase a “vibration at 80”."
+briefing_sw: "Baada ya crank: flywheel, clutch au converter, gearbox, shafts, diff. FWD ina transaxle. RWD ina propshaft. Gia zinazidisha torque. CV inabofya kwenye lock."
+estimated_minutes: 26
+license: "CC-BY-SA-4.0"
+exam_domain: "Driveline"
+exercises:
+  - id: "vehicle-anatomy-drivetrain-q1"
+    type: "MULTIPLE_CHOICE"
+    prompt: "A differential exists so that:"
+    options:
+      - id: "a"
+        text: "Both wheels must always spin at one speed"
+      - id: "b"
+        text: "Driven wheels can rotate at different speeds in a turn"
+      - id: "c"
+        text: "The battery can charge faster"
+      - id: "d"
+        text: "Coolant can bypass the head"
+    correct_answer: "b"
+    hint: "Inside vs outside wheel."
+    explanation: "Without a diff, a driven axle fights itself in a corner."
+    xp_reward: 50
+  - id: "vehicle-anatomy-drivetrain-q2"
+    type: "MULTIPLE_CHOICE"
+    prompt: "FWD power typically leaves the gearbox through:"
+    options:
+      - id: "a"
+        text: "A long timber propshaft to a rear beam"
+      - id: "b"
+        text: "Driveshafts with CV joints to the front hubs"
+      - id: "c"
+        text: "The radiator fan clutch only"
+      - id: "d"
+        text: "The handbrake cable"
+    correct_answer: "b"
+    hint: "Transaxle."
+    explanation: "Front-wheel drive uses short CV shafts."
+    xp_reward: 50
+  - id: "vehicle-anatomy-drivetrain-fb1"
+    type: "FILL_BLANK"
+    prompt: "The assembly that lets driven wheels turn at different speeds is the ___."
+    correct_answer: "differential"
+    hint: "Diff."
+    explanation: "Differential / final drive."
+    xp_reward: 50
+  - id: "vehicle-anatomy-drivetrain-diagram"
+    type: "DIAGRAM_LABEL"
+    prompt: "Label how torque leaves the engine."
+    options:
+      - id: "gear"
+        text: "Gearbox"
+      - id: "shaft"
+        text: "Prop / driveshafts"
+      - id: "diff"
+        text: "Differential"
+    diagram_slots:
+      - id: "gear"
+        label: "Gearbox"
+        x: 38
+        y: 40
+      - id: "shaft"
+        label: "Prop / driveshafts"
+        x: 62
+        y: 48
+      - id: "diff"
+        label: "Differential"
+        x: 82
+        y: 58
+    diagram_kind: "drivetrain"
+    correct_answer:
+      - "gear=gear"
+      - "shaft=shaft"
+      - "diff=diff"
+    hint: "Box, then shaft, then split to the wheels."
+    explanation: "Gearbox, shaft, differential."
+    xp_reward: 50
+  - id: "vehicle-anatomy-drivetrain-scenario"
+    type: "SCENARIO"
+    prompt: "Clicking on full lock after a pothole, no engine misfire. Anatomy target?"
+    options:
+      - id: "a"
+        text: "Spark plugs"
+      - id: "b"
+        text: "Outer CV joint / driveshaft"
+      - id: "c"
+        text: "Radiator cap"
+      - id: "d"
+        text: "Cabin pollen filter"
+    correct_answer: "b"
+    hint: "Corner, lock, click."
+    explanation: "Classic CV. Confirm boot, play, and grease before you rebuild an engine."
+    xp_reward: 60

@@ -6,7 +6,7 @@ export function triggerConfettiBurst(options?: confetti.Options) {
       particleCount: 50,
       spread: 60,
       origin: { y: 0.75 },
-      colors: ['#00d4aa', '#ffd700', '#2ed573', '#33debb', '#ffffff'],
+      colors: ['#e85d04', '#ca8a04', '#f5f5f4', '#262626', '#f48c06'],
       disableForReducedMotion: true,
       ...options,
     });
@@ -20,7 +20,7 @@ export function triggerLevelUpCelebration() {
     const count = 200;
     const defaults = {
       origin: { y: 0.7 },
-      colors: ['#00d4aa', '#ffd700', '#2ed573', '#ff4757', '#33debb'],
+      colors: ['#e85d04', '#ca8a04', '#f5f5f4', '#dc2626', '#f48c06'],
     };
 
     function fire(particleRatio: number, opts: confetti.Options) {
