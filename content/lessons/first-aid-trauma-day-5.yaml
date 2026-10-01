@@ -1,0 +1,135 @@
+id: first-aid-trauma-day-5
+course_id: first-aid-trauma
+title: "Patient Assessment & Improvised Evacuation"
+title_sw: "Tathmini ya Mgonjwa na Uokoaji wa Kubuni"
+week_number: 1
+day_number: 5
+estimated_minutes: 55
+license: CC-BY-SA-4.0
+tags: [first-aid, patient-assessment, triage, stretcher, evacuation, trauma, kenya]
+xp: 90
+exam_domain: Pre-Hospital Emergency Care
+
+briefing: |
+  In disaster response and remote trauma incidents, the greatest danger to the casualty
+  often occurs during rough, uncoordinated evacuation. Dropping a casualty, twisting an
+  unstable cervical spine, or attempting single-rescuer drag carries can prove fatal.
+  This final day unites everything into a systematic Primary & Secondary Survey
+  (<C>ABCDE algorithm), simple triage color coding, and practical construction of improvised
+  stretchers using everyday materials: two poles with blankets, jackets, or sacks.
+briefing_sw: |
+  Katika majanga na majeraha ya vijijini, hatari kubwa mara nyingi hutokea wakati wa
+  usafirishaji wa haraka usioratibiwa. Siku hii ya mwisho inakamilisha mfumo mzima wa
+  tathmini ya mgonjwa kwa utaratibu wa <C>ABCDE, mbinu za triage, na jinsi ya kutengeneza
+  machela imara ya kubuni kwa kutumia miti miwili na kanga, koti, au magunia.
+
+outline: |
+  1. Scene safety and sizing up: hazards (electrical, fire, traffic, toxic gas)
+  2. The <C>ABCDE Trauma Algorithm: Catastrophic Bleeding, Airway, Breathing, Circulation, Disability, Exposure
+  3. Rapid Trauma Assessment (Head-to-toe DCAP-BTLS survey)
+  4. START Simple Triage: Green (Walking Wounded), Yellow (Delayed), Red (Immediate), Black (Expectant)
+  5. Mechanics of lifting: protecting the rescuer's spine and coordinating multi-bearer moves
+  6. Improvised stretcher designs: Blanket & Poles, Button-Shirt / Jacket Sleeves, Burlap/Sisal Sacks
+  7. Loading and securing a casualty onto a stretcher: Log-roll with manual in-line spinal stabilization
+  8. PHOTO_CAPTURE practical: Construct and document an improvised load-bearing stretcher
+
+content_md: |
+  ## Scene Assessment & Rescuer Safety
+
+  Before touching any patient:
+  1. **Is the scene safe?** Look for live power lines, leaking fuel, oncoming vehicles, armed aggressors, or unstable structures. A dead rescuer saves nobody.
+  2. **Mechanism of Injury (MOI):** High-speed impact, fall > 2× patient height, blast? Anticipate hidden internal injuries.
+  3. **Casualty Count:** Call for community assistance immediately if casualties exceed rescuers.
+
+  ## The <C>ABCDE Trauma Primary Survey
+
+  Perform this 90-second sequence immediately upon reaching the casualty:
+
+  | Step | Focus | Assessment & Intervention |
+  |------|-------|---------------------------|
+  | **<C>** | **Catastrophic Bleeding** | Look for spurting or pooling arterial blood. Apply tourniquet or wound packing **before** touching airway! |
+  | **A** | **Airway + C-Spine** | Open airway with jaw-thrust if trauma; maintain manual in-line spinal immobilisation. Clear blood/vomit. |
+  | **B** | **Breathing & Ventilation** | Check chest rise, respiratory rate, and bilateral symmetry. Cover sucking chest wounds with 3-sided seal. |
+  | **C** | **Circulation & Perfusion** | Palpate radial pulse. Check capillary refill time (< 2 sec) and skin temperature. Control minor bleeds. |
+  | **D** | **Disability (Neuro)** | AVPU scale: **A**lert, responds to **V**erbal, responds to **P**ain, or **U**nresponsive. Check pupil reactivity. |
+  | **E** | **Exposure & Environment** | Expose injuries to inspect, but **cover immediately** with dry blankets/shukas to prevent hypothermia! |
+
+  ## Mass Casualty Triage: The START System
+
+  When resources are overwhelmed:
+  - **GREEN (Minor / Walking Wounded):** Anyone who can hear your voice and walk to a designated assembly area.
+  - **RED (Immediate / P1):** Unconscious but breathing after airway opened, respiratory rate > 30 bpm, radial pulse absent, or capillary refill > 2 sec. Evacuate first.
+  - **YELLOW (Delayed / P2):** Serious injuries (fractures, deep lacerations) but normal vitals and airway intact.
+  - **BLACK (Expectant / Deceased):** Apneic casualties who do not breathe even after opening the airway. Do not perform prolonged CPR when others can be saved.
+
+  ## Constructing Improvised Stretchers
+
+  When commercial scoop stretchers or spine boards are unavailable, three proven designs can be built using two sturdy wooden/bamboo poles (at least 2.2 m long, 5–7 cm diameter):
+
+  ### Method A: Blanket / Shuka / Tarpaulin Wrap
+  1. Lay a heavy blanket flat on the ground.
+  2. Place Pole 1 one-third of the way across the blanket.
+  3. Fold the short side of the blanket over Pole 1.
+  4. Place Pole 2 on top of the folded blanket, approximately 50 cm from Pole 1.
+  5. Fold the remaining large side of the blanket over Pole 2 and completely across Pole 1.
+  6. *Friction principle:* When the patient's weight is placed in the center, the friction between the layers locks the fabric in place without needing pins or ropes.
+
+  ### Method B: Buttoned Jackets / Sweaters
+  1. Take 2–3 heavy jackets or work coats.
+  2. Turn the sleeves **inside-out** (into the jacket interior).
+  3. Slide the two poles through the inside-out sleeves.
+  4. Zip or button the jackets completely. The jackets form a tough, supportive hammock between the poles.
+
+  ### Method C: Gunny Sacks (Magunia)
+  1. Cut small slits in the bottom corners of 3–4 sisal/polythene grain sacks.
+  2. Slide Pole 1 and Pole 2 through the mouths and out the bottom corner holes of each sack in series.
+  3. The overlapping sacks create a reinforced, tear-resistant stretcher capable of carrying > 100 kg.
+
+  ## Stretcher Safety & Bearer Commands
+  - Always carry casualty **feet-first** during level evacuation so the lead bearers watch where they are going and the rear bearers monitor the patient's face and breathing.
+  - Carry **head-first when ascending stairs or steep slopes** to prevent blood pooling in the head.
+  - Designate one leader at the patient's head to call synchronized commands: *"Ready to lift... Lift."* *"Ready to step off... March."*
+
+exercises:
+  - id: fa5-q1
+    type: MULTIPLE_CHOICE
+    prompt: "Under the <C>ABCDE trauma protocol, why is catastrophic external bleeding assessed and treated BEFORE managing the airway?"
+    xp_reward: 35
+    options:
+      - text: "Because an open airway is not important if the patient is unconscious"
+        correct: false
+        explanation: "Airway is always vital, but massive arterial haemorrhage causes fatal hypovolemic cardiac arrest faster than airway occlusion."
+      - text: "A patient with complete femoral artery transection can bleed to death in under 3 minutes, outstripping the timeline of hypoxic brain damage"
+        correct: true
+        explanation: "Correct! Catastrophic arterial bleeding causes exsanguination and irreversible shock in 2–3 minutes. Controlling active massive hemorrhage (<C>) takes immediate priority before airway interventions."
+      - text: "Bleeding control is technically easier than opening the airway"
+        correct: false
+        explanation: "Prioritisation is strictly dictated by physiological survival timelines, not technical ease."
+      - text: "Airway interventions always increase blood pressure, which worsens bleeding"
+        correct: false
+        explanation: "Opening an airway restores oxygenation and does not artificially spike blood pressure."
+    correct_answer: "A patient with complete femoral artery transection can bleed to death in under 3 minutes, outstripping the timeline of hypoxic brain damage"
+
+  - id: fa5-q2
+    type: FILL_BLANK
+    prompt: "In the START triage system, casualties who are breathing, have a radial pulse, but are unable to walk due to a closed femur fracture are classified under the color category ___ (Delayed)."
+    xp_reward: 20
+    correct_answer: yellow
+    explanation: "Yellow (Delayed / P2) indicates casualties with significant injuries who have stable vitals (normal respirations and perfusion) and can safely wait until all Red (Immediate) casualties are evacuated."
+
+  - id: fa5-practical
+    type: PHOTO_CAPTURE
+    prompt: "Practical Assessment: Build and test an improvised load-bearing stretcher."
+    xp_reward: 50
+    correct_answer: null
+    rubric:
+      - criterion: "Two rigid longitudinal poles (wood, bamboo, metal pipe ≥ 2m long) used as the frame"
+        points: 3
+      - criterion: "Fabric bed constructed using Blanket-wrap, Jacket-sleeves, or Sack-feed method"
+        points: 3
+      - criterion: "Tested with a test subject or heavy load (≥ 50 kg) showing no slippage or tear"
+        points: 3
+      - criterion: "Photo clearly displays the fully assembled stretcher with test weight loaded"
+        points: 3
+      - criterion: "Written or verbal description explaining the friction or locking mechanism utilized"
+        points: 3

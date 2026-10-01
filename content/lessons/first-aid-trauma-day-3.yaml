@@ -1,0 +1,134 @@
+id: first-aid-trauma-day-3
+course_id: first-aid-trauma
+title: "Burns, Scalds & Wound Care"
+title_sw: "Kuungua, Kuchemka na Utunzaji wa Majeraha"
+week_number: 1
+day_number: 3
+estimated_minutes: 50
+license: CC-BY-SA-4.0
+tags: [first-aid, burns, scalds, wound-care, sepsis, dressing, kenya]
+xp: 85
+exam_domain: Pre-Hospital Emergency Care
+
+briefing: |
+  Burns cause catastrophic fluid loss, hypothermia, excruciating pain, and overwhelming
+  systemic sepsis. In East Africa, open cookfires, overturned paraffin lamps, and hot tea/boiling
+  water scalds account for thousands of pediatric trauma admissions annually. Harmful
+  traditional remedies (applying raw eggs, motor oil, toothpaste, cow dung) trigger
+  devastating bacterial infections and tissue necrosis. This day teaches the Rule of Nines
+  depth classification, correct thermal cooling protocols, clean covering methods, fluid
+  resuscitation basics (Parkland formula), and antiseptic wound irrigation.
+briefing_sw: |
+  Kuungua husababisha upotevu mkubwa wa maji mwilini, hypothermia, maumivu makali,
+  na maambukizi ya hatari (sepsis). Katika Afrika Mashariki, majiko ya kuni, taa za
+  mafuta ya taa, na chai moto husababisha majeraha mengi kwa watoto. Dawa za kienyeji
+  zenye madhara kama kupaka yai, mafuta ya gari, au mchanga huleta maambukizi makali.
+  Siku hii inafundisha kanuni sahihi za kutuliza kwa maji baridi na kufunika jeraha.
+
+outline: |
+  1. Burn depth classification: superficial (1st), partial thickness (2nd), full thickness (3rd)
+  2. Total Body Surface Area (TBSA) estimation: Wallace Rule of Nines and the Palmar Method
+  3. Immediate emergency action: Stop the burning process, remove constricting jewellery
+  4. Cooling protocol: clean cool running water for 20 minutes (never ice or freezing water)
+  5. What NEVER to put on a burn: debunking toothpaste, eggs, flour, cow dung, and engine oil
+  6. Dressing and protection: plastic cling film wrap vs sterile non-adherent sheets
+  7. Fluid loss & shock: oral rehydration therapy (ORT) vs intravenous Ringer's Lactate
+  8. Wound irrigation: high-pressure saline flushing vs soaking, signs of wound infection (cellulitis)
+
+content_md: |
+  ## Burn Depth Classification
+
+  | Degree | Tissue Layer Involved | Clinical Appearance | Sensation | Healing Time |
+  |--------|----------------------|---------------------|-----------|--------------|
+  | **Superficial (1st Degree)** | Epidermis only | Erythematous (red), dry, no blisters | Painful | 3–6 days; no scarring |
+  | **Partial Thickness (2nd Degree)** | Epidermis + partial dermis | Blistered, weeping, mottled pink/red | Extremely painful, hypersensitive | 14–21 days; variable scarring |
+  | **Full Thickness (3rd Degree)** | Epidermis, entire dermis, subcutaneous | Leathery, waxy white, charred, parchment-dry | **Painless** at center (nerve endings destroyed) | Requires surgical excision & skin grafting |
+
+  ## Estimating Burn Extent: Rule of Nines
+
+  For adults, Total Body Surface Area (TBSA) is divided into multiples of 9%:
+  - **Head & Neck:** 9% (4.5% front, 4.5% back)
+  - **Chest:** 9% | **Abdomen:** 9% (Total anterior torso = 18%)
+  - **Upper Back:** 9% | **Lower Back:** 9% (Total posterior torso = 18%)
+  - **Each Arm:** 9% (4.5% front, 4.5% back each)
+  - **Each Leg:** 18% (9% front, 9% back each)
+  - **Perineum/Genitalia:** 1%
+
+  **The Palmar Method (for scattered or small burns):**
+  The patient's entire hand (palm plus fingers) equals approximately **1% TBSA**.
+
+  ## Immediate Emergency Treatment: The "Cool and Cover" Protocol
+
+  1. **Stop the burning:** Extinguish flames (Stop, Drop, Roll), isolate electrical source, or brush off dry corrosive chemicals before washing.
+  2. **Cool with clean running water for 20 continuous minutes:**
+     - Must be cool tap water (15–25 °C).
+     - **NEVER use ice, freezing water, or ice packs** — intense cold causes vasoconstriction, deepening tissue ischemia, and precipitates fatal hypothermia.
+     - Cooling is effective if initiated within 3 hours of the injury.
+  3. **Remove constricting items early:** Rings, watches, bangles, tight clothing, and shoes must be stripped immediately before severe inflammatory oedema sets in.
+  4. **Do NOT peel adhered melted synthetic clothing:** Cut around fabric stuck to molten skin.
+  5. **Cover the burn:**
+     - Best dressing: Clean food-grade **plastic cling wrap** layered loosely over the burn (do not wrap circumferentially as limb swelling will create a tourniquet effect).
+     - Cling film excludes air (dramatically cutting nerve pain), does not stick to the wound bed, and allows clinical inspection without painful dressing changes.
+     - Alternatively, use clean, ironed cotton cloth dampened with saline.
+
+  ## Dangerous Traditional Remedies — What NEVER to Apply
+
+  In Kenyan and regional community settings, harmful substances are frequently applied to burns. These must be actively countered:
+  - **Toothpaste / Menthol:** Traps heat, causes chemical irritation and severe tissue toxicity.
+  - **Raw Eggs / Flour / Milk:** Provides ideal bacterial culture medium; leads to explosive Pseudomonas and Staphylococcus sepsis.
+  - **Engine Oil / Grease / Cow Dung:** Introduces deadly Clostridium tetani spores and hydrocarbon toxicity; makes subsequent clinical debridement agonising.
+  - **Butter / Animal Fats:** Insulates the burned tissue, preventing heat dissipation.
+
+  ## Fluid Resuscitation Basics
+
+  Burns exceeding **15% TBSA in adults** or **10% TBSA in children** induce systemic capillary leak syndrome, leading to hypovolemic burn shock.
+
+  - **If conscious and hospital is distant (>2 hours):** Administer Oral Rehydration Salts (ORS) solution continuously: ~500 mL/hr for adults.
+  - **Clinical rule (Parkland formula for healthcare providers):**
+    `4 mL × Patient Weight (kg) × % TBSA` of Ringer's Lactate in the first 24 hours (half given in first 8 hours post-burn).
+
+exercises:
+  - id: fa3-q1
+    type: MULTIPLE_CHOICE
+    prompt: "A child suffers boiling water scalds across their entire chest, abdomen, and the front of one arm. Using the Rule of Nines, what is the estimated TBSA?"
+    xp_reward: 35
+    options:
+      - text: "9%"
+        correct: false
+        explanation: "Chest alone is 9%. Abdomen is another 9%. The anterior arm is 4.5%."
+      - text: "22.5%"
+        correct: true
+        explanation: "Correct! Entire anterior torso (chest 9% + abdomen 9% = 18%) plus anterior surface of one arm (4.5%) = 22.5% TBSA. This represents major pediatric burn trauma requiring IV fluids."
+      - text: "36%"
+        correct: false
+        explanation: "36% would include both sides of the torso."
+      - text: "13.5%"
+        correct: false
+        explanation: "This underestimates the combined chest and abdominal surface area."
+    correct_answer: "22.5%"
+
+  - id: fa3-q2
+    type: FILL_BLANK
+    prompt: "Burns should be cooled with clean running water for exactly ___ minutes to halt heat progression without causing hypothermia."
+    xp_reward: 25
+    correct_answer: "20"
+    explanation: "Clinical guidelines worldwide (ANZBA, British Burn Association) mandate 20 minutes of cool running water. Shorter durations fail to dissipate deep thermal energy, while using ice causes vasoconstriction and tissue necrosis."
+
+  - id: fa3-q3
+    type: MATCH_PAIRS
+    prompt: "Match each burn intervention to its rationale."
+    xp_reward: 25
+    pairs:
+      - left: Clean plastic cling wrap
+        right: Excludes atmospheric air to cut nerve pain and prevents adherence
+      - left: Immediate removal of rings and bracelets
+        right: Prevents ischemic necrosis from progressive tissue oedema
+      - left: Avoidance of ice packs
+        right: Prevents reactive vasoconstriction and systemic hypothermia
+      - left: Copious low-pressure saline irrigation
+        right: Flushes bacteria and necrotic debris from contaminated lacerations
+    correct_answer:
+      - Clean plastic cling wrap=Excludes atmospheric air to cut nerve pain and prevents adherence
+      - Immediate removal of rings and bracelets=Prevents ischemic necrosis from progressive tissue oedema
+      - Avoidance of ice packs=Prevents reactive vasoconstriction and systemic hypothermia
+      - Copious low-pressure saline irrigation=Flushes bacteria and necrotic debris from contaminated lacerations

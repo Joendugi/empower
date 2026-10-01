@@ -1,0 +1,128 @@
+id: first-aid-trauma-day-4
+course_id: first-aid-trauma
+title: "Fractures, Dislocations & Improvised Splinting"
+title_sw: "Mifupa Iliyovunjika, Kutoka na Splinting ya Kubuni"
+week_number: 1
+day_number: 4
+estimated_minutes: 50
+license: CC-BY-SA-4.0
+tags: [first-aid, fractures, splinting, dislocations, immobilisation, pms-check, kenya]
+xp: 85
+exam_domain: Pre-Hospital Emergency Care
+
+briefing: |
+  Unstabilised fractures cause severe pain, vascular transection, fat embolism syndrome,
+  and convert closed fractures into contaminated open wounds during bumpy rural transport.
+  A fractured femur can bleed 1.5 to 2.0 litres of blood into the thigh compartment silently.
+  This day teaches fracture classification, the PMS (Pulse, Motor, Sensory) neurovascular
+  assessment algorithm, the golden rule of splinting (immobilising the joint above and below),
+  and practical improvised splints built from sticks, cardboard, blankets, and triangular bandages.
+briefing_sw: |
+  Mifupa iliyovunjika isipowekewa splint husababisha maumivu makali, uharibifu wa mishipa
+  ya damu, na kuvuja kwa damu kwa ndani (mfupa wa paja unaweza kupoteza lita 1.5–2 za damu).
+  Siku hii inafundisha jinsi ya kutambua mivunjiko, ukaguzi wa PMS (Mapigo ya moyo, Mwendo,
+  na Hisia), na mbinu za kutengeneza splint kwa kutumia miti, makadibodi, na kanga.
+
+outline: |
+  1. Fracture classifications: closed vs open (compound), greenstick, comminuted
+  2. The PMS check: Pulse, Motor function, and Sensory assessment before and after splinting
+  3. The Golden Rule of Splinting: immobilise one joint above and one joint below the fracture
+  4. Open fracture emergency management: sterile covering, no bone reduction into wound
+  5. Improvised splinting materials: branches, timber slats, folded cardboard, rolled blankets
+  6. Traction splinting concepts for mid-shaft femur fractures (anatomical splinting)
+  7. Sling and swathe techniques for collarbone (clavicle) and shoulder dislocations
+  8. Compartment syndrome recognition: the 5 Ps (Pain out of proportion, Pallor, Pulselessness, Paresthesia, Paralysis)
+
+content_md: |
+  ## Fracture Classification & Hemorrhagic Risks
+
+  - **Closed Fracture:** Skin remains intact over the fracture site.
+  - **Open (Compound) Fracture:** Bone fragments have penetrated through skin, or a deep laceration extends down to the broken bone. High risk of osteomyelitis and systemic sepsis.
+
+  ### Internal Blood Loss from Fractures:
+  | Bone Fractured | Estimated Internal Hemorrhage | Shock Risk |
+  |----------------|-------------------------------|------------|
+  | Radius / Ulna | 250 – 500 mL | Low |
+  | Humerus | 500 – 750 mL | Moderate |
+  | Tibia / Fibula | 500 – 1 000 mL | Moderate |
+  | **Femur (Thigh)** | **1 000 – 2 000 mL** | **Severe (Class II–III Shock)** |
+  | **Pelvis** | **1 500 – 3 500+ mL** | **Critical / Fatal** |
+
+  ## The PMS Assessment Algorithm
+
+  **Always assess PMS BEFORE applying any splint, and RE-ASSESS immediately AFTER splinting:**
+  1. **Pulse (Circulation):** Palpate the most distal pulse (radial pulse for arm fractures; dorsalis pedis or posterior tibial pulse for leg fractures). Check capillary refill time (< 2 seconds).
+  2. **Motor (Movement):** Ask patient to wiggle fingers or toes ("Can you squeeze my fingers?" or "Push against my hand like pressing a car accelerator").
+  3. **Sensory (Nerves):** Lightly touch distal digits and ask: "Which finger/toe am I touching? Does it feel numb or tingling?"
+
+  *Crucial Rule:* If pulses disappear or severe numbness appears *after* splinting, the splint or ties are too tight. Loosen immediately!
+
+  ## The Golden Rule of Splinting
+
+  > **To immobilise a fractured bone, you must immobilise the joint ABOVE and the joint BELOW the fracture site.**
+
+  - **Example — Mid-shaft Tibia/Fibula fracture:** Splint must extend from above the **knee joint** down past the **ankle joint**, securing the foot at 90 degrees.
+  - **Example — Forearm fracture:** Splint must support the **elbow joint** and immobilise the **wrist joint**.
+
+  ## Rules of Field Splinting:
+  1. **Splint the limb in the position found**, unless there is no distal pulse (absent circulation). If pulseless, apply gentle, steady inline axial traction to align the limb until pulse returns before splinting.
+  2. **Never push protruding bone fragments back beneath the skin.** Cover exposed bone with sterile moist gauze or clean cloth, then splint around it.
+  3. **Pad the splint:** Rigid boards or sticks must be padded with clothing, cotton, or towels over bony prominences (ankles, knees, elbows) to prevent pressure necrosis.
+  4. **Tie knots on the outside of the splint**, never directly over the fracture or against bare skin.
+
+  ## Improvised Splinting Materials in Kenya
+
+  - **Cardboard Splint:** Fold heavy cardboard into a "U" or "trough" shape. Extremely rigid once bent along its flutes; ideal for forearms and lower legs.
+  - **Anatomical Splint (Buddy Taping):** Use the patient's own body as a splint:
+    - Broken leg tied to uninjured leg with 4–5 cloth ties (kangas, scarves, belts) with padding between knees and ankles.
+    - Broken finger taped to adjacent healthy finger.
+  - **Tree Branches / Timber:** Two straight branches (padded with dry grass or fabric) placed on medial and lateral sides of the limb, secured with strips of cloth.
+  - **Kanga / Scarf Slings:**
+    - Broad arm sling to elevate and support forearm fractures.
+    - **Swathe:** A second horizontal cloth wrapped around the chest and injured arm to bind the arm securely against the torso, preventing swing.
+
+exercises:
+  - id: fa4-q1
+    type: MULTIPLE_CHOICE
+    prompt: "You apply an improvised cardboard splint to a patient's fractured lower leg. Five minutes later, the patient complains their foot feels numb and you can no longer feel the dorsalis pedis pulse. What should you do immediately?"
+    xp_reward: 35
+    options:
+      - text: "Elevate the leg higher to decrease swelling"
+        correct: false
+        explanation: "Elevation will not restore a mechanically compressed arterial supply and may worsen ischemia."
+      - text: "Loosen the splint wraps and re-check the distal pulse and sensation"
+        correct: true
+        explanation: "Correct! Disappearance of a pulse or onset of numbness post-splinting indicates mechanical vascular or nerve compression by the splint ties. Loosen the bandages immediately until pulses return."
+      - text: "Wait 30 minutes to see if circulation normalizes"
+        correct: false
+        explanation: "Waiting risks permanent nerve damage and ischemic muscle death. Ischemia must be relieved immediately."
+      - text: "Tighten the ties further to secure the bone fragments"
+        correct: false
+        explanation: "Tightening further will completely occlude remaining collateral circulation, causing gangrene."
+    correct_answer: "Loosen the splint wraps and re-check the distal pulse and sensation"
+
+  - id: fa4-q2
+    type: FILL_BLANK
+    prompt: "The golden rule of fracture management dictates that a splint must immobilise the joint ___ and the joint ___ the fracture site."
+    xp_reward: 20
+    correct_answer: above and below
+    explanation: "Immobilising both the joint above and the joint below prevents muscular contraction and rotational forces from displacing the fractured bone ends."
+
+  - id: fa4-q3
+    type: MATCH_PAIRS
+    prompt: "Match each type of improvised splint to its ideal clinical application."
+    xp_reward: 30
+    pairs:
+      - left: Anatomical leg splint (Buddy splinting)
+        right: Binding the injured leg to the uninjured leg with padding between knees and ankles
+      - left: Sling and swathe
+        right: Immobilising clavicle fractures and dislocated shoulders against the chest wall
+      - left: Folded cardboard trough
+        right: Rapid rigid immobilisation of forearm, wrist, or lower leg fractures
+      - left: Straight padded branches
+        right: Bilateral lateral/medial splinting for remote wilderness long-bone fractures
+    correct_answer:
+      - Anatomical leg splint (Buddy splinting)=Binding the injured leg to the uninjured leg with padding between knees and ankles
+      - Sling and swathe=Immobilising clavicle fractures and dislocated shoulders against the chest wall
+      - Folded cardboard trough=Rapid rigid immobilisation of forearm, wrist, or lower leg fractures
+      - Straight padded branches=Bilateral lateral/medial splinting for remote wilderness long-bone fractures
