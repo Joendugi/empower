@@ -444,6 +444,43 @@ Slaking quicklime (calcium oxide) with water is violently exothermic, reaching b
 Blending lime putty with volcanic pumice pozzolan yields hydraulic mortar capable of setting permanently underwater.
 `,
   },
+  {
+    id: 'book-electrical-power',
+    title: 'Autonomous Electrical Power Systems & Micro-Grid Engineering',
+    titleSw: 'Mifumo ya Umeme ya Kujitegemea na Uhandisi wa Gridi Ndogo',
+    author: 'Eng. John Gitau (EPRA Certified Electrical Systems Lead)',
+    description: 'Comprehensive engineering manual for designing, commissioning, and maintaining off-grid mini-grids: single-phase 230V and 3-phase 400V star/delta analysis, inductive power factor correction capacitor calculation, synchronous alternator excitation and AVR tuning, field flashing, laminated transformer winding calculations (turns-per-volt, wire sizing), consumer unit MCB trip curves (B, C, D), 30mA RCD differential earth protection, TT earthing electrode installation, rotary synchroscope generator paralleling, and frequency-droop dynamic load shedding.',
+    descriptionSw: 'Mwongozo kamili wa uhandisi kuhusu umeme wa awamu tatu, kurekebisha power factor, alternator na vidhibiti vya AVR, kufuma transfoma, vifaa vya MCB na RCD, mfumo wa earth, na kusawazisha jenereta kwenye gridi.',
+    category: 'engineering',
+    tradeId: 'electrical-installation',
+    tradeTitle: 'Electrical Installation & Grid Engineering',
+    coverColor: 'from-amber-600 to-yellow-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 7.1,
+    totalPages: 142,
+    estimatedMinutes: 280,
+    featured: true,
+    rating: 5.0,
+    readersCount: 4620,
+    cdaccUnitId: 'CU/ENG/EL/CR/09/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Single-Phase vs 3-Phase & Power Factor', pageNumber: 1 },
+      { id: 'ch2', title: 'Synchronous Alternators & AVR Systems', pageNumber: 32 },
+      { id: 'ch3', title: 'Transformer Physics & Coil Winding', pageNumber: 64 },
+      { id: 'ch4', title: 'Circuit Breakers, RCDs & Earth Electrodes', pageNumber: 92 },
+      { id: 'ch5', title: 'Micro-Grid Paralleling & Load Shedding', pageNumber: 118 },
+    ],
+    contentMarkdown: `# Autonomous Electrical Power Systems & Micro-Grids
+
+## Chapter 1: Alternating Current & 3-Phase Power
+Direct current powers batteries, but alternating current powers civilization.
+Three-phase star distribution delivers 230V line-to-neutral for households and 400V line-to-line for motors while using 25% less conductor copper.
+Inductive motor loads draw reactive power (kVAR), dragging the power factor down.
+Connecting power factor correction capacitor banks across motor terminals relieves generators of circulating reactive currents, unlocking hidden capacity.
+`,
+  },
 ];
 
 interface BookState {

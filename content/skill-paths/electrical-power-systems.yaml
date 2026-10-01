@@ -1,0 +1,34 @@
+id: electrical-power-systems
+title: Electrical Power Systems & Grid Resilience
+titleSw: Mifumo ya Umeme na Uimara wa Gridi
+description: >
+  Master the essential electrical engineering skills required to generate, regulate,
+  distribute, and protect AC/DC power in autonomous off-grid communities — from
+  single-phase and 3-phase AC circuit analysis and alternator rewinding to transformer
+  fabrication, circuit breaker sizing, earthing systems, and smart micro-grid load management.
+level: intermediate
+category: engineering
+estimatedHours: 10
+xpTotal: 1250
+license: CC-BY-SA-4.0
+nodes:
+  - day: 1
+    lessonId: electrical-power-systems-day-1
+    title: "AC Fundamentals — Single-Phase vs 3-Phase & Power Factor"
+    xp: 250
+  - day: 2
+    lessonId: electrical-power-systems-day-2
+    title: "Alternators, Generators & Automatic Voltage Regulators"
+    xp: 250
+  - day: 3
+    lessonId: electrical-power-systems-day-3
+    title: "Transformer Physics, Winding & Core Sizing"
+    xp: 250
+  - day: 4
+    lessonId: electrical-power-systems-day-4
+    title: "Distribution Panels, MCB/RCD Protection & Earthing"
+    xp: 250
+  - day: 5
+    lessonId: electrical-power-systems-day-5
+    title: "Micro-Grid Synchronization & Dynamic Load Shedding"
+    xp: 250

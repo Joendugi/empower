@@ -1,0 +1,241 @@
+id: electrical-power-systems-day-5
+course_id: electrical-power-systems
+title: "Micro-Grid Synchronization & Dynamic Load Shedding"
+title_sw: "Kuunganisha Gridi Ndogo (Synchronization) na Udhibiti wa Mizigo"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - electrical
+  - micro-grid
+  - synchronization
+  - synchroscope
+  - load-shedding
+  - frequency-droop
+  - engineering
+xp: 250
+exam_domain: electrical-power-systems
+
+briefing: >
+  In mature off-grid communities, a single generator or solar inverter is rarely
+  enough. True resilience requires paralleling multiple diverse energy sources—a
+  micro-hydro turbine, a diesel generator, and battery inverter banks—into a unified
+  AC micro-grid. Paralleling two out-of-phase AC generators creates an electromagnetic
+  short-circuit explosion with forces equivalent to a direct mechanical collision.
+  This capstone lesson covers generator synchronization physics, the three-dark-lamp
+  and synchroscope methods, active/reactive power sharing via governor droop, priority
+  tier load shedding, and smart dump load ballast controllers.
+
+outline: >
+  Paralleling physics and the four mandatory synchronization conditions (voltage
+  magnitude, frequency, phase sequence, phase angle); the classic 'three-lamp'
+  synchronization method (dark lamp vs bright lamp); optical rotary synchroscopes;
+  the breaker closing moment (11 o'clock slow clockwise rotation); real power
+  sharing via Governor Speed Droop (4%-5% droop curve); reactive power sharing
+  via AVR Voltage Droop; frequency-based dynamic load shedding tiers (Tier 1 clinic/comm,
+  Tier 2 refrigeration/lighting, Tier 3 water pumping/milling); Electronic Load
+  Controllers (ELC) and resistive dump loads for run-of-river hydro; PHOTO_CAPTURE
+  assessment rubric of electrical panel or generator wiring.
+
+content_md: |
+  ## The Challenge of Paralleling AC Generators
+
+  Connecting two AC power sources (e.g., Generator 1 and Generator 2) to the same
+  busbar multiplies total power capacity and allows maintenance without blackouts.
+  However, AC waveforms cannot be combined like DC batteries.
+
+  ### The 4 Synchronization Pre-Conditions:
+  Before the circuit breaker linking the incoming generator to the live bus is closed,
+  all four parameters must match:
+
+  | Condition | Permissible Tolerance | Danger if Closed Out of Sync |
+  |---|---|---|
+  | **1. Voltage Magnitude** | $\pm 1\%$ to $2\%$ of bus voltage | Heavy circulating reactive current (kVAR), tripping breakers |
+  | **2. Frequency** | $\pm 0.1\text{ to } 0.2\text{ Hz}$ ($50.0\text{ Hz vs } 50.1\text{ Hz}$) | Severe power surges and engine speed hunting |
+  | **3. Phase Sequence** | **Identical** ($L_1-L_2-L_3$ must match bus $L_1-L_2-L_3$) | **Instant catastrophic dead short-circuit across 2 phases** (explodes switchgear) |
+  | **4. Phase Angle ($\delta$)** | $\Delta \delta < \pm 5^\circ$ (Waveform peaks coincide) | Enormous instantaneous torque shock shears engine crankshaft or rips generator off concrete foundations! |
+
+  ## The Three-Lamp Synchronization Method
+
+  Before automated digital synchro-controllers, ships and power plants relied on
+  simple incandescent light bulbs connected across the breaker contacts:
+
+  ```
+  Incoming Generator (G2)               Live Busbar (G1)
+         Phase L1 ───────── [LAMP 1] ───────── Phase L1
+         Phase L2 ───────── [LAMP 2] ───────── Phase L2
+         Phase L3 ───────── [LAMP 3] ───────── Phase L3
+  ```
+
+  Each lamp is rated for full line-to-line voltage ($400\text{ V}$).
+
+  ### 1. Checking Phase Sequence (Rotation):
+  - If the lamps flash **in sequence (chasing one another around in a circle)**:
+    Phase sequence is **INCORRECT**. Stop the engine immediately and swap any two phase leads (e.g., switch $L_2$ and $L_3$).
+  - If all three lamps dim and brighten **together in unison**:
+    Phase sequence is **CORRECT**.
+
+  ### 2. Tuning Frequency & Closing the Breaker ("Three-Dark" Method):
+  1. The flashing speed of the lamps indicates the frequency difference ($\Delta f = f_2 - f_1$).
+  2. Adjust the throttle governor of the incoming generator until the lamps pulse very slowly—bright, dim, dark—taking **3 to 5 seconds per cycle** ($\Delta f \approx 0.2\text{ Hz}$).
+  3. Set incoming generator slightly faster than the bus (so it takes on load rather than acting as a motor upon connection).
+  4. Watch the lamps dim down:
+     - **Full Bright**: Phase angle $\Delta \delta = 180^\circ$ (voltages oppose; 800V across lamps; **NEVER CLOSE**).
+     - **Dead Dark**: Phase angle $\Delta \delta = 0^\circ$ (voltages identical; 0V across lamps).
+  5. Snap the paralleling circuit breaker closed at the **center of the dark interval**.
+  6. The two machines instantly lock together in magnetic synchronism.
+
+  ## The Modern Synchroscope
+
+  A rotary synchroscope features a rotating pointer driven by the phase angle between
+  the bus and the incoming generator:
+  - Pointer spins **Clockwise (FAST)**: Incoming generator is running faster than the bus.
+  - Pointer spins **Counter-Clockwise (SLOW)**: Incoming generator is running slower than the bus.
+  - Pointer stationary at **12 o'clock**: Frequencies and phase angles match perfectly.
+  - **The Golden Rule of Manual Synching**:
+    Tune incoming engine speed so the needle rotates **very slowly clockwise (approx. 1 revolution every 5 seconds)**.
+    Throw the breaker when the needle reaches **11 o'clock (just before 12 o'clock)**, accounting for the mechanical closing time of the circuit breaker contacts (approx. 50–100 ms).
+
+  ## Power Sharing via Governor Speed Droop
+
+  Once paralleled, you cannot change generator speed; both shafts are locked to the
+  same electrical grid frequency. How do you divide the kilowatt load between them?
+
+  ### Speed Droop Principle:
+  Every generator governor is calibrated with a **4% to 5% Speed Droop curve**:
+  as electrical load increases from 0% to 100%, the governor allows frequency to drop
+  predictably from **52.0 Hz (no load) to 50.0 Hz (full load)**:
+
+  ```
+  Frequency (Hz)
+    52.0 Hz ┌── (No Load)
+            │  \
+            │   \  Droop Slope (-4%)
+            │    \
+    50.0 Hz └─────\────── (Full 100% Load)
+            0%    50%   100% Load
+  ```
+
+  - **To Increase Real Load (kW) on Generator 2**:
+    Turn G2's governor speed control up. G2 takes on more of the kilowatt burden, relieving Generator 1.
+  - **To Balance Reactive Load (kVAR)**:
+    Adjust the AVR Voltage trimpot. Increasing excitation on G2 increases its kVAR contribution, relieving G1 of winding heating.
+
+  ## Dynamic Load Shedding & Dump Loads
+
+  In an isolated mini-grid, sudden overload drops frequency below 48 Hz, which will
+  stall engines and trigger a total system collapse (blackout).
+
+  ### Automatic Under-Frequency Load Shedding (UFLS) Tiers:
+  Distribution feeders are partitioned into priority contactors triggered by frequency relays:
+  - **Normal Operation ($49.5\text{ Hz – } 50.5\text{ Hz}$)**: All circuits active.
+  - **Tier 3 Disconnect ($49.0\text{ Hz for } 2\text{ seconds}$)**:
+    - *Non-essential loads shed*: Municipal water pumping, posho grain mills, ice-making plants, EV charging stations.
+  - **Tier 2 Disconnect ($48.5\text{ Hz for } 1\text{ second}$)**:
+    - *Secondary loads shed*: Residential heating, domestic refrigeration, general street lighting.
+  - **Tier 1 Protected ($47.5\text{ Hz threshold}$)**:
+    - *Critical infrastructure maintained*: Community health clinic vaccine fridges, maternity ward lighting, emergency radio communications repeater.
+
+  ### Micro-Hydro Electronic Load Controllers (ELC):
+  Run-of-river Pelton turbines cannot throttle water instantly without water hammer
+  rupturing penstocks. They run at 100% full water flow continuously:
+  - An **Electronic Load Controller (ELC)** monitors grid frequency 1,000 times per second using high-speed TRIACs / solid-state relays.
+  - When village households switch off lights, the ELC instantly diverts the surplus power into a **resistive dump load** (water immersion heating elements in a school shower tank or dry finned air heaters).
+  - Total electrical load seen by the turbine remains exactly 100% at all times, keeping shaft speed and frequency locked at 50.0 Hz!
+
+exercises:
+  - id: elec-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A plant technician is preparing to manually parallel an incoming diesel generator
+      to a live mini-grid bus using a rotary synchroscope. When should the technician
+      throw the paralleling breaker?
+    xp_reward: 50
+    options:
+      - text: "When the pointer is rotating very slowly in the clockwise (FAST) direction and reaches the '11 o'clock' position just before true 12 o'clock, allowing for breaker mechanical closing delay"
+        correct: true
+        explanation: "Rotating slowly clockwise ensures the incoming machine will take on positive generation (rather than motoring). Tripping at 11 o'clock compensates for the 50-100 ms mechanical contact travel time, so contacts close precisely at 12 o'clock (0° phase angle)."
+      - text: "When the pointer is rotating rapidly counter-clockwise past 6 o'clock"
+        correct: false
+        explanation: "Rapid counter-clockwise rotation means the generator is running much too slowly, which will cause massive reverse-power tripping."
+      - text: "At 6 o'clock on the dial when voltages are opposite"
+        correct: false
+        explanation: "At 6 o'clock, the waveforms are 180° out of phase (maximum voltage difference), which would cause a violent explosion."
+      - text: "Any time the pointer is moving, because generators self-align automatically"
+        correct: false
+        explanation: "Closing out of phase produces huge short-circuit forces that can shear generator shafts."
+
+  - id: elec-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      Before closing a paralleling breaker between two AC generators, four conditions
+      must be matched: voltage magnitude, frequency, phase ___, and phase ___.
+    xp_reward: 50
+    correct_answer: "sequence; angle"
+    explanation: >
+      Voltage, frequency, phase sequence (rotation L1-L2-L3), and instantaneous
+      phase angle (crest coincidence) are all mandatory conditions.
+
+  - id: elec-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each mini-grid control strategy to its operational objective.
+    xp_reward: 50
+    pairs:
+      - left: Governor Speed Droop (4-5%)
+        right: Enables stable proportional kilowatt (kW) load sharing between generators
+      - left: Three-Dark Lamp Method
+        right: Visual verification that phase sequence is correct and phase angle is zero
+      - left: Under-Frequency Load Shedding (UFLS)
+        right: Automatically disconnects non-essential loads when frequency drops below 49 Hz
+      - left: Electronic Load Controller (ELC)
+        right: Shunts excess micro-hydro power to dump load heaters to maintain 50 Hz speed
+    correct_answer: null
+    explanation: >
+      Governor droop balances kW; lamps confirm synchronism; UFLS prevents blackout
+      cascades; ELC stabilizes run-of-river hydro frequency without throttles.
+
+  - id: elec-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why must run-of-river micro-hydro turbine generators use an Electronic Load
+      Controller (ELC) with a ballast dump load rather than an automotive-style
+      throttle to regulate grid frequency?
+    xp_reward: 50
+    options:
+      - text: "Rapidly closing a water valve to drop turbine power creates catastrophic hydraulic water hammer pressures that burst penstocks; the ELC keeps water flow constant while dynamically shunting electrical power"
+        correct: true
+        explanation: "Water has immense mass and momentum. Snapping a spear valve shut sends high-pressure shockwaves (water hammer) that shatter PVC or steel pipes. An ELC diverts surplus electricity into water-heating dump loads in milliseconds, keeping water flow and generator frequency rock-steady."
+      - text: "Because hydro turbines cannot generate 50 Hz electricity directly"
+        correct: false
+        explanation: "Hydro turbines generate standard 50 Hz power via standard synchronous alternators."
+      - text: "Because resistive dump loads make the water cleaner"
+        correct: false
+        explanation: "Dump loads dissipate electrical heat; they are not water filters."
+      - text: "To recharge the mechanical governor springs"
+        correct: false
+        explanation: "ELCs are solid-state electronic controllers, not mechanical springs."
+
+  - id: elec-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Photograph an electrical distribution board, generator terminal panel, changeover
+      switch, or micro-grid control setup from your electrical workshop practice.
+      Ensure the image clearly displays circuit breakers, earthing conductor connections,
+      or phase wiring with appropriate safety labelling, and include your written
+      load balance and protection audit.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Clear photographic documentation of electrical distribution boards confirms
+      proper cable color coding, correct MCB/RCD ratings, and secure protective
+      earthing connections compliant with electrical safety codes.
+    rubric:
+      - criterion: "Photograph clearly shows distribution board, MCBs/RCDs, generator terminals, or changeover switchgear"
+        points: 15
+      - criterion: "Protective earthing conductor (green/yellow or earth bar) and neutral links are distinctly visible and properly connected"
+        points: 15
+      - criterion: "Written inspection log details circuit breaker ratings, wire sizing, connected load categories, and earthing regime (TT or TN-S)"
+        points: 10
+      - criterion: "Image is well-lit, sharp, and demonstrates safe electrical installation standards"
+        points: 10

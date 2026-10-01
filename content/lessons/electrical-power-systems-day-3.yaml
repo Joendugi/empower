@@ -1,0 +1,218 @@
+id: electrical-power-systems-day-3
+course_id: electrical-power-systems
+title: "Transformer Physics, Winding & Core Sizing"
+title_sw: "Fizikia ya Transfoma, Kufuma Nyaya na Ukubwa wa Chuma"
+week_number: 1
+day_number: 3
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - electrical
+  - transformer
+  - magnetic-core
+  - copper-wire
+  - coil-winding
+  - engineering
+xp: 250
+exam_domain: electrical-power-systems
+
+briefing: >
+  Transformers are purely passive, solid-state electromagnetic machines that operate
+  at over 95% efficiency. Without transformers, transmitting electricity beyond a few
+  hundred metres at 230V would require copper cables as thick as tree trunks due to
+  resistive I²R voltage drop. By stepping voltage up to 1,000V–11,000V for rural transmission
+  and stepping back down to 230V/400V at homestead clusters, line losses are slashed
+  by up to 99%. This lesson covers transformer electromagnetic induction, grain-oriented
+  silicon steel laminated core calculations, turns-per-volt formulas, wire gauge selection,
+  and insulation varnishing.
+
+outline: >
+  Transformer induction laws and turns ratio formula (Vp / Vs = Np / Ns = Is / Ip);
+  the electrical power loss equation P_loss = I^2 * R and why stepping up voltage
+  cuts line losses by the square of voltage ratio; core physics (magnetic saturation
+  Bmax, hysteresis, eddy currents in laminated silicon steel sheets); transformer
+  design formula: E = 4.44 * f * Bmax * Ac * N; turns-per-volt calculation; copper
+  wire circular mil / mm2 sizing based on 3.0 A/mm2 current density; insulating
+  materials (Nomex paper, Kapton, baked polyurethane varnish); rewinding and
+  testing open-circuit vs short-circuit parameters.
+
+content_md: |
+  ## The Transformer & Faraday's Law
+
+  A transformer transfers electrical energy between two isolated circuits via mutual
+  electromagnetic induction through a shared ferromagnetic core:
+
+  $$\frac{V_p}{V_s} = \frac{N_p}{N_s} = \frac{I_s}{I_p} = a \quad (\text{Turns Ratio})$$
+
+  - If $N_s > N_p$: **Step-up transformer** (voltage increases, current decreases).
+  - If $N_s < N_p$: **Step-down transformer** (voltage decreases, current increases).
+  - **Power Invariance (Ideal)**:
+    $$P_{\text{primary}} = P_{\text{secondary}} \quad \Longrightarrow \quad V_p \times I_p = V_s \times I_s$$
+
+  ## Why Step-Up Voltage Cuts Distribution Losses
+
+  Conductor power loss due to wire resistance ($R_{\text{cable}}$) is determined by the
+  square of the transmitted current:
+
+  $$P_{\text{loss}} = I^2 \times R_{\text{cable}}$$
+
+  *Practical Demonstration*:
+  Suppose an off-grid micro-hydro turbine generates **23 kW** of power at a river site
+  located **1,000 metres (1 km)** away from a village school. Cable loop resistance = $2.0\,\Omega$.
+
+  ### Case A: Direct Transmission at 230 V:
+  - Current required: $I = \frac{P}{V} = \frac{23,000\text{ W}}{230\text{ V}} = 100\text{ Amperes}$.
+  - Power lost as heat in the cable:
+    $$P_{\text{loss}} = (100\text{ A})^2 \times 2.0\,\Omega = 10,000 \times 2.0 = \mathbf{20,000\text{ Watts (20 kW)}}$$
+  - **Catastrophic Failure**: Out of 23 kW generated, 20 kW is burned in the wires. Only 3 kW arrives at the school (efficiency = 13%).
+
+  ### Case B: Stepped Up to 2,300 V (10:1 Step-Up Transformer):
+  - Current required: $I = \frac{23,000\text{ W}}{2,300\text{ V}} = 10\text{ Amperes}$ (current dropped by a factor of 10).
+  - Power lost as heat in the cable:
+    $$P_{\text{loss}} = (10\text{ A})^2 \times 2.0\,\Omega = 100 \times 2.0 = \mathbf{200\text{ Watts (0.2 kW)}}$$
+  - **Result**: Stepping voltage up by 10× slashes transmission power losses by a factor of $10^2 =$ **100 times** ($99\%\text{ loss reduction}$)!
+  - At the school, a 2300V $\rightarrow$ 230V step-down transformer restores safe household power with 98.5% total transmission efficiency.
+
+  ## The Transformer Design Equation
+
+  The electromotive force ($\text{RMS Voltage } E$) induced in a coil of $N$ turns wrapped
+  around a magnetic core of cross-sectional area $A_c$ (in $\text{m}^2$) at frequency $f$ (in Hz):
+
+  $$E = 4.44 \times f \times B_{\text{max}} \times A_c \times N$$
+
+  Where:
+  - $E$ = RMS Voltage (Volts)
+  - $f$ = Grid Frequency (**50 Hz**)
+  - $B_{\text{max}}$ = Peak magnetic flux density in the iron core (in **Tesla**).
+    - Standard non-oriented transformer steel: $1.0\text{ to } 1.2\text{ Tesla}$.
+    - Cold-Rolled Grain-Oriented (CRGO) silicon steel: **$1.4\text{ to } 1.6\text{ Tesla}$**.
+    - Ferrite / cast iron (scrap): $< 0.8\text{ Tesla}$.
+  - $A_c$ = Effective iron core cross-sectional area ($\text{m}^2$).
+  - $N$ = Number of wire turns.
+
+  ## Sizing a Practical Transformer: Turns-Per-Volt (TPV)
+
+  Rearranging the design formula yields the **Turns Per Volt (TPV)** constant for a given core:
+
+  $$\text{TPV} = \frac{N}{E} = \frac{1}{4.44 \times f \times B_{\text{max}} \times A_c}$$
+
+  At $50\text{ Hz}$ with high-grade CRGO steel ($B_{\text{max}} = 1.5\text{ Tesla}$):
+  $$\text{TPV} = \frac{1}{4.44 \times 50 \times 1.5 \times A_c} = \frac{1}{333 \times A_c}$$
+
+  *Worked Example*: Fabricating a 1.0 kVA Isolation / Distribution Transformer:
+  - Stacking laminated E-I iron sheets to produce a center tongue width of $40\text{ mm}$ and stack depth of $50\text{ mm}$.
+  - Gross area = $40\text{ mm} \times 50\text{ mm} = 2,000\text{ mm}^2 = 0.0020\text{ m}^2$.
+  - Accounting for a 90% stacking factor (varnish insulation between thin laminations):
+    $$A_c = 0.0020 \times 0.90 = 0.0018\text{ m}^2$$
+  - Calculate TPV:
+    $$\text{TPV} = \frac{1}{333 \times 0.0018} = \mathbf{1.668\text{ Turns per Volt}}$$
+
+  ### Primary Winding (230 V):
+  $$N_p = 230\text{ V} \times 1.668 \approx \mathbf{384\text{ Turns}}$$
+
+  ### Secondary Winding (115 V):
+  Add a 5% allowance to compensate for copper resistance voltage drop under load:
+  $$N_s = (115\text{ V} \times 1.668) \times 1.05 = 192 \times 1.05 \approx \mathbf{202\text{ Turns}}$$
+
+  ## Copper Wire Sizing & Current Density
+
+  Running excessive current through magnet wire overheats the core, melting insulation:
+  - **Design Current Density ($J$)**: For natural air-cooled transformers, select **$J = 2.5\text{ to } 3.0\text{ Amperes per mm}^2$**.
+  - **Wire Cross-Sectional Area**:
+    $$A_{\text{wire}} = \frac{I}{J} \quad (\text{in mm}^2)$$
+
+  *Example*: For 1,000 VA at 230 V, primary current $I_p = 1000 / 230 = 4.35\text{ A}$.
+  $$A_{\text{wire}} = \frac{4.35\text{ A}}{3.0\text{ A/mm}^2} = 1.45\text{ mm}^2$$
+  Consulting standard wire tables, $1.45\text{ mm}^2$ corresponds to **1.36 mm diameter enamelled copper wire (approx. 16 AWG / 17 SWG)**.
+
+  ## Transformer Core Losses & Winding Safety
+
+  1. **Eddy Current Losses**: Alternating magnetic flux induces circulating currents inside solid iron, acting like a giant heating element. Cores must be built from **thin insulated laminations (0.35 mm to 0.5 mm thick)** coated in insulating varnish to break the electrical current paths.
+  2. **Inter-Layer Insulation**: Between each layer of primary and secondary wire, place a layer of **Kraft paper, Nomex, or polyester film**.
+  3. **Electrostatic Shield**: An unclosed copper foil strip placed between the primary and secondary winding (grounded to Earth) blocks high-frequency lightning spikes from crossing from the high-voltage transmission line into low-voltage building wiring.
+  4. **Varnish Impregnation & Baking**: After winding, submerge the entire core in electrical insulating resin/varnish under vacuum, then bake at **110°C for 4 hours**. This cements wires in place, preventing mechanical wire buzzing and abrasive insulation wear.
+
+exercises:
+  - id: elec-d3-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why are iron transformer cores constructed from stacks of thin, varnish-insulated
+      silicon steel sheets (laminations) rather than a solid block of forged iron?
+    xp_reward: 50
+    options:
+      - text: "Thin laminations interrupt and suppress circulating eddy currents induced by the alternating magnetic field, preventing severe thermal overheating and wasted core energy"
+        correct: true
+        explanation: "Solid iron provides low resistance paths for massive circulating eddy currents that waste huge power as heat (P = V²/R). Slicing the core into 0.35 mm insulated sheets restricts eddy currents to microscopic loops, reducing losses by over 95%."
+      - text: "Laminated cores are cheaper to ship by weight"
+        correct: false
+        explanation: "Laminated cores have the same weight and are more labour-intensive to produce."
+      - text: "Solid iron blocks cannot conduct magnetic flux"
+        correct: false
+        explanation: "Solid iron conducts magnetic flux very well, but suffers massive electrical heating losses."
+      - text: "Laminations allow the transformer to convert AC directly into DC"
+        correct: false
+        explanation: "Transformers operate strictly on AC and do not rectify."
+
+  - id: elec-d3-q2
+    type: FILL_BLANK
+    prompt: >
+      If transmission line voltage is stepped up by a factor of 5 using a transformer,
+      the current required to transmit the same kilowatt load drops by a factor of ___,
+      and the resistive I²R line power losses in the transmission wires drop by a factor of ___.
+    xp_reward: 50
+    correct_answer: "5; 25"
+    explanation: >
+      Current is inversely proportional to voltage (I = P / V), so current drops by 5×.
+      Power loss is proportional to current squared (P_loss = I² × R), so loss drops by 5² = 25 times.
+
+  - id: elec-d3-q3
+    type: MATCH_PAIRS
+    prompt: Match each transformer design parameter to its operational purpose.
+    xp_reward: 50
+    pairs:
+      - left: Turns Per Volt (TPV)
+        right: Ratio determining how many wire loops are wound per volt of coil potential
+      - left: Current Density (J = 3.0 A/mm2)
+        right: Sizing rule preventing copper conductor overheating and insulation breakdown
+      - left: Electrostatic Shield
+        right: Grounded copper foil layer preventing high-voltage lightning capacitive coupling
+      - left: Secondary +5% Turn Allowance
+        right: Compensates for internal winding resistance and inductive leakage voltage drop
+    correct_answer: null
+    explanation: >
+      TPV governs core magnetic saturation; current density sizes copper; electrostatic
+      shields protect against line surges; extra turns compensate for internal I×R drop.
+
+  - id: elec-d3-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      An off-grid technician designs a 50 Hz transformer on a core with effective iron area
+      Ac = 0.0025 m2 using grain-oriented silicon steel with Bmax = 1.4 Tesla.
+      Using E = 4.44 × f × Bmax × Ac × N, what is the calculated Turns Per Volt (TPV)?
+    xp_reward: 50
+    options:
+      - text: "Approximately 1.29 Turns per Volt"
+        correct: true
+        explanation: "TPV = 1 / (4.44 × 50 × 1.4 × 0.0025) = 1 / (310.8 × 0.0025) = 1 / 0.777 ≈ 1.287 Turns per Volt."
+      - text: "Approximately 12.9 Turns per Volt"
+        correct: false
+        explanation: "This is ten times too high, which would result in an over-wound coil that would not fit in the core window."
+      - text: "Approximately 0.55 Turns per Volt"
+        correct: false
+        explanation: "This would heavily saturate the magnetic core, causing massive excitation current and tripping circuit breakers."
+      - text: "Exactly 5.0 Turns per Volt"
+        correct: false
+        explanation: "This neglects the core area and Bmax calculations."
+
+  - id: elec-d3-q5
+    type: FILL_BLANK
+    prompt: >
+      After winding a high-voltage transformer coil, the assembly must be impregnated
+      with insulating resin and baked at 110 degrees C to cement the windings together,
+      preventing microscopic abrasive wear caused by magnetic ___ between adjacent wire turns.
+    xp_reward: 50
+    correct_answer: "vibration"
+    explanation: >
+      Alternating 50 Hz magnetic fields exert physical mechanical forces on the copper
+      conductors. Without solid varnish impregnation, wires vibrate and buzz, rubbing
+      through thin enamel insulation and causing catastrophic turn-to-turn short circuits.
