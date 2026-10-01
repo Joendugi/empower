@@ -370,6 +370,43 @@ The 24-hour glass jar sedimentation test accurately separates the strata: sand s
 Maintaining a crumbly granular structure with over 2% soil organic matter ensures high cation exchange capacity and moisture retention during prolonged dry spells.
 `,
   },
+  {
+    id: 'book-mechanical-workshop',
+    title: 'Remote Workshop Practice, Machining & Micro-Hydro Fabrication',
+    titleSw: 'Mazoezi ya Karakana, Utengenezaji Mitambo na Turbini za Maji',
+    author: 'Eng. Patrick Mutiso (NITA Master Machinist & Energy Technologist)',
+    description: 'Comprehensive engineering manual covering precision measurement (vernier calipers, micrometers, dial test indicators), drilling speeds, tapping progressions, oxy-acetylene cutting, SMAW stick welding, rolling bearing maintenance, shaft alignment, and Pelton runner micro-hydro turbine fabrication with static balancing.',
+    descriptionSw: 'Mwongozo kamili wa uhandisi kuhusu vipimo sahihi, kuchimba na kutengeneza nyuzi, kukata kwa gesi na kuchomelea, fani za mitambo, na kutengeneza turbini za maji.',
+    category: 'engineering',
+    tradeId: 'mechanical-production',
+    tradeTitle: 'Mechanical Engineering & Fabrication',
+    coverColor: 'from-zinc-700 to-slate-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 6.8,
+    totalPages: 132,
+    estimatedMinutes: 260,
+    featured: true,
+    rating: 4.9,
+    readersCount: 4250,
+    cdaccUnitId: 'CU/ENG/MP/CR/07/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Precision Measurement & Bench Layout', pageNumber: 1 },
+      { id: 'ch2', title: 'Twist Drills, Tapping & Thread Standards', pageNumber: 28 },
+      { id: 'ch3', title: 'Oxy-Acetylene Cutting & SMAW Welding', pageNumber: 56 },
+      { id: 'ch4', title: 'Rolling Bearings, Fits & Shaft Alignment', pageNumber: 84 },
+      { id: 'ch5', title: 'Micro-Hydro Pelton Turbine Balancing', pageNumber: 110 },
+    ],
+    contentMarkdown: `# Remote Workshop Practice & Machine Fabrication
+
+## Chapter 1: Precision Measurement & Layout
+In machine fabrication, guessing tolerances leads to loose bearings, vibrating shafts, and sudden equipment failure.
+The metric vernier caliper provides 0.02 mm resolution across 50 vernier scale graduations.
+The outside micrometer provides 0.01 mm resolution using a 0.50 mm pitch spindle screw.
+Always verify and account for zero error before measuring critical interference shaft journals.
+`,
+  },
 ];
 
 interface BookState {

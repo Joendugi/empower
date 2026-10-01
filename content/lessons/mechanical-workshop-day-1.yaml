@@ -1,0 +1,186 @@
+id: mechanical-workshop-day-1
+course_id: mechanical-workshop
+title: "Precision Measurement & Bench Work"
+title_sw: "Vipimo Sahihi na Kazi za Benchi"
+week_number: 1
+day_number: 1
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - mechanical
+  - measurement
+  - vernier-caliper
+  - micrometer
+  - bench-work
+  - workshop
+xp: 250
+exam_domain: mechanical-workshop
+
+briefing: >
+  In mechanical fabrication and machine repair, visual estimation leads to loose
+  bearings, vibrating shafts, and catastrophic equipment failure. A master
+  mechanic works to strict tolerances using precision instruments: the vernier
+  caliper (0.02 mm resolution), the outside micrometer (0.01 mm resolution),
+  and optical dial indicators. This lesson covers reading vernier scales,
+  correct zeroing, parallax avoidance, hand filing techniques, and engineer's blue
+  surface scraping for creating true mating surfaces.
+
+outline: >
+  Vernier caliper reading and internal/external/depth measurement; outside
+  micrometer calibration, ratchet thimble use, and zero-error correction; dial
+  test indicators (DTI) and runout measurement; layout tools (scriber, prick punch,
+  engineer's square, hermaphrodite calipers); file cuts (bastard, second cut,
+  smooth), cross-filing, and draw-filing techniques; engineer's blue surface
+  scraping for flat bearing surfaces.
+
+content_md: |
+  ## The Hierarchy of Workshop Measurement
+
+  Fabrication tolerances determine the required measuring instrument:
+
+  | Instrument | Typical resolution | Primary use |
+  |---|---|---|
+  | Steel rule | 0.5 mm – 1.0 mm | Rough stock sizing, general layout |
+  | Vernier caliper | 0.02 mm (1/50 mm) | Internal/external diameters, step depths |
+  | Digital caliper | 0.01 mm | Fast workshop verification |
+  | Outside micrometer | 0.01 mm (0.001 mm with vernier) | Shaft diameters, bearing journals, shims |
+  | Dial Test Indicator (DTI) | 0.01 mm | Shaft runout, truing work in a lathe chuck |
+  | Feeler gauges | 0.03 – 1.00 mm | Spark plug gaps, valve clearances, bearing backlash |
+
+  ## Reading the Vernier Caliper (0.02 mm Scale)
+
+  A standard metric vernier caliper has 50 divisions on the slider scale spanning
+  49 mm on the main beam. Each vernier division equals `49 / 50 = 0.98 mm`.
+  The difference between a main scale division (1.00 mm) and a vernier division
+  is `1.00 - 0.98 = 0.02 mm`.
+
+  ### Reading Steps:
+  1. **Main Scale**: Read the whole millimetre line immediately to the left of the vernier scale's `0` line.
+  2. **Vernier Scale**: Locate the single vernier division line that aligns perfectly with any main scale line.
+  3. **Calculation**: Total reading = `Main scale (mm) + (Coinciding vernier line number × 0.02 mm)`.
+
+  *Example*: Main scale reads past 24 mm. Vernier line 17 aligns with a main scale line.
+  Reading = `24.00 mm + (17 × 0.02 mm) = 24.34 mm`.
+
+  ## The Outside Micrometer (0.01 mm Resolution)
+
+  The micrometer uses a precision pitch screw (0.50 mm per complete revolution) and
+  a thimble divided into 50 equal increments.
+  One thimble division = `0.50 mm / 50 = 0.01 mm`.
+
+  ### Essential Operating Rules:
+  - **Always use the ratchet stop or friction thimble**: Never tighten using the main thimble; excessive torque springs the C-frame, introducing 0.03–0.05 mm error.
+  - **Zero Error Check**: Clean anvil faces with clean paper, close gently using the ratchet (3 clicks). If zero line does not align with the sleeve index line:
+    - **Positive error**: Reading is greater than zero; subtract from final reading.
+    - **Negative error**: Reading is behind zero; add to final reading.
+    - Or adjust the sleeve using the supplied C-spanner.
+
+  ## Bench Layout Tools & Methods
+
+  Accurate machining begins with precise marking out on raw stock:
+  - **Layout dye (Engineer's Blue or Dykem)**: Thin, uniform coat provides high-contrast background for scribing.
+  - **Tungsten Carbide Scriber**: Held at 75° angle, pulled firmly once to cut through the blue layer into the metal. Never scribe multiple times over the same line.
+  - **Prick Punch (30° included angle)**: Used for precise layout intersections; creates a tiny dimple to locate compasses or dividers.
+  - **Center Punch (90° included angle)**: Follows the prick punch to enlarge the dimple into a seat that prevents twist drills from wandering.
+  - **Engineer's Try Square**: Checked against a known granite surface plate. Light gap under the blade indicates non-perpendicular edges.
+
+  ## Hand Filing Fundamentals
+
+  Filing is not abrasive rubbing; each tooth is a miniature cutting chisel that cuts only on the **forward stroke**.
+
+  ### File Classifications:
+  - **Bastard cut**: Coarse teeth; for rapid material removal (0.5 mm or more).
+  - **Second cut**: Medium spacing; for sizing within 0.1 mm of layout line.
+  - **Smooth cut**: Fine teeth; for final sizing and surface finish within 0.02 mm.
+
+  ### Techniques:
+  - **Cross-filing**: Pushing the file diagonally across the work at 45° with full forward body weight. Relieve pressure on the return stroke to prevent dulling teeth.
+  - **Draw-filing**: Holding the file flat with both hands at 90° to the stroke and sliding back and forth along the workpiece. Removes file marks and leaves a satin finish.
+  - **Pinning & File Carding**: When soft metals (aluminium, brass) clog file teeth (pinning), they scratch the work. Clean teeth frequently with a wire **file card** brushed parallel to tooth grooves. Rubbing chalk into the file prevents chips from sticking.
+
+exercises:
+  - id: mech-d1-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A mechanic measures an electric motor shaft with a 0.02 mm vernier caliper.
+      The vernier zero is past the 38 mm main scale line. The 34th division on the
+      vernier slider aligns exactly with a main scale graduation. What is the
+      measured diameter?
+    xp_reward: 50
+    options:
+      - text: "38.68 mm"
+        correct: true
+        explanation: "Reading = 38.00 mm + (34 × 0.02 mm) = 38.00 mm + 0.68 mm = 38.68 mm."
+      - text: "38.34 mm"
+        correct: false
+        explanation: "This directly adds the division count without multiplying by the 0.02 mm resolution factor."
+      - text: "38.17 mm"
+        correct: false
+        explanation: "This improperly divides the 34 divisions by 2 instead of multiplying by 0.02."
+      - text: "39.68 mm"
+        correct: false
+        explanation: "The zero line has only passed 38 mm, not 39 mm."
+
+  - id: mech-d1-q2
+    type: FILL_BLANK
+    prompt: >
+      An outside micrometer has a screw spindle pitch of ___ mm per complete turn,
+      and its thimble is divided into ___ equal graduations, yielding a measurement
+      resolution of ___ mm.
+    xp_reward: 50
+    correct_answer: "0.5 mm; 50; 0.01 mm"
+    explanation: >
+      A metric micrometer screw moves 0.5 mm per full 360-degree rotation. Dividing
+      0.5 mm by 50 thimble marks produces 0.01 mm per division.
+
+  - id: mech-d1-q3
+    type: MATCH_PAIRS
+    prompt: Match each workshop punch and file type to its correct engineering function.
+    xp_reward: 50
+    pairs:
+      - left: Prick Punch (30 degree point)
+        right: Creates precise tiny locator dimple at layout line intersections
+      - left: Center Punch (90 degree point)
+        right: Enlarges locator dimple to seat and guide twist drill tips
+      - left: Bastard Cut File
+        right: Heavy metal removal when working down rough stock to near size
+      - left: Draw-filing
+        right: Moving file sideways along work to produce smooth scratch-free finish
+    correct_answer: null
+    explanation: >
+      Prick punches (30°) are sharp for accurate visual placement on scribed lines.
+      Center punches (90°) match typical drill chisel edges. Bastard files remove stock,
+      and draw-filing smooths the surface.
+
+  - id: mech-d1-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      When closing an outside micrometer onto a cylindrical workpiece, why is it
+      critical to turn the ratchet speeder rather than rotating the main thimble?
+    xp_reward: 50
+    options:
+      - text: "The ratchet slips at a calibrated torque (approx. 5-10 N), preventing frame flex and spindle deformation that cause false high or low readings"
+        correct: true
+        explanation: "Gripping and turning the thimble by hand can easily exert 30-50 N of force, flexing the forged C-frame by 0.02-0.05 mm and giving inaccurate measurements or damaging the micro-threads."
+      - text: "The ratchet stop speeds up the measurement process by spinning freely"
+        correct: false
+        explanation: "The purpose of the ratchet stop is precision torque control, not speed."
+      - text: "The main thimble is locked during measurement and cannot be turned"
+        correct: false
+        explanation: "The thimble is free to turn unless the locking lever is engaged."
+      - text: "Turning the thimble reverses the zero error on the barrel"
+        correct: false
+        explanation: "Zero error is adjusted using the barrel spanner, not by how the thimble is turned."
+
+  - id: mech-d1-q5
+    type: FILL_BLANK
+    prompt: >
+      When filing soft metals like aluminium, metal particles clog the file teeth in a
+      defect called ___. This is prevented by rubbing ___ into the file face and
+      cleared using a ___.
+    xp_reward: 50
+    correct_answer: "pinning; chalk; file card"
+    explanation: >
+      Pinning occurs when soft chips weld into tooth gullets and gouge the work.
+      Chalk fills gullets temporarily so chips cannot bond, and a brass/steel wire
+      file card clears trapped pins.
