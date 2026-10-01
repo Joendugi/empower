@@ -1,0 +1,299 @@
+id: aquaculture-hydroponics-day-5
+course_id: aquaculture-hydroponics
+title: "Coupled Aquaponics & Closed-Loop Deep Water Culture"
+title_sw: "Kilimo Mseto cha Samaki na Mimea (Aquaponics) na Njia ya DWC"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - aquaponics
+  - deep-water-culture
+  - DWC
+  - nutrient-film-technique
+  - bell-siphon
+  - closed-loop
+xp: 250
+exam_domain: aquaculture-hydroponics
+
+briefing: >
+  Aquaponics represents the ultimate closed-loop food production system: fish and plants
+  sustain each other in a coupled cycle where fish metabolic waste fertilizes plant roots,
+  and plants biologically purify the water that returns clean to the fish. This eliminates
+  the primary problem of standalone aquaculture — the costly, environmentally destructive
+  discharge of nitrate-rich effluent. Simultaneously, plants receive a complete mineral
+  nutrient solution with zero synthetic chemical fertilizer input. Well-designed aquaponic
+  systems in tropical climates achieve fish yields of 40 to 60 kg per cubic metre per cycle
+  alongside vegetable yields of 15 to 20 kg/m²/month. This final lesson covers media bed
+  design with bell siphons, deep water culture (DWC) raft configuration, nutrient film
+  technique (NFT), fish-to-plant ratio design rules, system cycling protocols, and the
+  annual production economics of integrated aquaponic enterprises.
+
+outline: >
+  The nitrogen cycle in aquaponics as the biological foundation: TAN → nitrite → nitrate
+  via biofilm nitrification; plant roots assimilate nitrate (NO3-), ammonium (NH4+),
+  phosphate (PO43-), potassium, calcium, magnesium, iron, and trace minerals; pH management
+  (6.8 to 7.2 — the 'aquaponic sweet spot' balancing fish health and plant nutrient availability);
+  plant production subsystems: (1) media beds — gravel or expanded clay (LECA) filled 30 cm deep,
+  flood-and-drain using Affnan bell siphon auto-siphon; (2) Deep Water Culture (DWC) rafts:
+  25 mm polystyrene sheets floating on a 30 cm water channel, net pots holding plant root
+  masses; (3) Nutrient Film Technique (NFT): thin film of nutrient solution flowing over bare
+  roots in PVC half-pipes; fish-to-plant biomass ratio calculation (stocking 5-7 kg fish per
+  m² of media bed as general rule of thumb); iron supplementation (chelated Fe-EDTA or iron
+  filings in media bed); calcium and potassium deficiencies in fish-dominated systems; the
+  Affnan bell siphon mechanics (standpipe height sets flood level, bell cap traps air,
+  snorkel breaks siphon at drain level); PHOTO_CAPTURE practical assessment.
+
+content_md: |
+  ## Aquaponics: Closing the Nutrient Loop
+
+  Standalone aquaculture's critical weakness is effluent: water must be drained and replaced
+  to manage nitrate accumulation, wasting water and nutrients. Aquaponics closes this loop
+  entirely. The Coupled System Logic:
+
+  ```
+  THE AQUAPONICS NUTRIENT CYCLE
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │                                                                             │
+  │   ┌──────────────┐    TAN (NH3/NH4+)     ┌─────────────────────────────┐   │
+  │   │   FISH TANK  │ ─────────────────────► │  BIOFILTER / MEDIA BED     │   │
+  │   │              │                         │  Nitrosomonas: NH4+ → NO2- │   │
+  │   │  Feed Input  │ ◄─────────────────────  │  Nitrobacter:  NO2- → NO3- │   │
+  │   │  (Protein)   │   CLEAN OXYGENATED WATER│                             │   │
+  │   └──────────────┘                         └───────────┬─────────────────┘   │
+  │                                                         │                     │
+  │                                               NO3- Rich Water                 │
+  │                                                         ↓                     │
+  │                                          ┌──────────────────────────────┐     │
+  │                                          │  PLANT GROW BED (DWC / NFT) │     │
+  │                                          │  Roots absorb: NO3-, NH4+,  │     │
+  │                                          │  PO4, K, Ca, Mg, Fe, Zn... │     │
+  │                                          └──────────────────────────────┘     │
+  └─────────────────────────────────────────────────────────────────────────────┘
+  ```
+
+  ---
+
+  ## pH: The Aquaponic Sweet Spot
+
+  Fish and beneficial bacteria thrive in neutral to slightly alkaline conditions, while plants
+  achieve optimal micronutrient availability at slightly acidic to neutral pH. Aquaponics requires
+  managing this conflict:
+
+  ```
+  pH PREFERENCES IN THE AQUAPONIC SYSTEM
+  │────────────────────────────────────────────────────────────────────────│
+  │ pH 5.0──────pH 6.5──── pH 6.8 ─────── pH 7.2 ────pH 7.5──────pH 9.0 │
+  │        [Plant     ◄─────────────────────────────► Nitrifying           │
+  │         Micronutrients  AQUAPONIC SWEET SPOT      Bacteria & Fish]     │
+  │         Best]                 TARGET                  [Best]           │
+  │────────────────────────────────────────────────────────────────────────│
+  ```
+  * **Target Range**: 6.8 to 7.2.
+  * **pH Correction**:
+    * **Too Low (< 6.5)**: Add potassium bicarbonate (KHCO₃) or calcium carbonate (CaCO₃ — seashells/limestone chips in media) to raise pH.
+    * **Too High (> 7.5)**: Add food-grade phosphoric acid or dilute hydrochloric acid slowly, monitoring with a calibrated pH meter.
+
+  ---
+
+  ## Plant Production Subsystems
+
+  ### 1. Media Bed with Affnan Bell Siphon (Flood-and-Drain)
+  The media bed is the simplest aquaponic grow bed. It combines biofiltration, solids
+  mineralization, and plant cultivation in a single unit.
+
+  ```
+  AFFNAN BELL SIPHON ANATOMY & OPERATION
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │     [GROW BED — Filled to 30 cm with Expanded Clay (LECA)]            │
+  │                                                                        │
+  │                    ┌─────────────┐  ← Bell Cap (Inverted Cup)         │
+  │                    │  ┌───────┐  │     Traps air to start siphon      │
+  │                    │  │Standpipe│  │     when water reaches bell rim   │
+  │      Water Inlet   │  │(Drain  │  │  ← Protective Screen guards       │
+  │    (From Fish Tank)│  │ level) │  │     against media blockage        │
+  │    →→→→→→→→→→→→ │  │ F  L  │  │                                    │
+  │  Water slowly rises│  │ O  O  │  │                                    │
+  │  until it reaches  │  │ O  O  │  │                                    │
+  │  bell rim — siphon │  │ D  D  │  │                                    │
+  │  pulls ALL water   │  └───┬───┘  │                                    │
+  │  DOWN instantly    │      │Snorkel│ ← Snorkel tube set at drain level │
+  │                    └──────┴───────┘   breaks siphon (admits air) when │
+  │                           │           water drops below snorkel lip    │
+  └───────────────────────────┼────────────────────────────────────────────┘
+                               ↓  To Fish Tank (gravity return)
+  ```
+
+  **Flood-and-Drain Timing**:
+  * Flood phase: Water pumped into media bed over approximately 15 to 30 minutes.
+  * The bell siphon triggers automatically when water reaches the standpipe rim.
+  * Drain phase: Entire bed drains in 3 to 8 minutes through the standpipe.
+  * The snorkel tube located 2 to 3 cm below the standpipe top admits air into the siphon at drain completion, breaking the vacuum and stopping the drain.
+  * Full cycle repeats every 30 to 45 minutes, delivering oxygen-flush to root zones.
+
+  ### 2. Deep Water Culture (DWC) Floating Raft
+  DWC is the highest-yielding aquaponic system for leafy vegetables and herbs (basil, lettuce,
+  spinach, watercress):
+
+  ```
+  DWC RAFT CROSS-SECTION
+  ─────────────────────────────────────────────────────────
+       [Net Pot with Plant]   [Net Pot]   [Net Pot]
+              │                   │           │
+   ═══════════╪═══════════════════╪═══════════╪═══════════  ← Polystyrene Raft (25 mm)
+              │                   │           │                  Floating on water surface
+              │  Plant Roots Hanging           │
+              │  Submerged in Nutrient Water   │
+   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  ← Water Surface (30 cm depth DWC channel)
+   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+   [NITRATE-RICH WATER — Continuous flow from biofilter / media bed]
+   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  ```
+
+  * **DWC Channel Design**: PVC guttering or concrete trough, 30 cm deep, 60 cm wide, up to 30 m long.
+  * **Plant Spacing**: Lettuce at 20 × 20 cm centers; Basil at 25 × 25 cm; Spinach at 15 × 15 cm.
+  * **Aeration**: Air stones every 2 m of channel to maintain DO at root zone.
+  * **Planting-to-Harvest**: Leafy greens: 28 to 35 days; Herbs: 45 to 60 days.
+
+  ### 3. Nutrient Film Technique (NFT)
+  * Water flows as a thin film (2 to 3 mm depth) through 100 mm diameter PVC pipes at a 2° slope.
+  * Net pots inserted into holes cut every 20 cm hold plant crowns above the channel while roots hang into the film.
+  * NFT suits fruiting crops (tomatoes, cucumbers, peppers) when combined with supplemental potassium and phosphate dosing.
+
+  ---
+
+  ## Fish-to-Plant Ratio Design Rule
+
+  The key design relationship in aquaponics is matching fish feed input to plant nutrient demand:
+
+  $$\text{Daily Feed Input (g)} = \frac{\text{Plant Grow Bed Area (m}^2\text{)} \times 60\text{ g}}{1\text{ m}^2}$$
+
+  * **60 to 100 g of feed per m² of grow bed per day** is the practical rule for balanced nutrient cycling.
+  * Example: A 10 m² DWC raft system requires 600 to 1000 g of fish feed daily → supports 15 to 25 kg of fish biomass at a 3–4% feed rate.
+  * **Too Many Fish**: Nitrate and TAN overwhelm plant capacity; water turns yellow-green; pH crashes.
+  * **Too Few Fish**: Nitrate deficiency; plants yellow from nitrogen starvation (chlorosis).
+
+  ---
+
+  ## Iron, Calcium & Potassium Supplementation
+
+  Pure fish excretion provides excellent levels of nitrogen (nitrate), phosphorus, and trace minerals,
+  but three nutrients are commonly deficient in fish-dominated systems:
+
+  | Deficiency | Visual Symptom | Remedy |
+  | :--- | :--- | :--- |
+  | **Iron (Fe)** | Interveinal chlorosis on young leaves (yellow between green veins) | Chelated Fe-EDTA: 2 mg Fe/L added weekly |
+  | **Potassium (K)** | Leaf tip and margin necrosis (brown edge scorching) | Potassium bicarbonate or potassium sulfate dosing |
+  | **Calcium (Ca)** | Blossom end rot in tomatoes and peppers; distorted growing tips | Calcium carbonate (crushed coral/limestone) in media |
+
+  ---
+
+  ## System Cycling Protocol
+
+  Before stocking fish, a new aquaponic system must complete a biological cycling process:
+  1. **Add ammonia source**: 2–5 mg/L ammonia from ammonium chloride or small piece of decaying organic material.
+  2. **Monitor daily**: Test TAN, NO₂⁻, NO₃⁻, and pH each morning.
+  3. **Week 1–2**: TAN rises, then Nitrosomonas establish and TAN peaks. Nitrite (NO₂⁻) begins rising rapidly.
+  4. **Week 3–4**: Nitrobacter colonize; NO₂⁻ falls; NO₃⁻ steadily accumulates. This confirms a fully functioning nitrogen cycle.
+  5. **System Ready**: TAN < 1.0 mg/L AND NO₂⁻ < 0.5 mg/L after adding a large ammonia spike. Fish can now be stocked safely at partial capacity.
+
+exercises:
+  - id: aqua-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why must the target pH in an integrated aquaponic system be maintained strictly in the
+      range of 6.8 to 7.2 — a compromise narrower than the individual optima for fish,
+      nitrifying bacteria, and plants separately?
+    xp_reward: 50
+    options:
+      - text: "Below pH 6.8 nitrifying bacteria activity collapses sharply and iron and manganese precipitate out of solution; above pH 7.2 plant micronutrient availability is severely restricted and toxic un-ionized ammonia (NH3) fraction rises, so 6.8 to 7.2 is the only viable overlap zone for all three components simultaneously"
+        correct: true
+        explanation: "Fish tolerate 6.5 to 8.5; nitrifiers are optimal at 7.5 to 8.0 but function above 6.5; plants access iron and manganese best below 6.8. The sweet spot 6.8 to 7.2 is the compromise where all three system components remain functional without critically compromising any component."
+      - text: "The 6.8 to 7.2 range is ideal because it prevents all types of fish disease"
+        correct: false
+        explanation: "pH management reduces stress but does not prevent all bacterial or parasitic fish diseases."
+      - text: "Plants cannot grow below pH 8.0 and fish cannot survive below pH 9.0"
+        correct: false
+        explanation: "Most aquaponic plants grow well at pH 5.5 to 7.5; fish typically need pH 6.0 to 8.5."
+      - text: "The pH sweet spot of 6.8 to 7.2 ensures maximum TAN toxicity for algae control"
+        correct: false
+        explanation: "At pH 6.8 to 7.2, NH3 fraction is actually very low, not maximized. Algae control is unrelated."
+
+  - id: aqua-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      In the Affnan bell siphon flood-and-drain media bed system, the siphon suction is
+      automatically broken and the drain cycle is stopped when the water level falls below
+      the open end of the small ___ tube, which admits atmospheric air into the siphon
+      vacuum and terminates the drain cycle.
+    xp_reward: 50
+    correct_answer: "snorkel"
+    explanation: >
+      The snorkel tube (a small pipe penetrating the bell cap at a height 2-3 cm below the
+      standpipe top) admits air into the siphon bell vacuum when water drops below its open end,
+      breaking the siphon and stopping the drain automatically without any electrical timer.
+
+  - id: aqua-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each aquaponic plant nutrient deficiency to its characteristic visible symptom in growing plants.
+    xp_reward: 50
+    pairs:
+      - left: Iron (Fe) Deficiency
+        right: Interveinal chlorosis — yellow tissue between distinctly green veins on youngest leaves
+      - left: Potassium (K) Deficiency
+        right: Marginal leaf scorch — brown tip and edge necrosis spreading inward on older leaves
+      - left: Calcium (Ca) Deficiency
+        right: Blossom end rot on tomato fruits and distorted/blackened growing tips on lettuce
+      - left: Nitrogen (N) Deficiency
+        right: Uniform pale yellowing of all older lower leaves while young leaves remain green
+    correct_answer: null
+    explanation: >
+      Iron deficiency causes interveinal yellowing on young leaves; potassium causes leaf edge
+      scorching; calcium causes blossom end rot; nitrogen deficiency causes uniform lower-leaf
+      yellowing.
+
+  - id: aqua-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Using the standard aquaponics fish-to-plant feed ratio rule, a farmer operating a 15 m²
+      Deep Water Culture raft system should feed approximately how many grams of fish feed per
+      day to maintain a balanced nitrogen budget?
+    xp_reward: 50
+    options:
+      - text: "900 to 1500 grams per day (at 60 to 100 g of feed per m² of grow bed), supporting approximately 20 to 35 kg of fish biomass at a 4% daily feed rate"
+        correct: true
+        explanation: "The design rule is 60 to 100 g of feed per m² of grow bed per day. For 15 m²: 15 × 60 = 900 g minimum; 15 × 100 = 1500 g maximum. At 4% feed rate (feed per day / fish biomass): 900/0.04 = 22.5 kg fish; 1500/0.04 = 37.5 kg fish — roughly 20 to 35 kg standing stock."
+      - text: "50 to 100 grams per day in total for the entire 15 m² raft"
+        correct: false
+        explanation: "This dose is far too low — only 3 to 7 g/m²/day — creating severe nitrogen starvation in the plants."
+      - text: "3000 to 5000 grams per day because larger raft systems require intensified feeding"
+        correct: false
+        explanation: "200 to 333 g/m²/day would overwhelm the system, causing ammonia and nitrate accumulation."
+      - text: "Feed input is irrelevant; plants regulate nitrogen automatically regardless of fish stocking"
+        correct: false
+        explanation: "Plant nitrogen uptake is directly determined by fish feed input, which is the system's only external nutrient source."
+
+  - id: aqua-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Photograph your functional aquaponics system component, earthen pond, fish hatchery setup,
+      on-farm feed production, or RAS biofilter installation from your aquaculture field practice.
+      The image must clearly show: fish, plant production channels, grow media beds, bell siphon
+      components, fingerling culture tanks, feed pellets, or water quality test equipment, with
+      accompanying written notes recording measured water quality parameters (DO, pH, TAN,
+      temperature) or system design dimensions.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Photographic documentation of aquaponic systems, fish ponds, or hatchery facilities verifies
+      practical application of water chemistry, biofilter design, fish biology, and integrated plant
+      production principles covered across this five-day curriculum unit.
+    rubric:
+      - criterion: "Photograph clearly shows aquaponic grow beds, fish tanks, pond infrastructure, hatchery equipment, or feed production components with distinct legible detail"
+        points: 15
+      - criterion: "System components (bell siphons, net pots, aeration lines, biofilters, media, plumbing) or fish/plant subjects are clearly identifiable and in sharp focus"
+        points: 15
+      - criterion: "Written notes record at least three water quality readings (e.g., DO mg/L, pH, temperature, TAN) or documented system design measurements with units"
+        points: 10
+      - criterion: "Image is well-lit, properly oriented, and demonstrates safe handling practices and clean installation quality"
+        points: 10

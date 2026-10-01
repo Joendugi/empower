@@ -1,0 +1,257 @@
+id: aquaculture-hydroponics-day-2
+course_id: aquaculture-hydroponics
+title: "Hatchery Operations, Broodstock & Induced Spawning"
+title_sw: "Uendeshaji wa Viatulio, Mifugo ya Mbegu na Upandishaji wa Kishawishi"
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - hatchery
+  - induced-spawning
+  - broodstock
+  - hypophysation
+  - fingerlings
+  - catfish-breeding
+xp: 250
+exam_domain: aquaculture-hydroponics
+
+briefing: >
+  Without a reliable, disease-free supply of vigorous fingerlings, an aquaculture operation
+  collapses at the start. In the tropics, Nile Tilapia reproduce prolifically in grow-out ponds,
+  causing severe overpopulation and stunted fish unless monosex all-male populations are produced.
+  Conversely, the high-value African Catfish (*Clarias gariepinus*) will not spawn naturally in
+  captivity, requiring artificial hormone induction (hypophysation), hand-stripping of gametes,
+  and precision artificial incubation. This lesson details the science of sex differentiation,
+  synthetic hormone dosage, egg stripping, water-hardening, and first-feeding nursery care.
+
+outline: >
+  Broodstock selection and nutritional conditioning (minimum 35-40% crude protein feed);
+  sexual dimorphism and visual sexing of Tilapia (papilla morphology) and Catfish (genital
+  papilla shape and redness); the biology of Tilapia monosex all-male production: oral
+  administration of 17α-methyltestosterone (MT) at 60 mg/kg feed to swim-up fry (under 11 mm)
+  for 21 to 28 consecutive days; hormonal induction of African Catfish (*Clarias gariepinus*)
+  using dried Carp Pituitary Gland (CPG) or synthetic GnRH analogues (Ovaprim / DHP at 0.5 mL/kg);
+  intramuscular injection protocol; latency time calculation as a function of water temperature
+  (degree-hours formula; 9-11 hours at 28°C); dry-method stripping of ova; milt collection and
+  saline preservation; gamete activation with fresh water (60-second fertilization window);
+  incubation systems (McDonald hatching jars, flow-through incubation troughs, kakaban mesh);
+  yolk-sac fry absorption (48-72 hours) and first-feeding nutrition (Artemia nauplii, rotifers,
+  and micronized egg-yolk emulsion).
+
+content_md: |
+  ## The Seed Production Bottleneck
+
+  Commercial aquaculture cannot rely on wild fingerling collection; wild seed carries parasites,
+  unpredictable genetics, and heterogeneous age classes. A modern hatchery operates under
+  strict biosecurity and controlled environmental triggers.
+
+  ---
+
+  ## Nile Tilapia: Monosex All-Male Production
+
+  Nile Tilapia (*Oreochromis niloticus*) reach sexual maturity at only 3 to 4 months of age
+  (at 50 to 100 grams). If males and females are stocked together, reproduction is incessant.
+  Energy shifts from somatic muscle growth to gonadal development, and the pond swarms with
+  tens of thousands of tiny, unmarketable stunted fish.
+
+  ```
+                       SEXUAL DIMORPHISM IN MATURE NILE TILAPIA
+         FEMALE (2 Orifices)                         MALE (1 Orifice)
+             ┌───────────┐                              ┌───────────┐
+             │  ○ Anus   │                              │  ○ Anus   │
+             │           │                              │           │
+             │  ═ Slit   │ (Transverse Oviduct)         │           │
+             │  • Pore   │ (Urinary Pore)               │  • Pore   │ (Single Urogenital Papilla)
+             └───────────┘                              └───────────┘
+  ```
+
+  ### 1. Oral Hormonal Sex Reversal
+  * Newly hatched Tilapia fry have undifferentiated gonadal tissue. Administering an androgen
+    during the first month forces all genetic females to differentiate phenotypically into males.
+  * **Hormone**: $17\alpha$-methyltestosterone (MT).
+  * **Dosage**: **60 mg MT per kilogram** of feed.
+  * **Protocol**:
+    1. Dissolve 60 mg MT powder in 100 mL of 95% ethanol.
+    2. Mix ethanol solution thoroughly into 1.0 kg of finely powdered high-protein (45% CP) fry mash.
+    3. Air-dry the feed in a shaded, ventilated room until all alcohol evaporates completely.
+    4. Collect swim-up fry measuring **less than 11 mm** (under 14 days old). Fry larger than 11 mm have already initiated natural sexual differentiation and will not reverse.
+    5. Feed the hormone feed at 10–20% body weight daily, split across 4 to 6 feedings, for **21 to 28 consecutive days**.
+    6. Yields > 98% phenotypically male populations that grow 30–50% faster than mixed-sex populations. The hormone is completely metabolized and undetectable in tissue within 2 weeks of cessation.
+
+  ---
+
+  ## African Catfish (*Clarias gariepinus*) Induced Spawning
+
+  In nature, African Catfish spawn during seasonal river flooding triggered by rising waters,
+  rainfall shock, and vegetation inundation. In pond confinement, mature females produce eggs
+  that remain arrested in the post-vitellogenic stage; they will not ovulate spontaneously.
+  They require artificial hormonal induction (*hypophysation*).
+
+  ```
+                 INDUCING OVULATION IN AFRICAN CATFISH WITH OVAPRIM
+                     Intramuscular Injection (45° Angle Behind Dorsal Fin)
+                                    \
+                                     ▼
+      ┌──────────────────────────────\───────────────┬─────────────────┐
+      │   (o)                         \   Dorsal Fin │                 │
+      │  Head                          \             │      Tail       │
+      └─────────────────────────────────\────────────┴─────────────────┘
+                                         \
+                     Wait Latency Period: ~10 Hours at 28°C
+  ```
+
+  ### 1. Broodstock Selection
+  * **Female**: Minimum 1.0 to 2.0 kg. Swollen, soft, reddish/pinkish genital papilla. A gentle
+    cannulation test or abdominal massage should express ripe, olive-green ova of uniform diameter (> 1.0 mm).
+  * **Male**: Pointed, elongated, vascularized red-tipped papilla.
+
+  ### 2. Hormonal Induction Options
+  1. **Synthetic GnRH Analogue + Domperidone (e.g., Ovaprim)**:
+     * Dosage: **0.5 mL per kg** body weight for females; 0.25 mL per kg for males (if live-milking).
+     * Injected intramuscularly at a 45° angle into the dorsal musculature between the lateral line and dorsal fin.
+  2. **Carp Pituitary Gland (CPG)**:
+     * Dosage: 3.0 to 4.0 mg dried pituitary per kg female weight, pulverized in a mortar and suspended in 1 mL sterile physiological saline (0.9% NaCl).
+
+  ### 3. Latency Period (Degree-Hours)
+  The interval between hormone injection and complete ovulation depends strictly on water temperature:
+
+  $$\text{Latency Hours} \approx \frac{280}{\text{Water Temperature (°C)}}$$
+
+  * At **28°C**: Latency is **9.5 to 10.5 hours**. If injected at 20:00 PM, stripping takes place between 05:30 and 06:30 AM.
+  * Over-standing (waiting too long) causes egg over-ripening and lysis; stripping too early yields unripe, unfertilizable eggs.
+
+  ---
+
+  ## Stripping, Fertilization & Water Hardening
+
+  ```
+  CATFISH STRIPPING WORKFLOW (THE DRY METHOD)
+  ┌─────────────────────────┐
+  │ Anesthetize Female      │ ◄── Clove oil (50 ppm) or MS-222
+  └───────────┬─────────────┘
+              ▼
+  ┌─────────────────────────┐
+  │ Dry Female Thoroughly   │ ◄── WATER PREMATURELY ACTIVATES & DESTROYS EGGS!
+  └───────────┬─────────────┘
+              ▼
+  ┌─────────────────────────┐
+  │ Strip Ova into Dry Bowl │ ◄── Gentle abdominal pressure toward urogenital pore
+  └───────────┬─────────────┘
+              ▼
+  ┌─────────────────────────┐
+  │ Collect Male Milt       │ ◄── Sacrificed male testis dissected or live catheterization
+  └───────────┬─────────────┘
+              ▼
+  ┌─────────────────────────┐
+  │ Dry Feather Mix (60 sec)│ ◄── Milt + eggs mixed dry with sterile bird feather
+  └───────────┬─────────────┘
+              ▼
+  ┌─────────────────────────┐
+  │ Add Fresh Water (O2)    │ ◄── Triggers motility; sperm penetrates micropyle in 60s
+  └───────────┬─────────────┘
+              ▼
+  ┌─────────────────────────┐
+  │ Spread onto Kakabans    │ ◄── Prevents clumping; adhesive eggs stick to mesh
+  └─────────────────────────┘
+  ```
+
+  ### Critical Rules of Fertilization:
+  * **Water Contact Rule**: Fish spermatozoa and ova activate the instant they contact freshwater. Once activated, the egg micropyle (sperm entry pore) closes within **60 to 90 seconds** as the outer membrane swells (*water hardening*). If water droplets fall into the stripping bowl before milt is blended, 100% of the eggs will be rendered sterile.
+  * **Adhesiveness**: Catfish eggs possess a sticky glutinous layer. In incubation tanks, eggs are poured over submerged synthetic mosquito mesh (*kakabans*) in a single layer. If eggs clump into thick piles, inner eggs suffocate from lack of oxygen and rot with *Saprolegnia* fungus.
+
+  ---
+
+  ## Hatching & First-Feeding Nursery
+
+  * **Incubation**: Eggs hatch in **22 to 26 hours** at 27–29°C.
+  * **Yolk-Sac Stage**: Hatchlings (*larvae*) carry a large yolk sac and remain clustered in dark tank corners for **48 to 72 hours**. They require zero supplemental food; feeding them during this period fouls the water.
+  * **First Feeding**: The moment yolk sacs are 80% absorbed and fry swim actively horizontal, feeding must start immediately. Delayed feeding leads to irrecoverable larval starvation and vicious cannibalism.
+  * **Dietary Sequence**:
+    * Days 1 to 5: Newly hatched *Artemia salina* cysts (live brine shrimp nauplii), cultured freshwater rotifers, or hard-boiled chicken egg yolk blended with water and strained through a 100-micron screen.
+    * Days 6 to 14: Decapsulated Artemia, cultured zooplankton (*Daphnia*, *Moina*), and 50% protein micronized starter mash (0.2–0.3 mm crumble).
+    * Frequent grading through 1.0 mm, 1.5 mm, and 2.0 mm plastic sieves every 4 days to eliminate cannibalistic 'shooters' (fast-growing giants that swallow smaller siblings whole).
+
+exercises:
+  - id: aqua-d2-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why is the 'Dry Method' strictly enforced when stripping and fertilizing African Catfish
+      (Clarias gariepinus) eggs, prohibiting any water droplets in the collection basin until after milt is mixed?
+    xp_reward: 50
+    options:
+      - text: "Water contact triggers immediate motility of spermatozoa and simultaneously initiates rapid water-hardening of the egg membrane, sealing the micropyle (fertilization pore) within 60 to 90 seconds"
+        correct: true
+        explanation: "Catfish sperm and eggs are activated by freshwater. Once activated, spermatozoa exhaust their energy reserves in under 2 minutes, and the egg membrane swells and seals the micropyle within 60 to 90 seconds. If water enters before mixing, the gametes lose viability before fertilization can occur."
+      - text: "Water dilutes the red color of the eggs, making them unmarketable"
+        correct: false
+        explanation: "Catfish eggs are greenish-brown; color has nothing to do with marketability."
+      - text: "Catfish eggs dissolve instantly upon contacting liquid water"
+        correct: false
+        explanation: "Fish eggs do not dissolve in water; they water-harden and incubate in water."
+      - text: "To prevent the female fish from feeling cold during handling"
+        correct: false
+        explanation: "The dry method protects gamete fertilization mechanics, not fish temperature comfort."
+
+  - id: aqua-d2-q2
+    type: FILL_BLANK
+    prompt: >
+      To produce monosex all-male Nile Tilapia populations and prevent in-pond overpopulation,
+      swim-up fry under 11 mm in size must be fed a starter diet infused with the synthetic
+      androgen 17α-methyltestosterone (MT) at a standard dosage of ___ mg per kilogram of feed
+      for 21 to 28 consecutive days.
+    xp_reward: 50
+    correct_answer: "60"
+    explanation: >
+      The globally recognized standard dosage for tilapia oral masculinization is 60 mg of
+      17α-methyltestosterone per kilogram of feed.
+
+  - id: aqua-d2-q3
+    type: MATCH_PAIRS
+    prompt: Match each hatchery breeding component or stage to its operational definition.
+    xp_reward: 50
+    pairs:
+      - left: Kakaban Mesh
+        right: Submerged synthetic screen where sticky catfish eggs are spread in a single layer
+      - left: 17α-Methyltestosterone
+        right: Androgenic steroid hormone used to masculinize sexually undifferentiated tilapia fry
+      - left: Latency Period
+        right: Time elapsed between hormone injection and complete female egg ovulation (~10 hrs at 28°C)
+      - left: Cannibalistic Shooters
+        right: Fast-growing fingerlings that must be graded out every 4 days to prevent sibling predation
+    correct_answer: null
+    explanation: >
+      Kakabans support sticky eggs; MT masculinizes tilapia; latency dictates stripping timing;
+      shooters must be graded out to prevent cannibalism.
+
+  - id: aqua-d2-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      What critical physical boundary dictates when 17α-methyltestosterone (MT) treatment
+      must be initiated to successfully achieve 98%+ phenotypic male tilapia?
+    xp_reward: 50
+    options:
+      - text: "Fry must be swim-up stage and less than 11 mm in total length, because gonadal differentiation begins after this size and later treatment fails to reverse ovaries"
+        correct: true
+        explanation: "Tilapia fry must be under 11 mm (swim-up stage, typically under 14 days post-hatch) for oral MT therapy. Once fry exceed 11 to 14 mm, gonadal differentiation has already started, making hormonal sex reversal ineffective."
+      - text: "Fry must weigh at least 50 grams before hormones can be tolerated"
+        correct: false
+        explanation: "At 50 grams, fish are already sexually mature and sex reversal is impossible."
+      - text: "Hormone feeding is only administered to mature 1-year-old broodstock"
+        correct: false
+        explanation: "Broodstock are not fed MT; MT is fed exclusively to early post-larval fry."
+      - text: "Hormones must be injected directly into each individual fry's eye"
+        correct: false
+        explanation: "MT is administered orally in feed mash, never by micro-injection into eyes."
+
+  - id: aqua-d2-q5
+    type: FILL_BLANK
+    prompt: >
+      At a standard tropical water temperature of 28°C, the calculated latency period for
+      female Clarias gariepinus following an intramuscular injection of 0.5 mL/kg Ovaprim
+      is approximately ___ hours before manual stripping of ripe eggs should take place.
+    xp_reward: 50
+    correct_answer: "10"
+    explanation: >
+      At 28°C, the latency time for ovulation in Clarias gariepinus is approximately 9.5 to 10.5
+      (10) hours (calculated via ~280 degree-hours / 28°C).

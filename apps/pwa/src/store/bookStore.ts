@@ -664,7 +664,44 @@ Directional felling is the science of internal wooden hinge engineering: carving
 Retreating along a cleared 45-degree path keeps the logger safe from collapsing tree canopies and backward stump kicks.
 `,
   },
+  {
+    id: 'book-aquaculture-hydroponics',
+    title: 'Aquaculture, Inland Fisheries & Integrated Aquaponics Manual',
+    titleSw: 'Mwongozo wa Kilimo cha Samaki, Uvuvi wa Bara na Aquaponics',
+    author: 'Dr. Amina Odhiambo & Kenya Marine and Fisheries Research Institute',
+    description: 'Comprehensive off-grid aquaculture field manual covering freshwater pond ecology and earthen pond engineering (clay ribbon test, 2:1 dyke slopes, monk sluice gates); dissolved oxygen diurnal cycles and ammonia-ammonium equilibrium chemistry; Nile Tilapia monosex production via 17α-methyltestosterone oral administration (60 mg/kg at swim-up stage < 11 mm); African Catfish induced spawning by Ovaprim or Carp Pituitary Gland injection, latency period calculation (280 degree-hours), dry-method gamete stripping, kakaban fertilization, and Artemia nursery feeding; on-farm fish feed formulation using the Pearson Square method and BSF (Hermetia illucens) prepupae as a self-replicating protein source; Recirculating Aquaculture Systems (RAS) with swirl separator solids removal, Moving Bed Biofilm Reactors (MBBR with K3 Kaldnes media at 500 m²/m³), nitrification biochemistry (Nitrosomonas + Nitrobacter consuming 4.57 g O2/g TAN), airlift pump CO2 stripping, and UV sterilization; and integrated aquaponics deep water culture (DWC) raft systems with Affnan bell siphon flood-and-drain media beds, pH sweet-spot management (6.8–7.2), fish-to-plant feed ratio design, and micronutrient supplementation protocols.',
+    descriptionSw: 'Mwongozo kamili wa kilimo cha samaki kwenye mabwawa ya udongo, uzalishaji wa vifaranga vya samaki wa choroko na kambare, uundaji wa chakula cha samaki kwa njia ya Pearson Square na mdudu wa BSF, mifumo ya mzunguko wa maji (RAS), na kilimo mseto cha samaki na mboga (aquaponics) kwa kutumia mifumo ya DWC na mifumo ya bell siphon.',
+    category: 'agriculture',
+    tradeId: 'aquaculture-fisheries',
+    tradeTitle: 'Aquaculture, Fisheries & Aquaponics',
+    coverColor: 'from-teal-600 to-cyan-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 6.8,
+    totalPages: 136,
+    estimatedMinutes: 270,
+    featured: true,
+    rating: 4.9,
+    readersCount: 4120,
+    cdaccUnitId: 'CU/AGR/AQ/CR/18/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Pond Ecology, Water Chemistry & Fish Biology', pageNumber: 1 },
+      { id: 'ch2', title: 'Hatchery Operations & Induced Spawning', pageNumber: 28 },
+      { id: 'ch3', title: 'Feed Formulation, BSF Protein & Pellet Milling', pageNumber: 58 },
+      { id: 'ch4', title: 'Recirculating Systems (RAS) & Biofiltration', pageNumber: 88 },
+      { id: 'ch5', title: 'Aquaponics, DWC Rafts & Bell Siphon Systems', pageNumber: 116 },
+    ],
+    contentMarkdown: `# Aquaculture, Inland Fisheries & Integrated Aquaponics
+
+## Chapter 1: Pond Ecology, Water Chemistry & Fish Biology
+Successful aquaculture is fundamentally water management rather than fish handling.
+Fish breathe, excrete, and live entirely in a single continuous aquatic medium. Dissolved oxygen must remain above 5.0 mg/L; un-ionized ammonia (NH3) must stay below 0.05 mg/L; pH must be maintained between 6.5 and 8.5.
+The diurnal oxygen cycle is critical: phytoplankton produce oxygen during daylight, but from midnight to dawn, respiration drives DO to dangerous minimum levels, requiring emergency aeration capability.
+`,
+  },
 ];
+
 
 interface BookState {
   books: Book[];

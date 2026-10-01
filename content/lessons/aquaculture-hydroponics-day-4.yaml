@@ -1,0 +1,287 @@
+id: aquaculture-hydroponics-day-4
+course_id: aquaculture-hydroponics
+title: "Recirculating Aquaculture Systems (RAS) & Biofiltration"
+title_sw: "Mifumo ya Mzunguko wa Maji (RAS) na Uchujaji wa Kibiolojia"
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - RAS
+  - biofiltration
+  - nitrification
+  - MBBR
+  - swirl-separator
+  - airlift-pump
+xp: 250
+exam_domain: aquaculture-hydroponics
+
+briefing: >
+  Recirculating Aquaculture Systems (RAS) represent the highest-intensity, lowest-water-use
+  fish production technology available. A well-designed RAS recycles 95–99% of its process
+  water daily, achieving stocking densities of 50 to 150 kg/m³ — equivalent to a 1 m³ tank
+  producing 100 kg of harvestable fish. The biological core of any RAS is the biofilter:
+  a colonized surface area where autotrophic nitrifying bacteria perform the critical conversion
+  of metabolically lethal ammonia into relatively harmless nitrate. Understanding the biochemistry
+  of Nitrosomonas and Nitrobacter, the mechanics of solids removal, moving bed bioreactor (MBBR)
+  design, oxygen supplementation, and carbon dioxide stripping is essential for designing,
+  building, or operating a land-based RAS farm.
+
+outline: >
+  The nitrogen cycle in RAS: fish metabolize dietary protein → excrete Total Ammonia Nitrogen (TAN)
+  primarily through gill diffusion; Step 1 nitrification: Nitrosomonas europaea oxidizes NH3/NH4+
+  to nitrite (NO2-) consuming 3.43 g O2 per gram TAN; Step 2: Nitrobacter winogradskyi oxidizes
+  NO2- to nitrate (NO3-) consuming 1.14 g O2 per gram NO2-; total oxygen consumption for complete
+  nitrification = 4.57 g O2 / g TAN; hydraulic turnover rate: minimum 1 complete tank volume
+  exchange per hour; solids removal as the first treatment step — swirl separators (passive radial
+  flow separators achieving 60-80% TSS removal) and drum filters (80-95% removal); moving bed
+  biofilm reactors (MBBR): high-density polyethylene (HDPE) K3 or Kaldnes media with 500 m²
+  of protected surface area per m³ of media at 50-60% fill ratio; ammonia removal rate (ARE)
+  3.0 to 5.0 g TAN/m²/day depending on water temperature and DO; airlift pump design for
+  combined aeration, circulation, and CO2 stripping; degassing column design; carbon dioxide
+  accumulation (CO2 > 25 mg/L causes hypercapnia in fish); UV sterilization for pathogen control.
+
+content_md: |
+  ## Why Recirculate? The Water-Protein Efficiency Argument
+
+  An open flow-through pond producing 10 tonnes of fish per year requires 10,000 to 30,000 m³
+  of fresh water. A RAS producing the same tonnage on a fraction of the footprint uses only
+  200 to 500 m³ of annual make-up water. This 50x to 100x reduction in water consumption makes
+  RAS viable in:
+  * Water-scarce arid regions
+  * Dense urban areas with high land values
+  * Cold climates where heating a small recirculated volume is economically feasible
+  * Biosecure high-health production environments free from wild pathogen exposure
+
+  ---
+
+  ## The Nitrogen Cycle in RAS
+
+  Every gram of protein fed to fish generates nitrogenous waste. Approximately 30–35% of dietary
+  protein nitrogen is retained in fish tissue; the rest is excreted:
+
+  ```
+  NITROGEN PATHWAY IN A FISH FARM SYSTEM
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │                                                                      │
+  │  FEED PROTEIN ──► FISH METABOLISM ──► AMMONIA (NH3 / NH4+)         │
+  │                                              │                       │
+  │                                 NITRIFICATION BY BIOFILM BACTERIA   │
+  │                                              │                       │
+  │                    Step 1:  NH4+ ──Nitrosomonas──► NO2- + 3.43 g O2 │
+  │                    Step 2:  NO2- ──Nitrobacter──►  NO3- + 1.14 g O2 │
+  │                                              │                       │
+  │                          NO3- (Relatively Harmless, accumulates)     │
+  │                          Managed via: 10-20% daily water exchange    │
+  │                          Or: Denitrification / Aquaponics plant uptake│
+  └──────────────────────────────────────────────────────────────────────┘
+  ```
+
+  **Key Biochemistry Facts:**
+  * Complete nitrification (NH4+ → NO3-) consumes **4.57 g of dissolved oxygen per gram of TAN**.
+  * Nitrifying bacteria are strict autotrophs that grow extremely slowly (doubling time 8–24 hours vs. 20 minutes for heterotrophs). A freshly built biofilter takes 4 to 6 weeks to reach full biological maturity (*cycling*).
+  * Nitrifiers are highly sensitive to chlorine, antibiotics, pH < 6.5, and rapid temperature fluctuations.
+
+  ---
+
+  ## Step 1: Solids Removal
+
+  Suspended fish feces and uneaten feed particles are the primary substrate for heterotrophic
+  bacteria that outcompete and suppress slow-growing nitrifiers. Solids must be captured and
+  removed before water reaches the biofilter.
+
+  ### Swirl Separator (Radial Flow Separator)
+  ```
+  SWIRL SEPARATOR CROSS-SECTION (PASSIVE GRAVITATIONAL FLOW)
+                     Water Inlet (Tangential Entry)
+                              ↘
+      ╭─────────────────────────────────────────────╮
+      │                       ↪→ Rotation           │ Clarified Water Outlet (Top Centre)
+      │     ↘ ↘ ↘ ↘ ↘ ↘ ↘ ↘ ↘                   │     ↑
+      │                                  ↘           ├─────────────────►
+      │  (Centrifugal force throws heavy              │
+      │   particles outward and downward)             │
+      │                  ↓                            │
+      ╰─────────────────────────────────────────────╯
+                              ↓
+               Sludge Drain Valve (Opened 2x Daily)
+  ```
+  * Effective for particles > 100 microns (feces, pellet fragments).
+  * TSS removal efficiency: **60 to 80%**.
+  * Simple construction; PVC pipe and a conical base; no moving parts; no electricity required.
+
+  ### Drum Filter (Mechanical Screen Filter)
+  * Rotating stainless steel or polyester mesh (60 to 100 micron aperture).
+  * Self-backwashing with spray nozzles every 60 seconds.
+  * TSS removal: **80 to 95%** (for fine particles missed by swirl separators).
+  * Higher capital cost; requires electricity and pressurized backwash water.
+
+  ---
+
+  ## The Moving Bed Biofilm Reactor (MBBR)
+
+  The MBBR is the industry standard biofilter design for high-intensity RAS. It uses thousands
+  of buoyant HDPE (high-density polyethylene) plastic media pieces — typically Kaldnes K3 media
+  or equivalent — freely suspended in aerated water.
+
+  ```
+  K3 KALDNES MBBR MEDIA PIECE (Actual Dimensions ~25mm × 10mm)
+        ╭──────────╮
+       /│          │\
+      / │          │ \   Outer Cylinder with Fins (Enhanced Surface Area)
+     │  │──────────│  │
+     │  │  INSIDE  │  │  ◄── Protected inner cross-shaped surface colonized by biofilm
+     │  │──────────│  │       (Protected from shear stress and abrasion)
+      \ │          │ /
+       \│          │/
+        ╰──────────╯
+        Surface Area: 500 m² / m³ of media volume
+  ```
+
+  **MBBR Design Parameters:**
+  * **Fill Ratio**: 50% to 60% of reactor volume filled with media (above 70% media impedes fluidization).
+  * **Aeration Requirement**: Coarse bubble aeration at flow rate keeping media in constant vigorous motion.
+  * **Ammonia Removal Rate (ARR)**: 3.0 to 5.0 g TAN/m²/day at water temperature 20–28°C and DO > 5 mg/L.
+  * **Biofilm Maturation**: Takes 4 to 6 weeks after initial system start-up.
+
+  **Sizing Calculation Example:**
+  * Daily TAN production from a 1000 kg/yr Catfish farm (feed rate at 2% BW/day at 35% CP):
+    * Estimated TAN load ≈ 15 to 20 g TAN/day per 100 kg fish biomass.
+    * For a 100 kg standing crop: ~20 g TAN/day.
+    * MBBR surface area needed at 4 g/m²/day: 20/4 = **5.0 m² of biofilm surface**.
+    * With K3 media (500 m²/m³): 5/500 = **0.01 m³ media = 10 litres of media**.
+
+  ---
+
+  ## Airlift Pump: Circulation + Aeration + CO₂ Stripping Combined
+
+  The airlift pump is the simplest, most energy-efficient circulation device for RAS, combining
+  water movement, oxygen dissolution, and carbon dioxide degassing in a single unit.
+
+  ```
+  AIRLIFT PUMP OPERATION PRINCIPLE
+                                Water + CO2 Out
+                                      ↑
+                               ═══════╪══════  ◄── Water Surface
+                                      │
+                         ┌────────────┴──────────────┐
+                         │    RISER PIPE (PVC)        │
+                         │   ■ Air Bubble Stream ■    │
+                         │  ■■■■■■■■■■■■■■■■■■■■■   │
+                         │ Water + Bubbles Rising →   │ ←── Reduced density column rises
+                         │■■■■■■■■■■■■■■■■■■■■■■■■■│
+                         └────────────┬──────────────┘
+                                      │ Air Injector (Fine Bubble Diffuser Stone)
+                              ═════════╪═════════  ◄── Tank Bottom
+  ```
+
+  * A fine bubble air stone at the base of a submerged riser pipe creates a column of buoyant water-bubble mixture.
+  * The density difference between the water-bubble column and surrounding water drives circulation upward with no moving mechanical parts.
+  * As water cascades at the top of the riser, **CO₂ strips out** into the atmosphere at the air-water interface.
+  * **Power efficiency**: 3 to 8 times more energy-efficient than centrifugal pump systems for the same flow rate at low head pressure requirements.
+
+  ### Carbon Dioxide Management
+  * Fish continuously produce CO₂ from cellular respiration.
+  * In recirculated systems without adequate aeration or degassing, CO₂ accumulates.
+  * **CO₂ > 25 mg/L** causes hypercapnia: fish blood CO₂ rises, blood pH drops (respiratory acidosis), reducing oxygen affinity of hemoglobin (Bohr Effect), causing lethargy and growth suppression.
+  * **CO₂ > 40 mg/L** triggers anesthesia; > 60 mg/L causes mortality.
+
+  ---
+
+  ## UV Sterilization for Pathogen Control
+
+  Ultraviolet sterilization units expose recirculated water to short-wave UV-C light (253.7 nm),
+  damaging the DNA of bacteria, viruses, and parasites, preventing infectious disease outbreaks.
+
+  * Effective dose: **≥ 30 mJ/cm²** for broad-spectrum fish pathogen inactivation.
+  * Critical limitation: UV does not remove dissolved chemicals (TAN, NO₂⁻, NO₃⁻). It only kills living organisms.
+  * UV lamps must be replaced annually as output degrades below effective bactericidal intensity even if lamps still glow visibly.
+
+exercises:
+  - id: aqua-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      In a recirculating aquaculture system (RAS), why is it critical to remove solid fish
+      feces and uneaten feed from the water before it enters the biological biofilter?
+    xp_reward: 50
+    options:
+      - text: "Organic solids fuel explosive growth of fast-reproducing heterotrophic bacteria that consume most of the dissolved oxygen and outcompete the slow-growing nitrifying bacteria, causing the biofilter to crash and TAN to accumulate to lethal levels"
+        correct: true
+        explanation: "Heterotrophic bacteria that colonize and digest organic solids reproduce every 20 minutes and have much higher oxygen demands than autotrophic nitrifiers (8-24 hour generation times). If solids reach the biofilter, heterotrophs establish dominance, suppress nitrification, and ammonia builds to toxic levels."
+      - text: "Fish feces physically block the UV sterilizer lamp aperture"
+        correct: false
+        explanation: "UV sterilizers are downstream of biofilters and solids removal; they do not address biological nitrification."
+      - text: "Solid particles raise the water temperature by thermal insulation"
+        correct: false
+        explanation: "Suspended solids do not contribute meaningfully to water temperature change."
+      - text: "Fish actively avoid eating in the presence of visible floating feces"
+        correct: false
+        explanation: "Feed intake avoidance is not the primary technical reason for removing solids before biofiltration."
+
+  - id: aqua-d4-q2
+    type: FILL_BLANK
+    prompt: >
+      Complete nitrification of fish ammonia excretions in a biofilm biofilter requires two
+      sequential bacterial groups: Nitrosomonas europaea converts ammonia (TAN) to nitrite,
+      and Nitrobacter winogradskyi converts nitrite to nitrate. The combined total oxygen
+      consumption of the complete two-step nitrification process is ___ grams of dissolved
+      oxygen consumed per gram of Total Ammonia Nitrogen (TAN) processed.
+    xp_reward: 50
+    correct_answer: "4.57"
+    explanation: >
+      Step 1 (NH4+ → NO2-) consumes 3.43 g O2 per gram TAN.
+      Step 2 (NO2- → NO3-) consumes 1.14 g O2 per gram NO2-.
+      Total: 3.43 + 1.14 = 4.57 g O2 per gram TAN nitrified.
+
+  - id: aqua-d4-q3
+    type: MATCH_PAIRS
+    prompt: Match each RAS component to its primary function in the recirculating water treatment train.
+    xp_reward: 50
+    pairs:
+      - left: Swirl Separator
+        right: Passive gravitational radial-flow device removing 60-80% of suspended solid particles
+      - left: Moving Bed Biofilm Reactor (MBBR)
+        right: Suspended HDPE media colonized by nitrifying bacteria converting TAN to harmless nitrate
+      - left: Airlift Pump
+        right: Combines water circulation, oxygen dissolution, and CO2 stripping with no moving parts
+      - left: UV Sterilizer (253.7 nm UV-C)
+        right: Damages pathogen DNA to prevent bacterial and viral disease outbreaks in recirculated water
+    correct_answer: null
+    explanation: >
+      Swirl separator removes coarse solids; MBBR provides nitrification; airlift pump circulates
+      while stripping CO2; UV sterilization destroys pathogens.
+
+  - id: aqua-d4-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A freshly constructed RAS biofilter consistently fails to control ammonia even though
+      Kaldnes K3 media has been installed at a 55% fill ratio and aeration appears adequate.
+      The system was only started 5 days ago. What is the most probable root cause?
+    xp_reward: 50
+    options:
+      - text: "The nitrifying bacteria (Nitrosomonas and Nitrobacter) have not had sufficient time to colonize and form a mature biofilm; RAS biofiltration requires 4 to 6 weeks of biological cycling before reaching full nitrification capacity"
+        correct: true
+        explanation: "Nitrifying bacteria are autotrophic specialist chemolithotrophs with doubling times of 8 to 24 hours — orders of magnitude slower than heterotrophs. A new biofilter needs 4 to 6 weeks of gradual, increasing ammonia load exposure to develop a full, stable biofilm capable of handling production-level TAN loads."
+      - text: "The K3 media is incorrectly installed; it must be glued to the tank walls"
+        correct: false
+        explanation: "K3 media is designed to float freely in suspension — it must NOT be attached. Free movement is essential to biofilm stability."
+      - text: "The biofilter needs to be disinfected with chlorine bleach before bacteria can colonize"
+        correct: false
+        explanation: "Chlorine is lethal to nitrifying bacteria and would prevent biofilm establishment."
+      - text: "Ammonia is too low in a new system; nitrifying bacteria only grow at TAN > 10 mg/L"
+        correct: false
+        explanation: "Nitrifiers grow across a wide range of TAN concentrations; the constraint is colonization time, not minimum substrate concentration."
+
+  - id: aqua-d4-q5
+    type: FILL_BLANK
+    prompt: >
+      In a recirculating aquaculture system, carbon dioxide produced by fish cellular respiration
+      accumulates and causes hypercapnia. Fish begin experiencing clinical hypercapnia symptoms
+      (lethargy, reduced growth, respiratory distress) when dissolved CO2 concentration exceeds
+      ___ mg/L, making continuous CO2 stripping by airlift pumps or degassing columns mandatory.
+    xp_reward: 50
+    correct_answer: "25"
+    explanation: >
+      Dissolved CO2 concentrations exceeding 25 mg/L in recirculated water cause hypercapnia:
+      blood pH drops through respiratory acidosis, the Bohr Effect reduces hemoglobin-oxygen
+      affinity, and fish exhibit lethargy, gasping, and suppressed growth.

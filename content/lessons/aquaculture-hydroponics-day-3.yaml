@@ -1,0 +1,266 @@
+id: aquaculture-hydroponics-day-3
+course_id: aquaculture-hydroponics
+title: "Nutrition, Pearson Square Formulation & Feed Milling"
+title_sw: "Lishe ya Samaki, Mfumo wa Pearson na Utengenezaji wa Chakula"
+week_number: 1
+day_number: 3
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - fish-nutrition
+  - feed-formulation
+  - pearson-square
+  - BSF-larvae
+  - feed-milling
+  - protein-requirements
+xp: 250
+exam_domain: aquaculture-hydroponics
+
+briefing: >
+  Commercial fish feeds account for 60 to 70% of total aquaculture production costs.
+  For smallholder and off-grid farmers, importing pelleted commercial feed at US\$700–900
+  per tonne is economically unsustainable. On-farm compounded feed, using locally available
+  high-protein agricultural by-products, can cut feed costs by 40 to 60% without sacrificing
+  growth performance. This lesson covers fish nutritional physiology, amino acid requirements,
+  the Pearson Square balancing method for two-ingredient feed blending, Black Soldier Fly (BSF)
+  larvae production as a self-replicating local protein source, and the mechanics of low-cost
+  farm-scale feed milling and pellet drying.
+
+outline: >
+  Fish nutritional physiology: amino acids as the primary energy source in carnivores and
+  omnivores (unlike ruminants, fish preferentially oxidize protein for energy); crude protein
+  (CP) requirements: fry 40–45%, grow-out Tilapia 25–30%, grow-out Catfish 35–40%; the
+  concept of digestible protein and apparent digestibility coefficients (ADC); essential
+  amino acids (lysine, methionine, threonine) and their primary dietary sources; key local
+  feed ingredients: soybean meal (44–48% CP), fishmeal (60–72% CP, avoid un-dried locally
+  produced meal), sunflower seedcake (34–38% CP), blood meal (80% CP, use at max 5% of diet),
+  rice bran (12–14% CP, maximum 30% inclusion), maize grain (8–10% CP, energy carrier),
+  BSF prepupae (Hermetia illucens: 40–44% CP DM, 30–36% crude fat); the Pearson Square
+  method for balancing two-ingredient blends to a target protein level; farm-scale feed
+  production steps: weighing, grinding to < 1 mm particle size, mixing, steam pelleting
+  or ring-die extrusion, and solar-tray drying of finished pellets.
+
+content_md: |
+  ## Fish Nutritional Physiology: Why Protein Matters Most
+
+  Unlike cattle and pigs that primarily oxidize carbohydrates for energy, carnivorous and
+  omnivorous fish evolved in protein-rich aquatic environments; they preferentially catabolize
+  amino acids as their primary metabolic fuel. This means:
+  1. **Protein Demands Are High**: Grow-out Tilapia require 26–32% crude protein (CP) in the diet; catfish fry require 45%+ CP.
+  2. **Carbohydrate Utilization Is Poor**: Fish lack the pancreatic amylase enzyme activity needed for efficient starch digestion. Diet starch content should remain below 20%.
+  3. **Lipid Quality Matters**: Polyunsaturated fatty acids (PUFAs) — specifically n-3 PUFA series (EPA and DHA) — are essential for fish immune function, growth, and flesh quality.
+
+  ```
+  CRUDE PROTEIN (CP) TARGET BY SPECIES AND LIFE STAGE
+  ┌─────────────────────────────┬──────────────┬───────────────┬────────────────┐
+  │ Life Stage                  │ Tilapia (CP) │ Catfish (CP)  │ Carps (CP)     │
+  ├─────────────────────────────┼──────────────┼───────────────┼────────────────┤
+  │ Larvae / Yolk-Sac Fry       │ —            │ —             │ —              │
+  │ First-Feeding to 1 g        │ 45–48 %      │ 45–50 %       │ 40–45 %        │
+  │ Fingerling (1–20 g)         │ 35–40 %      │ 40–45 %       │ 35–40 %        │
+  │ Juvenile (20–100 g)         │ 28–35 %      │ 35–40 %       │ 30–35 %        │
+  │ Sub-Adult Grow-Out          │ 25–30 %      │ 32–38 %       │ 25–32 %        │
+  │ Broodstock Conditioning     │ 35–40 %      │ 38–42 %       │ 35–40 %        │
+  └─────────────────────────────┴──────────────┴───────────────┴────────────────┘
+  ```
+
+  ---
+
+  ## Common Feed Ingredients & Composition Table
+
+  | Ingredient | Crude Protein (%) | Crude Fat (%) | Key Notes |
+  | :--- | :---: | :---: | :--- |
+  | Fishmeal (sun-dried) | 60–72 | 8–12 | Best protein; expensive; risk of rancidity |
+  | Soybean Meal (solvent) | 44–48 | 1–2 | Excellent plant protein; anti-nutritional factors destroyed by heat |
+  | Blood Meal (spray-dried) | 78–85 | 0.5 | Max 5% inclusion; dark pellets; poor palatability |
+  | Sunflower Seedcake | 34–38 | 2–5 | Good local availability; low in lysine |
+  | Groundnut Cake | 42–48 | 8–12 | Risk of aflatoxin if poorly stored; heat at 100°C for 15 min |
+  | BSF Larvae (*Hermetia*) | 40–44 | 28–36 | Self-replicating from organic waste; excellent palatability |
+  | Maize Grain (ground) | 8–10 | 3–5 | Energy carrier; cheap filler; max 30% inclusion |
+  | Rice Bran | 12–14 | 12–16 | High fat prone to rancidity; max 20–25% inclusion |
+
+  ---
+
+  ## The Pearson Square Method: On-Farm Feed Balancing
+
+  The Pearson Square allows a farmer to determine the exact proportion of two ingredients
+  needed to reach a target protein level.
+
+  ### Worked Example: Targeting 32% CP Grow-Out Catfish Feed Using Soybean Meal + Maize
+
+  **Ingredients**: Soybean Meal (45% CP) and Maize (9% CP). **Target**: 32% CP blend.
+
+  ```
+  PEARSON SQUARE DIAGRAM
+
+        Soybean Meal (45% CP) ─────────────────────────── 23 parts
+                         \                              /
+                          \        Target: 32%         /
+                           \                          /
+        Maize (9% CP)  ─────────────────────────────── 13 parts
+                                                      ─────────
+                                                  Total: 36 parts
+  ```
+
+  **Step-by-Step Calculation:**
+  1. Place the higher-CP ingredient (SBM, 45%) in the **top-left corner**.
+  2. Place the lower-CP ingredient (Maize, 9%) in the **bottom-left corner**.
+  3. Place the **Target CP value (32%)** in the center.
+  4. **Top-right corner**: Target − Lower ingredient: 32 − 9 = **23 parts SBM**
+  5. **Bottom-right corner**: Higher ingredient − Target: 45 − 32 = **13 parts Maize**
+  6. **Total parts**: 23 + 13 = **36 total parts**
+  7. **Proportions**:
+     * Soybean Meal: 23/36 = **63.9% of diet**
+     * Maize: 13/36 = **36.1% of diet**
+
+  **Verification**: (0.639 × 45) + (0.361 × 9) = 28.75 + 3.25 = **32.0% CP** ✓
+
+  ---
+
+  ## Black Soldier Fly (BSF) Larvae: Self-Replicating Protein
+
+  *Hermetia illucens* is arguably the most powerful decentralized protein production system
+  available to off-grid aquaculture farmers. A BSF colony converts organic waste (kitchen
+  scraps, restaurant refuse, agricultural by-products) directly into high-grade protein with
+  negligible land and water requirements.
+
+  ```
+                        BSF LIFE CYCLE FOR FARMER-CONTROLLED PRODUCTION
+             ┌──────────────────────────────────────────────────────┐
+             │                                                      ↑
+         Eggs (4 days)                                      Adult Fly (5-7 days)
+             ↓                                                      │
+        Tiny Larvae                                         Pupation (14 days)
+         (hatches)                                                  │
+             ↓                                                      │
+      Growth on Waste ──────────────────────────► Pre-Pupae (14-18 days)
+        (10-12 days)             HARVEST            (45% CP, fat: 36%)
+            │                   WINDOW   ↙
+            │               (Migrating to Pupate → Naturally Walk into Collection Bucket!)
+            ↓
+   Processing: Fresh Feed / Sun-Dry / Pellet Inclusion
+  ```
+
+  **BSF Production Metrics (per square metre of substrate cage):**
+  * Feed waste input: 1.0 to 2.0 kg/day of organic kitchen scraps or brewery waste.
+  * Larvae biomass yield: 60 to 100 grams fresh-weight prepupae per kg of waste substrate.
+  * Protein content of sun-dried prepupae: 40–44% CP on dry-matter basis.
+  * Water requirement: Near zero (larvae moisture from waste substrate itself).
+
+  ---
+
+  ## On-Farm Feed Milling Process
+
+  ```
+  FARM-SCALE FEED PRODUCTION FLOW
+  [Raw Ingredients Sourced] → [Dry Ingredients Weighed in Batch] → [Grind to < 1.0 mm]
+         ↓                                                                     ↓
+  [Wet Binders Added: 1% CMC, or fish oil + water] ←─────────────── [Batch Blended 10 min]
+         ↓
+  [PELLET FORMATION OPTIONS]
+         ├── RING-DIE PELLET MILL (Commercial): 4–6 mm diameter cylindrical pellets
+         ├── FLAT-DIE HAND PELLET PRESS (Artisanal): Manual pressing through 4 mm holes
+         └── WET EXTRUSION (Simple): Force moist dough through syringe barrel or garden pipe fittings
+         ↓
+  [Solar-Tray Drying on wire mesh screens (8–12 hrs sun drying to < 12% moisture)]
+         ↓
+  [Quality Check: Pellet Water Stability Test — sink test; good pellet holds form 20 min submerged]
+         ↓
+  [Store in sealed grain bags or airtight drums in cool dark area; max 4 weeks for high-fat diets]
+  ```
+
+  **Critical Quality Parameters:**
+  * **Particle Size (< 1 mm)**: Coarse grinding reduces surface area available for binding; pellets
+    will crumble and disintegrate in 2 to 5 minutes of submersion, creating turbidity and bacterial
+    bloom.
+  * **Moisture (< 12%)**: Inadequate drying triggers explosive mold growth (*Aspergillus*) within 72 hours.
+  * **Pellet Stability Test**: Drop 5 pellets into a container of water. After 20 minutes, remove
+    and inspect. A passing pellet must remain 80% intact. A crumbling pellet means insufficient binder
+    or over-coarse grind.
+
+exercises:
+  - id: aqua-d3-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Using the Pearson Square method, a fish farmer wants to formulate a catfish grow-out feed
+      reaching a target of 35% Crude Protein (CP), using Fishmeal (65% CP) and Rice Bran (13% CP).
+      What is the correct ratio of Fishmeal to Rice Bran in the blend?
+    xp_reward: 50
+    options:
+      - text: "22 parts Fishmeal : 30 parts Rice Bran (ratio 42% Fishmeal and 58% Rice Bran)"
+        correct: true
+        explanation: "Using the Pearson Square: Top-right (Fishmeal parts) = Target − Rice Bran = 35 − 13 = 22 parts. Bottom-right (Rice Bran parts) = Fishmeal − Target = 65 − 35 = 30 parts. Total = 52 parts. Fishmeal = 22/52 = 42.3%; Rice Bran = 30/52 = 57.7%. Verification: (0.423 × 65) + (0.577 × 13) = 27.5 + 7.5 = 35.0% CP. ✓"
+      - text: "50% Fishmeal and 50% Rice Bran by equal weight"
+        correct: false
+        explanation: "50/50 equal blend would yield (0.5 × 65) + (0.5 × 13) = 32.5 + 6.5 = 39.0% CP, not 35%."
+      - text: "35 parts Fishmeal to 65 parts Rice Bran"
+        correct: false
+        explanation: "This proportion gives approximately (0.35 × 65) + (0.65 × 13) = 22.75 + 8.45 = 31.2% CP."
+      - text: "Fishmeal and Rice Bran cannot be blended because their proteins are biologically incompatible"
+        correct: false
+        explanation: "Fishmeal and rice bran are routinely combined in fish diets worldwide."
+
+  - id: aqua-d3-q2
+    type: FILL_BLANK
+    prompt: >
+      Black Soldier Fly (Hermetia illucens) prepupae harvested at the migration stage provide
+      approximately ___ to 44% crude protein and 28 to 36% crude fat on a dry-matter basis,
+      making them a self-replicating, zero-water-requirement local protein source perfectly suited
+      for off-grid aquaculture feed supplementation.
+    xp_reward: 50
+    correct_answer: "40"
+    explanation: >
+      Sun-dried BSF prepupae contain 40 to 44% crude protein and 28 to 36% crude fat on a
+      dry-matter basis, comparable in protein quality to conventional fishmeal.
+
+  - id: aqua-d3-q3
+    type: MATCH_PAIRS
+    prompt: Match each feed ingredient to its most important inclusion limitation or practical risk in fish diets.
+    xp_reward: 50
+    pairs:
+      - left: Blood Meal (80% CP)
+        right: Limits to 5% maximum inclusion; dark coloration and poor palatability reduce feed intake
+      - left: Rice Bran (13% CP)
+        right: High oil fraction rapidly oxidizes causing rancidity; maximum 20-25% inclusion
+      - left: Groundnut Cake (45% CP)
+        right: Must be heat-treated at 100°C for 15 minutes to destroy aflatoxin contamination risk
+      - left: Raw Soybean Meal
+        right: Contains trypsin inhibitors and lectins; must be heat-processed to destroy anti-nutritional factors
+    correct_answer: null
+    explanation: >
+      Blood meal limits palatability; rice bran goes rancid rapidly; groundnut cake requires
+      aflatoxin control by heating; raw soybean contains anti-nutritional factors destroyed by heat.
+
+  - id: aqua-d3-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      What simple standard field test should a fish farmer conduct to confirm that freshly
+      produced on-farm feed pellets are of adequate quality before stocking them in the fish pond?
+    xp_reward: 50
+    options:
+      - text: "The 20-minute water stability submersion test — drop 5 pellets into pond water; passing pellets must remain at least 80% structurally intact after 20 minutes underwater"
+        correct: true
+        explanation: "Fish require 5 to 15 minutes to locate and consume pellets after broadcasting. Pellets that disintegrate within 2 to 5 minutes leach nutrients into the water, causing bacterial blooms, zero-growth of fish, and toxic ammonia spikes."
+      - text: "Smell the pellets; if they smell of fresh fish, they contain enough protein for good growth"
+        correct: false
+        explanation: "Aroma is not a reliable indicator of nutritional balance or pellet binding quality."
+      - text: "Count the number of pellets that sink versus float; all good pellets must sink immediately"
+        correct: false
+        explanation: "Floating pellets are beneficial for many species (monitoring feed intake); sinking does not determine protein level."
+      - text: "Crush a pellet between fingers; a quality pellet shatters into uniform powder"
+        correct: false
+        explanation: "A quality pellet should resist crushing and hold shape. Shattering into powder indicates poor binding."
+
+  - id: aqua-d3-q5
+    type: FILL_BLANK
+    prompt: >
+      To prevent explosive mold growth (particularly Aspergillus spp.) and maintain safe feed
+      quality during storage, farm-produced fish feed pellets must be solar-dried until their
+      internal moisture content is below ___ percent, then stored sealed in cool, dark conditions
+      for a maximum of 4 weeks for high-fat diets.
+    xp_reward: 50
+    correct_answer: "12"
+    explanation: >
+      Fish feed moisture content must be below 12% during storage. Above this threshold, mold
+      fungi proliferate rapidly within 48 to 72 hours, producing mycotoxins that suppress fish
+      immune systems and cause mortalities.
