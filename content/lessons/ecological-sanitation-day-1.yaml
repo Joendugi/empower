@@ -1,0 +1,195 @@
+id: ecological-sanitation-day-1
+course_id: ecological-sanitation
+title: "Sanitation Ladder & Faecal-Oral Disease Routes"
+title_sw: "Ngazi ya Usafi na Njia za Magonjwa ya Kinyesi-Mdomo"
+week_number: 1
+day_number: 1
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - sanitation
+  - public-health
+  - faecal-oral
+  - WASH
+  - epidemiology
+xp: 250
+exam_domain: ecological-sanitation
+
+briefing: >
+  In post-crisis communities the collapse of sewage infrastructure is one of the
+  fastest triggers of epidemic disease. Before we build any toilet we must
+  understand *why* sanitation saves lives — the faecal-oral transmission chain —
+  and *how* to select the right technology from the WHO sanitation ladder for
+  our specific context (soil type, water table, population density, water
+  scarcity).
+
+outline: >
+  The F-diagram (six pathways from faeces to mouth); WHO/JMP sanitation service
+  ladder (open defecation to safely managed); R0 for cholera/typhoid/hepatitis A;
+  pit latrine siting rules (15 m from wells, 30 m from streams); estimating
+  daily faecal load (150-400 g wet weight/person/day); handwashing critical
+  control points (after defecation, before food prep).
+
+content_md: |
+  ## The Faecal-Oral Transmission Chain
+
+  The **F-diagram** (Feachem et al. 1983) names six environmental pathways by
+  which pathogens travel from one person's faeces to another's mouth:
+
+  | Pathway | Example vector |
+  |---|---|
+  | Fingers | Unwashed hands touching food |
+  | Flies | Houseflies landing on open pit then food |
+  | Fields | Crops irrigated with raw effluent |
+  | Fluids | Contaminated drinking water |
+  | Food | Uncooked fish or shellfish from polluted water |
+  | Floods | Overflow of latrines or sewers |
+
+  Breaking **any one** of these pathways dramatically reduces disease burden.
+  Handwashing with soap after defecation breaks the Fingers pathway and
+  reduces diarrhoeal disease incidence by ~40% (Cochrane 2015).
+
+  ## WHO Sanitation Service Ladder
+
+  | Rung | Definition | Goal |
+  |---|---|---|
+  | Open defecation (OD) | No facility at all | Eliminate entirely |
+  | Unimproved | Pit without slab, hanging latrine | Eliminate |
+  | Limited | Improved facility, shared with >2 households | Tolerate short-term |
+  | Basic | Improved, private household facility | Minimum target |
+  | Safely managed | Excreta contained + treated or reused safely | SDG 6.2 target |
+
+  Improved facilities include flush/pour-flush to sewer or septic tank,
+  ventilated improved pit (VIP), pit with slab, composting toilet,
+  urine-diversion dry toilet (UDDT).
+
+  ## Disease R0 and Sanitation Impact
+
+  | Disease | Pathogen | R0 | Primary route |
+  |---|---|---|---|
+  | Cholera | Vibrio cholerae | 2-6 | Fluids (water) |
+  | Typhoid | Salmonella typhi | 3-7 | Food, water |
+  | Hepatitis A | HAV virus | 4-6 | Food, fingers |
+  | Rotavirus diarrhoea | Rotavirus | 5-10 | Fingers, food |
+
+  When R0 > 1 an outbreak sustains itself. Sanitation interventions reduce the
+  effective reproduction number R_eff = R0 x (1 - p_block) where p_block is the
+  fraction of transmission pathways interrupted.
+
+  ## Pit Latrine Siting Rules
+
+  1. **15 m minimum** horizontal separation from any hand-dug well or borehole.
+  2. **30 m minimum** from perennial streams or ponds.
+  3. **Downslope** from water sources; use topographic maps or Abney level.
+  4. **Water table depth**: base of pit must be 2 m or more above seasonal high
+     water table (measure in March/April in East Africa).
+  5. **Soil type**: clay soils (hydraulic conductivity < 10^-7 m/s) are safer
+     than sandy soils for siting near wells.
+
+  ## Daily Faecal Load Estimation
+
+  A community of 500 people produces:
+
+  - **Faeces:** 500 x 250 g/day = 125 kg/day (wet weight)
+  - **Urine:** 500 x 1.5 L/day = 750 L/day
+  - **Nutrients in urine:** about 80% of nitrogen, 50% of phosphorus excreted by
+    a healthy adult are in urine — making urine a valuable fertiliser.
+
+  ## Handwashing Critical Control Points (CCPs)
+
+  1. After defecation or handling a child's faeces
+  2. Before preparing food
+  3. Before eating
+  4. After handling animals or raw meat
+
+  A **tippy tap** (jerrycan suspended from a stick, foot-pedal operated) allows
+  hands-free handwashing using fewer than 40 mL of water per wash — critical in
+  water-scarce settings.
+
+exercises:
+  - id: ecos-d1-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A cholera epidemic has an estimated R0 = 4 in a camp without latrines.
+      A WASH team installs pit latrines with slabs and handwashing stations,
+      blocking an estimated 65% of transmission pathways. What is the new
+      approximate R_eff?
+    xp_reward: 50
+    options:
+      - text: "R_eff = 1.4"
+        correct: true
+        explanation: "R_eff = R0 x (1 - p_block) = 4 x (1 - 0.65) = 4 x 0.35 = 1.4. Outbreaks barely sustain when R_eff is just above 1, so further measures are still needed."
+      - text: "R_eff = 2.6"
+        correct: false
+        explanation: "This would result from blocking only 35% of pathways."
+      - text: "R_eff = 0.6"
+        correct: false
+        explanation: "0.6 would require blocking 85% of pathways."
+      - text: "R_eff = 4.0"
+        correct: false
+        explanation: "R_eff = R0 only if no intervention is made."
+
+  - id: ecos-d1-q2
+    type: FILL_BLANK
+    prompt: >
+      The minimum horizontal distance between a pit latrine and a hand-dug well
+      is ___ metres, and the pit base must sit at least ___ metres above the
+      seasonal high water table.
+    xp_reward: 50
+    correct_answer: "15 metres; 2 metres"
+    explanation: >
+      15 m lateral separation reduces pathogen migration in most soil types.
+      2 m unsaturated zone allows sufficient natural attenuation of faecal
+      coliforms before reaching the water table.
+
+  - id: ecos-d1-q3
+    type: MATCH_PAIRS
+    prompt: Match each F-diagram pathway to its correct example vector.
+    xp_reward: 50
+    pairs:
+      - left: Fingers
+        right: Unwashed hands transferring pathogens to food
+      - left: Flies
+        right: Houseflies carrying faecal matter to open cooking pots
+      - left: Fields
+        right: Vegetables irrigated with raw effluent
+      - left: Fluids
+        right: Drinking water contaminated at the source
+    correct_answer: null
+    explanation: >
+      The F-diagram identifies six pathways. Breaking any one reduces disease
+      burden; handwashing with soap (Fingers pathway) is the most cost-effective
+      single intervention.
+
+  - id: ecos-d1-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A 300-person camp wants to site a pit latrine. The nearest borehole is
+      20 m away upslope. The seasonal high water table is 1.8 m below ground.
+      Which siting problem is critical?
+    xp_reward: 50
+    options:
+      - text: "Water table is too shallow — pit base will be below the 2 m safety margin"
+        correct: true
+        explanation: "The pit base must be 2 m or more above the seasonal high water table. At 1.8 m depth the margin is insufficient. A raised-platform latrine or UDDT is needed."
+      - text: "The borehole is too close — 20 m is less than the 30 m minimum"
+        correct: false
+        explanation: "The minimum separation from a borehole is 15 m, not 30 m. 20 m is adequate. The 30 m rule applies to perennial streams."
+      - text: "The latrine is upslope of the borehole — groundwater will be contaminated"
+        correct: false
+        explanation: "The latrine is downslope (borehole is upslope). Downslope siting is correct. The water table depth is the real problem."
+      - text: "No problem — this site meets all siting rules"
+        correct: false
+        explanation: "The water table at 1.8 m violates the 2 m minimum unsaturated zone rule."
+
+  - id: ecos-d1-q5
+    type: FILL_BLANK
+    prompt: >
+      A community of 400 people produces approximately ___ kg of wet faeces per
+      day and ___ litres of urine per day.
+    xp_reward: 50
+    correct_answer: "100 kg; 600 litres"
+    explanation: >
+      Using mean values: 400 x 250 g = 100,000 g = 100 kg faeces;
+      400 x 1.5 L = 600 L urine. Urine contains about 80% of excreted nitrogen,
+      making diversion for agricultural reuse highly valuable.

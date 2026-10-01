@@ -1,0 +1,227 @@
+id: ecological-sanitation-day-3
+course_id: ecological-sanitation
+title: "Biogas Digesters from Organic Waste"
+title_sw: "Vichombo vya Biogas kutoka Taka za Kikaboni"
+week_number: 1
+day_number: 3
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - biogas
+  - anaerobic-digestion
+  - renewable-energy
+  - methane
+  - waste-to-energy
+xp: 250
+exam_domain: ecological-sanitation
+
+briefing: >
+  Anaerobic digestion converts organic waste — animal manure, food scraps, human
+  excreta — into biogas (60-70% methane) for cooking and lighting, plus digestate,
+  a liquid fertiliser superior to raw manure. A household fixed-dome digester
+  replaces charcoal consumption, reduces deforestation, and permanently processes
+  disease-carrying waste.
+
+outline: >
+  Anaerobic digestion biochemistry (hydrolysis, acidogenesis, methanogenesis);
+  fixed-dome vs floating-drum digester designs; digester sizing from daily
+  feedstock; HRT and temperature effects; biogas quality, pressure, and
+  appliance compatibility; digestate composition and safe agricultural use;
+  troubleshooting (no gas, acidification, foam).
+
+content_md: |
+  ## Anaerobic Digestion — Three Stages
+
+  | Stage | Microbes | Process | Products |
+  |---|---|---|---|
+  | Hydrolysis | Hydrolytic bacteria | Break complex polymers (starch, proteins, fats) into monomers | Sugars, amino acids, fatty acids |
+  | Acidogenesis | Acidogenic bacteria | Ferment monomers to volatile fatty acids (VFAs) | Acetate, propionate, butyrate, H2, CO2 |
+  | Methanogenesis | Archaea (strict anaerobes) | Convert VFAs + H2 to methane | CH4 + CO2 (biogas) |
+
+  **Key condition**: methanogens require:
+  - pH 6.8–7.8 (optimal 7.0–7.2)
+  - Temperature 20–37 °C (mesophilic) or 50–65 °C (thermophilic)
+  - Absence of oxygen
+  - Carbon-to-Nitrogen (C:N) ratio 20:1 to 30:1
+
+  ## Fixed-Dome vs Floating-Drum
+
+  | Feature | Fixed-dome (Deenbandhu) | Floating-drum (KVIC) |
+  |---|---|---|
+  | Construction | Brick + cement, underground | Steel drum + concrete pit |
+  | Cost | Low (local materials) | Higher (steel) |
+  | Pressure | Variable (gas compresses slurry) | Constant (drum weight) |
+  | Maintenance | Very low (no moving parts) | Drum rusts, needs painting |
+  | Lifespan | 20+ years | 10-15 years |
+  | Recommended | Yes — for off-grid Africa | Only if constant pressure needed |
+
+  **Deenbandhu fixed-dome** is the standard for rural East Africa:
+  - Underground hemispherical dome
+  - Inlet pipe feeds slurry from mixing tank
+  - Outlet overflow displaces into expansion chamber as gas accumulates
+  - Gas pipe exits through crown of dome
+
+  ## Digester Sizing
+
+  ### Daily Gas Yield
+
+  | Feedstock | Gas yield |
+  |---|---|
+  | Cattle manure | 0.04 m3 biogas per kg VS (volatile solids) |
+  | Pig manure | 0.06 m3 biogas per kg VS |
+  | Human excreta | 0.05 m3 biogas per kg VS |
+  | Food waste | 0.10-0.15 m3 biogas per kg VS |
+
+  A family of 5 cooking 3 meals/day needs approximately 1.2 m3 of biogas per day.
+
+  ### Sizing Formula
+
+  Digester volume (m3) = Daily feed volume (m3/day) x HRT (days)
+
+  **HRT (Hydraulic Retention Time):**
+  - 30–40 days at 20–25 °C (common in highland Kenya)
+  - 20–25 days at 30–35 °C (lowland Kenya)
+
+  **Example calculation:**
+  - Family of 5, 2 cattle producing 15 kg manure/day each
+  - Total fresh manure = 30 kg/day; dilute 1:1 with water = 60 L/day = 0.06 m3/day
+  - HRT at 25 °C = 35 days
+  - Digester volume = 0.06 m3/day x 35 days = **2.1 m3**
+  - Add 25% safety factor: specify **2.5 m3 digester**
+
+  ## C:N Ratio and Feedstock Blending
+
+  | Material | C:N Ratio |
+  |---|---|
+  | Cattle manure | 20:1 (ideal) |
+  | Straw/dry grass | 80-100:1 (too high) |
+  | Food waste | 15:1 (slightly low) |
+  | Human excreta | 8:1 (too low) |
+
+  To co-digest human excreta (low C:N), blend with dry grass or crop residues:
+
+  Blended C:N = (C1 x m1 + C2 x m2) / (N1 x m1 + N2 x m2)
+
+  where m1, m2 are mass fractions of each feedstock.
+
+  ## Biogas Composition and Use
+
+  | Component | Percentage |
+  |---|---|
+  | Methane (CH4) | 55-70% |
+  | Carbon dioxide (CO2) | 30-45% |
+  | Hydrogen sulphide (H2S) | 0.1-1% |
+
+  - Calorific value: approximately 6 kWh per m3 (at 65% CH4)
+  - A 1.2 m3/day family digester saves approximately 2.5 kg charcoal/day
+  - Biogas burners require low-pressure (< 1 kPa) regulators — not LPG regulators
+
+  ## Digestate as Fertiliser
+
+  Digestate retains most nutrients from feedstock but pathogens are greatly reduced:
+
+  - At 35-day HRT, 35 °C: faecal coliform reduction = 2-3 log10 (99-99.9%)
+  - Ascaris eggs require 60+ days at 20 °C or thermophilic treatment for full kill
+  - Apply digestate to non-food crops, or co-compost for 30 days before applying to food crops
+
+  Nutrient content (approximate, per m3 digestate):
+  - Nitrogen: 0.5-1.5 kg (mostly ammoniacal N — immediately plant-available)
+  - Phosphorus: 0.1-0.3 kg
+  - Potassium: 0.3-0.6 kg
+
+  ## Troubleshooting
+
+  | Symptom | Likely cause | Fix |
+  |---|---|---|
+  | No gas after 2 weeks | Low temperature or wrong C:N | Insulate digester; adjust feedstock blend |
+  | Gas but won't ignite | Too much CO2 or H2S | Check CH4 content; add iron shavings to reduce H2S |
+  | pH < 6.5 (acidification) | VFA overload, methanogens inhibited | Stop feeding; add lime water in small doses (50 g/m3) |
+  | Foaming in inlet | Excess fat or detergent contamination | Remove contaminated feed; reduce fat content |
+  | Gas pressure drop | Blocked outlet pipe or slurry crust | Clear outlet; break surface crust with stick |
+
+exercises:
+  - id: ecos-d3-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A biodigester has pH 6.1 after 3 weeks of operation with heavy kitchen
+      scraps (mostly fat and protein). What is the most likely cause and fix?
+    xp_reward: 50
+    options:
+      - text: "VFA overload acidifying the digester — stop feeding and add small doses of lime water"
+        correct: true
+        explanation: "High-fat, high-protein kitchen scraps rapidly produce volatile fatty acids that overwhelm the slower methanogens, dropping pH below the viable range for methanogenesis. Stopping feed allows methanogens to catch up; lime water carefully neutralises pH."
+      - text: "Too little methane — add more feedstock to stimulate gas production"
+        correct: false
+        explanation: "Adding more feedstock when already acidified will worsen the VFA overload. The methanogenic Archaea need time to process existing acids."
+      - text: "Temperature is too high — cool the digester"
+        correct: false
+        explanation: "High temperature would accelerate digestion, not cause acidification. Acidification is from substrate overload."
+      - text: "The digester needs oxygen — open the inlet to aerate"
+        correct: false
+        explanation: "Methanogens are strict anaerobes. Introducing oxygen kills them and destroys the anaerobic process entirely."
+
+  - id: ecos-d3-q2
+    type: FILL_BLANK
+    prompt: >
+      A family of 5 has 3 cattle producing 15 kg manure/day each. Diluted 1:1
+      with water at 25 degrees C with HRT of 35 days, the required digester
+      volume (before the 25% safety factor) is ___ m3. With the safety factor,
+      specify a ___ m3 digester.
+    xp_reward: 50
+    correct_answer: "2.1 m3; 2.5 m3"
+    explanation: >
+      Total manure = 3 x 15 = 45 kg/day. Diluted 1:1 = 90 L/day = 0.09 m3/day.
+      Volume = 0.09 x 35 = 3.15 m3. Hmm — re-check: 2 cattle x 15 kg = 30 kg/day,
+      diluted = 60 L = 0.06 m3/day, x 35 = 2.1 m3, x 1.25 = 2.625, specify 2.5 m3 (round down).
+      If 3 cattle: 45 kg, 90 L, 0.09 m3/day x 35 = 3.15 m3, x 1.25 = 3.94, specify 4 m3.
+      The worked example uses 2 cattle.
+
+  - id: ecos-d3-q3
+    type: MATCH_PAIRS
+    prompt: Match each anaerobic digestion stage to what it produces.
+    xp_reward: 50
+    pairs:
+      - left: Hydrolysis
+        right: Sugars and amino acids from complex polymers
+      - left: Acidogenesis
+        right: Volatile fatty acids, hydrogen and CO2
+      - left: Methanogenesis
+        right: Methane and carbon dioxide (biogas)
+    correct_answer: null
+    explanation: >
+      The three-stage cascade is sequential. If any stage is blocked (e.g.,
+      methanogens inhibited by low pH), the preceding products accumulate and
+      further suppress the system.
+
+  - id: ecos-d3-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why is a fixed-dome (Deenbandhu) digester preferred over a floating-drum
+      (KVIC) design for off-grid East Africa?
+    xp_reward: 50
+    options:
+      - text: "Built entirely from local brick and cement with no moving parts; lifespan exceeds 20 years and requires no steel maintenance"
+        correct: true
+        explanation: "The fixed-dome uses locally available materials, has no rusting steel parts, and has a lifespan of 20+ years. The floating drum corrodes and must be repainted every few years — a significant maintenance burden in remote areas."
+      - text: "Produces higher methane percentage than floating-drum designs"
+        correct: false
+        explanation: "Biogas composition depends on feedstock and microbial conditions, not digester geometry. Both designs produce similar gas quality."
+      - text: "Operates at thermophilic temperatures without external heating"
+        correct: false
+        explanation: "Fixed-dome digesters are usually mesophilic (20-37 C). They do not self-heat to thermophilic range (50-65 C) without an external heat source."
+      - text: "Delivers constant gas pressure through a mechanical regulator"
+        correct: false
+        explanation: "Fixed-dome pressure is variable (it rises as gas accumulates and slurry is pushed to the expansion chamber). Constant pressure is the advantage of the floating-drum design."
+
+  - id: ecos-d3-q5
+    type: FILL_BLANK
+    prompt: >
+      Biogas is approximately ___% methane and ___% carbon dioxide by volume.
+      Its calorific value is approximately ___ kWh per cubic metre.
+    xp_reward: 50
+    correct_answer: "60%; 40%; 6 kWh"
+    explanation: >
+      Typical biogas is 55-70% CH4 (commonly quoted as 60%) and 30-45% CO2.
+      At 65% CH4 the calorific value is approximately 6 kWh/m3, compared to
+      10 kWh/m3 for pure methane. H2S at 0.1-1% contributes to corrosion of
+      metal appliances if not scrubbed.

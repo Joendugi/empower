@@ -1,0 +1,247 @@
+id: ecological-sanitation-day-5
+course_id: ecological-sanitation
+title: "Constructed Wetlands & Greywater Treatment"
+title_sw: "Mabwawa ya Ujenzi na Matibabu ya Maji Kijivu"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - constructed-wetlands
+  - greywater
+  - phytoremediation
+  - subsurface-flow
+  - wastewater-treatment
+xp: 250
+exam_domain: ecological-sanitation
+
+briefing: >
+  Greywater (kitchen and laundry wastewater) represents 60-75% of a household's
+  wastewater and is far easier to treat than blackwater. Constructed wetlands —
+  engineered shallow gravel beds planted with Phragmites or Canna — provide
+  passive, low-energy treatment of greywater and secondary effluent, producing
+  water safe for irrigation while building soil carbon and habitat.
+
+outline: >
+  Greywater composition and typical contaminants; simple treatment train
+  (screening, settling, wetland); HSSF wetland design; vertical flow wetland
+  for higher-rate treatment; plant selection (Phragmites, Canna, Typha);
+  sizing calculations (hydraulic loading rate, BOD5 removal); overflow
+  management and mosquito control; photo capture — field wetland assessment.
+
+content_md: |
+  ## Greywater Characteristics
+
+  Greywater comes from sinks, showers, laundry — but NOT toilets (blackwater).
+
+  | Source | Volume share | Key contaminants |
+  |---|---|---|
+  | Kitchen sink | 20-30% | Food particles, fats, oils, grease (FOG), detergents |
+  | Bathroom/shower | 30-40% | Soap, personal care products, hair |
+  | Laundry | 25-35% | Detergents, phosphates, pathogens (low) |
+
+  **Typical greywater quality:**
+
+  | Parameter | Value |
+  |---|---|
+  | BOD5 (Biochemical Oxygen Demand) | 50-300 mg/L |
+  | Total Suspended Solids (TSS) | 50-200 mg/L |
+  | Total Nitrogen | 5-20 mg/L |
+  | Total Phosphorus | 1-15 mg/L |
+  | Faecal coliforms | 0-10^4 CFU/100mL |
+
+  For context, raw domestic sewage has BOD5 of 200-400 mg/L and
+  faecal coliforms of 10^6-10^8 CFU/100mL. Greywater is much lower risk.
+
+  ## Simple Treatment Train
+
+  A three-stage system handles typical household greywater:
+
+  1. **Grease trap / settling chamber** (50-200 L buried tank):
+     - Allows fats to float and solids to settle
+     - Retention time 2-4 hours
+     - Clean out every 2-4 weeks (floating grease layer)
+
+  2. **Horizontal Subsurface Flow (HSSF) Wetland:**
+     - Main biological treatment stage
+     - Gravel bed 0.5-0.8 m deep, planted with reeds
+     - Water flows horizontally through gravel, never pools on surface
+     - No mosquito breeding because surface stays dry
+
+  3. **Polishing pond or reuse** (optional):
+     - Further clarification, UV disinfection by sunlight
+     - Effluent suitable for orchard/tree irrigation (not direct food crop contact)
+
+  ## HSSF Wetland Design
+
+  ### Sizing Using Hydraulic Loading Rate (HLR)
+
+  For greywater treatment, design HLR = 20-50 L/m2/day.
+
+  **Example:**
+  - Household of 6 generates 6 x 50 L/day greywater = 300 L/day
+  - At HLR = 30 L/m2/day: required area = 300 / 30 = **10 m2**
+  - Bed dimensions: 4 m long x 2.5 m wide x 0.6 m gravel depth
+
+  ### BOD5 First-Order Removal Model
+
+  BOD5 removal in a HSSF wetland follows first-order kinetics:
+
+  Ce/Ci = exp(-k x A / Q)
+
+  Where:
+  - Ce = effluent BOD5 (mg/L)
+  - Ci = influent BOD5 (mg/L)
+  - k = areal rate constant (typically 0.1-0.2 m/day for HSSF at 20 °C)
+  - A = wetland area (m2)
+  - Q = flow rate (m3/day)
+
+  At k = 0.15 m/day, Q = 0.3 m3/day, A = 10 m2:
+  Ce/Ci = exp(-0.15 x 10 / 0.3) = exp(-5) = 0.0067
+
+  If Ci = 200 mg/L, Ce = 200 x 0.0067 = **1.3 mg/L BOD5** — excellent removal.
+
+  ## Vertical Flow (VF) Wetland
+
+  VF wetlands are dosed intermittently from the top — wastewater percolates
+  down through fine sand/gravel media. They provide:
+
+  - Better oxygenation (air fills pores between doses) → better nitrification
+  - Higher loading rate: 50-100 L/m2/day
+  - Smaller footprint needed
+  - Disadvantage: require a dosing siphon or pump; more construction complexity
+
+  Use VF wetlands when space is limited or when ammonia removal is critical.
+
+  ## Plant Selection
+
+  | Species | Local name | Best use | Notes |
+  |---|---|---|---|
+  | Phragmites australis | Common reed | HSSF primary treatment | Very robust, rapid root growth, tolerates high BOD5 |
+  | Canna indica | Canna lily | HSSF or polishing | Attractive flowering; good P uptake; edible rhizome |
+  | Typha latifolia | Cattail/bulrush | High-nutrient greywater | Fast-growing; harvest leaves for basket-making |
+  | Vetiver grass | Vetiver | Greywater edges/overflow | Erosion control; drought tolerant; no water clogging |
+
+  **Plant spacing**: 0.5-1.0 m apart in rows across the flow direction.
+  Full establishment takes 2-3 months. Harvest stems at end of growing season
+  to remove accumulated nutrients from the system.
+
+  ## Mosquito Control
+
+  The main risk with any greywater system is creating stagnant water pools.
+
+  Prevention measures:
+  1. **HSSF design**: gravel surface stays dry — mosquitoes cannot breed
+  2. **Dosing uniformity**: even distribution prevents short-circuiting and surface pooling
+  3. **Polishing pond**: if used, stock with mosquitofish (Gambusia) or Nile tilapia fry
+  4. **Overflow**: pipe any overflow to infiltration trench — never allow ponding beside the bed
+  5. **Inlet inspection**: check inlet distribution pipe weekly for blockages
+
+  ## Annual Maintenance Schedule
+
+  | Task | Frequency | Notes |
+  |---|---|---|
+  | Grease trap desludging | Every 2-4 weeks | Remove floating grease layer manually |
+  | Inlet pipe inspection | Weekly | Clear any blocked distribution holes |
+  | Plant harvest | Annually (dry season) | Cut stems to 0.2 m above surface; compost cuttings |
+  | Gravel bed inspection | Every 2 years | Check for clogging; replace surface gravel if needed |
+  | Effluent quality check | Quarterly | BOD5 and faecal coliform test strips |
+
+exercises:
+  - id: ecos-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A household HSSF wetland has influent BOD5 of 180 mg/L, flow = 0.4 m3/day,
+      area = 12 m2, and areal rate constant k = 0.15 m/day. What is the
+      approximate effluent BOD5?
+    xp_reward: 50
+    options:
+      - text: "About 1.8 mg/L — excellent treatment"
+        correct: true
+        explanation: "Ce/Ci = exp(-0.15 x 12 / 0.4) = exp(-4.5) = 0.011. Ce = 180 x 0.011 = 1.98 mg/L, approximately 1.8-2.0 mg/L. This meets WHO effluent standards for restricted irrigation."
+      - text: "About 18 mg/L — adequate for tree irrigation only"
+        correct: false
+        explanation: "18 mg/L would require exp(-k*A/Q) = 0.1, meaning k*A/Q = 2.3. With these values k*A/Q = 4.5, giving much better than 18 mg/L removal."
+      - text: "About 90 mg/L — only 50% removal"
+        correct: false
+        explanation: "50% removal would occur if Ce/Ci = 0.5. Constructed wetlands at these design parameters achieve far greater than 50% BOD5 removal."
+      - text: "About 0.1 mg/L — complete sterilisation"
+        correct: false
+        explanation: "The first-order model gives approximately 2 mg/L, not 0.1 mg/L. Complete sterilisation does not occur in a biological treatment wetland."
+
+  - id: ecos-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      A household of 8 people generates 50 L greywater per person per day.
+      At a hydraulic loading rate of 25 L/m2/day, the required HSSF wetland
+      area is ___ m2. A rectangular bed 4 m wide would be ___ m long.
+    xp_reward: 50
+    correct_answer: "16 m2; 4 m"
+    explanation: >
+      Total flow = 8 x 50 = 400 L/day. Area = 400 / 25 = 16 m2.
+      Length = 16 m2 / 4 m width = 4 m long. The bed would be 4 m x 4 m x 0.6 m
+      gravel depth — a compact footprint achievable on a standard homestead plot.
+
+  - id: ecos-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each wetland plant species to its primary characteristic.
+    xp_reward: 50
+    pairs:
+      - left: Phragmites australis
+        right: Robust common reed — best for primary HSSF treatment at high BOD5
+      - left: Canna indica
+        right: Flowering plant with edible rhizome and good phosphorus uptake
+      - left: Typha latifolia
+        right: Cattail/bulrush — fast-growing, leaves harvested for basket weaving
+      - left: Vetiver grass
+        right: Drought-tolerant edge plant for erosion control around wetland beds
+    correct_answer: null
+    explanation: >
+      Plant selection matches species strengths to functional roles. Phragmites
+      is the workhorse for treatment; Canna and Typha add value through
+      harvestable products; Vetiver stabilises embankments.
+
+  - id: ecos-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why does a horizontal subsurface flow (HSSF) wetland pose a lower mosquito
+      breeding risk than a surface-flow pond?
+    xp_reward: 50
+    options:
+      - text: "Water flows entirely below the gravel surface — the top of the bed stays dry so mosquitoes cannot lay eggs"
+        correct: true
+        explanation: "In HSSF design, water level is maintained 50-100 mm below the gravel surface. Mosquitoes require standing water on an accessible surface to lay eggs. The dry gravel surface prevents breeding."
+      - text: "The plants in the wetland release insecticide-like compounds that repel mosquitoes"
+        correct: false
+        explanation: "Wetland plants do not produce insecticide compounds. The mosquito control comes from the physical design (subsurface flow), not chemical repellence."
+      - text: "Gravel is too coarse for mosquito larvae to survive in"
+        correct: false
+        explanation: "Mosquito larvae are aquatic and need standing water — they cannot survive in unsaturated gravel regardless of pore size. The key is keeping water below the surface."
+      - text: "HSSF wetlands are treated with chlorine which kills larvae"
+        correct: false
+        explanation: "HSSF wetlands are biological treatment systems. Adding chlorine would kill the beneficial microbes that provide treatment. No disinfectant is used."
+
+  - id: ecos-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Walk to a greywater discharge point near your household or community
+      (kitchen drain, laundry area, or roadside). Photograph the area and
+      assess it against the five criteria in the rubric below. Submit your
+      best-quality photo with a written assessment.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Unmanaged greywater creates mosquito habitat, nutrient runoff to water
+      bodies, and slipping hazards. This exercise builds the habit of
+      seeing greywater as a resource to capture rather than a waste to dump.
+    rubric:
+      - criterion: Photo clearly shows the greywater discharge point or drain outlet
+        points: 10
+      - criterion: Written assessment identifies at least two contaminants or hazards present
+        points: 15
+      - criterion: Learner recommends appropriate treatment option (grease trap, wetland, or soakaway) with reason
+        points: 15
+      - criterion: Photo quality — clear, in focus, good natural light
+        points: 5
+      - criterion: Assessment includes estimated daily volume generated at this point
+        points: 5

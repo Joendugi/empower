@@ -1,0 +1,237 @@
+id: ecological-sanitation-day-4
+course_id: ecological-sanitation
+title: "Composting Latrines & Vermicomposting"
+title_sw: "Vyoo vya Mbolea na Ufugaji wa Minyoo"
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - composting
+  - vermicomposting
+  - latrine
+  - earthworms
+  - humus
+  - aerobic-decomposition
+xp: 250
+exam_domain: ecological-sanitation
+
+briefing: >
+  Composting latrines use aerobic thermophilic decomposition inside the vault
+  to produce safe humus in 3-12 months. When earthworms (Eisenia fetida) are
+  added — vermicomposting — the process accelerates 4-fold and produces
+  vermicast, one of the highest-quality soil amendments available. Both
+  approaches close the nutrient loop while destroying pathogens through heat
+  and biological competition.
+
+outline: >
+  Aerobic vs anaerobic decomposition and pathogen kill by heat; composting
+  latrine (Clivus Multrum) vault design and airflow; C:N balance for
+  thermophilic composting; Eisenia fetida biology and temperature limits;
+  vermicomposting latrine design — worm bin integration; vermicast quality,
+  application rates, and market value; combined UDDT + vermicompost system.
+
+content_md: |
+  ## Aerobic Decomposition vs Anaerobic — Key Differences
+
+  | Property | Aerobic composting | Anaerobic (pit latrine / biodigester) |
+  |---|---|---|
+  | Oxygen | Required | Absent |
+  | Odour | Earthy (if managed) | Strong hydrogen sulphide |
+  | Heat generation | Yes — up to 70 °C | No significant heat |
+  | Pathogen kill | Thermal + biological | Biological (slower) |
+  | End product | Humus (stable, dry) | Sludge (wet, needs further treatment) |
+  | Methane | None | Produced (greenhouse gas if uncontrolled) |
+
+  **Thermal kill thresholds** for faecal pathogens (WHO guidelines):
+
+  | Pathogen | Time for kill at 55 °C | Time for kill at 62 °C |
+  |---|---|---|
+  | E. coli | < 1 hour | Minutes |
+  | Salmonella spp. | 1-2 hours | < 1 hour |
+  | Ascaris eggs (most resistant) | 1 week | 24 hours |
+
+  A well-managed compost pile that reaches 55 °C for at least 3 days (with
+  turning) achieves WHO Category A pathogen reduction (safe for food-crop use).
+
+  ## Composting Latrine Design (Clivus Multrum Principle)
+
+  The Clivus Multrum (Swedish: "inclined room") uses a sloped chamber where:
+
+  - Faeces and organic material slide slowly down a 30-35 degree inclined floor
+  - Fresh deposits at top are moist and active
+  - Older material moves down and becomes progressively drier and more composted
+  - Matured humus collects in the lower access chamber for periodic emptying
+
+  ### Key Design Parameters
+
+  | Parameter | Value |
+  |---|---|
+  | Chamber slope | 30-35 degrees |
+  | Ventilation | 200 mm vent pipe, solar- or wind-driven |
+  | Air inlet | Grille at base of toilet room, 0.02 m2 minimum |
+  | Capacity per person per year | 40-60 L of void space |
+  | Minimum rest period before emptying | 12 months from last fresh deposit |
+  | Operating temperature target | 40-60 °C (centre of pile) |
+
+  ### C:N Management
+
+  Faeces alone have C:N = 8:1 (nitrogen-rich, quickly becomes anaerobic).
+  Adding carbon-rich materials restores the 25-30:1 ratio needed for
+  thermophilic aerobic decomposition:
+
+  | Carbon material | C:N ratio | Add after each use |
+  |---|---|---|
+  | Dry grass/straw | 80:1 | 2 large handfuls |
+  | Newspaper (shredded) | 170:1 | 1 handful |
+  | Wood chips | 400:1 | 1 small scoop |
+  | Wood ash only | 25:1 | Not ideal alone — too alkaline |
+
+  ## Eisenia fetida — Composting Worm Biology
+
+  | Property | Value |
+  |---|---|
+  | Common name | Red wiggler, tiger worm |
+  | Optimal temperature | 15-25 °C |
+  | Cold limit | 4 °C (dormant below) |
+  | Heat limit | 35 °C (fatal above) |
+  | pH tolerance | 5-9 |
+  | Feeding rate | Consumes up to their body weight per day |
+  | Reproduction | Doubles population every 60-90 days |
+
+  **Important:** E. fetida cannot survive thermophilic composting temperatures.
+  Either use vermicomposting as a separate post-composting stage, or design a
+  cool vermicomposting latrine (keeps below 30 °C) distinct from a hot-compost
+  system.
+
+  ## Vermicomposting Latrine Design
+
+  A vermicomposting toilet (VC latrine) operates at ambient temperatures
+  without trying to reach thermophilic conditions:
+
+  1. **Worm bin vault**: 1.5 m deep, insulated, with drainage holes in base
+  2. **Bedding**: 20 cm deep layer of pre-soaked cardboard/wood chips before adding worms
+  3. **Worm loading**: 0.5-1.0 kg Eisenia fetida per 0.1 m2 of vault surface
+  4. **Cover material**: add dry carbon material after every use
+  5. **Moisture**: target 60-70% moisture (squeeze test — drop of water only)
+  6. **Pathogen safety**: vermicast requires 6-month storage post-emptying for
+     Ascaris kill (worms do NOT thermally kill eggs)
+
+  ### Throughput
+
+  Each kg of worms processes approximately 0.5 kg organic waste per day.
+  A family of 5 generating 1.25 kg faeces/day needs at least 2.5 kg of worms
+  (approximately 5,000 individual worms) in active bin area.
+
+  ## Vermicast Quality vs Conventional Compost
+
+  | Nutrient | Conventional compost | Vermicast |
+  |---|---|---|
+  | Available nitrogen | 0.5-1.0% | 1.5-2.5% |
+  | Phosphorus | 0.3-0.5% | 0.8-1.2% |
+  | Potassium | 0.5-1.0% | 1.0-1.5% |
+  | Plant hormones | None | Cytokinins, auxins (promote germination) |
+  | Microbial activity | Moderate | Very high |
+  | Commercial value (Kenya) | 5-10 KES/kg | 30-80 KES/kg |
+
+  ## Combined UDDT + Vermicompost System
+
+  The most resource-efficient sanitation system combines:
+
+  1. **UDDT pedestal** — diverts urine to sealed storage tank
+  2. **Vermicompost vault** for faeces — keeps system cool for worm activity
+  3. **Urine stored 1 month** then applied as liquid fertiliser
+  4. **Vermicast stored 6 months** then applied as soil amendment or sold
+
+  This system produces zero pathogens in outputs, zero water use, zero odour,
+  and generates two revenue streams: urine fertiliser + vermicast.
+
+exercises:
+  - id: ecos-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A composting latrine operator wants to achieve WHO Category A pathogen
+      reduction (safe for food crops). What thermophilic condition must the
+      pile sustain?
+    xp_reward: 50
+    options:
+      - text: "55 °C for at least 3 days with turning to ensure uniform heat penetration"
+        correct: true
+        explanation: "WHO guidelines for composting require 55 °C for a minimum of 3 days with at least one turning to expose all material to thermophilic conditions. This achieves Category A, suitable for direct application to food crops."
+      - text: "70 °C for 1 hour — a short burst of extreme heat is sufficient"
+        correct: false
+        explanation: "While 70 °C would kill pathogens, composting piles rarely reach this temperature uniformly. WHO requires sustained 55 °C over 3 days with turning to ensure all material is treated."
+      - text: "Any temperature above 35 °C for 30 days achieves pathogen kill"
+        correct: false
+        explanation: "35 °C is insufficient for thermal kill of Ascaris eggs. 55 °C is the minimum required for the thermophilic kill mechanism."
+      - text: "Composting latrines never reach pathogen-safe levels — always co-compost for 2 years"
+        correct: false
+        explanation: "A well-managed thermophilic composting latrine achieves Category A in 3 days of sustained 55 °C. The 2-year period is a conservative rule of thumb for cold piles, not a universal requirement."
+
+  - id: ecos-d4-q2
+    type: FILL_BLANK
+    prompt: >
+      Eisenia fetida worms consume up to their body weight per day and cannot
+      survive temperatures above ___ °C. A family of 5 generating 1.25 kg faeces
+      per day needs at least ___ kg of worms in the vermicompost vault.
+    xp_reward: 50
+    correct_answer: "35 °C; 2.5 kg"
+    explanation: >
+      E. fetida dies above 35 °C. Processing rate is 0.5 kg waste per kg worms
+      per day. To process 1.25 kg/day: 1.25 / 0.5 = 2.5 kg worms needed.
+      At about 2,000 worms per kg this is approximately 5,000 individual worms.
+
+  - id: ecos-d4-q3
+    type: MATCH_PAIRS
+    prompt: Match each carbon material to its approximate C:N ratio.
+    xp_reward: 50
+    pairs:
+      - left: Dry grass/straw
+        right: "80:1"
+      - left: Newspaper (shredded)
+        right: "170:1"
+      - left: Wood chips
+        right: "400:1"
+      - left: Human faeces
+        right: "8:1"
+    correct_answer: null
+    explanation: >
+      The target C:N for thermophilic composting is 25-30:1. Blending
+      nitrogen-rich faeces (8:1) with high-carbon materials restores the
+      balance. Wood chips require the smallest volume per scoop due to
+      their very high C:N ratio.
+
+  - id: ecos-d4-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why must vermicast from a cold vermicomposting latrine be stored for
+      6 months before applying to food crops?
+    xp_reward: 50
+    options:
+      - text: "Worms do not generate sufficient heat to kill Ascaris eggs, so extended storage time is needed for biological and desiccation inactivation"
+        correct: true
+        explanation: "Ascaris eggs are the most thermally resistant pathogen. Cold vermicomposting does not reach 55 °C, so thermal kill is absent. 6 months of storage at ambient temperature allows enough time for natural die-off through desiccation and biological antagonism."
+      - text: "The worms in the vermicast will contaminate crops if applied immediately"
+        correct: false
+        explanation: "E. fetida in vermicast is not a human pathogen. The concern is faecal pathogens, particularly Ascaris eggs, not worms."
+      - text: "Vermicast is chemically toxic when fresh and must be neutralised by time"
+        correct: false
+        explanation: "Vermicast is not chemically toxic. The storage requirement is purely for pathogen inactivation."
+      - text: "Nutrients in fresh vermicast are not yet plant-available"
+        correct: false
+        explanation: "Vermicast nutrients (especially ammoniacal N) are highly plant-available from day one. The storage requirement is for pathogen safety, not nutrient availability."
+
+  - id: ecos-d4-q5
+    type: FILL_BLANK
+    prompt: >
+      Vermicast contains approximately ___% available nitrogen and ___% phosphorus
+      by dry weight, compared to conventional compost at 0.75% N and 0.4% P.
+      In Kenya, vermicast sells for approximately ___ KES per kilogram.
+    xp_reward: 50
+    correct_answer: "2.0%; 1.0%; 30-80 KES"
+    explanation: >
+      Vermicast typical analysis: 1.5-2.5% N (use 2.0% midpoint), 0.8-1.2% P
+      (use 1.0%). Conventional compost runs 0.5-1.0% N, 0.3-0.5% P — roughly
+      half as concentrated. Vermicast commands KES 30-80/kg on the Kenyan
+      organic market vs KES 5-10/kg for conventional compost, making
+      vermicomposting latrines both hygienic and economically attractive.

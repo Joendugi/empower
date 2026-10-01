@@ -1,0 +1,210 @@
+id: ecological-sanitation-day-2
+course_id: ecological-sanitation
+title: "Urine-Diversion Dry Toilets (UDDTs)"
+title_sw: "Vyoo vya Mgawaniko wa Mkojo (UDDT)"
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - UDDT
+  - sanitation
+  - urine-diversion
+  - dry-toilet
+  - nutrient-recovery
+xp: 250
+exam_domain: ecological-sanitation
+
+briefing: >
+  The urine-diversion dry toilet (UDDT) is the most resource-efficient sanitation
+  technology for water-scarce off-grid communities. By separating urine from
+  faeces at source, it eliminates odour, desiccates pathogens, and produces two
+  safe agricultural inputs — liquid fertiliser and dry humus — without any
+  water for flushing.
+
+outline: >
+  Why separation matters (pathogen matrix and nutrient value); UDDT vault
+  geometry and desiccation chamber sizing; cover material selection (ash,
+  sawdust, dry soil); urine collection and storage — pH kill curve for
+  pathogens; emptying protocols and safe use of dry humus; construction
+  sequence — block or brick vault with fibreglass divider pedestal.
+
+content_md: |
+  ## Why Separate Urine from Faeces?
+
+  Human faeces and urine have very different properties:
+
+  | Property | Urine | Faeces |
+  |---|---|---|
+  | Volume share | 95% of toilet waste by volume | 5% |
+  | Pathogen load | Very low (sterile if not UTI) | Very high |
+  | Nitrogen content | 80% of excreted N (as urea) | 20% |
+  | Phosphorus content | 50% of excreted P | 50% |
+  | Potassium | 60% of excreted K | 40% |
+  | Odour cause | Hydrolysis of urea to ammonia if mixed with faeces | Anaerobic decomposition |
+
+  When kept **separate and dry**, faeces desiccate within 6 months into odourless,
+  pathogen-safe humus. When mixed with water or urine, pathogens persist for years.
+
+  ## UDDT Vault Design
+
+  A standard two-vault UDDT alternates use between two desiccation chambers:
+
+  - **Vault dimensions**: 0.8 m x 0.8 m x 1.0 m deep (640 L) per vault
+  - **Capacity**: one vault serves a 5-person family for 6 months
+  - **Cover**: sealed slab with pedestal (fibreglass or ceramic) — urine enters
+    front bowl, faeces fall into rear chamber
+  - **Ventilation**: 110 mm PVC vent pipe painted black, 300 mm above roof —
+    creates upward thermal draft, carries odour up and out
+
+  ### Cover Material Addition (after each use)
+
+  Add one scoop (approximately 200 mL) of dry cover material after each
+  faecal deposit:
+
+  | Material | Effectiveness | Notes |
+  |---|---|---|
+  | Wood ash | Excellent — raises pH > 9, kills pathogens | Best available; free where biomass is burned |
+  | Dry soil | Good — absorbs moisture | Must be completely dry |
+  | Sawdust | Good — absorbs moisture | Avoid treated wood |
+  | Dried leaves | Moderate | Should be ground/shredded |
+
+  **Ash is preferred** because the high pH (> 9) creates a hostile environment
+  for Ascaris eggs, the most resistant faecal pathogen (requires pH > 9 for
+  kill, or 6+ months desiccation).
+
+  ## Urine Storage and Pathogen Inactivation
+
+  Collected urine should be stored in sealed 20 L jerry cans or a lidded tank.
+
+  **pH rise**: Urea hydrolyses to ammonium (NH4+) and bicarbonate within 24 h,
+  raising pH from ~6 to 8–9. At pH 9 most bacterial pathogens are inactivated
+  within 24 h.
+
+  **Recommended storage time before agricultural use:**
+
+  | Risk level | Storage time |
+  |---|---|
+  | Healthy population, no diarrhoeal outbreak | 1 month minimum |
+  | Known diarrhoeal or UTI cases in household | 6 months |
+  | WHO lowest-risk category | 1 month + dilute 1:5 with water before application |
+
+  ### Urine Application Rate
+
+  Fresh urine contains approximately 6 g nitrogen per litre.
+
+  For a maize crop requiring 120 kg N/ha:
+  - Urine needed = 120,000 g N / 6 g N/L = **20,000 L/ha**
+  - A family of 5 produces 5 x 1.5 L/day x 365 days = **2,737 L/year**
+  - One family's annual urine fertilises approximately 0.14 ha of maize
+
+  ## Vault Emptying Protocol
+
+  After 6 months of filling and 6 months of desiccation:
+
+  1. Don gloves and dust mask.
+  2. Open the emptying hatch at the side or rear of the vault.
+  3. The contents should be dry, dark brown, crumbly, and odourless.
+  4. Test with paper pH strip — if pH < 8, return to vault for another month.
+  5. Apply directly as soil amendment, or co-compost with plant waste for 1 month.
+  6. Record emptying date in household hygiene register.
+
+  ## Construction Sequence
+
+  1. **Excavate** two 0.8 x 0.8 x 1.0 m pits, 0.5 m apart.
+  2. **Line pits** with concrete block or burnt brick (no mortar in base — allow
+     moisture to drain to subsoil; or use concrete base if water table is close).
+  3. **Cast slab** — 75 mm reinforced concrete slab with two access holes and
+     offset urine channel moulded in.
+  4. **Set pedestal** — fibreglass dividing pedestal bonded to slab with PU sealant.
+  5. **Build superstructure** — timber frame or block walls, corrugated iron or
+     thatch roof.
+  6. **Install vent pipe** — black PVC pipe from rear of vault chamber to
+     300 mm above roof ridge.
+  7. **Fit fly screen** to top of vent pipe (1 mm mesh).
+
+exercises:
+  - id: ecos-d2-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A family uses a UDDT and adds dry wood ash after every faecal deposit.
+      What is the primary mechanism by which ash prevents pathogen survival?
+    xp_reward: 50
+    options:
+      - text: "Ash raises the pH above 9, creating conditions lethal to most faecal pathogens including Ascaris eggs"
+        correct: true
+        explanation: "Wood ash pH is typically 10-12. A layer of ash around faecal matter raises local pH above 9, which is lethal to bacterial pathogens within hours and inactivates the most resistant helminth eggs within weeks."
+      - text: "Ash absorbs all moisture, causing rapid physical dessication"
+        correct: false
+        explanation: "Ash does absorb some moisture but its primary mechanism is alkalinity, not desiccation. Dry soil or sawdust are better pure-desiccant materials."
+      - text: "Ash releases chlorine gas which disinfects the chamber"
+        correct: false
+        explanation: "Ash does not release chlorine. It works through alkalinity (high pH)."
+      - text: "Ash is a nutrient that feeds beneficial bacteria which outcompete pathogens"
+        correct: false
+        explanation: "Ash is not a nutrient for beneficial competitive bacteria. Its action is chemical — high pH."
+
+  - id: ecos-d2-q2
+    type: FILL_BLANK
+    prompt: >
+      A standard UDDT vault measures 0.8 m x 0.8 m x 1.0 m, giving a volume
+      of ___ litres. One vault serves a 5-person family for approximately ___
+      months of filling before switching to the second vault.
+    xp_reward: 50
+    correct_answer: "640 litres; 6 months"
+    explanation: >
+      Volume = 0.8 x 0.8 x 1.0 = 0.64 m3 = 640 L. At a generation rate of
+      about 1 L/person/day of faeces + cover material, a 5-person family fills
+      the vault in roughly 6 months, after which the second vault is used while
+      the first desiccates for 6 more months.
+
+  - id: ecos-d2-q3
+    type: MATCH_PAIRS
+    prompt: Match each urine/faeces property to the correct percentage share.
+    xp_reward: 50
+    pairs:
+      - left: Share of nitrogen excreted in urine
+        right: 80%
+      - left: Share of toilet waste volume that is urine
+        right: 95%
+      - left: Share of phosphorus excreted in urine
+        right: 50%
+      - left: Share of potassium excreted in urine
+        right: 60%
+    correct_answer: null
+    explanation: >
+      These ratios explain why urine diversion recovers most of the fertiliser
+      value while keeping the small faeces fraction manageable and dry.
+
+  - id: ecos-d2-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Urine collected from a healthy household with no UTI cases should be
+      stored for a minimum of how long before direct application to food crops?
+    xp_reward: 50
+    options:
+      - text: "1 month, then dilute 1:5 with water before applying"
+        correct: true
+        explanation: "WHO guidelines recommend at least 1 month storage (during which pH rises to 8-9, inactivating most pathogens) and dilution 1:5 before applying to edible crops as an additional safety margin."
+      - text: "It can be applied immediately — urine is sterile"
+        correct: false
+        explanation: "While urine from healthy individuals is nearly sterile, WHO still recommends 1 month storage before crop application to ensure pathogen inactivation and as a precautionary principle."
+      - text: "6 months — the same as for faecal humus"
+        correct: false
+        explanation: "6 months is required only when diarrhoeal or UTI cases are present in the household. For a healthy household, 1 month is sufficient."
+      - text: "2 years — urine is too dangerous without long storage"
+        correct: false
+        explanation: "2 years is not required. At 1 month, pH-driven inactivation makes urine safe for most crops."
+
+  - id: ecos-d2-q5
+    type: FILL_BLANK
+    prompt: >
+      A family of 6 produces approximately ___ litres of urine per year.
+      If maize requires 120 kg N/ha and urine contains 6 g N/L, this family's
+      annual urine fertilises approximately ___ hectares of maize.
+    xp_reward: 50
+    correct_answer: "3285 litres; 0.16 hectares"
+    explanation: >
+      Urine volume = 6 x 1.5 L x 365 = 3,285 L per year.
+      N available = 3,285 L x 6 g/L = 19,710 g = 19.7 kg N.
+      Area fertilised = 19.7 kg / 120 kg/ha = 0.164 ha, approximately 0.16 ha.

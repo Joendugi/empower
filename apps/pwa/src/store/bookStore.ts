@@ -262,6 +262,42 @@ Radio waves travel at light speed. An antenna resonates when cut to precise frac
 Operating into an unmatched antenna reflects RF energy back into the transmitter, destroying output power amplifier transistors.
 `,
   },
+  {
+    id: 'book-ecological-sanitation',
+    title: 'Ecological Sanitation & Closed-Loop Waste Systems',
+    titleSw: 'Usafi wa Mazingira na Mfumo wa Taka Wenye Mzunguko',
+    author: 'Eng. Grace Akinyi & EcoSan East Africa Initiative',
+    description: 'Complete guide to urine-diversion dry toilets (UDDTs), fixed-dome biogas digesters, composting latrines, vermicomposting with Eisenia fetida, and horizontal subsurface flow constructed wetlands for greywater treatment.',
+    descriptionSw: 'Mwongozo kamili wa vyoo vya UDDT, vichombo vya biogas, mabwawa ya ujenzi, minyoo ya Eisenia fetida, na matibabu ya maji machafu.',
+    category: 'resilience',
+    tradeId: 'water-sanitation-hygiene',
+    tradeTitle: 'Water Sanitation & Hygiene',
+    coverColor: 'from-green-700 to-emerald-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 5.4,
+    totalPages: 108,
+    estimatedMinutes: 220,
+    featured: true,
+    rating: 4.8,
+    readersCount: 1870,
+    cdaccUnitId: 'CU/ENV/SN/CR/04/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Sanitation Ladder & Faecal-Oral Disease Routes', pageNumber: 1 },
+      { id: 'ch2', title: 'Urine-Diversion Dry Toilets — Design & Construction', pageNumber: 22 },
+      { id: 'ch3', title: 'Fixed-Dome Biogas Digesters — Sizing & Operation', pageNumber: 46 },
+      { id: 'ch4', title: 'Composting Latrines & Vermicomposting', pageNumber: 74 },
+      { id: 'ch5', title: 'Constructed Wetlands & Greywater Treatment', pageNumber: 92 },
+    ],
+    contentMarkdown: `# Ecological Sanitation & Closed-Loop Waste Systems
+
+## Chapter 1: The Sanitation Ladder
+In post-crisis communities the collapse of sewage infrastructure is one of the fastest triggers of epidemic disease.
+The F-diagram identifies six pathways — Fingers, Flies, Fields, Fluids, Food, and Floods — by which pathogens travel from faeces to mouth.
+Breaking any one pathway dramatically reduces disease burden. The WHO/JMP sanitation service ladder ranges from open defecation to safely managed systems aligned with SDG 6.2.
+`,
+  },
 ];
 
 interface BookState {
