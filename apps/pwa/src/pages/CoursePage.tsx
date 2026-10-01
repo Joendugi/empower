@@ -23,6 +23,10 @@ import { useCurriculumStore } from '@/store/curriculumStore';
 import { useAnalyticsStore } from '@/store/analyticsStore';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useLibraryStore } from '@/store/libraryStore';
+import CourseExtras from '@/components/campus/CourseExtras';
+import MaterialGate from '@/components/campus/MaterialGate';
+import { useCampusCatalogue } from '@/store/campusCatalogue';
+import { useIsEducator } from '@/lib/roles';
 import { useT } from '@/i18n';
 
 export default function CoursePage() {
@@ -33,12 +37,15 @@ export default function CoursePage() {
 
   const language = useLearnerStore((state) => state.language);
   const signedIn = Boolean(useLearnerStore((state) => state.token));
+  const teaching = useIsEducator();
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
   const choosePath = useLearnerStore((state) => state.choosePath);
   const customPaths = useCurriculumStore((state) => state.paths);
   const cloudPaths = useCurriculumStore((state) => state.cloudPaths);
-  const path = useMemo(() => getSkillPaths().find((item) => item.id === pathId), [pathId, customPaths, cloudPaths]);
+  const overlays = useCampusCatalogue((state) => state.overlays);
+  const catalogue = useMemo(() => getSkillPaths(), [customPaths, cloudPaths, overlays]);
+  const path = useMemo(() => catalogue.find((item) => item.id === pathId), [pathId, catalogue]);
 
   useEffect(() => {
     void useCurriculumStore.getState().syncCurriculum();
@@ -73,6 +80,10 @@ export default function CoursePage() {
   };
 
   const openLesson = (lessonId: string) => {
+    if (teaching) {
+      navigate(`/educator?tab=notes&programme=${path.id}`);
+      return;
+    }
     choose();
     const dest = `/learn/lesson/${lessonId}`;
     if (!signedIn) {
@@ -97,6 +108,8 @@ export default function CoursePage() {
         >
           <ArrowLeft className="w-4 h-4" /> {t('chooseCourseTitle')}
         </Link>
+        <MaterialGate pathId={path.id} title={title}>
+        <div className="space-y-6">
 
         {/* Hero Course Overview Card */}
         <div className="card !p-6 sm:!p-8">
@@ -143,6 +156,11 @@ export default function CoursePage() {
           </div>
 
           <p className="text-xs sm:text-sm text-muted-light mt-4 leading-relaxed max-w-2xl">{description}</p>
+          {teaching && (
+            <p className="text-xs text-accent mt-3">
+              Educators grade this programme and add library notes. Learners sit the lessons.
+            </p>
+          )}
 
           {path.certificationTarget && (
             <p className="text-xs text-accent mt-2 font-mono flex items-center gap-1.5">
@@ -160,21 +178,34 @@ export default function CoursePage() {
 
           {/* Actions */}
           <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            {!chosen && (
-              <button type="button" className="btn-secondary py-3 text-xs font-semibold" onClick={choose}>
-                {t('chooseThisCourse')}
-              </button>
+            {teaching ? (
+              <>
+                <Link to={`/educator?tab=grade&programme=${path.id}`} className="btn-primary py-3 text-xs font-bold flex-1 text-center">
+                  Grade this programme
+                </Link>
+                <Link to={`/educator?tab=notes&programme=${path.id}`} className="btn-secondary py-3 text-xs font-semibold text-center">
+                  Add library notes
+                </Link>
+              </>
+            ) : (
+              <>
+                {!chosen && (
+                  <button type="button" className="btn-secondary py-3 text-xs font-semibold" onClick={choose}>
+                    {t('chooseThisCourse')}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className="btn-primary py-3 text-xs font-bold flex-1"
+                  onClick={start}
+                  disabled={!firstLesson}
+                >
+                  <Play className="w-4 h-4 fill-current" />
+                  {progress.done > 0 ? t('continueCourse') : t('startChosenCourse')}
+                </button>
+                <CourseDownloadButton path={path} className="shrink-0" />
+              </>
             )}
-            <button
-              type="button"
-              className="btn-primary py-3 text-xs font-bold flex-1"
-              onClick={start}
-              disabled={!firstLesson}
-            >
-              <Play className="w-4 h-4 fill-current" />
-              {progress.done > 0 ? t('continueCourse') : t('startChosenCourse')}
-            </button>
-            <CourseDownloadButton path={path} className="shrink-0" />
           </div>
 
           {!signedIn && (
@@ -249,6 +280,9 @@ export default function CoursePage() {
             />
           </div>
         )}
+        <CourseExtras path={path} catalogue={catalogue} />
+        </div>
+        </MaterialGate>
       </main>
 
       <BottomNav />

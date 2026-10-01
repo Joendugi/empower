@@ -1,0 +1,62 @@
+id: water-purification-day-2
+course_id: potable-water-engineering
+title: "Day 2: Biofilm Schmutzdecke Cultivation & Head Management"
+title_sw: "Siku ya 2: Kukuza Tabaka la Biolojia na Udhibiti wa Kimo cha Maji"
+week_number: 1
+day_number: 2
+estimated_minutes: 15
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ENV/WT/CR/01/5
+exam_domain: Water Sanitation & Hygiene
+briefing: |
+  A freshly packed sand filter is only a physical strainer; it allows bacteria, viruses, and cysts to pass freely until biological maturation occurs. The purifying organ of the slow sand filter is the **Schmutzdecke** (skin of dirt / hyponeuston layer).
+
+  BIOLOGICAL MATURATION CYCLE:
+  1. Ripening period: It requires 10 to 21 days of continuous raw water flow for algae, rotifers, ciliates, and filamentous bacteria to colonize the top 2-3 cm of sand.
+  2. Predation mechanism: Active protozoa ingest enteric bacteria (*Vibrio cholerae*, *Salmonella typhi*, *Escherichia coli*) as food. The sticky extracellular polymeric substances (EPS) trap viral particles through electrostatic adsorption.
+  3. Ripening effluent disposal: Water produced during the first 14 days MUST be piped to waste or returned to the raw reservoir. It cannot be consumed.
+  4. Dissolved Oxygen: The incoming raw water must contain dissolved oxygen (> 3 mg/L). Anaerobic conditions cause bacterial die-off, foul hydrogen sulfide odors, and iron/manganese dissolution.
+
+exercises:
+  - id: w-d2-q1
+    type: FILL_BLANK
+    prompt: The biological biofilm skin formed in the top 2-3 cm of sand that consumes pathogens is the ___.
+    correct_answer: schmutzdecke
+    hint: German technical term adopted internationally in water engineering.
+    explanation: The Schmutzdecke contains the living zoogloeal matrix that performs biological predation of waterborne pathogens.
+    xp_reward: 50
+
+  - id: w-d2-q2
+    type: MULTIPLE_CHOICE
+    prompt: What must be done with the filtered water produced during the initial 14-day ripening period?
+    options:
+      - id: a
+        text: Drink it immediately to build natural immunity
+      - id: b
+        text: Divert it to waste or recycle back to the raw source because the bio-barrier is not yet mature
+      - id: c
+        text: Boil it and pour it back into the sand to accelerate growth
+      - id: d
+        text: Add commercial detergent to wash the sand grains
+    correct_answer: b
+    hint: The bio-layer takes 10 to 21 days to achieve 99.9% pathogen reduction.
+    explanation: During ripening, bacteria pass through the uncolonized sand pores. Effluent must not be released into drinking water cisterns until microbial tests confirm safety.
+    xp_reward: 50
+
+  - id: w-d2-q3
+    type: SCENARIO
+    prompt: |
+      An operator notices the filter bed has turned black under the surface and emits a rotten-egg sulfur odor. Raw water inlet had been stagnant with heavy floating weeds blocking sunlight and air for 48 hours. What happened and how is it corrected?
+    options:
+      - id: a
+        text: The filter turned anaerobic; drain the stagnant head, aerate incoming water, and flush with oxygen-rich water until aerobic biofilm restores
+      - id: b
+        text: The sand has turned into coal; dig out all sand and throw it away
+      - id: c
+        text: Pour petroleum into the bed to kill the odor
+      - id: d
+        text: Increase flow speed by 10x to blow out the black color
+    correct_answer: a
+    hint: Rotten-egg smell indicates hydrogen sulfide (H2S) produced by anaerobic sulfate-reducing bacteria.
+    explanation: Slow sand filtration must remain aerobic. When oxygen depletes, anaerobic bacteria produce toxic H2S. Aeration restores the aerobic trophic chain.
+    xp_reward: 70

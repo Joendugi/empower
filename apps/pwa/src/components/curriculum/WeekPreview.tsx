@@ -25,8 +25,16 @@ export default function WeekPreview({
   return (
     <article className="space-y-5">
       <header className="space-y-2">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
-          {t('weekLabel')} {week}
+        <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold flex items-center gap-1.5">
+          {lesson.dayNumber ? (
+            <span>
+              {t('dayLabel')} {lesson.dayNumber} · {t('weekLabel')} {week}
+            </span>
+          ) : (
+            <span>
+              {t('weekLabel')} {week}
+            </span>
+          )}
         </p>
         <h2 className="text-2xl font-bold">{lesson.title}</h2>
         <p className="text-xs text-muted">

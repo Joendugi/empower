@@ -8,8 +8,6 @@ import {
   RotateCcw, 
   User, 
   Sparkles, 
-  Layers, 
-  ShieldCheck, 
   X, 
   ArrowRight,
   Command
@@ -43,10 +41,9 @@ export default function CommandPalette({ isOpen, onClose }: CommandPaletteProps)
     { title: 'Study Library & Articles', category: 'Navigation', icon: BookOpen, path: '/study', subtitle: 'Detailed notes, sequences & diagrams' },
     { title: 'Review Mistakes & Flashcards', category: 'Navigation', icon: RotateCcw, path: '/learn/review', subtitle: 'Spaced repetition practice' },
     { title: 'Leaderboard & Rankings', category: 'Navigation', icon: Trophy, path: '/learn/leaderboard', subtitle: 'Learner league & weekly XP' },
-    { title: 'Learner Profile & Stats', category: 'Navigation', icon: User, path: '/profile', subtitle: 'Portfolio, streak & offline storage' },
-    { title: 'Curriculum Studio', category: 'Tools', icon: Layers, path: '/curriculum', subtitle: 'Author units, diagrams & exercises' },
-    { title: 'Educator Center', category: 'Tools', icon: Sparkles, path: '/educator', subtitle: 'Facilitator & instructor management' },
-    { title: 'Admin Office', category: 'Tools', icon: ShieldCheck, path: '/office', subtitle: 'System controls & challenges' },
+    { title: 'Learner Profile & Stats', category: 'Navigation', icon: User, path: '/profile', subtitle: 'Certificates, streak, and saved progress' },
+    { title: 'Campus class', category: 'Navigation', icon: GraduationCap, path: '/campus', subtitle: 'Join a stream, open materials, sit exams, see results' },
+    { title: 'Teaching desk', category: 'Tools', icon: Sparkles, path: '/educator', subtitle: 'Campus, grades, library notes, instructor-led methods' },
   ], []);
 
   // Filtered results

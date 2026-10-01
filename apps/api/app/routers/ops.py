@@ -12,6 +12,7 @@ from app.config import settings
 from app.database import get_db
 from app.models.studio import ErrorEventRow
 from app.schemas import CamelModel
+from app.services.mail import mail_backend, mail_configured
 
 router = APIRouter()
 logger = logging.getLogger("empower.ops")
@@ -46,5 +47,7 @@ async def ops_status(db: AsyncSession = Depends(get_db)) -> dict[str, object]:
         "publicHost": settings.PUBLIC_HOST or None,
         "cache": "redis" if settings.redis_enabled else "memory",
         "edx": "off",
+        "smtp": mail_configured(),
+        "mail": mail_backend(),
         "recentErrors": int(errors),
     }

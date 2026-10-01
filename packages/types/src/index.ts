@@ -161,6 +161,7 @@ export interface Lesson {
   /** Learner-facing week outline, one item per line. */
   outline?: string;
   weekNumber?: number;
+  dayNumber?: number;
   estimatedMinutes: number;
   exercises: Exercise[];
   cdaccUnitId?: string;
@@ -179,6 +180,7 @@ export interface SkillNode {
   /** Short outline shown on the course page, one item per line. */
   outline?: string;
   weekNumber?: number;
+  dayNumber?: number;
   prerequisites: string[];
   lessonIds: string[];
   badgeIds: string[];

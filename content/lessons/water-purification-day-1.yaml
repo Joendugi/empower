@@ -1,0 +1,103 @@
+id: water-purification-day-1
+course_id: potable-water-engineering
+title: "Day 1: Slow Sand Gravity Filter Sizing & Stratification"
+title_sw: "Siku ya 1: Upimaji na Utengenezaji wa Chujio la Mchanga"
+week_number: 1
+day_number: 1
+estimated_minutes: 15
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ENV/WT/CR/01/5
+exam_domain: Water Sanitation & Hygiene
+briefing: |
+  Slow sand filtration is the primary bio-mechanical technology for drinking water in decentralized or reconstructed societies. Unlike pressurized rapid sand filters which require backwash pumps and chemical dosing, slow sand operates strictly under gravity and biological predation.
+
+  CRITICAL SPECIFICATIONS & STRATIFICATION:
+  1. Under-drainage layer: 10-15 cm of clean, washed coarse gravel (12 to 25 mm diameter) surrounding the perforated exit manifold.
+  2. Intermediate pea-gravel layer: 5 cm of washed pea gravel (2 to 6 mm diameter) placed above the coarse stones to prevent fine filter sand from migrating downward into the underdrain.
+  3. Active filter sand bed: 60 to 90 cm of clean quartz river sand. Effective grain size D10 must be between 0.15 mm and 0.35 mm with a Uniformity Coefficient (U = D60/D10) of less than 3.0.
+  4. Supernatant raw water head: 0.7 to 1.0 meter depth maintained continuously over the sand surface to provide positive hydrostatic head and prevent disturbance to the top layer.
+  5. Filtration velocity: 0.1 to 0.2 meters per hour (100 to 200 liters per hour per square meter of filter surface area).
+
+  OPERATIONAL WARNING:
+  Never allow the sand bed to drain dry. If the biological hyponeuston layer loses hydration, the microbial predators perish and the bed requires a full 14 to 21-day ripening cycle to regain pathogen removal efficacy.
+
+exercises:
+  - id: w-d1-q1
+    type: MATCH_PAIRS
+    prompt: Match each stratification stratum of the slow sand filter to its exact engineering requirement.
+    pairs:
+      - left:
+          id: sand
+          text: Active Filter Sand Bed
+        right:
+          id: sand-spec
+          text: 60-90 cm depth, D10 grain size 0.15-0.35 mm
+      - left:
+          id: pea
+          text: Intermediate Transition Layer
+        right:
+          id: pea-spec
+          text: 5 cm depth, 2-6 mm pea gravel
+      - left:
+          id: drain
+          text: Underdrain Gravel Layer
+        right:
+          id: drain-spec
+          text: 10-15 cm depth, 12-25 mm coarse stones
+      - left:
+          id: head
+          text: Supernatant Water Head
+        right:
+          id: head-spec
+          text: 0.7-1.0 m continuous gravity water depth
+    correct_answer:
+      - sand=sand-spec
+      - pea=pea-spec
+      - drain=drain-spec
+      - head=head-spec
+    hint: The sand layer is the deepest filtering stratum; gravel protects the outlet.
+    explanation: Graded stratification ensures hydraulic conductivity without sand loss into the treated effluent cistern.
+    xp_reward: 60
+
+  - id: w-d1-q2
+    type: FILL_BLANK
+    prompt: The standard filtration rate of a slow sand filter operates between 100 and ___ liters per hour per square meter.
+    correct_answer: "200"
+    hint: Normal range is 0.1 to 0.2 meters per hour (100 to 200 L/m²/hr).
+    explanation: Velocities above 200 L/m²/hr shear the biological layer and force pathogens through the sand bed without sufficient detention time.
+    xp_reward: 50
+
+  - id: w-d1-q3
+    type: SCENARIO
+    prompt: |
+      During filter assembly, an apprentice suggests using unwashed ocean beach sand because it is already fine and plentiful. Why is this catastrophic for a drinking water system?
+    options:
+      - id: a
+        text: Beach sand contains high sodium chloride and calcium carbonate that dissolves, cementing pores and salinating effluent
+      - id: b
+        text: Beach sand is too radioactive for biological life
+      - id: c
+        text: Beach sand turns water permanently black
+      - id: d
+        text: Beach sand cannot support water pressure above 0.1 bar
+    correct_answer: a
+    hint: Marine sand carries soluble salts and shell fragments that cement under water.
+    explanation: River quartz sand is inert. Marine sand leaches high salt and dissolved shell lime, altering pH, hardening water, and cementing the bed into impermeable sandstone.
+    xp_reward: 60
+
+  - id: w-d1-q4
+    type: MULTIPLE_CHOICE
+    prompt: What is the primary purpose of the intermediate 5 cm pea gravel layer?
+    options:
+      - id: a
+        text: To chemically kill enteric viruses
+      - id: b
+        text: To prevent the fine 0.2 mm filter sand from slipping into the coarse 20 mm underdrain gravel
+      - id: c
+        text: To add mineral flavour to the water
+      - id: d
+        text: To warm the incoming water through friction
+    correct_answer: b
+    hint: Think about particle migration between disparate grain sizes.
+    explanation: Without a transition size, fine sand immediately sifts downward into coarse stone gaps, causing subsidence, channeling, and sand discharge into the outlet.
+    xp_reward: 50

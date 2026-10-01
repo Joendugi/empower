@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
 import type { SkillPath } from '@cyberlearn/types';
 import { courseIcon, courseLessonCount } from '@/lib/courseMeta';
 import type { ProgrammeProgress } from '@/lib/progress';
+import { isMaterialLocked, overlayFor, ratingSummary } from '@/store/campusCatalogue';
 import { useT } from '@/i18n';
 
 export default function CourseCard({
@@ -26,6 +27,8 @@ export default function CourseCard({
   const trackLabel = isTrades ? t('tradesTrack') : isTvet ? t('tvetTrack') : t('cyberTrack');
   const lessons = courseLessonCount(path);
   const isCompleted = progress && progress.percent === 100;
+  const overlay = overlayFor(path.id);
+  const rating = ratingSummary(path.id);
 
   return (
     <article className="card-interactive h-full flex flex-col justify-between !p-6 border-white/[0.08] group">
@@ -54,6 +57,18 @@ export default function CourseCard({
         <p className="text-xs sm:text-sm text-muted mt-2 leading-relaxed line-clamp-3">
           {description}
         </p>
+        {(overlay?.educatorName || overlay?.school) && (
+          <p className="text-[11px] text-muted mt-2">
+            {overlay.educatorName}
+            {overlay.school ? ` · ${overlay.school}` : ''}
+            {isMaterialLocked(path.id) ? ' · locked' : ''}
+          </p>
+        )}
+        {rating.count > 0 && (
+          <p className="text-[11px] text-accent mt-1">
+            {'★'.repeat(Math.round(rating.average))} {rating.average.toFixed(1)}
+          </p>
+        )}
       </div>
 
       <div className="mt-5 pt-4 border-t border-white/[0.06]">

@@ -1,0 +1,29 @@
+id: resilient-infrastructure
+title: Post-Cataclysm TVET & Resilient Infrastructure
+title_sw: Miundombinu Imara na Uhandisi wa Maisha
+description: Foundational technical knowledge needed to rebuild vital systems — potable water, micro-hydro, solar storage, and mechanical metal repair.
+certification_target: TVET Resilient Systems Level 4
+track: tvet
+content_version: "2026.10.01"
+nodes:
+  - id: potable-water-engineering
+    title: Potable Water Engineering
+    title_sw: Uhandisi wa Maji Safi
+    description: 5-Day comprehensive intensive on biological sand filtration, plant flocculation, solar sterilization, and maintenance.
+    outline: |
+      Day 1: Slow sand gravity filter sizing and gravel stratification
+      Day 2: Biofilm Schmutzdecke biological layer and constant head maintenance
+      Day 3: Botanical coagulants (Moringa oleifera) and jar testing
+      Day 4: Solar UV disinfection (SODIS) and WSO pasteurization thresholds
+      Day 5: Hydraulic scraping, bed rejuvenation, and pathogen testing
+    week_number: 1
+    icon: "💧"
+    cdacc_unit_id: CU/ENV/WT/CR/01/5
+    exam_domain: Water Sanitation & Hygiene
+    prerequisites: []
+    lesson_ids:
+      - water-purification-day-1
+      - water-purification-day-2
+      - water-purification-day-3
+      - water-purification-day-4
+      - water-purification-day-5

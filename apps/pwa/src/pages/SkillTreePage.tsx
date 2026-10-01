@@ -10,6 +10,7 @@ import BottomNav from '@/components/ui/BottomNav';
 import XPBar from '@/components/gamification/XPBar';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
+import { useIsEducator } from '@/lib/roles';
 import { useLearnerStore } from '@/store/learnerStore';
 import { resolveLesson } from '@/store/libraryStore';
 import { useT } from '@/i18n';
@@ -21,6 +22,7 @@ export default function SkillTreePage() {
   const xp = useLearnerStore((state) => state.xp);
   const completedLessonIds = useLearnerStore((state) => state.completedLessonIds);
   const chosenPathIds = useLearnerStore((state) => state.chosenPathIds);
+  const teaching = useIsEducator();
   const [params, setParams] = useSearchParams();
   const requested = params.get('track');
   const query = params.get('q') ?? '';
@@ -71,7 +73,16 @@ export default function SkillTreePage() {
         </div>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('catalogueKicker')}</p>
         <h1 className="text-2xl sm:text-3xl font-bold mt-1">{t('chooseCourseTitle')}</h1>
-        <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">{t('chooseCourseBody')}</p>
+        <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">
+          {teaching
+            ? 'Browse programmes to grade work and attach library notes. You do not start learner lessons from here.'
+            : t('chooseCourseBody')}
+        </p>
+        {teaching && (
+          <Link to="/educator" className="btn-primary mt-4 inline-flex text-sm">
+            Open teaching desk
+          </Link>
+        )}
 
         <div className="mt-5 max-w-xl">
           <SearchField
@@ -149,15 +160,6 @@ export default function SkillTreePage() {
             </ul>
           )}
         </section>
-
-        <Link
-          to="/curriculum"
-          className="card mt-10 mb-4 block hover:border-accent/40"
-        >
-          <p className="text-xs uppercase tracking-wider text-accent">{t('studioKicker')}</p>
-          <h2 className="font-semibold mt-1">{t('studioTitle')}</h2>
-          <p className="text-sm text-muted mt-2 leading-relaxed">{t('studioHelp')}</p>
-        </Link>
       </main>
       <BottomNav />
     </div>

@@ -1,18 +1,27 @@
 import { Link, useLocation } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { GraduationCap, RotateCcw, Trophy, User } from 'lucide-react';
+import { BookOpen, Building2, ClipboardCheck, GraduationCap, RotateCcw, User } from 'lucide-react';
+import { useIsEducator } from '@/lib/roles';
 import { useT } from '@/i18n';
 
 export default function BottomNav() {
   const t = useT();
   const location = useLocation();
+  const teaching = useIsEducator();
 
-  const items = [
-    { to: '/learn/skill-tree', label: t('learn'), icon: GraduationCap },
-    { to: '/learn/review', label: t('review'), icon: RotateCcw },
-    { to: '/learn/leaderboard', label: t('leaderboard'), icon: Trophy },
-    { to: '/profile', label: t('profile'), icon: User },
-  ];
+  const items = teaching
+    ? [
+        { to: '/educator', label: t('desk'), icon: ClipboardCheck },
+        { to: '/study', label: t('library'), icon: BookOpen },
+        { to: '/learn/skill-tree', label: t('learn'), icon: GraduationCap },
+        { to: '/profile', label: t('profile'), icon: User },
+      ]
+    : [
+        { to: '/learn/skill-tree', label: t('learn'), icon: GraduationCap },
+        { to: '/campus', label: t('campus'), icon: Building2 },
+        { to: '/learn/review', label: t('review'), icon: RotateCcw },
+        { to: '/profile', label: t('profile'), icon: User },
+      ];
 
   return (
     <nav className="fixed bottom-0 inset-x-0 z-30 border-t border-white/[0.08] bg-primary-dark">

@@ -72,11 +72,16 @@ def _public_exercise(raw: dict[str, Any]) -> dict[str, Any]:
 def _public_lesson(raw: dict[str, Any], path: Path) -> dict[str, Any]:
     exercises = [_public_exercise(ex) for ex in raw.get("exercises", [])]
     xp_total = raw.get("xp_total") or sum(ex.get("xpReward", 0) for ex in exercises)
-    return {
+    payload = {
         "id": raw["id"],
         "courseId": raw.get("course_id") or raw.get("courseId"),
         "title": raw["title"],
         "titleSw": raw.get("title_sw") or raw.get("titleSw"),
+        "briefing": raw.get("briefing"),
+        "briefingSw": raw.get("briefing_sw") or raw.get("briefingSw"),
+        "outline": raw.get("outline"),
+        "weekNumber": raw.get("week_number") or raw.get("weekNumber"),
+        "dayNumber": raw.get("day_number") or raw.get("dayNumber"),
         "estimatedMinutes": raw.get("estimated_minutes") or raw.get("estimatedMinutes", 5),
         "exercises": exercises,
         "cdaccUnitId": raw.get("cdacc_unit_id") or raw.get("cdaccUnitId"),
@@ -84,7 +89,9 @@ def _public_lesson(raw: dict[str, Any], path: Path) -> dict[str, Any]:
         "xpTotal": xp_total,
         "contentVersion": _file_version(path),
         "license": raw.get("license"),
+        "media": raw.get("media"),
     }
+    return {k: v for k, v in payload.items() if v is not None}
 
 
 @lru_cache(maxsize=1)
@@ -112,6 +119,9 @@ def _catalog() -> dict[str, Any]:
                     "title": node["title"],
                     "titleSw": node.get("title_sw") or node.get("titleSw"),
                     "description": node.get("description"),
+                    "outline": node.get("outline"),
+                    "weekNumber": node.get("week_number") or node.get("weekNumber"),
+                    "dayNumber": node.get("day_number") or node.get("dayNumber"),
                     "prerequisites": node.get("prerequisites") or [],
                     "lessonIds": lesson_ids,
                     "badgeIds": node.get("badge_ids") or node.get("badgeIds") or [],

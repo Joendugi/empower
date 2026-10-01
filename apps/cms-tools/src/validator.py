@@ -53,10 +53,16 @@ class LessonManifest(BaseModel):
     course_id: str
     title: str
     title_sw: Optional[str] = None
+    briefing: Optional[str] = None
+    briefing_sw: Optional[str] = None
+    outline: Optional[str] = None
+    week_number: Optional[int] = None
+    day_number: Optional[int] = None
     estimated_minutes: int = Field(ge=1, le=180)
     license: str
     cdacc_unit_id: Optional[str] = None
     exam_domain: Optional[str] = None
+    media: Optional[list[dict[str, Any]]] = None
     exercises: List[ExerciseModel]
 
 

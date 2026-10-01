@@ -154,6 +154,17 @@ class Settings(BaseSettings):
     RATE_LIMIT_AUTH_PER_MINUTE: int = 20
     RATE_LIMIT_WRITE_PER_MINUTE: int = 60
 
+    # Optional SMTP. Empty host = no send (PWA falls back to free mailto / inbox).
+    # Brevo free = 300/day. Amazon SES ≈ $0.10 / 1,000. College Google Workspace = $0 extra.
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USER: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_FROM: str = "Empower <noreply@localhost>"
+    SMTP_STARTTLS: bool = True
+    # Resend (https://resend.com) — preferred production path. Free tier ~100/day.
+    RESEND_API_KEY: str = ""
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

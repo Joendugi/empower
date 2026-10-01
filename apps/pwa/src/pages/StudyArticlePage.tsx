@@ -15,6 +15,9 @@ import VehicleAnatomy from '@/components/anatomy/VehicleAnatomy';
 import BrandMark from '@/components/ui/BrandMark';
 import ProfileButton from '@/components/ui/ProfileButton';
 import { getPublicStudy, publicStudies } from '@/content/publicStudies';
+import MaterialGate from '@/components/campus/MaterialGate';
+import { methodLabel, useEducatorStore } from '@/store/educatorStore';
+import { useIsEducator } from '@/lib/roles';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useT } from '@/i18n';
 
@@ -24,6 +27,8 @@ export default function StudyArticlePage() {
   const token = useLearnerStore((state) => state.token);
   const isGuest = useLearnerStore((state) => state.isGuest);
   const signedIn = Boolean(token && !isGuest);
+  const teaching = useIsEducator();
+  const allNotes = useEducatorStore((state) => state.notes);
 
   const study = slug ? getPublicStudy(slug) : undefined;
   if (!study) return <Navigate to="/study" replace />;
@@ -61,6 +66,8 @@ export default function StudyArticlePage() {
       </header>
 
       <article className="max-w-4xl mx-auto px-4 py-10 space-y-8">
+        <MaterialGate pathId={study.programmeId} title={study.programmeTitle}>
+        <div className="space-y-8">
         {/* Topic Banner */}
         <div>
           <div className="flex items-center gap-2 mb-3">
@@ -98,6 +105,30 @@ export default function StudyArticlePage() {
           ))}
         </div>
 
+        {allNotes
+          .filter((note) => note.slug === study.slug || (!note.slug && note.programmeId === study.programmeId))
+          .map((note) => (
+            <section key={note.id} className="card !p-5 border-accent/30 space-y-3">
+              <p className="text-xs font-bold uppercase tracking-wider text-accent">
+                Instructor note · {methodLabel(note.method)}
+                {note.sample ? ' · sample' : ''}
+              </p>
+              <h2 className="text-xl font-semibold">{note.title}</h2>
+              {note.outcomes.length > 0 && (
+                <ul className="text-sm text-muted-light list-disc pl-5 space-y-1">
+                  {note.outcomes.map((outcome) => (
+                    <li key={outcome}>{outcome}</li>
+                  ))}
+                </ul>
+              )}
+              <div className="space-y-3 text-sm text-white/90 leading-relaxed">
+                {note.body.split(/\n\n+/).map((para) => (
+                  <p key={para.slice(0, 24)}>{para}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+
         {/* Sources & Standards */}
         <section className="card !p-5 border-white/[0.08]">
           <h2 className="text-xs font-bold uppercase tracking-wider text-muted flex items-center gap-1.5">
@@ -123,23 +154,39 @@ export default function StudyArticlePage() {
                 <span>Hands-on Lab & Assessment</span>
               </div>
               <h3 className="text-xl font-bold text-white">
-                {signedIn ? 'Ready for the Practical Assessment?' : 'Account Required for Practical Assessment & XP'}
+                {teaching
+                  ? 'This quiz is for learners'
+                  : signedIn
+                    ? 'Ready for the Practical Assessment?'
+                    : 'Account Required for Practical Assessment & XP'}
               </h3>
               <p className="text-xs sm:text-sm text-muted mt-1.5 max-w-lg leading-relaxed">
-                {signedIn
-                  ? 'Launch the interactive module to complete step-by-step autograded exercises, record workshop evidence, and earn XP.'
-                  : 'Full interactive simulations, evidence uploads, and CDACC competency grading require an authenticated learner account.'}
+                {teaching
+                  ? 'Grade evidence and add instructor notes from the teaching desk. Do not sit the learner quiz.'
+                  : signedIn
+                    ? 'Launch the interactive module to complete step-by-step autograded exercises, record workshop evidence, and earn XP.'
+                    : 'Full interactive simulations, evidence uploads, and CDACC competency grading require an authenticated learner account.'}
               </p>
             </div>
 
             <div className="shrink-0 flex flex-col gap-2.5">
-              <Link 
-                to={signedIn ? study.lessonPath : `/login?next=${encodeURIComponent(study.lessonPath)}`} 
-                className="btn-primary text-xs !py-3 !px-5"
-              >
-                <GraduationCap className="w-4 h-4" />
-                {signedIn ? t('studyQuizCta') : 'Sign In to Start Quiz'}
-              </Link>
+              {teaching ? (
+                <Link
+                  to={`/educator?tab=notes&programme=${study.programmeId}`}
+                  className="btn-primary text-xs !py-3 !px-5"
+                >
+                  <GraduationCap className="w-4 h-4" />
+                  Add or grade from desk
+                </Link>
+              ) : (
+                <Link 
+                  to={signedIn ? study.lessonPath : `/login?next=${encodeURIComponent(study.lessonPath)}`} 
+                  className="btn-primary text-xs !py-3 !px-5"
+                >
+                  <GraduationCap className="w-4 h-4" />
+                  {signedIn ? t('studyQuizCta') : 'Sign In to Start Quiz'}
+                </Link>
+              )}
               <Link to={`/study?p=${study.programmeId}`} className="btn-secondary text-xs !py-2.5 !px-5 text-center">
                 {t('studyMore')}
               </Link>
@@ -162,6 +209,8 @@ export default function StudyArticlePage() {
             </Link>
           ) : null}
         </nav>
+        </div>
+        </MaterialGate>
       </article>
     </div>
   );

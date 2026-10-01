@@ -26,6 +26,8 @@ const CoursePage = lazy(() => import('@/pages/CoursePage'));
 const CurriculumStudioPage = lazy(() => import('@/pages/CurriculumStudioPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const VerifyCertificatePage = lazy(() => import('@/pages/VerifyCertificatePage'));
+const ScanPage = lazy(() => import('@/pages/ScanPage'));
+const CampusPage = lazy(() => import('@/pages/CampusPage'));
 
 export default function App() {
   const hydrated = useHydrated();
@@ -54,6 +56,8 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/verify/:certificateId" element={<VerifyCertificatePage />} />
           <Route path="/verify" element={<VerifyCertificatePage />} />
+          <Route path="/s/:code" element={<ScanPage />} />
+          <Route path="/campus" element={<CampusPage />} />
           <Route path="/learn" element={<Navigate to="/learn/skill-tree" replace />} />
           <Route path="/learn/skill-tree" element={<SkillTreePage />} />
           <Route path="/learn/course/:pathId" element={<CoursePage />} />
@@ -98,14 +102,7 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/educator"
-            element={
-              <ProtectedRoute>
-                <EducatorPage />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/educator" element={<EducatorPage />} />
           <Route path="/office" element={<AdminPage />} />
           <Route path="/admin" element={<NotFoundPage />} />
           <Route path="*" element={<NotFoundPage />} />

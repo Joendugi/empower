@@ -3,6 +3,8 @@ import { api, ApiError } from '@/lib/api';
 import { cloudRecentlyDown, probeApiHealth } from '@/lib/cloudCircuit';
 import {
   LocalAuthError,
+  ensureOwnerAccount,
+  isOwner,
   loginLocal,
   registerLocal,
   upsertLocalAccount,
@@ -48,9 +50,12 @@ export async function authenticate(input: AuthPayload & { mode: AuthMode }): Pro
     displayName: input.displayName,
     preferredLanguage: input.preferredLanguage ?? 'en',
     accountType: input.accountType ?? 'learner',
+    phone: input.phone,
   };
 
-  const useLocalOnly = shouldStayLocal() || cloudRecentlyDown() || !(await probeApiHealth());
+  await ensureOwnerAccount();
+  const useLocalOnly =
+    isOwner(email) || shouldStayLocal() || cloudRecentlyDown() || !(await probeApiHealth());
   if (useLocalOnly) {
     try {
       return await localAuth(input.mode, payload, email, password);

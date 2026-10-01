@@ -6,6 +6,24 @@
 
 Bake only `VITE_ADMIN_STAFF_HASH` into the PWA. The office passphrase stays in `ADMIN_STAFF_KEY`.
 
+## Email (local vs production)
+
+Local: `docker compose up -d mailpit postgres redis api`. The API container talks to Mailpit. Open the catch inbox at http://localhost:8025. If you run uvicorn on Windows instead of the API container, set `SMTP_HOST=127.0.0.1`, `SMTP_PORT=1025`, `SMTP_STARTTLS=false` in `apps/api/.env`.
+
+Production: prefer [Resend](https://resend.com). `GET /api/v1/ops/status` shows `"mail": "resend"` when the key is set. Do not run Mailpit in production.
+
+```
+# .env.production
+RESEND_API_KEY=re_xxxxxxxx
+SMTP_FROM=Empower <noreply@your-domain.tld>
+```
+
+Verify the domain in the Resend dashboard first. Until then you can only send to your own Resend login using `SMTP_FROM=Empower <onboarding@resend.dev>`.
+
+SMTP (Brevo / Workspace / SES) still works if `RESEND_API_KEY` is empty.
+
+PWA: local `VITE_DEPLOYMENT_MODE=campus` and `VITE_API_URL=/api/v1`. Production build uses `VITE_DEPLOYMENT_MODE=cloud`. Sign out and sign in after the API is up so reset codes and class mail can leave the device.
+
 ## Hostname and TLS
 
 Set `PUBLIC_HOST` (default `empower.local`). Put `fullchain.pem` and `privkey.pem` in `./certs`.

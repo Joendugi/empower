@@ -18,6 +18,10 @@ function isAuthPath(path: string) {
   return path.startsWith('/auth/');
 }
 
+function canUseCloud(path: string) {
+  return isAuthPath(path) || path.startsWith('/notices/');
+}
+
 export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const method = (init.method ?? 'GET').toUpperCase();
   const token = useLearnerStore.getState().token;
@@ -27,7 +31,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const skipNetwork =
     platform.deploymentMode === 'offline' ||
     cloudRecentlyDown() ||
-    (isLocalToken(token) && !isAuthPath(path));
+    (isLocalToken(token) && !canUseCloud(path));
 
   const fromLocal = async () => {
     try {
@@ -108,7 +112,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     const local = await fromLocal();
     if (local !== undefined) return local;
     if (error instanceof DOMException && error.name === 'AbortError') {
-      throw new ApiError(504, 'The campus/cloud API timed out. Your account can still work on this device.');
+      throw new ApiError(504, 'Could not reach the server. Your work is still saved here.');
     }
     throw error;
   }

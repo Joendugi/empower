@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import type { AnimationPreset, Lesson, ProgrammeTrack } from '@cyberlearn/types';
 import { allLessons, builtInSkillPaths, getLesson } from '@/content';
 import { buildProgrammeFromForm, useCurriculumStore } from '@/store/curriculumStore';
+import { usePlatformStore } from '@/store/platformStore';
 import {
-  defaultPlatformSettings,
-  type DeploymentMode,
-  usePlatformStore,
-} from '@/store/platformStore';
+  createLimitedAdmin,
+  isOwner,
+  listLocalAccounts,
+  setLocalAccountType,
+  type LocalAccount,
+} from '@/lib/localAccounts';
+import { useLearnerStore } from '@/store/learnerStore';
+import CatalogueEditor from '@/components/campus/CatalogueEditor';
 import AdminGate from '@/components/admin/AdminGate';
 import CourseAnalytics from '@/components/admin/CourseAnalytics';
 import BrandMark from '@/components/ui/BrandMark';
@@ -50,16 +55,32 @@ const emptyForm = {
 
 export default function AdminPage() {
   const t = useT();
-  const [tab, setTab] = useState<'analytics' | 'curriculum' | 'validation' | 'settings'>('analytics');
+  const applications = useModerationStore((state) => state.applications);
+  const pendingReview = applications.filter((item) => item.status === 'pending').length;
+  const [tab, setTab] = useState<'analytics' | 'curriculum' | 'validation' | 'settings' | 'catalogue'>(
+    pendingReview > 0 ? 'validation' : 'analytics'
+  );
   const [form, setForm] = useState(emptyForm);
   const [message, setMessage] = useState<string | null>(null);
+  const [catalogueNote, setCatalogueNote] = useState<string | null>(null);
   const paths = useCurriculumStore((state) => state.paths);
   const addProgramme = useCurriculumStore((state) => state.addProgramme);
   const removeProgramme = useCurriculumStore((state) => state.removeProgramme);
-  const applications = useModerationStore((state) => state.applications);
   const proposals = useModerationStore((state) => state.proposals);
   const reviewApplication = useModerationStore((state) => state.reviewApplication);
   const reviewProposal = useModerationStore((state) => state.reviewProposal);
+  const staffEmail = useLearnerStore((state) => state.email);
+  const staffName = useLearnerStore((state) => state.displayName) ?? 'Staff';
+  const owner = isOwner(staffEmail);
+  const queuedApplications = useMemo(
+    () =>
+      [...applications].sort((a, b) => {
+        if (a.status === 'pending' && b.status !== 'pending') return -1;
+        if (b.status === 'pending' && a.status !== 'pending') return 1;
+        return (b.submittedAt || '').localeCompare(a.submittedAt || '');
+      }),
+    [applications]
+  );
 
   const publish = (event: FormEvent) => {
     event.preventDefault();
@@ -119,7 +140,10 @@ export default function AdminPage() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('adminKicker')}</p>
           <h1 className="text-3xl font-bold mt-1">{t('adminTitle')}</h1>
-          <p className="text-muted mt-2 max-w-2xl leading-relaxed">{t('adminHelp')}</p>
+          <p className="text-muted mt-2 max-w-2xl leading-relaxed">
+            Review educator applications, publish course updates, and watch how learners use programmes on this
+            campus.
+          </p>
         </div>
 
         <>
@@ -133,40 +157,70 @@ export default function AdminPage() {
               </button>
               <button
                 type="button"
+                className={tab === 'catalogue' ? 'btn-primary' : 'btn-secondary'}
+                onClick={() => setTab('catalogue')}
+              >
+                PDFs & catalogue
+              </button>
+              <button
+                type="button"
                 className={tab === 'validation' ? 'btn-primary' : 'btn-secondary'}
                 onClick={() => setTab('validation')}
               >
-                Validation queue ({applications.filter((item) => item.status === 'pending').length +
+                Educators ({applications.filter((item) => item.status === 'pending').length +
                   proposals.filter((item) => item.status === 'pending').length})
               </button>
-              <button
-                type="button"
-                className={tab === 'curriculum' ? 'btn-primary' : 'btn-secondary'}
-                onClick={() => setTab('curriculum')}
-              >
-                {t('adminTabCurriculum')}
-              </button>
-              <button
-                type="button"
-                className={tab === 'settings' ? 'btn-primary' : 'btn-secondary'}
-                onClick={() => setTab('settings')}
-              >
-                {t('adminTabSettings')}
-              </button>
+              {owner && (
+                <button
+                  type="button"
+                  className={tab === 'curriculum' ? 'btn-primary' : 'btn-secondary'}
+                  onClick={() => setTab('curriculum')}
+                >
+                  {t('adminTabCurriculum')}
+                </button>
+              )}
+              {owner && (
+                <button
+                  type="button"
+                  className={tab === 'settings' ? 'btn-primary' : 'btn-secondary'}
+                  onClick={() => setTab('settings')}
+                >
+                  Classroom rules
+                </button>
+              )}
             </div>
 
-            {tab === 'analytics' ? (
+            {tab === 'catalogue' ? (
+              <CatalogueEditor actorEmail={staffEmail ?? ''} actorName={staffName} />
+            ) : tab === 'analytics' || (!owner && (tab === 'curriculum' || tab === 'settings')) ? (
               <CourseAnalytics />
             ) : tab === 'curriculum' ? (
               <>
                 <div className="card flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <h2 className="text-lg font-semibold">{t('studioTitle')}</h2>
-                    <p className="text-sm text-muted mt-1">{t('studioHelp')}</p>
+                    <h2 className="text-lg font-semibold">Keep courses current</h2>
+                    <p className="text-sm text-muted mt-1">
+                      Pull the latest published catalogue, then edit a lesson. Learners see the new version the
+                      next time they open the programme.
+                    </p>
+                    {catalogueNote && <p className="text-sm text-success mt-2">{catalogueNote}</p>}
                   </div>
-                  <Link to="/curriculum" className="btn-primary text-center">
-                    {t('studioOpen')}
-                  </Link>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => {
+                        void useCurriculumStore.getState().syncCurriculum().then(() => {
+                          setCatalogueNote('Catalogue updated for this campus.');
+                        });
+                      }}
+                    >
+                      Update catalogue
+                    </button>
+                    <Link to="/curriculum" className="btn-primary text-center">
+                      {t('studioOpen')}
+                    </Link>
+                  </div>
                 </div>
                 <form className="card grid gap-3 md:grid-cols-2" onSubmit={publish}>
                   <h2 className="md:col-span-2 text-lg font-semibold">{t('adminNewProgramme')}</h2>
@@ -402,20 +456,28 @@ export default function AdminPage() {
               </>
             ) : tab === 'validation' ? (
               <section className="space-y-8">
+                <StaffAccounts />
                 <div>
                   <h2 className="text-xl font-semibold">Educator verification</h2>
                   <p className="text-sm text-muted mt-2">
-                    Verify identity, qualifications, references, and relevant trade experience. Approval permits
-                    proposals only; it never permits direct publishing.
+                    Verification requests land here. Check phone, institution, qualifications, and the statement
+                    before you approve. Approval permits teaching — it never lets them sit learner courses.
                   </p>
+                  {pendingReview > 0 && (
+                    <p className="text-sm text-accent mt-3">{pendingReview} request(s) waiting for office review.</p>
+                  )}
                   <div className="grid gap-3 mt-4">
-                    {applications.length === 0 && <p className="text-sm text-muted">No applications yet.</p>}
-                    {applications.map((application) => (
+                    {queuedApplications.length === 0 && <p className="text-sm text-muted">No applications yet.</p>}
+                    {queuedApplications.map((application) => (
                       <article key={application.id} className="card">
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div>
-                            <h3 className="font-semibold">{application.displayName}</h3>
+                            <p className="text-[10px] uppercase tracking-wider text-accent">Verification request</p>
+                            <h3 className="font-semibold mt-1">{application.displayName}</h3>
                             <p className="text-xs text-muted">{application.email} · {application.phone} · {application.county}</p>
+                            {application.submittedAt && (
+                              <p className="text-xs text-muted mt-1">Submitted {application.submittedAt.slice(0, 10)}</p>
+                            )}
                           </div>
                           <span className="text-xs uppercase text-accent">{application.status}</span>
                         </div>
@@ -423,7 +485,7 @@ export default function AdminPage() {
                           <div><dt className="text-muted">Institution</dt><dd>{application.institution}</dd></div>
                           <div><dt className="text-muted">Experience</dt><dd>{application.experienceYears} years</dd></div>
                           <div><dt className="text-muted">Trade areas</dt><dd>{application.tradeAreas}</dd></div>
-                          <div><dt className="text-muted">Qualifications</dt><dd>{application.qualifications}</dd></div>
+                          <div><dt className="text-muted">Qualifications / verifier</dt><dd>{application.qualifications}</dd></div>
                         </dl>
                         <p className="text-sm mt-4 leading-relaxed">{application.statement}</p>
                         {application.status === 'pending' && (
@@ -580,10 +642,10 @@ function LocalLessonEditor() {
   return (
     <form className="card grid md:grid-cols-2 gap-3" onSubmit={save}>
       <div className="md:col-span-2">
-        <h2 className="text-lg font-semibold">Local curriculum editor</h2>
+        <h2 className="text-lg font-semibold">Update a course lesson</h2>
         <p className="text-sm text-muted mt-1">
-          Edit any shipped or custom lesson. Changes are stored on this device as an override and included in
-          curriculum JSON export; the original packaged lesson remains available to restore.
+          Edit notes or media for a shipped or custom lesson. Save a new version; learners get it when they
+          reopen the course. Restore the original if you need to undo.
         </p>
       </div>
       <label className="md:col-span-2 text-sm text-muted">
@@ -729,6 +791,112 @@ function MediaFields({
   );
 }
 
+function StaffAccounts() {
+  const staffEmail = useLearnerStore((state) => state.email);
+  const owner = isOwner(staffEmail);
+  const [accounts, setAccounts] = useState(() => listLocalAccounts());
+  const [form, setForm] = useState({ email: '', password: '', displayName: '' });
+  const [note, setNote] = useState('');
+
+  const refresh = () => setAccounts(listLocalAccounts());
+
+  const changeRole = (email: string, accountType: LocalAccount['accountType']) => {
+    if (!owner || isOwner(email)) return;
+    setLocalAccountType(email, accountType);
+    refresh();
+  };
+
+  const createStaff = async (event: FormEvent) => {
+    event.preventDefault();
+    setNote('');
+    try {
+      await createLimitedAdmin(form);
+      setForm({ email: '', password: '', displayName: '' });
+      setNote('Limited staff account created. They can review analytics and educators only.');
+      refresh();
+    } catch (error) {
+      setNote(error instanceof Error ? error.message : 'Could not create staff.');
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-xl font-semibold">Accounts and authorization</h2>
+        <p className="text-sm text-muted mt-2">
+          The owner can add limited staff. Limited staff review analytics and educator applications only.
+        </p>
+      </div>
+      {owner && (
+        <form className="card grid md:grid-cols-2 gap-3" onSubmit={(event) => void createStaff(event)}>
+          <h3 className="md:col-span-2 font-semibold">Create limited staff</h3>
+          <input
+            className={fieldClass}
+            placeholder="Name"
+            value={form.displayName}
+            onChange={(event) => setForm({ ...form, displayName: event.target.value })}
+            required
+          />
+          <input
+            className={fieldClass}
+            type="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={(event) => setForm({ ...form, email: event.target.value })}
+            required
+          />
+          <input
+            className={`${fieldClass} md:col-span-2`}
+            type="password"
+            minLength={8}
+            placeholder="Temporary password (8+ characters)"
+            value={form.password}
+            onChange={(event) => setForm({ ...form, password: event.target.value })}
+            required
+          />
+          <button className="btn-primary md:col-span-2" type="submit">
+            Add limited admin
+          </button>
+          {note && <p className="md:col-span-2 text-sm text-muted">{note}</p>}
+        </form>
+      )}
+      <div className="grid gap-3">
+        {accounts.length === 0 && <p className="text-sm text-muted">No accounts on this device yet.</p>}
+        {accounts.map((account) => (
+          <article key={account.id} className="card flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h3 className="font-semibold">{account.displayName}</h3>
+              <p className="text-xs text-muted">{account.email}</p>
+            </div>
+            {isOwner(account.email) ? (
+              <span className="text-xs uppercase text-accent font-semibold">Owner</span>
+            ) : owner ? (
+              <label className="text-xs text-muted">
+                Role
+                <select
+                  className={`${fieldClass} mt-1 min-w-36`}
+                  value={account.accountType === 'owner' ? 'admin' : account.accountType}
+                  onChange={(event) =>
+                    changeRole(account.email, event.target.value as LocalAccount['accountType'])
+                  }
+                >
+                  <option value="learner">Learner</option>
+                  <option value="educator">Educator</option>
+                  <option value="admin">Limited staff</option>
+                </select>
+              </label>
+            ) : (
+              <span className="text-xs uppercase text-muted">
+                {account.accountType === 'admin' ? 'Limited staff' : account.accountType}
+              </span>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ArchitectureSettings() {
   const t = useT();
   const settings = usePlatformStore();
@@ -737,12 +905,6 @@ function ArchitectureSettings() {
   const save = (event: FormEvent) => {
     event.preventDefault();
     settings.update({
-      deploymentMode: settings.deploymentMode,
-      apiBaseUrl: settings.apiBaseUrl.trim() || defaultPlatformSettings.apiBaseUrl,
-      mediaCdnUrl: settings.mediaCdnUrl.trim(),
-      requestTimeoutMs: settings.requestTimeoutMs,
-      httpsMediaOnly: settings.httpsMediaOnly,
-      allowedMediaHosts: settings.allowedMediaHosts,
       requireWatchBeforeContinue: settings.requireWatchBeforeContinue,
       enableAnimations: settings.enableAnimations,
       enableVideo: settings.enableVideo,
@@ -754,67 +916,11 @@ function ArchitectureSettings() {
 
   return (
     <form className="card grid gap-3 md:grid-cols-2" onSubmit={save}>
-      <h2 className="md:col-span-2 text-lg font-semibold">{t('adminSettingsTitle')}</h2>
-      <p className="md:col-span-2 text-sm text-muted leading-relaxed">{t('adminSettingsHelp')}</p>
-
-      <label className="text-sm text-muted space-y-1">
-        <span>{t('adminMode')}</span>
-        <select
-          className={fieldClass}
-          value={settings.deploymentMode}
-          onChange={(event) => settings.update({ deploymentMode: event.target.value as DeploymentMode })}
-        >
-          <option value="offline">{t('adminModeOffline')}</option>
-          <option value="campus">{t('adminModeCampus')}</option>
-          <option value="cloud">{t('adminModeCloud')}</option>
-        </select>
-      </label>
-      <label className="text-sm text-muted space-y-1">
-        <span>{t('adminTimeout')}</span>
-        <input
-          type="number"
-          min={2000}
-          max={25000}
-          step={500}
-          className={fieldClass}
-          value={settings.requestTimeoutMs}
-          onChange={(event) => settings.update({ requestTimeoutMs: Number(event.target.value) || 8000 })}
-        />
-      </label>
-      <label className="md:col-span-2 text-sm text-muted space-y-1">
-        <span>{t('adminApiBase')}</span>
-        <input
-          className={fieldClass}
-          value={settings.apiBaseUrl}
-          onChange={(event) => settings.update({ apiBaseUrl: event.target.value })}
-        />
-      </label>
-      <label className="md:col-span-2 text-sm text-muted space-y-1">
-        <span>{t('adminMediaCdn')}</span>
-        <input
-          className={fieldClass}
-          value={settings.mediaCdnUrl}
-          onChange={(event) => settings.update({ mediaCdnUrl: event.target.value })}
-        />
-      </label>
-      <label className="md:col-span-2 text-sm text-muted space-y-1">
-        <span>{t('adminAllowedHosts')}</span>
-        <input
-          className={fieldClass}
-          value={settings.allowedMediaHosts}
-          onChange={(event) => settings.update({ allowedMediaHosts: event.target.value })}
-        />
-      </label>
-      <p className="md:col-span-2 text-sm text-muted">{t('officeKeyHelp')}</p>
-
-      <label className="text-sm text-muted flex items-center gap-2">
-        <input
-          type="checkbox"
-          checked={settings.httpsMediaOnly}
-          onChange={(event) => settings.update({ httpsMediaOnly: event.target.checked })}
-        />
-        {t('adminHttpsOnly')}
-      </label>
+      <h2 className="md:col-span-2 text-lg font-semibold">Classroom rules</h2>
+      <p className="md:col-span-2 text-sm text-muted leading-relaxed">
+        Control what learners must finish before they continue. Media hosting is configured by IT, not in this
+        office.
+      </p>
       <label className="text-sm text-muted flex items-center gap-2">
         <input
           type="checkbox"
@@ -847,21 +953,9 @@ function ArchitectureSettings() {
         />
         {t('adminEnableAudio')}
       </label>
-
       <div className="md:col-span-2 flex flex-wrap gap-2 mt-2">
         <button className="btn-primary" type="submit">
           {t('adminSettingsSave')}
-        </button>
-        <button
-          className="btn-secondary"
-          type="button"
-          onClick={() => {
-            settings.reset();
-            setSaved(true);
-            window.setTimeout(() => setSaved(false), 2500);
-          }}
-        >
-          {t('adminSettingsReset')}
         </button>
       </div>
       {saved && <p className="md:col-span-2 text-sm text-accent">{t('adminSettingsSaved')}</p>}

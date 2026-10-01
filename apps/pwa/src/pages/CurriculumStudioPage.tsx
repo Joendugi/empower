@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import type { ProgrammeTrack } from '@cyberlearn/types';
 import AppHeader from '@/components/ui/AppHeader';
@@ -19,6 +19,7 @@ import {
 } from '@/lib/curriculumDraft';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useLearnerStore } from '@/store/learnerStore';
+import { isStaff } from '@/lib/localAccounts';
 import { useT } from '@/i18n';
 
 const field = 'w-full rounded-xl bg-primary-dark border border-surface-light px-3 py-3 text-white placeholder:text-muted';
@@ -63,6 +64,10 @@ export default function CurriculumStudioPage() {
   const checks = draft ? draftChecks(draft) : null;
   const previewLessons = preview ? Object.fromEntries(preview.lessons.map((lesson) => [lesson.id, lesson])) : {};
   const previewLesson = preview?.lessons[weekIndex] ?? preview?.lessons[0];
+
+  if (!isStaff(email)) {
+    return <Navigate to="/educator" replace />;
+  }
 
   const updateWeek = (patch: Partial<WeekDraft>) => {
     if (!draft || !week) return;

@@ -1,0 +1,63 @@
+id: water-purification-day-4
+course_id: potable-water-engineering
+title: "Day 4: Solar Disinfection (SODIS) & Thermal Pasteurization"
+title_sw: "Siku ya 4: Usafishaji wa Maji kwa Mionzi ya Jua (SODIS)"
+week_number: 1
+day_number: 4
+estimated_minutes: 15
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ENV/WT/CR/01/5
+exam_domain: Water Sanitation & Hygiene
+briefing: |
+  While slow sand filtration eliminates 99% to 99.9% of bacteria and protozoa, tertiary terminal disinfection guarantees complete viral and residual bacterial neutralization without chemical chlorine.
+
+  SOLAR DISINFECTION (SODIS) PROTOCOL:
+  1. Container container: Clean, un-scratched transparent PET (Polyethylene Terephthalate) beverage bottles (type 1 plastic, volume 0.5 to 2.0 liters). Never use PVC (polyvinyl chloride) or glass with heavy lead/iron tinting.
+  2. Turbidity threshold: Raw water MUST have turbidity < 30 NTU. If cloudy, suspended silt shades pathogens from UV-A penetration.
+  3. Solar irradiation mechanism: Solar UV-A light (wavelength 320 to 400 nm) reacts with dissolved oxygen producing reactive oxygen species (ROS: superoxide anions O2•- and hydroxyl radicals •OH) that break bacterial cellular membranes and cross-link microbial DNA.
+  4. Synergy with thermal pasteurization: If water temperature reaches 50°C, the synergy between thermal heat and UV radiation accelerates pathogen mortality by a factor of 100x.
+  5. Exposure duration: Minimum 6 hours under bright uninterrupted direct sunlight. If sky is over 50% cloudy, bottles must remain exposed for 2 consecutive full daylight days (48 hours).
+
+exercises:
+  - id: w-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: Which plastic container is suitable for solar water disinfection (SODIS)?
+    options:
+      - id: a
+        text: Clear PET (Polyethylene Terephthalate, resin code 1) bottles with labels removed
+      - id: b
+        text: Opaque PVC chemical jerrycans
+      - id: c
+        text: Dark green tinted wine bottles
+      - id: d
+        text: Black polyethylene irrigation tubing
+    correct_answer: a
+    hint: Transparent PET transmits UV-A rays; colored or opaque plastics block UV light.
+    explanation: PET allows 85% of UV-A rays to penetrate. PVC contains plasticizers that leach and block UV radiation.
+    xp_reward: 50
+
+  - id: w-d4-q2
+    type: FILL_BLANK
+    prompt: The minimum required exposure time for SODIS under full, clear direct sunlight is ___ hours.
+    correct_answer: "6"
+    hint: 6 hours on a clear sunny day.
+    explanation: 6 hours provides the threshold UV-A radiation dose (approximately 500 Watts/m² integrated solar fluence) to kill enteric pathogens.
+    xp_reward: 50
+
+  - id: w-d4-q3
+    type: SCENARIO
+    prompt: |
+      You are placing SODIS bottles on a corrugated iron roof. How should the bottles be oriented and supported for maximum thermal and radiative yield?
+    options:
+      - id: a
+        text: Laid horizontally on a reflective or black-painted corrugated iron sheet tilted towards the equatorial midday sun
+      - id: b
+        text: Stood upright in cold river water
+      - id: c
+        text: Wrapped tightly in wet wool blankets
+      - id: d
+        text: Placed under the shade of a mango tree
+    correct_answer: a
+    hint: Horizontal positioning maximizes surface area exposure; corrugated metal reflects light and adds conduction heat.
+    explanation: Laying bottles horizontally exposes maximum cross-sectional area to sunlight while the metallic roof provides reflected UV and thermal conduction above 50°C.
+    xp_reward: 60

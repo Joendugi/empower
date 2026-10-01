@@ -53,8 +53,9 @@ async def test_camel_case_skill_paths(client: AsyncClient) -> None:
     response = await client.get("/api/v1/skill-paths")
     assert response.status_code == 200
     paths = response.json()
-    assert paths[0]["id"] == "cybersecurity"
-    assert "lessonIds" in paths[0]["nodes"][0]
+    cyber = next((p for p in paths if p["id"] == "cybersecurity"), None)
+    assert cyber is not None
+    assert "lessonIds" in cyber["nodes"][0]
 
 
 async def test_curriculum_requires_authentication(client: AsyncClient) -> None:

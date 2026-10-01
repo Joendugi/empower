@@ -306,7 +306,7 @@ export default function LandingPage() {
               Build a skill. Serve a community. Create work.
             </h2>
             <p className="text-muted-light mt-3 max-w-xl mx-auto text-sm sm:text-base">
-              Join learners mastering practical TVET trades, or apply to contribute verified technical curriculum.
+              Join learners mastering practical TVET trades, or apply as an educator to grade work and write library notes.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3.5">
               <Link to="/login" className="btn-primary py-3 px-6 text-sm">

@@ -84,6 +84,13 @@ def main() -> None:
             "DATABASE_URL": f"postgresql+asyncpg://cyberlearn:{postgres}@postgres:5432/cyberlearn",
             "SUPABASE_DB_URL": "",
             "SUPABASE_URL": "",
+            "SMTP_HOST": os.environ.get("SMTP_HOST") or "",
+            "SMTP_PORT": os.environ.get("SMTP_PORT") or "587",
+            "SMTP_USER": os.environ.get("SMTP_USER") or "",
+            "SMTP_PASSWORD": os.environ.get("SMTP_PASSWORD") or "",
+            "SMTP_FROM": os.environ.get("SMTP_FROM") or f"Empower <noreply@{public_host}>",
+            "SMTP_STARTTLS": os.environ.get("SMTP_STARTTLS") or "true",
+            "RESEND_API_KEY": os.environ.get("RESEND_API_KEY") or "",
         },
     )
     print(f"wrote secrets to {API_ENV.name}, {PWA_ENV.name}, {PROD_ENV.name}")

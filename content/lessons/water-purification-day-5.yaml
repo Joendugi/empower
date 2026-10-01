@@ -1,0 +1,78 @@
+id: water-purification-day-5
+course_id: potable-water-engineering
+title: "Day 5: Silt Scraping, Bed Rejuvenation & Field Quality Testing"
+title_sw: "Siku ya 5: Kusafisha Mchanga, Kurejesha Chujio na Upimaji wa Maji"
+week_number: 1
+day_number: 5
+estimated_minutes: 15
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ENV/WT/CR/01/5
+exam_domain: Water Sanitation & Hygiene
+briefing: |
+  As the biological filter captures silt and dead biomass, hydraulic headloss increases until supernatant water reaches the overflow pipe while output flow drops to an unusable trickle (< 20 L/hr).
+
+  BED SCRAPING & REJUVENATION PROTOCOL:
+  1. Drainage: Close the raw water inlet. Allow supernatant water to drop until the water level is 5 to 10 cm BELOW the sand surface. Never drain the bottom gravel dry.
+  2. Scraping: Using clean flat shovels or trowels, scrape away only the top 1.0 to 2.0 cm of sand containing the clogged silt and biofilm crust.
+  3. Sand storage & washing: The scraped sand is washed in a clean drum with running water, dried in the sun, and stored until re-sanding is required (when sand depth drops to 50 cm).
+  4. Smoothing: Smooth the exposed sand surface with a wooden board without treading or compacting.
+  5. Backfilling: REFILL GENTLY FROM BELOW via the outlet pipe using clean filtered water until the sand is submerged 10 cm. This forces entrapped air bubbles upward, preventing air binding.
+  6. Re-ripening: Run raw water for 24 to 48 hours to waste before connecting output back to the clean water reservoir.
+
+exercises:
+  - id: w-d5-q1
+    type: MATCH_PAIRS
+    prompt: Match each step of the filter bed rejuvenation procedure to its technical rationale.
+    pairs:
+      - left:
+          id: scrape
+          text: Scrape Only Top 1-2 cm Sand
+        right:
+          id: scrape-why
+          text: Removes hydraulic restriction while preserving deeper microbial colonies
+      - left:
+          id: bottom
+          text: Refill From Below (Underdrain Up)
+        right:
+          id: bottom-why
+          text: Displaces trapped air bubbles upward and avoids air binding
+      - left:
+          id: waste
+          text: Run 24-48 Hours to Waste
+        right:
+          id: waste-why
+          text: Re-establishes biofilm and flushes disturbed fine particles
+    correct_answer:
+      - scrape=scrape-why
+      - bottom=bottom-why
+      - waste=waste-why
+    hint: Scraping preserves deep sand; refilling from bottom drives out air.
+    explanation: Top-down refilling traps air pockets that permanently reduce filtration area; bottom-up flooding ensures hydraulic continuity.
+    xp_reward: 60
+
+  - id: w-d5-q2
+    type: SCENARIO
+    prompt: |
+      After 18 months of seasonal scrapings, the sand layer has decreased from 80 cm down to 48 cm. The operator notices that bacterial counts in the treated effluent are climbing despite clear, non-turbid water. What must be done?
+    options:
+      - id: a
+        text: Re-sand the bed with washed, sterilized quartz sand back up to 80-90 cm depth to restore retention time
+      - id: b
+        text: Add chlorine bleach directly into the sand bed
+      - id: c
+        text: Scrape off another 10 cm of sand
+      - id: d
+        text: Speed up the water flow with an electric pump
+    correct_answer: a
+    hint: Minimum sand depth is 50-60 cm to ensure sufficient detention time for biological predation.
+    explanation: Sand depths below 50 cm do not provide enough contact time for protozoa to consume bacteria before water exits into the gravel underdrain.
+    xp_reward: 70
+
+  - id: w-d5-q3
+    type: PHOTO_CAPTURE
+    prompt: Conduct a field water clarity test. Photograph a glass of raw influent water side-by-side with a glass of treated effluent over a black-and-white Secchi disk or printed text card.
+    rubric:
+      - "Raw water and filtered water samples placed in transparent, uncolored glasses."
+      - "Printed text or cross mark is clearly legible through the filtered water sample."
+      - "Side-by-side comparison under bright natural daylight."
+    xp_reward: 100

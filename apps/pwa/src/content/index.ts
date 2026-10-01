@@ -44,6 +44,7 @@ import {
   cyberThreatsLessons,
 } from './cyberSemester';
 import { useCurriculumStore } from '@/store/curriculumStore';
+import { applyLessonOverlay, applyPathOverlay } from '@/store/campusCatalogue';
 import { toPublicLesson } from '@/lib/publicLesson';
 import generatedCatalogue from './generated/catalogue.json';
 
@@ -115,8 +116,11 @@ function lessonCount(path: SkillPath) {
 
 function versionWins(incoming: SkillPath, existing: SkillPath) {
   if (incoming.contentVersion && existing.contentVersion) {
-    return incoming.contentVersion >= existing.contentVersion && lessonCount(incoming) >= lessonCount(existing);
+    if (incoming.contentVersion > existing.contentVersion) return true;
+    if (incoming.contentVersion < existing.contentVersion) return false;
+    return lessonCount(incoming) >= lessonCount(existing);
   }
+  if (incoming.contentVersion && !existing.contentVersion) return true;
   return lessonCount(incoming) >= lessonCount(existing);
 }
 
@@ -139,19 +143,20 @@ export function getSkillPaths(): SkillPath[] {
     if (!path.id.startsWith('custom-')) continue;
     byId.set(path.id, path);
   }
-  return [...byId.values()];
+  return [...byId.values()].map(applyPathOverlay);
 }
 
 export function getLesson(id: string): Lesson | undefined {
   const custom = useCurriculumStore.getState().lessons[id];
   if (custom) {
-    return custom.exercises?.some((item) => item.correctAnswer !== undefined)
+    const lesson = custom.exercises?.some((item) => item.correctAnswer !== undefined)
       ? withoutPlaintextAnswers(custom)
       : custom;
+    return applyLessonOverlay(lesson);
   }
-  if (publicLessonsById?.[id]) return publicLessonsById[id];
+  if (publicLessonsById?.[id]) return applyLessonOverlay(publicLessonsById[id]);
   const raw = lessonsById[id];
-  return raw ? withoutPlaintextAnswers(raw) : undefined;
+  return raw ? applyLessonOverlay(withoutPlaintextAnswers(raw)) : undefined;
 }
 
 export async function getLessonAsync(id: string): Promise<Lesson | undefined> {

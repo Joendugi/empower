@@ -1,8 +1,7 @@
-import { FormEvent, useState, type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import BrandMark from '@/components/ui/BrandMark';
-import { hasAdminGrant, tryStaffUnlock } from '@/lib/adminAccess';
-import { isLocalAdmin, promoteLocalAdmin } from '@/lib/localAccounts';
+import { ensureOwnerAccount, isStaff } from '@/lib/localAccounts';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useT } from '@/i18n';
 
@@ -11,29 +10,12 @@ export default function AdminGate({ children }: { children: ReactNode }) {
   const email = useLearnerStore((state) => state.email);
   const token = useLearnerStore((state) => state.token);
   const valid = useLearnerStore((state) => Boolean(state.token && !state.isGuest && state.isSessionValid()));
-  const [granted, setGranted] = useState(() => hasAdminGrant(email) && Boolean(email && isLocalAdmin(email)));
-  const [passphrase, setPassphrase] = useState('');
-  const [status, setStatus] = useState('');
 
-  const unlock = async (event: FormEvent) => {
-    event.preventDefault();
-    if (!valid || !email) {
-      setStatus(t('pageMissingBody'));
-      return;
-    }
-    const result = await tryStaffUnlock(passphrase, email);
-    if (result === 'ok') {
-      promoteLocalAdmin(email);
-      setGranted(true);
-      setPassphrase('');
-      setStatus('');
-      return;
-    }
-    setStatus(result === 'locked' ? t('pageMissingBody') : t('pageMissingBody'));
-    setPassphrase('');
-  };
+  useEffect(() => {
+    void ensureOwnerAccount();
+  }, []);
 
-  if (granted && hasAdminGrant(email)) {
+  if (valid && token && isStaff(email)) {
     return <>{children}</>;
   }
 
@@ -44,27 +26,14 @@ export default function AdminGate({ children }: { children: ReactNode }) {
           <BrandMark size="sm" />
           <span className="font-semibold">{t('brand')}</span>
         </Link>
-        <h1 className="text-2xl font-bold">{t('pageMissing')}</h1>
-        <p className="text-sm text-muted mt-3">{t('pageMissingBody')}</p>
-        {valid && token && (
-          <form className="mt-8" onSubmit={(event) => void unlock(event)}>
-            <label className="sr-only" htmlFor="office-ref">
-              Reference
-            </label>
-            <input
-              id="office-ref"
-              type="password"
-              autoComplete="off"
-              className="w-full bg-transparent border-0 border-b border-surface-light/40 text-white/40 text-sm px-0 py-2 focus:outline-none focus:border-white/20"
-              value={passphrase}
-              onChange={(event) => setPassphrase(event.target.value)}
-            />
-            <button type="submit" className="sr-only">
-              Continue
-            </button>
-          </form>
-        )}
-        {status && <p className="text-xs text-muted mt-4">{status}</p>}
+        <h1 className="text-2xl font-bold">Staff office</h1>
+        <p className="text-sm text-muted mt-3">
+          Sign in with the owner account or a limited staff account created by the owner. Learners cannot open
+          this page.
+        </p>
+        <Link to="/login?next=/office" className="btn-primary mt-6 inline-flex">
+          Sign in to continue
+        </Link>
         <Link to="/" className="btn-secondary mt-6 inline-flex">
           {t('back')}
         </Link>

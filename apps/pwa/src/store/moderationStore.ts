@@ -87,7 +87,7 @@ export function validateProposal(proposal: CurriculumProposal) {
 
 export const useModerationStore = create<ModerationState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       applications: [],
       proposals: [],
       submitApplication: (application) => {
@@ -100,6 +100,7 @@ export const useModerationStore = create<ModerationState>()(
         void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
       },
       reviewApplication: (applicationId, status, reviewerNote) => {
+        const application = get().applications.find((item) => item.id === applicationId);
         set((state) => ({
           applications: state.applications.map((item) =>
             item.id === applicationId
@@ -107,6 +108,11 @@ export const useModerationStore = create<ModerationState>()(
               : item
           ),
         }));
+        if (application) {
+          void import('@/lib/localAccounts').then(({ setLocalAccountType }) => {
+            setLocalAccountType(application.email, status === 'approved' ? 'educator' : 'learner');
+          });
+        }
         void import('@/lib/syncEngine').then((mod) => mod.scheduleCloudSync());
       },
       submitProposal: (proposal) => {

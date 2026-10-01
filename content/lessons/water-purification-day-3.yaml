@@ -1,0 +1,83 @@
+id: water-purification-day-3
+course_id: potable-water-engineering
+title: "Day 3: Botanical Coagulants (Moringa Oleifera) & Clarification"
+title_sw: "Siku ya 3: Usafishaji wa Maji kwa Mlonge (Moringa Oleifera)"
+week_number: 1
+day_number: 3
+estimated_minutes: 15
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ENV/WT/CR/01/5
+exam_domain: Water Sanitation & Hygiene
+briefing: |
+  Slow sand filters quickly blind and clog if the incoming raw water turbidity exceeds 10 to 20 NTU (Nephelometric Turbidity Units). Pre-treatment by coagulation and sedimentation is vital when dealing with muddy river floodwater.
+
+  BOTANICAL COAGULATION WITH MORINGA OLEIFERA:
+  1. Active component: Dimethyldiallylammonium chloride-like water-soluble cationic proteins (molecular weight ~6.5 to 13 kDa) present in mature dried seeds.
+  2. Action mechanism: The positively charged cationic proteins neutralize the negative surface zeta-potential of colloidal clay and organic particles, allowing them to collide and form dense, settleable flocs.
+  3. Dosing ratio: 50 to 150 mg of dry seed kernel powder per liter of turbid water (approximately 1 seed per 2 liters for low turbidity, 1-2 seeds per liter for heavy mud).
+  4. Preparation protocol: Remove seed wings and husks; crush white kernels into fine powder with mortar/pestle. Mix powder into a small paste with clean water, shake vigorously for 2 minutes to extract the cationic proteins, and strain through clean cotton cloth.
+  5. Hydraulic mixing cycle: Rapid rapid-mix for 1 minute (100 RPM equivalent) to disperse coagulant, followed by slow gentle stirring for 5 to 10 minutes to promote floc aggregation, and 1 to 2 hours undisturbed settling.
+
+exercises:
+  - id: w-d3-q1
+    type: MATCH_PAIRS
+    prompt: Match each stage of the Moringa oleifera clarification process to its operational role.
+    pairs:
+      - left:
+          id: extract
+          text: Powder Extraction in Small Water
+        right:
+          id: extract-role
+          text: Releases soluble cationic proteins into liquid
+      - left:
+          id: rapid
+          text: 1 Minute Rapid Stirring
+        right:
+          id: rapid-role
+          text: Rapidly disperses coagulant across negative colloidal particles
+      - left:
+          id: slow
+          text: 5-10 Minutes Gentle Stirring
+        right:
+          id: slow-role
+          text: Encourages particle collision into large settleable flocs
+      - left:
+          id: settle
+          text: 1-2 Hours Quiescent Settling
+        right:
+          id: settle-role
+          text: Clarified supernatant separates above compacted bottom sludge
+    correct_answer:
+      - extract=extract-role
+      - rapid=rapid-role
+      - slow=slow-role
+      - settle=settle-role
+    hint: First disperse rapidly, then stir gently to aggregate, then settle without motion.
+    explanation: This sequence replicates modern water treatment plant flash-mixing and flocculation basins using simple bucket hydraulics.
+    xp_reward: 60
+
+  - id: w-d3-q2
+    type: FILL_BLANK
+    prompt: The positively charged proteins in Moringa seed kernels neutralize the negative ___ potential of suspended clay particles.
+    correct_answer: zeta
+    hint: Also known as electrical surface potential of colloids.
+    explanation: Zeta potential repulsion keeps colloidal particles suspended indefinitely. Cationic Moringa proteins neutralize this charge, enabling Van der Waals attraction.
+    xp_reward: 50
+
+  - id: w-d3-q3
+    type: SCENARIO
+    prompt: |
+      An operator leaves Moringa-treated clarified water sitting in an open bucket for 4 days before pouring it into the sand filter. A biological film and foul odor develop. Why did this happen?
+    options:
+      - id: a
+        text: Moringa seed powder contains organic nutrients and proteins that nourish secondary bacterial growth if stored long-term
+      - id: b
+        text: Moringa creates radioactive decay after 48 hours
+      - id: c
+        text: The bucket dissolved into the water
+      - id: d
+        text: Moringa evaporates all minerals
+    correct_answer: a
+    hint: Botanical coagulants are biodegradable organic matter.
+    explanation: Unlike mineral alum (aluminum sulfate), Moringa is organic. Coagulated water must be decanted and filtered immediately into the sand filter within 12 hours before organic decomposition starts.
+    xp_reward: 60

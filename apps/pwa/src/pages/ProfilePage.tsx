@@ -29,7 +29,12 @@ import { isLocalToken } from '@/lib/localApi';
 import { isSoundEnabled, setSoundEnabled, playSuccessChime } from '@/lib/soundEffects';
 import { scheduleCloudSync } from '@/lib/syncEngine';
 import { useLearnerStore } from '@/store/learnerStore';
-import { useSyncStore } from '@/store/syncStore';
+import { useModerationStore } from '@/store/moderationStore';
+import { findLocalAccount, isStaff, updateLocalProfile } from '@/lib/localAccounts';
+import { phoneError, sanitizePhoneInput } from '@/lib/validate';
+import { classesForLearner } from '@/store/campusHub';
+import { noticesFor, useNoticeStore } from '@/store/noticeStore';
+import { useIsEducator } from '@/lib/roles';
 import { useT } from '@/i18n';
 import type { StringKey } from '@/i18n/strings';
 import type { BadgeType, SkillPath } from '@cyberlearn/types';
@@ -53,14 +58,26 @@ export default function ProfilePage() {
     restartOnboarding,
   } = useLearnerStore();
   
-  const syncStatus = useSyncStore((s) => s.status);
-  const pendingSyncCount = useSyncStore((s) => s.pending);
+  const educatorApproved = useModerationStore((s) =>
+    s.applications.some(
+      (item) => item.email.toLowerCase() === (email ?? '').toLowerCase() && item.status === 'approved'
+    )
+  );
+  const teaching = useIsEducator();
   
   const signedIn = Boolean(token);
   const localSession = isLocalToken(token);
   const [activeTab, setActiveTab] = useState<'overview' | 'certificates' | 'settings'>('overview');
   const [name, setName] = useState(displayName ?? '');
+  const [phone, setPhone] = useState(() => (email ? findLocalAccount(email)?.phone ?? '' : ''));
   const [saved, setSaved] = useState(false);
+  const [phoneSaved, setPhoneSaved] = useState(false);
+  const [phoneIssue, setPhoneIssue] = useState('');
+  const notices = useNoticeStore((state) => state.notices);
+  const inbox = useMemo(
+    () => noticesFor(email ?? '', classesForLearner(email ?? '').map((item) => item.id)),
+    [email, notices]
+  );
   const [soundOn, setSoundOn] = useState(() => isSoundEnabled());
   const [viewCertPath, setViewCertPath] = useState<SkillPath | null>(null);
 
@@ -98,6 +115,21 @@ export default function ProfilePage() {
     setDisplayName(name);
     setSaved(true);
     window.setTimeout(() => setSaved(false), 1600);
+  };
+
+  const savePhone = (event: FormEvent) => {
+    event.preventDefault();
+    if (!email) return;
+    const invalid = phoneError(phone);
+    if (invalid) {
+      setPhoneIssue(invalid);
+      setPhoneSaved(false);
+      return;
+    }
+    setPhoneIssue('');
+    updateLocalProfile(email, { phone });
+    setPhoneSaved(true);
+    window.setTimeout(() => setPhoneSaved(false), 1600);
   };
 
   const toggleSound = () => {
@@ -439,6 +471,50 @@ export default function ProfilePage() {
                   </p>
                 </section>
 
+                <section className="card space-y-3 border-white/[0.08]">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-muted">Phone & password reset</h2>
+                  <form className="flex flex-col sm:flex-row gap-2" onSubmit={savePhone}>
+                    <input
+                      value={phone}
+                      onChange={(event) => setPhone(sanitizePhoneInput(event.target.value))}
+                      className="flex-1 rounded-xl bg-surface/90 border border-white/[0.08] px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-accent/60 placeholder:text-muted"
+                      placeholder="0712000000"
+                      inputMode="numeric"
+                      autoComplete="tel"
+                      maxLength={16}
+                      pattern="[0-9+]+"
+                      title="Numbers only"
+                      aria-label="Phone number"
+                    />
+                    <button type="submit" className="btn-secondary !py-2.5 text-xs font-semibold">
+                      {phoneSaved ? 'Phone saved' : 'Save phone'}
+                    </button>
+                  </form>
+                  {phoneIssue && <p className="text-xs text-rose-300">{phoneIssue}</p>}
+                  <p className="text-[11px] text-muted">
+                    Forgot password uses the free email or SMS app on this phone. A 6-digit code lasts 15 minutes.
+                    SMS needs a number saved here.
+                  </p>
+                  <Link to="/login" className="text-xs text-accent hover:underline font-semibold">
+                    Reset password
+                  </Link>
+                </section>
+
+                <section className="card space-y-3 border-white/[0.08]">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-muted">Inbox</h2>
+                  {inbox.length === 0 ? (
+                    <p className="text-xs text-muted">No class reminders yet. Trainers send these from Campus desk.</p>
+                  ) : (
+                    inbox.slice(0, 6).map((item) => (
+                      <article key={item.id} className="rounded-xl border border-white/[0.08] p-3">
+                        <p className="text-[10px] uppercase text-accent">{item.channel}</p>
+                        <p className="font-semibold text-sm mt-1">{item.title}</p>
+                        <p className="text-xs text-muted mt-1">{item.body}</p>
+                      </article>
+                    ))
+                  )}
+                </section>
+
                 {/* Preference Toggles (Language, Audio, Auto-Logout) */}
                 <div className="grid sm:grid-cols-3 gap-4">
                   <section className="card space-y-3 border-white/[0.08]">
@@ -484,14 +560,12 @@ export default function ProfilePage() {
                   </section>
                 </div>
 
-                {/* Device & Sync Ledger Health */}
                 <section className="card space-y-3 border-white/[0.08]">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-xs font-bold uppercase tracking-wider text-muted">Offline Replica & Cloud Sync</h2>
+                      <h2 className="text-xs font-bold uppercase tracking-wider text-muted">Saved progress</h2>
                       <p className="text-xs text-muted mt-0.5">
-                        Status: <span className="font-bold text-white capitalize">{syncStatus}</span>
-                        {pendingSyncCount > 0 && ` (${pendingSyncCount} events in local offline queue)`}
+                        Your lessons and certificates stay on this device. Refresh if another workshop PC updated them.
                       </p>
                     </div>
                     <button
@@ -500,7 +574,7 @@ export default function ProfilePage() {
                       className="btn-secondary !py-2 !px-3 text-xs flex items-center gap-1.5"
                     >
                       <RefreshCw className="w-3.5 h-3.5" />
-                      <span>Sync Now</span>
+                      <span>Refresh</span>
                     </button>
                   </div>
                 </section>
@@ -524,12 +598,40 @@ export default function ProfilePage() {
                   </button>
                 </section>
 
-                {/* Curriculum Studio Link */}
-                <Link to="/curriculum" className="card-interactive block !p-5 border-white/[0.08]">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-muted">{t('studioKicker')}</p>
-                  <p className="font-bold text-base text-white mt-1">{t('studioTitle')}</p>
-                  <p className="text-xs text-muted mt-1">{t('studioHelp')}</p>
-                </Link>
+                {isStaff(email) && (
+                  <Link to="/office" className="card-interactive block !p-5 border-white/[0.08]">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Office</p>
+                    <p className="font-bold text-base text-white mt-1">Staff office</p>
+                    <p className="text-xs text-muted mt-1">Analytics, educator review, and course updates.</p>
+                  </Link>
+                )}
+                {teaching && (
+                  <Link to="/educator" className="card-interactive block !p-5 border-white/[0.08]">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Teach</p>
+                    <p className="font-bold text-base text-white mt-1">Teaching desk</p>
+                    <p className="text-xs text-muted mt-1">
+                      Campus classes, exams, results, and library notes. You do not sit learner courses.
+                    </p>
+                  </Link>
+                )}
+                {signedIn && !teaching && (
+                  <Link to="/campus" className="card-interactive block !p-5 border-white/[0.08]">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Campus</p>
+                    <p className="font-bold text-base text-white mt-1">My class</p>
+                    <p className="text-xs text-muted mt-1">
+                      Join with a class code. Open materials, sit CATs, and see posted results.
+                    </p>
+                  </Link>
+                )}
+                {!educatorApproved && !teaching && signedIn && !isStaff(email) && (
+                  <Link to="/educator" className="card-interactive block !p-5 border-white/[0.08]">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Teach</p>
+                    <p className="font-bold text-base text-white mt-1">Apply as an educator</p>
+                    <p className="text-xs text-muted mt-1">
+                      Submit qualifications. After the office verifies you, you grade work and write library notes.
+                    </p>
+                  </Link>
+                )}
 
                 {/* Dedicated Sign Out to Landing Page Button */}
                 <button 
@@ -547,7 +649,7 @@ export default function ProfilePage() {
           <section className="card space-y-4 border-white/[0.08] !p-8 text-center max-w-md mx-auto">
             <h2 className="text-lg font-bold text-white">Sign In to Your Learning Account</h2>
             <p className="text-xs text-muted leading-relaxed">
-              Create a free account or sign in to track your XP, earn accredited TVET certificates, and sync across workshop devices.
+              Create a free account or sign in to track your XP and earn TVET certificates.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link to="/login" className="btn-primary py-2.5 text-xs flex-1 font-bold">

@@ -179,11 +179,21 @@ export default function LessonPlayerPage() {
 
       {/* Lesson Title & Topic Banner */}
       <div className="px-4 pt-5 pb-2 max-w-3xl mx-auto w-full">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center flex-wrap gap-2">
+          {lesson.dayNumber && (
+            <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              {t('dayLabel')} {lesson.dayNumber}
+            </span>
+          )}
+          {lesson.weekNumber && (
+            <span className="text-[10px] uppercase font-mono font-medium tracking-wider text-muted">
+              {t('weekLabel')} {lesson.weekNumber}
+            </span>
+          )}
           <span className="badge-accent text-[10px] uppercase font-mono tracking-wider">
             {lesson.examDomain ?? lesson.cdaccUnitId ?? t('lesson')}
           </span>
-          <span className="text-xs text-muted flex items-center gap-1 font-medium">
+          <span className="text-xs text-muted flex items-center gap-1 font-medium ml-auto">
             <Clock className="w-3.5 h-3.5" />
             {lesson.estimatedMinutes} {t('minutes')}
           </span>

@@ -12,6 +12,8 @@ import {
 import { publicProgrammes, publicStudies } from '@/content/publicStudies';
 import AppHeader from '@/components/ui/AppHeader';
 import SearchField from '@/components/ui/SearchField';
+import { useIsEducator } from '@/lib/roles';
+import { useEducatorStore } from '@/store/educatorStore';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useT } from '@/i18n';
 
@@ -21,6 +23,8 @@ export default function StudyLibraryPage() {
   const token = useLearnerStore((state) => state.token);
   const isGuest = useLearnerStore((state) => state.isGuest);
   const signedIn = Boolean(token && !isGuest);
+  const teaching = useIsEducator();
+  const instructorNotes = useEducatorStore((state) => state.notes);
 
   const selected = params.get('p') ?? 'all';
   const query = params.get('q') ?? '';
@@ -47,6 +51,11 @@ export default function StudyLibraryPage() {
   const selectedProgramme = publicProgrammes.find((programme) => programme.id === selected);
   const showTradeGrid = selected === 'all' && !needle;
   const showUnits = Boolean(selectedProgramme || needle);
+  const visibleNotes = instructorNotes.filter(
+    (note) =>
+      (selected === 'all' || note.programmeId === selected) &&
+      matchesQuery([note.title, note.body, note.programmeTitle])
+  );
 
   return (
     <div className="min-h-dvh bg-primary-dark text-white">
@@ -152,6 +161,34 @@ export default function StudyLibraryPage() {
                 </li>
               ))}
             </ul>
+          </section>
+        )}
+
+        {visibleNotes.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-bold mb-4">Instructor notes</h2>
+            <ul className="grid sm:grid-cols-2 gap-4">
+              {visibleNotes.map((note) => (
+                <li key={note.id}>
+                  <Link
+                    to={note.slug ? `/study/${note.slug}` : `/study?p=${note.programmeId}`}
+                    className="card-interactive block h-full !p-6 border-white/[0.08]"
+                  >
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-accent">
+                      {note.programmeTitle}
+                      {note.sample ? ' · sample' : ''}
+                    </p>
+                    <h3 className="font-bold text-base text-white mt-2">{note.title}</h3>
+                    <p className="text-xs text-muted mt-2 line-clamp-3">{note.body}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {teaching && (
+              <Link to="/educator?tab=notes" className="btn-secondary mt-4 inline-flex text-xs">
+                Write another note
+              </Link>
+            )}
           </section>
         )}
 

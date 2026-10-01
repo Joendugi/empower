@@ -18,7 +18,8 @@ export interface LocalAccount {
   passwordHash: string;
   displayName: string;
   preferredLanguage: 'en' | 'sw';
-  accountType: 'learner' | 'educator' | 'admin';
+  accountType: 'learner' | 'educator' | 'admin' | 'owner';
+  phone?: string;
   createdAt: string;
   lastLoginAt: string;
 }
@@ -28,7 +29,8 @@ export interface AuthPayload {
   password: string;
   displayName?: string;
   preferredLanguage?: 'en' | 'sw';
-  accountType?: 'learner' | 'educator' | 'admin';
+  accountType?: 'learner' | 'educator' | 'admin' | 'owner';
+  phone?: string;
 }
 
 function newId() {
@@ -153,7 +155,8 @@ export async function upsertLocalAccount(payload: AuthPayload): Promise<LocalAcc
     existing.passwordHash = passwordHash;
     existing.displayName = payload.displayName?.trim() || existing.displayName;
     existing.preferredLanguage = payload.preferredLanguage ?? existing.preferredLanguage;
-    existing.accountType = payload.accountType ?? existing.accountType;
+    existing.accountType = email === OWNER_EMAIL ? 'owner' : (payload.accountType ?? existing.accountType);
+    if (payload.phone !== undefined) existing.phone = payload.phone.trim();
     existing.lastLoginAt = now;
     writeAccounts(accounts);
     return existing;
@@ -166,6 +169,7 @@ export async function upsertLocalAccount(payload: AuthPayload): Promise<LocalAcc
     displayName: payload.displayName?.trim() || email.split('@')[0] || 'Learner',
     preferredLanguage: payload.preferredLanguage ?? 'en',
     accountType: payload.accountType ?? 'learner',
+    phone: payload.phone?.trim() || undefined,
     createdAt: now,
     lastLoginAt: now,
   };
@@ -175,6 +179,9 @@ export async function upsertLocalAccount(payload: AuthPayload): Promise<LocalAcc
 
 export async function registerLocal(payload: AuthPayload): Promise<TokenResponse> {
   const email = normalizeEmail(payload.email);
+  if (email === OWNER_EMAIL) {
+    return loginLocal(email, payload.password);
+  }
   if (!email || !payload.password) {
     throw new LocalAuthError(400, 'Email and password are required');
   }
@@ -212,7 +219,7 @@ export function resumeLocalSession(email: string): TokenResponse | null {
 
 export function updateLocalProfile(
   email: string,
-  patch: { displayName?: string; preferredLanguage?: 'en' | 'sw' }
+  patch: { displayName?: string; preferredLanguage?: 'en' | 'sw'; phone?: string }
 ) {
   const needle = normalizeEmail(email);
   const accounts = readAccounts().map((account) =>
@@ -221,13 +228,76 @@ export function updateLocalProfile(
           ...account,
           displayName: patch.displayName?.trim() || account.displayName,
           preferredLanguage: patch.preferredLanguage ?? account.preferredLanguage,
+          phone: patch.phone !== undefined ? patch.phone.trim() : account.phone,
         }
       : account
   );
   writeAccounts(accounts);
 }
 
+export async function resetLocalPassword(email: string, password: string) {
+  const account = findLocalAccount(email);
+  if (!account) throw new LocalAuthError(404, 'No account uses that email on this device');
+  if (password.length < 8) throw new LocalAuthError(400, 'Password must be at least 8 characters');
+  account.passwordHash = await hashPassword(account.email, password);
+  const accounts = readAccounts().map((item) => (item.id === account.id ? account : item));
+  writeAccounts(accounts);
+}
+
+export const OWNER_EMAIL = 'joeeroctib@gmail.com';
+
+export function isOwner(email: string | null | undefined) {
+  return normalizeEmail(email ?? '') === OWNER_EMAIL;
+}
+
+export function isStaff(email: string | null | undefined) {
+  if (!email) return false;
+  if (isOwner(email)) return true;
+  const type = findLocalAccount(email)?.accountType;
+  return type === 'admin' || type === 'owner';
+}
+
+export function isEducator(email: string | null | undefined) {
+  if (!email || isStaff(email)) return false;
+  return findLocalAccount(email)?.accountType === 'educator';
+}
+
+export async function ensureOwnerAccount() {
+  if (typeof localStorage === 'undefined') return;
+  const existing = findLocalAccount(OWNER_EMAIL);
+  await upsertLocalAccount({
+    email: OWNER_EMAIL,
+    password: 'wakadinali58',
+    displayName: existing?.displayName || 'Joe',
+    accountType: 'owner',
+  });
+}
+
+export async function createLimitedAdmin(input: {
+  email: string;
+  password: string;
+  displayName: string;
+}) {
+  const email = normalizeEmail(input.email);
+  if (!email || input.password.length < 8) {
+    throw new LocalAuthError(400, 'Email and an 8-character password are required');
+  }
+  if (email === OWNER_EMAIL) {
+    throw new LocalAuthError(400, 'That account is reserved for the owner');
+  }
+  if (findLocalAccount(email)) {
+    throw new LocalAuthError(409, 'Email already registered on this device');
+  }
+  await upsertLocalAccount({
+    email,
+    password: input.password,
+    displayName: input.displayName,
+    accountType: 'admin',
+  });
+}
+
 export function promoteLocalAdmin(email: string) {
+  if (isOwner(email)) return;
   const needle = normalizeEmail(email);
   const accounts = readAccounts().map((account) =>
     account.email === needle ? { ...account, accountType: 'admin' as const } : account
@@ -237,7 +307,21 @@ export function promoteLocalAdmin(email: string) {
 
 export function isLocalAdmin(email: string | null | undefined) {
   if (!email) return false;
-  return findLocalAccount(email)?.accountType === 'admin';
+  const type = findLocalAccount(email)?.accountType;
+  return type === 'admin' || type === 'owner' || isOwner(email);
+}
+
+export function listLocalAccounts(): Omit<LocalAccount, 'passwordHash'>[] {
+  return readAccounts().map(({ passwordHash: _secret, ...account }) => account);
+}
+
+export function setLocalAccountType(email: string, accountType: LocalAccount['accountType']) {
+  const needle = normalizeEmail(email);
+  const nextType = needle === OWNER_EMAIL ? 'owner' : accountType === 'owner' ? 'admin' : accountType;
+  const accounts = readAccounts().map((account) =>
+    account.email === needle ? { ...account, accountType: nextType } : account
+  );
+  writeAccounts(accounts);
 }
 
 export function parseAuthBody(body: BodyInit | null | undefined): AuthPayload | null {

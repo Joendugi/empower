@@ -54,6 +54,13 @@ services:
       SUPABASE_DB_URL: ${SUPABASE_DB_URL:-}
       PUBLIC_HOST: ${PUBLIC_HOST:-empower.local}
       CORS_ORIGINS: ${CORS_ORIGINS:-https://empower.local}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-Empower <noreply@empower.local>}
+      SMTP_STARTTLS: ${SMTP_STARTTLS:-true}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
     depends_on:
       postgres:
         condition: service_healthy

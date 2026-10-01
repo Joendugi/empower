@@ -44,6 +44,14 @@ services:
       retries: 10
     restart: unless-stopped
 
+  # ── Mailpit — local inbox for SMTP tests (http://localhost:8025) ────
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped
+
   # ── Gamification API ────────────────────────────────────────────────
   api:
     build:
@@ -56,6 +64,10 @@ services:
       REDIS_URL: redis://redis:6379/0
       ENVIRONMENT: development
       CONTENT_DIR: /content
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      SMTP_STARTTLS: "false"
+      SMTP_FROM: Empower <noreply@empower.local>
     ports:
       - "8000:8000"
     volumes:
@@ -67,6 +79,8 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+      mailpit:
+        condition: service_started
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 10s

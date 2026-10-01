@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { ACCOUNTS_KEY, loginLocal, registerLocal } from '@/lib/localAccounts';
+import { ACCOUNTS_KEY, isEducator, loginLocal, registerLocal } from '@/lib/localAccounts';
 
 describe('local accounts', () => {
   beforeEach(() => {
@@ -17,6 +17,16 @@ describe('local accounts', () => {
     expect(session.learner.isGuest).toBe(false);
     expect(session.learner.email).toBe('trainer@poly.ac.ke');
     expect(session.accessToken.startsWith('local-user:')).toBe(true);
+    expect(isEducator('trainer@poly.ac.ke')).toBe(true);
+  });
+
+  it('does not treat learners as educators', async () => {
+    await registerLocal({
+      email: 'learner@poly.ac.ke',
+      password: 'workshop1',
+      displayName: 'Joe',
+    });
+    expect(isEducator('learner@poly.ac.ke')).toBe(false);
   });
 
   it('stores a PBKDF2 hash instead of unsalted SHA-256', async () => {

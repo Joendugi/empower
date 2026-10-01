@@ -23,6 +23,7 @@ from app.models.submission import LessonCompletion
 from app.schemas import CamelModel
 from app.security import attach_session_cookie, clear_session_cookie, staff_key_matches
 from app.services.auth import create_access_token, decode_access_token, hash_password, verify_password
+from app.services.mail import send_mail
 from app.services.rate_limit import clear_auth_failures, enforce_auth_rate_limit, record_auth_failure
 
 router = APIRouter()
@@ -90,6 +91,7 @@ class ChallengeIssued(CamelModel):
     ok: bool = True
     # Returned only outside production so local/dev can verify without SMTP.
     debug_token: str | None = None
+    mailed: bool = False
 
 
 def _public(learner: Learner) -> LearnerPublic:
@@ -178,6 +180,26 @@ async def _create_challenge(
     return row, raw
 
 
+def _mail_challenge(email: str | None, purpose: str, raw: str) -> bool:
+    if not email:
+        return False
+    if purpose == "reset_password":
+        return send_mail(
+            to=email,
+            subject="Empower password reset",
+            body=(
+                f"Your Empower reset code:\n\n{raw}\n\n"
+                "It expires in 2 hours. Enter it on the sign-in screen, then choose a new password.\n"
+                "If you did not ask for a reset, ignore this message."
+            ),
+        )
+    return send_mail(
+        to=email,
+        subject="Confirm your Empower email",
+        body=f"Confirm this Empower account with this code:\n\n{raw}\n\nIt expires in 2 hours.",
+    )
+
+
 @router.post("/auth/register", response_model=TokenResponse, status_code=status.HTTP_201_CREATED)
 async def register(
     payload: RegisterRequest,
@@ -216,7 +238,8 @@ async def register(
         await db.flush()
 
     await _merge_completed_lessons(db, learner.id, payload.completed_lesson_ids)
-    await _create_challenge(db, learner_id=learner.id, purpose="verify_email")
+    _, verify_raw = await _create_challenge(db, learner_id=learner.id, purpose="verify_email")
+    _mail_challenge(learner.email, "verify_email", verify_raw)
     await clear_auth_failures(cache, request, bucket="register")
     return _token_body(learner, _issued_token(learner.id), response)
 
@@ -285,12 +308,14 @@ async def request_password_reset(
     await enforce_auth_rate_limit(cache, request, bucket="reset")
     learner = await db.scalar(select(Learner).where(Learner.email == payload.email.lower()))
     debug_token: str | None = None
+    mailed = False
     if learner and not learner.is_guest:
         _, raw = await _create_challenge(db, learner_id=learner.id, purpose="reset_password")
+        mailed = _mail_challenge(learner.email, "reset_password", raw)
         if not settings.is_production:
             debug_token = raw
     await clear_auth_failures(cache, request, bucket="reset")
-    return ChallengeIssued(ok=True, debug_token=debug_token)
+    return ChallengeIssued(ok=True, debug_token=debug_token, mailed=mailed)
 
 
 @router.post("/auth/password-reset/confirm", response_model=ChallengeIssued)
@@ -334,7 +359,8 @@ async def request_email_verification(
     if learner.email_verified:
         return ChallengeIssued(ok=True)
     _, raw = await _create_challenge(db, learner_id=learner.id, purpose="verify_email")
-    return ChallengeIssued(ok=True, debug_token=None if settings.is_production else raw)
+    mailed = _mail_challenge(learner.email, "verify_email", raw)
+    return ChallengeIssued(ok=True, debug_token=None if settings.is_production else raw, mailed=mailed)
 
 
 @router.post("/auth/verify-email/confirm", response_model=ChallengeIssued)
