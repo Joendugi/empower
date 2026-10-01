@@ -1,0 +1,252 @@
+id: community-health-day-5
+course_id: community-health
+title: "Community Surveillance & Outbreak Response"
+title_sw: "Ufuatiliaji wa Afya ya Jamii na Mwitikio wa Mlipuko"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - surveillance
+  - outbreak-response
+  - IDSR
+  - contact-tracing
+  - community-health
+xp: 250
+exam_domain: community-health
+
+briefing: >
+  Early detection of disease outbreaks saves exponentially more lives than late
+  response. Kenya's Integrated Disease Surveillance and Response (IDSR) system
+  gives community health workers the tools to identify unusual illness clusters,
+  trigger alerts within 24 hours, and implement initial containment while
+  awaiting formal public health response. Speed and systematic recording are
+  the two critical skills.
+
+outline: >
+  Kenya IDSR framework — priority diseases and alert thresholds; community-level
+  detection (rumour reporting, illness clustering); 24-hour reporting obligation
+  and the case definition; contact tracing methodology and quarantine periods;
+  isolation vs quarantine; setting up a community isolation space; line list
+  documentation; outbreak communication — messaging families without panic;
+  photo capture — community health register field practice.
+
+content_md: |
+  ## Kenya IDSR — Priority Diseases
+
+  The Kenya Integrated Disease Surveillance and Response (IDSR) system categorises
+  diseases into three tiers based on response urgency:
+
+  ### Tier 1 — Immediate (notify within 24 hours)
+
+  Any single case triggers immediate notification:
+
+  - Cholera, Ebola, Plague, Yellow Fever, Viral Haemorrhagic Fevers
+  - Polio (acute flaccid paralysis in a child under 15)
+  - Meningococcal disease (N. meningitidis confirmed)
+  - Unusual cluster of unexplained deaths
+
+  ### Tier 2 — Weekly Reporting
+
+  - Malaria, TB, measles, typhoid, dysentery
+  - Notified weekly but investigated immediately if above threshold
+
+  ### Alert Thresholds (Community Level)
+
+  An alert threshold triggers investigation even before confirmation:
+
+  - Cholera: any 1 case of acute watery diarrhoea in a person over 5 years
+  - Measles: any 1 case of fever + generalised rash
+  - Meningitis: any 2 cases of stiff neck + fever in same area within 1 week
+  - Unexplained deaths: 2+ deaths in same household within 48 hours
+
+  ## Community-Level Detection
+
+  Community health workers are the **first sensor** in the surveillance system.
+  Key detection methods:
+
+  1. **Household register review**: monthly home visits reveal fever clusters
+  2. **Rumour surveillance**: gather information from community leaders, teachers,
+     market traders about unusual illnesses
+  3. **Health facility crosscheck**: compare community report to facility attendance
+  4. **School absenteeism**: sudden cluster of absences may indicate outbreak
+
+  Detection formula — calculate attack rate by class or neighbourhood:
+  AR = cases / population x 100%
+
+  If AR in one cluster is > 3x the background rate, declare an alert.
+
+  ## Case Definition
+
+  A standard case definition has three components:
+
+  | Component | Example (measles) |
+  |---|---|
+  | Clinical criteria | Fever AND generalised rash lasting 3+ days AND one of: cough, runny nose, or red eyes |
+  | Time criteria | Onset within the current reporting week |
+  | Place criteria | Resident in the affected sub-location |
+
+  **Suspected case**: meets clinical criteria only
+  **Probable case**: meets clinical + time + place criteria
+  **Confirmed case**: laboratory-confirmed (PCR, serology, culture)
+
+  Community action starts at suspected case level — do not wait for laboratory
+  confirmation to begin containment.
+
+  ## Contact Tracing
+
+  A contact is anyone who has had close exposure to a confirmed case during
+  the infectious period:
+
+  | Disease | Infectious period | Quarantine period for contacts |
+  |---|---|---|
+  | Measles | 4 days before rash to 4 days after | 21 days from last exposure |
+  | Cholera | Duration of symptoms | Observe only; no quarantine if hygiene followed |
+  | Ebola | Onset of symptoms until recovery/death | 21 days from last exposure |
+  | Meningococcal | 7 days before symptoms | 10 days; chemoprophylaxis with ciprofloxacin |
+
+  ### Contact Tracing Steps
+
+  1. Interview confirmed case: list all people contacted in last 2-21 days (disease-specific)
+  2. Visit each contact: take temperature, ask about symptoms, record in line list
+  3. Check daily for the full quarantine period
+  4. Escalate to clinic if contact develops fever or symptoms
+
+  ## Isolation vs Quarantine
+
+  | Term | Who | Duration |
+  |---|---|---|
+  | Isolation | Confirmed or suspected CASE — infectious | Until no longer infectious |
+  | Quarantine | CONTACT — exposed but not yet ill | Incubation period of the disease |
+
+  A community isolation space should be:
+  - Separate room or building, not shared with family
+  - Good natural ventilation (cross-ventilation, open windows)
+  - Dedicated toilet/latrine not shared with rest of household
+  - Caregiver uses mask + hand hygiene when entering
+
+  ## Line List Documentation
+
+  A line list records every case for rapid analysis:
+
+  | # | Name | Age | Sex | Village | Onset date | Symptoms | Outcome | Sample taken |
+  |---|---|---|---|---|---|---|---|---|
+  | 1 | Patient A | 7 | F | Lwanda | 2026-10-01 | Fever, rash | Recovering | Yes |
+  | 2 | Patient B | 34 | M | Lwanda | 2026-10-03 | Fever, rash, cough | Active | Yes |
+
+  The line list enables calculation of: attack rate by age/sex/village; epidemic
+  curve (onset dates plotted over time); identification of common exposure source.
+
+  ## Outbreak Communication — Messaging Without Panic
+
+  Effective community messaging during outbreaks:
+
+  1. **Acknowledge** the outbreak honestly; do not deny or minimise
+  2. **Explain** the disease in simple terms: what causes it, how it spreads
+  3. **Empower**: tell people what they can do (ORT, mosquito nets, handwashing)
+  4. **Direct**: give a clear action — "If you have fever and rash, go to [health post]"
+  5. **Consistent**: use the same message through community leaders, radio, and CHW visits
+  6. **Counter rumours**: proactively address false information; name the misinformation
+     and replace it with evidence
+
+  Avoid: jargon, blame, stigmatising affected households, false reassurance.
+
+exercises:
+  - id: ch-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      In a village of 300 people, a community health worker identifies 9 cases
+      of fever and rash in the same week, all within a 500-metre radius.
+      The background measles rate in the district is 0.5 per 100 per week.
+      What is the village attack rate, and should an alert be triggered?
+    xp_reward: 50
+    options:
+      - text: "AR = 3% (9/300 x 100); alert threshold exceeded — any single suspected measles case triggers immediate notification"
+        correct: true
+        explanation: "AR = 9/300 x 100 = 3%. For measles, the IDSR threshold is any 1 suspected case (fever + generalised rash) — immediate notification is required regardless of numbers. The cluster of 9 cases makes this urgent. Notify within 24 hours."
+      - text: "AR = 3%; no alert yet — wait for laboratory confirmation of at least 2 cases"
+        correct: false
+        explanation: "IDSR does not require laboratory confirmation before alerting. Suspected cases meeting clinical criteria trigger notification. Waiting for lab delays containment."
+      - text: "AR = 0.3%; below the district background rate — monitor only"
+        correct: false
+        explanation: "AR = 9/300 x 100 = 3%, not 0.3%. The background rate of 0.5/100 = 0.5%. The village rate (3%) is 6x higher than background — clearly above threshold."
+      - text: "AR = 3%; trigger alert only if cases are in children under 5"
+        correct: false
+        explanation: "Measles affects all unvaccinated ages. The IDSR threshold is any 1 suspected case — age restriction does not apply to triggering notification."
+
+  - id: ch-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      An Ebola contact must be monitored for ___ days after last exposure.
+      A measles case is infectious from ___ days before rash onset to ___
+      days after rash onset.
+    xp_reward: 50
+    correct_answer: "21 days; 4 days; 4 days"
+    explanation: >
+      Ebola maximum incubation is 21 days — contacts monitored for 21 days.
+      Measles infectious period: 4 days before rash (late prodrome, highest
+      viral shedding) to 4 days after rash appearance. This wide pre-rash
+      infectious window is why measles spreads so rapidly before it is diagnosed.
+
+  - id: ch-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each IDSR disease to its community-level alert threshold.
+    xp_reward: 50
+    pairs:
+      - left: Cholera
+        right: Any 1 case of acute watery diarrhoea in a person over 5 years
+      - left: Measles
+        right: Any 1 case of fever plus generalised rash
+      - left: Meningococcal meningitis
+        right: 2 or more cases of stiff neck and fever in the same area within 1 week
+      - left: Unexplained deaths
+        right: 2 or more deaths in the same household within 48 hours
+    correct_answer: null
+    explanation: >
+      Alert thresholds are deliberately set low for high-consequence diseases.
+      A single cholera case in a person over 5 is almost always epidemic cholera
+      (El Tor) because sporadic cholera in adults is rare — any case requires
+      immediate investigation of the water source.
+
+  - id: ch-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      What is the key difference between isolation and quarantine?
+    xp_reward: 50
+    options:
+      - text: "Isolation separates confirmed or suspected infectious cases; quarantine separates exposed but not yet symptomatic contacts for the incubation period"
+        correct: true
+        explanation: "Isolation removes known or suspected infectious people from the community. Quarantine monitors exposed people who may or may not become ill — duration equals the disease's maximum incubation period. Both prevent forward transmission, but the target populations are different."
+      - text: "Isolation is used for severe cases; quarantine is for mild cases"
+        correct: false
+        explanation: "Isolation and quarantine are not categorised by disease severity. They are defined by whether the person IS infectious (isolation) or MIGHT BECOME infectious (quarantine)."
+      - text: "Quarantine requires a medical prescription; isolation can be self-managed"
+        correct: false
+        explanation: "Both are public health measures, not medical prescriptions. Self-isolation and self-quarantine are both valid community-level approaches with CHW monitoring."
+      - text: "Isolation lasts 21 days for all diseases; quarantine lasts 14 days"
+        correct: false
+        explanation: "Duration varies by disease. Ebola isolation lasts until recovery/death. Measles isolation ends 4 days after rash. Quarantine period = disease-specific maximum incubation."
+
+  - id: ch-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Visit a household in your community and complete a community health
+      household register entry for that family. Photograph the completed
+      register page showing at least one household member's entry with:
+      name, age, sex, village, date of last home visit, and any current health
+      complaint. Protect privacy — you may redact the surname.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Accurate, complete community health registers are the foundation of
+      surveillance. A CHW who cannot maintain a register cannot detect unusual
+      illness clusters early enough to trigger timely outbreak response.
+    rubric:
+      - criterion: Register page clearly photographed and readable
+        points: 10
+      - criterion: At least one entry includes all six required fields (name, age, sex, village, visit date, complaint)
+        points: 20
+      - criterion: Date of visit matches within the current week
+        points: 10
+      - criterion: Written reflection identifies one health concern observed in this household
+        points: 10

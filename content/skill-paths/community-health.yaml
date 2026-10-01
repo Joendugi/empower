@@ -1,0 +1,34 @@
+id: community-health
+title: Community Health & Epidemiology
+titleSw: Afya ya Jamii na Magonjwa ya Mlipuko
+description: >
+  Master the epidemiological tools needed to prevent, detect, and control
+  disease outbreaks in resource-limited communities — from disease surveillance
+  and ORT to malaria case management, vaccination cold chains, and outbreak
+  response protocols.
+level: intermediate
+category: health
+estimatedHours: 10
+xpTotal: 1250
+license: CC-BY-SA-4.0
+nodes:
+  - day: 1
+    lessonId: community-health-day-1
+    title: "Disease Transmission & the Epidemiological Triangle"
+    xp: 250
+  - day: 2
+    lessonId: community-health-day-2
+    title: "Oral Rehydration Therapy & Diarrhoeal Disease"
+    xp: 250
+  - day: 3
+    lessonId: community-health-day-3
+    title: "Malaria — Lifecycle, Diagnosis & ACT Treatment"
+    xp: 250
+  - day: 4
+    lessonId: community-health-day-4
+    title: "Vaccination Cold Chain & Immunisation Logistics"
+    xp: 250
+  - day: 5
+    lessonId: community-health-day-5
+    title: "Community Surveillance & Outbreak Response"
+    xp: 250

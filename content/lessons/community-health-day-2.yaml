@@ -1,0 +1,222 @@
+id: community-health-day-2
+course_id: community-health
+title: "Oral Rehydration Therapy & Diarrhoeal Disease"
+title_sw: "Tiba ya Maji kwa Mdomo na Magonjwa ya Kuhara"
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - ORT
+  - diarrhoea
+  - dehydration
+  - cholera
+  - community-health
+xp: 250
+exam_domain: community-health
+
+briefing: >
+  Diarrhoeal disease kills approximately 1.6 million people per year globally —
+  the vast majority are children under 5 in low-income settings. Oral rehydration
+  therapy (ORT), a simple solution of sugar, salt, and water, can reduce cholera
+  CFR from 50% to under 1%. Every community health worker must be able to prepare
+  ORT from local materials, assess dehydration severity, and know when to escalate
+  to intravenous fluids.
+
+outline: >
+  Pathophysiology of secretory diarrhoea; WHO dehydration assessment (no
+  dehydration, some dehydration, severe dehydration); WHO ORS formulation and
+  home-made alternatives; ORT administration rates (Plan A, B, C); zinc
+  supplementation evidence; BRAT/BRAF diet guidance; danger signs requiring
+  IV fluids or hospital referral; cholera cot setup for mass casualty events.
+
+content_md: |
+  ## Pathophysiology of Secretory Diarrhoea
+
+  In cholera, the CT (cholera toxin) activates intestinal cAMP, forcing massive
+  chloride secretion into the gut lumen. Water follows osmotically, producing
+  "rice-water stools" at up to 1 litre per hour. The patient loses:
+
+  - Sodium (Na+): 90-140 mmol/L in stool
+  - Potassium (K+): 20-30 mmol/L
+  - Bicarbonate (HCO3-): 30-50 mmol/L
+  - Water: up to 20 L/day in severe cases
+
+  Replacing these electrolytes and water is the entire treatment. There is no
+  anti-toxin. ORT works by using the sodium-glucose co-transporter (SGLT1)
+  in the gut wall — glucose carries sodium across even when the secretory
+  pump is maximally activated.
+
+  ## WHO Dehydration Assessment
+
+  Assess three clinical signs:
+
+  | Sign | No dehydration | Some dehydration (2 signs = confirm) | Severe dehydration (2 signs = confirm) |
+  |---|---|---|---|
+  | General appearance | Well, alert | Restless, irritable | Lethargic or unconscious |
+  | Eyes | Normal | Sunken | Very sunken, dry |
+  | Mouth/tongue | Moist | Dry | Very dry |
+  | Skin pinch | Returns immediately | Returns slowly (< 2s) | Returns very slowly (> 2s) |
+  | Thirst | Not thirsty | Thirsty, drinks eagerly | Unable to drink |
+
+  If **2 or more signs** in the severe column → IV fluids + urgent referral.
+
+  ## WHO ORS Formulation (per 1 litre water)
+
+  | Ingredient | Amount |
+  |---|---|
+  | Sodium chloride (table salt) | 3.5 g (or 0.6 teaspoon) |
+  | Trisodium citrate | 2.9 g (or use 2.5 g sodium bicarbonate) |
+  | Potassium chloride | 1.5 g |
+  | Glucose (anhydrous) | 20.0 g |
+
+  If commercial ORS sachet unavailable — **home-made ORT** (temporary substitute):
+
+  - 1 litre clean water (boiled and cooled)
+  - 6 level teaspoons of sugar (30 g)
+  - 0.5 teaspoon of salt (2.5 g)
+
+  Home-made ORT contains no potassium or bicarbonate — adequate for mild/moderate
+  cases but not for severe cholera requiring full electrolyte replacement.
+
+  ## ORT Administration — WHO Treatment Plans
+
+  ### Plan A (No dehydration — home treatment)
+  - Give ORS after every loose stool
+  - Children under 2: 50-100 mL per stool
+  - Children 2-10: 100-200 mL per stool
+  - Adults/children over 10: as much as desired
+  - Continue normal feeding
+
+  ### Plan B (Some dehydration — clinic/facility)
+  - Give 75 mL/kg of ORS over 4 hours
+  - Example: 20 kg child = 1,500 mL over 4 hours = 375 mL/hour
+  - Re-assess after 4 hours; upgrade to Plan C if deteriorating
+
+  ### Plan C (Severe dehydration — IV fluids essential)
+  - Adults and children over 5: Ringer's Lactate 100 mL/kg IV over 3 hours
+  - Children under 5: RL 100 mL/kg IV over 6 hours (30 mL/kg in first 30 min)
+  - If IV not immediately available: nasogastric ORS at 20 mL/kg/hour
+  - Seek hospital transfer urgently
+
+  ## Zinc Supplementation
+
+  WHO recommends zinc given alongside ORT for all children under 5 with diarrhoea:
+
+  - Under 6 months: 10 mg elemental zinc per day for 10-14 days
+  - 6 months to 5 years: 20 mg per day for 10-14 days
+
+  Evidence: zinc reduces duration of diarrhoea episode by 25%, severity by 30%,
+  and probability of subsequent episode in 2-3 months by 50% (Cochrane 2016).
+
+  ## Danger Signs — When to Refer Immediately
+
+  Refer to hospital if any of the following:
+
+  1. Signs of severe dehydration (sunken eyes, very slow skin pinch, unconscious)
+  2. Bloody diarrhoea (dysentery — likely Shigella, needs antibiotics)
+  3. Vomiting repeatedly preventing ORT administration
+  4. High fever (> 38.5°C) in child under 3 months
+  5. No improvement after 3 hours of Plan B ORT
+  6. Unable to drink or breastfeed
+
+  ## Cholera Cot Setup (Mass Casualty)
+
+  A cholera cot is a purpose-built stretcher with a central hole over a bucket
+  to collect stool and enable continuous measurement:
+
+  1. Foam mattress with waterproof cover; 10 cm hole at seat position
+  2. 20 L calibrated bucket below
+  3. ORS bag suspended on IV stand with wide-bore drinking tube
+  4. Record intake and output every 30 minutes
+  5. Replace stool volume with equal volume of ORS
+
+  Measurable intake-output balance is the key to preventing both under-treatment
+  (dehydration) and over-treatment (pulmonary oedema).
+
+exercises:
+  - id: ch-d2-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A 15 kg child has sunken eyes, is drinking eagerly, and skin pinch returns
+      in 1.5 seconds. What WHO dehydration classification and treatment plan apply?
+    xp_reward: 50
+    options:
+      - text: "Some dehydration — Plan B: 75 mL/kg ORS over 4 hours = 1,125 mL"
+        correct: true
+        explanation: "Sunken eyes + thirsty (drinks eagerly) = 2 signs of 'some dehydration'. Plan B: 75 mL/kg x 15 kg = 1,125 mL over 4 hours = approximately 281 mL/hour. Re-assess after 4 hours."
+      - text: "Severe dehydration — Plan C: IV Ringer's Lactate 100 mL/kg"
+        correct: false
+        explanation: "Severe dehydration requires lethargic/unconscious + very sunken eyes + very slow (>2s) skin pinch. At 1.5s skin pinch and drinking eagerly, this is 'some' not 'severe' dehydration."
+      - text: "No dehydration — Plan A: ORS after every loose stool only"
+        correct: false
+        explanation: "Two clinical signs (sunken eyes, thirsty) confirm 'some dehydration' — Plan A is insufficient. Plan B ORS rehydration over 4 hours is needed."
+      - text: "Some dehydration — Plan B: 100 mL/kg over 6 hours"
+        correct: false
+        explanation: "Plan B is 75 mL/kg over 4 hours. The 100 mL/kg over 6 hours is the IV regimen for Plan C in children under 5."
+
+  - id: ch-d2-q2
+    type: FILL_BLANK
+    prompt: >
+      Home-made ORT uses 1 litre of clean water with ___ teaspoons of sugar
+      and ___ teaspoon of salt. WHO recommends zinc supplementation for children
+      under 5 for ___ days alongside ORT.
+    xp_reward: 50
+    correct_answer: "6 teaspoons; 0.5 teaspoon; 10-14 days"
+    explanation: >
+      Home ORT: 6 level teaspoons sugar (30 g) + 0.5 teaspoon salt (2.5 g)
+      per litre. Home ORT lacks potassium and bicarbonate found in WHO ORS
+      sachets — it is a temporary measure only. Zinc: 10-14 days reduces
+      episode duration by 25% and prevents future episodes for 2-3 months.
+
+  - id: ch-d2-q3
+    type: MATCH_PAIRS
+    prompt: Match each dehydration sign to its severity category.
+    xp_reward: 50
+    pairs:
+      - left: Skin pinch returns in 3 seconds, patient unconscious
+        right: Severe dehydration
+      - left: Child restless and irritable, eyes sunken, drinking eagerly
+        right: Some dehydration
+      - left: Child well and alert, eyes normal, moist tongue
+        right: No dehydration
+      - left: Very dry mouth, unable to drink, very sunken eyes
+        right: Severe dehydration
+    correct_answer: null
+    explanation: >
+      The WHO skin pinch test is key: immediate return = no dehydration;
+      slow (<2s) = some; very slow (>2s) = severe. Two or more signs in a
+      severity category are required for that classification.
+
+  - id: ch-d2-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why does oral rehydration therapy work even when the cholera toxin is
+      causing massive fluid secretion in the gut?
+    xp_reward: 50
+    options:
+      - text: "Glucose activates the SGLT1 sodium-glucose co-transporter, which remains functional even when the secretory cAMP pump is active, allowing net sodium and water absorption"
+        correct: true
+        explanation: "Cholera toxin activates adenylate cyclase (cAMP), forcing Cl- secretion. However, the SGLT1 absorptive pathway is a completely separate mechanism — glucose carries Na+ across the enterocyte even during maximal secretion. ORT exploits this parallel absorption pathway."
+      - text: "ORS neutralises the cholera toxin directly, stopping the secretory diarrhoea"
+        correct: false
+        explanation: "There is no antitoxin in ORS. ORS does not neutralise cholera toxin. It works around the toxin by using a different absorptive pathway."
+      - text: "Salt in ORS kills the Vibrio cholerae bacteria in the gut"
+        correct: false
+        explanation: "ORS salt concentrations are far too low to be antibacterial. ORS replaces lost fluids and electrolytes — it does not treat the infection."
+      - text: "ORS induces vomiting of the toxin before it can cause secretion"
+        correct: false
+        explanation: "ORS does not induce vomiting. It is given orally in small sips specifically to prevent vomiting. Vomiting is a danger sign requiring reassessment."
+
+  - id: ch-d2-q5
+    type: FILL_BLANK
+    prompt: >
+      Untreated cholera has a case fatality rate of ___%, which drops to below
+      ___% with prompt oral rehydration therapy. A 25 kg child classified as
+      Plan B needs ___ mL of ORS over 4 hours.
+    xp_reward: 50
+    correct_answer: "25-50%; 1%; 1875 mL"
+    explanation: >
+      Untreated cholera CFR is 25-50% from dehydration alone. With ORT CFR
+      drops below 1% — one of the most dramatic treatment effects in all of
+      medicine. Plan B: 75 mL/kg x 25 kg = 1,875 mL over 4 hours.

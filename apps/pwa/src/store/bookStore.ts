@@ -298,6 +298,42 @@ The F-diagram identifies six pathways — Fingers, Flies, Fields, Fluids, Food, 
 Breaking any one pathway dramatically reduces disease burden. The WHO/JMP sanitation service ladder ranges from open defecation to safely managed systems aligned with SDG 6.2.
 `,
   },
+  {
+    id: 'book-community-health',
+    title: 'Community Epidemiology & Disease Control Field Guide',
+    titleSw: 'Mwongozo wa Ugonjwa wa Mlipuko na Udhibiti wa Magonjwa',
+    author: 'Dr. Agnes Mwangi (Kenya Field Epidemiology & Laboratory Training Programme)',
+    description: 'Practical field manual covering R0, herd immunity, ORT formulation, malaria RDT/ACT protocols, vaccination cold chain, VVM interpretation, IDSR alert thresholds, contact tracing, and outbreak line listing.',
+    descriptionSw: 'Mwongozo wa wahusika wa afya ya jamii kuhusu R0, ORT, malaria RDT/ACT, mnyororo baridi wa chanjo, na ufuatiliaji wa mlipuko.',
+    category: 'health',
+    tradeId: 'community-health-support',
+    tradeTitle: 'Community Health & Epidemiology',
+    coverColor: 'from-teal-600 to-cyan-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 5.1,
+    totalPages: 104,
+    estimatedMinutes: 210,
+    featured: true,
+    rating: 4.9,
+    readersCount: 4120,
+    cdaccUnitId: 'CU/MED/PH/CR/05/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Disease Transmission & the Epidemiological Triangle', pageNumber: 1 },
+      { id: 'ch2', title: 'Oral Rehydration Therapy & Diarrhoeal Disease', pageNumber: 22 },
+      { id: 'ch3', title: 'Malaria — RDT Diagnosis & ACT Treatment', pageNumber: 46 },
+      { id: 'ch4', title: 'Vaccination Cold Chain & KEPI Immunisation', pageNumber: 70 },
+      { id: 'ch5', title: 'IDSR Surveillance & Outbreak Response', pageNumber: 88 },
+    ],
+    contentMarkdown: `# Community Epidemiology & Disease Control
+
+## Chapter 1: The Epidemiological Triangle
+Every infectious disease requires three elements: the agent (pathogen), the host (susceptible person), and the environment enabling contact.
+Removing any one side of this triangle breaks transmission. The basic reproduction number R0 determines how many secondary cases each infectious person generates in a fully susceptible population.
+When effective R_eff drops below 1.0, the outbreak collapses.
+`,
+  },
 ];
 
 interface BookState {

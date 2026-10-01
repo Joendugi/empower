@@ -1,0 +1,227 @@
+id: community-health-day-3
+course_id: community-health
+title: "Malaria — Lifecycle, Diagnosis & ACT Treatment"
+title_sw: "Malaria — Mzunguko wa Maisha, Utambuzi na Matibabu ya ACT"
+week_number: 1
+day_number: 3
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - malaria
+  - Plasmodium
+  - RDT
+  - ACT
+  - community-health
+xp: 250
+exam_domain: community-health
+
+briefing: >
+  Malaria causes over 600,000 deaths per year, over 95% in sub-Saharan Africa,
+  and over 80% in children under 5. Kenya has high malaria burden in lakeside,
+  coastal, and western regions. A community health worker equipped with a rapid
+  diagnostic test (RDT) and artemisinin-based combination therapy (ACT) can
+  test, diagnose, and treat uncomplicated malaria at the household level —
+  saving lives before referral is possible.
+
+outline: >
+  Plasmodium species (falciparum, vivax, malariae, ovale); Anopheles mosquito
+  lifecycle and biting behaviour; clinical presentation (uncomplicated vs severe
+  malaria); rapid diagnostic tests (RDT) — HRP2 antigen basis, procedure, and
+  reading results; artemisinin-based combination therapy (ACT) dosing by weight;
+  artemether-lumefantrine (AL) 6-dose regimen; danger signs requiring referral;
+  insecticide-treated bed nets (ITNs) and indoor residual spraying (IRS).
+
+content_md: |
+  ## Plasmodium Species in East Africa
+
+  | Species | Regional importance | Key features |
+  |---|---|---|
+  | P. falciparum | 99% of Kenya cases — most dangerous | Can infect all red blood cell ages; causes cerebral malaria |
+  | P. vivax | Occasional, mainly highland | Dormant liver stage (hypnozoite); relapses; requires primaquine |
+  | P. malariae | Rare | Long incubation (18-40 days); quartan fever (48-hr cycles) |
+  | P. ovale | Rare | Similar to vivax; relapsing |
+
+  **P. falciparum** is the primary target of all Kenya malaria control programmes.
+
+  ## Anopheles Mosquito & Transmission
+
+  - Female Anopheles mosquitoes are the sole malaria vectors
+  - Biting behaviour: **peak biting time 2200h-0200h** (midnight hours)
+  - Preferred breeding sites: slow-moving or still water — rice paddies, hoofprints,
+    irrigation channels, open water storage containers
+  - Sporogonic cycle in mosquito: 10-14 days at 25°C (pathogen develops in mosquito)
+  - Incubation in human after bite: 7-14 days for P. falciparum
+
+  ## Clinical Presentation
+
+  ### Uncomplicated Malaria (Classic Triad)
+
+  1. Fever (> 37.5°C), often with rigors (shaking chills)
+  2. Headache
+  3. Muscle pain and malaise
+
+  **Fever pattern by species:**
+  - P. falciparum: irregular (no classic pattern in early infection)
+  - P. vivax/ovale: tertian fever — spikes every 48 hours
+  - P. malariae: quartan fever — spikes every 72 hours
+
+  ### Severe Malaria — Danger Signs (WHO)
+
+  Any ONE of the following = severe malaria → urgent referral:
+
+  1. Impaired consciousness / coma (cerebral malaria)
+  2. Multiple convulsions in 24 hours
+  3. Respiratory distress (acidotic breathing)
+  4. Circulatory collapse (systolic BP < 70 mmHg)
+  5. Jaundice + dark urine (blackwater fever — haemoglobinuria)
+  6. Abnormal bleeding
+  7. Severe anaemia (Hb < 5 g/dL)
+  8. Hypoglycaemia (blood glucose < 2.2 mmol/L)
+
+  ## Rapid Diagnostic Tests (RDT)
+
+  Kenya National Malaria Programme recommends HRP2-based RDTs that detect
+  P. falciparum-specific histidine-rich protein 2.
+
+  ### RDT Procedure
+
+  1. Clean fingertip with alcohol swab — allow to dry completely
+  2. Prick finger with sterile lancet — wipe away first drop
+  3. Collect 5 mcL blood with capillary tube
+  4. Transfer blood to sample well (S)
+  5. Add 2-3 drops of buffer solution
+  6. Read result at **15-20 minutes** (not before 15 min; not after 25 min)
+
+  ### Reading the RDT
+
+  | Result | Lines visible | Interpretation |
+  |---|---|---|
+  | Negative | Control line (C) only | No P. falciparum antigen detected |
+  | Positive | Control (C) + Test line (T) | P. falciparum detected |
+  | Invalid | No control line appears | Test failed — repeat with new kit |
+
+  **Important**: Always treat on RDT result. A positive RDT = give ACT.
+  Do NOT treat a patient who tests RDT negative for malaria with ACT —
+  the fever has another cause.
+
+  ## ACT Treatment — Artemether-Lumefantrine (AL)
+
+  Kenya first-line ACT: artemether-lumefantrine (Coartem, Lumartem)
+  Dosing by weight — 6-dose regimen over 3 days:
+
+  | Weight | Tablets per dose | Schedule |
+  |---|---|---|
+  | 5-14 kg (infants/young children) | 1 tablet | 0h, 8h, 24h, 36h, 48h, 60h |
+  | 15-24 kg (older children) | 2 tablets | same schedule |
+  | 25-34 kg (adolescents) | 3 tablets | same schedule |
+  | 35 kg and above (adults) | 4 tablets | same schedule |
+
+  **Key counselling points:**
+  - Give with food (fatty meal improves absorption by 3-fold — e.g. peanuts, milk, avocado)
+  - Complete all 6 doses even if fever resolves after dose 1-2
+  - Return immediately if vomits within 30 minutes of dose (repeat same dose)
+  - Return in 3 days for follow-up RDT
+
+  ## Prevention — ITNs and IRS
+
+  **Insecticide-Treated Bed Nets (ITNs):**
+  - Long-lasting insecticidal nets (LLINs) retain efficacy for 3 years
+  - Hang net to cover entire sleeping area; tuck edges under mattress
+  - Effectiveness: 50% reduction in child malaria mortality
+  - Check for holes monthly; repair with needle and thread
+
+  **Indoor Residual Spraying (IRS):**
+  - Spray all internal walls and ceilings with approved insecticide
+  - Effective for 3-6 months per application cycle
+  - Move furniture away from walls before spraying
+  - Residents leave room for 30 minutes after spraying
+
+exercises:
+  - id: ch-d3-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A 7-year-old child (22 kg) has a positive RDT and fever. What is the
+      correct AL dosing regimen for this child?
+    xp_reward: 50
+    options:
+      - text: "2 tablets at 0h, 8h, 24h, 36h, 48h and 60h — give with food such as peanuts or milk"
+        correct: true
+        explanation: "22 kg falls in the 15-24 kg weight band = 2 tablets per dose. The 6-dose regimen spans 3 days: 0h, 8h, then twice daily (24h, 36h, 48h, 60h). Fatty food increases AL absorption 3-fold."
+      - text: "1 tablet at 0h, 8h, 24h, 36h, 48h and 60h"
+        correct: false
+        explanation: "1 tablet is the dose for children 5-14 kg. At 22 kg the dose is 2 tablets per dose."
+      - text: "4 tablets in a single dose — adults and children over 15 kg take the same dose"
+        correct: false
+        explanation: "4 tablets is for adults 35 kg and above. Paediatric dosing is weight-banded. 22 kg = 2 tablets per dose, not a single adult dose."
+      - text: "2 tablets twice daily for 5 days"
+        correct: false
+        explanation: "AL is a 6-dose 3-day regimen (not 5 days, not twice daily for the full period — doses are at 0h, 8h, 24h, 36h, 48h, 60h)."
+
+  - id: ch-d3-q2
+    type: FILL_BLANK
+    prompt: >
+      Female Anopheles mosquitoes peak biting time is between ___h and ___h.
+      The incubation period for P. falciparum in the human after a bite is
+      ___ to ___ days.
+    xp_reward: 50
+    correct_answer: "2200h; 0200h; 7; 14"
+    explanation: >
+      Peak biting 2200h-0200h is why sleeping under an ITN during these hours
+      is the primary protection. Incubation of 7-14 days means a returning
+      traveller may not be symptomatic until 2 weeks after the infective bite —
+      important for clinical history taking.
+
+  - id: ch-d3-q3
+    type: MATCH_PAIRS
+    prompt: Match each severe malaria danger sign to its physiological cause.
+    xp_reward: 50
+    pairs:
+      - left: Coma or impaired consciousness
+        right: Cerebral malaria — parasitised RBCs sequestered in brain capillaries
+      - left: Dark (cola-coloured) urine
+        right: Blackwater fever — massive haemolysis releasing haemoglobin in urine
+      - left: Severe anaemia (Hb < 5 g/dL)
+        right: Destruction of red blood cells by parasite replication cycles
+      - left: Hypoglycaemia (glucose < 2.2 mmol/L)
+        right: Parasite glucose consumption + impaired hepatic gluconeogenesis
+    correct_answer: null
+    explanation: >
+      P. falciparum causes severe disease through multiple mechanisms acting
+      simultaneously. Each danger sign reflects a different organ system failure
+      and is an independent indication for urgent IV artesunate + referral.
+
+  - id: ch-d3-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      An RDT shows no line in the Control (C) position after 20 minutes.
+      What should the community health worker do?
+    xp_reward: 50
+    options:
+      - text: "The test is invalid — discard it and repeat with a new RDT kit"
+        correct: true
+        explanation: "The control line must always appear — its presence confirms the test ran correctly. No C line = invalid test regardless of T line status. Repeat with a new kit from a different lot if repeated invalids occur (possible storage problem)."
+      - text: "The patient is negative for malaria — treat the fever as another cause"
+        correct: false
+        explanation: "No C line does not mean negative. It means the test failed. A valid negative shows C line only. Without C line the test gives no diagnostic information."
+      - text: "The patient is strongly positive — two lines always indicate severe infection"
+        correct: false
+        explanation: "A positive result shows C + T lines. No C line means invalid, regardless of whether T appears. The test has not functioned correctly."
+      - text: "Give ACT immediately as a precaution since the result is unclear"
+        correct: false
+        explanation: "Kenya NMCP guidelines: treat only confirmed positives. Give empirical ACT only in high-transmission areas when RDT is unavailable. Repeat the test first."
+
+  - id: ch-d3-q5
+    type: FILL_BLANK
+    prompt: >
+      Long-lasting insecticidal nets (LLINs) retain efficacy for approximately
+      ___ years and reduce child malaria mortality by approximately ___%.
+      A patient who vomits AL within ___ minutes of a dose should receive the
+      same dose again.
+    xp_reward: 50
+    correct_answer: "3 years; 50%; 30 minutes"
+    explanation: >
+      LLINs: factory-impregnated to last 3 years even with washing.
+      50% mortality reduction (RCT evidence, WHO malaria report 2023).
+      AL vomiting: if < 30 minutes since ingestion, repeat the same dose
+      (the tablet has not been absorbed). If > 30 minutes, do not repeat
+      (assume absorbed even if some vomiting occurs).
