@@ -1,0 +1,213 @@
+id: chemical-engineering-day-5
+course_id: chemical-engineering
+title: "Pyrolysis — Biochar, Pyroligneous Acid & Syngas"
+title_sw: "Kuvunjika kwa Joto (Pyrolysis) — Mkaa Maalumu, Asidi ya Mbao na Gesi"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - chemistry
+  - pyrolysis
+  - biochar
+  - wood-vinegar
+  - syngas
+  - retort-kiln
+  - chemical-engineering
+xp: 250
+exam_domain: chemical-engineering
+
+briefing: >
+  Thermochemical biomass conversion (pyrolysis and gasification) extracts solid,
+  liquid, and gaseous fuels from dry wood, crop stalks, and agricultural waste
+  without consuming oxygen. In an indirect retort kiln, heating biomass to 400°C–650°C
+  drives off three co-products: stable high-surface-area biochar for soil carbon
+  sequestration; condensed pyroligneous acid (wood vinegar) for natural pesticide
+  and antifungal foliar sprays; and non-condensable syngas (CO, H2, CH4) which can
+  be flamed back under the retort to sustain the reaction autothermally.
+
+outline: >
+  Thermal decomposition regimes (drying at 100°C-200°C, torrefaction at 200°C-300°C,
+  exothermic primary pyrolysis at 300°C-500°C); mass balance split (30% biochar,
+  40% liquid bio-oil/wood vinegar, 30% non-condensable syngas); double-drum retort
+  construction (55-gallon outer drum, 30-gallon inner feedstock chamber); condensing
+  train (copper/iron tube in water trough) for raw pyroligneous acid collection;
+  separation of wood tar from wood vinegar by settling; wood vinegar chemical
+  composition (acetic acid, methanol, guaiacol, phenols) and agricultural dilution
+  rates (1:500 foliar spray, 1:200 soil pest drench); syngas recirculation burner
+  loops; PHOTO_CAPTURE assessment rubric of workshop chemical apparatus or test setup.
+
+content_md: |
+  ## Thermochemical Biomass Pyrolysis
+
+  Pyrolysis is the thermal decomposition of carbonaceous biomass in the **strict absence of oxygen**.
+  Unlike combustion, which converts wood to carbon dioxide gas and white mineral ash,
+  pyrolysis reorganizes cellulose, hemicellulose, and lignin polymers into three distinct high-value phases:
+
+  ```
+                     Heat (400°C - 600°C, No Oxygen)
+  Dry Biomass (100%) ─────────────────────────────────> Solid Phase: Biochar (25% - 35%)
+                                                      > Liquid Phase: Bio-oil / Pyroligneous Acid (35% - 45%)
+                                                      > Gas Phase: Producer Syngas (20% - 30%)
+  ```
+
+  ### Thermal Progression Regimes:
+  1. **Drying ($100^\circ\text{C} – 180^\circ\text{C}$)**: Free water evaporates; white water vapor plume. Endothermic.
+  2. **Torrefaction & Hemicellulose Breakdown ($200^\circ\text{C} – 280^\circ\text{C}$)**: Fragile hemicellulose depolymerizes; light combustible gases and initial acetic acid escape.
+  3. **Exothermic Primary Pyrolysis ($280^\circ\text{C} – 450^\circ\text{C}$)**:
+     - Rapid cleavage of cellulose and lignin polymer chains.
+     - **Self-Sustaining Reaction**: The process turns strongly exothermic, liberating heat without requiring external fuel.
+     - Heavy dense yellow-brown smoke evolves containing condensable aerosols and syngas.
+  4. **Carbon Consolidation ($450^\circ\text{C} – 650^\circ\text{C}$)**: Residual volatile tars are driven off, consolidating crystalline carbon rings and maximizing internal pore surface area ($200\text{ to } 400\text{ m}^2/\text{g}$).
+
+  ## The Double-Drum Retort Architecture
+
+  An indirect retort produces clean biochar, collects liquid vinegar, and burns its own off-gases:
+
+  ### Construction:
+  - **Outer Furnace (55-Gallon Steel Drum)**:
+    - Sits over a brick firebox with bottom air damper control.
+    - Insulated with clay or mineral wool to retain thermal energy.
+  - **Inner Retort (30-Gallon Steel Drum)**:
+    - Packed tightly with dry wood billets, coconut shells, or corn cobs.
+    - Sealed with an airtight bolted rim clamp or clay-sealed lid.
+  - **Gas Extraction Pipe**:
+    - A 1-inch (25 mm) steel pipe emerges from the inner drum lid and exits through the outer furnace wall into a **condensation train**.
+  - **Condensing Train**:
+    - 3 metres of copper or galvanized iron pipe sloped downward inside a cold water cooling trough.
+    - Condenses vapors into liquid **Pyroligneous Acid (Wood Vinegar)** which drips into a glass or HDPE receiver.
+  - **Syngas Return Loop**:
+    - Non-condensable flammable gases exit the top of the condensate receiver via a rubber hose equipped with a metal mesh flame arrestor.
+    - Directed straight back into the bottom firebox beneath the inner retort.
+    - Once the retort reaches 300°C, the syngas ignites into a clean blue/orange blowtorch flame, **powering the rest of the burn with zero additional firewood input**.
+
+  ## Pyroligneous Acid (Wood Vinegar) Chemistry & Processing
+
+  The condensed liquid collected from the retort is dark amber-brown with a distinct smoky barbecue aroma:
+
+  ### Chemical Composition:
+  - **Water**: 80%–90%
+  - **Acetic Acid (Vinegar)**: 3%–7% (gives pH 2.5–3.2)
+  - **Methanol**: 1%–2%
+  - **Acetone & Esters**: 1%–2%
+  - **Phenolic Compounds (Guaiacol, Cresol, Phenol)**: 2%–4% (gives potent antifungal, insect-repellent, and antimicrobial properties)
+  - **Wood Tar**: 3%–8% (toxic polycyclic aromatic hydrocarbons)
+
+  ### The 90-Day Settling Protocol (Mandatory):
+  Raw wood vinegar directly from the condenser contains dissolved settling tars that will burn crop leaves and leave toxic residues.
+  1. Store the raw liquid in an opaque HDPE carboy or food-grade plastic drum.
+  2. Keep undisturbed in a cool, dark room for **minimum 90 days (3 months)**.
+  3. Three distinct strata separate by gravity:
+     - **Top Floating Layer**: Light wood oil film (~2%). Skim off and discard.
+     - **Middle Layer (85%–90%)**: Clear, transparent, reddish-brown purified **Wood Vinegar**. Siphon off for agricultural use.
+     - **Bottom Layer**: Dense, sticky, black **Sedimentary Wood Tar** (~10%). Use as a natural wood preservative for fence posts against termite attack.
+
+  ## Agricultural & Sanitation Formulations
+
+  | Purpose | Dilution Ratio | Application Method | Mechanism of Action |
+  |---|---|---|---|
+  | **Foliar Growth & Pest Deterrent** | **1:500** (20 mL in 10 L water) | Mist on leaves every 14 days | Mild acetic acid stimulates plant metabolism; phenolics repel whiteflies, aphids, caterpillars |
+  | **Soil Nematode & Fungal Drench** | **1:200** (50 mL in 10 L water) | Soak planting holes 10 days before sowing | Acidity and cresol kill pathogenic soil nematodes, Fusarium, and damp-off fungi |
+  | **Compost Accelerant** | **1:100** (100 mL in 10 L water) | Sprinkle over compost pile layers | Organic acids feed beneficial fungi and speed organic decomposition |
+  | **Odour Control & Disinfection** | **1:50** (200 mL in 10 L water) | Spray latrines, poultry coops, animal stalls | Acid eliminates volatile ammonia gas ($\text{NH}_3 \rightarrow \text{NH}_4^+$), kills fly larvae |
+
+  ## Biochar Quality Verification
+
+  High-quality biochar should:
+  - Ring like porcelain or hard ceramic when dropped on stone (indicates complete carbonization of lignin without structural collapse).
+  - Break cleanly between fingers without leaving greasy black tar on skin (greasy black streaks indicate under-cooked wood with remaining toxic polycyclic tars).
+  - Crush easily into sparkling black grains.
+  - Remember the agronomic rule from Part 9: **Always charge fresh biochar** with compost, liquid manure, or urine before applying to crop root zones!
+
+exercises:
+  - id: chem-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why must raw pyroligneous acid (wood vinegar) freshly collected from a retort
+      condenser be settled for 90 days before applying to agricultural crops?
+    xp_reward: 50
+    options:
+      - text: "To allow heavy sedimentary wood tars containing toxic polycyclic aromatic hydrocarbons to settle out by gravity, leaving clean, crop-safe wood vinegar in the middle layer"
+        correct: true
+        explanation: "Raw wood vinegar contains suspended wood tars that coat and scorch plant stomata, stunting crops. Gravitational separation over 90 days cleanly partitions toxic heavy pitch at the bottom from the beneficial middle vinegar layer."
+      - text: "To allow the liquid to evaporate into a concentrated dry powder"
+        correct: false
+        explanation: "Wood vinegar is applied as a liquid foliar spray, not as a dry powder."
+      - text: "To allow atmospheric oxygen to convert the acetic acid into alcohol"
+        correct: false
+        explanation: "Oxygen oxidizes alcohol to acid; it cannot turn acetic acid back into alcohol."
+      - text: "Because the liquid is radioactive immediately after pyrolysis"
+        correct: false
+        explanation: "Thermal pyrolysis involves purely chemical rearrangement, not nuclear reactions."
+
+  - id: chem-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      During the thermal breakdown of dry biomass inside an airtight retort, the
+      reaction turns strongly ___ between 280°C and 450°C, releasing heat and
+      combustible non-condensable ___ gas that can be routed back into the firebox.
+    xp_reward: 50
+    correct_answer: "exothermic; syngas"
+    explanation: >
+      Primary pyrolysis is exothermic; the breakdown of cellulose generates heat,
+      and burning the returning syngas powers the retort without additional external firewood.
+
+  - id: chem-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each biomass pyrolysis phase to its primary agricultural or energy product.
+    xp_reward: 50
+    pairs:
+      - left: Solid Phase (30% by mass)
+        right: Porous crystalline biochar for long-term soil carbon and CEC enhancement
+      - left: Liquid Phase (40% by mass)
+        right: Pyroligneous acid (wood vinegar) for pest deterrence and foliar health
+      - left: Gas Phase (30% by mass)
+        right: Flammable syngas (CO, H2, CH4) for autothermal retort heating
+      - left: Heavy Bottom Tar
+        right: Natural waterproofing and anti-termite sealant for timber fence posts
+    correct_answer: null
+    explanation: >
+      Zero waste: solid is biochar, liquid is wood vinegar, gas powers the kiln,
+      bottom tar preserves structural timber.
+
+  - id: chem-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A farmer suspects their fresh biochar is under-cooked and poorly pyrolyzed.
+      Which field test confirms the biochar contains harmful unreacted tars?
+    xp_reward: 50
+    options:
+      - text: "Rubbing the biochar piece against the palm leaves a greasy, tarry, brownish-black smear that is difficult to wash off with plain water"
+        correct: true
+        explanation: "Fully pyrolyzed biochar is dry, crystalline, and washes away as fine charcoal powder. Under-cooked biochar leaves greasy, sticky tar residue that smells strongly of creosote."
+      - text: "The biochar sinks in water"
+        correct: false
+        explanation: "Fresh biochar can float or sink depending on pore wetting and moisture content; this is not a diagnostic test for tars."
+      - text: "The biochar attracts a magnet"
+        correct: false
+        explanation: "Pure carbon is non-magnetic unless contaminated with iron scrap."
+      - text: "The biochar dissolves completely in cold vinegar"
+        correct: false
+        explanation: "Elemental carbon is completely insoluble in mild acids."
+
+  - id: chem-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Photograph a chemical apparatus setup, retort kiln, distillation condenser,
+      or soap batch from your local chemical engineering fabrication practice.
+      Ensure the image clearly demonstrates liquid separation, airtight sealing,
+      or temperature monitoring, and include your written processing log.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Visual verification of condenser slope, airtight fittings, and phase separation
+      ensures safety protocols and chemical yields are achieved in field conditions.
+    rubric:
+      - criterion: "Photograph clearly shows reaction vessel, condenser cooling train, lye test, or finished chemical product"
+        points: 15
+      - criterion: "Safety precautions (ventilation, sealed joints, or protective equipment) are evident in the workshop setup"
+        points: 15
+      - criterion: "Written report records starting materials, reaction temperatures, settling durations, and output yields"
+        points: 10
+      - criterion: "Image is well-lit, in sharp focus, showing clean fluid boundaries or solid product texture"
+        points: 10

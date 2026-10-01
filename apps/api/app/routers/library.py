@@ -407,6 +407,42 @@ The metric vernier caliper provides 0.02 mm resolution across 50 vernier scale g
 The outside micrometer provides 0.01 mm resolution using a 0.50 mm pitch spindle screw.
 Always verify and account for zero error before measuring critical interference shaft journals.
 """
+    },
+    {
+        "id": "book-chemical-engineering",
+        "title": "Decentralized Chemical Engineering & Industrial Production",
+        "titleSw": "Uhandisi wa Kemikali na Utengenezaji wa Viwandani Vijijini",
+        "author": "Dr. Beatrice Muthoni & Energy Autonomy Initiative",
+        "description": "Comprehensive engineering field manual for producing vital civilization chemicals from local resources: vertical-shaft lime kilns and pozzolanic hydraulic mortar, wood-ash lye extraction, saponification and crude glycerol separation, fractional ethanol distillation with azeotrope handling, biodiesel transesterification from Jatropha/Croton seed oils, and double-drum retort biomass pyrolysis producing biochar and pyroligneous acid (wood vinegar).",
+        "descriptionSw": "Mwongozo kamili wa uhandisi kuhusu kuchoma chokaa, kutengeneza sabuni na glycerol, kunereka pombe ya dawa, kutengeneza mafuta ya biodiesel, na kuzalisha mkaa na asidi ya mbao.",
+        "category": "engineering",
+        "tradeId": "chemical-processing",
+        "tradeTitle": "Chemical Engineering & Industrial Processing",
+        "coverColor": "from-purple-700 to-indigo-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 6.9,
+        "totalPages": 136,
+        "estimatedMinutes": 270,
+        "featured": True,
+        "rating": 4.9,
+        "readersCount": 3950,
+        "cdaccUnitId": "CU/ENG/CH/CR/08/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "The Lime Cycle & Vertical Shaft Kilns", "pageNumber": 1},
+            {"id": "ch2", "title": "Saponification, Lye Leaching & Glycerol", "pageNumber": 28},
+            {"id": "ch3", "title": "Ethanol Fermentation & Fractional Columns", "pageNumber": 58},
+            {"id": "ch4", "title": "Biodiesel Transesterification & Washing", "pageNumber": 86},
+            {"id": "ch5", "title": "Biomass Pyrolysis & Wood Vinegar Extraction", "pageNumber": 112},
+        ],
+        "contentMarkdown": """# Decentralized Chemical Engineering & Production
+
+## Chapter 1: The Chemical Lime Cycle
+Before Portland cement, civilization was anchored upon the calcium carbonate cycle.
+Limestone calcination requires 900°C to 1,000°C inside a counter-current vertical shaft kiln.
+Slaking quicklime (calcium oxide) with water is violently exothermic, reaching boiling temperatures and producing pure calcium hydroxide putty.
+Blending lime putty with volcanic pumice pozzolan yields hydraulic mortar capable of setting permanently underwater.
+"""
     }
 ]
 

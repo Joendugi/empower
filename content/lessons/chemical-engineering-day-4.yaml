@@ -1,0 +1,239 @@
+id: chemical-engineering-day-4
+course_id: chemical-engineering
+title: "Biodiesel Transesterification from Seed Oils"
+title_sw: "Kutengeneza Mafuta ya Dizeli (Biodiesel) Kutoka Mbegu"
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - chemistry
+  - biodiesel
+  - transesterification
+  - fuels
+  - jatropha
+  - chemical-engineering
+xp: 250
+exam_domain: chemical-engineering
+
+briefing: >
+  Diesel engines power essential heavy equipment: agricultural tractors, milling
+  machinery, water well drilling rigs, and backup generators. While raw vegetable
+  oil can run in a warm engine briefly, its high viscosity (10 times higher than
+  petrodiesel) quickly leads to injector coking, piston ring sticking, and engine
+  seizure. Through chemical transesterification, triglycerides are reacted with an
+  alcohol in the presence of a strong base catalyst to strip the heavy glycerol
+  backbone, producing Fatty Acid Methyl/Ethyl Esters (FAME/FAEE) with viscosity
+  and cetane ratings matching commercial petrodiesel.
+
+outline: >
+  Transesterification stoichiometry (1 triglyceride + 3 alcohol -> 3 fatty acid
+  esters + 1 glycerol); alcohol options (methanol vs bio-ethanol); catalyst
+  selection (anhydrous NaOH or KOH); free fatty acid (FFA) titration using 0.1%
+  NaOH and phenolphthalein/turmeric indicator; the soap problem (moisture + FFA
+  forms soap, preventing separation); batch processor design (sealed 200L oil drum,
+  water heater element, 55°C temperature control, circulation pump); gravity
+  settling and bottom glycerol draining; bubble washing and dry washing with wood ash;
+  the 3/27 conversion test (fuel quality verification).
+
+content_md: |
+  ## Why Raw Vegetable Oil Destroys Diesel Engines
+
+  Diesel fuel systems rely on precise spray atomization through micro-orifices (0.15 mm)
+  at injection pressures of 200–2,000 bar:
+  - **Kinematic Viscosity of Petrodiesel**: **2.5 to 3.5 cSt** at 40°C.
+  - **Kinematic Viscosity of Raw Vegetable Oil**: **35 to 50 cSt** at 40°C (over 10 times too thick).
+
+  When raw oil is sprayed into a combustion chamber:
+  1. The thick droplets fail to vaporize, striking cold cylinder walls.
+  2. Incomplete combustion generates hard polycyclic carbon deposits (**coking**) that bake onto injector tips.
+  3. Unburned oil migrates past the piston rings into the crankcase, polymerizing with lubricating oil into a thick jelly that starves the oil pump, throwing connecting rod bearings.
+
+  ## Transesterification Chemistry
+
+  Transesterification strips the bulky 3-carbon glycerol backbone and replaces it
+  with short single-carbon (methyl) or two-carbon (ethyl) chains:
+
+  $$\begin{matrix}
+  \text{CH}_2-\text{OOC}-\text{R}_1 \\
+  \mid \\
+  \text{CH}-\text{OOC}-\text{R}_2 \\
+  \mid \\
+  \text{CH}_2-\text{OOC}-\text{R}_3
+  \end{matrix}
+  + 3\,\text{R}'\text{OH} \xrightarrow{\text{Base Catalyst}}
+  \begin{matrix}
+  \text{CH}_2-\text{OH} \\
+  \mid \\
+  \text{CH}-\text{OH} \\
+  \mid \\
+  \text{CH}_2-\text{OH}
+  \end{matrix}
+  +
+  \begin{matrix}
+  \text{R}_1-\text{COO}-\text{R}' \\
+  \text{R}_2-\text{COO}-\text{R}' \\
+  \text{R}_3-\text{COO}-\text{R}'
+  \end{matrix}$$
+
+  $$\text{Triglyceride} + 3\,\text{Alcohol} \xrightarrow{\text{KOH / NaOH}} \text{Glycerol} + 3\,\text{Biodiesel Esters}$$
+
+  - Viscosity drops from **40 cSt down to 4.2 cSt** (fully engine-safe).
+  - Cetane number increases from 35–40 to **50–55** (excellent ignition quality).
+
+  ## Feedstocks in East Africa
+  - **Jatropha curcas**: Non-edible drought-hardy shrub; seeds yield 30%–35% oil.
+  - **Croton megalocarpus**: Abundant indigenous Kenyan tree; seeds contain 30% high-energy oil with low free fatty acids.
+  - **Castor Oil**: High viscosity; useful in blends (10%–20%).
+  - **Waste Vegetable Cooking Oil (WVO)**: Collected from restaurants; contains high Free Fatty Acids (FFA) and water, requiring filtering and titration.
+
+  ## Chemical Quantities & Stoichiometry (per 1,000 mL Oil)
+
+  Stoichiometrically, 1 mole of triglyceride requires 3 moles of alcohol. In practice,
+  we use a **100% stoichiometric excess** (approx. 6:1 molar ratio) to drive the
+  equilibrium reaction to 99%+ completion:
+
+  | Reagent | Preferred Spec | Quantity per 1 Litre Oil |
+  |---|---|---|
+  | **Vegetable Oil** | Dry (< 0.1% water), filtered to 5 microns | **1,000 mL** |
+  | **Methanol** ($\text{CH}_3\text{OH}$) | 99.8% anhydrous pure | **200 mL** (20% by volume) |
+  | *Or Bio-Ethanol* ($\text{C}_2\text{H}_5\text{OH}$) | 99.5% anhydrous (requires 3A sieves) | **240 mL** (reaction runs slower, requires KOH) |
+  | **Potassium Hydroxide ($\text{KOH}$)** | 85%–90% purity flakes | **7.0 grams** (base) + titration extra |
+  | *Or Sodium Hydroxide ($\text{NaOH}$)* | 98%+ purity crystals | **5.0 grams** (base) + titration extra |
+
+  ## The Free Fatty Acid (FFA) Titration
+
+  Used cooking oils and degraded seed oils contain Free Fatty Acids. When base catalyst
+  meets FFAs in the presence of moisture, it forms **soap** ($\text{FFA} + \text{NaOH} \rightarrow \text{Soap} + \text{H}_2\text{O}$),
+  which turns the entire 200 L reactor into an inseparable gel.
+
+  ### Titration Procedure:
+  1. Dissolve **1.0 gram of pure $\text{NaOH}$** in **1,000 mL of distilled water** (0.1% reference solution).
+  2. Measure **10 mL of pure isopropanol (or 95% ethanol)** into a small beaker; add 3 drops of phenolphthalein indicator (or 1 drop of yellow turmeric extract).
+  3. Add 0.1% NaOH drops until the alcohol turns faintly pink (pH 8.5) — this neutralizes the solvent.
+  4. Add **1.0 mL of the sample oil** and swirl vigorously.
+  5. Using a graduated 1 mL syringe, titrate the 0.1% NaOH solution dropwise into the oil-alcohol mix until a persistent pink colour lasts for 30 seconds.
+  6. **Calculation**: If it required **$X$ mL** of NaOH solution:
+     $$\text{Total NaOH per Litre of Oil} = 5.0\text{ g (base catalyst)} + X\text{ grams}$$
+     *(If using KOH, multiply by 1.4: $\text{Total KOH} = 7.0\text{ g} + (X \times 1.4)\text{ grams}$)*.
+
+  *Threshold Rule*: If $X > 5\text{ mL}$ (FFA > 5%), standard single-stage alkaline transesterification will fail. The oil must undergo two-stage acid esterification (pretreatment with 1 mL/L concentrated sulfuric acid) first.
+
+  ## Batch Processor Operation Sequence
+
+  1. **Drying the Oil**: Heat filtered oil in a steel drum to **105°C** until crackling/bubbling stops (all suspended water steam-flashes off). Cool down to **55°C**.
+  2. **Methoxide Preparation**:
+     - *DANGER: Toxic and blind-hazard fumes*. Mix methanol and measured KOH flakes in a sealed HDPE container.
+     - Shake until all catalyst dissolves completely, forming **potassium methoxide** ($\text{KOCH}_3$). The reaction gets hot.
+  3. **Reaction Run**:
+     - Add methoxide solution into the 55°C oil inside the closed reactor.
+     - **Keep below 60°C** (methanol boils at 64.7°C; do not boil the alcohol off).
+     - Circulate vigorously through a closed centrifugal pump or mechanical impeller for **60 to 90 minutes**.
+  4. **Phase Separation (Settling)**:
+     - Allow the mixture to settle undisturbed in a conical-bottom tank for **8 to 12 hours**.
+     - Two distinct layers form:
+       - **Top Layer (85%–90%)**: Golden-amber liquid — crude **Biodiesel (FAME)**.
+       - **Bottom Layer (10%–15%)**: Dark brown, thick, viscous layer — **Glycerol / Soap / Excess Catalyst**.
+  5. **Draining**: Open the bottom drain valve to decant the thick dark glycerol until the golden biodiesel begins to flow, then close the valve.
+
+  ## Fuel Washing & The 3/27 Quality Test
+
+  Crude biodiesel contains trace residual methanol, free glycerol, and microscopic soap.
+
+  ### Water Washing:
+  1. Gently mist 20 L of warm water over 100 L of biodiesel without turbulent agitation (prevents emulsion).
+  2. Water droplets sink through the fuel, scrubbing polar impurities.
+  3. Drain the cloudy milky water from the conical bottom after 2 hours. Repeat 2–3 times until the rinse water drains crystal clear.
+  4. Reheat fuel to **100°C** for 15 minutes to flash off residual water until the fuel is bright and clear ("sparkling").
+
+  ### The 3/27 Completeness of Reaction Test:
+  Before pouring into an expensive tractor engine:
+  - Add **3.0 mL of dry finished biodiesel** into **27.0 mL of pure room-temperature methanol** (1:9 ratio) inside a glass vial.
+  - Shake for 10 seconds and let sit for 15 minutes.
+  - **PASS**: The biodiesel dissolves completely into the methanol, remaining clear and transparent.
+  - **FAIL**: Any droplet, haze, or fallout at the bottom indicates unreacted triglycerides (incomplete conversion); the fuel will coke injectors and must be reprocessed.
+
+exercises:
+  - id: chem-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A batch of used cooking oil requires 3.2 mL of 0.1% NaOH during titration.
+      Using pure NaOH crystals, how much total catalyst should be dissolved into
+      methanol per 1 litre of this oil for complete transesterification?
+    xp_reward: 50
+    options:
+      - text: "8.2 grams of NaOH (5.0 g base + 3.2 g titration extra)"
+        correct: true
+        explanation: "Standard base catalyst for dry virgin oil is 5.0 g NaOH per litre. The titration result (3.2 mL of 0.1% solution) directly indicates 3.2 g of extra NaOH needed to neutralize the free fatty acids: 5.0 + 3.2 = 8.2 g/L."
+      - text: "3.2 grams of NaOH"
+        correct: false
+        explanation: "3.2 g only neutralizes the free fatty acids; it leaves zero catalyst for the actual transesterification reaction."
+      - text: "5.0 grams of NaOH"
+        correct: false
+        explanation: "5.0 g is the base amount for pure fresh oil with zero FFAs. In used oil, FFAs would consume part of this 5.0 g, causing reaction failure."
+      - text: "11.5 grams of NaOH"
+        correct: false
+        explanation: "This excessive amount would trigger severe saponification and lock the reactor into a solid gel."
+
+  - id: chem-d4-q2
+    type: FILL_BLANK
+    prompt: >
+      During the batch transesterification of vegetable oil with methanol and KOH,
+      the reactor temperature should be maintained at approximately ___ degrees C,
+      because exceeding 64.7°C causes the alcohol to ___ and escape as vapor.
+    xp_reward: 50
+    correct_answer: "55; boil"
+    explanation: >
+      Reaction kinetics are fast and complete at 50°C-55°C. Methanol boils at 64.7°C,
+      so staying below 60°C prevents boiling, overpressure, and toxic vapor loss.
+
+  - id: chem-d4-q3
+    type: MATCH_PAIRS
+    prompt: Match each biodiesel processing stage to its underlying chemical mechanism.
+    xp_reward: 50
+    pairs:
+      - left: Heat to 105 C before reaction
+        right: Steam-flashes off trace moisture to prevent catalyst saponification
+      - left: 3/27 Methanol Test
+        right: Verifies absence of unreacted triglycerides via solubility in alcohol
+      - left: Bottom Layer in Settling Tank
+        right: Dense crude glycerol mixed with spent alkali and soaps
+      - left: Water Bubble Washing
+        right: Extracts polar impurities, free methanol, and micro-soaps into aqueous phase
+    correct_answer: null
+    explanation: >
+      Drying prevents soap; 3/27 tests conversion; glycerol is dense and drops out;
+      water washing cleans the fuel.
+
+  - id: chem-d4-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      What is the mechanical consequence of running an unmodified direct-injection
+      diesel engine on unheated, raw, unrefined vegetable oil over several weeks?
+    xp_reward: 50
+    options:
+      - text: "High kinematic viscosity (40 cSt vs 3 cSt) prevents droplet atomization, causing unburned fuel to glaze cylinder walls, stick piston rings, and coke injector nozzles"
+        correct: true
+        explanation: "Raw oil viscosity is 10 times higher than diesel. Large droplets hit cylinder walls instead of burning in suspension, causing severe injector coking, blow-by, ring sticking, and crankcase oil polymerization."
+      - text: "The engine runs too cool because vegetable oil has higher octane"
+        correct: false
+        explanation: "Diesel engines require cetane, not octane; high viscosity causes thermal and mechanical fouling, not cool running."
+      - text: "The injection pump speeds up to dangerous RPM"
+        correct: false
+        explanation: "The governor controls pump speed; thick oil actually strains and can snap pump drive shafts."
+      - text: "The exhaust emissions turn into pure nitrogen gas"
+        correct: false
+        explanation: "Emissions increase with unburned hydrocarbons, acrolein, and heavy black carbon smoke."
+
+  - id: chem-d4-q5
+    type: FILL_BLANK
+    prompt: >
+      In the '3/27' fuel quality verification test, 3 mL of finished biodiesel is
+      mixed into 27 mL of pure ___. If the solution remains completely transparent
+      with no fallout, the fuel ___ the conversion test.
+    xp_reward: 50
+    correct_answer: "methanol; passes"
+    explanation: >
+      Pure biodiesel (FAME) is completely miscible in methanol at a 1:9 ratio.
+      Unreacted mono-, di-, or triglycerides are insoluble and fall out as visible
+      haze or oil droplets at the bottom.

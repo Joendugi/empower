@@ -1,0 +1,34 @@
+id: chemical-engineering
+title: Essential Chemical Engineering & Decentralized Production
+titleSw: Uhandisi wa Kemikali na Utengenezaji wa Kienyeji
+description: >
+  Master the chemical principles and practical engineering operations required
+  to produce critical civilization supplies from raw local resources — from
+  quicklime mortar, soap saponification, and botanical ethanol distillation to
+  biodiesel fuel transesterification and wood pyroligneous acid / biochar production.
+level: intermediate
+category: engineering
+estimatedHours: 10
+xpTotal: 1250
+license: CC-BY-SA-4.0
+nodes:
+  - day: 1
+    lessonId: chemical-engineering-day-1
+    title: "Lime Chemistry & Calcination Kilns"
+    xp: 250
+  - day: 2
+    lessonId: chemical-engineering-day-2
+    title: "Saponification — Soap & Glycerol Production"
+    xp: 250
+  - day: 3
+    lessonId: chemical-engineering-day-3
+    title: "Ethanol Fermentation & Fractional Distillation"
+    xp: 250
+  - day: 4
+    lessonId: chemical-engineering-day-4
+    title: "Biodiesel Transesterification from Seed Oils"
+    xp: 250
+  - day: 5
+    lessonId: chemical-engineering-day-5
+    title: "Pyrolysis — Biochar, Pyroligneous Acid & Syngas"
+    xp: 250
