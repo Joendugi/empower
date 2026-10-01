@@ -551,6 +551,41 @@ Contour lines translate a three-dimensional landscape of mountains, rivers, and 
 Water always flows down the open throat of a contour 'V', while ridgelines push spurs into the lowlands.
 Mastering the 1-kilometre UTM metric grid allows precision coordination across expedition teams down to 10 metres.
 """
+    },
+    {
+        "id": "book-metallurgy-foundry",
+        "title": "Practical Metallurgy, Blacksmithing & Non-Ferrous Foundry Manual",
+        "titleSw": "Mwongozo wa Ufundi Chuma, Uhunzi na Uyahushaji Vyuma Karakana",
+        "author": "Fundi Mkuu Juma Omondi (Foundry Master & Blacksmith Guild Lead)",
+        "description": "Comprehensive engineering field guide to extracting, hot-forging, heat-treating, and casting metals in remote workshops: direct iron reduction in clay bloomery furnaces (fayalite slag chemistry, consolidation forging), brake-drum forge hearth design, anvil work zones, drawing out, upsetting, hot punching, forge-welding with borax/silica flux, iron-carbon phase metallurgy (ferrite, pearlite, austenite, martensite), full annealing, normalizing, oil vs water quenching, temper color oxide spectrums (pale straw to spring blue), differential hardening, greensand mold making (bentonite binders, draft angles, shrinkage allowances), cope and drag flask gating, and crucible furnace non-ferrous casting (scrap aluminium and bronze, degassing fluxes, dross skimming, moisture explosion prevention).",
+        "descriptionSw": "Mwongozo kamili wa kuyeyusha chuma cha asili kwenye tanuri ya bloomery, uhunzi wa zana, utireshaji wa ugumu wa vyuma (quenching na tempering), utengenezaji wa ukungu wa mchanga (greensand), na kuyeyusha alumini na shaba kwenye tanuri ya crucible.",
+        "category": "engineering",
+        "tradeId": "welding-fabrication",
+        "tradeTitle": "Welding, Fabrication & Metallurgy",
+        "coverColor": "from-orange-700 to-red-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 7.3,
+        "totalPages": 146,
+        "estimatedMinutes": 290,
+        "featured": True,
+        "rating": 5.0,
+        "readersCount": 5420,
+        "cdaccUnitId": "CU/MET/FD/CR/12/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "Bloomery Smelting & Direct Iron Reduction", "pageNumber": 1},
+            {"id": "ch2", "title": "Blacksmith Forge Hearth, Anvil & Tooling", "pageNumber": 32},
+            {"id": "ch3", "title": "Heat Treatment — Quench & Temper Colors", "pageNumber": 62},
+            {"id": "ch4", "title": "Greensand Mold Making & Patterns", "pageNumber": 92},
+            {"id": "ch5", "title": "Crucible Furnace Melting & Foundry Safety", "pageNumber": 120},
+        ],
+        "contentMarkdown": """# Practical Metallurgy, Blacksmithing & Non-Ferrous Foundry
+
+## Chapter 1: The Foundations of Direct Iron Smelting
+Civilization relies on elemental iron. Before industrial blast furnaces, humanity extracted workable wrought iron through the bloomery process.
+Operating at 1,150°C to 1,250°C, solid-state chemical reduction produces a spongy bloom of low-carbon iron without melting.
+Consolidation forging under heavy sledges expels trapped liquid fayalite slag, welding the iron grains into tough structural billets.
+"""
     }
 ]
 

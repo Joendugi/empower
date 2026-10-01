@@ -1,0 +1,238 @@
+id: metallurgy-foundry-day-4
+course_id: metallurgy-foundry
+title: "Greensand Mold Making & Pattern Engineering"
+title_sw: "Utengenezaji wa Ukungu wa Mchanga (Greensand) na Sampuli za Vyuma"
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - metallurgy
+  - foundry
+  - sand-casting
+  - greensand
+  - patternmaking
+  - molding-flask
+xp: 250
+exam_domain: metallurgy-foundry
+
+briefing: >
+  When machinery components break in remote field stations—a water pump impeller,
+  a V-belt pulley, a pipe flange, or a bearing housing—replacement parts cannot
+  be ordered online. Metal casting allows a workshop to replicate complex mechanical
+  geometries using scrap aluminium or bronze. The cornerstone of the foundry is
+  the Greensand mold: an economical, reusable composite of silica sand, bentonite
+  clay binder, and moisture that holds sharp dimensional details against molten metal.
+  This lesson covers pattern draft angles, shrinkage allowances, molding flask
+  carpentry (cope and drag), gating system hydraulics (sprues, runners, ingates),
+  and riser placement to feed solidification shrinkage.
+
+outline: >
+  The physical chemistry of Greensand (85-90% clean sub-angular silica sand, 8-10%
+  sodium/calcium bentonite clay, 3-5% water); the hand-squeeze ball test for sand
+  moisture; wooden pattern design rules: parting lines, draft taper angle (1° to 3°),
+  and metal shrinkage allowances (1.3% for aluminium, 1.5% for bronze, 2.0% for cast iron);
+  parting powder (talc, fine dry wood ash, graphite); molding flask anatomy (lower
+  drag, upper cope, alignment register pins); ramming technique and venting needles;
+  gating system engineering: pouring basin, tapered sprue, runner trap, ingates,
+  and feeding risers (feeder heads) to eliminate internal shrinkage voids.
+
+content_md: |
+  ## The Principle of Greensand Casting
+
+  **Greensand casting** does not mean the sand is green in color; "green" refers to
+  the fact that the sand mold is bonded with clay and moisture and used in its
+  **damp (uncooked) state**:
+  - **Why Greensand?**:
+    - Low cost: 100% locally sourceable materials.
+    - 100% recyclable: After shaking out the cooled casting, the sand is re-moistened, re-milled, and reused indefinitely.
+    - Excellent breathability: Natural sand pores allow boiling steam and expanding gases to escape through the mold walls rather than bubbling into the molten metal.
+
+  ## The Greensand Formula & The Hand-Squeeze Test
+
+  A high-quality greensand formula:
+
+  | Component | Percentage by Weight | Function |
+  |---|---|---|
+  | **Silica Sand** | **85% – 88%** | Refractory skeleton; clean, washed, sub-angular grain size (mesh 70 to 100). |
+  | **Bentonite Clay** | **8% – 10%** | Plastic binder; sodium bentonite provides high green strength and thermal durability. |
+  | **Water (Moisture)** | **3% – 5%** | Activates the clay platelets. |
+  | *Optional: Coal Dust / Wood Pitch* | 1% – 2% | Carbonizes on contact with metal, forming a gas cushion that creates a smooth casting surface finish. |
+
+  ### The Master Foundryman's Hand-Squeeze Test:
+  1. Take a handful of mixed, tempered greensand and squeeze it firmly in your fist.
+  2. Open your hand:
+     - The sand must form a firm, cohesive lump that retains every fine fingerprint groove.
+  3. Break the lump in half between your thumbs:
+     - **CORRECT**: The lump snaps cleanly with sharp, crisp edges like a dry cookie, leaving the palm of your hand dry and free of clinging mud.
+     - **TOO DRY**: The lump crumbles into loose grains; sand will wash into the metal during pouring, creating sand inclusions.
+     - **TOO WET**: Sand leaves wet mud stuck to your skin. **DANGER**: Excess water generates explosive high-pressure steam when molten 1,000°C metal enters the mold!
+
+  ## Pattern Engineering: Draft & Shrinkage
+
+  The **pattern** is the replica of the object to be cast, carved from hardwood (mahogany,
+  cedar), dense polyurethane foam, or cast resin.
+
+  ### 1. The Parting Line:
+  The boundary plane dividing the mold into two halves:
+  - **Drag**: The bottom flask half.
+  - **Cope**: The top flask half.
+
+  ```
+                       [ COPE (Top Flask) ]
+  ═════════════════════════════════════════════════════════ Parting Line
+                       [ DRAG (Bottom Flask) ]
+  ```
+
+  ### 2. Draft Angle (Taper):
+  Vertical walls must never be 90° square. They must feature a **1° to 3° draft taper**:
+  - Without draft taper, lifting the pattern out of the packed sand creates vacuum suction that shears and breaks the delicate sand mold edges.
+
+  ### 3. Solidification Shrinkage Rules:
+  Metals expand when liquid and shrink as they freeze from liquid to solid. Patterns
+  must be carved oversize using a **Shrinkage Rule**:
+
+  | Metal / Alloy | Liquid-to-Solid Shrinkage | Pattern Oversize Allowance |
+  |---|---|---|
+  | **Aluminium Alloys (Al-Si)** | **1.3%** | Add **13 mm per 1 metre** (approx. 1/8" per foot) |
+  | **Bronze / Brass (Cu-Sn-Zn)** | **1.5% – 1.8%** | Add **16 mm per 1 metre** (approx. 3/16" per foot) |
+  | **Cast Iron (Grey)** | **1.0%** | Add **10 mm per 1 metre** (approx. 1/10" per foot) |
+  | **Lead / Zinc** | **2.5%** | Add **25 mm per 1 metre** |
+
+  ## The Molding Flask: Cope and Drag
+
+  A heavy wooden or welded steel two-part box without top or bottom:
+  - Equipped with precision **hardwood or steel alignment register pins** on the sides.
+  - The pins ensure that when the cope is lifted off to remove the pattern and then put back on, the two mold cavities align with sub-millimetre precision.
+
+  ```
+                 POURING BASIN          RISER / FEEDER
+                      ▼                      ▼
+               ┌──────┴──┐            ┌──────┴──┐
+    [ COPE ]   │  SPRU   │            │         │
+               │  (Down) │            │         │
+  ═════════════╪═════════╪════════════╪═════════╪════════════ Parting Line
+    [ DRAG ]   │         │ RUNNER     │ CAVITY  │
+               └─────────┴────────────┴─────────┘
+                                ▲
+                             INGATE
+  ```
+
+  ## The 7-Step Sand Molding Protocol
+
+  1. **Place Pattern in Drag**:
+     - Place pattern flat-face down on a molding board inside the inverted Drag flask.
+     - Dust pattern generously with **Parting Powder** (fine dry talcum powder, powdered blackboard chalk, or fine dry wood ash) so sand will not stick to the wood.
+  2. **Riddle & Ram the Drag**:
+     - Sift fine greensand through a 3 mm wire riddle sieve directly over the pattern (15 mm fine facing layer).
+     - Fill drag with coarse greensand; compact firmly using a wooden wedge rammer around the edges, then flat butt-ram the top.
+     - Strike off excess sand flush with the top of the flask using a straight steel bar.
+  3. **Invert the Drag**:
+     - Roll the heavy drag 180° right-side-up. Smooth the parting sand surface with a trowel.
+  4. **Assemble the Cope**:
+     - Set the Cope flask onto the Drag, locking the alignment register pins.
+     - Dust the entire parting plane with dry parting powder.
+     - Set vertical wooden pegs in place for the **Sprue** (where metal enters) and the **Riser** (where metal exits).
+  5. **Ram the Cope & Vent**:
+     - Sift and ram greensand in the cope identical to the drag.
+     - Carve a wide conical **Pouring Basin** around the sprue top.
+     - **Venting (Crucial)**: Push a 2 mm bicycle spoke or wire needle down through the cope sand repeatedly, stopping 15 mm above the pattern. These micro-vents let steam and air vent freely to avoid gas blowhole defects.
+  6. **Separate & Draw the Pattern**:
+     - Carefully lift the Cope vertically off the Drag; set it aside on its edge.
+     - Tap the wooden pattern gently with a small brass mallet (**rapping**) to loosen it from the sand.
+     - Screw a threaded steel draw-spike into the pattern and lift it vertically straight out without wiggling.
+  7. **Cut the Gating System**:
+     - With a curved brass spoon or gate cutter, carve a smooth horizontal channel (**Runner**) in the drag connecting the bottom of the sprue to the mold cavity via a restricted **Ingate**.
+     - Blow out any loose sand grains with a gentle hand air bulb.
+     - Re-close the Cope onto the Drag; lock the register pins.
+     - Place a **10 kg to 20 kg cast-iron weight** on top of the cope sand (without weight, the hydrostatic lifting pressure of dense molten metal will float the cope, blowing molten metal out the parting line!).
+
+  ## The Role of the Feeding Riser
+
+  Thick sections of metal cool slower than thin walls. As the core freezes, it contracts,
+  leaving internal hollow voids (**shrinkage porosity**).
+  - A **Riser (Feeder Head)** is a large reservoir of molten metal placed above the thickest section of the casting.
+  - The riser is designed to freeze **last**, feeding liquid metal downward by gravity into the contracting casting until it is 100% solid, dense, and void-free.
+
+exercises:
+  - id: met-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A foundry patternmaker is carving a wooden pattern for an aluminium V-belt pulley
+      that must have a finished outside diameter of exactly 200.0 mm. Accounting for
+      aluminium's 1.3% solidification shrinkage, what diameter must the wooden pattern be carved to?
+    xp_reward: 50
+    options:
+      - text: "202.6 mm (200.0 mm × 1.013)"
+        correct: true
+        explanation: "Aluminium contracts by 1.3% as it freezes from liquid to solid. The pattern must be oversized by 1.3%: 200.0 × 1.013 = 202.6 mm. When cast, the molten aluminium freezes and shrinks down to the target 200.0 mm."
+      - text: "200.0 mm"
+        correct: false
+        explanation: "If carved at 200 mm, the finished casting will shrink to 197.4 mm and will be undersized scrap."
+      - text: "213.0 mm"
+        correct: false
+        explanation: "This is a 6.5% oversize, which would require massive machining to bring to size."
+      - text: "197.4 mm"
+        correct: false
+        explanation: "This subtracts shrinkage instead of adding it, making the part double-undersized."
+
+  - id: met-d4-q2
+    type: FILL_BLANK
+    prompt: >
+      Greensand for foundry mold making consists of 85% to 88% silica sand, 8% to 10%
+      bentonite clay binder, and ___ to 5% moisture. When squeezed firmly in the fist,
+      the sand lump should snap cleanly with sharp edges, leaving the palm of the hand ___.
+    xp_reward: 50
+    correct_answer: "3%; dry"
+    explanation: >
+      3% to 5% water activates bentonite. If properly tempered, the sand feels
+      firm and snaps cleanly like a cookie, leaving the palm dry. Wet sticky sand generates dangerous steam.
+
+  - id: met-d4-q3
+    type: MATCH_PAIRS
+    prompt: Match each sand casting component to its structural or hydraulic role.
+    xp_reward: 50
+    pairs:
+      - left: Cope
+        right: The upper/top half of the two-part molding flask
+      - left: Drag
+        right: The lower/bottom half of the two-part molding flask
+      - left: Sprue
+        right: Vertical tapered channel where molten metal is poured from the ladle
+      - left: Riser (Feeder)
+        right: Reservoir of molten metal that stays liquid last to feed shrinkage voids
+    correct_answer: null
+    explanation: >
+      Cope is top; drag is bottom; sprue carries molten metal in; riser feeds solidification shrinkage.
+
+  - id: met-d4-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why must vertical wooden pattern walls feature a 1° to 3° draft taper angle?
+    xp_reward: 50
+    options:
+      - text: "To prevent vacuum suction and friction from tearing and destroying the delicate packed greensand mold walls when the pattern is extracted vertically"
+        correct: true
+        explanation: "A pattern with 90° perpendicular walls rubs against sand throughout its entire vertical withdrawal, causing sand to crumble and collapse. A 1°-3° taper breaks contact the instant the pattern moves upward by 1 mm, leaving sharp, pristine cavity edges."
+      - text: "To make the casting heavier"
+        correct: false
+        explanation: "Draft taper has a negligible effect on weight; its purpose is clean pattern extraction."
+      - text: "To make the pattern float in water"
+        correct: false
+        explanation: "Patterns are used in dry molding flasks, not water."
+      - text: "To allow the molten metal to freeze faster"
+        correct: false
+        explanation: "Solidification rate depends on section thickness and sand thermal conductivity, not draft angle."
+
+  - id: met-d4-q5
+    type: FILL_BLANK
+    prompt: >
+      Before pouring molten metal into a greensand mold, a heavy iron weight must be
+      placed on top of the cope flask to counteract the powerful ___ pressure of the
+      dense liquid metal, which would otherwise float the cope and blow out molten metal.
+    xp_reward: 50
+    correct_answer: "hydrostatic"
+    explanation: >
+      Molten metal is dense (aluminium 2.4 g/cm3, bronze 8.8 g/cm3). When the mold fills,
+      hydrostatic head pressure pushes upward against the cope sand with hundreds of
+      kilograms of force.

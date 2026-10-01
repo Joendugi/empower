@@ -1,0 +1,230 @@
+id: metallurgy-foundry-day-2
+course_id: metallurgy-foundry
+title: "Blacksmithing — The Forge Hearth, Anvil & Tool Crafting"
+title_sw: "Uhunzi wa Chuma — Tanuri ya Uhunzi, Fuawe na Utengenezaji Zana"
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - metallurgy
+  - blacksmithing
+  - forge
+  - anvil
+  - hot-forging
+  - toolmaking
+xp: 250
+exam_domain: metallurgy-foundry
+
+briefing: >
+  The blacksmith is the mother of all crafts; without the smith, the carpenter has
+  no saws, the stonemason has no chisels, the farmer has no plows, and the surgeon
+  has no scalpels. Transforming raw iron or scrap leaf springs into precision tools
+  demands mastery over incandescent thermal colors, hammer control, anvil horn physics,
+  and the fundamental forging operations: drawing out, upsetting, punching, drifting,
+  and hot-cutting. This lesson covers building a low-cost side-blast charcoal brake-drum
+  forge, anvil work zones, hammer blow geometry, making tongs, and forge-welding
+  high-carbon steel cutting edges into mild iron bodies.
+
+outline: >
+  The brake-drum charcoal forge hearth (tuyere pipe, ash dump, centrifugal blower /
+  hand crank); blacksmith's anvil anatomy (face, round horn, step, hardy hole, pritchel
+  hole); anvil mounting and rebound testing (bearing ball test > 80% rebound);
+  steel incandescent temperature color chart (faint red 600°C to yellow/white 1,200°C);
+  hammer dynamics (cross-peen hammer, drawing out length vs spreading width); upsetting
+  to thicken bar stock; hot punching and drifting round/square eye holes (axes, hammers);
+  making a pair of flat-jaw blacksmith tongs from scrap rebar; the physics of
+  forge-welding (silica sand / borax flux, liquid oxide displacement, incandescent
+  white heat @ 1,300°C).
+
+content_md: |
+  ## The Blacksmith's Forge Hearth
+
+  A forge does not melt metal; it heats steel to its plastic deformation zone
+  (**850°C to 1,200°C**), where iron crystals can be reshaped under hammer blows
+  like clay without fracturing.
+
+  ### The Brake-Drum Charcoal Forge:
+  A robust off-grid forge built from scrap automotive and plumbing parts:
+
+  ```
+                        [ Charcoal Fire Pot (1,200°C) ]
+                   ┌──────────────────────────────────────┐
+                   │    Cast Iron Heavy Brake Drum        │
+                   └──────────────────┬───────────────────┘
+                                      │  50mm Steel Pipe
+    Hand Bellows / 12V Fan ────► [ T-Junction ]
+                                      │
+                                      ▼
+                             [ Ash Dump Valve ] (Weighted Flap)
+  ```
+
+  - **Firepot**: A heavy truck or tractor cast-iron brake drum (resists burn-through).
+  - **Tuyere**: 50 mm (2-inch) galvanized steel pipe entering from the bottom.
+  - **Clinker Breaker / Grate**: A triangular iron pivot bar over the tuyere opening that grinds and drops brittle glass-slag (*clinkers*) while passing air.
+  - **Fuel**: Hardwood charcoal broken to walnut size (20–30 mm). Charcoal burns cleaner than mineral coal, containing virtually zero sulfur that would embrittle hot steel.
+
+  ## The Anvil: Anatomy & Work Zones
+
+  A professional cast steel or forged steel anvil (typically 50 kg to 150 kg) is a
+  multi-purpose shaping die:
+
+  ```
+     Round Horn        Cutting Step         Flat Face (Hardened)       Heel
+        (Bending)       (Chiseling)         (Drawing & Leveling)
+          ╭───╮             ┌─┐          ┌────────────────────────┐    ┌────┐
+         ╱     ╲            │ │          │                        │    │ [] │ < Hardy Hole (Square)
+        ╱       ╰───────────╯ └──────────┘                        └────┘ O  │ < Pritchel Hole (Round)
+       ╰────────────────────────────────────────────────────────────────────╯
+  ```
+
+  1. **Hardened Face**: Precision ground, induction-hardened tool steel (55–60 HRC). Used for flattening, drawing out, and trueing stock.
+  2. **Round Horn (Biconical)**: Used for bending smooth curves, forging rings, and forming round eye sockets.
+  3. **Cutting Step**: A soft unhardened flat shelf between the face and horn. Used for hot-chiseling through metal so cutting edges strike soft iron rather than chipping the hardened face.
+  4. **Hardy Hole (Square Socket, 20–25 mm)**: Holds bottom tooling (swages, fullers, hot cut-off hardy chisels, benders).
+  5. **Pritchel Hole (Round Hole, 12–16 mm)**: Sits under hot punched holes so slugs can drop clear through without hitting the anvil face.
+
+  ### Mounting & The Rebound Test:
+  - Mount anvil on a massive dry hardwood tree stump (oak, eucalyptus) buried 50 cm into the ground.
+  - **Height Rule**: Top face should sit at the exact height of the blacksmith's knuckles when standing relaxed with arms hanging down.
+  - **Rebound Quality Test**: Drop a 25 mm chrome steel ball bearing from 25 cm height onto the face. High-grade forged steel rebounds **80% to 90%** of the height, demonstrating that hammer impact energy bounces back into the work rather than being absorbed by the anvil.
+
+  ## Incandescent Thermal Color Chart
+
+  Steel changes color predictably as it absorbs heat. The smith must read temperatures
+  by eye in a shaded workshop (never in direct sunlight):
+
+  | Incandescent Color | Approx. Temperature | Mechanical Condition of Steel | Permissible Operations |
+  |---|---|---|---|
+  | **Black / Faint Red** | **550°C – 650°C** | Brittle; high internal stress | **DO NOT HAMMER** (cracks high-carbon steel) |
+  | **Dark Blood Red** | **700°C – 800°C** | Critical transformation range (A1) | Light finish planishing; normalizing |
+  | **Bright Cherry Red** | **850°C – 950°C** | Plastic, ductile | General forging; bending; punching |
+  | **Bright Orange** | **950°C – 1,050°C** | Very soft and malleable | Heavy drawing out, upsetting, fullering |
+  | **Lemon Yellow** | **1,100°C – 1,200°C** | Peak forging heat | Rapid heavy sledgehammer stock reduction |
+  | **Incandescent White** | **1,250°C – 1,350°C** | Steel surface begins sweating droplets | **Forge-welding heat** (do not exceed; steel burns) |
+  | **Sparkling Fireworks** | **> 1,380°C** | Carbon burns violently; iron melts | **Ruined steel** (burnt, structurally destroyed) |
+
+  ## The Fundamental Forging Operations
+
+  Every complex forged tool—from a battleaxe to a surgical clamp—is a sequence of
+  five basic metal movements:
+
+  ### 1. Drawing Out (Lengthening):
+  - Reducer operation: Decreases cross-sectional thickness to increase length.
+  - Strike the bar over the horn or with the **cross-peen** of the hammer (the narrow wedge concentrates force perpendicular to the bar, displacing metal along its length).
+  - Alternate: Forge square first, then octagonal, and finally round (the **Square-Octagon-Round** rule). Forging round stock directly creates internal center-burst tears!
+
+  ### 2. Upsetting (Thickening):
+  - Increases cross-sectional area by driving metal back into itself.
+  - Heat strictly the local section to be thickened (quench adjacent bar stock in water to keep it stiff).
+  - Place bar vertically on anvil face; strike the cold top end with heavy, dead-blow hammer strokes. The hot soft zone mushrooms outward.
+
+  ### 3. Hot Punching & Drifting:
+  - Making eye holes for hammer handles or axe heads without removing metal.
+  - Drive a tapered square/oval punch through the hot steel at bright orange heat until almost through.
+  - Flip the bar over; position over the round **pritchel hole**.
+  - Drive the punch from the opposite side; a small rectangular steel slug pops out.
+  - Insert a long tapered steel **drift** to expand and form the finished symmetrical eye socket.
+
+  ## The Art of Forge-Welding (Fire Welding)
+
+  Forge-welding joins two pieces of solid steel by hammering them together at
+  incandescent white heat (**1,250°C – 1,300°C**), fusing crystalline grain structures:
+
+  ### The Problem of Iron Oxide Scale:
+  At high temperatures, oxygen rapidly oxidizes hot iron, forming thick black magnetic
+  iron oxide scale ($\text{Fe}_3\text{O}_4$) that melts at 1,370°C. If trapped between two
+  bars, scale acts as a barrier, preventing metallic bonding.
+
+  ### The Silica / Borax Fluxing Mechanism:
+  1. Heat the scarfed (beveled) joint surfaces to bright cherry red (**850°C**).
+  2. Sprinkle **pure anhydrous borax** or fine **clean quartz river sand** onto the mating surfaces.
+  3. The flux melts and dissolves the iron oxide scale into a thin, glassy liquid silicate slag with a low melting point (**1,100°C**).
+  4. Return the joint to the fire; bring to **sweating incandescent white heat (1,280°C)**.
+  5. Pull quickly from the fire, overlap the joints on the anvil, and deliver rapid, overlapping hammer blows starting from the **center outward**.
+  6. The initial impact squirts the liquid glassy flux out the sides, allowing atomic metal-to-metal contact. The two steel bars instantly weld into a single continuous crystal matrix!
+
+exercises:
+  - id: met-d2-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A blacksmith wants to forge-weld two bars of high-carbon spring steel.
+      What thermal incandescent color must the steel reach in the forge hearth,
+      and what visual surface indicator confirms the welding heat is reached?
+    xp_reward: 50
+    options:
+      - text: "Incandescent sweating white heat (1,250°C - 1,300°C), where the surface of the steel appears wet and greasy like melting butter, with occasional tiny white sparks"
+        correct: true
+        explanation: "Forge-welding requires high atomic mobility right below the burning point. The steel must look 'wet' with molten liquid flux slag covering clean, incandescent white metal. Hammering at orange heat will result in immediate joint separation."
+      - text: "Dark cherry red (800°C), before any scale can form"
+        correct: false
+        explanation: "800°C is far too cold; iron atoms cannot inter-diffuse or weld under hammer pressure at cherry red."
+      - text: "Brilliant sparking fireworks (1,400°C+)"
+        correct: false
+        explanation: "Violent sparks indicate the carbon in the steel is burning away uncontrollably, destroying the metal."
+      - text: "Black heat (500°C)"
+        correct: false
+        explanation: "Black heat is brittle; hammering high-carbon steel here causes catastrophic cracking."
+
+  - id: met-d2-q2
+    type: FILL_BLANK
+    prompt: >
+      When drawing out a round steel bar to reduce its diameter, the blacksmith
+      must follow the classic progression of forging the stock into a ___ cross-section
+      first, then an ___, and finally rolling it back into a round, to prevent internal
+      center-burst cracking.
+    xp_reward: 50
+    correct_answer: "square; octagon"
+    explanation: >
+      The 'Square-Octagon-Round' rule compresses the center of the bar uniformly.
+      Hammering round stock directly rolls and tears the interior grain along shear planes.
+
+  - id: met-d2-q3
+    type: MATCH_PAIRS
+    prompt: Match each anvil zone to its specific forging operation.
+    xp_reward: 50
+    pairs:
+      - left: Hardened Steel Face
+        right: Heavy drawing out, leveling, planishing, and high-rebound hammer work
+      - left: Biconical Round Horn
+        right: Bending smooth continuous curves, forging rings, and forming scrolls
+      - left: Soft Cutting Step
+        right: Chipping hot stock through with a cold chisel without dulling the tool
+      - left: Square Hardy Hole
+        right: Sockets bottom tooling such as hot-cut chisels, swage blocks, and benders
+    correct_answer: null
+    explanation: >
+      Face provides high-energy bounce; horn bends curves; step protects chisels;
+      hardy hole locks bottom dies.
+
+  - id: met-d2-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why is anhydrous borax or fine silica quartz sand sprinkled onto steel during
+      the preparation for a forge-weld?
+    xp_reward: 50
+    options:
+      - text: "It acts as a flux that chemically dissolves hard iron oxide scale into a low-melting-point liquid slag, which squirts out when hammered to permit pure metal-to-metal bonding"
+        correct: true
+        explanation: "Iron oxidizes rapidly in air, creating a barrier scale that melts only at 1,370°C. Borax/silica dissolves this scale into liquid slag at 1,100°C, cleaning the metal surfaces so hammer impacts weld pure steel grains together."
+      - text: "It adds carbon to the weld joint to make it harder"
+        correct: false
+        explanation: "Borax (Na2B4O7) contains boron and sodium, not carbon."
+      - text: "It lowers the weight of the finished tool"
+        correct: false
+        explanation: "Flux has no effect on tool weight; it is squeezed out during hammering."
+      - text: "It glues the two cold steel bars together before heating"
+        correct: false
+        explanation: "Flux is applied hot and has no adhesive bonding strength when cold."
+
+  - id: met-d2-q5
+    type: FILL_BLANK
+    prompt: >
+      When punching an eye hole through an axe head or hammer, the final plug of waste
+      metal is popped out over the round ___ hole of the anvil to allow the slug to
+      fall through cleanly.
+    xp_reward: 50
+    correct_answer: "pritchel"
+    explanation: >
+      The pritchel hole (12-16 mm round hole in the heel of the anvil) allows
+      punches and slugs to clear the bottom of the work without striking the anvil face.
