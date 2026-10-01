@@ -1,0 +1,36 @@
+id: forestry-timber-technology
+title: Silviculture, Timber Engineering & Wood Technology
+titleSw: Misitu, Uhandisi wa Mbao na Teknolojia ya Mbao
+description: >
+  Master the essential forestry, logging, timber conversion, and structural wood
+  engineering skills required to manage community forest reserves sustainably and
+  transform raw logs into durable structural beams — from chain saw safety and felling
+  mechanics (face cuts, back cuts, hinge wood) and two-man pit sawing to solar kiln
+  timber seasoning (equilibrium moisture content), natural borate wood preservation,
+  and traditional timber joinery (mortise-and-tenon, scarf joints) for heavy framing.
+level: intermediate
+category: engineering
+estimatedHours: 10
+xpTotal: 1250
+license: CC-BY-SA-4.0
+nodes:
+  - day: 1
+    lessonId: forestry-timber-technology-day-1
+    title: "Directional Felling, Chainsaw Physics & Sawlog Grading"
+    xp: 250
+  - day: 2
+    lessonId: forestry-timber-technology-day-2
+    title: "Timber Conversion — Pit Sawing & Chainsaw Mills"
+    xp: 250
+  - day: 3
+    lessonId: forestry-timber-technology-day-3
+    title: "Wood Anatomy, Moisture Physics & Solar Kiln Seasoning"
+    xp: 250
+  - day: 4
+    lessonId: forestry-timber-technology-day-4
+    title: "Timber Preservation — Borates, Pyroligneous Tar & Termite Defense"
+    xp: 250
+  - day: 5
+    lessonId: forestry-timber-technology-day-5
+    title: "Heavy Timber Joinery & Structural Truss Framing"
+    xp: 250

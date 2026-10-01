@@ -622,6 +622,41 @@ A systematic physical examination begins before touching the animal: observing g
 Measuring rectal temperature, listening for 2 to 3 rumen contractions per 2 minutes in the left paralumbar fossa, and palpating prescapular lymph nodes separates simple indigestion from fatal hemoparasitic infections.
 Rapid decompression of frothy bloat with non-polar vegetable oils breaks foam surface tension, saving animals from asphyxiation.
 """
+    },
+    {
+        "id": "book-forestry-timber",
+        "title": "Silviculture, Sustainable Logging & Timber Engineering Manual",
+        "titleSw": "Mwongozo wa Misitu, Upasuaji Magogo na Uhandisi wa Mbao Nzito",
+        "author": "Forester David Mwangi & African Wood Technology Institute",
+        "description": "Comprehensive engineering field guide to managing community forests, harvesting timber safely, and erecting heavy timber structures: chainsaw kickback zone physics, chain filing geometry (30° crosscut vs 10° ripping chain), directional felling cuts (open-face notch, 10% holding wood hinge, bore-cut trigger release for forward-leaning trees, 45° retreat paths), Smalian's log volume scaling, primary lumber conversion (traditional two-man pit sawing with 3mm kerf vs Alaskan chainsaw mills), plain vs quarter sawing grain dynamics, wood moisture physics (free water vs bound water at Fiber Saturation Point 28%), solar lumber kiln construction with convective heat baffles, chemical and biological wood preservation (diffusion borates for interior framing, pyroligneous wood tar for fence posts, Boucherie gravity sap displacement for green poles, 45° galvanized metal termite shields), and heavy post-and-beam timber joinery (mortise-and-tenon 1/3 rule, draw-boring with offset hardwood pegs, keyed scarf splices, and King Post roof trusses).",
+        "descriptionSw": "Mwongozo kamili wa kuangusha miti kwa usalama, upasuaji wa magogo kwa msumeno wa shimo na chainsaw mill, kukausha mbao kwa jua, kuzuia mchwa na wadudu waharibifu, na kuunda viungio vya mbao nzito vya mortise-and-tenon bila misumari.",
+        "category": "engineering",
+        "tradeId": "carpentry-joinery",
+        "tradeTitle": "Carpentry, Joinery & Timber Technology",
+        "coverColor": "from-amber-800 to-stone-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 7.4,
+        "totalPages": 148,
+        "estimatedMinutes": 295,
+        "featured": True,
+        "rating": 5.0,
+        "readersCount": 5890,
+        "cdaccUnitId": "CU/CON/CJ/CR/14/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "Directional Felling & Chainsaw Physics", "pageNumber": 1},
+            {"id": "ch2", "title": "Lumber Conversion — Pit & Chainsaw Mills", "pageNumber": 32},
+            {"id": "ch3", "title": "Moisture Physics & Solar Kiln Seasoning", "pageNumber": 62},
+            {"id": "ch4", "title": "Timber Preservation & Termite Defense", "pageNumber": 92},
+            {"id": "ch5", "title": "Heavy Timber Joinery & King Post Trusses", "pageNumber": 122},
+        ],
+        "contentMarkdown": """# Silviculture, Sustainable Logging & Timber Engineering
+
+## Chapter 1: The Physics of Directional Felling
+A falling 20-ton tree possesses immense destructive kinetic energy.
+Directional felling is the science of internal wooden hinge engineering: carving an open-face notch that guides the fall, maintaining a holding wood hinge equal to exactly 10% of tree diameter, and using the bore cut to eliminate lethal barber-chair trunk explosions on forward-leaning trees.
+Retreating along a cleared 45-degree path keeps the logger safe from collapsing tree canopies and backward stump kicks.
+"""
     }
 ]
 

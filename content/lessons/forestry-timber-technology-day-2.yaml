@@ -1,0 +1,231 @@
+id: forestry-timber-technology-day-2
+course_id: forestry-timber-technology
+title: "Timber Conversion — Pit Sawing & Chainsaw Mills"
+title_sw: "Upasuaji Magogo — Misumeno ya Mashimo (Pit Sawing) na Mashine za Msumeno"
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - forestry
+  - pit-sawing
+  - chainsaw-mill
+  - lumber-conversion
+  - kerf-loss
+  - timber
+xp: 250
+exam_domain: forestry-timber-technology
+
+briefing: >
+  A round tree trunk lying in the mud cannot frame a clinic or build a bridge;
+  it must be converted into dimensioned structural lumber (posts, rafters, purlins,
+  planks). In remote forests without heavy industrial band sawmills, lumber conversion
+  relies on two decentralized technologies: the classical two-man Pit Saw (zero-fuel
+  manual conversion using human muscle) and the portable Chainsaw Alaskan Mill (gasoline-powered
+  precision slabbing). This lesson covers log debarking, chalk line layout geometry,
+  saw tooth set and kerf thickness calculations, pit sawyer roles (Topman vs Pitman),
+  ripping chain geometry (10° top plate angle), and sawing patterns (through-and-through
+  vs quarter sawing).
+
+outline: >
+  Log preparation: debarking to eliminate grit/stones, end-coating with wax to prevent
+  drying checks; snapping parallel layout chalk lines; the mechanics of the Two-Man
+  Pit Saw (long tapered blade, 2.0 to 2.5 m, rip-filed teeth cutting on the downstroke);
+  crew roles: the Topman (steers line from above) and the Pitman (powers downstroke in
+  the pit); portable Chainsaw Alaskan Mills: aluminum guide rails, clamp carriages;
+  the physics of the Ripping Chain (10° cutter angle vs standard 30° crosscut, scoring
+  wood along end grain); kerf width analysis (3 mm pit saw vs 9 mm chainsaw mill) and
+  percentage recovery yields; sawing patterns: Plain/Through-and-Through vs Quarter Sawing.
+
+content_md: |
+  ## The Challenge of Primary Timber Conversion
+
+  Primary conversion is the process of breaking down a cylindrical log into square-edged,
+  flat lumber.
+  In off-grid regions, heavy industrial diesel sawmills cannot access roadless mountain
+  forests. The timber must be milled right at the stump where the tree fell:
+  - **The Pit Saw (Manual)**: Driven entirely by human power; uses a thin-kerf blade (3 mm); produces zero fuel emissions; whisper-quiet; highly labor intensive.
+  - **The Alaskan Chainsaw Mill (Mechanized)**: Driven by a heavy 70cc–90cc two-stroke engine mounted on a rigid aluminum frame; highly portable; wide kerf (9 mm); fast production.
+
+  ## Log Preparation & The Snapping Line
+
+  Sawing straight lumber from a crooked log begins with layout:
+  1. **Debarking (Spudding)**:
+     - Strip the outer bark completely using an iron **bark spud** or sharpened spade.
+     - *Why*: Tree bark traps wind-blown volcanic silica and sand grains that dull hand-saw teeth in 5 minutes and ruin chainsaw chains!
+  2. **End-Sealing**:
+     - Paint the exposed end-grain of the log immediately with melted candle wax, bituminous roofing tar, or thick slaked lime slurry.
+     - *Why*: Water evaporates through end-grain **10 to 15 times faster** than through radial bark, causing severe radial splitting (*end-checks*) that ruins the first 50 cm of the log.
+  3. **Snapping the Cut Lines**:
+     - Dip a long cotton string into a slurry of water and black wood soot (or red ochre / chalk).
+     - Stretch the string taut between measured tick marks on both log ends.
+     - Pluck the string vertically: it snaps against the white wood, leaving a razor-sharp, dead-straight black reference guideline across the entire 4-metre log length.
+
+  ## The Classical Two-Man Pit Saw
+
+  Used across East African highland forests for over a century:
+
+  ```
+                       [ TOPMAN (Guides the Line & Lifts) ]
+                                      ▲
+                                      │
+            ══════════════════════════╪════════════════════════════
+             LOG RESTING ON HEAVY TRESTLES OVER PIT
+            ══════════════════════════╪════════════════════════════
+                                      │
+                                      ▼
+                       [ PITMAN (Powers the Heavy Downstroke) ]
+  ```
+
+  ### Anatomy of the Pit Saw:
+  - A heavy steel blade **2.0 to 2.5 metres long**, wider at the top handle (tiller) and tapering toward the bottom handle (box).
+  - **Teeth Geometry**: Large rip teeth (20 mm to 25 mm pitch) filed with a **0° to 5° rake angle**. The teeth are shaped like miniature wood-chisels designed to cut wood strictly on the **downward stroke**.
+  - **The Saw Tooth Set**: Alternate teeth are bent left and right by **0.5 mm**. This creates a cut kerf wider than the blade thickness, preventing the saw body from pinching inside the log.
+
+  ### Crew Roles & Dynamics:
+  - **The Topman (Leader)**:
+    - Stands on top of the log high in the air.
+    - Sights straight down the blade against the black chalk line, steering the tiller handle with millimeter precision.
+    - Pulls the saw upward on the return stroke (relieving cutting pressure).
+  - **The Pitman (Engine)**:
+    - Stands beneath the log inside an excavated 2.0-metre-deep pit (or below an elevated wooden scaffold).
+    - Grasps the lower box handle and pulls **violently downward with full body weight**, driving the chisel teeth through the timber.
+    - Wears a wide-brimmed hat or goggles to shield eyes from the continuous blinding rain of falling sawdust.
+
+  ## The Chainsaw Alaskan Mill
+
+  An Alaskan mill clamps a precision aluminum ladder frame directly onto the chainsaw guide bar:
+  - A beginner attempts to mill lumber using a standard crosscut chain and burns up the powerhead.
+  - Milling requires an **Alaskan Ripping Chain**:
+
+  ```
+     STANDARD CROSSCUT TEETH (30° Angle)         RIPPING CHAIN TEETH (10° Angle)
+                 \                                          |
+                  \  30°                                    |  10°
+                   \                                        |
+      (Severs wood fibers across grain)           (Shaves wood fibers along end-grain)
+  ```
+
+  ### Why Ripping Chains Differ:
+  - Wood fibers in a log run parallel like straws in a box.
+  - Slicing along the grain with a 30° crosscut chain tears out long, stringy fibers (*angel hair*) that clog the sprocket cover, stalling the engine.
+  - **Ripping Teeth are filed at a flat 10° angle**: The cutter acts like a miniature hand-plane, peeling off microscopic wafer-thin wood shavings cleanly without bogging the saw.
+
+  ## Kerf Loss & Recovery Yields
+
+  The **kerf** is the width of wood pulverized into sawdust by the saw blade:
+  - **Pit Saw Kerf**: **3.0 mm** (0.12 inches).
+  - **Bandsaw Kerf**: **2.0 mm to 2.5 mm**.
+  - **Chainsaw Mill Kerf**: **9.0 mm to 10.0 mm** (3/8" chain with side clearance).
+
+  ### The Kerf Penalty in Lumber Recovery:
+  Suppose you are sawing a log into **25 mm (1-inch) thick planks**:
+  - With a **Chainsaw Mill (10 mm kerf)**:
+    $$\text{Total Wood per Plank} = 25\text{ mm (wood)} + 10\text{ mm (sawdust)} = 35\text{ mm}$$
+    $$\text{Lumber Recovery Efficiency} = \frac{25}{35} = \mathbf{71.4\%} \quad (\text{28.6\% turned into sawdust!})$$
+  - With a **Pit Saw (3 mm kerf)**:
+    $$\text{Total Wood per Plank} = 25\text{ mm (wood)} + 3\text{ mm (sawdust)} = 28\text{ mm}$$
+    $$\text{Lumber Recovery Efficiency} = \frac{25}{28} = \mathbf{89.3\%} \quad (\text{Only 10.7\% lost as sawdust})$$
+  - *Engineering Trade-Off*: The chainsaw mill is 10 times faster, but the manual pit saw yields **25% more usable building boards** from the exact same tree!
+
+  ## Sawing Patterns: Plain vs Quarter Sawing
+
+  The orientation of cuts relative to the tree's annual growth rings determines whether
+  boards will cup, warp, or stay flat:
+
+  ### 1. Plain Sawing (Through-and-Through / Flat Sawn):
+  - Cut straight through the log in parallel horizontal slices.
+  - Growth rings run parallel to the wide face of the board ($< 45^\circ$).
+  - **Pros**: Fastest method; near-zero wasted wood.
+  - **Cons**: High tendency to **cup and warp** as it dries (tangential shrinkage is twice radial shrinkage).
+
+  ### 2. Quarter Sawing (Radial Sawn):
+  - Log is split into 4 quarters; boards are cut radiating inward toward the center pith.
+  - Growth rings run perpendicular to the face (**60° to 90°**).
+  - **Pros**: Outstanding dimensional stability; will not cup or twist; expands and shrinks 50% less; beautiful ray-fleck grain (ideal for furniture, doors, flooring).
+  - **Cons**: More complex repositioning; lower board-foot recovery.
+
+exercises:
+  - id: for-d2-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A sawyer is setting up a 70cc chainsaw with an Alaskan mill to rip a hardwood log
+      into dimensional framing planks. Why must a specialized 'Ripping Chain' with
+      a 10° cutter top-plate angle be installed instead of a standard 30° crosscut chain?
+    xp_reward: 50
+    options:
+      - text: "The 10° cutter angle acts like a miniature plane, shaving end-grain fibers cleanly into fine chips, whereas 30° crosscut teeth tear out long stringy 'angel-hair' fibers that instantly choke the saw sprocket and stall the engine"
+        correct: true
+        explanation: "Cutting parallel to wood grain requires a planing chisel action (10° angle). Standard 30° crosscut teeth tear long strings that wrap around the clutch drum and pack the bar gullet, causing severe engine bogging and rough, grooved boards."
+      - text: "Because 30° chains are illegal to use on fallen logs"
+        correct: false
+        explanation: "There is no legal restriction; it is a purely mechanical wood-cutting physics problem."
+      - text: "To make the chainsaw run twice as fast"
+        correct: false
+        explanation: "Engine RPM is limited by the governor; ripping chains actually experience higher resistance."
+      - text: "Because 10° chains never need sharpening"
+        correct: false
+        explanation: "Ripping chains must be filed frequently due to high end-grain wear."
+
+  - id: for-d2-q2
+    type: FILL_BLANK
+    prompt: >
+      In traditional two-man pit sawing, the saw blade is designed to cut wood strictly
+      on the ___ stroke, driven by the body weight of the ___ standing beneath the log
+      inside the pit.
+    xp_reward: 50
+    correct_answer: "downward; Pitman"
+    explanation: >
+      The teeth point downward with negative rake; cutting occurs on the downstroke
+      powered by the Pitman below, while the Topman above steers the line and lifts.
+
+  - id: for-d2-q3
+    type: MATCH_PAIRS
+    prompt: Match each primary log conversion concept to its technical definition.
+    xp_reward: 50
+    pairs:
+      - left: Bark Spudding
+        right: Peeling outer bark to eliminate embedded grit that dulls saw teeth
+      - left: End-Grain Sealing (Wax/Tar)
+        right: Slows longitudinal water evaporation to prevent destructive radial end-checking
+      - left: Saw Kerf
+        right: The width of wood pulverized into sawdust by the thickness of the cutting blade
+      - left: Quarter Sawn Lumber
+        right: Boards with growth rings at 60°-90° providing maximum resistance to cupping
+    correct_answer: null
+    explanation: >
+      Spudding cleans logs; end-sealing stops cracks; kerf is cutting waste; quarter-sawing
+      creates dimensionally stable non-cupping planks.
+
+  - id: for-d2-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A community has harvested 5 valuable timber logs and needs to produce 25 mm thick
+      roofing boards. Why might the community choose manual pit sawing over an Alaskan
+      chainsaw mill for this specific job?
+    xp_reward: 50
+    options:
+      - text: "The pit saw's narrow 3 mm kerf recovers nearly 90% of the log volume as usable boards, whereas the chainsaw mill's 10 mm kerf turns nearly 30% of the log into wasted sawdust"
+        correct: true
+        explanation: "Kerf thickness is critical when cutting thin 25 mm boards. A chainsaw blade grinds 10 mm into dust for every 25 mm board cut (destroying nearly a third of the tree). The thin 3 mm pit saw blade produces 20-25% more finished boards from scarce timber."
+      - text: "Because pit sawing requires zero human physical effort"
+        correct: false
+        explanation: "Pit sawing is exhausting, grueling manual labor."
+      - text: "Because chainsaws cannot cut hardwood trees"
+        correct: false
+        explanation: "Chainsaws cut hardwoods easily, but waste significant wood volume as kerf."
+      - text: "Because pit-sawn lumber does not require drying"
+        correct: false
+        explanation: "All green lumber must be dried before construction regardless of conversion method."
+
+  - id: for-d2-q5
+    type: FILL_BLANK
+    prompt: >
+      Alternate teeth on a pit saw blade are bent slightly to the left and right in
+      a mechanical adjustment called the ___, which creates a kerf wider than the blade
+      body to prevent the saw from ___ inside the cut.
+    xp_reward: 50
+    correct_answer: "set; binding"
+    explanation: >
+      Tooth set (0.5 mm offset on each side) creates clearance. Without set, wood
+      friction clamps onto the saw blade body, locking it motionless.

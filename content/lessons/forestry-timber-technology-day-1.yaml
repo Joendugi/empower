@@ -1,0 +1,237 @@
+id: forestry-timber-technology-day-1
+course_id: forestry-timber-technology
+title: "Directional Felling, Chainsaw Physics & Sawlog Grading"
+title_sw: "Kuangusha Miti kwa Usahihi, Fizikia ya Msumeno wa Moto na Upimaji Magogo"
+week_number: 1
+day_number: 1
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - forestry
+  - tree-felling
+  - chainsaw
+  - sawlog-grading
+  - hinge-wood
+  - safety
+xp: 250
+exam_domain: forestry-timber-technology
+
+briefing: >
+  Felling a 20-ton hardwood tree is one of the most hazardous operations in field
+  engineering; an uncontrolled fall will crush workers, smash equipment, shatter
+  valuable sawlogs, or trigger deadly 'barber-chair' trunk splits. True forestry
+  is not about hacking at a stump; it is the precision science of internal hinge
+  engineering—using an open-face directional notch, a calculated holding wood hinge
+  (10% of trunk diameter), wedges, and an established 45-degree retreat path. This
+  lesson covers chainsaw kickback zone physics, chainsaw chain sharpening geometry,
+  directional felling mechanics, and sawlog scaling/grading formulas.
+
+outline: >
+  Personal protective equipment (PPE: ballistic kevlar chaps, steel-toe boots, mesh
+  visor helmet, hearing protection); chainsaw anatomy and safety features (inertia chain
+  brake, chain catcher, throttle interlock); kickback physics: the upper quadrant of
+  the guide bar tip (rotational energy vector); chain filing geometry (30° cutter top-plate
+  angle, 0.025-inch depth gauge / raker height); assessing tree hazards (dead snags,
+  rot, lean, crown weight distribution, wind speed); directional felling cuts: the
+  Open-Face notch (70° opening, depth 20-25% diameter), the Bore Cut (plunge cut) to
+  prevent barber-chairing on heavy leaning trees, and the Back Cut; holding wood hinge
+  thickness rule (10% of DBH); felling wedges; establishing the 45° escape retreat route;
+  sawlog grading and volume calculation (Huber's and Smalian's cubic volume formulas).
+
+content_md: |
+  ## The Danger of Tree Felling & Chainsaw Physics
+
+  A mature 70 cm diameter tree weighs between **15,000 kg and 25,000 kg**.
+  When it falls, potential energy converts into devastating kinetic momentum.
+  Logging fatalities stem primarily from four phenomena:
+  1. **Barber-Chairing**: A leaning tree splits vertically up the trunk before the back-cut is complete, catapulting the rear slab upward like a giant spring into the sawyer's chest.
+  2. **Widow-Makers**: Dead branches (*snags*) in the canopy dislodged by vibrations that plunge vertically onto the logger's head.
+  3. **Kickback**: The tip of the guide bar contacts wood, throwing the running saw upward into the operator's neck at 25 metres per second.
+  4. **Springpoles**: Saplings pinned under fallen logs that whip back with bone-shattering force when cut.
+
+  ## Chainsaw Safety Architecture & Kickback Physics
+
+  ```
+                       [ UPPER QUADRANT = KICKBACK ZONE ]
+                                  ╭──────────╮
+                                ╭─╯   ▲ ▲    ╰─╮  ◄── NEVER TOUCH WOOD HERE!
+                                │    ◄─┴─┴─►   │
+     ═══════════════════════════╧══════════════╪════════════════════
+      GUIDE BAR (Cutting with Bottom Edge = Pulls Forward)
+     ═══════════════════════════════════════════════════════════════
+  ```
+
+  ### 1. The Kickback Zone:
+  - The **upper 90° quadrant of the guide bar tip**.
+  - When rotating cutters strike wood in this zone, the chain stops instantaneously.
+  - Newton's third law drives the entire bar and spinning engine backward and upward in a violent rotational arc directly toward the operator's face in less than **100 milliseconds**.
+  - **Defense**: The **Inertia Chain Brake** (stops chain rotation within 0.05 seconds if a kickback wrist impact occurs) and maintaining a **firm wrap-around thumb grip** on the front handlebar at all times.
+
+  ### 2. Cutter Tooth Sharpening Geometry:
+  A dull chain produces powdery sawdust, overheats the bar, and tempts the sawyer to force the tool. A sharp chain pulls itself into the wood, throwing long, curled shavings:
+  - **Top-Plate Filing Angle**: File at **30°** using a round file matched to pitch (e.g., 5.5 mm file for 3/8" chain; 4.8 mm for .325" chain).
+  - **Depth Gauge (Raker) Height**: The unsharpened fin in front of the cutting tooth controls bite depth. Maintain at **0.025 inches (0.65 mm)** below the cutting tooth using a flat file and depth gauge tool. (Too low = severe violent grabbing; too high = teeth skate without cutting).
+
+  ## The Mechanics of Directional Felling
+
+  Directional felling uses three cuts to create an **internal wooden hinge** that guides
+  the tree to the ground like a swinging barn door:
+
+  ```
+               [ TREE TRUNK (Side View) ]
+                         │   │
+                         │   │
+        Back Cut (3)     │   │
+        ───────────────► │ █ │ ◄── Top Notch Cut (1)  (45° to 70° Angle)
+     (Slightly higher)   │ H │  \
+                         │ I │   \
+                         │ N │    \
+                         │ G │     \
+                         │ E │ ◄──── Bottom Flat Cut (2)
+                         │   │
+                        ══╧═══╧══ Ground Level
+  ```
+
+  ### 1. The Open-Face Notch (Directional Face Cut):
+  The notch faces the **exact target landing zone**:
+  - **Top Cut**: Angle downward at **50° to 70°**.
+  - **Bottom Cut**: Cut horizontally flat (or angled upward at 20° for a 90° Humboldt notch).
+  - **Depth**: Cut **20% to 25% of trunk diameter** (never exceed 30%, which weakens support).
+  - The two cuts must meet at a clean, sharp horizontal line (**the apex**). Never bypass cuts (over-cutting weakens the hinge).
+
+  ### 2. The Holding Wood Hinge:
+  - The hinge is the uncut strip of wood between the notch apex and the back cut.
+  - **Thickness Rule**: Hinge thickness must equal **10% of Tree Diameter at Breast Height (DBH)**.
+    - *Example*: For a 60 cm tree, the hinge must be exactly **6 cm thick**.
+  - **Hinge Width**: Equals 80% to 90% of trunk width.
+  - **The Hinge Controls the Tree**: As the tree tips, the fibers in the hinge bend under tension, holding the trunk on track until the canopy hits the ground.
+
+  ### 3. The Back Cut & Wedging:
+  - Cut horizontally from the rear toward the notch, **2.5 cm to 5.0 cm HIGHER than the notch apex** (the "stump step").
+  - The step prevents the falling trunk from kicking backward off the stump toward the sawyer.
+  - Stop cutting the instant the 10% hinge thickness is reached!
+  - Drive **impact-resistant plastic or aluminum felling wedges** into the back cut kerf behind the bar to lift the tree's center of gravity forward.
+
+  ## Preventing the "Barber-Chair" on Heavy Leaning Trees
+
+  Trees with a heavy forward lean carry massive tension in the rear fibers. Standard
+  rear-entry back cuts will snap the wood prematurely upward into a fatal barber-chair.
+
+  ### The Bore Cut (Plunge Cut) Protocol:
+  1. Complete the open-face directional notch on the front.
+  2. Plunge the tip of the chainsaw directly through the center of the trunk **behind the hinge**, using the lower quadrant of the tip to avoid kickback.
+  3. Bore entirely through the tree, establishing the **10% hinge** from the *inside*.
+  4. Saw backward toward the rear, leaving a **5 cm to 8 cm solid "trigger strap"** of uncut wood on the extreme back of the tree.
+  5. The tree is now completely neutralized: the hinge is pre-cut, but the rear trigger holds all tension safely.
+  6. Insert felling wedges; verify escape paths.
+  7. Sever the rear trigger strap from the outside with a single downward cut. The tree falls smoothly without splitting!
+
+  ## The 45-Degree Escape Retreat Path
+
+  Before touching a saw to wood, clear the ground:
+  - Clear brush and tripping roots in a **45-degree angle path diagonally backward** away from the expected line of fall (never step directly behind the stump).
+  - The moment the tree begins to tip:
+    - Engage the chain brake; step immediately down the 45° retreat path.
+    - Walk backward **minimum 6 to 10 metres**, keeping your eyes fixed upward on the falling canopy to dodge falling overhead branches.
+
+  ## Sawlog Scaling & Volume Calculation
+
+  When logs arrive at the processing landing, lumber yield is calculated using
+  geometric volume formulas:
+
+  ### Smalian's Cubic Volume Formula:
+  $$V = \frac{A_{\text{small}} + A_{\text{large}}}{2} \times L = \frac{\pi \times (D_s^2 + D_l^2)}{8} \times L$$
+
+  Where:
+  - $V$ = Solid log volume in cubic metres ($\text{m}^3$)
+  - $D_s$ = Small-end diameter inside bark (m)
+  - $D_l$ = Large-end diameter inside bark (m)
+  - $L$ = Log length (m)
+
+  *Example*: A 4.0-metre sawlog has a small-end diameter of 40 cm ($0.40\text{ m}$) and a large-end diameter of 50 cm ($0.50\text{ m}$):
+  $$V = \frac{3.1416 \times (0.40^2 + 0.50^2)}{8} \times 4.0 = \frac{3.1416 \times (0.16 + 0.25)}{8} \times 4.0 = \frac{3.1416 \times 0.41}{2} \approx \mathbf{0.644\text{ m}^3}$$
+  At an average green hardwood density of $900\text{ kg/m}^3$, this single log weighs **580 kg**.
+
+exercises:
+  - id: for-d1-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A certified logger is preparing to fell a 50 cm diameter cypress tree using an
+      open-face notch. What is the required thickness of the uncut holding wood hinge,
+      and what is its mechanical function during the fall?
+    xp_reward: 50
+    options:
+      - text: "5 cm thick (10% of trunk diameter); the hinge acts as an internal wooden pivot that guides the tree along the planned path while preventing lateral twisting or premature backward kickoff"
+        correct: true
+        explanation: "The universal forestry rule: Hinge thickness = 10% of DBH (50 cm × 0.10 = 5 cm). The hinge wood holds the falling trunk in tension and compression, preventing the tree from rolling off course into power lines or workers."
+      - text: "15 cm thick (30% of trunk diameter)"
+        correct: false
+        explanation: "A 15 cm hinge is too thick; the tree will hang up or tear wood fibers, refusing to fall."
+      - text: "0.5 cm thick (1% of trunk diameter)"
+        correct: false
+        explanation: "A 0.5 cm hinge snaps instantly, losing all directional control."
+      - text: "Cut completely through with zero hinge"
+        correct: false
+        explanation: "Cutting through completely produces an uncontrolled free-falling tree that can crush the sawyer."
+
+  - id: for-d1-q2
+    type: FILL_BLANK
+    prompt: >
+      On a chainsaw guide bar, the upper 90-degree quadrant of the tip is designated
+      as the ___ zone, where chain contact throws the running saw violently upward
+      toward the operator's face in less than ___ milliseconds.
+    xp_reward: 50
+    correct_answer: "kickback; 100"
+    explanation: >
+      The upper tip quadrant is the kickback zone. Impact here generates violent
+      rotational energy that hurls the saw upward before human reflexes can respond.
+
+  - id: for-d1-q3
+    type: MATCH_PAIRS
+    prompt: Match each directional felling component to its geometric specification.
+    xp_reward: 50
+    pairs:
+      - left: Open-Face Directional Notch
+        right: 50° to 70° wide opening cut facing target landing zone (20-25% tree depth)
+      - left: Stump Step
+        right: Placing the back cut 2.5 to 5.0 cm higher than the notch apex to block kickback
+      - left: Bore Cut (Plunge Cut)
+        right: Plunging bar through trunk to establish hinge before severing rear trigger strap
+      - left: 45° Escape Path
+        right: Cleared retreat route walking diagonally backward away from the falling canopy
+    correct_answer: null
+    explanation: >
+      Notch aims the fall; stump step blocks kick-off; bore cuts prevent barber-chairs;
+      45° paths save lives.
+
+  - id: for-d1-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why is the 'Bore Cut' (plunging the chainsaw bar through the trunk behind the hinge)
+      strictly required when felling trees with a severe forward lean?
+    xp_reward: 50
+    options:
+      - text: "Heavy forward-leaning trees carry extreme tension in their rear wood fibers; a standard rear cut triggers a violent 'barber-chair' vertical trunk explosion, whereas a bore cut leaves a rear strap that holds the tree safely until released"
+        correct: true
+        explanation: "In leaning trees, tension in rear fibers is massive. Starting from the outside back causes the trunk to split vertically upwards (barber-chair), killing the logger. The bore cut builds the hinge safely from the inside, leaving a rear strap of wood that is severed last."
+      - text: "To save two-stroke fuel during felling"
+        correct: false
+        explanation: "Bore cutting consumes more power and fuel; its sole purpose is survival and safety."
+      - text: "Because leaning trees are always hollow in the center"
+        correct: false
+        explanation: "Leaning trees are usually solid wood; the issue is severe mechanical tension."
+      - text: "To make the chain teeth dull evenly on both sides"
+        correct: false
+        explanation: "Bore cuts test chain sharpness, but the technique is for fracture prevention."
+
+  - id: for-d1-q5
+    type: FILL_BLANK
+    prompt: >
+      Using Smalian's cubic volume formula V = [π × (Ds² + Dl²) / 8] × L, a 5.0-metre
+      sawlog with small-end diameter of 0.40 m and large-end diameter of 0.60 m has
+      a solid log volume of approximately ___ cubic metres.
+    xp_reward: 50
+    correct_answer: "1.02"
+    explanation: >
+      V = [3.1416 × (0.40² + 0.60²) / 8] × 5.0 = [3.1416 × (0.16 + 0.36) / 8] × 5.0
+      = [3.1416 × 0.52 / 8] × 5.0 = 0.2042 × 5.0 ≈ 1.021 m³.
