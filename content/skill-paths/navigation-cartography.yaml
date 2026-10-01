@@ -1,0 +1,35 @@
+id: navigation-cartography
+title: Expedition Cartography, Land Navigation & Geodesy
+titleSw: Ramani za Ardhi, Uelekezaji Njia na Jiografia
+description: >
+  Master the essential terrestrial navigation, field surveying, and cartographic
+  skills required to explore, map, and navigate unfamiliar landscapes without
+  commercial GPS satellites or digital cellular networks — from topographic contour
+  interpretation and magnetic declination calculation to prismatic compass resection,
+  plane table alidade mapping, and dead reckoning route traverses.
+level: intermediate
+category: resilience
+estimatedHours: 10
+xpTotal: 1250
+license: CC-BY-SA-4.0
+nodes:
+  - day: 1
+    lessonId: navigation-cartography-day-1
+    title: "Topographic Maps, Contours & Grid Coordinates"
+    xp: 250
+  - day: 2
+    lessonId: navigation-cartography-day-2
+    title: "The Magnetic Compass & Declination Mathematics"
+    xp: 250
+  - day: 3
+    lessonId: navigation-cartography-day-3
+    title: "Field Resection, Triangulation & Position Fixing"
+    xp: 250
+  - day: 4
+    lessonId: navigation-cartography-day-4
+    title: "Plane Table Surveying & Community Base Mapping"
+    xp: 250
+  - day: 5
+    lessonId: navigation-cartography-day-5
+    title: "Dead Reckoning, Pacing Calibration & Night Navigation"
+    xp: 250

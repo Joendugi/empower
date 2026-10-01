@@ -1,0 +1,274 @@
+id: navigation-cartography-day-5
+course_id: navigation-cartography
+title: "Dead Reckoning, Pacing Calibration & Night Navigation"
+title_sw: "Uelekezaji Njia Gizani (Dead Reckoning), Upimaji wa Hatua na Anga ya Usiku"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - navigation
+  - dead-reckoning
+  - pace-counting
+  - night-navigation
+  - celestial
+  - cartography
+xp: 250
+exam_domain: navigation-cartography
+
+briefing: >
+  In zero-visibility conditions—dense mountain fog, pitch-black night missions,
+  or featureless arid flatlands—landmarks disappear from view, rendering triangulation
+  impossible. Under these conditions, survival depends on Dead Reckoning (DR):
+  advancing along strict compass headings while measuring elapsed distance through
+  calibrated human pace counting. This capstone lesson covers pacing calibration
+  across variable terrain, ranger pace-bead (ranger bead) construction, boxing
+  impassable obstacles (90-degree doglegs), night compass bezel manipulation,
+  and emergency celestial orientation using the Southern Cross and Orion.
+
+outline: >
+  The dead reckoning navigational triangle (Position = Known Origin + Vector Heading +
+  Distance Traversed); pacing calibration methodology (measuring 100-metre baseline
+  for flat, uphill, and thick scrub); constructing ranger pace-counting beads
+  (tallying 100m and 1km units); obstacle bypassing techniques (the 90° box method
+  and the optical point-aiming method); night compass techniques (bezel ring click
+  intervals, tritium luminous markers, dead-reckoning buddy teams); southern hemisphere
+  celestial navigation: Southern Cross (Crux) and Pointers (Alpha & Beta Centauri)
+  true south projection; equatorial star tracking (Orion's Belt rising true East
+  and setting true West); PHOTO_CAPTURE assessment rubric of field cartography,
+  triangulation sketch, or pace tracking record.
+
+content_md: |
+  ## The Principle of Dead Reckoning (DR)
+
+  **Dead Reckoning** is the process of estimating your current real-time position by
+  projecting a known starting point forward using only:
+  1. A continuous **compass heading (vector direction)**.
+  2. A continuous measurement of **distance traversed**.
+
+  $$\text{New Position} = \text{Known Origin} + \text{Heading Vector} \times \text{Distance Walked}$$
+
+  - When visual landmarks vanish in thick jungle, heavy dust storms, or total night,
+    dead reckoning is the **only terrestrial navigation method that functions**.
+  - **The Law of Cumulative Error**: Unlike landmark resection, which self-corrects at every fix, dead reckoning errors accumulate continuously over time. Without strict discipline, small pacing and heading errors compound into miles of uncertainty.
+
+  ## Calibrating Your Personal Pace Count
+
+  A **pace** is defined as two natural footsteps (every time your **left foot** strikes the ground).
+  Never use a generic average; every individual must calibrate their own pace on a surveyed 100-metre baseline.
+
+  ### 100-Metre Calibration Protocol:
+  1. Measure out exactly **100.0 metres** on flat, level dirt using a steel tape.
+  2. Walk the 100 m course at your normal, relaxed patrol gait.
+  3. Count each time your left foot hits the ground.
+  4. Repeat 3 times and calculate the average:
+     - *Average Adult Pace Count*: Typically **62 to 68 paces per 100 metres** (approx. $1.5\text{ metres per pace} = 0.75\text{ m per single step}$).
+
+  ### Terrain Adjustment Factors:
+  Physical terrain radically changes stride length:
+  | Terrain Condition | Impact on Stride | Adjusted Pace Count per 100 m |
+  |---|---|---|
+  | **Flat open road / hardpan** | Baseline normal stride | **64 paces** (Baseline) |
+  | **Thick acacia thorn / tall grass** | Shorter high-stepping strides | **72 to 78 paces** (+15% to 20%) |
+  | **Steep uphill climb (> 15% slope)** | Greatly compressed steps | **80 to 90 paces** (+25% to 40%) |
+  | **Steep downhill descent** | Extended braking strides | **58 to 62 paces** (-5% to 10%) |
+  | **Fatigued night patrol with 25 kg pack** | Shorter shuffling strides | **74 to 80 paces** (+15% to 25%) |
+
+  ## Ranger Pace Beads (Pace Count Tally)
+
+  In wet, cold, or high-stress environments, keeping track of 8,000 footsteps in your
+  head is impossible. The military **Ranger Pace Bead** cord automates tallying:
+
+  ```
+          [ Paracord Loop attached to Chest Rig ]
+                            │
+               ┌────────────┴────────────┐
+               │  Upper Section (Kilometres)
+               │  [ 4 Beads: 1km, 2km, 3km, 4km ]
+               │
+               ├─────────────────────────┤  Divider Knot
+               │
+               │  Lower Section (100-Metre Units)
+               │  [ 9 Beads: 100m to 900m ]
+               │
+               └─────────────────────────┘
+  ```
+
+  ### Operation:
+  1. Start with all 13 beads pushed to the top of the cord.
+  2. Walk your calibrated pace count (e.g., 65 paces = 100 metres).
+  3. Pull **one lower bead down**. You have traveled 100 metres.
+  4. After 900 metres (all 9 lower beads down), walk the next 100 m (1,000 m total):
+     - Pull **one upper bead down** (1 Kilometre traveled).
+     - Reset all 9 lower beads back to the top.
+  5. The cord now permanently stores your ground distance traveled up to 5,000 metres without writing or mental distraction.
+
+  ## Bypassing Obstacles: The 90-Degree Box Method
+
+  When marching on a compass bearing through bush, you will inevitably encounter an
+  impassable barrier (a swamp, a cliff face, or a dense thorn thicket):
+
+  ```
+                     [ Impassable Swamp ]
+                      ┌───────────────┐
+                      │               │
+      Turn 90° Right  │               │ Turn 90° Left
+     (Walk 150 paces) │               │ (Walk 150 paces)
+           ▲          │               │       │
+           │          └───────────────┘       ▼
+  [ A ] ───┴──────────────────────────────────┴───► [ Continue on 045° ]
+   Marching 045°     March 045° Around
+                     (Say, 300 paces)
+  ```
+
+  ### Step-by-Step Procedure:
+  1. Stop at edge of obstacle (Point $A$). Record current pace count.
+  2. Turn **90° to the Right** of your heading: Heading $= 045^\circ + 90^\circ = \mathbf{135^\circ}$.
+  3. Walk parallel to the obstacle until clear: count exactly **150 paces**. Stop.
+  4. Turn **90° to the Left** back onto original heading: $\mathbf{045^\circ}$.
+  5. Walk past the obstacle: count **300 paces** (add this 300 paces to your main journey record!).
+  6. Turn **90° to the Left** back toward the original line: $045^\circ - 90^\circ = \mathbf{315^\circ}$.
+  7. Walk the exact same offset distance: count **150 paces**. Stop.
+  8. Turn **90° to the Right** back onto original heading: $\mathbf{045^\circ}$.
+  9. **Result**: You are now back on your exact original line of march, past the obstacle, with your distance tally completely accurate!
+
+  ## Night Navigation: The Two-Person Team
+
+  Walking on a compass bearing at night is difficult because trees pull you off course:
+  - **The Sentry & Scout System**:
+    - **Navigator (Rear)**: Stands stationary with the illuminated compass dial.
+    - **Pacesetter (Front)**: Walks ahead into the darkness carrying a subdued red or infrared marker on their pack.
+    - The Navigator sights the Pacesetter against the compass hairline, whispering: *"Two steps left... hold... you are on line."*
+    - The Navigator walks forward to join the Pacesetter, counting paces. Repeat.
+    - This eliminates human lateral drift entirely!
+
+  ## Southern Hemisphere Celestial Navigation (Emergency Orientation)
+
+  When compasses are damaged or lost, the night sky provides true cardinal directions:
+
+  ### 1. The Southern Cross (Crux) — True South:
+  In Kenya and the Southern Hemisphere, the North Star is below the horizon. Use **Crux**:
+
+  ```
+             Gacrux (Top)
+                 ★
+                 │
+  Delta ★        │        ★ Beta
+                 │
+                 ★ Acrux (Bottom)
+                 │
+                 │ 4.5 × Long Axis of Cross
+                 │
+                 ▼
+       [ Celestial South Pole ]
+                 │
+                 ▼ Drop vertically down to horizon
+         [ TRUE SOUTH ]
+  ```
+
+  1. Locate the **Southern Cross** (a distinct kite-shaped constellation of four bright stars) and the two bright **Pointers (Alpha & Beta Centauri)**.
+  2. Trace a straight imaginary line through the long axis of the cross from the top star (Gacrux) through the bottom star (Acrux).
+  3. Extend that line **4.5 times the length of the cross** into the empty sky.
+  4. (Optional check: Draw a perpendicular bisector line between the two Pointers; where it intersects the cross axis line is the **South Celestial Pole**).
+  5. Drop an imaginary plumb line vertically straight down to the horizon. That point on the horizon is **TRUE SOUTH (180°)**!
+
+  ### 2. Orion the Hunter — True East and True West:
+  - The constellation **Orion** sits squarely over the Earth's equator.
+  - **Orion's Belt** (three bright stars: Alnitak, Alnilam, Mintaka in a straight line):
+    - The leading star (**Mintaka**) sits within 1/4 degree of the celestial equator.
+    - In Kenya, Mintaka rises **due East (090°)** within 1 degree and sets **due West (270°)** within 1 degree regardless of the time of year!
+
+exercises:
+  - id: nav-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      While marching on a dead reckoning heading of 020° across savannah at night,
+      your scout hits a deep, flooded marsh. You execute a 90-degree box dogleg
+      to the right to bypass the obstacle. What heading do you walk to clear the obstacle?
+    xp_reward: 50
+    options:
+      - text: "110° (020° + 90° = 110°)"
+        correct: true
+        explanation: "A 90-degree right turn from heading 020° is: 020° + 90° = 110°. You walk on 110° until clear of the swamp, then turn 90° left back to 020°."
+      - text: "290° (020° - 90°)"
+        correct: false
+        explanation: "290° would be a 90-degree turn to the left, not to the right."
+      - text: "200° (020° + 180°)"
+        correct: false
+        explanation: "200° is a 180-degree turnaround back to where you started."
+      - text: "090°"
+        correct: false
+        explanation: "090° is cardinal East, not a 90° offset from 020°."
+
+  - id: nav-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      A pace is defined as two natural footsteps, counted every time the ___ foot
+      strikes the ground. If your calibrated pace count is 65 paces per 100 metres,
+      marching 520 paces indicates you have traveled exactly ___ metres.
+    xp_reward: 50
+    correct_answer: "left; 800"
+    explanation: >
+      Paces are counted on the strike of one foot (traditionally the left).
+      520 paces / 65 paces per 100m = 8 units of 100m = 800 metres.
+
+  - id: nav-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each night and dead reckoning navigation tool to its operational duty.
+    xp_reward: 50
+    pairs:
+      - left: Ranger Pace Beads
+        right: Mechanical bead cord tallying elapsed 100-metre units and full kilometres
+      - left: Southern Cross (Crux)
+        right: Constellation whose extended 4.5x long axis projects true South onto horizon
+      - left: Orion's Belt (Mintaka)
+        right: Equatorial star cluster rising due East (090°) and setting due West (270°)
+      - left: Pacesetter / Navigator Team
+        right: Two-person night formation where rear observer keeps front scout on heading
+    correct_answer: null
+    explanation: >
+      Ranger beads count distance; Southern cross finds South; Orion gives East/West;
+      two-person buddy teams eliminate night lateral compass drift.
+
+  - id: nav-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      How does walking through dense, thorny scrub or climbing a steep 20% hillslope
+      affect a navigator's personal pace count per 100 metres?
+    xp_reward: 50
+    options:
+      - text: "Pace count increases by 15% to 35% because footsteps are shortened and compressed by obstacles and gravity; failing to compensate will cause you to underestimate distance and stop short of the target"
+        correct: true
+        explanation: "Rough terrain and slopes force shorter steps. If your flat baseline is 65 paces/100m, climbing uphill will require 80-85 paces for the same 100 metres. If you don't adjust, you will believe you have reached 1 km after only 800 real metres."
+      - text: "Pace count decreases because your legs take wider strides over bushes"
+        correct: false
+        explanation: "Thorns and hills force shorter, high-stepping steps, never longer strides."
+      - text: "Pace count remains perfectly identical regardless of terrain"
+        correct: false
+        explanation: "Assuming pace count is static across mud, hills, and road is a primary cause of lost navigators."
+      - text: "Paces double in length when climbing uphill"
+        correct: false
+        explanation: "Steps shorten uphill due to fatigue and gravity, increasing the count per 100 m."
+
+  - id: nav-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Photograph a hand-drawn field map sketch, resection plotting exercise on a
+      topographic sheet, plane table setup, or personal ranger pace-bead calibration
+      from your navigation and cartography field practice. Ensure grid coordinates,
+      compass bearings, or measured baseline paces are clearly documented in your notes.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Photographic documentation of cartographic plotting, alidade sightlines,
+      or pace count calibration records verifies practical field proficiency in
+      terrestrial navigation independent of electronic satellite navigation.
+    rubric:
+      - criterion: "Photograph clearly shows topographic map with plotted bearings, plane table setup, or pace counting record"
+        points: 15
+      - criterion: "Navigation instruments (prismatic compass, protractor, alidade, or scale rule) are visible in the work frame"
+        points: 15
+      - criterion: "Written field notes record measured magnetic vs grid bearings, calculated declination, or calibrated pace count"
+        points: 10
+      - criterion: "Image is well-lit, in sharp focus, showing clean pencil work and legible coordinate notations"
+        points: 10

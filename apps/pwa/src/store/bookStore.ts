@@ -518,6 +518,43 @@ The 2-metre canopy and 0.5-metre shrub rule maintains unobstructed sightlines ac
 Tactical outward-facing illumination exposes intruders in stark silhouette while keeping defenders concealed in darkness.
 `,
   },
+  {
+    id: 'book-navigation-cartography',
+    title: 'Expedition Cartography, Land Navigation & Geodesy Field Manual',
+    titleSw: 'Mwongozo wa Uelekezaji Njia, Upimaji wa Ardhi na Ramani za Topografia',
+    author: 'Dr. Joseph Kamau & Survey of Kenya Mapping Corps',
+    description: 'Comprehensive practical field guide to terrestrial navigation, topographical map reading, and surveying without satellites: 1:50,000 contour interpretation and slope percentage calculations, UTM/MGRS coordinate systems, magnetic declination and annual drift calculations, prismatic compass sighting and back-bearing resection (resolving the Triangle of Error), plane table alidade mapping (radiation, intersection, and closed traverse), dead reckoning route navigation, personal pace counting calibration, ranger beads, 90-degree obstacle bypass box method, and emergency celestial orientation via the Southern Cross (Crux) and Orion's Belt.',
+    descriptionSw: 'Mwongozo kamili wa kusoma ramani za topografia, kutumia dira na kurekebisha mkengeuko wa sumaku, kutambua eneo ulipo kwa pembetatu, upimaji wa jedwali la ndege, na uelekezaji wa njia gizani kwa kuhesabu hatua na nyota.',
+    category: 'resilience',
+    tradeId: 'surveying-geomatics',
+    tradeTitle: 'Surveying & Geospatial Technology',
+    coverColor: 'from-teal-700 to-emerald-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 6.8,
+    totalPages: 140,
+    estimatedMinutes: 280,
+    featured: true,
+    rating: 5.0,
+    readersCount: 5120,
+    cdaccUnitId: 'CU/GEO/SV/CR/11/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Topographic Maps, Contours & UTM Grids', pageNumber: 1 },
+      { id: 'ch2', title: 'Magnetic Compass & Declination Math', pageNumber: 30 },
+      { id: 'ch3', title: 'Field Resection & Triangulation', pageNumber: 60 },
+      { id: 'ch4', title: 'Plane Table Surveying & Base Mapping', pageNumber: 90 },
+      { id: 'ch5', title: 'Dead Reckoning, Pacing & Night Navigation', pageNumber: 116 },
+    ],
+    contentMarkdown: `# Expedition Cartography, Land Navigation & Geodesy
+
+## Chapter 1: Topographic Maps & The Language of Terrain
+When digital satellites and cellular networks fall silent, a paper map is your only true guide.
+Contour lines translate a three-dimensional landscape of mountains, rivers, and cliffs onto a flat two-dimensional sheet.
+Water always flows down the open throat of a contour 'V', while ridgelines push spurs into the lowlands.
+Mastering the 1-kilometre UTM metric grid allows precision coordination across expedition teams down to 10 metres.
+`,
+  },
 ];
 
 interface BookState {

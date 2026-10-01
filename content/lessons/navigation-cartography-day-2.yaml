@@ -1,0 +1,229 @@
+id: navigation-cartography-day-2
+course_id: navigation-cartography
+title: "The Magnetic Compass & Declination Mathematics"
+title_sw: "Dira ya Sumaku na Hisabati ya Mkengeuko wa Kijiografia (Declination)"
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - navigation
+  - compass
+  - magnetic-declination
+  - grid-magnetic-angle
+  - bearings
+  - cartography
+xp: 250
+exam_domain: navigation-cartography
+
+briefing: >
+  A magnetic compass needle does not point to the North Pole of the Earth; it points
+  to the wandering Magnetic North Pole dictated by Earth's molten liquid iron core.
+  Failing to account for Magnetic Declination (the angular difference between True
+  North, Grid North, and Magnetic North) causes a navigator to drift off course by
+  hundreds of metres for every kilometre walked. Over a 10 km trek through featureless
+  bush, a 5-degree uncorrected declination error results in missing a vital waterhole
+  by nearly 1,000 metres. This lesson covers compass anatomy, the three norths,
+  declination arithmetic, annual magnetic drift updates, and taking precision field
+  bearings.
+
+outline: >
+  The three Norths: True North (geographic rotation axis), Grid North (map UTM vertical
+  lines), and Magnetic North (compass needle alignment); the marginal diagram
+  declination diagram on topographic maps; Magnetic Declination and Grid Magnetic
+  Angle (GMA); calculating annual magnetic change (drift rate in minutes of arc);
+  the universal conversion formulas: "Grid to Mag: ADD if West / SUBTRACT if East";
+  lensatic and baseplate prismatic compass anatomy (sighting wire, prism optic,
+  liquid capsule, dial damping); back-bearings formula (θ ± 180°); eliminating local
+  magnetic attraction (rifles, steel vehicles, wristwatches, iron-rich basalt rock).
+
+content_md: |
+  ## The Three Norths
+
+  To navigate accurately between a paper map and the physical earth, you must
+  distinguish three distinct reference lines:
+
+  ```
+          True North (TN)       Grid North (GN)      Magnetic North (MN)
+                ★                      ▲                     ▲
+                │                      │                    /
+                │                      │                   /
+                │                      │                  /  Grid-Magnetic
+                │                      │                 /   Angle (GMA)
+                │                      │                /
+                └──────────────────────┴───────────────/
+  ```
+
+  1. **True North (Geographic North - $\star$)**:
+     - The physical axis of the Earth's daily rotation (90°00'N latitude).
+     - Marked by the North Star (Polaris) in the Northern hemisphere, or true lines of longitude (meridians) running pole-to-pole.
+  2. **Grid North ($\text{GN}$)**:
+     - The vertical lines printed on a flat topographic map projection (UTM grid).
+     - Because the round Earth is flattened onto a 2D sheet, grid lines diverge slightly from true meridians away from the central meridian.
+  3. **Magnetic North ($\text{MN}$)**:
+     - The direction the magnetized needle of your compass points, drawn toward the magnetic dip pole in northern Canada/Arctic.
+     - **Dynamic**: It migrates continuously across the Arctic at approximately 40 to 55 kilometres per year.
+
+  ## Magnetic Declination & The Grid Magnetic Angle (GMA)
+
+  - **Magnetic Declination**: The horizontal angle between **True North** and **Magnetic North**.
+  - **Grid Magnetic Angle (GMA)**: The practical field angle between **Grid North (Map)** and **Magnetic North (Compass)**.
+
+  ### Reading the Map Margin Declination Box:
+  Every topographic map sheet features a declination diagram in the bottom margin.
+  *Example Map Note (Nanyuki Sheet, Series Y731)*:
+  ```
+  Magnetic North is 1° 30' East of Grid North in January 2015.
+  Annual change is approximately 4' West.
+  ```
+
+  ### Updating Declination to the Current Year (e.g., Year 2026):
+  1. Elapsed time: $2026 - 2015 = \mathbf{11\text{ years}}$.
+  2. Total magnetic drift:
+     $$\text{Drift} = 11\text{ years} \times 4'\text{ West/year} = 44'\text{ West} = 0^\circ 44'\text{ West}$$
+  3. Original GMA in 2015: $1^\circ 30'\text{ East}$.
+  4. Current GMA in 2026:
+     $$\text{GMA}_{2026} = 1^\circ 30'\text{ East} - 0^\circ 44'\text{ West} = \mathbf{0^\circ 46'\text{ East}}$$
+
+  ## The Conversion Rules: Map to Compass
+
+  Navigation requires converting angles between the map (Grid Bearing) and the field (Magnetic Bearing):
+
+  ### Universal Formula for EAST Declination (common in parts of East Africa):
+  $$\text{Magnetic Bearing} = \text{Grid Bearing} - \text{GMA (if East)}$$
+  $$\text{Grid Bearing} = \text{Magnetic Bearing} + \text{GMA (if East)}$$
+
+  ### Universal Formula for WEST Declination:
+  $$\text{Magnetic Bearing} = \text{Grid Bearing} + \text{GMA (if West)}$$
+  $$\text{Grid Bearing} = \text{Magnetic Bearing} - \text{GMA (if West)}$$
+
+  ### The Standard Field Mnemonic:
+  - **"Grid to Mag: Subtract East, Add West"** (G-M-S-E: *General Motors Sells Every...*)
+  - **"Mag to Grid: Add East, Subtract West"**
+
+  *Practical Drift Error Demonstration*:
+  An uncorrected error of only **$1^\circ$** causes a lateral position drift of:
+  $$\text{Drift Error} \approx \text{Distance Walked} \times \sin(1^\circ) \approx 1,000\text{ m} \times 0.0175 \approx \mathbf{17.5\text{ metres per kilometre}}$$
+  - A $5^\circ$ error over an 8 km march drifts the team off course by **700 metres**—enough to miss an airstrip or march into a minefield.
+
+  ## Precision Compass Anatomy
+
+  The standard military and expedition instrument is the **Prismatic / Lensatic Sighting Compass**:
+  - **Sighting Wire (Hairline)**: In the front cover; placed directly over the target landmark.
+  - **Magnifying Sighting Prism / Lens**: Allows reading the micro-graduated floating dial at the exact same instant you look through the sighting wire.
+  - **Liquid-Damped Capsule**: High-viscosity silicone oil dampens needle oscillations within 2 seconds.
+  - **Bezel Ring**: Outer rotating ring with audible 3-degree tactile clicks for setting night bearings.
+  - **Tritium / Photoluminescent Vials**: Radiates green illumination for night navigation without white light torches.
+
+  ## Back-Bearings: Verifying Direction & Retracing Steps
+
+  A **back-bearing** is the exact reverse direction of travel (180° opposite).
+
+  ### The 180° Mathematical Rule:
+  $$\text{If Forward Bearing } < 180^\circ \quad \Longrightarrow \quad \text{Back-Bearing} = \theta + 180^\circ$$
+  $$\text{If Forward Bearing } \ge 180^\circ \quad \Longrightarrow \quad \text{Back-Bearing} = \theta - 180^\circ$$
+
+  *Examples*:
+  - You march forward on bearing **$065^\circ$**. Your back-bearing looking behind you is $65 + 180 = \mathbf{245^\circ}$.
+  - You march forward on bearing **$310^\circ$**. Your back-bearing is $310 - 180 = \mathbf{130^\circ}$.
+
+  *Field Sentry Verification*: While walking on a bearing, turn around periodically and sight back to your start point. If your compass does not read the exact back-bearing, lateral drift has occurred!
+
+  ## Eliminating Local Magnetic Attraction (Interference)
+
+  The compass needle aligns with Earth's weak magnetic field (~0.5 Gauss). Any iron or
+  active electrical device nearby will deflect the needle (**Deviation Error**):
+
+  ### Minimum Safe Operating Distances:
+  | Metal / Electrical Object | Minimum Separation Distance |
+  |---|---|
+  | High-voltage 3-phase power lines | **50 metres** |
+  | 4x4 Vehicle, tractor, artillery piece | **15 metres** |
+  | Wire perimeter fence, railway tracks | **10 metres** |
+  | Military assault rifle (AK-47, G3), steel helmet | **1.5 metres** (sling rifle over opposite shoulder) |
+  | Steel wristwatch, radio transceiver, machete / panga | **0.5 metres** (hold compass in bare hands away from watch) |
+  | Volcanic basalt rocks (contain magnetite $\text{Fe}_3\text{O}_4$) | **Varies**: Test rock by bringing it to compass; if needle twitches, stand on soil |
+
+exercises:
+  - id: nav-d2-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A navigator measures a bearing of 120° from a topographic map (Grid Bearing).
+      The map margin states that the Grid Magnetic Angle (GMA) is 3° East.
+      What magnetic bearing should be dialled into the compass to walk this route in the field?
+    xp_reward: 50
+    options:
+      - text: "117° (Grid to Mag with East declination: Subtract East: 120° - 3°)"
+        correct: true
+        explanation: "When Magnetic North is East of Grid North, magnetic bearings are smaller than grid bearings: Magnetic Bearing = Grid Bearing - GMA = 120° - 3° = 117°."
+      - text: "123° (120° + 3°)"
+        correct: false
+        explanation: "Adding is done for West declination, not East declination. Adding here would double the error to 6 degrees."
+      - text: "300° (120° + 180°)"
+        correct: false
+        explanation: "300° is the back-bearing, not the magnetic conversion."
+      - text: "120° (no correction needed)"
+        correct: false
+        explanation: "Failing to correct for 3° declination will cause approx. 52 metres of drift per kilometre walked."
+
+  - id: nav-d2-q2
+    type: FILL_BLANK
+    prompt: >
+      If an expedition is marching on a forward magnetic bearing of 078 degrees,
+      the exact reverse back-bearing to verify they have not drifted off course
+      is ___ degrees.
+    xp_reward: 50
+    correct_answer: "258"
+    explanation: >
+      Because 78° is less than 180°, add 180°: 78° + 180° = 258°.
+      Looking back along the trail to the origin must align with 258°.
+
+  - id: nav-d2-q3
+    type: MATCH_PAIRS
+    prompt: Match each 'North' definition to its cartographic representation.
+    xp_reward: 50
+    pairs:
+      - left: True North
+        right: Earth's geographic axis of rotation (marked by star symbol on maps)
+      - left: Grid North
+        right: Vertical metric grid lines printed on flat UTM map projections
+      - left: Magnetic North
+        right: Direction indicated by a free-floating magnetized compass needle
+      - left: Local Magnetic Attraction
+        right: Compass needle deflection caused by nearby rifles, vehicles, or basalt
+    correct_answer: null
+    explanation: >
+      True north is rotation axis; grid north is map lines; magnetic north follows
+      geomagnetic flux; local attraction is manmade or mineral magnetic interference.
+
+  - id: nav-d2-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A map printed in 2010 notes that the Grid Magnetic Angle was 2° 10' East,
+      with an annual change of 5' West. What is the updated GMA for the year 2026?
+    xp_reward: 50
+    options:
+      - text: "0° 50' East"
+        correct: true
+        explanation: "Elapsed years = 2026 - 2010 = 16 years. Total drift = 16 × 5' West = 80' West = 1° 20' West. Updated GMA = 2° 10' East - 1° 20' West = 0° 50' East."
+      - text: "3° 30' East"
+        correct: false
+        explanation: "This improperly adds the western drift to an eastern angle instead of subtracting."
+      - text: "2° 10' East"
+        correct: false
+        explanation: "This neglects 16 years of continuous magnetic pole migration."
+      - text: "0° 10' West"
+        correct: false
+        explanation: "The angle has reduced toward zero, but has not yet crossed into West declination."
+
+  - id: nav-d2-q5
+    type: FILL_BLANK
+    prompt: >
+      To prevent severe local magnetic attraction (deviation error) when taking a
+      field bearing, a navigator must hold the compass at least ___ metres away
+      from a steel rifle barrel and at least ___ metres away from a 4x4 motor vehicle.
+    xp_reward: 50
+    correct_answer: "1.5; 15"
+    explanation: >
+      Rifles cause magnetic needle deflection within 1.5 metres; massive steel vehicle
+      chassis and engine blocks distort magnetic fields out to 15 metres.
