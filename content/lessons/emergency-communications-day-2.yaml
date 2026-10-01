@@ -1,0 +1,138 @@
+id: emergency-communications-day-2
+course_id: emergency-communications
+title: "Handheld VHF/UHF & Field Protocols"
+title_sw: "Redio za Mkono za VHF/UHF na Kanuni za Uwanjani"
+week_number: 1
+day_number: 2
+estimated_minutes: 50
+license: CC-BY-SA-4.0
+tags: [communications, baofeng, vhf, uhf, radio-protocols, emergency, tvet, kenya]
+xp: 85
+exam_domain: Telecommunications & RF Engineering
+
+briefing: |
+  Dual-band VHF/UHF handheld transceivers (such as the Baofeng UV-5R and UV-82 series)
+  cost under KSh 4,000 in Nairobi and are ubiquitous among community patrols, wildlife
+  rangers, and agricultural cooperatives. However, improper configuration (wrong squelch,
+  misconfigured repeater offsets, or inadvertent CTCSS blocking) renders them useless
+  during crises. This day teaches transceiver architecture, simplex direct vs repeater
+  duplex operation, CTCSS/DCS sub-audible tones, standard international radio etiquette
+  (ICAO phonetic alphabet), distress protocols (MAYDAY vs PAN-PAN), and power management.
+briefing_sw: |
+  Redio za mkono za VHF/UHF (kama Baofeng UV-5R) zinapatikana kwa bei nafuu Nairobi na
+  zinatumika sana na walinzi na wakulima. Lakini bila kuelewa jinsi ya kurekebisha squelch,
+  repeater offsets, na CTCSS tones, mawasiliano ya dharura yatakwama. Siku hii inafundisha
+  uendeshaji sahihi, kanuni za simu za dharura (MAYDAY na PAN-PAN), na kutumia sauti ya ICAO.
+
+outline: |
+  1. Handheld transceiver architecture: Antenna port (SMA), PTT button, volume/power, squelch
+  2. Simplex communication: Direct radio-to-radio on a single shared frequency
+  3. Repeater Duplex operation: Transmit offsets (+/- 600 kHz on 2m VHF; +/- 5.0 MHz on 70cm UHF)
+  4. Squelch mechanisms: Carrier squelch threshold vs CTCSS/DCS sub-audible tone decoders
+  5. The PTT (Push-To-Talk) technique: Press, pause one second, speak across the mic, release
+  6. Emergency message traffic: MAYDAY (life distress) vs PAN-PAN (urgency) vs SECURITE (safety)
+  7. The ICAO international phonetic alphabet and standard prowords (ROGER, OVER, OUT, SAY AGAIN)
+  8. Battery preservation: 1W Low-power discipline, 12V battery eliminators, and field solar charging
+
+content_md: |
+  ## Transceiver Architecture & Key Controls
+
+  Common handhelds (e.g. Baofeng UV-5R, TYT, Quansheng) operate across two primary bands:
+  - **VHF (136 – 174 MHz):** Exceptional range in rural, open terrain and water.
+  - **UHF (400 – 480 MHz):** Shorter wavelength (~70 cm); penetrates concrete buildings and dense forest canopies.
+
+  ### Critical Knobs and Menu Settings:
+  - **Power / Volume Knob:** Rotary switch on top.
+  - **PTT (Push-To-Talk):** Large rubber side switch. Press firmly to transmit; release to receive.
+  - **SQL (Squelch Level, Menu 0):** Sets the background noise threshold.
+    - Set to **Level 2 or 3**: Mutes ambient atmospheric static while remaining sensitive to distant signals.
+    - Setting to Level 8 or 9 requires an overwhelmingly strong signal to open the audio gate, deafening your radio to weak emergency transmissions!
+  - **TXP (Transmit Power, Menu 2):**
+    - **LOW (1 Watt):** Extends battery life by 400%; sufficient for line-of-sight comms up to 3 km.
+    - **HIGH (4–8 Watts):** Use only when communicating through obstacles or over long distances.
+
+  ## Simplex vs Repeater Duplex Operation
+
+  ### 1. Simplex Operation (Direct Radio-to-Radio)
+  Both transceivers transmit and receive on the exact same frequency.
+  - Example: Unit A and Unit B both set to `145.500 MHz`.
+  - Simple, requires zero infrastructure, but range is limited by terrain and curvature of the Earth (typically 3–15 km from ground level).
+
+  ### 2. Duplex Repeater Operation (Overcoming Mountains & Distance)
+  A **repeater** is a high-power transceiver mounted on an elevated tower or mountain ridge (e.g. Ngong Hills, Mount Longonot). It listens on one frequency (**Input**) and instantaneously re-broadcasts on another frequency (**Output**) with 50–100 Watts:
+  - **Standard 2-Meter VHF Offset:** $\pm 600\text{ kHz (0.6 MHz)}$.
+  - **Standard 70-Centimeter UHF Offset:** $\pm 5.0\text{ MHz}$.
+
+  ### CTCSS / DCS Tones (Continuous Tone-Coded Squelch)
+  Repeaters and community nets often require a sub-audible tone (e.g. `100.0 Hz` CTCSS) transmitted alongside your voice to open their receiver:
+  - **Tone does NOT encrypt your transmission.** Anyone on the frequency can still hear you.
+  - If you transmit without the correct tone, the repeater ignores your transmission.
+  - In community simplex nets, setting receive CTCSS blocks interference from neighboring users.
+
+  ## International Radio Etiquette & Discipline
+
+  In emergencies, panicked rambling blocks frequencies. Communications must be crisp and standardized:
+
+  ### The Golden PTT Rule:
+  > **Think before you key.** Press PTT $\rightarrow$ Wait **1 full second** (allows tone and repeater carrier to settle) $\rightarrow$ Speak clearly across the microphone (not directly into it) $\rightarrow$ Release PTT immediately.
+
+  ### Standard Prowords:
+  | Proword | Meaning |
+  |---------|---------|
+  | **ROGER** | "I have received and understood your last transmission." |
+  | **SAY AGAIN** | "Repeat your last transmission." (Never say 'repeat' — 'repeat' means artillery barrage in military doctrine!) |
+  | **AFFIRMATIVE / NEGATIVE** | "Yes" / "No" (clearer over noisy channels) |
+  | **STANDBY** | "Acknowledge call; pause for more info." |
+  | **OVER** | "I have finished speaking; response expected." |
+  | **OUT** | "Conversation ended; channel clear." (Never say 'Over and Out' together!) |
+
+  ### Emergency Distress Calls:
+  - **MAYDAY (Repeated 3 times):** Immediate life-or-death emergency (sinking boat, catastrophic bleed, armed attack). Clears all non-essential traffic immediately.
+  - **PAN-PAN (Repeated 3 times):** Urgent situation concerning safety of a person or vehicle (broken vehicle in wilderness, severe injury with stable vitals).
+  - **SECURITE (Repeated 3 times):** Safety bulletin (approaching flash flood, fallen high-voltage power lines).
+
+exercises:
+  - id: ec2-q1
+    type: MULTIPLE_CHOICE
+    prompt: "You are attempting to reach a mountain repeater with an output frequency of 145.600 MHz and a standard negative offset of 600 kHz (-0.6 MHz). What frequency should your radio transmit on when you press the PTT button?"
+    xp_reward: 35
+    options:
+      - text: "145.600 MHz (same frequency)"
+        correct: false
+        explanation: "Transmitting on the same frequency is simplex; repeaters operate duplex on different transmit and receive frequencies."
+      - text: "145.000 MHz"
+        correct: true
+        explanation: "Correct! With a -600 kHz (-0.600 MHz) offset, your radio listens on the repeater's output (145.600 MHz) and shifts down to transmit on the repeater's input: 145.600 - 0.600 = 145.000 MHz."
+      - text: "146.200 MHz"
+        correct: false
+        explanation: "146.200 MHz would be a positive (+0.600 MHz) offset, not a negative offset."
+      - text: "433.000 MHz"
+        correct: false
+        explanation: "This jumps to a completely different band (UHF instead of VHF)."
+    correct_answer: "145.000 MHz"
+
+  - id: ec2-q2
+    type: FILL_BLANK
+    prompt: "The highest-priority international radio distress call, used strictly when life is in immediate, grave danger, is spoken as the word ___ repeated three times."
+    xp_reward: 20
+    correct_answer: MAYDAY
+    explanation: "MAYDAY (from the French 'venez m'aider' - come help me) is the universal distress signal. It halts all other radio traffic on the channel to prioritize the emergency casualty or craft."
+
+  - id: ec2-q3
+    type: MATCH_PAIRS
+    prompt: "Match each transceiver control or setting to its function."
+    xp_reward: 30
+    pairs:
+      - left: Squelch (SQL Level 2-3)
+        right: Silences continuous background static while allowing weak signals to open speaker
+      - left: CTCSS Sub-audible Tone
+        right: Inaudible low-frequency audio tone required to open repeater receiver gates
+      - left: "Transmit Power: LOW (1W)"
+        right: Preserves 80% battery capacity during short-range line-of-sight communication
+      - left: Battery Eliminator
+        right: Replaces the Li-ion battery pack with a DC cable to run directly from a 12V car battery
+    correct_answer:
+      - Squelch (SQL Level 2-3)=Silences continuous background static while allowing weak signals to open speaker
+      - CTCSS Sub-audible Tone=Inaudible low-frequency audio tone required to open repeater receiver gates
+      - Transmit Power: LOW (1W)=Preserves 80% battery capacity during short-range line-of-sight communication
+      - Battery Eliminator=Replaces the Li-ion battery pack with a DC cable to run directly from a 12V car battery

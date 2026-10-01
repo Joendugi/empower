@@ -232,6 +232,40 @@ The arc temperature reaches over 3,500 °C, instantly melting base steel.
 Structural earth relies on mineral subsoil containing 65-75% sand aggregate and 15-25% cohesive clay binder.
 The 24-hour glass jar sedimentation test accurately separates sand, silt, and clay strata to determine stabilization requirements.
 """
+    },
+    {
+        "id": "book-emergency-communications",
+        "title": "Off-Grid Communications, VHF/UHF & LoRa Mesh Field Manual",
+        "titleSw": "Mwongozo wa Mawasiliano Nje ya Gridi na LoRa Mesh",
+        "author": "Eng. Robert Ochieng (Amateur Radio Society of Kenya 5Z4)",
+        "description": "Field technical guide to antenna calculation, handheld VHF/UHF Baofeng transceivers, regional NVIS skywave, solar Meshtastic LoRa packet repeaters, and lightning grounding.",
+        "descriptionSw": "Mwongozo wa uwanjani kuhusu antena, redio za Baofeng, mawasiliano ya NVIS, na mitandao ya LoRa Meshtastic.",
+        "category": "technology",
+        "tradeId": "electrical-installation",
+        "tradeTitle": "Telecommunications & RF Systems",
+        "coverColor": "from-cyan-600 to-blue-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 5.7,
+        "totalPages": 116,
+        "estimatedMinutes": 230,
+        "featured": True,
+        "rating": 4.9,
+        "readersCount": 3120,
+        "cdaccUnitId": "CU/ICT/TC/CR/03/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "Electromagnetic Wavelength & Antennas", "pageNumber": 1},
+            {"id": "ch2", "title": "Handheld VHF/UHF & Repeater Offsets", "pageNumber": 26},
+            {"id": "ch3", "title": "High Frequency NVIS Regional Skywaves", "pageNumber": 52},
+            {"id": "ch4", "title": "Decentralized LoRa Packet Mesh Networks", "pageNumber": 78},
+            {"id": "ch5", "title": "Guyed Masts & Single-Point RF Grounding", "pageNumber": 98},
+        ],
+        "contentMarkdown": """# Off-Grid Communications & Mesh Networks
+
+## Chapter 1: Wavelength & Antenna Resonance
+Radio waves travel at light speed. An antenna resonates when cut to precise fractions of its operating wavelength.
+Operating into an unmatched antenna reflects RF energy back into the transmitter, destroying output power amplifier transistors.
+"""
     }
 ]
 

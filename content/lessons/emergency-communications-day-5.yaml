@@ -1,0 +1,138 @@
+id: emergency-communications-day-5
+course_id: emergency-communications
+title: "Antenna Masts, Lightning & Grounding"
+title_sw: "Minara ya Antena, Radi na Upimaji wa Earth"
+week_number: 1
+day_number: 5
+estimated_minutes: 55
+license: CC-BY-SA-4.0
+tags: [communications, antenna-masts, lightning, grounding, safety, coaxial, kenya]
+xp: 90
+exam_domain: Telecommunications & RF Engineering
+
+briefing: |
+  In radio communications, antenna elevation is power: elevating an antenna from 2 meters
+  to 10 meters above ground quadruples your operational VHF line-of-sight range. However,
+  erecting an elevated metal mast in thunderstorm-prone regions of East Africa (such as
+  the Lake Victoria basin, which experiences over 200 thunderstorm days annually) creates
+  an enormous lightning strike hazard. Connecting an ungrounded mast to indoor radio equipment
+  invites catastrophic fire, equipment destruction, and fatal electric shock. This final
+  day covers radio horizon trigonometry, guyed mast engineering (bamboo and conduit),
+  coaxial cable attenuation physics, and single-point RF lightning grounding standards.
+briefing_sw: |
+  Kuinua antena juu kutoka mita 2 hadi mita 10 huongeza umbali wa mawasiliano mara nne.
+  Lakini ukiinua mnara bila kuweka earth ya kuzuia radi katika maeneo yenye radi nyingi
+  kama Ziwa Victoria, unakaribisha moto na ajali mbaya. Siku hii inafundisha jinsi ya
+  kujenga mnara wa mianzi au chuma ulioshikiliwa kwa nyaya tatu (guy wires) na kuweka
+  mfumo salama wa earth na kuzuia radi.
+
+outline: |
+  1. The radio horizon equation: Calculating line-of-sight distance (D = 3.57 * (sqrt(h1) + sqrt(h2)))
+  2. Improvised antenna masts: Cured bamboo vs galvanized steel electrical conduit (EMT)
+  3. The 3-way guy wire geometry: 120-degree radial triangulation with earth screw anchors
+  4. Coaxial cable attenuation: RG-58 vs RG-213 vs LMR-400 (decibel signal loss per 10 meters)
+  5. The RF Choke (Ugly Balun): Coiling coaxial cable to suppress common-mode outer-shield currents
+  6. Lightning physics: Step potential, side-flashing, and induced electromagnetic pulse (EMP)
+  7. Single-point grounding: Coaxial gas discharge arrestors, 16 mm² copper wire, and 2.4m earth rods
+  8. PHOTO_CAPTURE practical: Construct and document an antenna build or RF grounding installation
+
+content_md: |
+  ## The Radio Horizon & Elevation Mathematics
+
+  Because the Earth is a curved sphere, line-of-sight radio waves travel until they meet the optical horizon. Refraction slightly bends VHF/UHF waves around the curvature (effective Earth radius factor $k = 4/3$).
+
+  ### The Radio Line-of-Sight Formula:
+  $$D\text{ (km)} = 3.57 \times \left(\sqrt{h_1} + \sqrt{h_2}\right)$$
+  Where:
+  - $h_1$ = Height of transmitter antenna (meters)
+  - $h_2$ = Height of receiver antenna (meters)
+
+  ### The Math in Practice:
+  - Two operators holding Baofeng radios at head height ($h = 1.7\text{ m}$):
+    $$D = 3.57 \times (\sqrt{1.7} + \sqrt{1.7}) = 3.57 \times (1.30 + 1.30) = \mathbf{9.3\text{ km maximum flat horizon range}}$$
+  - Operator A climbs a hill or raises their antenna to **10 meters** ($h_1 = 10\text{ m}$):
+    $$D = 3.57 \times (\sqrt{10} + \sqrt{1.7}) = 3.57 \times (3.16 + 1.30) = \mathbf{15.9\text{ km}}$$
+  **Elevation delivers more practical range than quadrupling transmitter wattage!**
+
+  ## Guyed Mast Engineering: 3-Way Triangulation
+
+  To support a 6 to 12-meter mast built from treated bamboo poles or interlocking galvanized EMT electrical conduit:
+  1. **Base Plate:** Rest the mast base on a flat paving stone or concrete block with a locating pin. Never bury a wooden/bamboo mast directly in dirt (it will rot at the soil line within 12 months).
+  2. **Guy Triangulation at 120 Degrees:**
+     - Anchor points must be spaced symmetrically at **120 degrees** around the mast.
+     - The anchor distance from the base should equal **at least 60% of the mast height** (e.g. for a 10m mast, anchors are placed 6m out).
+  3. **Guy Materials:** UV-resistant Dacron cord or galvanized 3 mm steel wire with turnbuckles.
+  4. **Ground Anchors:** Steel earth screws driven at a 45-degree angle pointing away from the mast.
+
+  ## Coaxial Cable Selection: Don’t Waste Power
+
+  Cheap, thin coaxial cable (*RG-58*) has high internal resistance at VHF and UHF frequencies:
+
+  | Cable Type | Diameter | Loss per 30m @ 145 MHz (VHF) | Loss per 30m @ 433 MHz (UHF) | Recommendation |
+  |------------|----------|------------------------------|------------------------------|----------------|
+  | **RG-58** | 5.0 mm | **4.8 dB (67% power lost!)** | **9.2 dB (88% power lost!)** | Portable runs < 5 meters only |
+  | **RG-213** | 10.3 mm | **2.2 dB (40% power lost)** | **4.2 dB (62% power lost)** | Good general-purpose base station |
+  | **LMR-400** | 10.3 mm | **1.5 dB (29% power lost)** | **2.7 dB (46% power lost)** | **Best**: Mandatory for UHF & long runs |
+
+  *A 3 dB loss halves your transmitted power.* Running 30 meters of RG-58 on UHF turns a 5-Watt radio transmission into only **0.6 Watts** at the antenna!
+
+  ## Lightning Protection & RF Grounding
+
+  The highlands of Kenya, Uganda, and the Lake Victoria basin experience some of the highest lightning flash densities on the planet (over 50 strikes/km²/year).
+
+  ### The 4 Golden Rules of Lightning Protection:
+  1. **Gas Discharge Tube Surge Arrestor:**
+     - Install a 50 $\Omega$ coaxial surge protector (e.g. PolyPhaser or Diamond SP3000) at the building entrance point **before** the cable enters living quarters.
+  2. **Short, Straight Downlead:**
+     - Connect the surge protector and metal mast to the earth electrode using heavy **16 mm² bare copper conductor**.
+     - **Avoid sharp 90-degree bends!** High-frequency lightning surge pulses have massive inductive impedance; they will arc straight off sharp wire bends through walls and into electrical wiring.
+  3. **Deep Earth Electrode:**
+     - Drive a **2.4-meter (8-foot) copper-clad steel earth rod** fully into moist ground.
+     - If soil is rocky or dry sand, dig a horizontal trench and bed the rod in bentonite clay or charcoal and agricultural salt to lower ground resistance below $10\text{ }\Omega$.
+  4. **The "Ugly Balun" (RF Choke):**
+     - Wind 6 turns of your coaxial feedline around a 10 cm PVC pipe directly below the antenna feedpoint.
+     - Stops RF currents from flowing back down the outside shield of the cable into the radio room.
+
+exercises:
+  - id: ec5-q1
+    type: MULTIPLE_CHOICE
+    prompt: "An operator connects a 433 MHz LoRa transceiver to an antenna mounted on a 30-meter tall mast using thin RG-58 coaxial cable. Testing shows almost no signal reaching the next node. Why?"
+    xp_reward: 35
+    options:
+      - text: "The radio was struck by lightning during installation"
+        correct: false
+        explanation: "There is no indication of physical lightning damage."
+      - text: "RG-58 cable suffers extreme attenuation (~9.2 dB loss per 30m at 433 MHz), which dissipates over 88% of the radio's power as heat before it reaches the antenna"
+        correct: true
+        explanation: "Correct! High-frequency UHF signals (433 MHz) suffer massive dielectric and resistive losses in thin cables. A 9.2 dB loss leaves less than 12% of transmitter power reaching the antenna. High-grade low-loss cable (like LMR-400 or RG-213) must be used for UHF runs exceeding 5 meters."
+      - text: "UHF radio waves cannot travel through coaxial cables"
+        correct: false
+        explanation: "All radio frequencies travel through properly rated coaxial transmission lines."
+      - text: "The earth's magnetic field cancels out vertical cable runs"
+        correct: false
+        explanation: "Earth's magnetic field does not attenuate RF signals inside coaxial cables."
+    correct_answer: "RG-58 cable suffers extreme attenuation (~9.2 dB loss per 30m at 433 MHz), which dissipates over 88% of the radio's power as heat before it reaches the antenna"
+
+  - id: ec5-q2
+    type: FILL_BLANK
+    prompt: "When installing a heavy copper lightning downlead conductor from an antenna mast to the ground rod, you must avoid sharp ___ degree bends because high-frequency lightning energy will arc off the corner."
+    xp_reward: 20
+    correct_answer: "90"
+    explanation: "Lightning discharges contain high-frequency impulse currents where sharp bends create high inductive reactance. The lightning surge will jump (side-flash) directly off a sharp 90-degree corner rather than following the wire into the ground rod."
+
+  - id: ec5-practical
+    type: PHOTO_CAPTURE
+    prompt: "Practical Assessment: Document your field antenna construction, coaxial connection, or RF lightning grounding installation."
+    xp_reward: 50
+    correct_answer: null
+    rubric:
+      - criterion: "Antenna element or ground system constructed according to engineering specifications (dipole, ground plane, or mast grounding downlead)"
+        points: 3
+      - criterion: "Coaxial connector (SO-239, BNC, SMA, or PL-259) soldered or crimped cleanly with weatherproofing wrap"
+        points: 3
+      - criterion: "Measurement scale (ruler/tape measure) visible confirming calculated resonant element lengths"
+        points: 3
+      - criterion: "Written or verbal caption explaining the target frequency (e.g. 145 MHz VHF or 868 MHz LoRa) and calculated quarter-wavelength"
+        points: 3
+      - criterion: "Photo clearly displays the fully assembled field setup with handwritten student callsign/ID and date visible"
+        points: 3
