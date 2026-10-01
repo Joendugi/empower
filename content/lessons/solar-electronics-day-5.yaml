@@ -1,0 +1,215 @@
+id: solar-electronics-day-5
+course_id: solar-electronics
+title: "Commissioning & Fault-Finding with a Multimeter"
+title_sw: "Uanzishaji na Utambuzi wa Hitilafu kwa Multimeter"
+week_number: 1
+day_number: 5
+estimated_minutes: 55
+license: CC-BY-SA-4.0
+tags: [solar, multimeter, commissioning, fault-finding, troubleshooting, kenya]
+xp: 90
+exam_domain: Renewable Energy Systems
+
+briefing: |
+  A KSh 600 digital multimeter in the hands of someone who knows how to use it can
+  diagnose 90% of solar system faults in 20 minutes. A KSh 80 000 system left to a
+  guesser will fail and not be repaired. This final day of the solar unit teaches the
+  complete commissioning sequence for a new installation and a systematic fault-finding
+  methodology for diagnosing every common failure mode: no charge, low voltage, dead
+  loads, and battery that won't hold charge.
+briefing_sw: |
+  Multimeter ya digital ya KSh 600 mikononi mwa mtu anayejua kuitumiaa inaweza
+  kutambua asilimia 90 ya hitilafu za mfumo wa jua katika dakika 20. Mfumo wa
+  KSh 80,000 ulioacha kwa mkisia utashindwa na hautarekebishwa.
+
+outline: |
+  1. Multimeter functions: DC voltage, AC voltage, current (DC clamp), resistance, continuity
+  2. Safe multimeter practice: lead placement, range selection, avoiding common injuries
+  3. Commissioning sequence: the 8-step process for a new solar installation
+  4. Verifying panel output: Voc test, Isc test (with clamp meter)
+  5. Verifying charge controller operation: bulk, absorption, float stage indicators
+  6. Fault tree: battery not charging — step-by-step differential diagnosis
+  7. Fault tree: loads not working — isolating controller, fuse, cable, or load fault
+  8. PHOTO_CAPTURE practical: document your multimeter measurements on a real or simulated system
+
+content_md: |
+  ## Multimeter Functions for Solar Technicians
+
+  A basic digital multimeter (DMM) measures:
+
+  | Function | Symbol | Solar use |
+  |----------|--------|-----------|
+  | DC Voltage | V⎓ or VDC | Battery voltage, panel Voc, controller output |
+  | AC Voltage | V~ or VAC | Inverter output verification |
+  | DC Current (clamp adapter) | A⎓ | Panel Isc, charge current, load current |
+  | Resistance | Ω | Cable continuity, fuse integrity |
+  | Continuity beep | ))) | Fast cable continuity check (beeps when resistance < ~30 Ω) |
+  | Diode test | ▷| | Testing bypass diodes in panels |
+
+  **Clamp meter vs inline ammeter:**
+  - Clamp meters measure current without breaking the circuit — clamp around one conductor
+  - For DC clamp accuracy: zero the clamp away from any conductors first; only clamp around one conductor (not both)
+
+  ## Safe Multimeter Practice
+
+  **Rules that prevent injury:**
+  1. **Always connect COM (black) lead first, disconnect last** — avoids accidental shorts
+  2. **Select the correct range or use AUTO range** before measuring — connecting a 200 V panel Voc to a 20 V DC range will damage or destroy the meter
+  3. **Never measure resistance or continuity on a live circuit** — put batteries, panels, and the controller on isolation first
+  4. **Use the correct input jack:** current is measured through the **A input** (with its own fuse), not the V/Ω input — measuring current through the V/Ω terminals causes a dead short
+  5. **Inspect leads before use** — cracked insulation on a multimeter lead is a shock and short-circuit risk; replace any damaged leads
+
+  ## Commissioning Sequence: New Installation
+
+  Follow this exact sequence for every new installation. Deviating from the order risks
+  damaging controllers, batteries, or panels.
+
+  ### Step 1 — Pre-connection checks (no battery, no panels connected)
+  - Inspect all cable terminations — tug-test every ring terminal and MC4 connector
+  - Measure resistance between positive and negative busbars: must be > 1 MΩ (no short)
+  - Verify fuse ratings match design
+  - Verify all cable labels match wiring diagram
+
+  ### Step 2 — Connect battery to controller
+  - Connect battery negative to controller BAT− first
+  - Connect battery positive to controller BAT+ second
+  - Controller display should illuminate and show battery voltage
+  - Verify: multimeter DC voltage at controller BAT terminals = battery resting voltage ± 0.1 V
+
+  ### Step 3 — Verify battery voltage
+  - Multimeter on controller display ≈ 12.5–13.0 V (charged AGM/FLA at rest)
+  - If voltage < 11.8 V: battery may be discharged or faulty — charge externally before proceeding
+
+  ### Step 4 — Panel Voc test (before connecting to controller)
+  - Cover panels with an opaque cloth
+  - Connect multimeter DC voltage leads to panel output positive and negative
+  - Remove cloth: read Voc — should match datasheet Voc ± 5 %
+  - If reading is significantly lower than Voc: check for shade, damaged cell, or wiring error
+  - Cover panels again after test
+
+  ### Step 5 — Connect panels to controller
+  - Panels still covered (covered = approximately 0 A output, safe to connect)
+  - Connect panel positive to controller PV+ first; panel negative to PV− second
+  - Remove covers
+  - Charge current should appear on controller display within 30 seconds of exposure to sunlight
+
+  ### Step 6 — Verify charge current
+  - Clamp meter around positive cable from panel to controller
+  - Reading should match: (irradiance / 1 000) × panel Imp × number of panels × MPPT efficiency
+  - Example: noon (≈ 800 W/m²), 2 × 100 W panels, Imp = 5.56 A:
+    Expected charge current = (800/1000) × 5.56 × 2 × 0.95 = **8.4 A**
+  - If reading is < 50 % of expected: shade, connection problem, or controller fault
+
+  ### Step 7 — Connect loads and verify
+  - Turn on each load circuit individually
+  - Measure voltage at each load terminal — should be > 95 % of battery voltage
+  - Voltage significantly lower than battery voltage = undersized cable or loose connection
+
+  ### Step 8 — Label, document, and hand over
+  - Photograph all connections, fuse board, and meter readings
+  - Record: battery voltage, charge current at noon, system configuration in a log book
+  - Explain to the client: what the controller display means, charge stages, and who to call
+
+  ## Fault Tree 1: Battery Not Charging
+
+  ```
+  Battery not charging?
+  │
+  ├─ Is controller display ON?
+  │   NO → Check battery voltage at BAT terminals
+  │         < 10 V → battery dead or disconnected; check battery fuse
+  │         OK → controller may be faulty
+  │
+  ├─ Controller ON, charge current = 0?
+  │   ├─ Cover panels → Voc test at PV input terminals
+  │   │   No voltage → check MC4 connectors, string fuse, panel cabling
+  │   │   Voltage OK → controller PV input may be faulty
+  │   └─ Voc OK but still 0 A → check for wiring reversal at PV terminals (reversed polarity
+  │       blows the PV input protection diode in most controllers)
+  │
+  └─ Charge current low (< 50 % of expected)?
+      ├─ Check for shade or partial shade on any panel
+      ├─ Clean panel surface (dust can cut output 15–25 %)
+      ├─ Check panel string voltage at PV input = expected series Voc
+      └─ Check ambient temperature — cold morning → Voc higher, MPPT catches it; normal
+  ```
+
+  ## Fault Tree 2: Load Circuit Not Working
+
+  ```
+  Load not working?
+  │
+  ├─ Measure voltage at load terminals (device unplugged)
+  │   0 V → circuit is open; go to next step
+  │   Full battery voltage → device is faulty; replace device
+  │
+  ├─ Voltage 0 V — check fuse in circuit
+  │   Fuse blown → find and fix short circuit before replacing fuse
+  │   Fuse OK → check continuity from fuse to load terminal
+  │
+  ├─ Continuity broken → open circuit in cable
+  │   Test each section: fuse holder → switch → junction → load terminal
+  │   Break found → repair or replace cable section
+  │
+  └─ All continuity OK, fuse OK, voltage 0 V at load?
+      → Check controller LVD (Low Voltage Disconnect) — battery may be too low;
+        controller has disconnected load output to protect battery
+        Test: measure voltage between controller LOAD+ and LOAD−
+        If 0 V from controller with battery connected: battery below LVD threshold
+        Charge battery → loads should reconnect automatically
+  ```
+
+  ## Common Fault Causes in Kenyan Installations
+
+  | Symptom | Most common cause | Fix |
+  |---------|-----------------|-----|
+  | System worked for 6 months then stopped charging | Loose MC4 connector — vibration works connections free | Re-crimp or replace MC4 pair |
+  | Battery dies in < 12 months | Habitual deep discharge (DoD > 80 %) | Set controller LVD higher; educate client |
+  | Inverter shuts off under load | Undersized battery-to-inverter cable; voltage drop causes low-voltage cut-off | Upgrade cable; check connections |
+  | Controller shows error code | Overtemperature (controller in direct sun); short at PV input | Shade controller; check panel polarity |
+  | Low charge current in dry season | Dust accumulation on panels (can reduce output 20–25 %) | Clean panels with damp cloth; no detergent |
+  | FLA batteries consume water quickly | Overcharging — check controller charge voltage set point | Set absorption to 14.4 V, float to 13.6 V for 12 V FLA |
+
+exercises:
+  - id: se5-q1
+    type: MULTIPLE_CHOICE
+    prompt: "During commissioning, you measure Voc at the panel output terminals (covered): 43.2 V (expected: 44 V). You then measure at the controller PV input terminals (same cable, covered): 0 V. What is the fault?"
+    xp_reward: 35
+    options:
+      - text: "The panels are faulty — Voc should be exactly 44 V"
+        correct: false
+        explanation: "43.2 V is 98% of the 44 V rated Voc — well within the ±5% acceptable tolerance. Panel Voc varies with temperature and manufacturing tolerance. The panel is fine."
+      - text: "There is an open circuit between the panel junction box and the controller PV input — check the MC4 connectors and any in-line fuse in that run"
+        correct: true
+        explanation: "Correct. Voltage is present at the panel but not at the controller PV terminals — the break is in the cable run between them. Inspect every MC4 connector for a full engagement click, check any string combiner fuse, and test continuity along the cable."
+      - text: "The controller is faulty — it should show panel voltage at its PV terminals"
+        correct: false
+        explanation: "If the open circuit is between the panel and the controller, the controller PV input terminals will show 0 V regardless of the controller's health. Isolate the cable run first before concluding the controller is faulty."
+      - text: "Normal — Voc only appears at the PV input when the controller is connected to the battery"
+        correct: false
+        explanation: "Panel Voc is an intrinsic property of the panel — it appears across the panel output terminals regardless of what is connected downstream, as long as the circuit is open. 0 V at the controller means the cable is broken or disconnected."
+    correct_answer: "There is an open circuit between the panel junction box and the controller PV input — check the MC4 connectors and any in-line fuse in that run"
+
+  - id: se5-q2
+    type: FILL_BLANK
+    prompt: "When using a multimeter to measure DC current through an ammeter input, connecting the leads to the wrong terminals (V/Ω instead of A) causes a ___ which can blow the meter fuse or damage the circuit."
+    xp_reward: 20
+    correct_answer: short circuit
+    explanation: "The V/Ω input has very high internal impedance (> 1 MΩ) — safe for voltage measurement. The A (ammeter) input has near-zero impedance to shunt maximum current through the measuring shunt resistor. Connecting the A terminals across a voltage source creates a near-short circuit, typically blowing the meter's internal fuse instantly."
+
+  - id: se5-practical
+    type: PHOTO_CAPTURE
+    prompt: "Commissioning practical: document multimeter measurements on your solar system."
+    xp_reward: 50
+    correct_answer: null
+    rubric:
+      - criterion: "Photo 1 — Battery resting voltage: multimeter in DC V mode, leads on battery terminals, reading clearly visible"
+        points: 3
+      - criterion: "Photo 2 — Panel Voc test: multimeter on panel output (or controller PV input), reading clearly visible"
+        points: 3
+      - criterion: "Photo 3 — Charge current: clamp meter around positive charge cable, reading visible (or screenshot of controller display showing charge amps)"
+        points: 3
+      - criterion: "All readings labelled with handwritten or typed labels in the photo or submitted notes"
+        points: 2
+      - criterion: "Readings are within expected ranges (battery 11.8–14.6 V; Voc within 5% of datasheet; charge current > 0 in daylight)"
+        points: 4

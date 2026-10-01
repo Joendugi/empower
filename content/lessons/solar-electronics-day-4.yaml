@@ -1,0 +1,242 @@
+id: solar-electronics-day-4
+course_id: solar-electronics
+title: "DC Wiring, Fusing & Safety"
+title_sw: "Uwiring wa DC, Fyuzi na Usalama"
+week_number: 1
+day_number: 4
+estimated_minutes: 50
+license: CC-BY-SA-4.0
+tags: [solar, wiring, dc, fusing, safety, earthing, kenya]
+xp: 85
+exam_domain: Renewable Energy Systems
+
+briefing: |
+  DC wiring is where most solar systems fail — not the panels, not the batteries, but
+  undersized cables, loose connections, and missing fuses. A DC arc at 48 V carries
+  far more energy than an AC arc at the same voltage; DC does not have a zero-crossing
+  to extinguish the arc. This day teaches the voltage-drop formula, cable sizing tables,
+  fuse selection, earthing, and the professional wiring standards that prevent fires and
+  system failures in Kenyan solar installations.
+briefing_sw: |
+  Uwiring wa DC ndipo mifumo mingi ya jua inashindwa — si paneli, si betri, bali waya
+  ndogo, miunganisho huru, na fyuzi zilizokosekana. Arc ya DC kwa 48 V hubeba nishati
+  zaidi sana kuliko arc ya AC kwa voltage ile ile; DC haina sifuri ya kuvuka kuzima arc.
+
+outline: |
+  1. DC circuit fundamentals: Ohm's law, power, and why DC wiring differs from AC
+  2. Voltage drop: the 3% rule and the voltage-drop formula
+  3. Cable sizing: cross-section selection tables for DC solar systems
+  4. Fuse and circuit breaker selection: where to fuse, what rating to use
+  5. Connector types: MC4, Anderson, ring terminals — crimping vs soldering
+  6. Earthing and bonding: why and how to earth a DC solar system
+  7. DC distribution boards and bus bars for larger systems
+  8. Common wiring faults and how to identify them before energising
+
+content_md: |
+  ## DC vs AC Wiring — Why DC Is Harder
+
+  In AC systems, current reverses direction 50 times per second (50 Hz). An arc formed
+  by a loose connection or a fault is naturally extinguished every time the current
+  passes through zero (100 times per second). DC current does not reverse — an arc at
+  12 V, 24 V, or 48 V sustains itself indefinitely, burning through insulation and
+  igniting cable jackets.
+
+  **Implications for DC solar wiring:**
+  - Cable sizing must be more conservative (continuous current vs AC intermittent)
+  - Fuses must be DC-rated (AC fuses do NOT reliably interrupt DC arcs at rated current)
+  - Circuit breakers must be DC-rated and marked for the system voltage
+  - Connections must be mechanically secure and low-resistance — not just hand-tight
+
+  ## Voltage Drop: The 3 % Rule
+
+  Voltage drop in DC cables causes power losses, false low-voltage shutdowns, and
+  controller errors. The standard for solar wiring:
+
+  **Maximum voltage drop:** 3 % for main system cables; 1 % for short runs.
+
+  At 12 V: 3 % = 0.36 V drop acceptable.
+  At 24 V: 3 % = 0.72 V drop acceptable.
+  At 48 V: 3 % = 1.44 V drop acceptable.
+
+  **Voltage drop formula:**
+
+  > ΔV = (2 × L × I × ρ) ÷ A
+
+  Where:
+  - ΔV = voltage drop (V)
+  - L = one-way cable length (m)
+  - I = current (A)
+  - ρ = resistivity of copper = 0.0175 Ω·mm²/m
+  - A = cable cross-sectional area (mm²)
+
+  **Rearranging to find required cable area:**
+
+  > A (mm²) = (2 × L × I × 0.0175) ÷ ΔV_max
+
+  ### Example
+  Battery bank to inverter: 24 V system, 1 000 W inverter (max current = 1 000 ÷ 24 = 41.7 A),
+  cable run = 3 m (one-way), max ΔV = 0.72 V (3 % of 24 V):
+
+  > A = (2 × 3 × 41.7 × 0.0175) ÷ 0.72 = 4.375 ÷ 0.72 = **6.1 mm²**
+  > Use **10 mm² cable** (next standard size up; gives safety margin and lower operating temp)
+
+  ## Cable Sizing Quick-Reference Table (12 V DC, 3 % drop, ≤ 5 m run)
+
+  | Current (A) | Min cable area | Typical use |
+  |-------------|---------------|-------------|
+  | 10 A | 2.5 mm² | LED lighting circuits, small loads |
+  | 20 A | 4.0 mm² | Charge controller to battery |
+  | 30 A | 6.0 mm² | Panel string to controller (MPPT) |
+  | 50 A | 10 mm² | Battery to inverter (≤ 500 W at 12 V) |
+  | 80 A | 16 mm² | Battery to inverter (≤ 800 W at 12 V) |
+  | 100 A+ | 25–35 mm² | Large inverter or battery interconnect |
+
+  **Temperature derate:** if cable runs through conduit, wall cavity, or bundles, derate
+  by 0.75× (select next larger cable size).
+
+  **Always use tinned copper cables** for battery connections — untinned copper oxidises
+  at the battery terminal, increasing resistance and causing heat buildup.
+
+  ## Fuse Selection
+
+  Every positive conductor **leaving the battery** must be fused as close to the battery
+  as possible (within 150 mm / 6 inches ideally; maximum 300 mm / 12 inches).
+
+  **Why close to the battery?** The fuse protects the cable from the battery's fault
+  current capability (a large lead-acid bank can deliver 1 000+ A into a dead short).
+  Without a fuse, a shorted cable will glow red and ignite before the connection fails.
+
+  **Fuse rating rule:**
+  > Fuse rating = 125 % of maximum continuous current (next standard size up)
+
+  | Circuit | Max current | Fuse rating |
+  |---------|------------|-------------|
+  | Panel string (PWM, 12 V, 200 W) | 200 ÷ 12 = 16.7 A | 20 A |
+  | Battery to controller | Controller output rating | Match controller rating |
+  | Battery to inverter (300 W @ 12 V) | 25 A | 30 A |
+  | Battery to inverter (1 000 W @ 12 V) | 83 A | 100 A |
+  | Battery to inverter (1 000 W @ 24 V) | 41.7 A | 50 A |
+  | DC load circuit (LED lights) | 10 A | 15 A |
+
+  **Fuse types for DC solar systems:**
+  - **ATC/ATO blade fuses** (auto fuses): suitable for circuits ≤ 30 A; cheap; available everywhere
+  - **ANL/BF fuses**: for high-current battery connections (50–400 A); bolt-in; DC-rated
+  - **MIDI fuses**: 30–200 A; compact; widely used in solar installations
+  - **Circuit breakers (DC-rated)**: allow resetting without replacing; specify voltage rating
+    (a 12 V DC breaker is different from a 240 V AC breaker of the same current rating)
+
+  **Never use AC-only fuses in DC circuits** — they may not interrupt DC arcs at rated
+  current and can fail to protect the circuit.
+
+  ## MC4 Connectors and Ring Terminals
+
+  ### MC4 Connectors (Multi-Contact 4 mm)
+  The standard weatherproof connector for solar panel cables.
+
+  - **Rated:** 30 A, 1 000 V DC
+  - **IP67** rated — submersible to 1 m; suitable for outdoor use
+  - Connectors from different brands are not always cross-compatible — use matched pairs
+  - **Crimping:** use a proper MC4 crimping tool; never solder MC4 pins (voids weatherproof rating, creates brittle joint)
+  - After crimping, pull-test each pin — should require > 50 N (5 kg) to withdraw
+
+  ### Ring Terminals (Battery connections)
+  - Crimp, don't solder: soldered terminals can develop high resistance if flux is not
+    fully removed; mechanically weaker
+  - Use the correct crimp tool die size for the terminal and cable combination
+  - Torque battery terminals to manufacturer spec — typically 8–12 N·m for M8 bolt terminals
+  - Apply petroleum jelly or terminal grease to prevent corrosion after tightening
+
+  ## Earthing and Bonding
+
+  **Why earth a DC solar system?**
+  1. Limits voltage on exposed metal parts to safe levels in case of insulation fault
+  2. Allows fault current to flow through the earth path, blowing a fuse rather than
+     through a person
+  3. Reduces radio frequency interference (RFI) in communications equipment
+
+  **What to earth:**
+  - All metal panel frames → earth wire → earth rod
+  - Charge controller case (if metal)
+  - Battery negative terminal (negative earthing — most common in 12/24 V systems)
+  - Inverter chassis
+
+  **Earth rod:** 1.2 m copper-clad steel rod driven into moist ground; tested with
+  earth resistance meter; target < 10 Ω (for lightning protection systems < 1 Ω)
+
+  **Negative earthing:** connect battery negative to earth rod via a dedicated green/yellow
+  earth conductor (≥ 6 mm² for systems up to 24 V, 100 A)
+
+  ## DC Distribution Board Layout
+
+  For systems with multiple loads (lights, phone charger, TV, security light),
+  a DC distribution board prevents a jungle of wires from the controller.
+
+  **Components:**
+  - Positive bus bar: copper bar with multiple terminals; all positive leads connect here
+  - Negative bus bar: same, for negatives
+  - Individual fuses or MCBs (DC-rated) for each circuit — allows isolating one circuit
+    without shutting down the whole system
+  - Main circuit breaker between battery and bus bar (allows shutting down entire system safely)
+
+  **Labelling:** every cable and circuit must be labelled — function (LIGHTS, TV, PHONE),
+  current rating, and fuse size. Use cable tie labels or heat-shrink markers.
+
+  ## Common Wiring Faults (Pre-Energisation Checklist)
+
+  Before connecting the battery, verify:
+
+  | Check | Tool | Pass criterion |
+  |-------|------|----------------|
+  | No short circuit on DC bus | Multimeter (Ω mode) | > 1 MΩ between + and − |
+  | Correct polarity on all terminals | Multimeter (V mode) | Positive to positive, negative to negative |
+  | MC4 connectors locked and clicked | Physical check | Audible click; cannot pull apart by hand |
+  | All ring terminals tight | Torque check | No rotation under 5 kg·m hand torque |
+  | Fuses all rated correctly | Visual check | Fuse markings match design |
+  | Earth continuity | Multimeter (Ω mode) | < 1 Ω from panel frame to earth rod |
+  | No cable runs in tight bends < 5× cable diameter | Visual check | No kinks; no insulation damage |
+
+exercises:
+  - id: se4-q1
+    type: MULTIPLE_CHOICE
+    prompt: "A 12 V solar system has a 600 W inverter drawing 50 A maximum. The cable run from battery to inverter is 4 m one-way. Maximum allowed voltage drop is 3%. What minimum cable area should be used?"
+    xp_reward: 40
+    options:
+      - text: "2.5 mm² — sufficient for 50 A in short runs"
+        correct: false
+        explanation: "2.5 mm² at 50 A over 4 m gives ΔV = (2 × 4 × 50 × 0.0175) ÷ 2.5 = 7.0 V — nearly 58% voltage drop. This would cause the inverter to shut down immediately on low-voltage protection."
+      - text: "16 mm² — calculated as A = (2 × 4 × 50 × 0.0175) ÷ 0.36 = 19.4 mm², use next size up"
+        correct: true
+        explanation: "Correct. ΔV_max = 3% of 12 V = 0.36 V. A = (2 × 4 × 50 × 0.0175) ÷ 0.36 = 7.0 ÷ 0.36 = 19.4 mm². Next standard cable size above 19.4 mm² is 25 mm², though 16 mm² is the minimum many installers use with derating safety margin at shorter runs. Strictly 25 mm² is safest."
+      - text: "6 mm² — this is the standard cable for all solar installations"
+        correct: false
+        explanation: "There is no universal standard cable size. Sizing depends on current and cable length. 6 mm² at 50 A over 4 m: ΔV = (2 × 4 × 50 × 0.0175) ÷ 6 = 11.7% drop — far above the 3% limit."
+      - text: "10 mm² — the voltage drop formula is unnecessary for runs under 5 m"
+        correct: false
+        explanation: "The voltage drop formula applies at all cable lengths. At 50 A and 10 mm²: ΔV = (2 × 4 × 50 × 0.0175) ÷ 10 = 0.70 V = 5.8% — still above the 3% limit for a 12 V system."
+    correct_answer: "16 mm² — calculated as A = (2 × 4 × 50 × 0.0175) ÷ 0.36 = 19.4 mm², use next size up"
+
+  - id: se4-q2
+    type: FILL_BLANK
+    prompt: "Every fuse on a DC solar system must be placed within ___ mm of the positive battery terminal to protect the cable from the battery's full fault current."
+    xp_reward: 25
+    correct_answer: "300"
+    explanation: "The 300 mm (12 inch) maximum rule ensures the unprotected cable section is too short to ignite before the fuse blows. Closer is always better — 150 mm is ideal. Fuses placed at the load end only protect the load, not the cable run from the battery."
+
+  - id: se4-q3
+    type: MATCH_PAIRS
+    prompt: "Match each DC wiring component to its correct specification or use."
+    xp_reward: 25
+    pairs:
+      - left: MC4 connector
+        right: IP67, 30 A / 1 000 V DC; weatherproof panel-to-cable connection
+      - left: ANL/MIDI fuse
+        right: High-current bolt-in DC fuse for battery-to-inverter protection (50–400 A)
+      - left: ATC blade fuse
+        right: Low-cost automotive fuse for circuits up to 30 A
+      - left: DC-rated circuit breaker
+        right: Resettable overcurrent protection; must specify DC voltage rating explicitly
+    correct_answer:
+      - MC4 connector=IP67, 30 A / 1 000 V DC; weatherproof panel-to-cable connection
+      - ANL/MIDI fuse=High-current bolt-in DC fuse for battery-to-inverter protection (50–400 A)
+      - ATC blade fuse=Low-cost automotive fuse for circuits up to 30 A
+      - DC-rated circuit breaker=Resettable overcurrent protection; must specify DC voltage rating explicitly
