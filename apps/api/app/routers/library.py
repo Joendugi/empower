@@ -586,6 +586,42 @@ Civilization relies on elemental iron. Before industrial blast furnaces, humanit
 Operating at 1,150°C to 1,250°C, solid-state chemical reduction produces a spongy bloom of low-carbon iron without melting.
 Consolidation forging under heavy sledges expels trapped liquid fayalite slag, welding the iron grains into tough structural billets.
 """
+    },
+    {
+        "id": "book-veterinary-medicine",
+        "title": "Pastoral Veterinary Medicine & Herd Health Field Manual",
+        "titleSw": "Mwongozo wa Tiba ya Mifugo na Afya ya Mifugo Kijijini",
+        "author": "Dr. Amina Abdi (DVM, Kenya Veterinary Board Lead)",
+        "description": "Comprehensive clinical and surgical field manual for maintaining livestock herds in pastoral and rural communities: clinical vital signs and physical examination (rumen motility, mucous membrane pallor/jaundice, lymph node palpation), acute pasture bloat decompression (drenching oils, trocharization), vector-borne diseases (East Coast Fever diagnosis via Koch's blue bodies, Buparvaquone protocols; Trypanosomiasis diagnosis via buffy coat, Diminazene vs Isometamidium chemotherapy, Nzi odor-baited fly traps), vaccine cold chain management (+2°C to +8°C, conditioned icepacks), neck triangle injection routes, safe Anthrax carcass burial with quicklime, livestock obstetrics (correcting dystocia limb flexions, double half-hitch calving chains, caudal epidural anesthesia with lignocaine), traumatic wound debridement and horizontal mattress suturing, myiasis fly-strike treatment, and communal plunge-dip hydraulic engineering (amitraz lime stabilization, stripping phenomenon, field vat titration test kits, and acaricide resistance class rotation).",
+        "descriptionSw": "Mwongozo kamili wa uchunguzi wa mifugo, kutibu ugonjwa wa Ndigana (ECF) na Nagana, usimamizi wa chanjo, kufungua uzazi uliokwama (dystocia), na uendeshaji wa majosho ya kuoshea ng'ombe (plunge dips).",
+        "category": "agriculture",
+        "tradeId": "animal-health-production",
+        "tradeTitle": "Animal Health & Veterinary Technology",
+        "coverColor": "from-lime-700 to-emerald-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 7.2,
+        "totalPages": 144,
+        "estimatedMinutes": 285,
+        "featured": True,
+        "rating": 5.0,
+        "readersCount": 5680,
+        "cdaccUnitId": "CU/AGR/VT/CR/13/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "Clinical Examination & Ruminant Physiology", "pageNumber": 1},
+            {"id": "ch2", "title": "Vector-Borne Diseases — ECF & Trypanosomiasis", "pageNumber": 30},
+            {"id": "ch3", "title": "Vaccine Cold Chain & Epizootic Biosecurity", "pageNumber": 60},
+            {"id": "ch4", "title": "Obstetrics, Dystocia & Emergency Surgery", "pageNumber": 90},
+            {"id": "ch5", "title": "Plunge Dip Engineering & Acaricide Testing", "pageNumber": 118},
+        ],
+        "contentMarkdown": """# Pastoral Veterinary Medicine & Herd Health
+
+## Chapter 1: The Paravet's Clinical Triage
+Livestock are the lifeblood and savings bank of pastoral communities.
+A systematic physical examination begins before touching the animal: observing gait, posture, and herd interaction.
+Measuring rectal temperature, listening for 2 to 3 rumen contractions per 2 minutes in the left paralumbar fossa, and palpating prescapular lymph nodes separates simple indigestion from fatal hemoparasitic infections.
+Rapid decompression of frothy bloat with non-polar vegetable oils breaks foam surface tension, saving animals from asphyxiation.
+"""
     }
 ]
 

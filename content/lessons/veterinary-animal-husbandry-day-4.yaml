@@ -1,0 +1,214 @@
+id: veterinary-animal-husbandry-day-4
+course_id: veterinary-animal-husbandry
+title: "Livestock Obstetrics, Dystocia & Emergency Wound Care"
+title_sw: "Uzazi wa Mifugo, Kufungua Uzazi Uliokwama (Dystocia) na Matibabu ya Vidonda"
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - veterinary
+  - obstetrics
+  - calving
+  - dystocia
+  - wound-care
+  - suturing
+  - myiasis
+xp: 250
+exam_domain: veterinary-animal-husbandry
+
+briefing: >
+  Calving, lambing, and kidding season is the most critical period in the pastoral
+  calendar. A calf or lamb lost to dystocia (difficult, obstructed birth) is a lost
+  year of milk and herd reproduction; an untreated uterine prolapse or infected
+  hyena bite kills a productive dam. A competent paravet must master internal
+  vaginal exploration, correcting abnormal fetal presentations (head deviations,
+  leg flexions, breech deliveries), applying obstetric calving chains, administering
+  epidural anesthesia, and cleaning and suturing deep traumatic lacerations.
+
+outline: >
+  The three normal stages of ruminant parturition (cervical dilation, fetal expulsion,
+  placental expulsion); normal anterior presentation (two front hooves pointing downward,
+  head resting on knees); defining Dystocia causes (maternal-fetal disproportion,
+  uterine inertia, fetal malpresentation); internal examination hygiene (chlorhexidine/soap,
+  copious methylcellulose lubricant); correcting leg flexions (carpal/shoulder) and
+  head back deviations; calving ropes/chains placement (double half-hitch above and
+  below fetlock); traction timing with maternal labor contractions; caudal epidural
+  anesthesia (lignocaine into Co1-Co2 space); post-partum uterine prolapse replacement;
+  traumatic wound management (debridement, povidone-iodine flushing, interrupted
+  mattress sutures, fly strike/myiasis treatment).
+
+content_md: |
+  ## The Stages of Normal Parturition (Calving)
+
+  Understanding normal labor prevents premature, damaging interventions:
+
+  | Stage of Labor | Physiological Action | Duration (Cattle) | Clinical Signs |
+  |---|---|---|---|
+  | **Stage 1: Dilation** | Cervix dilates; myometrial contractions begin; fetus rotates into birth canal | 2 to 6 hours (up to 12h in heifers) | Restlessness, separating from herd, kicking at belly, tail raising, clear mucus discharge |
+  | **Stage 2: Fetal Expulsion** | Amniotic water bag bursts; fetus passes through birth canal | **30 minutes to 2 hours** | Strong abdominal straining in lateral recumbency; appearance of feet |
+  | **Stage 3: Placental Expulsion**| Separation and delivery of afterbirth | 4 to 8 hours | Placenta hangs from vulva; considered **retained** if not passed within 12 hours |
+
+  *Intervention Rule*: If Stage 2 active abdominal straining continues for **more than 2 hours** with no progress, or if feet appear and then disappear, **intervene immediately**!
+
+  ## Normal vs Abnormal Fetal Presentation
+
+  The only safe presentation for unassisted vaginal birth is:
+  **Normal Anterior Longitudinal Presentation, Dorso-Sacral Position, Extended Posture**:
+  - Two front feet emerge first, with the **pads of the hooves pointing DOWNWARD toward the ground**.
+  - The calf's muzzle rests flat between and slightly behind the two front knees.
+
+  ```
+     NORMAL PRESENTATION:                  HEAD RETRACTED (DYSTOCIA):
+        (Hooves Down + Head)                  (Two Legs, No Head)
+        ┌──────┐   ╭───╮                      ┌──────┐   
+        │ Nose │   │ █ │ Upper Knee           │      │   ╭───╮
+        └──────┘   ╰───╯                      │ Neck │   │ █ │
+      ═══════════════════════               ──┴──────┴───╰───╯
+        [ Hoof ]   [ Hoof ]                   [ Hoof ]   [ Hoof ]
+       (Soles Downward)                      (Soles Downward)
+  ```
+
+  ### Identifying Anterior (Front) vs Posterior (Back) Legs:
+  In the dark birth canal, feel the first two joints above the hoof:
+  - **Front Leg**: The first joint (fetlock) and second joint (**knee / carpus**) both bend in the **SAME direction**.
+  - **Back Leg**: The second joint (**hock / tarsus**) bends in the **OPPOSITE direction** to the fetlock, and the pads of the rear hooves point **UPWARD toward the dam's tail**.
+
+  ## The 5 Rules of Internal Obstetric Examination
+
+  1. **Extreme Hygiene**: Wash the cow's perineum, vulva, and tail with warm water and chlorhexidine or mild soap. Wash your arms up to the shoulders with antiseptic.
+  2. **Copious Lubrication**: Apply **minimum 1 to 2 litres of non-irritating veterinary lubricant (methylcellulose)** or sterile cooking oil into the birth canal. Dry friction causes vaginal tears and fatal hemorrhage.
+  3. **Repulsion before Rotation**: You cannot turn a tangled leg or head inside the narrow birth canal. Push the fetus **backward** into the spacious abdominal cavity first, then rotate the limb, and pull forward.
+  4. **Cup the Hooves in Your Palm**: When pulling a flexed leg forward, always cup the sharp pointed hoof inside your palm. An uncovered sharp hoof rakes across the thin uterine wall, puncturing it and causing fatal peritonitis.
+  5. **Double Half-Hitch with Calving Ropes**:
+     - Never tie a single slipknot around a leg (slips and fractures delicate fetal bones).
+     - Place the first loop of the cotton calving rope **above the fetlock joint**, and the second half-hitch loop **below the fetlock joint around the pastern**. This distributes pulling force across two skeletal points.
+
+  ## Calving Traction Protocols
+
+  - **Never use a tractor, 4x4 vehicle, or winch to pull a calf!** Mechanical pulling rips the cow's pelvis apart, tearing the uterus and killing both dam and calf.
+  - **Human Power Limit**: Maximum **two adult men** pulling on ropes.
+  - **Sync with Contractions**: Pull **only when the cow strains**. When the cow rests between labor contractions, stop pulling and hold the tension.
+  - **The Angle of Pull**:
+    - Pull straight outward until the head and chest clear the vulva.
+    - Once the chest is out, pull **downward toward the cow's hocks (45° angle)** to allow the calf's hips to slide smoothly through the widest pelvic opening.
+
+  ## Caudal Epidural Anesthesia
+
+  When a cow strains violently against the paravet during manipulation, or to replace a
+  painful uterine prolapse, an epidural stops abdominal straining while allowing the cow to stand:
+  - **Anatomical Site**: The first inter-coccygeal space (**Co1 – Co2**) at the base of the tail head.
+    - Raise and lower the tail like a pump handle; feel for the first flexible joint behind the sacrum.
+  - **Technique**: Insert an 18-gauge 38 mm needle vertically into the midline depression.
+  - **The Hanging Drop Test**: Place a drop of 2% Lignocaine / Lidocaine in the open needle hub. As the needle enters the negative-pressure epidural space, the drop is sucked cleanly into the needle!
+  - **Dose**: Inject **5.0 mL of 2% Lignocaine**.
+  - **Effect**: Within 5 minutes, the tail goes limp, straining stops completely, but the cow remains standing on her legs for 2 hours.
+
+  ## Emergency Wound Care & Fly Strike (Myiasis)
+
+  Pastoral livestock suffer severe lacerations from predator attacks (hyenas, leopards),
+  barbed wire, and horn gouges:
+
+  ### 1. Debridement & Antiseptic Lavage:
+  - Restrain animal securely.
+  - Clip hair 50 mm around wound edges.
+  - Lavage wound aggressively with **sterile 0.9% saline or 0.1% dilute povidone-iodine solution** using a 50 mL syringe to blast out dirt, hair, and necrotic tissue.
+
+  ### 2. Surgical Closure (Horizontal Mattress Suture):
+  - In thick, mobile cattle skin, simple stitches pull through under tension.
+  - Use **Horizontal Mattress Sutures** with non-absorbable braided polyamide (nylon) or synthetic suture (USP 2 or 3) on a heavy reverse-cutting curved needle.
+  - Mattress stitches distribute tension across a wide skin bridge, everting skin edges for rapid primary healing.
+  - Leave the bottom 15 mm of the wound open (or insert a penrose rubber drain) to allow drainage of inflammatory fluids.
+
+  ### 3. Fly Strike (Myiasis / Maggots):
+  - In hot tropical regions, blowflies (*Chrysomya bezziana*) lay eggs in wounds within hours, hatching thousands of flesh-eating maggots.
+  - **Treatment**:
+    - Pour **5% hydrogen peroxide or diluted diazinon / chlorfenvinphos** into the wound cavity. Maggots will writhe and crawl out immediately.
+    - Mechanically remove all maggots with thumb forceps.
+    - Dust wound generously with **Sulfanilamide antibiotic powder** or spray with **Oxytetracycline topical blue spray**.
+    - Apply a thick layer of pine tar or grease mixed with liquid pyrethroid to repel flies for 7 days.
+
+exercises:
+  - id: vet-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A paravet conducts an internal vaginal examination on a cow in prolonged labor.
+      Two legs are felt in the birth canal, but the pads of the hooves are pointing
+      UPWARD toward the cow's tail head, and the second joint above the fetlock bends
+      in the OPPOSITE direction to the fetlock. What presentation is this?
+    xp_reward: 50
+    options:
+      - text: "Posterior presentation (the back legs are presenting, meaning the calf is coming backwards / breech orientation)"
+        correct: true
+        explanation: "In anterior (front) legs, hooves point downward and knee and fetlock bend in the same direction. In posterior (rear) legs, hooves point upward and the hock bends opposite to the fetlock. The calf is positioned backward."
+      - text: "Normal anterior presentation (front legs)"
+        correct: false
+        explanation: "Front legs have soles pointing downward, not upward."
+      - text: "Twins delivering simultaneously"
+        correct: false
+        explanation: "The anatomy of the two joints confirms these are the two hind legs of a single calf."
+      - text: "Uterine torsion (twisted uterus)"
+        correct: false
+        explanation: "Uterine torsion presents with a corkscrew vaginal spiral that blocks entry of the hand, not clearly palpated rear limbs."
+
+  - id: vet-d4-q2
+    type: FILL_BLANK
+    prompt: >
+      When applying obstetric calving ropes to an extended calf leg, a ___ half-hitch
+      must be used, placing one loop above the fetlock joint and the second loop below
+      the fetlock, to prevent concentrated force from ___ the calf's leg bones.
+    xp_reward: 50
+    correct_answer: "double; fracturing"
+    explanation: >
+      A single loop acts like a garrote and snaps fragile cannon bones under pull.
+      A double half-hitch distributes tension across two separate joints.
+
+  - id: vet-d4-q3
+    type: MATCH_PAIRS
+    prompt: Match each veterinary obstetric and surgical procedure to its clinical rule.
+    xp_reward: 50
+    pairs:
+      - left: Repulsion before Rotation
+        right: Pushing fetus back into wide abdomen before correcting a folded head or leg
+      - left: Cupping the Hoof
+        right: Covering sharp fetal claws with your palm to prevent tearing uterine walls
+      - left: Hanging Drop Test
+        right: Confirms correct needle placement in the negative-pressure epidural space
+      - left: Horizontal Mattress Suture
+        right: Tension-relieving stitch pattern that everts thick livestock skin edges
+    correct_answer: null
+    explanation: >
+      Repulsion creates working room; cupping protects the uterus; hanging drop verifies
+      epidurals; mattress stitches hold tension on thick cattle hide.
+
+  - id: vet-d4-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      Why is it strictly forbidden in veterinary obstetrics to use a 4x4 motor vehicle,
+      tractor, or mechanical winch to pull a stuck calf during dystocia?
+    xp_reward: 50
+    options:
+      - text: "Mechanical traction exerts uncontrolled tons of pulling force, crushing the calf's ribcage, rupturing the maternal pelvis, and causing fatal uterine artery avulsion"
+        correct: true
+        explanation: "Mechanical pulling generates thousands of pounds of force. If the fetus is locked by wide hips, winches will snap the maternal pelvis, tear the birth canal open, and cause immediate fatal internal hemorrhage. Traction must never exceed two adult men."
+      - text: "Because vehicles emit exhaust fumes that poison the calf"
+        correct: false
+        explanation: "While fumes are unpleasant, the immediate catastrophic danger is mechanical trauma and structural tearing."
+      - text: "Because ropes break under mechanical tension"
+        correct: false
+        explanation: "The ropes hold, but the cow's body tears apart."
+      - text: "It causes the milk to sour immediately"
+        correct: false
+        explanation: "This is a myth; the danger is maternal and fetal death from physical trauma."
+
+  - id: vet-d4-q5
+    type: FILL_BLANK
+    prompt: >
+      To stop violent maternal abdominal straining while manipulating a difficult calving
+      or replacing a prolapsed uterus, a caudal epidural injection of 5 mL of 2% ___
+      is injected into the first inter-coccygeal space at the base of the tail head.
+    xp_reward: 50
+    correct_answer: "lignocaine"
+    explanation: >
+      Lignocaine (Lidocaine) 2% blocks sensory and motor nerves to the reproductive tract,
+      stopping straining while allowing the cow to maintain motor function in her legs.

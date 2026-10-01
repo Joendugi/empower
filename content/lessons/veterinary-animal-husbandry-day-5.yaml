@@ -1,0 +1,218 @@
+id: veterinary-animal-husbandry-day-5
+course_id: veterinary-animal-husbandry
+title: "Acaricide Plunge Dips & Parasite Resistance Management"
+title_sw: "Mabwawa ya Kuoshea Ng'ombe (Plunge Dips) na Kuzuia Usugu wa Wadudu"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - veterinary
+  - acaricide
+  - plunge-dip
+  - ticks
+  - amitraz
+  - resistance-management
+  - biosecurity
+xp: 250
+exam_domain: veterinary-animal-husbandry
+
+briefing: >
+  Controlling tick vectors—the carriers of East Coast Fever, Babesiosis, Anaplasmosis,
+  and Heartwater—requires disciplined community infrastructure. The communal plunge
+  dip (a 15,000-litre concrete vat through which hundreds of cattle swim weekly) is
+  the most cost-effective tick control tool in Africa. However, poor dip management—allowing
+  rainwater dilution, failing to test chemical wash strength, or using the wrong acaricide
+  class—triggers rapid tick resistance, rendering million-shilling facilities useless.
+  This capstone lesson covers plunge dip civil engineering, chemical classes (amidines,
+  synthetic pyrethroids, organophosphates), the dip vat titration test kit, replenishing
+  depleted vats, hand spray-race calibration, and rotational strategies to break tick resistance.
+
+outline: >
+  Communal plunge dip architecture: collection crush, footbath silt traps, 15,000L
+  deep swim tank, splash curtains, draining race with sump return; acaricide chemical
+  classes: Amidines (Amitraz 0.025%), Synthetic Pyrethroids (Deltamethrin / Cypermethrin),
+  Organophosphates (Chlorfenvinphos); the 'Stripping' phenomenon (ticks and hair
+  removing chemical faster than water); dip wash titration testing protocols
+  (testing chemical active ingredient strength); topping-up and reinforcement
+  arithmetic; operating mechanical spray races; managing acaricide resistance
+  (chemical class rotation every 2-3 years, refugia maintenance); PHOTO_CAPTURE
+  assessment rubric of livestock examination, dip facility, or veterinary equipment.
+
+content_md: |
+  ## The Communal Cattle Plunge Dip
+
+  A plunge dip is an engineered hydraulic concrete facility that forces cattle to
+  completely submerge in an aqueous acaricide bath, soaking every square centimetre
+  of hide, inner ear folds, and perineum:
+
+  ```
+  Entry Crush ──► [ Footbath (Silt Trap) ] ──► [ The Drop-Off Ramp ]
+                                                         │
+                                                         ▼
+                                             [ 15,000L Swim Tank (2.2m Deep) ]
+                                                         │
+                                                         ▼
+  Return Paddock ◄── [ Double Draining Race ] ◄── [ Stepped Exit Ramp ]
+                              │
+                              ▼
+                     [ Sump Sediment Trap ] ───► Clean Wash Returns to Tank
+  ```
+
+  ### Engineering Dimensions & Components:
+  1. **Collection Pens & Race**: Funnels cattle into a single-file race with high timber walls.
+  2. **Footbaths (Two in Series, 5 m long each)**: Clean water troughs that wash caked mud off hooves before cattle jump. Mud entering the main tank binds and neutralizes chemical acaricides!
+  3. **The Drop-Off**: A sudden, slick concrete lip sloping downward at 45°. Cattle cannot stop; they leap forward into the deep water.
+  4. **The Swim Tank (15,000 to 20,000 Litres)**:
+     - Length: 10 to 12 metres.
+     - Depth: **2.2 metres** (forces adult cattle to swim with only heads exposed).
+     - Splash Curtains: Deflect outward splashes back into the tank.
+  5. **The Head Dunker**: An operator stands on a raised gantry holding a wooden **dipping fork** (a Y-shaped pole), pushing each cow's head gently underwater twice to ensure ears and horns are 100% drenched.
+  6. **Draining Race (Sloped Concrete Floors)**: Cattle stand for 10 minutes; excess liquid drains back into a settling silt trap that filters hair before returning clean wash to the main tank.
+
+  ## Major Acaricide Chemical Classes
+
+  Using the wrong chemical or failing to understand its pharmacology causes herd poisonings or resistance:
+
+  | Chemical Class | Common Active Ingredient | Target Concentration in Dip | Strengths & Properties | Critical Limitations |
+  |---|---|---|---|---|
+  | **Amidines** | **Amitraz (Triatix / Norotraz)** | **0.025% (250 ppm)** | Rapid "detachment" effect (ticks detach within hours); kills organophosphate-resistant ticks. | **Unstable in acid/neutral water**! Must be stabilized with **hydrated lime (Ca(OH)2)** to keep pH > 10. |
+  | **Synthetic Pyrethroids (SP)** | **Deltamethrin (Decatix) / Cypermethrin** | **0.005% (50 ppm)** | Highly potent; long residual persistence (7 to 10 days); safe for young calves. | High risk of tick cross-resistance if used continuously for > 3 years. |
+  | **Organophosphates (OP)** | **Chlorfenvinphos (Supona) / Diazinon** | **0.05% (500 ppm)** | Excellent stability in dirty wash water; broad-spectrum against ticks, lice, and biting flies. | **High mammalian toxicity** (cholinesterase inhibitor); toxic to handlers; dangerous to dogs. |
+
+  ## The "Stripping" Phenomenon & Replenishment Math
+
+  When a cow swims through a dip, its hair coat and tick bodies absorb chemical active
+  ingredient molecules **faster than they absorb water**.
+  - **The Result**: The liquid carried out in the cow's coat is at a higher chemical concentration than the bulk tank.
+  - The remaining wash in the tank becomes progressively **weaker and under-dosed (Stripping)** after every 100 animals!
+
+  ### The Replenishment Rule (Reinforcement):
+  Because of stripping, you cannot simply add fresh water and standard-rate chemical.
+  You must add **Reinforcement Concentrate** at a higher ratio:
+  - *Standard Initial Filling Rate (Amitraz)*: 1 Litre per **1,000 Litres of water** (1:1,000).
+  - *Replenishment Rate (Topping up)*: 1 Litre per **600 Litres of water added** (1:600).
+
+  ## Testing Dip Wash Strength (Field Titration Test)
+
+  Under-strength dip wash does not kill ticks; it breeds super-resistant tick strains!
+  Community dip managers must test wash concentration every dipping day:
+
+  ### The Field Dip-Testing Kit:
+  1. Measure exactly **100 mL of well-mixed dip wash** from the center of the tank using a glass cylinder.
+  2. Add 5 drops of chemical indicator reagent (color turns yellow/orange).
+  3. Titrate drop-by-drop with the test acid/alkali reagent from a calibrated dropper bottle until the color snaps to permanent blue/green.
+  4. Count the drops:
+     - **30 to 35 drops**: **CORRECT STRENGTH** (Proceed with dipping).
+     - **< 25 drops**: **UNDER-STRENGTH** (DANGEROUS! Calculate and add required chemical concentrate before admitting cattle).
+     - **> 45 drops**: **OVER-STRENGTH** (Toxic! Add fresh water to prevent organ damage in calves).
+
+  ## Strategic Tick Resistance Management
+
+  Ticks evolve biological immunity when exposed to sub-lethal chemical doses over many generations.
+
+  ### Principles of Resistance Prevention:
+  1. **Strict Class Rotation**:
+     - Never use the same chemical class indefinitely. Rotate between an **Amidine (Amitraz)** and a **Synthetic Pyrethroid (Deltamethrin)** every **2 to 3 years**.
+     - Never rotate between two brands of the same class (e.g., switching from Decatix to Bayticol is useless, as both are synthetic pyrethroids).
+  2. **Seasonal Dipping Frequency**:
+     - *Dry Season (Low Tick Burden)*: Dip once every **14 days** (or cease dipping to allow natural tick immunity to develop in indigenous zebu cattle).
+     - *Wet Rainy Season (High ECF Challenge)*: Dip strictly every **7 days** to break the nymph-to-adult transmission cycle.
+  3. **Never Under-Dose**: Under-dosing is the fastest path to resistance; always maintain full label concentration.
+
+exercises:
+  - id: vet-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A communal cattle dip tank filled with an Amitraz (Amidine) acaricide wash is tested
+      with a field titration kit and found to be under-strength after 1,000 cattle have
+      swum through it. Why does the chemical concentration drop faster than water volume?
+    xp_reward: 50
+    options:
+      - text: "The 'Stripping' phenomenon: Cattle hair and hide absorb the chemical active ingredient molecules preferentially faster than water, leaving the remaining bath progressively diluted and requiring higher-rate reinforcement concentrate when topping up"
+        correct: true
+        explanation: "As cattle pass through, the lipophilic chemical adheres to grease on the hair, removing active molecules faster than water is lost. Topping up requires a richer 'replenishment rate' (e.g., 1:600 instead of 1:1,000) to maintain lethal concentration."
+      - text: "The chemical evaporates into the air within 2 hours"
+        correct: false
+        explanation: "Amitraz is non-volatile in water and does not evaporate rapidly."
+      - text: "Cattle drink the dip wash in large quantities"
+        correct: false
+        explanation: "Cattle dislike the taste and do not drink significant volumes; water loss is mechanical carryout on coats."
+      - text: "Bacteria in the cattle dung destroy the chlorine atoms"
+        correct: false
+        explanation: "Stripping is a physical surface-absorption phenomenon, not bacterial degradation."
+
+  - id: vet-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      When using Amitraz (an Amidine class acaricide) in an open concrete plunge dip,
+      the wash is chemically unstable at neutral or acidic pH and must be stabilized
+      by adding hydrated ___ (calcium hydroxide) to maintain a high alkaline pH of
+      greater than ___.
+    xp_reward: 50
+    correct_answer: "lime; 10"
+    explanation: >
+      Amitraz hydrolyzes and degrades in acidic or neutral wash water. Adding 10 kg
+      of hydrated lime per 1,000 L maintains pH > 10, keeping the active ingredient stable for months.
+
+  - id: vet-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each plunge dip structural element to its functional design purpose.
+    xp_reward: 50
+    pairs:
+      - left: Concrete Footbath
+        right: Washes caked mud off hooves so soil does not bind and deactivate tank chemicals
+      - left: 2.2-Metre Deep Swim Tank
+        right: Forces adult cattle to swim, completely submerging the body and perineum
+      - left: Wooden Dipping Fork
+        right: Used by operator on gantry to gently dunk cow heads underwater twice
+      - left: Draining Race
+        right: Sloped holding pens where cattle stand to allow excess wash to drain to sumps
+    correct_answer: null
+    explanation: >
+      Footbaths stop mud; 2.2 m forces swimming; forks dunk ears and horns; draining races
+      conserve expensive chemical.
+
+  - id: vet-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      To manage and prevent chemical acaricide resistance among tick populations
+      in a pastoral grazing zone, how should communal dipping programs rotate acaricides?
+    xp_reward: 50
+    options:
+      - text: "Rotate between completely different chemical classes (e.g., switch from an Amidine like Amitraz to a Synthetic Pyrethroid like Deltamethrin) every 2 to 3 years"
+        correct: true
+        explanation: "Resistance develops to a specific biochemical mechanism of action. Rotating chemical classes breaks the evolutionary cycle by killing ticks that survived the previous class. Switching brand names within the same class is useless."
+      - text: "Switch brand names every week while keeping the same active chemical"
+        correct: false
+        explanation: "Brand names have no biological relevance; switching brands of the same class maintains continuous selection pressure for resistance."
+      - text: "Dilute the chemical to 10% of normal strength during the dry season"
+        correct: false
+        explanation: "Sub-lethal under-dosing is the primary cause of rapid resistance evolution."
+      - text: "Mix organophosphates, amidines, and pyrethroids together in the same tank"
+        correct: false
+        explanation: "Cocktail mixing triggers multi-class cross-resistance and causes severe chemical toxicities."
+
+  - id: vet-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Photograph a livestock clinical examination, cattle plunge dip or spray-race
+      facility, veterinary medicine kit, or cold-chain vaccine carrier from your pastoral
+      animal health practice. Ensure the image clearly displays animal restraint,
+      dosage syringes, dip water testing, or clinical diagnostic instruments, and
+      include your written clinical inspection report.
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Photographic documentation of veterinary facilities, cattle handling races,
+      or clinical examination equipment verifies practical competency in pastoral
+      animal health management and biosecurity protocols.
+    rubric:
+      - criterion: "Photograph clearly shows livestock examination, plunge dip facility, spray race, or veterinary clinical equipment"
+        points: 15
+      - criterion: "Handling safety (crushes, halters, head gates) or medical instruments (syringes, thermometers, testing kit) are distinctly visible"
+        points: 15
+      - criterion: "Written report records animal vital signs, diagnostic findings, drug dosages/routes, or dip vat chemical concentration"
+        points: 10
+      - criterion: "Image is sharp, well-lit, showing professional animal welfare and biosecurity standards"
+        points: 10

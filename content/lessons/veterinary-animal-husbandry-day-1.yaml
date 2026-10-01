@@ -1,0 +1,231 @@
+id: veterinary-animal-husbandry-day-1
+course_id: veterinary-animal-husbandry
+title: "Clinical Examination, Vital Signs & Ruminant Physiology"
+title_sw: "Uchunguzi wa Kitabibu, Viashiria vya Uhai na Fiziolojia ya Wanyama Wacheuaji"
+week_number: 1
+day_number: 1
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - veterinary
+  - vital-signs
+  - ruminants
+  - cattle
+  - goats
+  - rumen-physiology
+xp: 250
+exam_domain: veterinary-animal-husbandry
+
+briefing: >
+  In pastoral and agrarian societies, livestock represent the community's bank,
+  food reserve, and draft power. Diagnosing an ailing cow, sheep, or camel before
+  an infectious disease sweeps through the herd requires disciplined clinical examination.
+  An animal cannot speak; the community paravet must read subtle physiological indicators—rectal
+  temperature, respiratory rate, mucous membrane coloration, rumen contraction frequency,
+  and lymph node swelling. This lesson covers physical restraint techniques, species-specific
+  vital sign baselines, ruminant stomach anatomy (rumen, reticulum, omasum, abomasum),
+  and emergency treatment of acute frothy bloat.
+
+outline: >
+  Large animal handling and physical restraint (cattle nose tongs, tail jack, halter,
+  casting ropes using the Reuff method); systematic clinical examination sequence
+  (distance appraisal, head-to-tail physical exam); normal vital sign tables (cattle,
+  sheep/goats, camels, donkeys: temperature, pulse, respiration); mucous membrane
+  evaluation (conjunctival and vulvar capillary refill time); superficial lymph node
+  palpation (prescapular, precrural, submandibular); the 4-chambered ruminant stomach;
+  rumen motility auscultation in the left paralumbar fossa (2 to 3 contractions every
+  2 minutes); acute bloat pathophysiology (frothy vs free-gas); emergency trocharization
+  and administration of vegetable oil / dimethicone anti-foaming agents.
+
+content_md: |
+  ## The Paravet's Approach: Safe Restraint
+
+  Before touching an ailing 400 kg bull or kicking camel, the animal must be securely
+  restrained to protect both the handler and the patient:
+
+  ### Common Restraint Methods:
+  - **Cattle Halter & Crush**: Guide the animal into a narrow timber race/crush. Restrain the head with a hemp rope halter.
+  - **The Tail Jack**: Grasp the base of the tail with both hands and push it vertically straight up over the spine. This locks the pelvic girdle, preventing the cow from kicking backward during examination.
+  - **Nose Tongs (Bull Tongs)**: Spring-loaded blunt clamps placed in the nasal septum; pressure subdues aggressive cattle immediately.
+  - **Reuff's Casting Method (Throwing Cattle)**: A single 12-metre rope tied around the neck, half-hitched around the chest behind the forelegs, and half-hitched around the flank in front of the udder. Pulling backward collapses the animal gently onto its side for hoof or abdominal intervention.
+
+  ## Normal Vital Signs by Species
+
+  A clinical diagnosis begins by comparing measured vitals against established physiological baselines:
+
+  | Species | Rectal Temperature (°C) | Heart / Pulse Rate (BPM) | Respiration Rate (Breaths/min) | Rumen Contractions |
+  |---|---|---|---|---|
+  | **Cattle (Adult)** | **38.0°C – 39.3°C** | **40 – 80** | **15 – 35** | **2 to 3 per 2 minutes** |
+  | **Calf** | **38.5°C – 39.8°C** | **80 – 110** | **25 – 50** | Not functional until 8 wks |
+  | **Sheep & Goats** | **38.5°C – 40.0°C** | **70 – 90** | **15 – 30** | **2 to 3 per 2 minutes** |
+  | **Camel (Dromedary)**| **35.5°C – 38.5°C** (Fluctuates diurnal)| **35 – 50** | **8 – 18** | **3 to 4 per 2 minutes** |
+  | **Donkey** | **36.5°C – 37.8°C** | **36 – 52** | **12 – 20** | Non-ruminant (Hindgut) |
+
+  *Rule on Camel Temperature*: Camels are heterothermic; their body temperature drops to 35.5°C in the cold desert dawn and rises to 38.5°C in the afternoon heat to conserve sweat. A reading of 39.5°C+ indicates severe fever.
+
+  ## Systematic Clinical Examination Protocol
+
+  1. **Distance Appraisal (Before Touching)**:
+     - Observe herd interaction: Is the animal isolated, lagging behind, or head drooping?
+     - Stance and posture: Arched back (abdominal pain), extended neck (respiratory distress), or dog-sitting (colic).
+     - Body condition score (BCS 1 to 5): Rib cage, spine prominence, and pelvic fat cover.
+  2. **Mucous Membrane Color (Conjunctiva & Gums)**:
+     - Pull down the lower eyelid or expose the inner vulva/prepuce:
+       - **Pink & Moist**: Healthy, normal blood perfusion.
+       - **Pale / Chalk White**: Severe anaemia (internal parasites, Haemonchus, East Coast Fever, or Trypanosomiasis).
+       - **Yellow (Jaundice / Icteric)**: Liver damage, bile duct obstruction, or severe haemolysis (Babesiosis / Redwater).
+       - **Dark Red / Injected (Congested)**: Septic shock, toxic dehydration.
+       - **Cyanotic (Bluish-Purple)**: Severe hypoxia, terminal pneumonia.
+  3. **Capillary Refill Time (CRT)**:
+     - Press thumb firmly against the gum or inner vulva for 2 seconds to blanch tissue white; release and count seconds:
+       - **< 2 seconds**: Normal cardiovascular perfusion.
+       - **> 3 to 4 seconds**: Dehydration (> 8%), hypovolemic shock.
+  4. **Superficial Lymph Node Palpation**:
+     - **Prescapular Lymph Node**: Located just in front of the shoulder joint blade. In healthy cattle, feels like a flat, firm finger-sized strip. If swollen to the size of a mango or orange, **suspect East Coast Fever (ECF)**.
+     - **Precrural (Prefemoral) Node**: Located in the flank fold just above the stifle joint.
+     - **Submandibular Nodes**: Located beneath the jaw angle.
+
+  ## The Ruminant Digestive Architecture
+
+  Ruminants digest high-cellulose fibrous grasses via microbial fermentation in a
+  specialized four-compartment stomach:
+
+  ```
+  Esophagus ──► [ RUMEN (Fermentation Vat) ] ◄──► [ RETICULUM (Honeycomb) ]
+                           │                                  │
+                           ▼                                  ▼
+                [ OMASUM (Manyplies Bible) ] ─────► [ ABOMASUM (True Stomach) ]
+  ```
+
+  1. **Rumen (The Fermentation Vat)**:
+     - Giant fermentation vat (100–150 L capacity in adult cows).
+     - Billions of symbiotic anaerobic bacteria, protozoa, and fungi ferment cellulose into **Volatile Fatty Acids (VFAs: acetate, propionate, butyrate)**, providing 70% of the animal's energy.
+     - Normal pH: **6.2 to 6.8**.
+  2. **Reticulum (The Honeycomb Filter)**:
+     - Hexagonal honeycomb lining. Collects heavy foreign objects (nails, wire) swallowed during grazing (site of "Hardware Disease" / traumatic reticuloperitonitis).
+  3. **Omasum (The Manyplies / Book Pages)**:
+     - Hundreds of leaf-like muscular folds that squeeze water and electrolytes from the fermented cud.
+  4. **Abomasum (The "True" Glandular Stomach)**:
+     - Acidic chamber (pH 2.0 to 3.0) secreting hydrochloric acid and pepsin to digest microbial protein and unfermented bypass feed.
+
+  ## Auscultating the Rumen: Paralumber Fossa
+
+  Place your fist or stethoscope firmly against the **Left Paralumber Fossa** (the triangular
+  sunken hollow behind the last rib and in front of the hip bone on the animal's left side):
+  - Listen and feel for the muscular rumen churning:
+  - You should hear a deep, rolling, thunderous roar every 40 to 60 seconds (**2 to 3 contractions every 2 minutes**).
+  - Complete silence (rumen stasis) indicates systemic toxemia, severe fever, milk fever, or ruminal acidosis.
+
+  ## Emergency Management of Acute Ruminal Bloat
+
+  Bloat occurs when fermentation gases (carbon dioxide and methane) cannot escape
+  via normal eructation (belching):
+
+  ```
+                          ACUTE BLOAT SIGNS:
+    - Left paralumbar fossa bulging tightly like an inflated basketball
+    - Open-mouth breathing, extended tongue, kicking at belly
+    - Distended left flank hollows completely disappear
+  ```
+
+  ### 1. Free-Gas Bloat (Physical Obstruction):
+  - Caused by an esophageal obstruction (swallowed potato, corn cob) or tetanus.
+  - **Treatment**: Pass a 20 mm flexible vinyl **stomach tube** lubricated with cooking oil through a wooden mouth gag down the esophagus into the rumen. A violent rush of foul gas vents out immediately, deflating the flank.
+
+  ### 2. Frothy / Pasture Bloat (Legumes & Wet Green Clovers):
+  - Fast-growing lush legumes (alfalfa, clovers) release soluble leaf proteins that create millions of tiny, stable, viscous gas bubbles.
+  - The gas is trapped in foam; a stomach tube cannot vent foam and will clog instantly!
+  - **Chemical Foam-Breaking Treatment**:
+    - Drench the cow orally with **500 mL of cooking vegetable oil (sunflower, canola, or maize oil)**, or **50 mL of Poloxalene / Dimethicone liquid**.
+    - The non-polar oil slashes surface tension, collapsing the foam bubbles into free gas that the animal belches out within 15 minutes.
+
+  ### 3. Emergency Surgical Trocharization (The Last Resort):
+  If the animal is in terminal respiratory collapse (eyes bulging, falling to knees):
+  - Identify the center of the swollen left paralumbar fossa: **one hand-width behind the last rib, one hand-width below the horizontal spine bones**.
+  - Drive a sharp **Trochar and Cannula** (or a clean, sterile hunting knife) directly through the hide into the rumen with a single powerful thrust.
+  - Pull the trochar core out, leaving the hollow sleeve cannula in place to vent the screaming jet of green foam and gas, saving the animal's life.
+
+exercises:
+  - id: vet-d1-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A pastoral herder presents a 3-year-old Boran cow that is breathing rapidly with an
+      extended neck. Physical examination reveals a rectal temperature of 39.1°C, mucous
+      membranes are pale white, and the left prescapular lymph node in front of the
+      shoulder is swollen to the size of a tennis ball. What condition is strongly indicated?
+    xp_reward: 50
+    options:
+      - text: "East Coast Fever (ECF / Theileriosis) — massive enlargement of the prescapular lymph nodes combined with severe hemolytic anaemia and respiratory distress is the hallmark presentation"
+        correct: true
+        explanation: "Theileria parva sporozoites invade lymphocytes, causing massive lymphadenopathy (dramatic swelling of prescapular and precrural nodes). The parasite then destroys red blood cells, causing severe pallor and pulmonary oedema."
+      - text: "Acute bloat from eating wet clover"
+        correct: false
+        explanation: "Bloat presents with left flank abdominal distension, not lymph node enlargement."
+      - text: "Hardware disease caused by a swallowed nail"
+        correct: false
+        explanation: "Hardware disease presents with arched back, grunting, and low-grade fever, without massive prescapular lymph node swelling."
+      - text: "Normal physiological estrus (heat)"
+        correct: false
+        explanation: "Estrus does not cause lymphadenopathy, pale membranes, or respiratory distress."
+
+  - id: vet-d1-q2
+    type: FILL_BLANK
+    prompt: >
+      In a healthy adult cow, auscultation of the left paralumbar fossa should reveal
+      a deep rolling muscular contraction of the rumen at a normal frequency of ___ to
+      3 contractions every ___ minutes.
+    xp_reward: 50
+    correct_answer: "2; 2"
+    explanation: >
+      A healthy rumen contracts 2 to 3 times every 2 minutes. Complete absence
+      of sounds indicates rumen stasis, toxemia, or severe metabolic disease.
+
+  - id: vet-d1-q3
+    type: MATCH_PAIRS
+    prompt: Match each compartment of the ruminant stomach to its primary physiological role.
+    xp_reward: 50
+    pairs:
+      - left: Rumen
+        right: Giant 150L microbial fermentation vat converting cellulose into volatile fatty acids
+      - left: Reticulum
+        right: Honeycomb chamber that traps heavy foreign metal debris (hardware disease)
+      - left: Omasum
+        right: Muscular book-page leaves that compress cud and absorb water and electrolytes
+      - left: Abomasum
+        right: The true acid-glandular stomach secreting hydrochloric acid and digestive enzymes
+    correct_answer: null
+    explanation: >
+      Rumen ferments; reticulum filters hardware; omasum absorbs water; abomasum secretes acid.
+
+  - id: vet-d1-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A dairy cow grazing on lush morning alfalfa pasture collapses with extreme
+      distension of the left flank. A passed stomach tube fails to release gas because
+      it clogs with thick green lather. What immediate emergency treatment will collapse the foam?
+    xp_reward: 50
+    options:
+      - text: "Administer 500 mL of cooking vegetable oil or dimethicone/poloxalene directly into the rumen to break the foam bubble surface tension"
+        correct: true
+        explanation: "Pasture bloat produces stable micro-bubbles that trap gas in viscous foam. Non-polar oils (vegetable oil or mineral oil) break surface tension, coalescing the foam into free gas that the cow belches out."
+      - text: "Inject antibiotic penicillin into the left flank"
+        correct: false
+        explanation: "Penicillin has zero immediate effect on mechanical foam surface tension."
+      - text: "Force the cow to drink 20 litres of cold water"
+        correct: false
+        explanation: "Adding more water increases ruminal volume, accelerating suffocation."
+      - text: "Administer large doses of baking soda"
+        correct: false
+        explanation: "Baking soda (sodium bicarbonate) releases more CO2 gas when mixed with acid, worsening the bloat."
+
+  - id: vet-d1-q5
+    type: FILL_BLANK
+    prompt: >
+      To safely restrain a standing cow and prevent it from kicking backward during a
+      clinical examination, an assistant can perform the tail ___, grasping the tail
+      base and pushing it vertically upward over the spine.
+    xp_reward: 50
+    correct_answer: "jack"
+    explanation: >
+      The 'tail jack' flexes the sacrococcygeal joint, immobilizing the pelvic hindquarters
+      and preventing kicking without causing pain or injury.
