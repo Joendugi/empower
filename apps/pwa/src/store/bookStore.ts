@@ -192,6 +192,41 @@ Shielded Metal Arc Welding produces an electric arc between a flux-covered consu
 The arc temperature reaches over 3,500 °C, instantly melting base steel.
 `,
   },
+  {
+    id: 'book-shelter-construction',
+    title: 'Natural Building & Resilient Structural Engineering in East Africa',
+    titleSw: 'Uhandisi wa Ujenzi wa Asili na Miundo Thabiti Afrika Mashariki',
+    author: 'Arch. Daniel Mutua (Earth Architecture Kenya)',
+    description: 'Engineering guide to soil classification, compressed earth blocks (CEB), Superadobe catenary domes, timber King Post trusses, and ferro-cement cisterns.',
+    descriptionSw: 'Mwongozo wa uhandisi kuhusu upimaji wa udongo, matofali ya CEB, kuba za Superadobe, na matanki ya ferro-cement.',
+    category: 'engineering',
+    tradeId: 'masonry',
+    tradeTitle: 'Masonry & Structural Building',
+    coverColor: 'from-amber-700 to-stone-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 6.2,
+    totalPages: 128,
+    estimatedMinutes: 260,
+    featured: true,
+    rating: 4.9,
+    readersCount: 2490,
+    cdaccUnitId: 'CU/CON/MS/CR/02/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Soil Fractions & 24h Jar Sedimentation', pageNumber: 1 },
+      { id: 'ch2', title: 'Cinva-Ram Pressing & Damp Curing', pageNumber: 28 },
+      { id: 'ch3', title: 'Superadobe & Catenary Arch Domes', pageNumber: 55 },
+      { id: 'ch4', title: 'King Post Trusses & Hurricane Uplift Ties', pageNumber: 84 },
+      { id: 'ch5', title: 'Thin-Shell Ferro-Cement Rainwater Tanks', pageNumber: 108 },
+    ],
+    contentMarkdown: `# Natural Building & Resilient Structural Engineering
+
+## Chapter 1: Soil Fractions & Testing
+Structural earth relies on mineral subsoil containing 65-75% sand aggregate and 15-25% cohesive clay binder.
+The 24-hour glass jar sedimentation test accurately separates sand, silt, and clay strata to determine stabilization requirements.
+`,
+  },
 ];
 
 interface BookState {

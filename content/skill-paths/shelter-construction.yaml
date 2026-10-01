@@ -1,0 +1,51 @@
+id: shelter-construction
+title: "Shelter, Natural Building & Structural Engineering"
+title_sw: "Makazi, Ujenzi wa Asili na Uhandisi wa Miundo"
+description: >
+  Five-day hands-on unit on resilient shelter and low-carbon structural engineering
+  for East African terrains: soil ribbon and jar sedimentation testing, stabilized
+  compressed earth blocks (CEB), earthbag (Superadobe) compressive domes, timber
+  roof trusses and passive thermal insulation, and ferro-cement construction for water
+  cisterns and storm shelter.
+description_sw: >
+  Kitengo cha siku tano cha vitendo kuhusu makazi thabiti na uhandisi wa miundo
+  kwa maeneo ya Afrika Mashariki: upimaji wa udongo, matofali ya udongo yaliyoshindiliwa (CEB),
+  mifuko ya udongo (Superadobe), nguzo za paa za mbao na ujenzi wa ferro-cement
+  kwa matanki ya maji na dhoruba.
+level: beginner
+tags: [shelter, construction, earthbag, masonry, natural-building, tvet, kenya]
+weeks:
+  - week_number: 1
+    title: "Resilient Structural Engineering"
+    title_sw: "Uhandisi wa Miundo Thabiti"
+    nodes:
+      - id: shelter-construction-day-1
+        title: "Soil Composition & Foundation Sizing"
+        title_sw: "Muundo wa Udongo na Upimaji wa Msingi"
+        day_number: 1
+        week_number: 1
+        xp: 85
+      - id: shelter-construction-day-2
+        title: "Compressed Earth Blocks & Stabilization"
+        title_sw: "Matofali ya Udongo Yaliyoshindiliwa na Uimarishaji"
+        day_number: 2
+        week_number: 1
+        xp: 85
+      - id: shelter-construction-day-3
+        title: "Earthbag & Superadobe Dome Mechanics"
+        title_sw: "Mifuko ya Udongo na Miundo ya Dome"
+        day_number: 3
+        week_number: 1
+        xp: 90
+      - id: shelter-construction-day-4
+        title: "Timber Trusses & Thermal Insulation"
+        title_sw: "Paa za Mbao na Kuzuia Joto"
+        day_number: 4
+        week_number: 1
+        xp: 85
+      - id: shelter-construction-day-5
+        title: "Ferro-Cement Engineering & Stormproofing"
+        title_sw: "Uhandisi wa Ferro-Cement na Kukabili Dhoruba"
+        day_number: 5
+        week_number: 1
+        xp: 90
