@@ -54,6 +54,24 @@ async def get_current_learner(
     return learner
 
 
+async def get_current_learner_optional(
+    request: Request,
+    creds: HTTPAuthorizationCredentials | None = Depends(_bearer),
+    db: AsyncSession = Depends(get_db),
+) -> Learner | None:
+    token = None
+    if creds is not None and creds.scheme.lower() == "bearer":
+        token = creds.credentials
+    if not token:
+        token = request.cookies.get(settings.AUTH_COOKIE_NAME)
+    if not token:
+        return None
+    learner_id = decode_access_token(token)
+    if not learner_id:
+        return None
+    return await db.get(Learner, learner_id)
+
+
 async def get_current_registered_learner(
     learner: Learner = Depends(get_current_learner),
 ) -> Learner:

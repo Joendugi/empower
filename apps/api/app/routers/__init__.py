@@ -1,4 +1,4 @@
-from app.routers import analytics, auth, badges, certificates, content, discussions, leaderboard, lti, moderation, notices, ops, review, rubrics, streaks, studio, submissions, xp
+from app.routers import analytics, auth, badges, certificates, content, discussions, leaderboard, library, lti, moderation, notices, ops, review, rubrics, streaks, studio, submissions, xp
 
 __all__ = [
     "auth",
@@ -7,6 +7,7 @@ __all__ = [
     "content",
     "discussions",
     "leaderboard",
+    "library",
     "lti",
     "review",
     "rubrics",

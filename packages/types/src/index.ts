@@ -263,3 +263,54 @@ export interface ReviewResult {
   contentId: string;
   rating: FSRSRating;
 }
+
+// ── Readflix Library & Books ──────────────────────────────
+export interface BookChapter {
+  id: string;
+  title: string;
+  pageNumber: number;
+  content?: string;
+}
+
+export interface Book {
+  id: string;
+  title: string;
+  titleSw?: string;
+  author: string;
+  description: string;
+  descriptionSw?: string;
+  category: 'resilience' | 'tvet-trade' | 'health' | 'agriculture' | 'engineering' | 'technology';
+  tradeId?: string;
+  tradeTitle?: string;
+  coverImage?: string;
+  coverColor: string; // Tailwind gradient classes e.g. "from-emerald-600 to-teal-900"
+  fileFormat: 'pdf' | 'epub' | 'markdown';
+  fileSizeMb: number;
+  totalPages: number;
+  estimatedMinutes: number;
+  downloadUrl?: string;
+  offlineReady?: boolean;
+  featured?: boolean;
+  rating?: number;
+  readersCount?: number;
+  cdaccUnitId?: string;
+  chapters?: BookChapter[];
+  contentMarkdown?: string;
+  publishedYear?: number;
+}
+
+export interface BookProgress {
+  bookId: string;
+  currentPage: number;
+  totalPages: number;
+  percent: number;
+  lastReadAt: string;
+  bookmarks?: number[];
+  completed?: boolean;
+}
+
+export interface BookShelf {
+  reading: BookProgress[];
+  savedBookIds: string[];
+  offlineBookIds: string[];
+}
