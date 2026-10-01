@@ -479,6 +479,42 @@ Three-phase star distribution delivers 230V line-to-neutral for households and 4
 Inductive motor loads draw reactive power (kVAR), dragging the power factor down.
 Connecting power factor correction capacitor banks across motor terminals relieves generators of circulating reactive currents, unlocking hidden capacity.
 """
+    },
+    {
+        "id": "book-civil-defense",
+        "title": "Civil Defense, Perimeter Security & Community Hardening Manual",
+        "titleSw": "Mwongozo wa Ulinzi wa Jamii, Vizuizi vya Mzunguko na Vyumba vya Usalama",
+        "author": "Major (Rtd.) Samuel Kiprop & Community Resilience Council",
+        "description": "Comprehensive tactical and engineering guide to safeguarding decentralized communities: CPTED environmental design, 2m/0.5m sightline landscaping, box H-brace high-tensile wire fencing, 3-coil pyramid concertina razor wire, anti-vehicle ditch-and-berm earthworks, impenetrable living thorn hedgerows (Euphorbia, Sisal, Kei Apple), elevated timber watchtower construction with ballistic parapets, dead space mapping, mechanical 12-gauge blank tripwire alarms, 3-zone wildfire defensible space, 3mm ember mesh, and hardened outward-opening panic rooms with sandbag ballistic walls and emergency VHF radio lifelines.",
+        "descriptionSw": "Mwongozo kamili wa ulinzi kuhusu usanifu wa mazingira wa CPTED, wigo imara, nyaya za miiba, mifereji ya kuzuia magari, minara ya ulinzi, vihisi vya ardhini, kuzuia moto wa nyika, na vyumba vya dharura vya kuokoa maisha.",
+        "category": "resilience",
+        "tradeId": "security-operations",
+        "tradeTitle": "Civil Defense & Physical Security",
+        "coverColor": "from-stone-700 to-red-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 6.7,
+        "totalPages": 138,
+        "estimatedMinutes": 275,
+        "featured": True,
+        "rating": 5.0,
+        "readersCount": 4890,
+        "cdaccUnitId": "CU/SEC/CD/CR/10/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "CPTED & Concentric Rings of Defense", "pageNumber": 1},
+            {"id": "ch2", "title": "Perimeter Fencing, Barriers & Living Hedges", "pageNumber": 30},
+            {"id": "ch3", "title": "Watchtowers, Lines of Sight & Early Warning", "pageNumber": 60},
+            {"id": "ch4", "title": "Wildfire Defensible Space & Firebreaks", "pageNumber": 88},
+            {"id": "ch5", "title": "Safe Rooms, Door Hardening & QRT Protocols", "pageNumber": 114},
+        ],
+        "contentMarkdown": """# Civil Defense, Perimeter Security & Community Hardening
+
+## Chapter 1: The Foundations of CPTED
+Physical security begins with environmental geometry, not just padlocks.
+Concentric rings of defense ensure that an intruder must breach detection, delay, and structural barriers before reaching human lives.
+The 2-metre canopy and 0.5-metre shrub rule maintains unobstructed sightlines across all approaches, stripping away ambush concealment.
+Tactical outward-facing illumination exposes intruders in stark silhouette while keeping defenders concealed in darkness.
+"""
     }
 ]
 

@@ -1,0 +1,35 @@
+id: civil-security-defense
+title: Civil Defense & Community Physical Security
+titleSw: Ulinzi wa Jamii na Usalama wa Mazingira
+description: >
+  Master the architectural, organizational, and physical security measures required
+  to safeguard decentralized settlements, critical infrastructure, and supply depots
+  against intrusions, perimeter breaches, wildfires, and civil unrest — from CPTED
+  environmental design and barrier construction to early warning tripwires, watchtower
+  siting, and community quick-reaction defense plans.
+level: intermediate
+category: resilience
+estimatedHours: 10
+xpTotal: 1250
+license: CC-BY-SA-4.0
+nodes:
+  - day: 1
+    lessonId: civil-security-defense-day-1
+    title: "CPTED & Defensible Space Architecture"
+    xp: 250
+  - day: 2
+    lessonId: civil-security-defense-day-2
+    title: "Physical Perimeter Barriers, Fencing & Hedgerows"
+    xp: 250
+  - day: 3
+    lessonId: civil-security-defense-day-3
+    title: "Watchtowers, Lines of Sight & Early Warning Sensors"
+    xp: 250
+  - day: 4
+    lessonId: civil-security-defense-day-4
+    title: "Wildfire Defensible Space & Firebreak Engineering"
+    xp: 250
+  - day: 5
+    lessonId: civil-security-defense-day-5
+    title: "Community Quick Reaction Protocols & Panic Rooms"
+    xp: 250
