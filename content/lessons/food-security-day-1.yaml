@@ -1,0 +1,177 @@
+id: food-security-day-1
+title: 'Hermetic Grain Storage: Keeping Maize & Legumes Safe'
+title_sw: 'Uhifadhi wa Nafaka kwa Hermetic: Kulinda Mahindi na Mikunde'
+week_number: 1
+day_number: 1
+level: beginner
+tags:
+- food-security
+- grain-storage
+- post-harvest
+- kenya
+- aflatoxin
+xp: 80
+briefing: 'Kenya loses 30–40 % of its grain harvest every year to weevils, moulds,
+  and rodents — before the food ever reaches a family. Hermetic (airtight) storage
+  kills insects without chemicals by starving them of oxygen. This day teaches you
+  to select, prepare, fill, and seal hermetic bags and metal silos using materials
+  available in most Kenyan markets.
+
+  '
+briefing_sw: 'Kenya hupoteza asilimia 30–40 ya mavuno yake ya nafaka kila mwaka kutokana
+  na wadudu, ukungu, na panya — kabla chakula haijafika kwa familia. Uhifadhi wa hermetic
+  huua wadudu bila kemikali kwa kuwanyima oksijeni.
+
+  '
+outline: '1. Why grain rots: the post-harvest loss triangle (moisture, insects, fungi)
+
+  2. Hermetic principle: O₂ depletion and CO₂ build-up kill weevils in 7–14 days
+
+  3. PICS bags vs. triple-layer hermetic bags vs. metal silos — cost and capacity
+
+  4. Moisture testing: bite test, 105 °C oven method, and affordable moisture meters
+
+  5. Filling, sealing, and stacking — avoiding puncture failure
+
+  6. Aflatoxin risk: visual sorting and UV lamp inspection
+
+  7. Rodent-proofing: silo placement, pallet rules, cat/trap programmes
+
+  8. Opening safely: airing before re-entry into enclosed stores'
+content_md: "## Why Grain Spoils\n\nThree factors act together — the **post-harvest\
+  \ loss triangle**:\n\n| Factor | Effect | Threshold to control |\n|--------|--------|----------------------|\n\
+  | Moisture | Mould growth, mycotoxins | < 13 % grain moisture content (GMC) |\n\
+  | Insects | Physical destruction, faecal contamination | O₂ depletion or cooling\
+  \ |\n| Fungi (Aspergillus) | Aflatoxin B1 — liver cancer risk | < 13 % GMC + < 70\
+  \ % relative humidity |\n\nControl any two of the three and grain survives. Hermetic\
+  \ storage controls **insects** and\n**fungi** simultaneously by sealing out oxygen.\n\
+  \n## The Hermetic Principle\n\nInside a sealed bag, the grain and insects breathe.\
+  \ O₂ drops from 21 % to < 2 % within\n7–14 days; CO₂ rises. Insects and eggs suffocate.\
+  \ Mould growth halts below 13 % GMC\nbecause even if spores are present, the dry\
+  \ sealed environment denies them the water activity\n(Aᵥ > 0.70) they need to germinate.\n\
+  \n**No pesticide needed.** This is critical in Kenya where organophosphate misuse\
+  \ causes\npoisoning deaths each year.\n\n## Storage Options\n\n### PICS Bags (Purdue\
+  \ Improved Crop Storage)\n- Three nested polypropylene layers — inner two are thin\
+  \ polyethylene\n- Capacity: 100 kg maize (2 × 50 kg inner bags)\n- Cost in Kenya\
+  \ (2025): KSh 80–120 per bag; reusable 2–4 seasons\n- Proven for: maize, cowpea,\
+  \ sorghum, millet, groundnuts\n- **Weakness**: Sharp grain corners (wheat, rice\
+  \ with awns) can puncture inner layers\n\n### Triple-Layer Hermetic Bags (GrainPro,\
+  \ StarSeal)\n- Stronger construction; some are UV-stabilised for outdoor stack storage\n\
+  - Capacity: 50–1 000 kg; larger bags suit community-level storage\n- Cost: KSh 300–900;\
+  \ commercial farms, SACCOs\n\n### Metal Silos (POSTCOSECHA design)\n- Galvanised\
+  \ steel; 250–3 000 kg capacity\n- Sealed with candle wax around the lid joint —\
+  \ cheap, effective\n- Lifespan: 20+ years; one-time cost, often supported by NGO\
+  \ programmes\n- **Best choice** where capital exists and rodents are severe\n\n\
+  ## Measuring Grain Moisture\n\nHermetic storage fails catastrophically if grain\
+  \ is wet: trapped moisture causes\nexplosive mould growth within days.\n\n**Field\
+  \ bite test** (< 14 % GMC):\nBite a single maize kernel. If it snaps cleanly and\
+  \ does not dent — it is dry enough.\nIf it bends or crushes, moisture is too high.\n\
+  \n**105 °C oven method** (definitive):\n1. Weigh a 100 g sample (W₁).\n2. Dry in\
+  \ oven at 105 °C for 72 hours.\n3. Weigh again (W₂).\n4. GMC (%) = (W₁ − W₂) / W₁\
+  \ × 100.\n\nTarget: ≤ 13 % for maize, ≤ 12 % for legumes.\n\n**Digital moisture\
+  \ meters** (Farmforce, Agri-Aqua): KSh 1 500–3 500, read in 30 seconds.\nCalibrate\
+  \ against the oven test at least once per season.\n\n## Filling and Sealing\n\n\
+  1. Spread grain on a clean tarpaulin; remove debris, broken kernels, soil.\n2. Sort\
+  \ out visibly mouldy kernels (green/black/orange discolouration).\n3. Load the **inner\
+  \ bag first**; fill to 80 % capacity — overfilling stretches seams.\n4. Twist the\
+  \ inner bag firmly; fold the twist over and tie with a rubber band.\n5. Repeat for\
+  \ outer bags.\n6. For metal silos: apply a continuous ring of melted candle wax\
+  \ around the lid channel\n   before pressing the lid down. The wax seals micro-gaps.\n\
+  7. **Label**: date filled, crop variety, weight, field GMC reading.\n\n## Aflatoxin\
+  \ Visual Sorting\n\nAspergillus flavus produces aflatoxin B1 — invisible to the\
+  \ naked eye but detectable\nunder UV (365 nm) as blue-green fluorescence in groundnuts\
+  \ and maize.\n\n- Lay grain in a single layer on dark cloth in a dark room.\n- Pass\
+  \ a 365 nm UV torch slowly over the grain.\n- Remove and destroy (do not feed to\
+  \ livestock) any glowing kernels.\n- Note: UV fluorescence detects the mould, not\
+  \ the toxin. All glowing grain should be\n  discarded as a precaution.\n\nAflatoxin\
+  \ threshold for human food in Kenya: 10 ppb (KEBS KS 09-50).\nConfirmed testing\
+  \ requires ELISA or HPLC — contact your county agriculture office.\n\n## Rodent-Proofing\n\
+  \n- Place bags/silos on **wooden pallets** ≥ 15 cm off the ground (rodents avoid\
+  \ open space).\n- Keep storeroom door metal-lined at the base.\n- Maintain **free\
+  \ space of 50 cm** around stacks — inspectors can walk the perimeter.\n- Snap traps\
+  \ baited with peanut butter along walls (reset daily for 2 weeks).\n- A single well-fed\
+  \ cat eliminates ~ 20 mice per month in a grain store.\n\n## Safe Opening\n\nAfter\
+  \ months of hermetic storage, CO₂ concentration inside can reach 10–20 %.\nThis\
+  \ is not dangerous outdoors but can cause dizziness in an enclosed store.\n\n**Procedure:**\n\
+  1. Open the store, leave doors/windows open for 30 minutes.\n2. Open the bag outdoors\
+  \ or in the open-doored store.\n3. Never open a large metal silo while leaning over\
+  \ it — let CO₂ vent upward.\n"
+exercises:
+- type: MULTIPLE_CHOICE
+  id: fs1-q1
+  options:
+  - text: Fill the hermetic bags immediately — the grain is ready
+    correct: false
+    explanation: Bending without snapping signals moisture above ~14 %. Hermetic storage
+      will trap that moisture and cause explosive mould.
+  - text: Continue sun-drying for 2–3 more days then retest
+    correct: true
+    explanation: Correct. The grain needs further drying. Retest after 2–3 days of
+      open sun-drying on a tarpaulin, ideally on a raised rack.
+  - text: Add silica gel sachets inside the hermetic bag to absorb moisture
+    correct: false
+    explanation: Silica gel can help reduce residual humidity in very small quantities
+      but cannot compensate for wet grain — it would be overwhelmed in hours.
+  - text: Store immediately but leave the bag slightly open to allow ventilation
+    correct: false
+    explanation: An open bag is no longer hermetic. It provides no O₂ depletion effect
+      and leaves grain exposed to insects.
+  prompt: A farmer bites a dried maize kernel and it bends without snapping. What
+    should she do?
+  xp_reward: 30
+  correct_answer: Continue sun-drying for 2–3 more days then retest
+- type: FILL_BLANK
+  id: fs1-q2
+  prompt: Hermetic storage kills insects by depleting ___ below 2% inside the sealed
+    container.
+  prompt_sw: Uhifadhi wa hermetic huua wadudu kwa kupunguza ___ chini ya asilimia
+    2 ndani ya chombo kilichofungwa.
+  explanation: As grain and insects respire, O₂ is consumed and CO₂ builds up. Below
+    ~2% O₂, all insect life stages (egg, larva, pupa, adult) die within 7–14 days.
+  xp_reward: 30
+  correct_answer: oxygen
+- type: MATCH_PAIRS
+  id: fs1-q3
+  pairs:
+  - left: PICS bag
+    right: Low-cost, widely available, reusable 2–4 seasons
+  - left: Metal silo
+    right: Rodent-proof, 20+ year lifespan, best for community stores
+  - left: Triple-layer hermetic bag
+    right: UV-stabilised for outdoor stacking, suits 50–1 000 kg
+  - left: Open polypropylene sack
+    right: No hermetic benefit — weevils freely enter and exit
+  prompt: Match each storage technology to its primary advantage.
+  xp_reward: 30
+  correct_answer:
+  - PICS bag=Low-cost, widely available, reusable 2–4 seasons
+  - Metal silo=Rodent-proof, 20+ year lifespan, best for community stores
+  - Triple-layer hermetic bag=UV-stabilised for outdoor stacking, suits 50–1 000 kg
+  - Open polypropylene sack=No hermetic benefit — weevils freely enter and exit
+- type: MULTIPLE_CHOICE
+  id: fs1-q4
+  options:
+  - text: Remove glowing nuts and feed them to chickens — the toxin is less harmful
+      to poultry
+    correct: false
+    explanation: Aflatoxin accumulates in poultry liver and eggs. Contaminated eggs
+      enter the human food chain. Do not feed to any livestock.
+  - text: Remove and destroy glowing nuts; do not consume or feed to animals
+    correct: true
+    explanation: UV fluorescence indicates Aspergillus mould. Destroy by burying deeply
+      or burning. Never feed aflatoxin-contaminated grain to any animal.
+  - text: Wash glowing nuts with clean water to remove the toxin
+    correct: false
+    explanation: Aflatoxin is bound to the grain matrix and is not water-soluble.
+      Washing has no effect.
+  - text: Continue storage — UV glow only appears during the first days and disappears
+    correct: false
+    explanation: Fluorescence persists as long as the mould is present. It does not
+      fade and the toxin does not break down at room temperature.
+  prompt: A UV torch shows blue-green glow on some groundnuts. What is the correct
+    action?
+  xp_reward: 30
+  correct_answer: Remove and destroy glowing nuts; do not consume or feed to animals
+course_id: food-security
+estimated_minutes: 45
+license: CC-BY-SA-4.0

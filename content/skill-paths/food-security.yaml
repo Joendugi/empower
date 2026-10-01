@@ -1,0 +1,48 @@
+id: food-security
+title: "Food Security & Preservation"
+title_sw: "Usalama wa Chakula na Uhifadhi"
+description: >
+  Five-day hands-on unit on post-harvest food preservation for East African
+  contexts: hermetic grain storage, solar drying, lacto-fermentation, salt
+  and smoke curing, and seed saving. Each day builds practical skills that
+  reduce food loss and extend nutritional reach across seasons.
+description_sw: >
+  Kitengo cha siku tano cha vitendo kuhusu uhifadhi wa chakula baada ya mavuno
+  kwa muktadha wa Afrika Mashariki.
+level: beginner
+tags: [food-security, preservation, fermentation, agriculture, kenya]
+weeks:
+  - week_number: 1
+    title: "Foundations of Food Preservation"
+    title_sw: "Misingi ya Uhifadhi wa Chakula"
+    nodes:
+      - id: food-security-day-1
+        title: "Hermetic Grain Storage"
+        title_sw: "Uhifadhi wa Nafaka kwa Hermetic"
+        day_number: 1
+        week_number: 1
+        xp: 80
+      - id: food-security-day-2
+        title: "Solar Drying"
+        title_sw: "Ukaushaji wa Jua"
+        day_number: 2
+        week_number: 1
+        xp: 80
+      - id: food-security-day-3
+        title: "Lacto-Fermentation"
+        title_sw: "Kuchacha kwa Lacto"
+        day_number: 3
+        week_number: 1
+        xp: 90
+      - id: food-security-day-4
+        title: "Salt & Smoke Preservation"
+        title_sw: "Uhifadhi wa Chumvi na Moshi"
+        day_number: 4
+        week_number: 1
+        xp: 80
+      - id: food-security-day-5
+        title: "Seed Saving & Storage"
+        title_sw: "Kuhifadhi Mbegu"
+        day_number: 5
+        week_number: 1
+        xp: 90
