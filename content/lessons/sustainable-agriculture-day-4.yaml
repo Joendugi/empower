@@ -1,0 +1,229 @@
+id: sustainable-agriculture-day-4
+course_id: sustainable-agriculture
+title: "Agroforestry & Nitrogen-Fixing Trees"
+title_sw: "Kilimo Msitu na Miti ya Kukuza Naitrojeni"
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - agroforestry
+  - nitrogen-fixation
+  - Calliandra
+  - Leucaena
+  - intercropping
+xp: 250
+exam_domain: sustainable-agriculture
+
+briefing: >
+  Agroforestry — integrating trees with crops and livestock — is the most
+  documented path to long-term soil fertility restoration in East Africa.
+  Nitrogen-fixing trees deliver 50-200 kg of biologically fixed nitrogen per
+  hectare per year through their root nodules, replacing expensive synthetic
+  fertiliser. Properly designed agroforestry systems also provide fuelwood,
+  fodder, shade, windbreaks, and improved water infiltration — all from
+  trees already growing on the farm.
+
+outline: >
+  Biological nitrogen fixation mechanism (Rhizobium nodules, nitrogenase
+  enzyme); key N-fixing species for East Africa (Calliandra calothyrsus,
+  Leucaena leucocephala, Tithonia diversifolia, Sesbania sesban, Gliricidia
+  sepium); improved fallow with Sesbania; fertiliser trees as green manure;
+  Farmer Managed Natural Regeneration (FMNR); alley cropping design (tree rows
+  6m apart, pollarding height 0.5-1.0m); windbreak design; multi-purpose tree
+  selection; legume intercropping.
+
+content_md: |
+  ## Biological Nitrogen Fixation
+
+  Nitrogen fixation is the conversion of atmospheric N2 (78% of air) into
+  plant-available ammonium (NH4+) by the nitrogenase enzyme in Rhizobium bacteria
+  living symbiotically in root nodules of leguminous plants.
+
+  **The process:**
+  1. Legume root exudates attract compatible Rhizobium from soil
+  2. Bacteria infect root hair and form a nodule (2-10 mm diameter pink/red inside)
+  3. Inside the nodule: N2 + 8H+ + 8e- + 16 ATP → 2 NH3 + H2 + 16 ADP
+  4. Ammonia converted to ammonium (NH4+), absorbed by plant
+  5. When roots decompose, fixed N enters the soil
+
+  **Pink/red nodule interior = active fixation** (contains leghaemoglobin).
+  White or brown inside = inactive or dead nodule (poor soil, wrong Rhizobium strain).
+
+  Annual N fixation rates by species in East Africa:
+
+  | Species | N fixed (kg/ha/year) |
+  |---|---|
+  | Leucaena leucocephala | 100-500 kg/ha |
+  | Calliandra calothyrsus | 50-150 kg/ha |
+  | Gliricidia sepium | 80-200 kg/ha |
+  | Sesbania sesban (short-cycle) | 40-200 kg/ha |
+  | Tithonia diversifolia (shrub) | 20-100 kg/ha |
+  | Climbing beans (crop) | 50-150 kg/ha |
+
+  ## Key N-Fixing Species for East Africa
+
+  ### Calliandra calothyrsus (Red Calliandra)
+  - Multi-purpose: fodder (35% crude protein), fuelwood, erosion control
+  - Tolerates: acid soils (pH 4.5-7.0), waterlogged soils, altitudes to 2,400 m
+  - Management: coppice to 0.5 m every 2-3 months for fodder production
+  - Green leaf application: 2-4 t/ha fresh biomass adds 40-80 kg N/ha
+
+  ### Leucaena leucocephala (White Leadtree)
+  - Highest N fixation rate (100-500 kg N/ha/year)
+  - Fast-growing: 3-5 m in first year; coppices vigorously
+  - Limitations: intolerant of acid soils (pH < 5.5); mimosine in leaves
+    toxic to non-ruminants and ruminants without adapted gut bacteria
+  - Best for: alley cropping in medium-altitude neutral-pH areas
+
+  ### Tithonia diversifolia (Mexican Sunflower)
+  - Shrubby perennial, not a legume — fixes N via mycorrhizal partnerships
+  - Very high biomass N content: 3.5-4.5% N in leaves (similar to synthetic urea)
+  - Grow on field edges; cut and carry as green manure
+  - Application: 2-5 t/ha fresh biomass incorporated before planting adds
+    70-200 kg N equivalent per hectare
+
+  ### Sesbania sesban (Improved Fallow)
+  - Short-cycle tree (1-2 year fallow): plant after harvest, cut before next season
+  - Produces 40-200 kg N/ha in one fallow season
+  - Trials in western Kenya: following 2-year Sesbania fallow, maize yields
+    4-6 t/ha without fertiliser vs 0.5-1.5 t/ha in unfallowed control plots
+
+  ## Farmer Managed Natural Regeneration (FMNR)
+
+  FMNR is the deliberate protection and management of naturally regenerating
+  trees and shrubs on farmland by pruning suckers to a single strong stem:
+
+  1. Select strongest sucker from stumps already present in the field
+  2. Remove competing shoots; protect from grazing for first year
+  3. Prune lower branches at 1.5-2.0 m height once established
+  4. Trees provide shade, N, roots to fight erosion, and fuelwood from prunings
+
+  FMNR cost: near zero (trees already exist). Impact: demonstrated to restore
+  5 million ha of degraded Sahel farmland with 500,000 farm families.
+
+  ## Alley Cropping Design
+
+  In alley cropping, rows of N-fixing trees are planted at regular intervals
+  with food crops grown between them:
+
+  | Parameter | Value |
+  |---|---|
+  | Tree row spacing | 4-8 m apart (wider spacing = less shading of crops) |
+  | Tree spacing within row | 0.25-0.5 m (dense hedge) |
+  | Pollarding height | 0.5-1.0 m above ground when cutting |
+  | Cutting frequency | At planting + 6-8 weeks later (when maize is knee-high) |
+  | Biomass placement | Lay prunings on soil surface as mulch; or incorporate |
+
+  The tree biomass from 4-8 m alleys in a 1 ha field provides approximately
+  60-180 kg N equivalent per hectare per year if harvested and incorporated.
+
+  ## Legume Intercropping
+
+  Short-cycle annual legumes grown with staple cereals provide dual benefits:
+  nitrogen fixation during the season + grain protein harvest.
+
+  | Cereal | Intercrop legume | Arrangement |
+  |---|---|---|
+  | Maize | Climbing bean (Phaseolus vulgaris) | Bean planted 2 weeks after maize, uses maize stalk as support |
+  | Sorghum | Cowpea (Vigna unguiculata) | Sow cowpea in alternate rows; cowpea tolerates drought |
+  | Millet | Groundnut (Arachis hypogaea) | Groundnut fixes 50-150 kg N/ha; also enriches diet |
+  | Maize | Desmodium (Silverleaf) | Push-pull system — Desmodium repels striga and stem borers |
+
+  **Push-Pull System** (ICIPE, Kenya): Desmodium intercrop repels stem borers
+  (push); Napier grass planted around field perimeter attracts stem borers away
+  from maize (pull). Also suppresses Striga weed through allelopathy.
+  Yield improvements: 2-3x in heavily infested fields.
+
+exercises:
+  - id: sa-d4-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A farmer cuts open a root nodule from a Leucaena tree and finds the
+      interior is white/grey in colour. What does this indicate and what action
+      should be taken?
+    xp_reward: 50
+    options:
+      - text: "White/grey nodules are inactive — no nitrogen fixation occurring; check soil pH (Leucaena requires pH > 5.5), consider Rhizobium inoculant on seeds of replacement plants"
+        correct: true
+        explanation: "Active nodules contain leghaemoglobin which gives a pink/red colour. White or grey interior indicates the Rhizobium are absent, dead, or inactive. Causes include: wrong Rhizobium strain, soil pH < 5.5 (kills Rhizobium), waterlogging, or high soil nitrogen (N inhibits fixation when fertiliser N is abundant)."
+      - text: "White nodules indicate maximum nitrogen fixation — the colour shows pure NH3 production"
+        correct: false
+        explanation: "This is incorrect. Pink/red colour from leghaemoglobin is the indicator of active fixation. White or grey indicates inactive nodules."
+      - text: "White nodules are normal in young trees — they turn pink after 6 months"
+        correct: false
+        explanation: "Active nodules are pink/red from early establishment. White nodules in mature trees indicate a problem, not a developmental stage."
+      - text: "Only nodule size matters — small white nodules will fix more N than large pink ones"
+        correct: false
+        explanation: "Size does not predict activity. Colour is the key indicator: pink/red = active, white/grey = inactive, regardless of size."
+
+  - id: sa-d4-q2
+    type: FILL_BLANK
+    prompt: >
+      Tithonia diversifolia leaves contain ___ to ___% nitrogen by dry weight,
+      similar to synthetic urea. Applying 3 t/ha of fresh Tithonia biomass
+      provides approximately ___ kg of nitrogen equivalent per hectare.
+    xp_reward: 50
+    correct_answer: "3.5%; 4.5%; 105-135 kg"
+    explanation: >
+      At 4% N (midpoint) in fresh biomass (approximately 25% DM):
+      3 t/ha fresh x 0.25 DM fraction = 0.75 t/ha dry matter.
+      0.75 t DM x 40 kg N/t DM (at 4% N) = 30 kg N — but fresh weight at
+      3.5-4.5% N on fresh weight basis: 3,000 kg x 0.04 = 120 kg N.
+      Range 3.5-4.5% gives 105-135 kg N equivalent per ha. A powerful
+      free fertiliser from a plant that grows on degraded land margins.
+
+  - id: sa-d4-q3
+    type: MATCH_PAIRS
+    prompt: Match each agroforestry species to its primary advantage in East Africa.
+    xp_reward: 50
+    pairs:
+      - left: Leucaena leucocephala
+        right: Highest N fixation rate (100-500 kg/ha/year) for alley cropping on neutral soils
+      - left: Calliandra calothyrsus
+        right: Tolerates acid soils and waterlogging; 35% crude protein fodder for dairy cattle
+      - left: Sesbania sesban
+        right: Short 1-2 year improved fallow that delivers 40-200 kg N before next maize crop
+      - left: Desmodium intortum (Silverleaf)
+        right: Push-pull intercrop — repels stem borers and suppresses Striga weed
+    correct_answer: null
+    explanation: >
+      Matching species to site and farming system is critical. Leucaena fails
+      on acid soils (pH < 5.5) where Calliandra thrives. Sesbania is for the
+      farmer who can afford one fallow season. Desmodium is for maize-belt
+      farmers with stem borer and Striga pressure.
+
+  - id: sa-d4-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      In the push-pull pest management system, what role does Desmodium
+      intercropped with maize play, and what does the Napier grass border do?
+    xp_reward: 50
+    options:
+      - text: "Desmodium releases volatile compounds that repel stem borers away from maize (push); Napier grass attracts stem borers to the field border where they lay eggs but larvae survive poorly (pull)"
+        correct: true
+        explanation: "Desmodium (silverleaf) releases isothiocyanates that push stem borer moths away from the maize stand. Napier grass at borders produces a sticky exudate that traps stem borer larvae after hatching, acting as a dead-end trap crop. This also suppresses Striga through allelopathic root exudates."
+      - text: "Desmodium kills stem borers with natural insecticide; Napier grass blocks physical entry into the field"
+        correct: false
+        explanation: "Desmodium does not directly kill insects — it repels them through volatile chemicals. Napier grass does not form a physical barrier; it attracts and traps larvae biochemically."
+      - text: "Both Desmodium and Napier grass fix nitrogen — the system is primarily for soil fertility"
+        correct: false
+        explanation: "Desmodium does fix some nitrogen as a legume, but the primary purpose of this system is pest and Striga management. Napier grass is a C4 grass and does not fix nitrogen."
+      - text: "Napier grass shades stem borer pupae preventing emergence; Desmodium provides habitat for parasitic wasps"
+        correct: false
+        explanation: "The mechanism is chemical, not physical shading. The parasitic wasp habitat aspect has some truth but is not the primary mechanism. The core is push (volatile repellent) and pull (attractive trap crop)."
+
+  - id: sa-d4-q5
+    type: FILL_BLANK
+    prompt: >
+      In alley cropping with Leucaena rows spaced ___ to ___ metres apart,
+      trees are pollarded to ___ to ___ metre height. FMNR costs approximately
+      ___ per hectare since it manages trees that are already ___ on the farmland.
+    xp_reward: 50
+    correct_answer: "4; 8; 0.5; 1.0; zero (near zero); regenerating"
+    explanation: >
+      Alley spacing of 4-8 m allows adequate light to reach inter-row crops
+      while providing significant N-fixing tree biomass. Pollarding at 0.5-1.0 m
+      keeps trees as hedges rather than large shade trees. FMNR's near-zero cost
+      arises because farmers protect and manage stumps already present in their
+      fields — no tree nursery, no planting, no seedling cost.

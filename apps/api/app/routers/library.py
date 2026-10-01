@@ -336,6 +336,41 @@ Every infectious disease requires three elements: the agent (pathogen), the host
 Removing any one side of this triangle breaks transmission. The basic reproduction number R0 determines how many secondary cases each infectious person generates in a fully susceptible population.
 When effective R_eff drops below 1.0, the outbreak collapses.
 """
+    },
+    {
+        "id": "book-sustainable-agriculture",
+        "title": "Smallholder Soil Science & Regenerative Agriculture Manual",
+        "titleSw": "Sayansi ya Udongo na Mwongozo wa Kilimo Endelevu",
+        "author": "Dr. Florence Wambugu & African Agroecology Network",
+        "description": "Practical guide to soil ribbon and jar sedimentation testing, thermophilic Berkeley composting, biochar, zai pits, contour swales, nitrogen-fixing agroforestry (Calliandra, Leucaena, Sesbania), and community seed saving.",
+        "descriptionSw": "Mwongozo wa vitendo kuhusu upimaji wa udongo, mboji ya moto, mkaa wa biochar, mashimo ya zai, kilimo msitu, na uhifadhi wa mbegu.",
+        "category": "agriculture",
+        "tradeId": "agriculture",
+        "tradeTitle": "Sustainable Agriculture",
+        "coverColor": "from-emerald-700 to-green-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 6.1,
+        "totalPages": 120,
+        "estimatedMinutes": 240,
+        "featured": True,
+        "rating": 4.9,
+        "readersCount": 3890,
+        "cdaccUnitId": "CU/AGR/SA/CR/06/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "Soil Science — Texture, Structure & Field Testing", "pageNumber": 1},
+            {"id": "ch2", "title": "Thermophilic Composting & Organic Amendments", "pageNumber": 26},
+            {"id": "ch3", "title": "Water-Wise Catchments — Zai Pits & Swales", "pageNumber": 50},
+            {"id": "ch4", "title": "Agroforestry & Biological Nitrogen Fixation", "pageNumber": 76},
+            {"id": "ch5", "title": "Open-Pollinated Seed Saving & Seed Banks", "pageNumber": 98},
+        ],
+        "contentMarkdown": """# Smallholder Soil Science & Regenerative Agriculture
+
+## Chapter 1: Soil Texture & Structure
+Healthy soil is the foundation of food sovereignty. Mineral soil consists of sand, silt, and clay fractions.
+The 24-hour glass jar sedimentation test accurately separates the strata: sand settles within 2 minutes, silt within 1 to 2 hours, and clay remains suspended for up to 24 hours.
+Maintaining a crumbly granular structure with over 2% soil organic matter ensures high cation exchange capacity and moisture retention during prolonged dry spells.
+"""
     }
 ]
 

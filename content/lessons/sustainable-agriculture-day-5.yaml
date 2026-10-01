@@ -1,0 +1,262 @@
+id: sustainable-agriculture-day-5
+course_id: sustainable-agriculture
+title: "Seed Saving, Variety Selection & Open-Pollinated Crops"
+title_sw: "Kuhifadhi Mbegu, Uchaguzi wa Aina na Mazao ya Kuzaliana Wenyewe"
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - seed-saving
+  - open-pollinated
+  - variety-selection
+  - food-sovereignty
+  - agriculture
+xp: 250
+exam_domain: sustainable-agriculture
+
+briefing: >
+  Seed sovereignty — the ability of farmers to save, replant, and exchange their
+  own seed — is the deepest form of food security. Open-pollinated varieties
+  (OPVs) reproduce true to type from saved seed, unlike F1 hybrids which must
+  be purchased every season. This lesson covers the science of seed selection,
+  processing, storage, and variety trials that enable a community to build a
+  locally adapted, high-yielding seed bank without dependency on commercial
+  suppliers.
+
+outline: >
+  Open-pollinated variety (OPV) vs F1 hybrid — genetics, reproduction, and seed
+  saving rules; positive mass selection — selecting 10-15% of best plants;
+  isolation distances for cross-pollinating crops (maize 200-500 m, brassicas
+  500 m); seed drying to safe moisture content (< 12% for cereals, < 8% for
+  legumes); hermetic storage and moisture indicators; seed viability testing
+  (germination rate test); community seed bank design; variety trial methodology
+  (mother-baby trial); labelling and record-keeping.
+
+content_md: |
+  ## Open-Pollinated Varieties vs F1 Hybrids
+
+  | Feature | Open-Pollinated Variety (OPV) | F1 Hybrid |
+  |---|---|---|
+  | Genetics | Genetically diverse, stable lines | Crossing two inbred parental lines |
+  | Seed saving | Yes — offspring same as parent | No — offspring segregate, lose vigour |
+  | Yield potential | Good (typically 70-85% of hybrid) | High in ideal conditions |
+  | Stress resilience | Often better (genetic diversity) | Often poorer (narrow gene base) |
+  | Seed cost | Near zero (farm-saved) | High — purchased every season |
+  | Local adaptation | Builds over generations of selection | Fixed at breeding station |
+
+  **Key principle**: Saving seed from F1 hybrids produces F2 offspring with
+  80% reduction in favourable trait combinations (heterozygosity lost). Do not
+  save from hybrids — always save from OPVs.
+
+  ## Positive Mass Selection
+
+  Mass selection is the most practical seed-saving method for smallholders:
+
+  1. Walk the field at maturity — before any harvest begins
+  2. Identify the **top 10-15% of plants** showing:
+     - Tall, straight, unblemished stalks
+     - Largest cob/pod/head for the variety
+     - Early uniform maturity (same date as neighbours)
+     - Disease-free leaves — no rust, blight, or viral lesions
+     - Root stability — not lodged even in wind or wet
+  3. Mark selected plants with a strip of cloth tied to stem
+  4. Harvest marked plants separately, first, before main harvest begins
+  5. Dry separately, process separately, store in labelled container
+
+  Over 3-5 seasons of consistent positive selection, local yields improve
+  measurably as the seed population adapts to local conditions.
+
+  ## Isolation Distances for Cross-Pollinating Crops
+
+  Cross-pollinating crops require spatial or temporal isolation to maintain
+  variety purity:
+
+  | Crop | Pollination mechanism | Minimum isolation distance |
+  |---|---|---|
+  | Maize | Wind-pollinated | 200-500 m from other maize varieties |
+  | Sorghum | Mainly self; some cross | 100-200 m |
+  | Brassicas (kale, cabbage) | Insect-pollinated | 500-1,000 m from other Brassica spp. |
+  | Sunflower | Insect-pollinated | 1,000 m |
+  | Squash/pumpkin | Insect-pollinated | 500-1,000 m |
+  | Tomato | Mainly self-pollinated | 5-10 m (sufficient for most purposes) |
+  | Beans (common) | Self-pollinated | 5-10 m |
+  | Cowpea | Self-pollinated | 10-20 m |
+
+  For communities without large isolation distances, use **time isolation**:
+  stagger planting by more than the silk-to-pollen synchrony window (10-14 days
+  for maize) so varieties flower at different times.
+
+  ## Seed Drying to Safe Moisture Content
+
+  Seeds at high moisture content deteriorate rapidly from mould and respiration.
+
+  | Crop category | Safe moisture content | Drying method |
+  |---|---|---|
+  | Cereals (maize, sorghum, millet) | < 12% | Sun-dry on raised platforms 3-7 days; test with teeth (hard, no dent = ready) |
+  | Legumes (beans, cowpea, groundnut) | < 8% | Sun-dry until pods rattle; shell and dry shelled seed further 1-2 days |
+  | Vegetables (tomato, kale, onion) | < 6% | Shade-dry (UV damages small seeds); 7-14 days on cloth |
+
+  **Moisture indicator**: place dried seed in an airtight jar for 24 hours.
+  If condensation appears on inner jar walls — moisture too high. Continue drying.
+
+  ## Hermetic Storage
+
+  Hermetic storage creates an oxygen-depleted, CO2-rich environment that:
+  - Kills storage insects (weevils, beetles, bruchid beetles on legumes)
+  - Prevents moisture re-absorption
+  - Inhibits mould growth
+
+  | Storage container | Capacity | Notes |
+  |---|---|---|
+  | PICS triple-layer hermetic bag | 100 kg | Standard for cereal; inexpensive |
+  | Purdue Improved Cowpea Storage (PICS) | 100 kg | Specifically for legumes; bruchid control |
+  | Metal drum with sealed lid | 50-200 kg | Very durable; paint to reduce heat absorption |
+  | Glass jar with rubber seal | 0.5-5 kg | Ideal for small vegetable seed lots |
+
+  Add **fresh dry wood ash** (1% by weight) to seed before sealing — raises
+  pH, desiccates microenvironment, repels insects mechanically.
+
+  ## Germination (Viability) Test
+
+  Before planting, always test seed viability:
+
+  1. Count out exactly 50 seeds from your saved stock
+  2. Lay on moist paper towel; fold over; place in a warm location (25-30°C)
+  3. Keep moist (not waterlogged) for the crop's germination period:
+     - Maize: 5-7 days
+     - Beans: 5-7 days
+     - Tomato: 7-10 days
+  4. Count germinated seeds (radicle visible, > 5 mm long)
+  5. Germination rate = germinated / 50 x 100%
+
+  **Decision guide:**
+  - > 85%: Excellent seed — plant at normal seeding rate
+  - 70-85%: Good seed — increase seeding rate by 15-20%
+  - 50-70%: Marginal — increase seeding rate by 30-50% and source new seed
+  - < 50%: Discard — unacceptably low germination; do not plant
+
+  ## Community Seed Bank Design
+
+  A community seed bank collects, stores, and distributes diverse local varieties:
+
+  1. **Storage room**: cool, dry, well-ventilated; insulated walls reduce temperature swings
+  2. **Inventory**: each variety labelled with: name, collector, village, harvest year, germination rate
+  3. **Withdrawal policy**: members borrow 1 kg, return 2 kg after harvest (grain-for-grain-plus-surplus)
+  4. **Refresh cycle**: refresh stored seed every 2-3 years with fresh well-dried stock
+  5. **Diversity targets**: minimum 3 varieties per crop species; prioritise rare local varieties
+
+  ## Mother-Baby Variety Trial
+
+  A structured on-farm trial to compare varieties under farmer conditions:
+
+  - **Mother trial**: one farmer manages all varieties under identical management; generates robust comparison data
+  - **Baby trials**: 20-30 farmers each grow one new variety alongside their local check in split plot
+  - Data collection: plant height, days to flowering, days to maturity, yield per plot
+  - Yield calculation: (harvest weight kg) / (plot area m2) x 10,000 = kg/ha
+
+  Results are shared at community field day. Farmers themselves vote on preferred
+  variety based on yield, taste, storability, and market price.
+
+exercises:
+  - id: sa-d5-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A farmer saves seed from an F1 hybrid maize variety for three seasons
+      running. What happens to the crop performance, and why?
+    xp_reward: 50
+    options:
+      - text: "Yields decline sharply in F2 and F3 generations as heterozygosity is lost — offspring no longer have the favourable gene combinations of the original hybrid cross"
+        correct: true
+        explanation: "F1 hybrids exploit heterosis from crossing two inbred parental lines. F2 offspring (from saved F1 seed) undergo Mendelian segregation, with 75% of gene pairs becoming homozygous. Favourable dominant-dominant combinations drop from ~100% to ~56% in F2, producing dramatically lower and uneven yields."
+      - text: "Yields improve season by season as the plants adapt to local conditions"
+        correct: false
+        explanation: "Adaptation through selection takes many generations and requires genetic diversity. F1 hybrids start with limited diversity, and segregation in F2/F3 primarily produces poorly performing homozygous lines, not adapted ones."
+      - text: "Yields stay the same — F1 seed and saved seed from F1 perform identically"
+        correct: false
+        explanation: "F1 yield advantage specifically comes from the first-generation heterozygosity. Saving seed destroys this advantage. Commercial seed companies rely on this biological fact to maintain annual seed purchase dependency."
+      - text: "Only the disease resistance is lost; yield potential is maintained through saving"
+        correct: false
+        explanation: "All traits that benefit from heterozygosity — including yield, stress tolerance, and disease resistance — decline in F2 generation. It is not selective loss of disease resistance only."
+
+  - id: sa-d5-q2
+    type: FILL_BLANK
+    prompt: >
+      Maize seed for saving must be isolated at least ___ metres from other
+      maize varieties to prevent cross-pollination. Safe moisture content for
+      stored maize seed is below ___%. A germination test using 50 seeds returns
+      38 germinated — the germination rate is ___% and the recommendation is ___.
+    xp_reward: 50
+    correct_answer: "200 metres; 12%; 76%; increase seeding rate by 15-20% and source new seed"
+    explanation: >
+      Maize is wind-pollinated over 200-500 m. Below 12% moisture, weevils
+      cannot complete their life cycle and mould is suppressed. Germination:
+      38/50 x 100 = 76% — falls in the 70-85% marginal-to-good range.
+      Increase seeding rate by 15-20% and plan to source better seed for
+      the next season.
+
+  - id: sa-d5-q3
+    type: MATCH_PAIRS
+    prompt: Match each crop to its minimum seed-saving isolation distance.
+    xp_reward: 50
+    pairs:
+      - left: Maize (wind-pollinated)
+        right: 200-500 m from other maize varieties
+      - left: Common bean (self-pollinated)
+        right: 5-10 m — almost no cross-pollination risk
+      - left: Kale/cabbage (Brassica, insect-pollinated)
+        right: 500-1,000 m from other Brassica species
+      - left: Tomato (mainly self-pollinated)
+        right: 5-10 m adequate for most smallholder saving
+    correct_answer: null
+    explanation: >
+      Isolation distance depends entirely on pollination mechanism: wind and
+      insect carriers need much larger distances than self-pollinators.
+      Communities without large isolation distances can use time isolation
+      (staggering planting dates) for wind-pollinated crops like maize.
+
+  - id: sa-d5-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      After 24 hours, a jar of dried beans sealed hermetically shows condensation
+      on the inner walls. What does this mean and what action should be taken?
+    xp_reward: 50
+    options:
+      - text: "The beans are still too moist — continue drying in the sun for another 1-2 days, then repeat the jar test before sealing for long-term storage"
+        correct: true
+        explanation: "Condensation forms when moisture evaporating from beans condenses on cooler jar walls — confirming moisture content is still above the safe threshold (< 8% for legumes). Storing at this moisture in hermetic bags would lead to mould growth and loss of germination viability within months."
+      - text: "Condensation is normal in sealed jars — proceed with hermetic storage immediately"
+        correct: false
+        explanation: "Condensation is a moisture warning, not a normal sign. In hermetic storage, high-moisture seed would create an anaerobic, humid environment that promotes mould even without oxygen — leading to mycotoxin contamination and seed death."
+      - text: "Add wood ash immediately — ash will absorb the moisture inside the sealed jar"
+        correct: false
+        explanation: "Wood ash is added before sealing as a preventive measure, not as a cure for already-wet seed. The correct action is to break the seal, continue drying, then re-test before closing for storage."
+      - text: "The condensation indicates seed is sufficiently cool for storage — proceed"
+        correct: false
+        explanation: "Condensation is a moisture indicator, not a temperature indicator. Cool seed does not produce condensation on inner jar walls unless moisture is being actively released."
+
+  - id: sa-d5-q5
+    type: PHOTO_CAPTURE
+    prompt: >
+      Visit a farm or market and photograph at least two different locally
+      named crop varieties of the same species (e.g. two types of bean,
+      two varieties of sorghum, or two local maize varieties). For each,
+      record: local name, perceived advantages according to the farmer or
+      seller (taste, drought tolerance, maturity time, storability),
+      and any visible seed morphology differences (colour, size, shape).
+    xp_reward: 50
+    correct_answer: null
+    explanation: >
+      Documenting local variety diversity is the first step in community seed
+      banking. Farmers' knowledge of variety performance under local conditions
+      is irreplaceable and often exceeds formal breeding station data for
+      smallholder-relevant traits like drought escaping and taste.
+    rubric:
+      - criterion: Two clearly different varieties of the same crop species are photographed side by side
+        points: 15
+      - criterion: Local name of each variety is recorded
+        points: 10
+      - criterion: At least two farmer-perceived advantages per variety are documented
+        points: 15
+      - criterion: At least one visible morphological difference between varieties is described
+        points: 10

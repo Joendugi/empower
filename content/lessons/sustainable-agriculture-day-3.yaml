@@ -1,0 +1,249 @@
+id: sustainable-agriculture-day-3
+course_id: sustainable-agriculture
+title: "Water-Wise Farming — Zai Pits, Swales & Drip Irrigation"
+title_sw: "Kilimo cha Kuokoa Maji — Mashimo ya Zai, Mifereji na Umwagiliaji"
+week_number: 1
+day_number: 3
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+  - water-harvesting
+  - zai-pits
+  - swales
+  - drip-irrigation
+  - drought-resilience
+xp: 250
+exam_domain: sustainable-agriculture
+
+briefing: >
+  In semi-arid Kenya, where rainfall is bimodal, erratic, and declining, the
+  difference between food security and food crisis is often 50 mm of rain that
+  runs off bare, compacted soil rather than soaking in. Water-wise farming
+  techniques — zai pits, half-moon catchments, contour swales, and low-cost
+  drip irrigation — capture, store, and deliver every raindrop to the root
+  zone of the crop, multiplying the effective rainfall by 2-4 times.
+
+outline: >
+  Rainfall-runoff relationship and infiltration rate; zai pit design and
+  spacing (0.9 m apart, 30x30x15 cm); half-moon catchment bunds;
+  contour swale design using A-frame level; keyline cultivation principle;
+  low-cost drip irrigation from jerrycan or gravity tank; bucket drip kit
+  design (0.5 mm emitter holes, dripper spacing); mulching and its effect
+  on evaporation; FOFIFA tied ridges for moisture conservation.
+
+content_md: |
+  ## Rainfall and Runoff
+
+  Kenya's semi-arid areas receive 400-700 mm of annual rainfall, yet crop yields
+  are often equivalent to what 150-200 mm of effective rainfall would support.
+  The gap is lost water: runoff, evaporation, and deep drainage below the root zone.
+
+  | Loss pathway | Typical % of rainfall lost | Intervention |
+  |---|---|---|
+  | Runoff (bare soil) | 30-60% | Zai pits, swales, tied ridges |
+  | Evaporation (bare soil surface) | 20-40% | Mulching, minimum tillage |
+  | Deep drainage (sandy soils) | 5-20% | Biochar, organic matter |
+  | Crop transpiration (desired) | 20-40% | — |
+
+  **Infiltration rate** of compacted crusted soil: 2-5 mm/hour.
+  Healthy soil with good structure: 20-50 mm/hour. During a 30-minute storm
+  delivering 20 mm of rain, compacted soil absorbs only 1-2.5 mm — the rest
+  runs off carrying topsoil.
+
+  ## Zai Pits
+
+  Originally from Burkina Faso (Yacouba Sawadogo), adapted across the Sahel.
+  Zai pits are hand-dug micro-catchments that concentrate water and organic
+  matter at the seed point.
+
+  ### Design Specifications
+
+  - **Pit dimensions**: 30 cm wide x 30 cm long x 15 cm deep
+  - **Spacing**: 0.9 m between pits in rows; 0.9 m between rows (1 pit per 0.81 m2)
+  - **Density**: approximately 12,300 pits per hectare
+  - **Soil placement**: excavated soil forms a downslope crescent bund (catches runoff)
+  - **Organic fill**: add 1-2 handfuls of compost or manure per pit before planting
+  - **Termite attraction**: manure fills attract termites which channel additional water to 40+ cm depth
+
+  ### Yield Impact
+
+  In trials across semi-arid East Africa, zai pits increase sorghum and millet
+  yields by 40-100% compared to flat planting in the same rainfall conditions.
+  In severe drought years, crops on zai pits often produce while flat-planted
+  crops fail entirely.
+
+  ## Half-Moon Catchments (Demi-Lunes)
+
+  Used for trees and large shrubs in drylands:
+
+  - Semicircular earth bund, flat side upslope, curved bund downslope
+  - Diameter: 2-4 m per demi-lune
+  - Plants at the centre of the flat base
+  - One demi-lune catches runoff from an upslope area 3-5x its own size
+
+  ## Contour Swales
+
+  A swale is a level trench dug exactly on the contour (zero slope) with the
+  excavated soil forming a downslope berm:
+
+  ### A-Frame Level Construction
+
+  1. Cut two equal legs (1.5 m each) and one crossbar (1.5 m) into an A-frame
+  2. Hang a plumb line (stone + string) from the apex
+  3. Mark where plumb hits crossbar when both legs are on flat ground
+  4. Walk the A-frame along the slope: the contour is the line where the
+     plumb bob rests on the same mark
+  5. Mark with stakes every 2-3 m; connect stakes with a hoe trench
+
+  ### Swale Specifications
+
+  | Parameter | Value |
+  |---|---|
+  | Trench depth | 30-50 cm |
+  | Trench width | 50-100 cm |
+  | Berm height | 30-40 cm above downslope ground |
+  | Spacing between swales | 3-10 m vertically (depends on slope steepness) |
+  | Overflow spillway | Always include — 20 cm lower section to prevent berm breach |
+
+  Swales capture runoff, allow it to infiltrate slowly, and recharge
+  groundwater. Trees planted on the berm access this stored moisture
+  during dry spells.
+
+  ## Low-Cost Drip Irrigation
+
+  ### Jerrycan Gravity Drip (Household Scale)
+
+  - 20 L jerrycan elevated 1 m above ground on a stand
+  - 0.5 mm holes (use hot nail or drill bit) in a 15 mm PE pipe connected at bottom
+  - One jerrycan irrigates approximately 25 plants at 0.5 L each per filling
+  - Flow rate: 0.5 mm holes deliver approximately 30 mL/hour at 1 m head
+  - Irrigation interval: every 2-3 days for most crops in warm lowlands
+
+  ### Bucket Drip Kit (0.1-0.4 ha scale)
+
+  Commercial bucket drip kits (KickStart, IDE) use:
+  - 20 L elevated bucket or small tank (200-1,000 L)
+  - Mainline PE pipe (16 mm) with lateral lines (12 mm) every 60 cm
+  - Button emitters or punch-hole emitters at 30-60 cm spacing
+  - Pressure filter on inlet to prevent clogging
+  - Cost: approximately KES 3,000-12,000 for a 0.1-0.2 ha kit
+
+  Water savings versus flood irrigation: 30-50% less water for same yield.
+
+  ## Mulching
+
+  Mulch reduces surface evaporation, moderates soil temperature, suppresses
+  weeds, and slowly adds organic matter as it decomposes.
+
+  | Mulch type | Depth | Evaporation reduction |
+  |---|---|---|
+  | Dry grass/straw | 5-10 cm | 50-70% |
+  | Crop residues | 5-8 cm | 40-60% |
+  | Wood chips | 8-12 cm | 60-75% |
+  | Living mulch (creeping legume) | Ground cover | 40-60% + nitrogen fixation |
+
+  Apply mulch leaving a 5 cm gap around stem base to prevent rot and rodent shelter.
+
+  ## Tied Ridges
+
+  Ridges formed between crop rows are tied at 2-5 m intervals with small earth
+  dams (ties), converting furrows into a series of small water storage basins:
+
+  - Each basin captures 2-5 L of runoff before overflowing to the next
+  - Labour: approximately 3 person-days per hectare to tie ridges
+  - Yield improvement in semi-arid areas: 30-60% over open ridges
+
+exercises:
+  - id: sa-d3-q1
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A farmer has a 0.25 ha plot on a 5% slope in a semi-arid area receiving
+      500 mm of annual rain. During a 30 mm rainstorm, the compacted crusted
+      soil absorbs only 3 mm/hour. Approximately what percentage of this
+      storm's rain is lost to runoff?
+    xp_reward: 50
+    options:
+      - text: "The storm delivers 30 mm in roughly 30 minutes; at 3 mm/hour absorption rate only about 1.5 mm infiltrates — approximately 95% runs off"
+        correct: true
+        explanation: "If the storm delivers 30 mm in 30 min = 60 mm/hour rain rate. Infiltration is only 3 mm/hour. In 30 min, 1.5 mm infiltrates while 28.5 mm runs off = 95% loss. This is why crusted, bare soil is catastrophic in semi-arid areas — virtually all rain is lost."
+      - text: "Approximately 50% runs off — most soils absorb at least half of incoming rain"
+        correct: false
+        explanation: "50% absorption assumes around 30 mm/hour infiltration rate. Compacted crusted soil only achieves 2-5 mm/hour. At 3 mm/hour in a 30-minute storm, only ~5% infiltrates."
+      - text: "No runoff occurs — rain in semi-arid areas is always light and absorbed fully"
+        correct: false
+        explanation: "Semi-arid rainfall is often intense and convective. High-intensity short-duration storms are the norm, and they overwhelm the infiltration capacity of bare compacted soils, producing flash runoff."
+      - text: "About 30% runs off — the remainder is lost to evaporation"
+        correct: false
+        explanation: "Evaporation occurs over hours to days, not during the storm itself. During the storm, the primary loss mechanism is runoff. 30% runoff would require an infiltration rate of ~42 mm/hour — not possible on compacted crust."
+
+  - id: sa-d3-q2
+    type: FILL_BLANK
+    prompt: >
+      Standard zai pits are ___ cm wide x ___ cm long x ___ cm deep, spaced
+      ___ m apart in all directions. At this spacing there are approximately
+      ___ pits per hectare.
+    xp_reward: 50
+    correct_answer: "30 cm; 30 cm; 15 cm; 0.9 m; 12300"
+    explanation: >
+      30x30x15 cm pits at 0.9 m x 0.9 m spacing gives 1/0.81 = 1.235 pits
+      per m2, so 12,350 pits per hectare (commonly rounded to 12,300).
+      Each pit receives a handful of manure before planting, creating a
+      microhabitat of concentrated fertility and water at every seed point.
+
+  - id: sa-d3-q3
+    type: MATCH_PAIRS
+    prompt: Match each water-wise technique to its primary mechanism of action.
+    xp_reward: 50
+    pairs:
+      - left: Zai pits
+        right: Concentrate runoff and organic matter at individual plant points on degraded crusted soil
+      - left: Contour swales
+        right: Intercept hillslope runoff along the contour and allow slow infiltration to recharge groundwater
+      - left: Tied ridges
+        right: Convert inter-row furrows into a series of small water-retention basins between tie dams
+      - left: Mulching
+        right: Reduce surface evaporation by 50-75% while adding organic matter as it decomposes
+    correct_answer: null
+    explanation: >
+      These techniques act at different scales: zai pits at the individual
+      plant, tied ridges at the row, swales at the field/catchment. They can
+      be combined — swales intercept hillslope runoff that is then distributed
+      to zai-pit fields below.
+
+  - id: sa-d3-q4
+    type: MULTIPLE_CHOICE
+    prompt: >
+      A household sets up a jerrycan gravity drip system with 0.5 mm holes
+      in the lateral pipe, elevated 1 m. Each hole delivers approximately
+      30 mL/hour. If the system runs for 6 hours, how much water does one
+      emitter deliver, and is this sufficient for a mature tomato plant?
+    xp_reward: 50
+    options:
+      - text: "180 mL per emitter per 6-hour session — mature tomatoes need 1-2 L/day so 2-3 sessions per day or longer run time is needed"
+        correct: true
+        explanation: "30 mL/hour x 6 hours = 180 mL. A fruiting tomato needs 1,000-2,000 mL/day. Multiple emitters per plant or longer run time is needed. Jerrycan drip is best for seedlings or drought-stressed crops receiving supplemental irrigation, not sole-source irrigation for heavy feeders."
+      - text: "180 mL — this fully meets mature tomato water needs"
+        correct: false
+        explanation: "180 mL is far below the 1,000-2,000 mL/day mature tomatoes require. Jerrycan drip provides supplemental irrigation — it must be paired with rain-fed or higher-volume supply for fruiting crops."
+      - text: "30 mL — the system only delivers at the flow rate, not accumulative"
+        correct: false
+        explanation: "Volume delivered = flow rate x time. 30 mL/hour x 6 hours = 180 mL. The accumulative volume over time is what reaches the plant."
+      - text: "1.8 L — units must be converted from mL to L"
+        correct: false
+        explanation: "180 mL = 0.18 L, not 1.8 L. 1.8 L would require 300 mL/hour flow rate, which is much larger than a 0.5 mm hole at 1 m head delivers."
+
+  - id: sa-d3-q5
+    type: FILL_BLANK
+    prompt: >
+      The A-frame level is used to mark the ___ (gradient = zero) line on a
+      hillslope for swale construction. A swale berm must always include an
+      ___ spillway section ___ cm lower than the main berm to prevent catastrophic
+      failure during heavy rain.
+    xp_reward: 50
+    correct_answer: "contour; overflow; 20 cm"
+    explanation: >
+      A contour is a line of equal elevation — water placed on a true contour
+      swale spreads evenly left and right with no tendency to flow. An overflow
+      spillway 20 cm lower than the berm crest ensures that when the swale fills
+      in a major storm, water exits in a controlled location rather than
+      overtopping and eroding the berm catastrophically.
