@@ -1,198 +1,172 @@
 id: solar-electronics-day-1
 course_id: solar-electronics
-title: "PV Fundamentals & Panel Selection"
-title_sw: "Misingi ya PV na Uchaguzi wa Paneli"
+title: PV Fundamentals & Panel Selection
+title_sw: Misingi ya PV na Uchaguzi wa Paneli
 week_number: 1
 day_number: 1
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [solar, photovoltaic, panel, kenya, off-grid]
+tags:
+- solar
+- photovoltaic
+- panel
+- kenya
+- off-grid
 xp: 80
 exam_domain: Renewable Energy Systems
+briefing: 'A 100 W solar panel costs KSh 7 000–10 000 in Nairobi (2025). Understanding what
 
-briefing: |
-  A 100 W solar panel costs KSh 7 000–10 000 in Nairobi (2025). Understanding what
   that number actually buys — and what it does not — is the difference between a system
+
   that runs a household for 15 years and one that fails in 18 months. This day decodes
+
   the photovoltaic effect, reads a panel datasheet correctly, and calculates the right
+
   tilt angle for any location in Kenya or East Africa.
-briefing_sw: |
-  Paneli ya jua ya wati 100 inagharimu KSh 7,000–10,000 Nairobi (2025). Kuelewa
+
+  '
+briefing_sw: 'Paneli ya jua ya wati 100 inagharimu KSh 7,000–10,000 Nairobi (2025). Kuelewa
+
   kinachonunuliwa kwa pesa hiyo — na kinachokosekana — ni tofauti kati ya mfumo
+
   unaoendesha nyumba kwa miaka 15 na unaoshindwa ndani ya miezi 18.
 
-outline: |
-  1. The photovoltaic effect: how a silicon p-n junction converts photons to current
+  '
+outline: '1. The photovoltaic effect: how a silicon p-n junction converts photons to current
+
   2. The I-V curve: Isc, Voc, Vmp, Imp, and maximum power point (MPP)
+
   3. Reading a panel datasheet: STC vs NOCT conditions, temperature coefficients
+
   4. Monocrystalline vs polycrystalline vs thin-film: which to choose in Kenya
+
   5. Panel ratings in practice: 100 W STC does not mean 100 W on your roof
+
   6. Tilt angle calculation for Kenya latitudes (equator to 4°S)
+
   7. Shade analysis: the one-module-in-shade problem and bypass diodes
+
   8. Series vs parallel stringing: when and why
 
-content_md: |
-  ## The Photovoltaic Effect
-
-  A silicon solar cell is a large semiconductor diode. It has two layers:
-  - **P-type** (positive): silicon doped with boron — has "holes" (electron absences)
-  - **N-type** (negative): silicon doped with phosphorus — has free electrons
-
-  At the junction between these layers, an electric field forms spontaneously.
-  When a photon with enough energy (≥ 1.12 eV for silicon) strikes the cell, it
-  knocks an electron free. The built-in electric field sweeps that electron toward
-  the N-side and the hole toward the P-side — creating a voltage (~0.5–0.6 V per cell)
-  and a current when an external circuit is connected.
-
-  **Key facts:**
-  - Each silicon cell produces ~0.5 V open-circuit; cells are wired in series to reach
-    panel voltages (36 cells → ~18 V, which charges 12 V batteries)
-  - Current depends on cell area and irradiance (W/m²)
-  - A standard 100 W panel has 36 cells in series
-
-  ## The I-V Curve
-
-  The I-V (Current–Voltage) curve describes every operating state a panel can be in:
-
-  | Point | Symbol | Meaning |
-  |-------|--------|---------|
-  | Short-circuit current | Isc | Max current when V = 0 (terminals shorted) |
-  | Open-circuit voltage | Voc | Max voltage when I = 0 (no load connected) |
-  | Max power current | Imp | Current at maximum power point |
-  | Max power voltage | Vmp | Voltage at maximum power point |
-  | Max power | Pmax = Vmp × Imp | Rated panel power |
-
-  **Typical 100 W panel datasheet values (STC):**
-  - Voc: 22.5 V | Vmp: 18.0 V | Isc: 5.98 A | Imp: 5.56 A | Pmax: 100 W
-
-  The **Fill Factor (FF)** measures how "square" the I-V curve is:
-  FF = (Vmp × Imp) / (Voc × Isc)
-
-  A good panel has FF > 0.70. Below 0.65 indicates cell degradation.
-
-  ## STC vs NOCT — Why Your Panel Underperforms
-
-  All panel ratings are measured at **Standard Test Conditions (STC)**:
-  - Irradiance: 1 000 W/m²
-  - Cell temperature: 25 °C
-  - Air mass: AM1.5
-
-  Your roof in Nairobi at noon is NOT 25 °C. Cell temperature routinely reaches
-  45–65 °C. The **temperature coefficient of Pmax** for crystalline silicon is
-  approximately **−0.4 % per °C**.
-
-  At cell temperature 55 °C (30 °C above STC):
-  > Power loss = 30 × 0.4 % = **12 % power reduction**
-
-  A "100 W" panel delivers **~88 W** at typical Kenyan operating temperatures.
-
-  **NOCT (Nominal Operating Cell Temperature)**: the cell temperature at
-  800 W/m² irradiance, 20 °C ambient, 1 m/s wind. Typically 43–48 °C for
-  crystalline panels. Use NOCT conditions for real-world sizing.
-
-  ## Panel Technologies
-
-  | Technology | Efficiency | Cost | Best use in Kenya |
-  |-----------|------------|------|-------------------|
-  | Monocrystalline (mono-Si) | 17–22 % | Higher | Best where space is limited; performs better in heat |
-  | Polycrystalline (poly-Si) | 15–18 % | Lower | Good value for large roofs |
-  | Thin-film (CdTe, CIGS) | 10–13 % | Variable | Better performance in diffuse/cloudy light — useful Coast and western Kenya |
-
-  **For most Kenyan households: monocrystalline** — better heat tolerance (lower
-  temperature coefficient: −0.35 %/°C vs −0.45 %/°C for poly) and more power
-  per square metre.
-
-  ## Tilt Angle for Kenya
-
-  Optimal fixed tilt angle = local latitude (maximises annual energy yield).
-
-  | Location | Latitude | Recommended tilt |
-  |----------|----------|-----------------|
-  | Nairobi | 1.3° S | 5–10° (face north) |
-  | Mombasa | 4.0° S | 5–10° (face north) |
-  | Kisumu | 0.1° S | 5° (nearly flat) |
-  | Nakuru | 0.3° S | 5° |
-  | Eldoret | 0.5° N | 5° (face south) |
-
-  **Minimum tilt: 5°** even at the equator — to allow rainwater to wash dust off panels.
-  Dust reduces output by 5–25 % in dry season. A 5° tilt allows natural washing.
-
-  **Seasonal adjustment**: tilt toward the equator at latitude + 15° in the cooler
-  dry season (June–August in Kenya) captures more energy when the sun is lower.
-  This is optional for fixed residential systems.
-
-  ## Shade Analysis
-
-  **One shaded cell can reduce the output of an entire series string by 30–75 %.**
-
-  Why: cells in series all carry the same current. A shaded cell produces less current;
-  the string current drops to match it. The shaded cell may also become reverse-biased
-  (a "hot spot") — generating heat, potentially cracking the cell or delaminating the module.
-
-  ### Bypass Diodes
-  Modern panels have bypass diodes (typically 3 diodes per 72-cell panel, one per 24-cell
-  substring). When a substring is shaded, the bypass diode conducts — routing current
-  around the shaded cells at a cost of ~0.5 V drop instead of the full substring loss.
-
-  **Practical rule:** Avoid any shade on panels between 9 AM and 3 PM. Even a shadow
-  the size of a fist from a wire or tree branch costs significant energy over a day.
-
-  ## Series vs Parallel Stringing
-
-  | Configuration | Voltage | Current | Use |
-  |--------------|---------|---------|-----|
-  | Series (+ to −) | Adds | Same | Increase system voltage (24 V, 48 V systems) |
-  | Parallel (+ to +, − to −) | Same | Adds | Increase current for 12 V systems |
-  | Series-parallel | Both increase | Both increase | Large arrays |
-
-  **For a 12 V system with 12 V nominal panels**: wire panels in parallel.
-  **For a 24 V system with 12 V nominal panels**: wire 2 panels in series.
-
-  Never mix panels of different wattage, Voc, or age in the same series string — the
-  weakest panel limits the entire string.
-
+  '
+content_md: "## The Photovoltaic Effect\n\nA silicon solar cell is a large semiconductor diode. It has\
+  \ two layers:\n- **P-type** (positive): silicon doped with boron — has \"holes\" (electron absences)\n\
+  - **N-type** (negative): silicon doped with phosphorus — has free electrons\n\nAt the junction between\
+  \ these layers, an electric field forms spontaneously.\nWhen a photon with enough energy (≥ 1.12 eV\
+  \ for silicon) strikes the cell, it\nknocks an electron free. The built-in electric field sweeps that\
+  \ electron toward\nthe N-side and the hole toward the P-side — creating a voltage (~0.5–0.6 V per cell)\n\
+  and a current when an external circuit is connected.\n\n**Key facts:**\n- Each silicon cell produces\
+  \ ~0.5 V open-circuit; cells are wired in series to reach\n  panel voltages (36 cells → ~18 V, which\
+  \ charges 12 V batteries)\n- Current depends on cell area and irradiance (W/m²)\n- A standard 100 W\
+  \ panel has 36 cells in series\n\n## The I-V Curve\n\nThe I-V (Current–Voltage) curve describes every\
+  \ operating state a panel can be in:\n\n| Point | Symbol | Meaning |\n|-------|--------|---------|\n\
+  | Short-circuit current | Isc | Max current when V = 0 (terminals shorted) |\n| Open-circuit voltage\
+  \ | Voc | Max voltage when I = 0 (no load connected) |\n| Max power current | Imp | Current at maximum\
+  \ power point |\n| Max power voltage | Vmp | Voltage at maximum power point |\n| Max power | Pmax =\
+  \ Vmp × Imp | Rated panel power |\n\n**Typical 100 W panel datasheet values (STC):**\n- Voc: 22.5 V\
+  \ | Vmp: 18.0 V | Isc: 5.98 A | Imp: 5.56 A | Pmax: 100 W\n\nThe **Fill Factor (FF)** measures how \"\
+  square\" the I-V curve is:\nFF = (Vmp × Imp) / (Voc × Isc)\n\nA good panel has FF > 0.70. Below 0.65\
+  \ indicates cell degradation.\n\n## STC vs NOCT — Why Your Panel Underperforms\n\nAll panel ratings\
+  \ are measured at **Standard Test Conditions (STC)**:\n- Irradiance: 1 000 W/m²\n- Cell temperature:\
+  \ 25 °C\n- Air mass: AM1.5\n\nYour roof in Nairobi at noon is NOT 25 °C. Cell temperature routinely\
+  \ reaches\n45–65 °C. The **temperature coefficient of Pmax** for crystalline silicon is\napproximately\
+  \ **−0.4 % per °C**.\n\nAt cell temperature 55 °C (30 °C above STC):\n> Power loss = 30 × 0.4 % = **12\
+  \ % power reduction**\n\nA \"100 W\" panel delivers **~88 W** at typical Kenyan operating temperatures.\n\
+  \n**NOCT (Nominal Operating Cell Temperature)**: the cell temperature at\n800 W/m² irradiance, 20 °C\
+  \ ambient, 1 m/s wind. Typically 43–48 °C for\ncrystalline panels. Use NOCT conditions for real-world\
+  \ sizing.\n\n## Panel Technologies\n\n| Technology | Efficiency | Cost | Best use in Kenya |\n|-----------|------------|------|-------------------|\n\
+  | Monocrystalline (mono-Si) | 17–22 % | Higher | Best where space is limited; performs better in heat\
+  \ |\n| Polycrystalline (poly-Si) | 15–18 % | Lower | Good value for large roofs |\n| Thin-film (CdTe,\
+  \ CIGS) | 10–13 % | Variable | Better performance in diffuse/cloudy light — useful Coast and western\
+  \ Kenya |\n\n**For most Kenyan households: monocrystalline** — better heat tolerance (lower\ntemperature\
+  \ coefficient: −0.35 %/°C vs −0.45 %/°C for poly) and more power\nper square metre.\n\n## Tilt Angle\
+  \ for Kenya\n\nOptimal fixed tilt angle = local latitude (maximises annual energy yield).\n\n| Location\
+  \ | Latitude | Recommended tilt |\n|----------|----------|-----------------|\n| Nairobi | 1.3° S | 5–10°\
+  \ (face north) |\n| Mombasa | 4.0° S | 5–10° (face north) |\n| Kisumu | 0.1° S | 5° (nearly flat) |\n\
+  | Nakuru | 0.3° S | 5° |\n| Eldoret | 0.5° N | 5° (face south) |\n\n**Minimum tilt: 5°** even at the\
+  \ equator — to allow rainwater to wash dust off panels.\nDust reduces output by 5–25 % in dry season.\
+  \ A 5° tilt allows natural washing.\n\n**Seasonal adjustment**: tilt toward the equator at latitude\
+  \ + 15° in the cooler\ndry season (June–August in Kenya) captures more energy when the sun is lower.\n\
+  This is optional for fixed residential systems.\n\n## Shade Analysis\n\n**One shaded cell can reduce\
+  \ the output of an entire series string by 30–75 %.**\n\nWhy: cells in series all carry the same current.\
+  \ A shaded cell produces less current;\nthe string current drops to match it. The shaded cell may also\
+  \ become reverse-biased\n(a \"hot spot\") — generating heat, potentially cracking the cell or delaminating\
+  \ the module.\n\n### Bypass Diodes\nModern panels have bypass diodes (typically 3 diodes per 72-cell\
+  \ panel, one per 24-cell\nsubstring). When a substring is shaded, the bypass diode conducts — routing\
+  \ current\naround the shaded cells at a cost of ~0.5 V drop instead of the full substring loss.\n\n\
+  **Practical rule:** Avoid any shade on panels between 9 AM and 3 PM. Even a shadow\nthe size of a fist\
+  \ from a wire or tree branch costs significant energy over a day.\n\n## Series vs Parallel Stringing\n\
+  \n| Configuration | Voltage | Current | Use |\n|--------------|---------|---------|-----|\n| Series\
+  \ (+ to −) | Adds | Same | Increase system voltage (24 V, 48 V systems) |\n| Parallel (+ to +, − to\
+  \ −) | Same | Adds | Increase current for 12 V systems |\n| Series-parallel | Both increase | Both increase\
+  \ | Large arrays |\n\n**For a 12 V system with 12 V nominal panels**: wire panels in parallel.\n**For\
+  \ a 24 V system with 12 V nominal panels**: wire 2 panels in series.\n\nNever mix panels of different\
+  \ wattage, Voc, or age in the same series string — the\nweakest panel limits the entire string.\n"
 exercises:
-  - id: se1-q1
-    type: MULTIPLE_CHOICE
-    prompt: "A 200 W monocrystalline panel has a temperature coefficient of −0.38 %/°C. On a Mombasa rooftop the cell temperature reaches 60 °C. What is the expected output?"
-    xp_reward: 35
-    options:
-      - text: "200 W — the rating is the rating regardless of temperature"
-        correct: false
-        explanation: "Panel ratings are at STC (25 °C cell temperature). Real-world cell temperatures in Kenya routinely reach 50–65 °C, causing significant derating."
-      - text: "Approximately 165 W — temperature derate of (60−25) × 0.38 % = 13.3 % applied"
-        correct: true
-        explanation: "Correct. (60 − 25) = 35 °C above STC. 35 × 0.38 % = 13.3 % loss. 200 × (1 − 0.133) = 173 W. At 165–175 W depending on exact conditions — this is the real-world operating range."
-      - text: "Approximately 220 W — hot panels produce more energy"
-        correct: false
-        explanation: "Higher temperature increases thermal noise in the semiconductor, reducing the built-in junction voltage. Output decreases with temperature for crystalline silicon. (Thin-film panels also derate, though slightly less.)"
-      - text: "About 180 W — there is a fixed 10 % loss for Kenyan conditions"
-        correct: false
-        explanation: "There is no fixed 10 % rule. Loss is calculated from the actual temperature coefficient and the temperature difference from STC. Always use the datasheet coefficient."
-    correct_answer: "Approximately 165 W — temperature derate of (60−25) × 0.38 % = 13.3 % applied"
+- id: se1-q1
+  type: MULTIPLE_CHOICE
+  prompt: A 200 W monocrystalline panel has a temperature coefficient of −0.38 %/°C. On a Mombasa rooftop
+    the cell temperature reaches 60 °C. What is the expected output?
+  xp_reward: 35
+  options:
+  - id: a
+    text: 200 W — the rating is the rating regardless of temperature
+  - id: b
+    text: Approximately 165 W — temperature derate of (60−25) × 0.38 % = 13.3 % applied
+  - id: c
+    text: Approximately 220 W — hot panels produce more energy
+  - id: d
+    text: About 180 W — there is a fixed 10 % loss for Kenyan conditions
+  correct_answer: b
+  explanation: 'Correct. (60 − 25) = 35 °C above STC. 35 × 0.38 % = 13.3 % loss. 200 × (1 − 0.133) = 173
+    W. At 165–175 W depending on exact conditions — this is the real-world operating range.
 
-  - id: se1-q2
-    type: FILL_BLANK
-    prompt: "The maximum power point voltage (___) is always lower than the open-circuit voltage (Voc) on an I-V curve."
-    xp_reward: 25
-    correct_answer: Vmp
-    explanation: "Vmp is typically 70–80 % of Voc. For a 12 V nominal panel: Voc ≈ 22 V, Vmp ≈ 18 V. A charge controller must track Vmp (MPPT) or be set below Voc (PWM) to extract useful power."
 
-  - id: se1-q3
-    type: MATCH_PAIRS
-    prompt: "Match each panel datasheet term to its correct definition."
-    xp_reward: 30
-    pairs:
-      - left: Isc
-        right: Maximum current at zero voltage (shorted terminals)
-      - left: Voc
-        right: Maximum voltage at zero current (open terminals)
-      - left: Pmax
-        right: Rated power = Vmp × Imp at STC
-      - left: Fill Factor
-        right: Squareness of I-V curve = (Vmp × Imp) / (Voc × Isc)
-    correct_answer:
-      - Isc=Maximum current at zero voltage (shorted terminals)
-      - Voc=Maximum voltage at zero current (open terminals)
-      - Pmax=Rated power = Vmp × Imp at STC
-      - Fill Factor=Squareness of I-V curve = (Vmp × Imp) / (Voc × Isc)
+    Why the other options are wrong: Panel ratings are at STC (25 °C cell temperature). Real-world cell
+    temperatures in Kenya routinely reach 50–65 °C, causing significant derating. Higher temperature increases
+    thermal noise in the semiconductor, reducing the built-in junction voltage. Output decreases with
+    temperature for crystalline silicon. (Thin-film panels also derate, though slightly less.) There is
+    no fixed 10 % rule. Loss is calculated from the actual temperature coefficient and the temperature
+    difference from STC. Always use the datasheet coefficient.'
+- id: se1-q2
+  type: FILL_BLANK
+  prompt: The maximum power point voltage (___) is always lower than the open-circuit voltage (Voc) on
+    an I-V curve.
+  xp_reward: 25
+  correct_answer: Vmp
+  explanation: 'Vmp is typically 70–80 % of Voc. For a 12 V nominal panel: Voc ≈ 22 V, Vmp ≈ 18 V. A charge
+    controller must track Vmp (MPPT) or be set below Voc (PWM) to extract useful power.'
+- id: se1-q3
+  type: MATCH_PAIRS
+  prompt: Match each panel datasheet term to its correct definition.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Isc
+    right:
+      id: r-7a84a8
+      text: Maximum current at zero voltage (shorted terminals)
+  - left:
+      id: l2
+      text: Voc
+    right:
+      id: r-182120
+      text: Maximum voltage at zero current (open terminals)
+  - left:
+      id: l3
+      text: Pmax
+    right:
+      id: r-a36fc7
+      text: Rated power = Vmp × Imp at STC
+  - left:
+      id: l4
+      text: Fill Factor
+    right:
+      id: r-0a4c43
+      text: Squareness of I-V curve = (Vmp × Imp) / (Voc × Isc)
+  correct_answer:
+  - l1=r-7a84a8
+  - l2=r-182120
+  - l3=r-a36fc7
+  - l4=r-0a4c43

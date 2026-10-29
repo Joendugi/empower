@@ -1,203 +1,211 @@
 id: civil-security-defense-day-4
 course_id: civil-security-defense
-title: "Wildfire Defensible Space & Firebreak Engineering"
-title_sw: "Nafasi ya Kuzuia Moto wa Nyika na Mistari ya Moto"
+title: Wildfire Defensible Space & Firebreak Engineering
+title_sw: Nafasi ya Kuzuia Moto wa Nyika na Mistari ya Moto
 week_number: 1
 day_number: 4
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - security
-  - wildfire
-  - firebreak
-  - defensible-space
-  - ember-protection
-  - resilience
+- security
+- wildfire
+- firebreak
+- defensible-space
+- ember-protection
+- resilience
 xp: 250
 exam_domain: civil-security-defense
+briefing: 'In dry semi-arid scrublands and forested highlands, seasonal wildfires pose a destructive threat
+  capable of wiping out an entire settlement in minutes. Over 90% of homes destroyed by wildfires are
+  not burned by direct flame fronts; they are ignited by wind-borne blowing embers entering attics, eaves,
+  and dry gutters hundreds of metres ahead of the fire. Protecting a community requires engineering three
+  concentric defensible space fuel zones, plowing bare-mineral firebreaks, fitting 3 mm stainless steel
+  ember mesh, and staging gravity roof-sprinkler systems.
 
-briefing: >
-  In dry semi-arid scrublands and forested highlands, seasonal wildfires pose a
-  destructive threat capable of wiping out an entire settlement in minutes. Over
-  90% of homes destroyed by wildfires are not burned by direct flame fronts; they
-  are ignited by wind-borne blowing embers entering attics, eaves, and dry gutters
-  hundreds of metres ahead of the fire. Protecting a community requires engineering
-  three concentric defensible space fuel zones, plowing bare-mineral firebreaks,
-  fitting 3 mm stainless steel ember mesh, and staging gravity roof-sprinkler systems.
+  '
+outline: 'The Wildfire Triangle (fuel, oxygen, heat) and fire behavior factors (slope, wind, fuel moisture);
+  the 3-Zone Defensible Space model: Zone 1 (0-1.5m Non-Combustible), Zone 2 (1.5-10m Clean & Green),
+  Zone 3 (10-30m Fuel Reduction); firebreak width calculations based on flame length and wind speed; tractor
+  disc plowing vs manual hoe trenches to bare mineral soil; wind-borne ember ignition physics and 3 mm
+  non-combustible wire mesh screening for eaves/soffits; roof sprinkler systems fed by gravity tanks;
+  fire-resistant landscaping plant selection (succulents, aloes, bananas).
 
-outline: >
-  The Wildfire Triangle (fuel, oxygen, heat) and fire behavior factors (slope, wind,
-  fuel moisture); the 3-Zone Defensible Space model: Zone 1 (0-1.5m Non-Combustible),
-  Zone 2 (1.5-10m Clean & Green), Zone 3 (10-30m Fuel Reduction); firebreak width
-  calculations based on flame length and wind speed; tractor disc plowing vs manual
-  hoe trenches to bare mineral soil; wind-borne ember ignition physics and 3 mm
-  non-combustible wire mesh screening for eaves/soffits; roof sprinkler systems
-  fed by gravity tanks; fire-resistant landscaping plant selection (succulents,
-  aloes, bananas).
-
-content_md: |
-  ## The Wildland-Urban Interface & Ember Dynamics
-
-  Wildfire spreads via three distinct heat transfer mechanisms:
-  1. **Direct Flame Contact**: Flames physically lick buildings.
-  2. **Radiant Heat**: Extreme thermal radiation ($> 40\text{ kW/m}^2$) shatters window glass and auto-ignites timber framing without direct contact.
-  3. **Wind-Borne Embers (Firebrands)**: The primary killer. Burning twigs and bark are carried by high winds **1 to 2 kilometres ahead** of the main fire front, landing in roof gutters, open eaves, firewood piles, and dry thatch.
-
-  ## The 3-Zone Defensible Space Model
-
-  Defensible space starves incoming fires of fuel and radiant intensity:
-
-  ```
-  [ BUILDING ]
-  │
-  ├── Zone 1: Immediate Non-Combustible Zone (0 to 1.5 metres from walls)
-  │
-  ├── Zone 2: Intermediate Lean, Clean & Green Zone (1.5 to 10 metres)
-  │
-  └── Zone 3: Extended Fuel Reduction Zone (10 to 30 metres / up to 60m on slopes)
-  ```
-
-  ### Zone 1: Immediate Non-Combustible Zone (0 – 1.5 m):
-  - **Zero Combustibles**: No plants, no wooden decking, no timber mulch, no stacked firewood.
-  - Surface: Crushed gravel, concrete paving stones, bare earth, or masonry aprons.
-  - Clear all dead leaves and needles from roof valleys and rain gutters daily during fire season.
-  - Siding: The bottom 150 mm of external walls should be non-combustible stone, brick, or cement plaster.
-
-  ### Zone 2: Lean, Clean & Green (1.5 – 10 m):
-  - Well-irrigated, short green lawns, vegetable gardens, or bare paths.
-  - Individual trees separated by **minimum 3 to 5 metres between canopies** to prevent crown fire propagation.
-  - Prune tree limbs up to **2.0 to 3.0 metres above ground** to eliminate **ladder fuels** (vegetation that allows ground fire to climb into the tree canopy).
-
-  ### Zone 3: Extended Fuel Reduction (10 – 30 m):
-  - Thin dense bush and saplings.
-  - Clear fallen dead logs, dry brush heaps, and dense dry grass.
-  - On steep slopes ($> 20\%$), extend Zone 3 out to **60 metres downslope**, because fire travels **twice as fast uphill** due to pre-heating of rising vegetation!
-
-  ## Firebreak Engineering: Bare Mineral Soil
-
-  A firebreak is a continuous cleared strip of land stripped down to raw mineral earth
-  (no grass, roots, or organic humus) to stop creeping ground fires:
-
-  ### Sizing Firebreaks:
-  $$\text{Firebreak Width} \ge 2.5 \times \text{Expected Flame Length}$$
-
-  - For dry savannah grass (flame length 1.0–1.5 m): Firebreak width = **3.0 to 4.0 metres**.
-  - For dense acacia / eucalyptus scrub (flame length 4.0–6.0 m): Firebreak width = **10.0 to 15.0 metres**.
-
-  ### Construction Protocols:
-  1. **Tractor / Ox-Drawn Disc Plowing**: Plow a boundary strip, then disc repeatedly until all organic turf is buried and bare subsoil is exposed.
-  2. **Manual Hoe Scraping**: In rocky terrain, teams using wide hoes (jembes) scrape down to bare red/brown mineral subsoil, raking all cleared brush onto the **fire side** (outer perimeter), never piling debris inside the firebreak!
-  3. **Controlled Back-Burning (Advanced)**:
-     - Clear a 2-metre baseline firebreak.
-     - With low wind and high evening humidity, burn small controlled strips against the wind (backing fire) into the oncoming wildfire, incinerating the fuel safely before the main front arrives.
-
-  ## Ember Hardening of Buildings
-
-  Even with clear firebreaks, wind will blast millions of glowing embers against homes:
-  - **Eave & Soffit Vents**: Cover all attic vents, gable vents, and foundation openings with **corrosion-resistant 3 mm (1/8-inch) stainless steel or bronze wire mesh**. Standard plastic mosquito netting melts in seconds, letting embers enter the attic space.
-  - **Double-Pane Tempered Glass**: Radiant heat from a fire shatters single-pane window glass in under 2 minutes, allowing embers to blow inside living rooms. Double-pane windows with outer tempered glass withstand radiant heat up to 20 minutes.
-  - **Metal Flashing under Roof Caps**: Fit galvanized sheet steel flashing under ridge caps and corrugated iron corners to block ember intrusion into roof trusses.
-  - **Cover Thatch Roofs**: Thatch is fatally vulnerable. If thatch must be used, paint with a thick slurry of slaked lime and borax/alum fire-retardant salt, or cover with galvanized iron sheets during drought months.
-
-  ## Fire-Resilient Landscaping Species
-
-  Plants differ radically in flammability. Replace high-oil, resinous trees (Eucalyptus,
-  Cypress, Pine, Lantana) with fire-retardant barrier plants:
-
-  | Fire-Safe Plant | Local Name | Fire-Retardant Characteristic |
-  |---|---|---|
-  | **Aloe vera / Aloe ferox** | Subuku / Aloe | Thick succulent leaves packed with 98% water; will not ignite |
-  | **Agave sisalana** | Sisal | High moisture content, zero volatile resins; acts as a heat shield |
-  | **Musa spp.** | Banana / Plantain | Massive watery stems and broad moist leaves; excellent green radiant heat shield planted in Zone 2 |
-  | **Opuntia ficus-indica** | Spineless Prickly Pear | High-water cladodes absorb radiant heat and block ground flames |
-  | **Sansevieria** | Mother-in-Law's Tongue | Tough drought-hardy succulent ground cover; burns poorly |
-
-  ## Gravity-Fed Roof Sprinkler Systems
-
-  A rooftop water delivery system creates a high-humidity thermal umbrella:
-  - **Storage**: Elevated 5,000 L to 10,000 L steel or ferro-cement water tank set on high ground (5–10 m head provides 0.5–1.0 bar pressure without electrical pumps).
-  - **Piping**: Galvanized iron pipe (PVC melts in radiant heat!) leading to full-circle brass agricultural impact sprinklers mounted on roof ridges.
-  - **Deployment**: When a wildfire approaches within 500 metres, open the manual ball valve. Sprinklers soak the entire roof, gutters, and Zone 1 perimeter with 50 L/min of water, keeping surfaces saturated as the fire and ember storm passes overhead.
-
+  '
+content_md: "## The Wildland-Urban Interface & Ember Dynamics\n\nWildfire spreads via three distinct heat\
+  \ transfer mechanisms:\n1. **Direct Flame Contact**: Flames physically lick buildings.\n2. **Radiant\
+  \ Heat**: Extreme thermal radiation ($> 40\\text{ kW/m}^2$) shatters window glass and auto-ignites timber\
+  \ framing without direct contact.\n3. **Wind-Borne Embers (Firebrands)**: The primary killer. Burning\
+  \ twigs and bark are carried by high winds **1 to 2 kilometres ahead** of the main fire front, landing\
+  \ in roof gutters, open eaves, firewood piles, and dry thatch.\n\n## The 3-Zone Defensible Space Model\n\
+  \nDefensible space starves incoming fires of fuel and radiant intensity:\n\n```\n[ BUILDING ]\n│\n├──\
+  \ Zone 1: Immediate Non-Combustible Zone (0 to 1.5 metres from walls)\n│\n├── Zone 2: Intermediate Lean,\
+  \ Clean & Green Zone (1.5 to 10 metres)\n│\n└── Zone 3: Extended Fuel Reduction Zone (10 to 30 metres\
+  \ / up to 60m on slopes)\n```\n\n### Zone 1: Immediate Non-Combustible Zone (0 – 1.5 m):\n- **Zero Combustibles**:\
+  \ No plants, no wooden decking, no timber mulch, no stacked firewood.\n- Surface: Crushed gravel, concrete\
+  \ paving stones, bare earth, or masonry aprons.\n- Clear all dead leaves and needles from roof valleys\
+  \ and rain gutters daily during fire season.\n- Siding: The bottom 150 mm of external walls should be\
+  \ non-combustible stone, brick, or cement plaster.\n\n### Zone 2: Lean, Clean & Green (1.5 – 10 m):\n\
+  - Well-irrigated, short green lawns, vegetable gardens, or bare paths.\n- Individual trees separated\
+  \ by **minimum 3 to 5 metres between canopies** to prevent crown fire propagation.\n- Prune tree limbs\
+  \ up to **2.0 to 3.0 metres above ground** to eliminate **ladder fuels** (vegetation that allows ground\
+  \ fire to climb into the tree canopy).\n\n### Zone 3: Extended Fuel Reduction (10 – 30 m):\n- Thin dense\
+  \ bush and saplings.\n- Clear fallen dead logs, dry brush heaps, and dense dry grass.\n- On steep slopes\
+  \ ($> 20\\%$), extend Zone 3 out to **60 metres downslope**, because fire travels **twice as fast uphill**\
+  \ due to pre-heating of rising vegetation!\n\n## Firebreak Engineering: Bare Mineral Soil\n\nA firebreak\
+  \ is a continuous cleared strip of land stripped down to raw mineral earth\n(no grass, roots, or organic\
+  \ humus) to stop creeping ground fires:\n\n### Sizing Firebreaks:\n$$\\text{Firebreak Width} \\ge 2.5\
+  \ \\times \\text{Expected Flame Length}$$\n\n- For dry savannah grass (flame length 1.0–1.5 m): Firebreak\
+  \ width = **3.0 to 4.0 metres**.\n- For dense acacia / eucalyptus scrub (flame length 4.0–6.0 m): Firebreak\
+  \ width = **10.0 to 15.0 metres**.\n\n### Construction Protocols:\n1. **Tractor / Ox-Drawn Disc Plowing**:\
+  \ Plow a boundary strip, then disc repeatedly until all organic turf is buried and bare subsoil is exposed.\n\
+  2. **Manual Hoe Scraping**: In rocky terrain, teams using wide hoes (jembes) scrape down to bare red/brown\
+  \ mineral subsoil, raking all cleared brush onto the **fire side** (outer perimeter), never piling debris\
+  \ inside the firebreak!\n3. **Controlled Back-Burning (Advanced)**:\n   - Clear a 2-metre baseline firebreak.\n\
+  \   - With low wind and high evening humidity, burn small controlled strips against the wind (backing\
+  \ fire) into the oncoming wildfire, incinerating the fuel safely before the main front arrives.\n\n\
+  ## Ember Hardening of Buildings\n\nEven with clear firebreaks, wind will blast millions of glowing embers\
+  \ against homes:\n- **Eave & Soffit Vents**: Cover all attic vents, gable vents, and foundation openings\
+  \ with **corrosion-resistant 3 mm (1/8-inch) stainless steel or bronze wire mesh**. Standard plastic\
+  \ mosquito netting melts in seconds, letting embers enter the attic space.\n- **Double-Pane Tempered\
+  \ Glass**: Radiant heat from a fire shatters single-pane window glass in under 2 minutes, allowing embers\
+  \ to blow inside living rooms. Double-pane windows with outer tempered glass withstand radiant heat\
+  \ up to 20 minutes.\n- **Metal Flashing under Roof Caps**: Fit galvanized sheet steel flashing under\
+  \ ridge caps and corrugated iron corners to block ember intrusion into roof trusses.\n- **Cover Thatch\
+  \ Roofs**: Thatch is fatally vulnerable. If thatch must be used, paint with a thick slurry of slaked\
+  \ lime and borax/alum fire-retardant salt, or cover with galvanized iron sheets during drought months.\n\
+  \n## Fire-Resilient Landscaping Species\n\nPlants differ radically in flammability. Replace high-oil,\
+  \ resinous trees (Eucalyptus,\nCypress, Pine, Lantana) with fire-retardant barrier plants:\n\n| Fire-Safe\
+  \ Plant | Local Name | Fire-Retardant Characteristic |\n|---|---|---|\n| **Aloe vera / Aloe ferox**\
+  \ | Subuku / Aloe | Thick succulent leaves packed with 98% water; will not ignite |\n| **Agave sisalana**\
+  \ | Sisal | High moisture content, zero volatile resins; acts as a heat shield |\n| **Musa spp.** |\
+  \ Banana / Plantain | Massive watery stems and broad moist leaves; excellent green radiant heat shield\
+  \ planted in Zone 2 |\n| **Opuntia ficus-indica** | Spineless Prickly Pear | High-water cladodes absorb\
+  \ radiant heat and block ground flames |\n| **Sansevieria** | Mother-in-Law's Tongue | Tough drought-hardy\
+  \ succulent ground cover; burns poorly |\n\n## Gravity-Fed Roof Sprinkler Systems\n\nA rooftop water\
+  \ delivery system creates a high-humidity thermal umbrella:\n- **Storage**: Elevated 5,000 L to 10,000\
+  \ L steel or ferro-cement water tank set on high ground (5–10 m head provides 0.5–1.0 bar pressure without\
+  \ electrical pumps).\n- **Piping**: Galvanized iron pipe (PVC melts in radiant heat!) leading to full-circle\
+  \ brass agricultural impact sprinklers mounted on roof ridges.\n- **Deployment**: When a wildfire approaches\
+  \ within 500 metres, open the manual ball valve. Sprinklers soak the entire roof, gutters, and Zone\
+  \ 1 perimeter with 50 L/min of water, keeping surfaces saturated as the fire and ember storm passes\
+  \ overhead.\n"
 exercises:
-  - id: sec-d4-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why are over 90% of homes destroyed in wildland fires ignited by blowing embers
-      rather than by direct flame front contact?
-    xp_reward: 50
-    options:
-      - text: "Strong convection winds loft burning twigs and embers kilometres ahead of the fire, blowing them into unshielded attic eave vents, dry rain gutters, and debris under eaves where they kindle internal fires"
-        correct: true
-        explanation: "Wind-borne firebrands exploit small building vulnerabilities long before the main fire front arrives. Embers entering 6 mm attic vents ignite dry timber roof trusses from the inside, causing the structure to burn down while the surrounding yard appears untouched."
-      - text: "Direct flames are too cold to ignite building timber"
-        correct: false
-        explanation: "Wildfire flames reach over 1,000°C; the issue is that embers travel much further and faster than the creeping flame front."
-      - text: "Embers contain chemical accelerants from forest trees"
-        correct: false
-        explanation: "Embers are simply burning wood particles; their danger lies in wind transport and landing in unhardened crevices."
-      - text: "Because roofs are magnetically attracted to ash particles"
-        correct: false
-        explanation: "Ember accumulation is aerodynamic, driven by wind and roof geometry, not magnetism."
+- id: sec-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Why are over 90% of homes destroyed in wildland fires ignited by blowing embers rather than
+    by direct flame front contact?
 
-  - id: sec-d4-q2
-    type: FILL_BLANK
-    prompt: >
-      In defensible space landscaping, Zone 1 extends from 0 to ___ metres from the building
-      walls and must contain ___ combustible materials, utilizing crushed gravel, concrete,
-      or bare earth.
-    xp_reward: 50
-    correct_answer: "1.5; zero"
-    explanation: >
-      Zone 1 (0 to 1.5 m) is the non-combustible apron. Any dry leaf, wooden planter,
-      or mulch within this zone can ignite from falling embers and directly burn the wall.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Strong convection winds loft burning twigs and embers kilometres ahead of the fire, blowing
+      them into unshielded attic eave vents, dry rain gutters, and debris under eaves where they kindle
+      internal fires
+  - id: b
+    text: Direct flames are too cold to ignite building timber
+  - id: c
+    text: Embers contain chemical accelerants from forest trees
+  - id: d
+    text: Because roofs are magnetically attracted to ash particles
+  explanation: 'Wind-borne firebrands exploit small building vulnerabilities long before the main fire
+    front arrives. Embers entering 6 mm attic vents ignite dry timber roof trusses from the inside, causing
+    the structure to burn down while the surrounding yard appears untouched.
 
-  - id: sec-d4-q3
-    type: MATCH_PAIRS
-    prompt: Match each defensible space zone to its designated fuel management rule.
-    xp_reward: 50
-    pairs:
-      - left: Zone 1 (0 to 1.5 m)
-        right: Completely non-combustible gravel/masonry perimeter; zero mulch or firewood
-      - left: Zone 2 (1.5 to 10 m)
-        right: Lean, clean & green; tree canopies separated by 3-5m and pruned up to 2m
-      - left: Zone 3 (10 to 30 m)
-        right: Extended fuel reduction; dead scrub and brush cleared down to open woodland
-      - left: Downslope Extension
-        right: Expanding Zone 3 out to 60m because fires advance twice as fast uphill
-    correct_answer: null
-    explanation: >
-      Zone 1 has zero fuel; Zone 2 manages canopy spacing and ladder fuels; Zone 3 reduces
-      wild brush; steep slopes require double distance because heat rises.
 
-  - id: sec-d4-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      What mesh material and aperture size should be installed over building eave
-      and soffit vents to prevent wind-borne wildfire embers from entering attic spaces?
-    xp_reward: 50
-    options:
-      - text: "3 mm (1/8-inch) stainless steel or bronze metal wire mesh (standard plastic insect screening melts under ember heat)"
-        correct: true
-        explanation: "Plastic or nylon fly screens melt instantly when contacted by a 600°C ember, leaving an open hole. 3 mm stainless steel or bronze mesh blocks embers while maintaining necessary attic ventilation."
-      - text: "15 mm galvanized diamond chicken wire"
-        correct: false
-        explanation: "15 mm mesh is far too coarse; small glowing embers blow directly through."
-      - text: "Nylon mosquito netting coated in vegetable oil"
-        correct: false
-        explanation: "Nylon melts and oil is highly flammable, worsening the hazard."
-      - text: "Solid sheet metal with zero ventilation holes"
-        correct: false
-        explanation: "Sealing vents entirely traps humidity, causing roof timber rot and mold during normal weather."
+    Why the other options are wrong: Wildfire flames reach over 1,000°C; the issue is that embers travel
+    much further and faster than the creeping flame front. Embers are simply burning wood particles; their
+    danger lies in wind transport and landing in unhardened crevices. Ember accumulation is aerodynamic,
+    driven by wind and roof geometry, not magnetism.'
+  correct_answer: a
+- id: sec-d4-q2
+  type: FILL_BLANK
+  prompt: 'In defensible space landscaping, Zone 1 extends from 0 to ___ metres from the building walls
+    and must contain ___ combustible materials, utilizing crushed gravel, concrete, or bare earth.
 
-  - id: sec-d4-q5
-    type: FILL_BLANK
-    prompt: >
-      To stop advancing ground fire, an engineered firebreak must be scraped down to bare
-      ___ soil with zero organic turf, and its width should equal at least ___ times
-      the expected flame length.
-    xp_reward: 50
-    correct_answer: "mineral; 2.5"
-    explanation: >
-      A firebreak must expose raw mineral subsoil (sand, clay, rock) with no dead roots.
-      A width of 2.5 times the flame length prevents direct flame reach across the break.
+    '
+  xp_reward: 50
+  correct_answer:
+  - '1.5'
+  - zero
+  explanation: 'Zone 1 (0 to 1.5 m) is the non-combustible apron. Any dry leaf, wooden planter, or mulch
+    within this zone can ignite from falling embers and directly burn the wall.
+
+    '
+- id: sec-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each defensible space zone to its designated fuel management rule.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Zone 1 (0 to 1.5 m)
+    right:
+      id: r-a89998
+      text: Completely non-combustible gravel/masonry perimeter; zero mulch or firewood
+  - left:
+      id: l2
+      text: Zone 2 (1.5 to 10 m)
+    right:
+      id: r-b3f7a7
+      text: Lean, clean & green; tree canopies separated by 3-5m and pruned up to 2m
+  - left:
+      id: l3
+      text: Zone 3 (10 to 30 m)
+    right:
+      id: r-ef82ed
+      text: Extended fuel reduction; dead scrub and brush cleared down to open woodland
+  - left:
+      id: l4
+      text: Downslope Extension
+    right:
+      id: r-47f0f0
+      text: Expanding Zone 3 out to 60m because fires advance twice as fast uphill
+  correct_answer:
+  - l1=r-a89998
+  - l2=r-b3f7a7
+  - l3=r-ef82ed
+  - l4=r-47f0f0
+  explanation: 'Zone 1 has zero fuel; Zone 2 manages canopy spacing and ladder fuels; Zone 3 reduces wild
+    brush; steep slopes require double distance because heat rises.
+
+    '
+- id: sec-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'What mesh material and aperture size should be installed over building eave and soffit vents
+    to prevent wind-borne wildfire embers from entering attic spaces?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 3 mm (1/8-inch) stainless steel or bronze metal wire mesh (standard plastic insect screening
+      melts under ember heat)
+  - id: b
+    text: 15 mm galvanized diamond chicken wire
+  - id: c
+    text: Nylon mosquito netting coated in vegetable oil
+  - id: d
+    text: Solid sheet metal with zero ventilation holes
+  explanation: 'Plastic or nylon fly screens melt instantly when contacted by a 600°C ember, leaving an
+    open hole. 3 mm stainless steel or bronze mesh blocks embers while maintaining necessary attic ventilation.
+
+
+    Why the other options are wrong: 15 mm mesh is far too coarse; small glowing embers blow directly
+    through. Nylon melts and oil is highly flammable, worsening the hazard. Sealing vents entirely traps
+    humidity, causing roof timber rot and mold during normal weather.'
+  correct_answer: a
+- id: sec-d4-q5
+  type: FILL_BLANK
+  prompt: 'To stop advancing ground fire, an engineered firebreak must be scraped down to bare ___ soil
+    with zero organic turf, and its width should equal at least ___ times the expected flame length.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - mineral
+  - '2.5'
+  explanation: 'A firebreak must expose raw mineral subsoil (sand, clay, rock) with no dead roots. A width
+    of 2.5 times the flame length prevents direct flame reach across the break.
+
+    '

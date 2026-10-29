@@ -1,196 +1,203 @@
 id: mechanical-workshop-day-5
 course_id: mechanical-workshop
-title: "Micro-Hydro Turbine Fabrication & Balancing"
-title_sw: "Kutengeneza Turbini ya Maji na Kusawazisha Mizania"
+title: Micro-Hydro Turbine Fabrication & Balancing
+title_sw: Kutengeneza Turbini ya Maji na Kusawazisha Mizania
 week_number: 1
 day_number: 5
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - mechanical
-  - micro-hydro
-  - pelton-wheel
-  - fabrication
-  - dynamic-balancing
-  - workshop
+- mechanical
+- micro-hydro
+- pelton-wheel
+- fabrication
+- dynamic-balancing
+- workshop
 xp: 250
 exam_domain: mechanical-workshop
+briefing: 'Micro-hydro impulse turbines (Pelton and Turgo runners) transform falling stream water into
+  mechanical shaft power and electricity. A well-built Pelton runner fabricated from plasma-cut or cast
+  spoon-cups operates at over 80% hydraulic efficiency for decades. However, a high-speed runner spinning
+  at 1,500 RPM with even 10 grams of mass imbalance generates centrifugal forces that will shatter bearing
+  housings and snap shafts. This capstone lesson covers impulse turbine mechanics, jet velocity calculation,
+  runner cup splitting geometry, and static two-knife-edge balancing procedures.
 
-briefing: >
-  Micro-hydro impulse turbines (Pelton and Turgo runners) transform falling stream
-  water into mechanical shaft power and electricity. A well-built Pelton runner
-  fabricated from plasma-cut or cast spoon-cups operates at over 80% hydraulic
-  efficiency for decades. However, a high-speed runner spinning at 1,500 RPM with
-  even 10 grams of mass imbalance generates centrifugal forces that will shatter
-  bearing housings and snap shafts. This capstone lesson covers impulse turbine
-  mechanics, jet velocity calculation, runner cup splitting geometry, and static
-  two-knife-edge balancing procedures.
+  '
+outline: 'Impulse turbine fundamentals (Pelton vs Turgo vs Crossflow); Torricelli jet velocity equation
+  V = sqrt(2 × g × H); bucket splitter edge physics and water redirection; runner pitch circle diameter
+  (PCD) sizing; fabricated sheet metal / cast bronze bucket attachment; nozzle needle valves and deflector
+  plates; static balancing on parallel knife edges; dynamic vibration analysis; PHOTO_CAPTURE assessment
+  rubric of workshop bench layout or fabricated component.
 
-outline: >
-  Impulse turbine fundamentals (Pelton vs Turgo vs Crossflow); Torricelli jet velocity
-  equation V = sqrt(2 × g × H); bucket splitter edge physics and water redirection;
-  runner pitch circle diameter (PCD) sizing; fabricated sheet metal / cast bronze
-  bucket attachment; nozzle needle valves and deflector plates; static balancing on
-  parallel knife edges; dynamic vibration analysis; PHOTO_CAPTURE assessment rubric
-  of workshop bench layout or fabricated component.
-
-content_md: |
-  ## Micro-Hydro Impulse Turbines
-
-  Impulse turbines extract kinetic energy from a high-velocity free water jet operating
-  at atmospheric pressure:
-  - **Pelton Runner**: Best for high head ($H > 20\text{ m}$), low-to-medium flow. Water jet strikes a central ridge (splitter) in double-hemispherical cups, turning 165°–170° backwards to extract maximum momentum.
-  - **Turgo Runner**: Intermediate head ($H = 10\text{ m to } 60\text{ m}$). Jet enters the runner at an angle (typically 20°) on one side and exits the other, handling 2–3 times more water volume than a Pelton of the same diameter.
-  - **Crossflow (Banki-Michell)**: Low-to-medium head ($H = 3\text{ m to } 30\text{ m}$), high flow. Water passes through a cylindrical drum runner twice.
-
-  ## Jet Velocity & Theoretical Hydraulic Power
-
-  Water stored at net head $H$ (in metres) converts potential energy into kinetic velocity at the nozzle tip:
-
-  ### Torricelli's Jet Velocity Equation:
-  $$V_j = C_v \times \sqrt{2 \times g \times H_{net}}$$
-
-  Where:
-  - $V_j$ = Water jet velocity (m/s)
-  - $C_v$ = Nozzle discharge coefficient (typically **0.97 – 0.98** for machined brass nozzles)
-  - $g$ = Acceleration due to gravity ($9.81\text{ m/s}^2$)
-  - $H_{net}$ = Effective head after friction losses (m)
-
-  ### Runner Pitch Speed Rule:
-  For maximum energy extraction, the runner's pitch circle peripheral speed ($U$) must equal **46% to 48%** of the water jet velocity:
-  $$U \approx 0.47 \times V_j$$
-
-  ### Hydraulic Power Available:
-  $$P_{hyd} = \rho \times g \times Q \times H_{net} \quad (\text{Watts})$$
-  Where $\rho = 1000\text{ kg/m}^3$, $Q = \text{Flow rate in m}^3/\text{s}$.
-
-  *Example*: Net head $H = 45\text{ m}$, flow $Q = 0.02\text{ m}^3/\text{s}$ (20 L/s):
-  $$V_j = 0.97 \times \sqrt{2 \times 9.81 \times 45} = 0.97 \times 29.7 = 28.8\text{ m/s}$$
-  $$P_{hyd} = 1000 \times 9.81 \times 0.02 \times 45 = 8,829\text{ Watts} \approx 8.8\text{ kW}$$
-
-  ## Pelton Bucket Geometry & Fabrication
-
-  Each Pelton bucket consists of two symmetric hollow halves joined by a knife-like **splitter ridge**:
-  - The splitter cuts the jet cleanly without splashing.
-  - Water curves around the inner bowls and exits backwards at an angle of **165°** to avoid hitting the back of the following bucket.
-  - **Bucket Cutout**: A notch on the outer lip allows the jet to strike the preceding bucket fully before the next bucket enters the jet path.
-
-  ### Fabrication Options:
-  1. **Fabricated Mild / Stainless Steel**: Cups pressed from 3 mm plate or plasma-cut spoons, fully welded to a 10 mm central steel disc using E7018 or 309L stainless rods.
-  2. **Cast Bronze / Gunmetal (88% Cu, 10% Sn, 2% Zn)**: Highest cavitation and sand erosion resistance; individual cups cast in foundry sand and keyed to the hub with high-tensile Grade 8.8 fitted bolts.
-
-  ## Static Balancing on Precision Knife Edges
-
-  Centrifugal force from an unbalanced mass $m$ at radius $r$ spinning at angular velocity $\omega$:
-  $$F_c = m \times r \times \omega^2$$
-
-  At 1500 RPM ($\omega = 157\text{ rad/s}$), an imbalance of only **15 grams (0.015 kg)** at a radius of **0.15 m**:
-  $$F_c = 0.015 \times 0.15 \times (157)^2 \approx 55.5\text{ Newtons} \approx 5.7\text{ kg of cyclic dynamic hammer shock}$$
-  This vibration shatters bearings and loosens mounting bolts within days.
-
-  ### Two-Knife-Edge Static Balancing Protocol:
-  1. Mount the runner on its precision ground shaft (or a true test mandrel).
-  2. Support the shaft horizontally on two hardened, ground, and precision-levelled parallel steel knife edges (or roller wheels).
-  3. Release the runner gently. The heaviest bucket will rotate by gravity to the lowest 6 o'clock position.
-  4. Mark the top (12 o'clock / lightest point).
-  5. **Correction Options**:
-     - *Additive*: Weld small balancing tabs or add stainless steel washers to the 12 o'clock bucket bolt.
-     - *Subtractive*: Grind metal carefully from the non-structural thick ribbing of the 6 o'clock heavy bucket.
-  6. Repeat until the runner will rest motionless at any angular position (neutral equilibrium) without rolling.
-
+  '
+content_md: "## Micro-Hydro Impulse Turbines\n\nImpulse turbines extract kinetic energy from a high-velocity\
+  \ free water jet operating\nat atmospheric pressure:\n- **Pelton Runner**: Best for high head ($H >\
+  \ 20\\text{ m}$), low-to-medium flow. Water jet strikes a central ridge (splitter) in double-hemispherical\
+  \ cups, turning 165°–170° backwards to extract maximum momentum.\n- **Turgo Runner**: Intermediate head\
+  \ ($H = 10\\text{ m to } 60\\text{ m}$). Jet enters the runner at an angle (typically 20°) on one side\
+  \ and exits the other, handling 2–3 times more water volume than a Pelton of the same diameter.\n- **Crossflow\
+  \ (Banki-Michell)**: Low-to-medium head ($H = 3\\text{ m to } 30\\text{ m}$), high flow. Water passes\
+  \ through a cylindrical drum runner twice.\n\n## Jet Velocity & Theoretical Hydraulic Power\n\nWater\
+  \ stored at net head $H$ (in metres) converts potential energy into kinetic velocity at the nozzle tip:\n\
+  \n### Torricelli's Jet Velocity Equation:\n$$V_j = C_v \\times \\sqrt{2 \\times g \\times H_{net}}$$\n\
+  \nWhere:\n- $V_j$ = Water jet velocity (m/s)\n- $C_v$ = Nozzle discharge coefficient (typically **0.97\
+  \ – 0.98** for machined brass nozzles)\n- $g$ = Acceleration due to gravity ($9.81\\text{ m/s}^2$)\n\
+  - $H_{net}$ = Effective head after friction losses (m)\n\n### Runner Pitch Speed Rule:\nFor maximum\
+  \ energy extraction, the runner's pitch circle peripheral speed ($U$) must equal **46% to 48%** of the\
+  \ water jet velocity:\n$$U \\approx 0.47 \\times V_j$$\n\n### Hydraulic Power Available:\n$$P_{hyd}\
+  \ = \\rho \\times g \\times Q \\times H_{net} \\quad (\\text{Watts})$$\nWhere $\\rho = 1000\\text{ kg/m}^3$,\
+  \ $Q = \\text{Flow rate in m}^3/\\text{s}$.\n\n*Example*: Net head $H = 45\\text{ m}$, flow $Q = 0.02\\\
+  text{ m}^3/\\text{s}$ (20 L/s):\n$$V_j = 0.97 \\times \\sqrt{2 \\times 9.81 \\times 45} = 0.97 \\times\
+  \ 29.7 = 28.8\\text{ m/s}$$\n$$P_{hyd} = 1000 \\times 9.81 \\times 0.02 \\times 45 = 8,829\\text{ Watts}\
+  \ \\approx 8.8\\text{ kW}$$\n\n## Pelton Bucket Geometry & Fabrication\n\nEach Pelton bucket consists\
+  \ of two symmetric hollow halves joined by a knife-like **splitter ridge**:\n- The splitter cuts the\
+  \ jet cleanly without splashing.\n- Water curves around the inner bowls and exits backwards at an angle\
+  \ of **165°** to avoid hitting the back of the following bucket.\n- **Bucket Cutout**: A notch on the\
+  \ outer lip allows the jet to strike the preceding bucket fully before the next bucket enters the jet\
+  \ path.\n\n### Fabrication Options:\n1. **Fabricated Mild / Stainless Steel**: Cups pressed from 3 mm\
+  \ plate or plasma-cut spoons, fully welded to a 10 mm central steel disc using E7018 or 309L stainless\
+  \ rods.\n2. **Cast Bronze / Gunmetal (88% Cu, 10% Sn, 2% Zn)**: Highest cavitation and sand erosion\
+  \ resistance; individual cups cast in foundry sand and keyed to the hub with high-tensile Grade 8.8\
+  \ fitted bolts.\n\n## Static Balancing on Precision Knife Edges\n\nCentrifugal force from an unbalanced\
+  \ mass $m$ at radius $r$ spinning at angular velocity $\\omega$:\n$$F_c = m \\times r \\times \\omega^2$$\n\
+  \nAt 1500 RPM ($\\omega = 157\\text{ rad/s}$), an imbalance of only **15 grams (0.015 kg)** at a radius\
+  \ of **0.15 m**:\n$$F_c = 0.015 \\times 0.15 \\times (157)^2 \\approx 55.5\\text{ Newtons} \\approx\
+  \ 5.7\\text{ kg of cyclic dynamic hammer shock}$$\nThis vibration shatters bearings and loosens mounting\
+  \ bolts within days.\n\n### Two-Knife-Edge Static Balancing Protocol:\n1. Mount the runner on its precision\
+  \ ground shaft (or a true test mandrel).\n2. Support the shaft horizontally on two hardened, ground,\
+  \ and precision-levelled parallel steel knife edges (or roller wheels).\n3. Release the runner gently.\
+  \ The heaviest bucket will rotate by gravity to the lowest 6 o'clock position.\n4. Mark the top (12\
+  \ o'clock / lightest point).\n5. **Correction Options**:\n   - *Additive*: Weld small balancing tabs\
+  \ or add stainless steel washers to the 12 o'clock bucket bolt.\n   - *Subtractive*: Grind metal carefully\
+  \ from the non-structural thick ribbing of the 6 o'clock heavy bucket.\n6. Repeat until the runner will\
+  \ rest motionless at any angular position (neutral equilibrium) without rolling.\n"
 exercises:
-  - id: mech-d5-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A micro-hydro site has a net head of 50 metres. Assuming a nozzle coefficient
-      Cv of 0.98, what is the calculated water jet velocity exiting the nozzle?
-    xp_reward: 50
-    options:
-      - text: "Approximately 30.7 m/s"
-        correct: true
-        explanation: "Vj = 0.98 × sqrt(2 × 9.81 × 50) = 0.98 × sqrt(981) = 0.98 × 31.32 ≈ 30.69 m/s."
-      - text: "Approximately 98.1 m/s"
-        correct: false
-        explanation: "This improperly multiplies g by 10 without taking the square root."
-      - text: "Approximately 15.3 m/s"
-        correct: false
-        explanation: "This is roughly half of the correct jet velocity (which would match runner peripheral speed, not jet velocity)."
-      - text: "Approximately 45.0 m/s"
-        correct: false
-        explanation: "This would require a net head of over 100 metres."
+- id: mech-d5-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A micro-hydro site has a net head of 50 metres. Assuming a nozzle coefficient Cv of 0.98, what
+    is the calculated water jet velocity exiting the nozzle?
 
-  - id: mech-d5-q2
-    type: FILL_BLANK
-    prompt: >
-      To maximize hydraulic momentum transfer, a Pelton turbine runner bucket is designed
-      with a sharp central ___ ridge that divides the water jet into two equal streams,
-      discharging the water backwards at an angle of ___ to ___ degrees.
-    xp_reward: 50
-    correct_answer: "splitter; 165; 170"
-    explanation: >
-      The splitter cuts the water jet cleanly with minimal entry turbulence. Discharging
-      backwards at 165°-170° transfers maximum kinetic momentum to the wheel without
-      having exiting water collide with the back of the following bucket.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Approximately 98.1 m/s
+  - id: b
+    text: Approximately 15.3 m/s
+  - id: c
+    text: Approximately 30.7 m/s
+  - id: d
+    text: Approximately 45.0 m/s
+  explanation: 'Vj = 0.98 × sqrt(2 × 9.81 × 50) = 0.98 × sqrt(981) = 0.98 × 31.32 ≈ 30.69 m/s.
 
-  - id: mech-d5-q3
-    type: MATCH_PAIRS
-    prompt: Match each micro-hydro impulse turbine component to its functional engineering role.
-    xp_reward: 50
-    pairs:
-      - left: Spear / Needle Valve
-        right: Adjusts water jet diameter and flow rate without losing jet velocity
-      - left: Jet Deflector Plate
-        right: Rapidly diverts jet away from runner during sudden generator load dump
-      - left: Bucket Outer Lip Cutout
-        right: Prevents incoming bucket from chopping into preceding bucket's jet stream
-      - left: Knife-Edge Mandrel Rig
-        right: Provides near-frictionless support for static runner wheel balancing
-    correct_answer: null
-    explanation: >
-      Spear valves throttle water cleanly; deflectors prevent overspeed runaway when
-      electrical loads trip; bucket cutouts maintain uninterrupted jet entry; knife-edge
-      mandrels detect minute gravity imbalances.
 
-  - id: mech-d5-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      For optimal efficiency on an impulse Pelton runner, the peripheral speed of the
-      runner buckets (pitch circle velocity U) should ideally be what fraction of the
-      water jet velocity (Vj)?
-    xp_reward: 50
-    options:
-      - text: "Between 46% and 48% (U ≈ 0.47 Vj)"
-        correct: true
-        explanation: "Theoretical impulse turbine efficiency peaks at U = 0.5 Vj. Due to friction losses along bucket walls and air resistance, practical optimum runner peripheral speed is 0.46 to 0.48 times the jet speed."
-      - text: "Exactly 100% (U = Vj)"
-        correct: false
-        explanation: "If the bucket moves at the same speed as the jet, zero force is transferred because relative velocity is zero."
-      - text: "Between 10% and 15%"
-        correct: false
-        explanation: "This is far too slow and would waste over 70% of kinetic energy in high-speed discharge water."
-      - text: "Over 150% (U = 1.5 Vj)"
-        correct: false
-        explanation: "A runner cannot spin faster than the jet driving it without external power input."
+    Why the other options are wrong: This improperly multiplies g by 10 without taking the square root.
+    This is roughly half of the correct jet velocity (which would match runner peripheral speed, not jet
+    velocity). This would require a net head of over 100 metres.'
+  correct_answer: c
+- id: mech-d5-q2
+  type: FILL_BLANK
+  prompt: 'To maximize hydraulic momentum transfer, a Pelton turbine runner bucket is designed with a
+    sharp central ___ ridge that divides the water jet into two equal streams, discharging the water backwards
+    at an angle of ___ to ___ degrees.
 
-  - id: mech-d5-q5
-    type: PHOTO_CAPTURE
-    prompt: >
-      Photograph a precision bench layout, drilled/tapped workpiece, or mechanical
-      component fabrication from your workshop practice. Ensure clear lighting showing
-      scribing, center marks, weld seams, or bearing fits, and include your written
-      dimensional inspection report.
-    xp_reward: 50
-    correct_answer: null
-    explanation: >
-      Accurate documentation and visual inspection of layout lines, thread quality,
-      and squareness verify that the fabricated component meets precision engineering
-      standards before final assembly.
-    rubric:
-      - criterion: "Photograph clearly shows layout lines, drilled holes, tapped threads, or fabricated machine runner"
-        points: 15
-      - criterion: "Measurement tool (vernier caliper, steel rule, or engineer's square) is visible in the frame demonstrating inspection"
-        points: 15
-      - criterion: "Written inspection notes report nominal vs actual measured dimensions and tolerance deviations"
-        points: 10
-      - criterion: "Image is sharp, well-lit, and in focus with clean edges visible"
-        points: 10
+    '
+  xp_reward: 50
+  correct_answer:
+  - splitter
+  - '165'
+  - '170'
+  explanation: 'The splitter cuts the water jet cleanly with minimal entry turbulence. Discharging backwards
+    at 165°-170° transfers maximum kinetic momentum to the wheel without having exiting water collide
+    with the back of the following bucket.
+
+    '
+- id: mech-d5-q3
+  type: MATCH_PAIRS
+  prompt: Match each micro-hydro impulse turbine component to its functional engineering role.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Spear / Needle Valve
+    right:
+      id: r-241e6e
+      text: Adjusts water jet diameter and flow rate without losing jet velocity
+  - left:
+      id: l2
+      text: Jet Deflector Plate
+    right:
+      id: r-72d3e3
+      text: Rapidly diverts jet away from runner during sudden generator load dump
+  - left:
+      id: l3
+      text: Bucket Outer Lip Cutout
+    right:
+      id: r-fe3383
+      text: Prevents incoming bucket from chopping into preceding bucket's jet stream
+  - left:
+      id: l4
+      text: Knife-Edge Mandrel Rig
+    right:
+      id: r-2cf3ff
+      text: Provides near-frictionless support for static runner wheel balancing
+  correct_answer:
+  - l1=r-241e6e
+  - l2=r-72d3e3
+  - l3=r-fe3383
+  - l4=r-2cf3ff
+  explanation: 'Spear valves throttle water cleanly; deflectors prevent overspeed runaway when electrical
+    loads trip; bucket cutouts maintain uninterrupted jet entry; knife-edge mandrels detect minute gravity
+    imbalances.
+
+    '
+- id: mech-d5-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'For optimal efficiency on an impulse Pelton runner, the peripheral speed of the runner buckets
+    (pitch circle velocity U) should ideally be what fraction of the water jet velocity (Vj)?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Exactly 100% (U = Vj)
+  - id: b
+    text: Between 10% and 15%
+  - id: c
+    text: Over 150% (U = 1.5 Vj)
+  - id: d
+    text: Between 46% and 48% (U ≈ 0.47 Vj)
+  explanation: 'Theoretical impulse turbine efficiency peaks at U = 0.5 Vj. Due to friction losses along
+    bucket walls and air resistance, practical optimum runner peripheral speed is 0.46 to 0.48 times the
+    jet speed.
+
+
+    Why the other options are wrong: If the bucket moves at the same speed as the jet, zero force is transferred
+    because relative velocity is zero. This is far too slow and would waste over 70% of kinetic energy
+    in high-speed discharge water. A runner cannot spin faster than the jet driving it without external
+    power input.'
+  correct_answer: d
+- id: mech-d5-q5
+  type: PHOTO_CAPTURE
+  prompt: 'Photograph a precision bench layout, drilled/tapped workpiece, or mechanical component fabrication
+    from your workshop practice. Ensure clear lighting showing scribing, center marks, weld seams, or
+    bearing fits, and include your written dimensional inspection report.
+
+    '
+  xp_reward: 50
+  correct_answer: null
+  explanation: 'Accurate documentation and visual inspection of layout lines, thread quality, and squareness
+    verify that the fabricated component meets precision engineering standards before final assembly.
+
+    '
+  rubric:
+  - criterion: Photograph clearly shows layout lines, drilled holes, tapped threads, or fabricated machine
+      runner
+    points: 15
+  - criterion: Measurement tool (vernier caliper, steel rule, or engineer's square) is visible in the
+      frame demonstrating inspection
+    points: 15
+  - criterion: Written inspection notes report nominal vs actual measured dimensions and tolerance deviations
+    points: 10
+  - criterion: Image is sharp, well-lit, and in focus with clean edges visible
+    points: 10

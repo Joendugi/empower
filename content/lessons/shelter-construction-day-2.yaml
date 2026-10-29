@@ -1,135 +1,164 @@
 id: shelter-construction-day-2
 course_id: shelter-construction
-title: "Compressed Earth Blocks & Stabilization"
-title_sw: "Matofali ya Udongo Yaliyoshindiliwa na Uimarishaji"
+title: Compressed Earth Blocks & Stabilization
+title_sw: Matofali ya Udongo Yaliyoshindiliwa na Uimarishaji
 week_number: 1
 day_number: 2
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [shelter, masonry, ceb, compressed-earth-blocks, cement, lime, kenya]
+tags:
+- shelter
+- masonry
+- ceb
+- compressed-earth-blocks
+- cement
+- lime
+- kenya
 xp: 85
 exam_domain: Civil & Structural Engineering
+briefing: 'Fired clay bricks consume massive quantities of firewood, driving deforestation across
 
-briefing: |
-  Fired clay bricks consume massive quantities of firewood, driving deforestation across
-  Kenya's water towers. Compressed Earth Blocks (CEB), made with manual toggle presses
+  Kenya''s water towers. Compressed Earth Blocks (CEB), made with manual toggle presses
+
   (such as the Cinva-Ram or Auram press), provide structural masonry units with a fraction
+
   of the carbon footprint and zero fuel cost. When stabilized with 5–8% cement or lime,
+
   CEBs resist rain erosion and achieve compressive strengths exceeding Kenya Standard
+
   KS 02-1070 (≥ 2.5 MPa). This day covers mechanical pressing, chemical stabilization,
+
   optimum moisture testing, damp curing protocols, and earth mortar formulation.
-briefing_sw: |
-  Kutengeneza matofali ya kuchoma kwa kuni huharibu misitu ya Kenya. Matofali ya udongo
+
+  '
+briefing_sw: 'Kutengeneza matofali ya kuchoma kwa kuni huharibu misitu ya Kenya. Matofali ya udongo
+
   yaliyoshindiliwa kwa mashine ya mkono (CEB) kama Cinva-Ram yanatoa uimara mkubwa bila
+
   kuhitaji kuni hata kidogo. Yakichanganywa na asilimia 5–8 ya saruji au chokaa, matofali
+
   haya yanadumu kwa miongo mingi. Siku hii inafundisha jinsi ya kupima unyevu, kushindilia,
+
   na kuponya matofali chini ya plastiki.
 
-outline: |
-  1. Environmental and economic comparison: Fired bricks vs quarry stone vs CEB
+  '
+outline: '1. Environmental and economic comparison: Fired bricks vs quarry stone vs CEB
+
   2. The mechanics of stabilization: Cement (for sandy soils) vs Lime (for clay soils)
+
   3. Determining Optimum Moisture Content (OMC): The hand-squeeze ball test
+
   4. Manual block pressing: Operation of the toggle lever press (Cinva-Ram mechanism)
+
   5. The curing imperative: 14 to 28-day hydration under black polythene sheeting
+
   6. Compressive strength standards: KS 02-1070 requirements (dry vs wet strength)
+
   7. Mortar compatibility: Soil-cement slurry vs destructive rigid Portland mortars
+
   8. Interlocking CEB (ISSB) designs: Mortarless tongue-and-groove construction
 
-content_md: |
-  ## Why Compressed Earth Blocks (CEB)?
-
-  Traditional fired clay bricks require approximately **1 cubic meter of firewood to burn 1,000 bricks**, contributing heavily to charcoal-driven deforestation in East Africa.
-
-  **Advantages of CEB:**
-  - **Zero fuel consumption** (cured by chemical hydration at ambient temperature)
-  - **High thermal mass** (moderates indoor temperatures between hot days and cool highland nights)
-  - **Manufactured on-site** from basement excavation soil, cutting transport costs to zero
-  - **Uniform dimensions** allowing thin mortar joints (5 mm) or mortarless interlocking
-
-  ## Chemical Stabilization: Cement vs Lime
-
-  | Parameter | Cement Stabilization (OPC) | Lime Stabilization (Hydrated Lime) |
-  |-----------|----------------------------|-----------------------------------|
-  | **Best Soil Type** | Sandy, granular soils (sand > 65%, clay < 20%) | High-clay soils (clay > 25%) |
-  | **Optimal Ratio** | **5% – 8% by weight** (~1 bag cement per 150-180 blocks) | **6% – 10% by weight** |
-  | **Setting Mechanism** | Calcium silicate hydrate gel forms mechanical matrix around sand grains | Pozzolanic reaction: lime reacts with silica/alumina in clay sheets |
-  | **Curing Speed** | Fast: achieves 70% strength in 7 days | Slow: requires 28–56 days of warm curing |
-
-  ## The Hand-Squeeze Optimum Moisture Test
-
-  If soil is too dry, it will not compress into a coherent block; if too wet, water squirts through press clearances, creating voids and low density.
-
-  **The Test:**
-  1. Take a handful of prepared soil-cement mix and squeeze firmly in your fist.
-  2. Open your hand: The soil should form a cohesive ball that retains your finger impressions without leaving wet mud on your skin.
-  3. Drop the ball from **waist height (approx. 1 meter)** onto hard, flat soil:
-     - **Shatters into powder:** Too dry. Add small amount of water with a watering can rose.
-     - **Flattens like mud / stays in 1-2 chunks:** Too wet. Spread mix out to dry or add dry soil.
-     - **Breaks into 4 to 6 clean fragments:** **Optimum Moisture Content (OMC ~8-12%)!** Proceed to press immediately.
-
-  ## Pressing with the Cinva-Ram / Toggle Press
-
-  1. Fill the compression box evenly with measured soil-cement mix (strike off excess with a straight edge).
-  2. Close the lid and latch securely.
-  3. Pull down the long toggle lever with steady, continuous body weight (generates over 20 kN of compressive force, compacting soil by ~30%).
-  4. Reverse the lever to eject the green block smoothly onto the discharge plate.
-  5. Lift the freshly pressed block using two flat wooden boards or palms on the sides — never grip by the edges.
-
-  ## The Curing Imperative (Hydration)
-
-  Cement does not "dry" — it **hydrates chemically**. If a green CEB loses its moisture to direct sun or wind, hydration halts and the block will turn to dust.
-
-  - Stack blocks under shade in tight layers up to 5 courses high.
-  - Sprinkle lightly with water twice daily.
-  - **Cover completely with black polythene plastic sheeting (150–200 micron)** to trap 100% relative humidity.
-  - Cure for a minimum of **14 days** (ideally 28 days) before laying in walls.
-
-  ## Compressive Strength Standards (Kenya KS 02-1070)
-  - **Minimum Dry Compressive Strength:** ≥ 2.5 N/mm² (MPa) for single-story loadbearing walls.
-  - **Minimum Wet Compressive Strength (after 24h water soak):** ≥ 1.25 N/mm² (MPa). A properly stabilized block retains > 50% of its strength even when fully submerged.
-
+  '
+content_md: "## Why Compressed Earth Blocks (CEB)?\n\nTraditional fired clay bricks require approximately\
+  \ **1 cubic meter of firewood to burn 1,000 bricks**, contributing heavily to charcoal-driven deforestation\
+  \ in East Africa.\n\n**Advantages of CEB:**\n- **Zero fuel consumption** (cured by chemical hydration\
+  \ at ambient temperature)\n- **High thermal mass** (moderates indoor temperatures between hot days and\
+  \ cool highland nights)\n- **Manufactured on-site** from basement excavation soil, cutting transport\
+  \ costs to zero\n- **Uniform dimensions** allowing thin mortar joints (5 mm) or mortarless interlocking\n\
+  \n## Chemical Stabilization: Cement vs Lime\n\n| Parameter | Cement Stabilization (OPC) | Lime Stabilization\
+  \ (Hydrated Lime) |\n|-----------|----------------------------|-----------------------------------|\n\
+  | **Best Soil Type** | Sandy, granular soils (sand > 65%, clay < 20%) | High-clay soils (clay > 25%)\
+  \ |\n| **Optimal Ratio** | **5% – 8% by weight** (~1 bag cement per 150-180 blocks) | **6% – 10% by\
+  \ weight** |\n| **Setting Mechanism** | Calcium silicate hydrate gel forms mechanical matrix around\
+  \ sand grains | Pozzolanic reaction: lime reacts with silica/alumina in clay sheets |\n| **Curing Speed**\
+  \ | Fast: achieves 70% strength in 7 days | Slow: requires 28–56 days of warm curing |\n\n## The Hand-Squeeze\
+  \ Optimum Moisture Test\n\nIf soil is too dry, it will not compress into a coherent block; if too wet,\
+  \ water squirts through press clearances, creating voids and low density.\n\n**The Test:**\n1. Take\
+  \ a handful of prepared soil-cement mix and squeeze firmly in your fist.\n2. Open your hand: The soil\
+  \ should form a cohesive ball that retains your finger impressions without leaving wet mud on your skin.\n\
+  3. Drop the ball from **waist height (approx. 1 meter)** onto hard, flat soil:\n   - **Shatters into\
+  \ powder:** Too dry. Add small amount of water with a watering can rose.\n   - **Flattens like mud /\
+  \ stays in 1-2 chunks:** Too wet. Spread mix out to dry or add dry soil.\n   - **Breaks into 4 to 6\
+  \ clean fragments:** **Optimum Moisture Content (OMC ~8-12%)!** Proceed to press immediately.\n\n##\
+  \ Pressing with the Cinva-Ram / Toggle Press\n\n1. Fill the compression box evenly with measured soil-cement\
+  \ mix (strike off excess with a straight edge).\n2. Close the lid and latch securely.\n3. Pull down\
+  \ the long toggle lever with steady, continuous body weight (generates over 20 kN of compressive force,\
+  \ compacting soil by ~30%).\n4. Reverse the lever to eject the green block smoothly onto the discharge\
+  \ plate.\n5. Lift the freshly pressed block using two flat wooden boards or palms on the sides — never\
+  \ grip by the edges.\n\n## The Curing Imperative (Hydration)\n\nCement does not \"dry\" — it **hydrates\
+  \ chemically**. If a green CEB loses its moisture to direct sun or wind, hydration halts and the block\
+  \ will turn to dust.\n\n- Stack blocks under shade in tight layers up to 5 courses high.\n- Sprinkle\
+  \ lightly with water twice daily.\n- **Cover completely with black polythene plastic sheeting (150–200\
+  \ micron)** to trap 100% relative humidity.\n- Cure for a minimum of **14 days** (ideally 28 days) before\
+  \ laying in walls.\n\n## Compressive Strength Standards (Kenya KS 02-1070)\n- **Minimum Dry Compressive\
+  \ Strength:** ≥ 2.5 N/mm² (MPa) for single-story loadbearing walls.\n- **Minimum Wet Compressive Strength\
+  \ (after 24h water soak):** ≥ 1.25 N/mm² (MPa). A properly stabilized block retains > 50% of its strength\
+  \ even when fully submerged.\n"
 exercises:
-  - id: sc2-q1
-    type: MULTIPLE_CHOICE
-    prompt: "A builder leaves freshly pressed cement-stabilized earth blocks directly under the hot midday sun to 'dry quickly'. What will happen to the blocks?"
-    xp_reward: 35
-    options:
-      - text: "They will achieve maximum strength faster because heat accelerates cement curing"
-        correct: false
-        explanation: "While warm temperatures help, solar heat evaporates the internal water required for cement hydration, halting crystal growth and causing severe friability."
-      - text: "They will dry out prematurely, stopping cement hydration and resulting in weak, crumbling blocks full of shrinkage cracks"
-        correct: true
-        explanation: "Correct! Cement requires moisture to hydrate and form calcium silicate hydrate crystals. Without damp curing under plastic tarpaulins for at least 14 days, the blocks will fail under minimal load."
-      - text: "They will turn into fired ceramic bricks"
-        correct: false
-        explanation: "Firing ceramic bricks requires kiln temperatures above 900 °C, not ambient solar heat."
-      - text: "Sunlight reacts with the sand to produce glass crystals"
-        correct: false
-        explanation: "Quartz sand does not melt or vitrify under sunlight."
-    correct_answer: "They will dry out prematurely, stopping cement hydration and resulting in weak, crumbling blocks full of shrinkage cracks"
+- id: sc2-q1
+  type: MULTIPLE_CHOICE
+  prompt: A builder leaves freshly pressed cement-stabilized earth blocks directly under the hot midday
+    sun to 'dry quickly'. What will happen to the blocks?
+  xp_reward: 35
+  options:
+  - id: a
+    text: They will achieve maximum strength faster because heat accelerates cement curing
+  - id: b
+    text: They will turn into fired ceramic bricks
+  - id: c
+    text: Sunlight reacts with the sand to produce glass crystals
+  - id: d
+    text: They will dry out prematurely, stopping cement hydration and resulting in weak, crumbling blocks
+      full of shrinkage cracks
+  correct_answer: d
+  explanation: 'Correct! Cement requires moisture to hydrate and form calcium silicate hydrate crystals.
+    Without damp curing under plastic tarpaulins for at least 14 days, the blocks will fail under minimal
+    load.
 
-  - id: sc2-q2
-    type: FILL_BLANK
-    prompt: "For sandy soils, the recommended percentage of Ordinary Portland Cement by weight for stabilizing compressed earth blocks is ___% to 8%."
-    xp_reward: 20
-    correct_answer: "5"
-    explanation: "A stabilization ratio of 5% to 8% cement by weight provides the ideal balance between weather resistance, compressive strength (≥ 2.5 MPa), and material cost efficiency."
 
-  - id: sc2-q3
-    type: MATCH_PAIRS
-    prompt: "Match each earthen masonry term to its correct definition."
-    xp_reward: 30
-    pairs:
-      - left: Optimum Moisture Content (OMC)
-        right: Soil moisture level where mechanical compaction achieves maximum dry density
-      - left: Black polythene damp curing
-        right: Traps humidity for 14-28 days so cement crystals hydrate fully without evaporating
-      - left: Interlocking CEB (ISSB)
-        right: Blocks with tongue-and-groove profiles that interlock with little to no mortar
-      - left: Lime stabilization
-        right: Best stabilizer for high-clay soils through long-term pozzolanic reactions
-    correct_answer:
-      - Optimum Moisture Content (OMC)=Soil moisture level where mechanical compaction achieves maximum dry density
-      - Black polythene damp curing=Traps humidity for 14-28 days so cement crystals hydrate fully without evaporating
-      - Interlocking CEB (ISSB)=Blocks with tongue-and-groove profiles that interlock with little to no mortar
-      - Lime stabilization=Best stabilizer for high-clay soils through long-term pozzolanic reactions
+    Why the other options are wrong: While warm temperatures help, solar heat evaporates the internal
+    water required for cement hydration, halting crystal growth and causing severe friability. Firing
+    ceramic bricks requires kiln temperatures above 900 °C, not ambient solar heat. Quartz sand does not
+    melt or vitrify under sunlight.'
+- id: sc2-q2
+  type: FILL_BLANK
+  prompt: For sandy soils, the recommended percentage of Ordinary Portland Cement by weight for stabilizing
+    compressed earth blocks is ___% to 8%.
+  xp_reward: 20
+  correct_answer: '5'
+  explanation: A stabilization ratio of 5% to 8% cement by weight provides the ideal balance between weather
+    resistance, compressive strength (≥ 2.5 MPa), and material cost efficiency.
+- id: sc2-q3
+  type: MATCH_PAIRS
+  prompt: Match each earthen masonry term to its correct definition.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Optimum Moisture Content (OMC)
+    right:
+      id: r-549e5e
+      text: Soil moisture level where mechanical compaction achieves maximum dry density
+  - left:
+      id: l2
+      text: Black polythene damp curing
+    right:
+      id: r-e58a8c
+      text: Traps humidity for 14-28 days so cement crystals hydrate fully without evaporating
+  - left:
+      id: l3
+      text: Interlocking CEB (ISSB)
+    right:
+      id: r-792f1d
+      text: Blocks with tongue-and-groove profiles that interlock with little to no mortar
+  - left:
+      id: l4
+      text: Lime stabilization
+    right:
+      id: r-e6b872
+      text: Best stabilizer for high-clay soils through long-term pozzolanic reactions
+  correct_answer:
+  - l1=r-549e5e
+  - l2=r-e58a8c
+  - l3=r-792f1d
+  - l4=r-e6b872

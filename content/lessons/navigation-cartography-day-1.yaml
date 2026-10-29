@@ -1,223 +1,203 @@
 id: navigation-cartography-day-1
 course_id: navigation-cartography
-title: "Topographic Maps, Contours & Grid Coordinates"
-title_sw: "Ramani za Topografia, Mistari ya Miinuko na Kuratibu za Gridi"
+title: Topographic Maps, Contours & Grid Coordinates
+title_sw: Ramani za Topografia, Mistari ya Miinuko na Kuratibu za Gridi
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - navigation
-  - cartography
-  - topographic-maps
-  - contours
-  - utm-grid
-  - surveying
+- navigation
+- cartography
+- topographic-maps
+- contours
+- utm-grid
+- surveying
 xp: 250
 exam_domain: navigation-cartography
+briefing: 'When satellite constellations go offline or electronic devices lose power, a paper topographic
+  map is an explorer''s only reliable window into the physical landscape. Reading a map is not merely
+  recognizing roads; it is the art of translating 2-dimensional contour lines into a living 3-dimensional
+  mental image of ridges, valleys, cliffs, and water flow. This lesson covers scale ratios, contour interval
+  arithmetic, relief interpretation (spurs vs valleys), slope gradient percentages, and the Universal
+  Transverse Mercator (UTM) metric grid coordinate system (UTM Zone 37N / 37S in Kenya).
 
-briefing: >
-  When satellite constellations go offline or electronic devices lose power, a
-  paper topographic map is an explorer's only reliable window into the physical
-  landscape. Reading a map is not merely recognizing roads; it is the art of
-  translating 2-dimensional contour lines into a living 3-dimensional mental image
-  of ridges, valleys, cliffs, and water flow. This lesson covers scale ratios,
-  contour interval arithmetic, relief interpretation (spurs vs valleys), slope
-  gradient percentages, and the Universal Transverse Mercator (UTM) metric grid
-  coordinate system (UTM Zone 37N / 37S in Kenya).
+  '
+outline: 'Map scale ratios (1:50,000 standard survey sheet); representative fractions; contour lines (index
+  contours, intermediate contours, supplementary); contour spacing vs terrain slope; the V-rule for river
+  valleys and spurs; calculating slope gradient percentage: Slope% = (Rise / Run) * 100; Universal Transverse
+  Mercator (UTM) and Military Grid Reference System (MGRS); reading 6-figure and 8-figure grid references
+  (Eastings before Northings); measuring curved trail distances with thread or map wheel.
 
-outline: >
-  Map scale ratios (1:50,000 standard survey sheet); representative fractions;
-  contour lines (index contours, intermediate contours, supplementary); contour
-  spacing vs terrain slope; the V-rule for river valleys and spurs; calculating
-  slope gradient percentage: Slope% = (Rise / Run) * 100; Universal Transverse
-  Mercator (UTM) and Military Grid Reference System (MGRS); reading 6-figure and
-  8-figure grid references (Eastings before Northings); measuring curved trail
-  distances with thread or map wheel.
-
-content_md: |
-  ## The Nature of the Topographic Map
-
-  A topographic map provides an accurate, two-dimensional scale model of the Earth's
-  curved surface projected onto flat paper.
-  - **Survey of Kenya Standard**: 1:50,000 scale series (Series Y731 / SK 57).
-  - **Representative Fraction ($1:50,000$)**:
-    $$1\text{ cm on the map} = 50,000\text{ cm on the ground} = 500\text{ metres} = 0.5\text{ kilometres}$$
-    $$2\text{ cm on the map} = 1,000\text{ metres} = 1.0\text{ kilometre}$$
-
-  ## Deciphering Contour Lines & Terrain Relief
-
-  Contour lines are imaginary brown lines connecting contiguous points of equal
-  elevation above mean sea level.
-
-  ### 1. Contour Classifications:
-  - **Index Contours**: Heavy, bold lines with printed elevation numbers (e.g., `1800m`, `1900m`), occurring every 5th line.
-  - **Intermediate Contours**: Thinner lines drawn between index contours.
-  - **Contour Interval (CI)**: The vertical vertical elevation difference between adjacent lines.
-    - On 1:50,000 East African sheets, **$\text{CI} = 20\text{ metres}$** (or $50\text{ feet}$ on older colonial editions).
-
-  ### 2. Reading Terrain Shape from Spacing:
-  - **Lines closely packed**: Steep slope, cliff face, or escarpment.
-  - **Lines widely spaced**: Gentle slope, flood plain, or savannah flatland.
-  - **Concentric closed circles**: Hill summit or peak. If hachure tick marks point inward, it represents a volcanic crater or sinkhole depression.
-
-  ```
-     RIDGE / SPUR (V-pointing downhill)          VALLEY / STREAM (V-pointing uphill)
-               500m                                        500m
-             /      \                                    /      \
-            /  480m  \                                  /  520m  \
-           /  /    \  \                                /  /    \  \
-          │  │ 460m │  │                              │  │ 540m │  │
-          │  └──┬───┘  │                              │  └──┬───┘  │
-                ▼                                           ▲
-          Spur points OUT                             Water flows DOWN
-         toward low ground                           V points toward summit
-  ```
-
-  ### 3. The "Rule of V's":
-  - **Stream Valleys**: When contour lines cross a river, creek, or dry lapa, they form a **sharp 'V' that points UPHILL** toward the high water source. Water always flows in the direction the 'V' opens (downhill).
-  - **Ridges & Spurs**: Contours crossing a protruding ridge form a **broad 'U' or 'V' that points DOWNHILL** into lower ground.
-
-  ## Calculating Slope Gradient
-
-  Slope gradient dictates whether terrain can be traversed by vehicles, pack animals,
-  or foot patrols:
-
-  $$\text{Slope Gradient (\%)} = \frac{\text{Vertical Rise (m)}}{\text{Horizontal Distance / Run (m)}} \times 100$$
-
-  *Worked Example*:
-  Between two points on a 1:50,000 map, an expedition must climb across 6 contour intervals ($\text{CI} = 20\text{ m}$).
-  The measured paper map distance between the two points is $1.6\text{ cm}$.
-
-  1. **Vertical Rise**:
-     $$\text{Rise} = 6 \times 20\text{ m} = \mathbf{120\text{ metres}}$$
-  2. **Horizontal Distance (Run)**:
-     $$\text{Run} = 1.6\text{ cm} \times 50,000 = 80,000\text{ cm} = \mathbf{800\text{ metres}}$$
-  3. **Slope Percentage**:
-     $$\text{Slope \%} = \frac{120\text{ m}}{800\text{ m}} \times 100 = \mathbf{15\%}$$
-     - *Traverse Assessment*: 15% is comfortable for foot travel, marginal for pack donkeys, and impassable for standard 2WD vehicles (requires low-range 4x4).
-
-  ## The Universal Transverse Mercator (UTM) Grid
-
-  Topographic maps feature a 1-kilometre square metric grid printed in blue or black.
-  - In Kenya, the territory spans **UTM Zone 36** (Western Kenya / Rift) and **UTM Zone 37** (Central Kenya, Nairobi, Garissa, Coast), divided by the Equator into Northern (N) and Southern (S) hemispheres.
-  - The grid lines allow any location to be communicated as a numeric coordinate.
-
-  ### The Golden Rule: "Read Right Up"
-  Always read the horizontal **Easting** (left-to-right) first, then the vertical **Northing** (bottom-to-top) second:
-
-  ```
-     Northing
-        ▲
-     84 ┼───────┬───────┐
-        │       │   X   │  Point X:
-     83 ┼───────┼───────┤  Easting grid line = 42
-        │       │       │  Northing grid line = 83
-     82 ┴───────┴───────┴───► Easting
-       41      42      43
-  ```
-
-  ### 1. Six-Figure Grid Reference (Accurate to 100 metres):
-  1. Identify the 1 km grid square: Easting line `42`, Northing line `83`.
-  2. Estimate tenths (100-metre increments) from the west grid line to Point X: say **$6\text{ tenths}$** east.
-  3. Estimate tenths from the south grid line to Point X: say **$7\text{ tenths}$** north.
-  4. Combine into a 6-digit reference: **`426 837`**.
-
-  ### 2. Eight-Figure Grid Reference (Accurate to 10 metres):
-  Using a plastic map roamer (roamer scale):
-  - Measure millimeters precisely within the 1 km grid block ($1\text{ mm} = 50\text{ m}$ on 1:50,000).
-  - Produces an 8-digit coordinate: **`4264 8372`** (locates a specific water borehole or building within 10 metres).
-
-  ## Measuring Curved Route Distances
-
-  Winding footpaths and game trails cannot be measured with a stiff plastic ruler:
-  - **Thread / Twine Method**:
-    - Lay a piece of damp cotton string along the twists and turns of the trail on the map.
-    - Mark the start and end points on the string with a fine-tip pencil.
-    - Straighten the string against the printed **graphic bar scale** at the bottom margin of the map sheet to read exact kilometres.
-  - **Pencil Ticking Technique**:
-    - Roll a straight strip of paper along the curve, rotating and making a pencil tick mark at every bend. Measure the total ticked strip against the bar scale.
-
+  '
+content_md: "## The Nature of the Topographic Map\n\nA topographic map provides an accurate, two-dimensional\
+  \ scale model of the Earth's\ncurved surface projected onto flat paper.\n- **Survey of Kenya Standard**:\
+  \ 1:50,000 scale series (Series Y731 / SK 57).\n- **Representative Fraction ($1:50,000$)**:\n  $$1\\\
+  text{ cm on the map} = 50,000\\text{ cm on the ground} = 500\\text{ metres} = 0.5\\text{ kilometres}$$\n\
+  \  $$2\\text{ cm on the map} = 1,000\\text{ metres} = 1.0\\text{ kilometre}$$\n\n## Deciphering Contour\
+  \ Lines & Terrain Relief\n\nContour lines are imaginary brown lines connecting contiguous points of\
+  \ equal\nelevation above mean sea level.\n\n### 1. Contour Classifications:\n- **Index Contours**: Heavy,\
+  \ bold lines with printed elevation numbers (e.g., `1800m`, `1900m`), occurring every 5th line.\n- **Intermediate\
+  \ Contours**: Thinner lines drawn between index contours.\n- **Contour Interval (CI)**: The vertical\
+  \ vertical elevation difference between adjacent lines.\n  - On 1:50,000 East African sheets, **$\\\
+  text{CI} = 20\\text{ metres}$** (or $50\\text{ feet}$ on older colonial editions).\n\n### 2. Reading\
+  \ Terrain Shape from Spacing:\n- **Lines closely packed**: Steep slope, cliff face, or escarpment.\n\
+  - **Lines widely spaced**: Gentle slope, flood plain, or savannah flatland.\n- **Concentric closed circles**:\
+  \ Hill summit or peak. If hachure tick marks point inward, it represents a volcanic crater or sinkhole\
+  \ depression.\n\n```\n   RIDGE / SPUR (V-pointing downhill)          VALLEY / STREAM (V-pointing uphill)\n\
+  \             500m                                        500m\n           /      \\               \
+  \                     /      \\\n          /  480m  \\                                  /  520m  \\\n\
+  \         /  /    \\  \\                                /  /    \\  \\\n        │  │ 460m │  │     \
+  \                         │  │ 540m │  │\n        │  └──┬───┘  │                              │  └──┬───┘\
+  \  │\n              ▼                                           ▲\n        Spur points OUT         \
+  \                    Water flows DOWN\n       toward low ground                           V points toward\
+  \ summit\n```\n\n### 3. The \"Rule of V's\":\n- **Stream Valleys**: When contour lines cross a river,\
+  \ creek, or dry lapa, they form a **sharp 'V' that points UPHILL** toward the high water source. Water\
+  \ always flows in the direction the 'V' opens (downhill).\n- **Ridges & Spurs**: Contours crossing a\
+  \ protruding ridge form a **broad 'U' or 'V' that points DOWNHILL** into lower ground.\n\n## Calculating\
+  \ Slope Gradient\n\nSlope gradient dictates whether terrain can be traversed by vehicles, pack animals,\n\
+  or foot patrols:\n\n$$\\text{Slope Gradient (\\%)} = \\frac{\\text{Vertical Rise (m)}}{\\text{Horizontal\
+  \ Distance / Run (m)}} \\times 100$$\n\n*Worked Example*:\nBetween two points on a 1:50,000 map, an\
+  \ expedition must climb across 6 contour intervals ($\\text{CI} = 20\\text{ m}$).\nThe measured paper\
+  \ map distance between the two points is $1.6\\text{ cm}$.\n\n1. **Vertical Rise**:\n   $$\\text{Rise}\
+  \ = 6 \\times 20\\text{ m} = \\mathbf{120\\text{ metres}}$$\n2. **Horizontal Distance (Run)**:\n   $$\\\
+  text{Run} = 1.6\\text{ cm} \\times 50,000 = 80,000\\text{ cm} = \\mathbf{800\\text{ metres}}$$\n3. **Slope\
+  \ Percentage**:\n   $$\\text{Slope \\%} = \\frac{120\\text{ m}}{800\\text{ m}} \\times 100 = \\mathbf{15\\\
+  %}$$\n   - *Traverse Assessment*: 15% is comfortable for foot travel, marginal for pack donkeys, and\
+  \ impassable for standard 2WD vehicles (requires low-range 4x4).\n\n## The Universal Transverse Mercator\
+  \ (UTM) Grid\n\nTopographic maps feature a 1-kilometre square metric grid printed in blue or black.\n\
+  - In Kenya, the territory spans **UTM Zone 36** (Western Kenya / Rift) and **UTM Zone 37** (Central\
+  \ Kenya, Nairobi, Garissa, Coast), divided by the Equator into Northern (N) and Southern (S) hemispheres.\n\
+  - The grid lines allow any location to be communicated as a numeric coordinate.\n\n### The Golden Rule:\
+  \ \"Read Right Up\"\nAlways read the horizontal **Easting** (left-to-right) first, then the vertical\
+  \ **Northing** (bottom-to-top) second:\n\n```\n   Northing\n      ▲\n   84 ┼───────┬───────┐\n     \
+  \ │       │   X   │  Point X:\n   83 ┼───────┼───────┤  Easting grid line = 42\n      │       │    \
+  \   │  Northing grid line = 83\n   82 ┴───────┴───────┴───► Easting\n     41      42      43\n```\n\n\
+  ### 1. Six-Figure Grid Reference (Accurate to 100 metres):\n1. Identify the 1 km grid square: Easting\
+  \ line `42`, Northing line `83`.\n2. Estimate tenths (100-metre increments) from the west grid line\
+  \ to Point X: say **$6\\text{ tenths}$** east.\n3. Estimate tenths from the south grid line to Point\
+  \ X: say **$7\\text{ tenths}$** north.\n4. Combine into a 6-digit reference: **`426 837`**.\n\n### 2.\
+  \ Eight-Figure Grid Reference (Accurate to 10 metres):\nUsing a plastic map roamer (roamer scale):\n\
+  - Measure millimeters precisely within the 1 km grid block ($1\\text{ mm} = 50\\text{ m}$ on 1:50,000).\n\
+  - Produces an 8-digit coordinate: **`4264 8372`** (locates a specific water borehole or building within\
+  \ 10 metres).\n\n## Measuring Curved Route Distances\n\nWinding footpaths and game trails cannot be\
+  \ measured with a stiff plastic ruler:\n- **Thread / Twine Method**:\n  - Lay a piece of damp cotton\
+  \ string along the twists and turns of the trail on the map.\n  - Mark the start and end points on the\
+  \ string with a fine-tip pencil.\n  - Straighten the string against the printed **graphic bar scale**\
+  \ at the bottom margin of the map sheet to read exact kilometres.\n- **Pencil Ticking Technique**:\n\
+  \  - Roll a straight strip of paper along the curve, rotating and making a pencil tick mark at every\
+  \ bend. Measure the total ticked strip against the bar scale.\n"
 exercises:
-  - id: nav-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      On a standard 1:50,000 Survey of Kenya topographic map, two water boreholes
-      are separated by exactly 7.4 cm as measured with a ruler. What is the true
-      horizontal ground distance between them?
-    xp_reward: 50
-    options:
-      - text: "3.7 kilometres (3,700 metres)"
-        correct: true
-        explanation: "At 1:50,000 scale, 1 cm = 50,000 cm = 500 m (0.5 km). Distance = 7.4 cm × 0.5 km/cm = 3.7 km (3,700 metres)."
-      - text: "7.4 kilometres"
-        correct: false
-        explanation: "1 cm = 1 km applies to 1:100,000 scale maps, not 1:50,000."
-      - text: "1.48 kilometres"
-        correct: false
-        explanation: "This improperly divides 7.4 by 5 instead of multiplying by 0.5."
-      - text: "370 metres"
-        correct: false
-        explanation: "This is off by a factor of 10."
+- id: nav-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'On a standard 1:50,000 Survey of Kenya topographic map, two water boreholes are separated by
+    exactly 7.4 cm as measured with a ruler. What is the true horizontal ground distance between them?
 
-  - id: nav-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      On a topographic map, when contour lines cross a river or stream valley, they form
-      a sharp 'V' shape that always points ___ (toward the high water source), while
-      spurs and protruding ridges form contours that point ___.
-    xp_reward: 50
-    correct_answer: "uphill; downhill"
-    explanation: >
-      Water flows downhill, so valley contours V uphill toward the source.
-      Spurs plunge downhill into valleys, so spur contours V downhill.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 7.4 kilometres
+  - id: b
+    text: 1.48 kilometres
+  - id: c
+    text: 3.7 kilometres (3,700 metres)
+  - id: d
+    text: 370 metres
+  explanation: 'At 1:50,000 scale, 1 cm = 50,000 cm = 500 m (0.5 km). Distance = 7.4 cm × 0.5 km/cm =
+    3.7 km (3,700 metres).
 
-  - id: nav-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each cartographic element to its technical definition.
-    xp_reward: 50
-    pairs:
-      - left: Index Contour
-        right: Heavy bold contour line printed with explicit elevation number every 5th line
-      - left: Contour Interval (CI)
-        right: Vertical elevation difference between any two adjacent contour lines
-      - left: Easting
-        right: Vertical grid line measuring metric distance eastward across the UTM zone
-      - left: 6-Figure Grid Reference
-        right: Coordinate notation locating a position on earth to within 100-metre precision
-    correct_answer: null
-    explanation: >
-      Index contours provide reference elevation; CI is vertical spacing; Eastings go right;
-      6-figure references locate within 100 m.
 
-  - id: nav-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      An expedition climbs from a valley floor at 1,400 m to a ridge summit at 1,640 m.
-      The horizontal distance traversed on the map is 1,200 metres. What is the
-      calculated average slope gradient percentage?
-    xp_reward: 50
-    options:
-      - text: "20% slope (Rise = 240 m / Run = 1,200 m × 100)"
-        correct: true
-        explanation: "Vertical Rise = 1,640 m - 1,400 m = 240 m. Slope % = (240 m / 1,200 m) × 100 = 0.20 × 100 = 20%."
-      - text: "12% slope"
-        correct: false
-        explanation: "12% would correspond to a rise of only 144 metres."
-      - text: "35% slope"
-        correct: false
-        explanation: "35% would require a rise of 420 metres."
-      - text: "2.4% slope"
-        correct: false
-        explanation: "This neglects the percentage multiplier."
+    Why the other options are wrong: 1 cm = 1 km applies to 1:100,000 scale maps, not 1:50,000. This improperly
+    divides 7.4 by 5 instead of multiplying by 0.5. This is off by a factor of 10.'
+  correct_answer: c
+- id: nav-d1-q2
+  type: FILL_BLANK
+  prompt: 'On a topographic map, when contour lines cross a river or stream valley, they form a sharp
+    ''V'' shape that always points ___ (toward the high water source), while spurs and protruding ridges
+    form contours that point ___.
 
-  - id: nav-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      When reading UTM or military grid coordinates on a topographic sheet, the universal
-      directional rule to follow is to read ___ (Eastings) before reading ___ (Northings).
-    xp_reward: 50
-    correct_answer: "right; up"
-    explanation: >
-      The standard mnemonic is 'read right up'—read across the page horizontally
-      (Eastings) first, then vertically up the page (Northings) second.
+    '
+  xp_reward: 50
+  correct_answer:
+  - uphill
+  - downhill
+  explanation: 'Water flows downhill, so valley contours V uphill toward the source. Spurs plunge downhill
+    into valleys, so spur contours V downhill.
+
+    '
+- id: nav-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each cartographic element to its technical definition.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Index Contour
+    right:
+      id: r-fef970
+      text: Heavy bold contour line printed with explicit elevation number every 5th line
+  - left:
+      id: l2
+      text: Contour Interval (CI)
+    right:
+      id: r-4bd4bf
+      text: Vertical elevation difference between any two adjacent contour lines
+  - left:
+      id: l3
+      text: Easting
+    right:
+      id: r-d0f040
+      text: Vertical grid line measuring metric distance eastward across the UTM zone
+  - left:
+      id: l4
+      text: 6-Figure Grid Reference
+    right:
+      id: r-f39432
+      text: Coordinate notation locating a position on earth to within 100-metre precision
+  correct_answer:
+  - l1=r-fef970
+  - l2=r-4bd4bf
+  - l3=r-d0f040
+  - l4=r-f39432
+  explanation: 'Index contours provide reference elevation; CI is vertical spacing; Eastings go right;
+    6-figure references locate within 100 m.
+
+    '
+- id: nav-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'An expedition climbs from a valley floor at 1,400 m to a ridge summit at 1,640 m. The horizontal
+    distance traversed on the map is 1,200 metres. What is the calculated average slope gradient percentage?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 20% slope (Rise = 240 m / Run = 1,200 m × 100)
+  - id: b
+    text: 12% slope
+  - id: c
+    text: 35% slope
+  - id: d
+    text: 2.4% slope
+  explanation: 'Vertical Rise = 1,640 m - 1,400 m = 240 m. Slope % = (240 m / 1,200 m) × 100 = 0.20 ×
+    100 = 20%.
+
+
+    Why the other options are wrong: 12% would correspond to a rise of only 144 metres. 35% would require
+    a rise of 420 metres. This neglects the percentage multiplier.'
+  correct_answer: a
+- id: nav-d1-q5
+  type: FILL_BLANK
+  prompt: 'When reading UTM or military grid coordinates on a topographic sheet, the universal directional
+    rule to follow is to read ___ (Eastings) before reading ___ (Northings).
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - right
+  - up
+  explanation: 'The standard mnemonic is ''read right up''—read across the page horizontally (Eastings)
+    first, then vertically up the page (Northings) second.
+
+    '

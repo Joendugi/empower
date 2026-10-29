@@ -1,229 +1,206 @@
 id: community-health-day-4
 course_id: community-health
-title: "Vaccination Cold Chain & Immunisation Logistics"
-title_sw: "Mnyororo Baridi wa Chanjo na Usimamizi wa Kinga"
+title: Vaccination Cold Chain & Immunisation Logistics
+title_sw: Mnyororo Baridi wa Chanjo na Usimamizi wa Kinga
 week_number: 1
 day_number: 4
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - vaccines
-  - cold-chain
-  - immunisation
-  - EPI
-  - community-health
+- vaccines
+- cold-chain
+- immunisation
+- EPI
+- community-health
 xp: 250
 exam_domain: community-health
+briefing: 'Vaccines are among the most cost-effective health interventions ever developed, but they are
+  utterly dependent on a functioning cold chain. In East Africa''s last-mile settings, a single power
+  outage or broken refrigerator door seal can destroy an entire vaccine stock. Community health workers
+  and vaccinators must master temperature monitoring, vaccine vial monitor (VVM) interpretation, and cold-box
+  packing to protect every dose.
 
-briefing: >
-  Vaccines are among the most cost-effective health interventions ever developed,
-  but they are utterly dependent on a functioning cold chain. In East Africa's
-  last-mile settings, a single power outage or broken refrigerator door seal can
-  destroy an entire vaccine stock. Community health workers and vaccinators must
-  master temperature monitoring, vaccine vial monitor (VVM) interpretation, and
-  cold-box packing to protect every dose.
+  '
+outline: 'Kenya Expanded Programme on Immunisation (KEPI) schedule and antigens; cold chain temperature
+  requirements (+2 to +8 degrees C, no freezing for most); freeze-sensitive vaccines (HepB, liquid pentavalent,
+  HPV); vaccine vial monitor (VVM) stages and discard rules; cold box and vaccine carrier packing; temperature
+  monitoring (Fridge-tag, manual log); open vial policy by antigen; vaccine wastage calculation and target
+  rates.
 
-outline: >
-  Kenya Expanded Programme on Immunisation (KEPI) schedule and antigens;
-  cold chain temperature requirements (+2 to +8 degrees C, no freezing for most);
-  freeze-sensitive vaccines (HepB, liquid pentavalent, HPV); vaccine vial
-  monitor (VVM) stages and discard rules; cold box and vaccine carrier packing;
-  temperature monitoring (Fridge-tag, manual log); open vial policy by antigen;
-  vaccine wastage calculation and target rates.
-
-content_md: |
-  ## Kenya EPI Schedule (Key Antigens)
-
-  | Age | Vaccines |
-  |---|---|
-  | Birth | OPV0, BCG, HepB birth dose |
-  | 6 weeks | OPV1, Pentavalent1 (DTP-HepB-Hib), PCV1, Rota1 |
-  | 10 weeks | OPV2, Pentavalent2, PCV2, Rota2 |
-  | 14 weeks | OPV3, Pentavalent3, PCV3, IPV |
-  | 6 months | Vitamin A (every 6 months to 5 years) |
-  | 9 months | Measles-Rubella (MR) 1st dose |
-  | 18 months | MR 2nd dose, Pentavalent booster |
-  | 9-14 years (girls) | HPV (2-dose schedule, 6 months apart) |
-
-  ## Cold Chain Temperature Requirements
-
-  All vaccines must be stored at **+2°C to +8°C** at health facility level.
-
-  | Category | Temperature | Examples | Risk if wrong |
-  |---|---|---|---|
-  | Freeze-sensitive | +2 to +8°C — NEVER freeze | HepB, Pentavalent, HPV, PCV, Hib | Freezing destroys adjuvant aggregation; protein denaturation — no visible change |
-  | Freeze-tolerant | Can be briefly frozen | OPV, Rotavirus | Warmer end is bigger risk; freezing not ideal but less damaging |
-  | Heat-sensitive | +2 to +8°C | BCG, MR, Yellow Fever | Heat above 8°C denatures antigen; VVM provides early warning |
-
-  **Freeze-sensitive vaccines are the most common cause of vaccine failure** —
-  they show no visible change when frozen and then thawed, yet are completely
-  ineffective.
-
-  ## Vaccine Vial Monitor (VVM)
-
-  A VVM is a small label on every vial containing a heat-sensitive chemical square.
-
-  | VVM Stage | Inner square vs outer ring | Action |
-  |---|---|---|
-  | Stage 1 (OK to use) | Inner square LIGHTER than outer ring | Use vaccine — good cold chain maintained |
-  | Stage 2 (OK to use) | Inner square SAME colour as outer ring | Use vaccine — but prioritise first (nearing end of life) |
-  | Stage 3 (DISCARD) | Inner square DARKER than outer ring | DO NOT USE — discard, report |
-  | Stage 4 (DISCARD) | Inner square completely DARK | DO NOT USE — discard, report |
-
-  **Rule:** Always check VVM before use. A Stage 1-2 VVM plus intact expiry date = safe to administer.
-
-  ## Shake Test for Freeze Damage
-
-  For freeze-sensitive vaccines (Pentavalent, HepB, PCV, HPV):
-
-  1. Take one vial suspected of freezing and one known good control vial
-  2. Shake both vigorously for 10-15 seconds
-  3. Hold both up to light source
-  4. **Observe sedimentation at 30 minutes:**
-     - Good control: slow, fine, uniform settling
-     - Frozen vial: faster, larger, clumping sediment
-  5. If suspect vial settles faster/coarser than control → discard entire batch
-
-  ## Cold Box and Vaccine Carrier Packing
-
-  ### Cold Box (capacity: 4-48 hour field use)
-
-  1. Pre-cool cold box for 4 hours minimum with frozen icepacks inside
-  2. Line all walls with conditioned icepacks (conditioned = thawed to slushy/cool, NOT frozen — prevents freeze damage)
-  3. Pack vaccines in insulated bags in centre of box; never directly touching icepacks
-  4. Place temperature monitor (Fridge-tag or dial thermometer) in centre
-  5. Seal lid; do not open unnecessarily
-
-  ### Conditioning Icepacks (Critical Step)
-
-  Conditioning prevents freeze-sensitive vaccines from contacting a surface
-  below 0°C:
-
-  1. Remove frozen icepacks from freezer
-  2. Leave at room temperature until water droplets form on surface (approximately 30-45 minutes)
-  3. Shake icepack — if you hear water sloshing, it is conditioned
-  4. Pack immediately into cold box
-
-  ## Temperature Monitoring
-
-  | Tool | Frequency of reading | Action threshold |
-  |---|---|---|
-  | Electronic Fridge-tag | Continuous alarm | Alarm sounds if < 2°C or > 8°C; record and report |
-  | Dial thermometer | Twice daily (morning + afternoon) | If outside 2-8°C: move vaccines to alternate refrigerator |
-  | Manual log card | Each reading | Record date, time, temperature, initials; submit monthly |
-
-  Never ignore an alarm or an out-of-range reading. Report to vaccine focal person
-  within 2 hours and quarantine affected vaccines pending investigation.
-
-  ## Open Vial Policy
-
-  | Vaccine | Open vial policy |
-  |---|---|
-  | OPV | Discard at end of each session day |
-  | MR | Discard at end of session (6 hours) |
-  | BCG | Discard 3 hours after opening |
-  | Pentavalent | Discard at end of session day |
-  | PCV | Discard at end of session day |
-
-  OPV is the only vaccine that can be returned to the cold chain after opening.
-  All others must be discarded once opened if not fully used in session.
-
-  ## Vaccine Wastage Rate
-
-  Wastage Rate (%) = ((doses received - doses administered) / doses received) x 100
-
-  Target wastage rates (Kenya MOH):
-  - OPV: < 25%
-  - BCG: < 50% (single-dose vials are often multi-dose)
-  - Pentavalent/PCV: < 5%
-  - MR: < 10%
-
+  '
+content_md: "## Kenya EPI Schedule (Key Antigens)\n\n| Age | Vaccines |\n|---|---|\n| Birth | OPV0, BCG,\
+  \ HepB birth dose |\n| 6 weeks | OPV1, Pentavalent1 (DTP-HepB-Hib), PCV1, Rota1 |\n| 10 weeks | OPV2,\
+  \ Pentavalent2, PCV2, Rota2 |\n| 14 weeks | OPV3, Pentavalent3, PCV3, IPV |\n| 6 months | Vitamin A\
+  \ (every 6 months to 5 years) |\n| 9 months | Measles-Rubella (MR) 1st dose |\n| 18 months | MR 2nd\
+  \ dose, Pentavalent booster |\n| 9-14 years (girls) | HPV (2-dose schedule, 6 months apart) |\n\n##\
+  \ Cold Chain Temperature Requirements\n\nAll vaccines must be stored at **+2°C to +8°C** at health facility\
+  \ level.\n\n| Category | Temperature | Examples | Risk if wrong |\n|---|---|---|---|\n| Freeze-sensitive\
+  \ | +2 to +8°C — NEVER freeze | HepB, Pentavalent, HPV, PCV, Hib | Freezing destroys adjuvant aggregation;\
+  \ protein denaturation — no visible change |\n| Freeze-tolerant | Can be briefly frozen | OPV, Rotavirus\
+  \ | Warmer end is bigger risk; freezing not ideal but less damaging |\n| Heat-sensitive | +2 to +8°C\
+  \ | BCG, MR, Yellow Fever | Heat above 8°C denatures antigen; VVM provides early warning |\n\n**Freeze-sensitive\
+  \ vaccines are the most common cause of vaccine failure** —\nthey show no visible change when frozen\
+  \ and then thawed, yet are completely\nineffective.\n\n## Vaccine Vial Monitor (VVM)\n\nA VVM is a small\
+  \ label on every vial containing a heat-sensitive chemical square.\n\n| VVM Stage | Inner square vs\
+  \ outer ring | Action |\n|---|---|---|\n| Stage 1 (OK to use) | Inner square LIGHTER than outer ring\
+  \ | Use vaccine — good cold chain maintained |\n| Stage 2 (OK to use) | Inner square SAME colour as\
+  \ outer ring | Use vaccine — but prioritise first (nearing end of life) |\n| Stage 3 (DISCARD) | Inner\
+  \ square DARKER than outer ring | DO NOT USE — discard, report |\n| Stage 4 (DISCARD) | Inner square\
+  \ completely DARK | DO NOT USE — discard, report |\n\n**Rule:** Always check VVM before use. A Stage\
+  \ 1-2 VVM plus intact expiry date = safe to administer.\n\n## Shake Test for Freeze Damage\n\nFor freeze-sensitive\
+  \ vaccines (Pentavalent, HepB, PCV, HPV):\n\n1. Take one vial suspected of freezing and one known good\
+  \ control vial\n2. Shake both vigorously for 10-15 seconds\n3. Hold both up to light source\n4. **Observe\
+  \ sedimentation at 30 minutes:**\n   - Good control: slow, fine, uniform settling\n   - Frozen vial:\
+  \ faster, larger, clumping sediment\n5. If suspect vial settles faster/coarser than control → discard\
+  \ entire batch\n\n## Cold Box and Vaccine Carrier Packing\n\n### Cold Box (capacity: 4-48 hour field\
+  \ use)\n\n1. Pre-cool cold box for 4 hours minimum with frozen icepacks inside\n2. Line all walls with\
+  \ conditioned icepacks (conditioned = thawed to slushy/cool, NOT frozen — prevents freeze damage)\n\
+  3. Pack vaccines in insulated bags in centre of box; never directly touching icepacks\n4. Place temperature\
+  \ monitor (Fridge-tag or dial thermometer) in centre\n5. Seal lid; do not open unnecessarily\n\n###\
+  \ Conditioning Icepacks (Critical Step)\n\nConditioning prevents freeze-sensitive vaccines from contacting\
+  \ a surface\nbelow 0°C:\n\n1. Remove frozen icepacks from freezer\n2. Leave at room temperature until\
+  \ water droplets form on surface (approximately 30-45 minutes)\n3. Shake icepack — if you hear water\
+  \ sloshing, it is conditioned\n4. Pack immediately into cold box\n\n## Temperature Monitoring\n\n| Tool\
+  \ | Frequency of reading | Action threshold |\n|---|---|---|\n| Electronic Fridge-tag | Continuous alarm\
+  \ | Alarm sounds if < 2°C or > 8°C; record and report |\n| Dial thermometer | Twice daily (morning +\
+  \ afternoon) | If outside 2-8°C: move vaccines to alternate refrigerator |\n| Manual log card | Each\
+  \ reading | Record date, time, temperature, initials; submit monthly |\n\nNever ignore an alarm or an\
+  \ out-of-range reading. Report to vaccine focal person\nwithin 2 hours and quarantine affected vaccines\
+  \ pending investigation.\n\n## Open Vial Policy\n\n| Vaccine | Open vial policy |\n|---|---|\n| OPV\
+  \ | Discard at end of each session day |\n| MR | Discard at end of session (6 hours) |\n| BCG | Discard\
+  \ 3 hours after opening |\n| Pentavalent | Discard at end of session day |\n| PCV | Discard at end of\
+  \ session day |\n\nOPV is the only vaccine that can be returned to the cold chain after opening.\nAll\
+  \ others must be discarded once opened if not fully used in session.\n\n## Vaccine Wastage Rate\n\n\
+  Wastage Rate (%) = ((doses received - doses administered) / doses received) x 100\n\nTarget wastage\
+  \ rates (Kenya MOH):\n- OPV: < 25%\n- BCG: < 50% (single-dose vials are often multi-dose)\n- Pentavalent/PCV:\
+  \ < 5%\n- MR: < 10%\n"
 exercises:
-  - id: ch-d4-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A health worker checks a Pentavalent vial and finds the inner VVM square
-      is darker than the outer ring. The expiry date is still 3 months away.
-      What should be done?
-    xp_reward: 50
-    options:
-      - text: "Discard the vial and report — VVM Stage 3/4 means heat damage regardless of expiry date"
-        correct: true
-        explanation: "VVM Stage 3 (inner darker than outer) = discard immediately. VVM indicates accumulated heat exposure that has likely compromised potency — expiry date only measures time, not heat. Both conditions must be met: VVM Stage 1-2 AND within expiry date."
-      - text: "Use the vial — the expiry date is still valid for 3 more months"
-        correct: false
-        explanation: "Expiry date and VVM are independent checks. A VVM Stage 3 or 4 overrides a valid expiry date. The vaccine may have been heat-exposed and is potentially non-immunogenic."
-      - text: "Shake the vial to check for freeze damage before deciding"
-        correct: false
-        explanation: "The shake test checks for freeze damage in freeze-sensitive vaccines. VVM Stage 3 indicates heat damage — a completely different issue. The answer is clear: discard."
-      - text: "Use the vial first and prioritise it before newer stock"
-        correct: false
-        explanation: "VVM Stage 3 is a discard instruction, not a prioritisation signal. Stage 2 (same colour) triggers prioritisation. Stage 3 (darker) = discard regardless."
+- id: ch-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A health worker checks a Pentavalent vial and finds the inner VVM square is darker than the
+    outer ring. The expiry date is still 3 months away. What should be done?
 
-  - id: ch-d4-q2
-    type: FILL_BLANK
-    prompt: >
-      Cold chain vaccines must be stored at ___ to ___ degrees C. Icepacks must
-      be conditioned before packing with freeze-sensitive vaccines — conditioning
-      is complete when ___ appear on the icepack surface and water sloshes inside.
-    xp_reward: 50
-    correct_answer: "+2; +8; water droplets"
-    explanation: >
-      The 2-8°C range protects vaccines from both heat (above 8°C denatures
-      antigens) and freeze damage (below 0°C destroys adjuvant in freeze-sensitive
-      vaccines like Pentavalent). Conditioned icepacks (at 0°C, no longer deeply
-      frozen) prevent direct contact with sub-zero surfaces.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Use the vial — the expiry date is still valid for 3 more months
+  - id: b
+    text: Shake the vial to check for freeze damage before deciding
+  - id: c
+    text: Discard the vial and report — VVM Stage 3/4 means heat damage regardless of expiry date
+  - id: d
+    text: Use the vial first and prioritise it before newer stock
+  explanation: 'VVM Stage 3 (inner darker than outer) = discard immediately. VVM indicates accumulated
+    heat exposure that has likely compromised potency — expiry date only measures time, not heat. Both
+    conditions must be met: VVM Stage 1-2 AND within expiry date.
 
-  - id: ch-d4-q3
-    type: MATCH_PAIRS
-    prompt: Match each vaccine to its open vial policy discard time.
-    xp_reward: 50
-    pairs:
-      - left: BCG
-        right: 3 hours after reconstitution
-      - left: Oral Polio Vaccine (OPV)
-        right: End of session day (can be returned to cold chain)
-      - left: Measles-Rubella (MR)
-        right: End of session (within 6 hours of opening)
-      - left: Pentavalent
-        right: End of session day (do not return to cold chain)
-    correct_answer: null
-    explanation: >
-      BCG is particularly sensitive after reconstitution because the live
-      attenuated bacteria are in suspension. MR is also a live attenuated vaccine
-      with a 6-hour limit. OPV is uniquely allowed cold-chain return after opening.
 
-  - id: ch-d4-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A health worker finds 5 Pentavalent vials that were left outside the
-      refrigerator overnight (room temperature 24°C). The VVM shows Stage 1.
-      What is the correct action?
-    xp_reward: 50
-    options:
-      - text: "Quarantine the vials and perform the shake test — if sedimentation passes, report to vaccine focal person who will decide based on full cold chain records"
-        correct: true
-        explanation: "Overnight at 24°C is a cold chain breach. VVM Stage 1 means heat exposure hasn't yet shown on the indicator, but the shake test rules out freeze damage from condensation. The vaccine focal person reviews the event; the vials may still be usable if VVM is Stage 1-2 and the cold chain breach was brief."
-      - text: "Use the vials immediately since VVM Stage 1 confirms they are good"
-        correct: false
-        explanation: "VVM Stage 1 is necessary but not sufficient after a cold chain breach. The VVM measures cumulative heat — a single overnight event might not have moved the VVM yet but the vaccines must be quarantined pending investigation and decision by a qualified person."
-      - text: "Discard all 5 vials immediately without further investigation"
-        correct: false
-        explanation: "Automatic discard wastes potentially salvageable vaccines. The correct protocol is quarantine + shake test + reporting, not immediate discard without assessment."
-      - text: "Return them to the refrigerator — the VVM shows they are still safe"
-        correct: false
-        explanation: "Simply returning to the refrigerator after a breach without documentation or assessment violates cold chain protocols. The breach must be documented and investigated."
+    Why the other options are wrong: Expiry date and VVM are independent checks. A VVM Stage 3 or 4 overrides
+    a valid expiry date. The vaccine may have been heat-exposed and is potentially non-immunogenic. The
+    shake test checks for freeze damage in freeze-sensitive vaccines. VVM Stage 3 indicates heat damage
+    — a completely different issue. The answer is clear: discard. VVM Stage 3 is a discard instruction,
+    not a prioritisation signal. Stage 2 (same colour) triggers prioritisation. Stage 3 (darker) = discard
+    regardless.'
+  correct_answer: c
+- id: ch-d4-q2
+  type: FILL_BLANK
+  prompt: 'Cold chain vaccines must be stored at ___ to ___ degrees C. Icepacks must be conditioned before
+    packing with freeze-sensitive vaccines — conditioning is complete when ___ appear on the icepack surface
+    and water sloshes inside.
 
-  - id: ch-d4-q5
-    type: FILL_BLANK
-    prompt: >
-      A health facility received 200 doses of MR vaccine and administered 178
-      doses. Wastage rate = ___%. The Kenya MOH target wastage rate for MR
-      is less than ___%.
-    xp_reward: 50
-    correct_answer: "11%; 10%"
-    explanation: >
-      Wastage = (200-178)/200 x 100 = 22/200 x 100 = 11%.
-      Kenya MOH target for MR: < 10%. This facility is slightly above target —
-      the vaccinator should review open vial policy compliance and session
-      planning to reduce waste while ensuring no child is missed.
+    '
+  xp_reward: 50
+  correct_answer:
+  - '+2'
+  - '+8'
+  - water droplets
+  explanation: 'The 2-8°C range protects vaccines from both heat (above 8°C denatures antigens) and freeze
+    damage (below 0°C destroys adjuvant in freeze-sensitive vaccines like Pentavalent). Conditioned icepacks
+    (at 0°C, no longer deeply frozen) prevent direct contact with sub-zero surfaces.
+
+    '
+- id: ch-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each vaccine to its open vial policy discard time.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: BCG
+    right:
+      id: r-681a6c
+      text: 3 hours after reconstitution
+  - left:
+      id: l2
+      text: Oral Polio Vaccine (OPV)
+    right:
+      id: r-d895b4
+      text: End of session day (can be returned to cold chain)
+  - left:
+      id: l3
+      text: Measles-Rubella (MR)
+    right:
+      id: r-438301
+      text: End of session (within 6 hours of opening)
+  - left:
+      id: l4
+      text: Pentavalent
+    right:
+      id: r-132fc1
+      text: End of session day (do not return to cold chain)
+  correct_answer:
+  - l1=r-681a6c
+  - l2=r-d895b4
+  - l3=r-438301
+  - l4=r-132fc1
+  explanation: 'BCG is particularly sensitive after reconstitution because the live attenuated bacteria
+    are in suspension. MR is also a live attenuated vaccine with a 6-hour limit. OPV is uniquely allowed
+    cold-chain return after opening.
+
+    '
+- id: ch-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A health worker finds 5 Pentavalent vials that were left outside the refrigerator overnight
+    (room temperature 24°C). The VVM shows Stage 1. What is the correct action?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Quarantine the vials and perform the shake test — if sedimentation passes, report to vaccine
+      focal person who will decide based on full cold chain records
+  - id: b
+    text: Use the vials immediately since VVM Stage 1 confirms they are good
+  - id: c
+    text: Discard all 5 vials immediately without further investigation
+  - id: d
+    text: Return them to the refrigerator — the VVM shows they are still safe
+  explanation: 'Overnight at 24°C is a cold chain breach. VVM Stage 1 means heat exposure hasn''t yet
+    shown on the indicator, but the shake test rules out freeze damage from condensation. The vaccine
+    focal person reviews the event; the vials may still be usable if VVM is Stage 1-2 and the cold chain
+    breach was brief.
+
+
+    Why the other options are wrong: VVM Stage 1 is necessary but not sufficient after a cold chain breach.
+    The VVM measures cumulative heat — a single overnight event might not have moved the VVM yet but the
+    vaccines must be quarantined pending investigation and decision by a qualified person. Automatic discard
+    wastes potentially salvageable vaccines. The correct protocol is quarantine + shake test + reporting,
+    not immediate discard without assessment. Simply returning to the refrigerator after a breach without
+    documentation or assessment violates cold chain protocols. The breach must be documented and investigated.'
+  correct_answer: a
+- id: ch-d4-q5
+  type: FILL_BLANK
+  prompt: 'A health facility received 200 doses of MR vaccine and administered 178 doses. Wastage rate
+    = ___%. The Kenya MOH target wastage rate for MR is less than ___%.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - 11%
+  - 10%
+  explanation: 'Wastage = (200-178)/200 x 100 = 22/200 x 100 = 11%. Kenya MOH target for MR: < 10%. This
+    facility is slightly above target — the vaccinator should review open vial policy compliance and session
+    planning to reduce waste while ensuring no child is missed.
+
+    '

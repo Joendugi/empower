@@ -1,264 +1,241 @@
 id: forestry-timber-technology-day-5
 course_id: forestry-timber-technology
-title: "Heavy Timber Joinery & Structural Truss Framing"
-title_sw: "Viungio vya Mbao Nzito na Uundaji wa Paa za Truss"
+title: Heavy Timber Joinery & Structural Truss Framing
+title_sw: Viungio vya Mbao Nzito na Uundaji wa Paa za Truss
 week_number: 1
 day_number: 5
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - forestry
-  - timber-framing
-  - joinery
-  - mortise-and-tenon
-  - roof-truss
-  - king-post
+- forestry
+- timber-framing
+- joinery
+- mortise-and-tenon
+- roof-truss
+- king-post
 xp: 250
 exam_domain: forestry-timber-technology
+briefing: 'Steel gusset plates and threaded bolts are convenient, but in isolated wilderness installations
+  where metal hardware is unavailable, buildings must stand on the timeless engineering of Heavy Timber
+  Joinery. For thousands of years, monumental cathedrals, covered bridges, and Japanese temples stood
+  without a single metallic nail, held together by interlocking mortise-and-tenon joints, draw-bored hardwood
+  pegs, and timber scarf splices. This capstone lesson covers structural stress vectors (tension, compression,
+  shear), classic joinery geometry, layout using the Square Rule, draw-boring physics, King Post roof
+  truss engineering, and field inspection rubrics.
 
-briefing: >
-  Steel gusset plates and threaded bolts are convenient, but in isolated wilderness
-  installations where metal hardware is unavailable, buildings must stand on the
-  timeless engineering of Heavy Timber Joinery. For thousands of years, monumental
-  cathedrals, covered bridges, and Japanese temples stood without a single metallic
-  nail, held together by interlocking mortise-and-tenon joints, draw-bored hardwood
-  pegs, and timber scarf splices. This capstone lesson covers structural stress vectors
-  (tension, compression, shear), classic joinery geometry, layout using the Square
-  Rule, draw-boring physics, King Post roof truss engineering, and field inspection rubrics.
+  '
+outline: 'Structural forces in timber frames: tension (pulling apart), compression (pushing together),
+  and horizontal shear parallel to grain; the classic Mortise-and-Tenon joint (1/3 thickness rule, cheek
+  layout, shoulder cutting); Draw-Boring mechanics (offset peg hole by 2-3 mm, tapered dry oak/acacia
+  peg pulling the joint permanently tight under tension); the Scarf Joint (halved and bladed scarf with
+  key) for splicing short logs into 12-metre ridge beams; the King Post Roof Truss (tie beam, principal
+  rafters, king post in tension, compressive struts); birdsmouth rafter seat cuts; PHOTO_CAPTURE assessment
+  rubric of timber joinery, truss framing, or solar kiln.
 
-outline: >
-  Structural forces in timber frames: tension (pulling apart), compression (pushing
-  together), and horizontal shear parallel to grain; the classic Mortise-and-Tenon
-  joint (1/3 thickness rule, cheek layout, shoulder cutting); Draw-Boring mechanics
-  (offset peg hole by 2-3 mm, tapered dry oak/acacia peg pulling the joint permanently
-  tight under tension); the Scarf Joint (halved and bladed scarf with key) for splicing
-  short logs into 12-metre ridge beams; the King Post Roof Truss (tie beam, principal
-  rafters, king post in tension, compressive struts); birdsmouth rafter seat cuts;
-  PHOTO_CAPTURE assessment rubric of timber joinery, truss framing, or solar kiln.
-
-content_md: |
-  ## The Philosophy of Heavy Timber Framing
-
-  Unlike modern light-frame "stick" construction (which uses thousands of small 2x4s
-  nailed together and sheathed in plywood), **Heavy Timber Framing (Post-and-Beam)**
-  uses large solid timbers (150 mm × 150 mm to 250 mm × 250 mm) spaced 3 to 4 metres
-  apart, joined by precision interlocking wooden connections:
-  - **Longevity**: Survives for 300 to 500+ years.
-  - **Fire Resistance**: Heavy timbers char on the outside at a predictable rate of 0.6 mm/min, forming an insulating carbon layer that protects the interior core long after steel beams have softened and collapsed.
-  - **Zero Hardware Requirement**: Entire frameworks can be erected using only hand saws, chisels, auger bits, and wooden pegs (*trunnels*).
-
-  ## Structural Forces: Tension, Compression & Shear
-
-  Every timber in a building experiences specific structural stresses:
-
-  ```
-     COMPRESSION (Posts, Rafters)             TENSION (Tie Beams, King Post)
-     ════►                  ◄════             ◄════                  ════►
-      Pushes wood fibers together              Pulls wood fibers apart (risks tearing)
-  ```
-
-  - **Compression (Parallel to Grain)**: Wood is exceptionally strong in compression (20 to 40 MPa). End-grain wood can support tons with minimal joint complexity.
-  - **Tension (Parallel to Grain)**: Wood has high tensile strength, but **joining members in tension is the hardest task in carpentry** because bolts or pegs tend to shear out along the grain.
-  - **Shear (Parallel to Grain)**: The weakest property of wood. Wood splits along its longitudinal grain like string cheese under modest shear loads. Joint shoulders must provide generous "relish" (wood distance behind peg holes, minimum 50 mm).
-
-  ## The Mortise-and-Tenon: The Sovereign Joint
-
-  The fundamental connection of all heavy timber architecture:
-
-  ```
-             [ TENON (Male Member) ]
-                      │   │
-                      │ █ │  Tenon Tongue (1/3 Thickness)
-                 ┌────┘   └────┐
-                 │  Shoulder   │ ◄── Bears 100% of compressive load
-                 └─────────────┘
-                        │
-                        ▼
-                 ┌─────────────┐
-                 │ ┌─────────┐ │
-                 │ │ MORTISE │ │  Chiseled Pocket Socket
-                 │ └─────────┘ │
-                 └─────────────┘
-             [ MORTISE (Female Member) ]
-  ```
-
-  ### The 1/3 Thickness Rule:
-  For a 150 mm thick timber beam:
-  - **Tenon Thickness**: Exactly **one-third of the timber thickness**:
-    $$\text{Tenon Thickness} = \frac{150\text{ mm}}{3} = \mathbf{50\text{ mm}}$$
-  - **Mortise Width**: Chiseled to match: **50 mm wide**.
-  - **Tenon Length**: Typically **100 mm to 125 mm deep**.
-  - **The Shoulders**: The flat perpendicular ledges flanking the tenon. **The shoulders must be cut dead square**: they bear 100% of the compressive load, seating flush against the mortise face.
-
-  ## The Genius of "Draw-Boring" with Hardwood Pegs
-
-  In traditional timber framing, joints are not clamped with steel bolts or glue.
-  They are pulled together with irreversible mechanical force using **Draw-Boring**:
-
-  ```
-                       [ MORTISE CHEEK ]
-                      ┌─────────────────┐
-                      │   (•) Peg Hole  │ ◄── Hole through Mortise Cheeks
-                      │    │            │
-                      │ ┌──┼──────────┐ │
-                      │ │  ▼ (x)      │ │ ◄── Hole through Tenon Offset by 2.5 mm
-                      │ │   Tenon     │ │     (Drawn deeper into pocket)
-                      │ └─────────────┘ │
-                      └─────────────────┘
-  ```
-
-  ### The 3-Step Draw-Boring Execution:
-  1. Bore a **19 mm (3/4-inch) hole** straight through both cheeks of the mortise using a hand T-auger.
-  2. Insert the tenon into the mortise and push it in tight. Insert the auger into the hole to mark the center on the tenon tongue; remove the tenon.
-  3. **The Offset (The Draw)**:
-     - Bore the hole through the tenon **2.5 mm to 3.0 mm CLOSER TO THE SHOULDER** than the mark!
-  4. Drive a tapered, dry, octagonal hardwood peg (riven from dense heartwood like Acacia, Olive, or White Oak) through the misaligned holes:
-     - As the tapered peg forces its way through the 2.5 mm offset, it acts as a powerful mechanical cam.
-     - **The peg stretches slightly in tension and violently sucks the tenon shoulder deep into the mortise with thousands of pounds of force!**
-     - The joint is permanently locked tight. As the structure flexes in wind storms, the draw-bored peg continuously pulls the joint tighter.
-
-  ## The Scarf Joint: Splicing Long Beams
-
-  When building a 12-metre long building, finding a single 12-metre straight, defect-free
-  tree is often impossible. Two 6-metre timbers are joined using a **Bladed & Keyed Scarf Joint**:
-
-  ```
-   Timber A                                                  Timber B
-   ─────────────────┐                                  ┌─────────────────
-                    │   \        [ HARDWOOD ]        / │
-                    │     \        [  KEY   ]      /   │
-                    └───────┴────────────────────┴─────┘
-  ```
-
-  - The two beams are cut with mating interlocking lightning-bolt steps and hooks.
-  - A square tapered wedge (**hardwood folding key**) is driven into the center slot.
-  - Driving the key drives the opposing hooks into one another, creating a spliced beam capable of resisting both bending deflection and tension across long spans.
-
-  ## The King Post Roof Truss
-
-  The King Post truss spans open spaces up to **10 to 12 metres** without interior
-  support columns:
-
-  ```
-                                 [ APEX ]
-                                    ▲
-                                   /│\
-              Principal Rafter    / │ \   Principal Rafter
-                                 /  │  \
-                                /   │   \
-                               /    │    \
-                              /  Strut   \
-                             /   /  │  \  \
-  [ WALL ]                  /  ▼    │   ▼  \                  [ WALL ]
-  ═════════════════════════[────────────────]═════════════════════════
-                              TIE BEAM (Carries Tensile Outward Thrust)
-                                    ▲
-                                    │
-                         KING POST (Suspended in TENSION,
-                         pulls center of tie beam upward!)
-  ```
-
-  ### How Forces Flow in a King Post Truss:
-  1. **Principal Rafters**: Experience heavy **compression** from roof weight (iron sheets, wind, rain).
-  2. **The Tie Beam**: Prevents the rafters from spreading outward and pushing the masonry walls down; the tie beam is in **pure horizontal tension**.
-  3. **The King Post (Vertical Center)**:
-     - Beginners think the King Post sits on the tie beam like a pillar. **WRONG!**
-     - The King Post does NOT support the rafters; **the rafters support the King Post!**
-     - The King Post is **suspended in tension from the apex**, hanging down like a plumb-line.
-     - A heavy tenon and iron stirrup at the bottom of the King Post pulls the center of the 10-metre tie beam **UPWARD**, preventing the tie beam from sagging under its own weight!
-  4. **Compressive Struts**: Angle upward from the base of the King Post to support the mid-span of the principal rafters.
-
+  '
+content_md: "## The Philosophy of Heavy Timber Framing\n\nUnlike modern light-frame \"stick\" construction\
+  \ (which uses thousands of small 2x4s\nnailed together and sheathed in plywood), **Heavy Timber Framing\
+  \ (Post-and-Beam)**\nuses large solid timbers (150 mm × 150 mm to 250 mm × 250 mm) spaced 3 to 4 metres\n\
+  apart, joined by precision interlocking wooden connections:\n- **Longevity**: Survives for 300 to 500+\
+  \ years.\n- **Fire Resistance**: Heavy timbers char on the outside at a predictable rate of 0.6 mm/min,\
+  \ forming an insulating carbon layer that protects the interior core long after steel beams have softened\
+  \ and collapsed.\n- **Zero Hardware Requirement**: Entire frameworks can be erected using only hand\
+  \ saws, chisels, auger bits, and wooden pegs (*trunnels*).\n\n## Structural Forces: Tension, Compression\
+  \ & Shear\n\nEvery timber in a building experiences specific structural stresses:\n\n```\n   COMPRESSION\
+  \ (Posts, Rafters)             TENSION (Tie Beams, King Post)\n   ════►                  ◄════     \
+  \        ◄════                  ════►\n    Pushes wood fibers together              Pulls wood fibers\
+  \ apart (risks tearing)\n```\n\n- **Compression (Parallel to Grain)**: Wood is exceptionally strong\
+  \ in compression (20 to 40 MPa). End-grain wood can support tons with minimal joint complexity.\n- **Tension\
+  \ (Parallel to Grain)**: Wood has high tensile strength, but **joining members in tension is the hardest\
+  \ task in carpentry** because bolts or pegs tend to shear out along the grain.\n- **Shear (Parallel\
+  \ to Grain)**: The weakest property of wood. Wood splits along its longitudinal grain like string cheese\
+  \ under modest shear loads. Joint shoulders must provide generous \"relish\" (wood distance behind peg\
+  \ holes, minimum 50 mm).\n\n## The Mortise-and-Tenon: The Sovereign Joint\n\nThe fundamental connection\
+  \ of all heavy timber architecture:\n\n```\n           [ TENON (Male Member) ]\n                   \
+  \ │   │\n                    │ █ │  Tenon Tongue (1/3 Thickness)\n               ┌────┘   └────┐\n \
+  \              │  Shoulder   │ ◄── Bears 100% of compressive load\n               └─────────────┘\n\
+  \                      │\n                      ▼\n               ┌─────────────┐\n               │\
+  \ ┌─────────┐ │\n               │ │ MORTISE │ │  Chiseled Pocket Socket\n               │ └─────────┘\
+  \ │\n               └─────────────┘\n           [ MORTISE (Female Member) ]\n```\n\n### The 1/3 Thickness\
+  \ Rule:\nFor a 150 mm thick timber beam:\n- **Tenon Thickness**: Exactly **one-third of the timber thickness**:\n\
+  \  $$\\text{Tenon Thickness} = \\frac{150\\text{ mm}}{3} = \\mathbf{50\\text{ mm}}$$\n- **Mortise Width**:\
+  \ Chiseled to match: **50 mm wide**.\n- **Tenon Length**: Typically **100 mm to 125 mm deep**.\n- **The\
+  \ Shoulders**: The flat perpendicular ledges flanking the tenon. **The shoulders must be cut dead square**:\
+  \ they bear 100% of the compressive load, seating flush against the mortise face.\n\n## The Genius of\
+  \ \"Draw-Boring\" with Hardwood Pegs\n\nIn traditional timber framing, joints are not clamped with steel\
+  \ bolts or glue.\nThey are pulled together with irreversible mechanical force using **Draw-Boring**:\n\
+  \n```\n                     [ MORTISE CHEEK ]\n                    ┌─────────────────┐\n           \
+  \         │   (•) Peg Hole  │ ◄── Hole through Mortise Cheeks\n                    │    │          \
+  \  │\n                    │ ┌──┼──────────┐ │\n                    │ │  ▼ (x)      │ │ ◄── Hole through\
+  \ Tenon Offset by 2.5 mm\n                    │ │   Tenon     │ │     (Drawn deeper into pocket)\n \
+  \                   │ └─────────────┘ │\n                    └─────────────────┘\n```\n\n### The 3-Step\
+  \ Draw-Boring Execution:\n1. Bore a **19 mm (3/4-inch) hole** straight through both cheeks of the mortise\
+  \ using a hand T-auger.\n2. Insert the tenon into the mortise and push it in tight. Insert the auger\
+  \ into the hole to mark the center on the tenon tongue; remove the tenon.\n3. **The Offset (The Draw)**:\n\
+  \   - Bore the hole through the tenon **2.5 mm to 3.0 mm CLOSER TO THE SHOULDER** than the mark!\n4.\
+  \ Drive a tapered, dry, octagonal hardwood peg (riven from dense heartwood like Acacia, Olive, or White\
+  \ Oak) through the misaligned holes:\n   - As the tapered peg forces its way through the 2.5 mm offset,\
+  \ it acts as a powerful mechanical cam.\n   - **The peg stretches slightly in tension and violently\
+  \ sucks the tenon shoulder deep into the mortise with thousands of pounds of force!**\n   - The joint\
+  \ is permanently locked tight. As the structure flexes in wind storms, the draw-bored peg continuously\
+  \ pulls the joint tighter.\n\n## The Scarf Joint: Splicing Long Beams\n\nWhen building a 12-metre long\
+  \ building, finding a single 12-metre straight, defect-free\ntree is often impossible. Two 6-metre timbers\
+  \ are joined using a **Bladed & Keyed Scarf Joint**:\n\n```\n Timber A                             \
+  \                     Timber B\n ─────────────────┐                                  ┌─────────────────\n\
+  \                  │   \\        [ HARDWOOD ]        / │\n                  │     \\        [  KEY \
+  \  ]      /   │\n                  └───────┴────────────────────┴─────┘\n```\n\n- The two beams are\
+  \ cut with mating interlocking lightning-bolt steps and hooks.\n- A square tapered wedge (**hardwood\
+  \ folding key**) is driven into the center slot.\n- Driving the key drives the opposing hooks into one\
+  \ another, creating a spliced beam capable of resisting both bending deflection and tension across long\
+  \ spans.\n\n## The King Post Roof Truss\n\nThe King Post truss spans open spaces up to **10 to 12 metres**\
+  \ without interior\nsupport columns:\n\n```\n                               [ APEX ]\n             \
+  \                     ▲\n                                 /│\\\n            Principal Rafter    / │\
+  \ \\   Principal Rafter\n                               /  │  \\\n                              /  \
+  \ │   \\\n                             /    │    \\\n                            /  Strut   \\\n   \
+  \                        /   /  │  \\  \\\n[ WALL ]                  /  ▼    │   ▼  \\             \
+  \     [ WALL ]\n═════════════════════════[────────────────]═════════════════════════\n             \
+  \               TIE BEAM (Carries Tensile Outward Thrust)\n                                  ▲\n   \
+  \                               │\n                       KING POST (Suspended in TENSION,\n       \
+  \                pulls center of tie beam upward!)\n```\n\n### How Forces Flow in a King Post Truss:\n\
+  1. **Principal Rafters**: Experience heavy **compression** from roof weight (iron sheets, wind, rain).\n\
+  2. **The Tie Beam**: Prevents the rafters from spreading outward and pushing the masonry walls down;\
+  \ the tie beam is in **pure horizontal tension**.\n3. **The King Post (Vertical Center)**:\n   - Beginners\
+  \ think the King Post sits on the tie beam like a pillar. **WRONG!**\n   - The King Post does NOT support\
+  \ the rafters; **the rafters support the King Post!**\n   - The King Post is **suspended in tension\
+  \ from the apex**, hanging down like a plumb-line.\n   - A heavy tenon and iron stirrup at the bottom\
+  \ of the King Post pulls the center of the 10-metre tie beam **UPWARD**, preventing the tie beam from\
+  \ sagging under its own weight!\n4. **Compressive Struts**: Angle upward from the base of the King Post\
+  \ to support the mid-span of the principal rafters.\n"
 exercises:
-  - id: for-d5-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      In traditional heavy timber framing, what is the mechanical purpose of 'Draw-Boring'
-      a mortise-and-tenon joint with an offset peg hole?
-    xp_reward: 50
-    options:
-      - text: "Boring the hole through the tenon 2.5 mm closer to the shoulder forces the tapered hardwood peg to act as a powerful mechanical cam, pulling the tenon shoulders permanently tight against the mortise face with thousands of pounds of tension"
-        correct: true
-        explanation: "Draw-boring eliminates the need for clamps or glue. The 2.5 mm offset creates a mechanical wedging action as the peg is driven, sucking the joint faces together into an indestructible, airtight structural connection that self-tightens under load."
-      - text: "To make the peg easier to remove with fingers"
-        correct: false
-        explanation: "Draw-bored pegs are locked permanently under tension; they cannot be removed by hand."
-      - text: "Because drilling straight through assembled wood splits the auger bit"
-        correct: false
-        explanation: "Auger bits drill through assembled wood easily, but straight holes provide zero pulling tension."
-      - text: "To allow the joint to slide back and forth in earthquakes"
-        correct: false
-        explanation: "The purpose of draw-boring is rigid structural lockup, not sliding."
+- id: for-d5-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'In traditional heavy timber framing, what is the mechanical purpose of ''Draw-Boring'' a mortise-and-tenon
+    joint with an offset peg hole?
 
-  - id: for-d5-q2
-    type: FILL_BLANK
-    prompt: >
-      According to the universal rule of heavy timber mortise-and-tenon joinery,
-      the thickness of the central tenon tongue should be exactly ___ of the total
-      timber beam thickness.
-    xp_reward: 50
-    correct_answer: "one-third"
-    explanation: >
-      The 1/3 rule balances strength equally between the tenon tongue in bending
-      and the two female mortise cheeks in shear.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: To make the peg easier to remove with fingers
+  - id: b
+    text: Because drilling straight through assembled wood splits the auger bit
+  - id: c
+    text: To allow the joint to slide back and forth in earthquakes
+  - id: d
+    text: Boring the hole through the tenon 2.5 mm closer to the shoulder forces the tapered hardwood
+      peg to act as a powerful mechanical cam, pulling the tenon shoulders permanently tight against the
+      mortise face with thousands of pounds of tension
+  explanation: 'Draw-boring eliminates the need for clamps or glue. The 2.5 mm offset creates a mechanical
+    wedging action as the peg is driven, sucking the joint faces together into an indestructible, airtight
+    structural connection that self-tightens under load.
 
-  - id: met-d5-q3
-    type: MATCH_PAIRS
-    prompt: Match each heavy timber truss component to its primary structural stress.
-    xp_reward: 50
-    pairs:
-      - left: Principal Rafter
-        right: Heavy axial compression transferring roof gravity and wind loads down
-      - left: Bottom Tie Beam
-        right: Pure horizontal tension preventing the rafters from spreading the walls apart
-      - left: Vertical King Post
-        right: Pure vertical tension; hangs from apex to pull the tie beam upward against sagging
-      - left: Diagonal Struts
-        right: Compression props supporting the mid-span of principal rafters against deflection
-    correct_answer: null
-    explanation: >
-      Rafters are compressed; tie beams are pulled in tension; the King Post hangs in
-      tension; struts push in compression.
 
-  - id: for-d5-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why are large heavy timber framing members (e.g. 200 mm × 200 mm posts and beams)
-      considered to possess superior fire resistance compared to unprotected light structural steel?
-    xp_reward: 50
-    options:
-      - text: "Heavy timbers burn slowly from the outside inward, forming a dense insulating charcoal crust (0.6 mm/min) that shields the interior load-bearing core, while structural steel rapidly softens and buckles at 500°C"
-        correct: true
-        explanation: "Unprotected steel beams lose 50% of structural yield strength at 500°C and collapse catastrophically within 15 minutes of a building fire. Massive heavy timber chars at 0.6 mm per minute; the insulating char blocks heat, preserving a solid load-bearing core for hours."
-      - text: "Because heavy timber cannot catch fire under any circumstances"
-        correct: false
-        explanation: "Wood is combustible, but massive cross-sections char slowly and predictably."
-      - text: "Because wood releases nitrogen gas when heated"
-        correct: false
-        explanation: "Wood releases combustible pyroligneous gases, not inert nitrogen."
-      - text: "Because timber frames are filled with concrete"
-        correct: false
-        explanation: "Timber framing is solid wood, not filled with concrete."
+    Why the other options are wrong: Draw-bored pegs are locked permanently under tension; they cannot
+    be removed by hand. Auger bits drill through assembled wood easily, but straight holes provide zero
+    pulling tension. The purpose of draw-boring is rigid structural lockup, not sliding.'
+  correct_answer: d
+- id: for-d5-q2
+  type: FILL_BLANK
+  prompt: 'According to the universal rule of heavy timber mortise-and-tenon joinery, the thickness of
+    the central tenon tongue should be exactly ___ of the total timber beam thickness.
 
-  - id: for-d5-q5
-    type: PHOTO_CAPTURE
-    prompt: >
-      Photograph a heavy timber mortise-and-tenon joint, roof truss assembly, pit-sawing
-      setup, chainsaw milling rig, or solar lumber seasoning stack from your forestry
-      and timber engineering field practice. Ensure the image clearly displays structural
-      joinery, peg fastening, wood grain orientation, or drying sticker alignment,
-      and include your written dimensional inspection report.
-    xp_reward: 50
-    correct_answer: null
-    explanation: >
-      Photographic documentation of timber joinery, wood seasoning stacks, or milling
-      rigs verifies practical craftsmanship and engineering compliance with structural
-      load-bearing and wood preservation standards.
-    rubric:
-      - criterion: "Photograph clearly shows mortise-and-tenon joint, timber truss, milling rig, or stickered drying stack"
-        points: 15
-      - criterion: "Carpentry details (square shoulders, draw-bore pegs, scarf joints) or forestry setups are distinctly visible"
-        points: 15
-      - criterion: "Written report records timber species, moisture content estimate, joint dimensions, and design load role"
-        points: 10
-      - criterion: "Image is well-lit, in sharp focus, showing clean woodworking tolerances and safe workshop practices"
-        points: 10
+    '
+  xp_reward: 50
+  correct_answer: one-third
+  explanation: 'The 1/3 rule balances strength equally between the tenon tongue in bending and the two
+    female mortise cheeks in shear.
+
+    '
+- id: met-d5-q3
+  type: MATCH_PAIRS
+  prompt: Match each heavy timber truss component to its primary structural stress.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Principal Rafter
+    right:
+      id: r-5170d3
+      text: Heavy axial compression transferring roof gravity and wind loads down
+  - left:
+      id: l2
+      text: Bottom Tie Beam
+    right:
+      id: r-1c33c4
+      text: Pure horizontal tension preventing the rafters from spreading the walls apart
+  - left:
+      id: l3
+      text: Vertical King Post
+    right:
+      id: r-c0d8c8
+      text: Pure vertical tension; hangs from apex to pull the tie beam upward against sagging
+  - left:
+      id: l4
+      text: Diagonal Struts
+    right:
+      id: r-16ed65
+      text: Compression props supporting the mid-span of principal rafters against deflection
+  correct_answer:
+  - l1=r-5170d3
+  - l2=r-1c33c4
+  - l3=r-c0d8c8
+  - l4=r-16ed65
+  explanation: 'Rafters are compressed; tie beams are pulled in tension; the King Post hangs in tension;
+    struts push in compression.
+
+    '
+- id: for-d5-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why are large heavy timber framing members (e.g. 200 mm × 200 mm posts and beams) considered
+    to possess superior fire resistance compared to unprotected light structural steel?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Heavy timbers burn slowly from the outside inward, forming a dense insulating charcoal crust
+      (0.6 mm/min) that shields the interior load-bearing core, while structural steel rapidly softens
+      and buckles at 500°C
+  - id: b
+    text: Because heavy timber cannot catch fire under any circumstances
+  - id: c
+    text: Because wood releases nitrogen gas when heated
+  - id: d
+    text: Because timber frames are filled with concrete
+  explanation: 'Unprotected steel beams lose 50% of structural yield strength at 500°C and collapse catastrophically
+    within 15 minutes of a building fire. Massive heavy timber chars at 0.6 mm per minute; the insulating
+    char blocks heat, preserving a solid load-bearing core for hours.
+
+
+    Why the other options are wrong: Wood is combustible, but massive cross-sections char slowly and predictably.
+    Wood releases combustible pyroligneous gases, not inert nitrogen. Timber framing is solid wood, not
+    filled with concrete.'
+  correct_answer: a
+- id: for-d5-q5
+  type: PHOTO_CAPTURE
+  prompt: 'Photograph a heavy timber mortise-and-tenon joint, roof truss assembly, pit-sawing setup, chainsaw
+    milling rig, or solar lumber seasoning stack from your forestry and timber engineering field practice.
+    Ensure the image clearly displays structural joinery, peg fastening, wood grain orientation, or drying
+    sticker alignment, and include your written dimensional inspection report.
+
+    '
+  xp_reward: 50
+  correct_answer: null
+  explanation: 'Photographic documentation of timber joinery, wood seasoning stacks, or milling rigs verifies
+    practical craftsmanship and engineering compliance with structural load-bearing and wood preservation
+    standards.
+
+    '
+  rubric:
+  - criterion: Photograph clearly shows mortise-and-tenon joint, timber truss, milling rig, or stickered
+      drying stack
+    points: 15
+  - criterion: Carpentry details (square shoulders, draw-bore pegs, scarf joints) or forestry setups are
+      distinctly visible
+    points: 15
+  - criterion: Written report records timber species, moisture content estimate, joint dimensions, and
+      design load role
+    points: 10
+  - criterion: Image is well-lit, in sharp focus, showing clean woodworking tolerances and safe workshop
+      practices
+    points: 10

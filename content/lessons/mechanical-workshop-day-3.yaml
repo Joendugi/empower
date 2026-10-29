@@ -1,181 +1,198 @@
 id: mechanical-workshop-day-3
 course_id: mechanical-workshop
-title: "Oxy-Acetylene Cutting & SMAW Welding Fundamentals"
-title_sw: "Kukata kwa Gesi na Misingi ya Kuchomelea Chuma (SMAW)"
+title: Oxy-Acetylene Cutting & SMAW Welding Fundamentals
+title_sw: Kukata kwa Gesi na Misingi ya Kuchomelea Chuma (SMAW)
 week_number: 1
 day_number: 3
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - welding
-  - smaw
-  - oxy-acetylene
-  - cutting-torch
-  - electrodes
-  - fabrication
+- welding
+- smaw
+- oxy-acetylene
+- cutting-torch
+- electrodes
+- fabrication
 xp: 250
 exam_domain: mechanical-workshop
+briefing: 'Metal fabrication in off-grid workshops relies heavily on thermal cutting and electric arc
+  joining. Oxy-acetylene torches rapidly cut, pierce, and bevel thick structural steel plate without electrical
+  power. Shielded Metal Arc Welding (SMAW / Stick) remains the most robust, wind-resistant welding process
+  for heavy machinery, penstocks, and equipment repair. This lesson covers gas pressures, flashback arrestors,
+  neutral flame tuning, drag lines, AWS electrode specifications (E6013 vs E7018), and weld defect inspection.
 
-briefing: >
-  Metal fabrication in off-grid workshops relies heavily on thermal cutting and
-  electric arc joining. Oxy-acetylene torches rapidly cut, pierce, and bevel
-  thick structural steel plate without electrical power. Shielded Metal Arc
-  Welding (SMAW / Stick) remains the most robust, wind-resistant welding process
-  for heavy machinery, penstocks, and equipment repair. This lesson covers gas
-  pressures, flashback arrestors, neutral flame tuning, drag lines, AWS electrode
-  specifications (E6013 vs E7018), and weld defect inspection.
+  '
+outline: 'Oxy-acetylene equipment setup, cylinder identification (maroon acetylene, black oxygen), and
+  flashback arrestors; lighting and adjusting flames (carburizing, neutral at 3100°C, oxidizing); oxygen
+  cutting torch mechanics (preheat flames, cutting lever, exothermic iron-oxygen combustion); cutting
+  defects (drag lines, slag adherence); SMAW fundamentals (DCEN vs DCEP polarity); AWS electrode numbering
+  breakdown (E7018, E6013); joint prep (bevel angles, root gap, tack welds); common defects (porosity,
+  slag inclusions, lack of fusion, undercut).
 
-outline: >
-  Oxy-acetylene equipment setup, cylinder identification (maroon acetylene, black
-  oxygen), and flashback arrestors; lighting and adjusting flames (carburizing,
-  neutral at 3100°C, oxidizing); oxygen cutting torch mechanics (preheat flames,
-  cutting lever, exothermic iron-oxygen combustion); cutting defects (drag lines,
-  slag adherence); SMAW fundamentals (DCEN vs DCEP polarity); AWS electrode
-  numbering breakdown (E7018, E6013); joint prep (bevel angles, root gap, tack
-  welds); common defects (porosity, slag inclusions, lack of fusion, undercut).
-
-content_md: |
-  ## Oxy-Acetylene Rig & Safety Architecture
-
-  Oxy-acetylene cutting does not merely melt steel; it heats steel to its kindling
-  temperature (~900°C / bright cherry red), then fires a high-velocity jet of pure
-  oxygen that burns the iron exothermically:
-  $$\text{Fe} + \text{O}_2 \rightarrow \text{Fe}_3\text{O}_4 + \text{Heat}$$
-
-  ### Cylinder & Pressure Standards:
-  - **Oxygen Cylinder**: Black (or green), high pressure (up to 200 bar / 3000 PSI). Right-hand threads on valves and regulators.
-  - **Acetylene Cylinder**: Maroon, low pressure (up to 15 bar / 250 PSI dissolved in liquid acetone inside a porous mass). **Left-hand notched threads** on fittings to prevent cross-connection.
-  - **Acetylene Working Pressure Rule**: **NEVER exceed 1.0 bar (15 PSI)** gauge pressure on acetylene. Above 15 PSI, free acetylene gas becomes chemically unstable and can explosively self-dissociate without oxygen.
-  - **Flashback Arrestors**: Bi-directional safety valves installed on BOTH torch handle and regulator outlets to quench internal flame propagation.
-
-  ## Flame Tuning Sequence
-
-  Combustion flame zones:
-  1. **Purge hoses**: Crack oxygen and acetylene separately for 3 seconds before lighting.
-  2. **Ignite acetylene first**: Turn acetylene needle valve 1/4 turn, light with a flint striker (never a cigarette lighter). Adjust until black carbon smoke disappears.
-  3. **Add oxygen to reach Neutral Flame**:
-     - *Carburizing (Reducing)*: Excess acetylene; long feathery white inner cone. Adds carbon to steel (brittle).
-     - *Neutral Flame*: Equal balance; sharply defined rounded white inner cone (~3,100°C). Standard for general heating, welding, and preheating for cuts.
-     - *Oxidizing Flame*: Excess oxygen; short pointed inner cone with hissing sound. Burns metal; used only for bronze brazing.
-
-  ## Cutting Technique & Drag Lines
-
-  1. Hold nozzle 2–3 mm above plate surface at 90° angle.
-  2. Pre-heat plate edge until cherry red (almost sweating drops of molten metal).
-  3. Depress high-pressure oxygen cutting lever smoothly.
-  4. Advance steadily across the line.
-  - **Drag Lines**: The lines on the cut face should be nearly vertical (within 5°–10°). If drag lines angle backwards sharply (> 15°), travel speed is too fast, oxygen pressure is too low, or tip is dirty.
-
-  ## Shielded Metal Arc Welding (SMAW / Stick)
-
-  SMAW generates an electric arc between a flux-coated consumable electrode and the base metal.
-  The arc reaches **3,500°C – 4,000°C**.
-
-  ### AWS Electrode Classification (e.g., E7018):
-  - **E**: Indicates an electric welding electrode.
-  - **70**: Minimum tensile strength in thousands of PSI ($70 \times 1,000 = 70,000\text{ PSI} \approx 485\text{ MPa}$).
-  - **1**: Welding position capability:
-    - `1` = All positions (flat, horizontal, vertical-up, overhead).
-    - `2` = Flat and horizontal fillet only.
-    - `4` = Vertical-down specialized.
-  - **8**: Coating type, operating current, and polarity. `8` denotes low-hydrogen iron powder coating operating on DCEP or AC.
-
-  ### Workshop Workhorse Electrodes:
-  | Electrode | AWS Type | Coating | Key Characteristics |
-  |---|---|---|---|
-  | **E6013** | Rutile | High titania | Smooth arc, easy restrike, light penetration; ideal for thin sheet, rusty gates, general fabrication |
-  | **E7018** | Low Hydrogen | Potassium iron powder | High ductility, crack-resistant; mandatory for structural beams, pressure vessels, vehicle chassis; must be kept in heated rod ovens (< 0.4% moisture) |
-  | **E6011** | Cellulosic | Cellulose potassium | Deep gouging penetration, can weld through grease, dirt, and heavy rust; AC/DCEP |
-
-  ## Polarity Selection:
-  - **DCEP (Direct Current Electrode Positive / Reverse Polarity)**: 70% heat at electrode, 30% at workpiece. Deep penetration, stable arc for E7018 and structural welds.
-  - **DCEN (Direct Current Electrode Negative / Straight Polarity)**: Higher deposition rate, shallower penetration; preferred for sheet metal to avoid burn-through.
-
-  ## Critical Weld Defects & Prevention:
-  - **Undercut**: A groove melted into the base metal along the weld toe that isn't filled. Caused by excessive travel speed, excessive arc voltage/amperage, or incorrect rod angle.
-  - **Slag Inclusions**: Non-metallic flux trapped inside weld bead. Caused by failing to chip slag between passes or running beads over uneven valleys.
-  - **Porosity**: Gas pockets trapped in solidifying weld pool. Caused by wet electrodes (especially E7018), excessive arc length, or grease/oil on joints.
-
+  '
+content_md: "## Oxy-Acetylene Rig & Safety Architecture\n\nOxy-acetylene cutting does not merely melt\
+  \ steel; it heats steel to its kindling\ntemperature (~900°C / bright cherry red), then fires a high-velocity\
+  \ jet of pure\noxygen that burns the iron exothermically:\n$$\\text{Fe} + \\text{O}_2 \\rightarrow \\\
+  text{Fe}_3\\text{O}_4 + \\text{Heat}$$\n\n### Cylinder & Pressure Standards:\n- **Oxygen Cylinder**:\
+  \ Black (or green), high pressure (up to 200 bar / 3000 PSI). Right-hand threads on valves and regulators.\n\
+  - **Acetylene Cylinder**: Maroon, low pressure (up to 15 bar / 250 PSI dissolved in liquid acetone inside\
+  \ a porous mass). **Left-hand notched threads** on fittings to prevent cross-connection.\n- **Acetylene\
+  \ Working Pressure Rule**: **NEVER exceed 1.0 bar (15 PSI)** gauge pressure on acetylene. Above 15 PSI,\
+  \ free acetylene gas becomes chemically unstable and can explosively self-dissociate without oxygen.\n\
+  - **Flashback Arrestors**: Bi-directional safety valves installed on BOTH torch handle and regulator\
+  \ outlets to quench internal flame propagation.\n\n## Flame Tuning Sequence\n\nCombustion flame zones:\n\
+  1. **Purge hoses**: Crack oxygen and acetylene separately for 3 seconds before lighting.\n2. **Ignite\
+  \ acetylene first**: Turn acetylene needle valve 1/4 turn, light with a flint striker (never a cigarette\
+  \ lighter). Adjust until black carbon smoke disappears.\n3. **Add oxygen to reach Neutral Flame**:\n\
+  \   - *Carburizing (Reducing)*: Excess acetylene; long feathery white inner cone. Adds carbon to steel\
+  \ (brittle).\n   - *Neutral Flame*: Equal balance; sharply defined rounded white inner cone (~3,100°C).\
+  \ Standard for general heating, welding, and preheating for cuts.\n   - *Oxidizing Flame*: Excess oxygen;\
+  \ short pointed inner cone with hissing sound. Burns metal; used only for bronze brazing.\n\n## Cutting\
+  \ Technique & Drag Lines\n\n1. Hold nozzle 2–3 mm above plate surface at 90° angle.\n2. Pre-heat plate\
+  \ edge until cherry red (almost sweating drops of molten metal).\n3. Depress high-pressure oxygen cutting\
+  \ lever smoothly.\n4. Advance steadily across the line.\n- **Drag Lines**: The lines on the cut face\
+  \ should be nearly vertical (within 5°–10°). If drag lines angle backwards sharply (> 15°), travel speed\
+  \ is too fast, oxygen pressure is too low, or tip is dirty.\n\n## Shielded Metal Arc Welding (SMAW /\
+  \ Stick)\n\nSMAW generates an electric arc between a flux-coated consumable electrode and the base metal.\n\
+  The arc reaches **3,500°C – 4,000°C**.\n\n### AWS Electrode Classification (e.g., E7018):\n- **E**:\
+  \ Indicates an electric welding electrode.\n- **70**: Minimum tensile strength in thousands of PSI ($70\
+  \ \\times 1,000 = 70,000\\text{ PSI} \\approx 485\\text{ MPa}$).\n- **1**: Welding position capability:\n\
+  \  - `1` = All positions (flat, horizontal, vertical-up, overhead).\n  - `2` = Flat and horizontal fillet\
+  \ only.\n  - `4` = Vertical-down specialized.\n- **8**: Coating type, operating current, and polarity.\
+  \ `8` denotes low-hydrogen iron powder coating operating on DCEP or AC.\n\n### Workshop Workhorse Electrodes:\n\
+  | Electrode | AWS Type | Coating | Key Characteristics |\n|---|---|---|---|\n| **E6013** | Rutile |\
+  \ High titania | Smooth arc, easy restrike, light penetration; ideal for thin sheet, rusty gates, general\
+  \ fabrication |\n| **E7018** | Low Hydrogen | Potassium iron powder | High ductility, crack-resistant;\
+  \ mandatory for structural beams, pressure vessels, vehicle chassis; must be kept in heated rod ovens\
+  \ (< 0.4% moisture) |\n| **E6011** | Cellulosic | Cellulose potassium | Deep gouging penetration, can\
+  \ weld through grease, dirt, and heavy rust; AC/DCEP |\n\n## Polarity Selection:\n- **DCEP (Direct Current\
+  \ Electrode Positive / Reverse Polarity)**: 70% heat at electrode, 30% at workpiece. Deep penetration,\
+  \ stable arc for E7018 and structural welds.\n- **DCEN (Direct Current Electrode Negative / Straight\
+  \ Polarity)**: Higher deposition rate, shallower penetration; preferred for sheet metal to avoid burn-through.\n\
+  \n## Critical Weld Defects & Prevention:\n- **Undercut**: A groove melted into the base metal along\
+  \ the weld toe that isn't filled. Caused by excessive travel speed, excessive arc voltage/amperage,\
+  \ or incorrect rod angle.\n- **Slag Inclusions**: Non-metallic flux trapped inside weld bead. Caused\
+  \ by failing to chip slag between passes or running beads over uneven valleys.\n- **Porosity**: Gas\
+  \ pockets trapped in solidifying weld pool. Caused by wet electrodes (especially E7018), excessive arc\
+  \ length, or grease/oil on joints.\n"
 exercises:
-  - id: mech-d3-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why is it strictly forbidden in workshop practice to set the acetylene regulator
-      gauge pressure above 1.0 bar (15 PSI)?
-    xp_reward: 50
-    options:
-      - text: "Free acetylene gas becomes chemically unstable above 15 PSI and can explosively decompose into carbon and hydrogen without any oxygen present"
-        correct: true
-        explanation: "Acetylene is endothermic. Above 15 PSI (1.03 bar), mechanical shock, heat, or internal friction can trigger violent spontaneous dissociation (explosion) inside hoses or manifolds."
-      - text: "The hose burst rating is limited to 15 PSI"
-        correct: false
-        explanation: "Standard welding hoses are pressure-tested well above 100 PSI; the danger is chemical dissociation of the gas itself."
-      - text: "The oxygen regulator cannot overcome higher acetylene pressure"
-        correct: false
-        explanation: "Oxygen regulators operate up to 40-100 PSI; this is purely an acetylene chemical stability threshold."
-      - text: "It causes the flame to turn oxidizing instantly"
-        correct: false
-        explanation: "Higher acetylene pressure creates a heavily carburizing flame, not oxidizing."
+- id: mech-d3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is it strictly forbidden in workshop practice to set the acetylene regulator gauge pressure
+    above 1.0 bar (15 PSI)?
 
-  - id: mech-d3-q2
-    type: FILL_BLANK
-    prompt: >
-      In the AWS electrode specification E7018, the number '70' indicates a minimum
-      tensile strength of ___ thousand PSI (approx. 485 MPa), while the digit '1'
-      indicates the electrode can be used in ___ welding positions.
-    xp_reward: 50
-    correct_answer: "70; all"
-    explanation: >
-      The first two digits give tensile strength in ksi (70 ksi = 70,000 PSI).
-      The third digit '1' designates all-position welding (flat, horizontal, vertical, overhead).
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The hose burst rating is limited to 15 PSI
+  - id: b
+    text: The oxygen regulator cannot overcome higher acetylene pressure
+  - id: c
+    text: It causes the flame to turn oxidizing instantly
+  - id: d
+    text: Free acetylene gas becomes chemically unstable above 15 PSI and can explosively decompose into
+      carbon and hydrogen without any oxygen present
+  explanation: 'Acetylene is endothermic. Above 15 PSI (1.03 bar), mechanical shock, heat, or internal
+    friction can trigger violent spontaneous dissociation (explosion) inside hoses or manifolds.
 
-  - id: mech-d3-q3
-    type: MATCH_PAIRS
-    prompt: Match each oxy-fuel and SMAW concept to its defining technical description.
-    xp_reward: 50
-    pairs:
-      - left: Flashback Arrestor
-        right: Sintered metal flame barrier with non-return check valve
-      - left: Neutral Flame
-        right: Equal ratio oxygen-acetylene burn producing approx. 3100 C inner cone
-      - left: E7018 Electrode
-        right: Low-hydrogen iron powder rod requiring dry oven storage for structural welds
-      - left: Undercut
-        right: Groove melted into base metal at weld toe caused by high current or long arc
-    correct_answer: null
-    explanation: >
-      Flashback arrestors prevent catastrophic flame travel into cylinders. Neutral flames
-      provide clean heating without carbonizing or oxidizing steel. E7018 requires dry
-      conditions to prevent hydrogen cracking. Undercut is a classic visual defect.
 
-  - id: mech-d3-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      You are welding structural steel trusses in a breezy off-grid location. Why is
-      SMAW (Stick) chosen over GMAW (MIG/CO2) for this work?
-    xp_reward: 50
-    options:
-      - text: "The solid flux coating produces its own heavy shielding gas and protective slag right at the arc, which cannot be blown away by wind like MIG shielding gas"
-        correct: true
-        explanation: "MIG welding relies on an external gas envelope (Argon/CO2) that ambient winds easily disperse, causing immediate severe porosity. SMAW produces a dense slag layer and gas cloud that withstands outdoor breeze."
-      - text: "SMAW requires no electrical power and runs on battery banks"
-        correct: false
-        explanation: "SMAW requires substantial electrical power from an inverter or generator."
-      - text: "MIG electrodes are too soft to weld structural steel"
-        correct: false
-        explanation: "MIG solid and flux-core wires are widely used in structural fabrication in indoor shop conditions."
-      - text: "SMAW operates at a lower temperature than MIG"
-        correct: false
-        explanation: "SMAW arc temperatures (3,500-4,000°C) are comparable to or higher than MIG."
+    Why the other options are wrong: Standard welding hoses are pressure-tested well above 100 PSI; the
+    danger is chemical dissociation of the gas itself. Oxygen regulators operate up to 40-100 PSI; this
+    is purely an acetylene chemical stability threshold. Higher acetylene pressure creates a heavily carburizing
+    flame, not oxidizing.'
+  correct_answer: d
+- id: mech-d3-q2
+  type: FILL_BLANK
+  prompt: 'In the AWS electrode specification E7018, the number ''70'' indicates a minimum tensile strength
+    of ___ thousand PSI (approx. 485 MPa), while the digit ''1'' indicates the electrode can be used in
+    ___ welding positions.
 
-  - id: mech-d3-q5
-    type: FILL_BLANK
-    prompt: >
-      When cutting heavy steel plate with an oxy-acetylene torch, the cut face should
-      exhibit nearly vertical ___ lines. If they lag backwards more than 15 degrees,
-      the torch travel speed was too ___.
-    xp_reward: 50
-    correct_answer: "drag; fast"
-    explanation: >
-      Drag lines trace the progression of the oxygen combustion stream through the plate
-      thickness. Fast travel leaves bottom slag behind, curving the drag lines sharply.
+    '
+  xp_reward: 50
+  correct_answer:
+  - '70'
+  - all
+  explanation: 'The first two digits give tensile strength in ksi (70 ksi = 70,000 PSI). The third digit
+    ''1'' designates all-position welding (flat, horizontal, vertical, overhead).
+
+    '
+- id: mech-d3-q3
+  type: MATCH_PAIRS
+  prompt: Match each oxy-fuel and SMAW concept to its defining technical description.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Flashback Arrestor
+    right:
+      id: r-ddda75
+      text: Sintered metal flame barrier with non-return check valve
+  - left:
+      id: l2
+      text: Neutral Flame
+    right:
+      id: r-88a093
+      text: Equal ratio oxygen-acetylene burn producing approx. 3100 C inner cone
+  - left:
+      id: l3
+      text: E7018 Electrode
+    right:
+      id: r-3ed295
+      text: Low-hydrogen iron powder rod requiring dry oven storage for structural welds
+  - left:
+      id: l4
+      text: Undercut
+    right:
+      id: r-7b1844
+      text: Groove melted into base metal at weld toe caused by high current or long arc
+  correct_answer:
+  - l1=r-ddda75
+  - l2=r-88a093
+  - l3=r-3ed295
+  - l4=r-7b1844
+  explanation: 'Flashback arrestors prevent catastrophic flame travel into cylinders. Neutral flames provide
+    clean heating without carbonizing or oxidizing steel. E7018 requires dry conditions to prevent hydrogen
+    cracking. Undercut is a classic visual defect.
+
+    '
+- id: mech-d3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'You are welding structural steel trusses in a breezy off-grid location. Why is SMAW (Stick)
+    chosen over GMAW (MIG/CO2) for this work?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: SMAW requires no electrical power and runs on battery banks
+  - id: b
+    text: MIG electrodes are too soft to weld structural steel
+  - id: c
+    text: SMAW operates at a lower temperature than MIG
+  - id: d
+    text: The solid flux coating produces its own heavy shielding gas and protective slag right at the
+      arc, which cannot be blown away by wind like MIG shielding gas
+  explanation: 'MIG welding relies on an external gas envelope (Argon/CO2) that ambient winds easily disperse,
+    causing immediate severe porosity. SMAW produces a dense slag layer and gas cloud that withstands
+    outdoor breeze.
+
+
+    Why the other options are wrong: SMAW requires substantial electrical power from an inverter or generator.
+    MIG solid and flux-core wires are widely used in structural fabrication in indoor shop conditions.
+    SMAW arc temperatures (3,500-4,000°C) are comparable to or higher than MIG.'
+  correct_answer: d
+- id: mech-d3-q5
+  type: FILL_BLANK
+  prompt: 'When cutting heavy steel plate with an oxy-acetylene torch, the cut face should exhibit nearly
+    vertical ___ lines. If they lag backwards more than 15 degrees, the torch travel speed was too ___.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - drag
+  - fast
+  explanation: 'Drag lines trace the progression of the oxygen combustion stream through the plate thickness.
+    Fast travel leaves bottom slag behind, curving the drag lines sharply.
+
+    '

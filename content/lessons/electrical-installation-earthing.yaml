@@ -1,0 +1,76 @@
+id: electrical-installation-earthing
+course_id: electrical-installation
+title: 'Earthing, Bonding And Protective Devices: Earth Fault Loop, Rcds, Mcbs, Tn
+  And Tt Systems: Principles and Practical Application'
+title_sw: 'Earthing, Bonding And Protective Devices: Earth Fault Loop, Rcds, Mcbs,
+  Tn And Tt Systems: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering Earthing, Bonding and Protective
+  Devices: Earth Fault Loop, RCDs, MCBs, TN and TT Systems requires strict adherence
+  to safety standards and sequential execution. Always inspect personal protective
+  equipment (PPE), ensure proper tool calibration, and verify that the workpiece is
+  securely mounted before commencing. Observe manufacturer specifications and relevant
+  standards. Maintain a clean work environment, store consumables dry, and double-check
+  your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa Earthing, Bonding and Protective Devices:
+  Earth Fault Loop, RCDs, MCBs, TN and TT Systems kunahitaji kufuata sheria za usalama
+  na mpangilio sahihi. Kagua vifaa vya kujikinga (PPE) kabla ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: ENG/OS/EI/CR/02/6
+exam_domain: 'Earthing, Bonding And Protective Devices: Earth Fault Loop, Rcds, Mcbs,
+  Tn And Tt Systems Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Earthing, Bonding And Protective Devices: Earth
+    Fault Loop, Rcds, Mcbs, Tn And Tt Systems'
+- kind: animation
+  preset: circuit
+  caption: 'Interactive Simulation: Earthing, Bonding And Protective Devices: Earth
+    Fault Loop, Rcds, Mcbs, Tn And Tt Systems operation cycle'
+exercises:
+- id: electrical-installation-earthing-bonding-and-protective-devices-earth-fault-loop-rcds-mcbs-tn-and-tt-systems-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting Earthing,
+    Bonding and Protective Devices: Earth Fault Loop, RCDs, MCBs, TN and TT Systems?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: electrical-installation-earthing-bonding-and-protective-devices-earth-fault-loop-rcds-mcbs-tn-and-tt-systems-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: electrical-installation-earthing-bonding-and-protective-devices-earth-fault-loop-rcds-mcbs-tn-and-tt-systems-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in Earthing, Bonding and
+    Protective Devices: Earth Fault Loop, RCDs, MCBs, TN and TT Systems?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

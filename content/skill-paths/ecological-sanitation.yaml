@@ -1,33 +1,50 @@
 id: ecological-sanitation
 title: Ecological Sanitation & Waste Systems
 titleSw: Usafi wa Mazingira na Mfumo wa Taka
-description: >
-  Design and operate closed-loop sanitation systems — from urine-diversion dry
-  toilets to biogas digesters and constructed wetlands — that turn human waste
+description: 'Design and operate closed-loop sanitation systems — from urine-diversion
+  dry toilets to biogas digesters and constructed wetlands — that turn human waste
   into safe compost and energy while protecting groundwater.
+
+  '
 level: intermediate
 category: resilience
 estimatedHours: 10
 xpTotal: 1250
 license: CC-BY-SA-4.0
 nodes:
-  - day: 1
-    lessonId: ecological-sanitation-day-1
-    title: "Sanitation Ladder & Faecal-Oral Disease Routes"
-    xp: 250
-  - day: 2
-    lessonId: ecological-sanitation-day-2
-    title: "Urine-Diversion Dry Toilets (UDDTs)"
-    xp: 250
-  - day: 3
-    lessonId: ecological-sanitation-day-3
-    title: "Biogas Digesters from Organic Waste"
-    xp: 250
-  - day: 4
-    lessonId: ecological-sanitation-day-4
-    title: "Composting Latrines & Vermicomposting"
-    xp: 250
-  - day: 5
-    lessonId: ecological-sanitation-day-5
-    title: "Constructed Wetlands & Greywater Treatment"
-    xp: 250
+- day: 1
+  lessonId: ecological-sanitation-day-1
+  title: Sanitation Ladder & Faecal-Oral Disease Routes
+  xp: 250
+  id: ecological-sanitation-day-1
+  lesson_ids:
+  - ecological-sanitation-day-1
+- day: 2
+  lessonId: ecological-sanitation-day-2
+  title: Urine-Diversion Dry Toilets (UDDTs)
+  xp: 250
+  id: ecological-sanitation-day-2
+  lesson_ids:
+  - ecological-sanitation-day-2
+- day: 3
+  lessonId: ecological-sanitation-day-3
+  title: Biogas Digesters from Organic Waste
+  xp: 250
+  id: ecological-sanitation-day-3
+  lesson_ids:
+  - ecological-sanitation-day-3
+- day: 4
+  lessonId: ecological-sanitation-day-4
+  title: Composting Latrines & Vermicomposting
+  xp: 250
+  id: ecological-sanitation-day-4
+  lesson_ids:
+  - ecological-sanitation-day-4
+- day: 5
+  lessonId: ecological-sanitation-day-5
+  title: Constructed Wetlands & Greywater Treatment
+  xp: 250
+  id: ecological-sanitation-day-5
+  lesson_ids:
+  - ecological-sanitation-day-5
+track: tvet

@@ -1,34 +1,51 @@
 id: mechanical-workshop
 title: Mechanical Engineering & Workshop Practice
 titleSw: Uhandisi wa Mitambo na Mazoezi ya Karakana
-description: >
-  Master the essential mechanical skills needed to fabricate, repair, and maintain
-  critical machinery in remote and off-grid environments — from precision hand tools,
-  drill presses, and SMAW/Oxy-Acetylene welding to bearing maintenance, shaft alignment,
-  and micro-hydro impulse turbine fabrication.
+description: 'Master the essential mechanical skills needed to fabricate, repair,
+  and maintain critical machinery in remote and off-grid environments — from precision
+  hand tools, drill presses, and SMAW/Oxy-Acetylene welding to bearing maintenance,
+  shaft alignment, and micro-hydro impulse turbine fabrication.
+
+  '
 level: intermediate
 category: engineering
 estimatedHours: 10
 xpTotal: 1250
 license: CC-BY-SA-4.0
 nodes:
-  - day: 1
-    lessonId: mechanical-workshop-day-1
-    title: "Precision Measurement & Bench Work"
-    xp: 250
-  - day: 2
-    lessonId: mechanical-workshop-day-2
-    title: "Drilling, Tapping & Fasteners"
-    xp: 250
-  - day: 3
-    lessonId: mechanical-workshop-day-3
-    title: "Oxy-Acetylene Cutting & SMAW Welding Fundamentals"
-    xp: 250
-  - day: 4
-    lessonId: mechanical-workshop-day-4
-    title: "Power Transmission — Bearings, Shafts & Belt Alignment"
-    xp: 250
-  - day: 5
-    lessonId: mechanical-workshop-day-5
-    title: "Micro-Hydro Turbine Fabrication & Balancing"
-    xp: 250
+- day: 1
+  lessonId: mechanical-workshop-day-1
+  title: Precision Measurement & Bench Work
+  xp: 250
+  id: mechanical-workshop-day-1
+  lesson_ids:
+  - mechanical-workshop-day-1
+- day: 2
+  lessonId: mechanical-workshop-day-2
+  title: Drilling, Tapping & Fasteners
+  xp: 250
+  id: mechanical-workshop-day-2
+  lesson_ids:
+  - mechanical-workshop-day-2
+- day: 3
+  lessonId: mechanical-workshop-day-3
+  title: Oxy-Acetylene Cutting & SMAW Welding Fundamentals
+  xp: 250
+  id: mechanical-workshop-day-3
+  lesson_ids:
+  - mechanical-workshop-day-3
+- day: 4
+  lessonId: mechanical-workshop-day-4
+  title: Power Transmission — Bearings, Shafts & Belt Alignment
+  xp: 250
+  id: mechanical-workshop-day-4
+  lesson_ids:
+  - mechanical-workshop-day-4
+- day: 5
+  lessonId: mechanical-workshop-day-5
+  title: Micro-Hydro Turbine Fabrication & Balancing
+  xp: 250
+  id: mechanical-workshop-day-5
+  lesson_ids:
+  - mechanical-workshop-day-5
+track: trades

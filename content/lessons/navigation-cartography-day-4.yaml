@@ -1,228 +1,219 @@
 id: navigation-cartography-day-4
 course_id: navigation-cartography
-title: "Plane Table Surveying & Community Base Mapping"
-title_sw: "Upimaji wa Jedwali la Ndege (Plane Table) na Kutengeneza Ramani za Jamii"
+title: Plane Table Surveying & Community Base Mapping
+title_sw: Upimaji wa Jedwali la Ndege (Plane Table) na Kutengeneza Ramani za Jamii
 week_number: 1
 day_number: 4
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - surveying
-  - plane-table
-  - alidade
-  - mapping
-  - cartography
-  - geodesy
+- surveying
+- plane-table
+- alidade
+- mapping
+- cartography
+- geodesy
 xp: 250
 exam_domain: navigation-cartography
+briefing: 'When a settlement expands into unmapped territory, establishing legal land boundaries, irrigation
+  canal routes, and defensive fortifications requires creating accurate custom base maps from scratch.
+  The Plane Table Survey—the classical graphical method used to map continents before satellite photogrammetry—allows
+  a surveyor to map terrain directly on a drawing board in the field without complex trigonometric calculations
+  or electronic theodolites. This lesson covers plane table leveling, orientation by trough compass, telescopic/sight-rule
+  alidades, radiation mapping, and establishing baseline triangulation networks.
 
-briefing: >
-  When a settlement expands into unmapped territory, establishing legal land boundaries,
-  irrigation canal routes, and defensive fortifications requires creating accurate
-  custom base maps from scratch. The Plane Table Survey—the classical graphical method
-  used to map continents before satellite photogrammetry—allows a surveyor to map
-  terrain directly on a drawing board in the field without complex trigonometric
-  calculations or electronic theodolites. This lesson covers plane table leveling,
-  orientation by trough compass, telescopic/sight-rule alidades, radiation mapping,
-  and establishing baseline triangulation networks.
+  '
+outline: 'The Plane Table apparatus (hardwood drawing board, sturdy wooden tripod, 360° leveling head,
+  trough compass, plumb-bob plumbing fork); the Alidade (sight rule with sighting vanes and fiducial edge);
+  the 3 golden operations at every station: Leveling (circular spirit level), Centering (plumbing fork
+  over ground peg), and Orientation (backsighting or magnetic trough compass); mapping methods: Method
+  of Radiation (radial rays to nearby trees, corners, wells), Method of Intersection (triangulating distant
+  peaks without visiting them), and Method of Traversing (walking closed polygon boundaries); closing
+  error adjustments.
 
-outline: >
-  The Plane Table apparatus (hardwood drawing board, sturdy wooden tripod, 360°
-  leveling head, trough compass, plumb-bob plumbing fork); the Alidade (sight rule
-  with sighting vanes and fiducial edge); the 3 golden operations at every station:
-  Leveling (circular spirit level), Centering (plumbing fork over ground peg),
-  and Orientation (backsighting or magnetic trough compass); mapping methods:
-  Method of Radiation (radial rays to nearby trees, corners, wells), Method of
-  Intersection (triangulating distant peaks without visiting them), and Method of
-  Traversing (walking closed polygon boundaries); closing error adjustments.
-
-content_md: |
-  ## The Principle of Plane Table Surveying
-
-  Plane table surveying is a **graphical method** where field observations and
-  cartographic plotting are performed simultaneously on-site on a drawing board.
-  - **The Core Advantage**: The map develops right before your eyes. Contours, rivers,
-    and boundaries are sketched while looking directly at the physical landscape,
-    eliminating field-notebook transcription errors.
-  - **No Trigonometry in the Field**: Distances are scaled directly with an engineer's
-    scale rule; angles are transferred graphically by sighting through the alidade.
-
-  ## The Surveying Apparatus
-
-  ```
-                       [ Sighting Alidade Rule ]
-                      ═════════════╤═════════════
-                                   │
-              ┌────────────────────┴────────────────────┐
-              │                                         │
-              │         Plane Table Drawing Board       │
-              │         (Laminated Birch or Teak)       │
-              │                                         │
-              └────────────────────┬────────────────────┘
-                                   │  Ball-and-Socket Leveling Head
-                                  / \
-                                 /   \  Sturdy Wooden Tripod
-                                /     \
-  ```
-
-  1. **Plane Table Board**: Smooth, seasoned hardwood board (typically 600 mm × 750 mm) mounted on a heavy wooden tripod with a ball-and-socket or three-screw leveling head.
-  2. **The Alidade (Sight Rule)**:
-     - A precision straightedge (brass or steel) equipped with two folding vertical sighting vanes:
-       - **Sight Vane**: Slit with a fine vertical brass wire or horsehair.
-       - **Eye Vane**: Narrow vertical viewing slit with a pinhole.
-     - **Fiducial Edge**: The beveled ruler edge along which pencil rays are drawn.
-  3. **Trough Compass**: A long rectangular wooden/brass box housing a magnetic needle with a narrow 5° scale on each end, used strictly to align the table with Magnetic North.
-  4. **Plumbing Fork & Plumb-Bob**: A 'U'-shaped metal arm that fits over the board to align a precise pencil point on the paper directly above the physical ground stake.
-  5. **Spirit Level**: Circular or tubular level used to ensure the board is dead horizontal.
-
-  ## The 3 Mandatory Setup Operations at Every Station
-
-  Whenever moving the plane table to a new survey station ($A, B, C$), perform these
-  three operations in strict sequence:
-
-  ### 1. Leveling:
-  - Place the spirit level in the center of the board in two perpendicular directions.
-  - Adjust the tripod legs and leveling screws until the bubble remains centered in all directions.
-  - *Why*: A tilted board introduces severe foreshortening errors when sighting up or down hillslopes.
-
-  ### 2. Centering:
-  - Place the upper tip of the plumbing fork on the map point representing the current station.
-  - Suspend the plumb-bob from the lower arm beneath the table.
-  - Shift the tripod until the plumb-bob hangs precisely over the wooden survey peg driven into the ground.
-
-  ### 3. Orientation (The Most Critical Step):
-  The board must be rotated so that lines drawn on the paper lie parallel to the corresponding lines on the physical terrain:
-  - **Method A: Backsighting (Highest Precision)**:
-    - If station $A$ and station $B$ are already plotted on the paper, set up the table over ground station $B$.
-    - Lay the alidade along the pencil line $b-a$.
-    - Unclamp the table and rotate the board until the crosshair sights back directly onto the ranging rod at station $A$.
-    - Clamp the table. The board is now perfectly oriented.
-  - **Method B: Trough Compass**:
-    - Place the trough compass along the printed North line on the paper edge.
-    - Rotate the board until the needle points dead to zero. Clamp table.
-
-  ## Primary Mapping Methods
-
-  ### 1. Method of Radiation (Mapping Features from a Single Station):
-  Ideal for mapping a village center, building corners, water points, and property corners from a central elevated position:
-  1. Set up and level the table at station $O$ in the center of the field.
-  2. Pin a needle at point $o$ on the paper representing the station.
-  3. Pivot the alidade fiducial edge against the needle; sight point 1 (e.g., corner of medical clinic).
-  4. Draw a faint pencil ray from $o$ outward toward 1.
-  5. Measure ground distance $O-1$ using a steel tape measure or laser rangefinder (say, $45.0\text{ m}$).
-  6. Using an engineer's scale rule (e.g., $1:500$ scale, where $1\text{ cm} = 5\text{ m}$):
-     - Scale off $45.0 / 5 = 9.0\text{ cm}$ along the ray and prick a tiny hole. Label as point $1$.
-  7. Repeat for all surrounding trees, fence corners, and well heads. Connect the points to produce a finished map.
-
-  ### 2. Method of Intersection (Triangulating Inaccessible Points):
-  Used to map river islands, distant mountain peaks, or enemy fortifications without walking to them:
-
-  ```
-              Inaccessible Landmark (C)
-                         ▲
-                        / \
-                       /   \
-                      /     \
-                     /       \
-                    /         \
-                   /           \
-  Station A [ a ] ───────────── [ b ] Station B
-                   Baseline (D)
-  ```
-
-  1. Establish a **Baseline $A-B$** on flat ground (say, exactly $100.0\text{ metres}$ long). Measure with steel tape.
-  2. Set up table at Station $A$. Plot line $a-b$ to scale ($100\text{ m} = 10\text{ cm}$ on $1:1,000$).
-  3. Pivot alidade at $a$, sight distant Landmark $C$, and draw a continuous ray line toward $C$.
-  4. Pack up table; move to Station $B$. Orient the table by backsighting to $A$.
-  5. Pivot alidade at $b$ on the paper, sight distant Landmark $C$, and draw a second ray toward $C$.
-  6. **The intersection of Ray $a-C$ and Ray $b-C$ on the drawing board fixes the exact map position of Landmark $C$** without ever crossing the river!
-
-  ## Method of Traversing (Closed Boundary Surveys)
-
-  To map a 100-hectare community boundary, survey stations form a closed polygon ($A \rightarrow B \rightarrow C \rightarrow D \rightarrow A$):
-  - At each station, backsight to the previous station, sight forward to the next, and measure distance with a 50-metre steel surveyor's tape.
-  - **Closing Error**: When returning to station $A$, the plotted point $a'$ rarely falls exactly on the starting pinhole $a$.
-  - If the closing error is small ($< 1/500$ of total perimeter length), distribute the error proportionally among all legs using **Bowditch's graphical compass rule**.
-
+  '
+content_md: "## The Principle of Plane Table Surveying\n\nPlane table surveying is a **graphical method**\
+  \ where field observations and\ncartographic plotting are performed simultaneously on-site on a drawing\
+  \ board.\n- **The Core Advantage**: The map develops right before your eyes. Contours, rivers,\n  and\
+  \ boundaries are sketched while looking directly at the physical landscape,\n  eliminating field-notebook\
+  \ transcription errors.\n- **No Trigonometry in the Field**: Distances are scaled directly with an engineer's\n\
+  \  scale rule; angles are transferred graphically by sighting through the alidade.\n\n## The Surveying\
+  \ Apparatus\n\n```\n                     [ Sighting Alidade Rule ]\n                    ═════════════╤═════════════\n\
+  \                                 │\n            ┌────────────────────┴────────────────────┐\n     \
+  \       │                                         │\n            │         Plane Table Drawing Board\
+  \       │\n            │         (Laminated Birch or Teak)       │\n            │                  \
+  \                       │\n            └────────────────────┬────────────────────┘\n               \
+  \                  │  Ball-and-Socket Leveling Head\n                                / \\\n        \
+  \                       /   \\  Sturdy Wooden Tripod\n                              /     \\\n```\n\n\
+  1. **Plane Table Board**: Smooth, seasoned hardwood board (typically 600 mm × 750 mm) mounted on a heavy\
+  \ wooden tripod with a ball-and-socket or three-screw leveling head.\n2. **The Alidade (Sight Rule)**:\n\
+  \   - A precision straightedge (brass or steel) equipped with two folding vertical sighting vanes:\n\
+  \     - **Sight Vane**: Slit with a fine vertical brass wire or horsehair.\n     - **Eye Vane**: Narrow\
+  \ vertical viewing slit with a pinhole.\n   - **Fiducial Edge**: The beveled ruler edge along which\
+  \ pencil rays are drawn.\n3. **Trough Compass**: A long rectangular wooden/brass box housing a magnetic\
+  \ needle with a narrow 5° scale on each end, used strictly to align the table with Magnetic North.\n\
+  4. **Plumbing Fork & Plumb-Bob**: A 'U'-shaped metal arm that fits over the board to align a precise\
+  \ pencil point on the paper directly above the physical ground stake.\n5. **Spirit Level**: Circular\
+  \ or tubular level used to ensure the board is dead horizontal.\n\n## The 3 Mandatory Setup Operations\
+  \ at Every Station\n\nWhenever moving the plane table to a new survey station ($A, B, C$), perform these\n\
+  three operations in strict sequence:\n\n### 1. Leveling:\n- Place the spirit level in the center of\
+  \ the board in two perpendicular directions.\n- Adjust the tripod legs and leveling screws until the\
+  \ bubble remains centered in all directions.\n- *Why*: A tilted board introduces severe foreshortening\
+  \ errors when sighting up or down hillslopes.\n\n### 2. Centering:\n- Place the upper tip of the plumbing\
+  \ fork on the map point representing the current station.\n- Suspend the plumb-bob from the lower arm\
+  \ beneath the table.\n- Shift the tripod until the plumb-bob hangs precisely over the wooden survey\
+  \ peg driven into the ground.\n\n### 3. Orientation (The Most Critical Step):\nThe board must be rotated\
+  \ so that lines drawn on the paper lie parallel to the corresponding lines on the physical terrain:\n\
+  - **Method A: Backsighting (Highest Precision)**:\n  - If station $A$ and station $B$ are already plotted\
+  \ on the paper, set up the table over ground station $B$.\n  - Lay the alidade along the pencil line\
+  \ $b-a$.\n  - Unclamp the table and rotate the board until the crosshair sights back directly onto the\
+  \ ranging rod at station $A$.\n  - Clamp the table. The board is now perfectly oriented.\n- **Method\
+  \ B: Trough Compass**:\n  - Place the trough compass along the printed North line on the paper edge.\n\
+  \  - Rotate the board until the needle points dead to zero. Clamp table.\n\n## Primary Mapping Methods\n\
+  \n### 1. Method of Radiation (Mapping Features from a Single Station):\nIdeal for mapping a village\
+  \ center, building corners, water points, and property corners from a central elevated position:\n1.\
+  \ Set up and level the table at station $O$ in the center of the field.\n2. Pin a needle at point $o$\
+  \ on the paper representing the station.\n3. Pivot the alidade fiducial edge against the needle; sight\
+  \ point 1 (e.g., corner of medical clinic).\n4. Draw a faint pencil ray from $o$ outward toward 1.\n\
+  5. Measure ground distance $O-1$ using a steel tape measure or laser rangefinder (say, $45.0\\text{\
+  \ m}$).\n6. Using an engineer's scale rule (e.g., $1:500$ scale, where $1\\text{ cm} = 5\\text{ m}$):\n\
+  \   - Scale off $45.0 / 5 = 9.0\\text{ cm}$ along the ray and prick a tiny hole. Label as point $1$.\n\
+  7. Repeat for all surrounding trees, fence corners, and well heads. Connect the points to produce a\
+  \ finished map.\n\n### 2. Method of Intersection (Triangulating Inaccessible Points):\nUsed to map river\
+  \ islands, distant mountain peaks, or enemy fortifications without walking to them:\n\n```\n       \
+  \     Inaccessible Landmark (C)\n                       ▲\n                      / \\\n            \
+  \         /   \\\n                    /     \\\n                   /       \\\n                  / \
+  \        \\\n                 /           \\\nStation A [ a ] ───────────── [ b ] Station B\n      \
+  \           Baseline (D)\n```\n\n1. Establish a **Baseline $A-B$** on flat ground (say, exactly $100.0\\\
+  text{ metres}$ long). Measure with steel tape.\n2. Set up table at Station $A$. Plot line $a-b$ to scale\
+  \ ($100\\text{ m} = 10\\text{ cm}$ on $1:1,000$).\n3. Pivot alidade at $a$, sight distant Landmark $C$,\
+  \ and draw a continuous ray line toward $C$.\n4. Pack up table; move to Station $B$. Orient the table\
+  \ by backsighting to $A$.\n5. Pivot alidade at $b$ on the paper, sight distant Landmark $C$, and draw\
+  \ a second ray toward $C$.\n6. **The intersection of Ray $a-C$ and Ray $b-C$ on the drawing board fixes\
+  \ the exact map position of Landmark $C$** without ever crossing the river!\n\n## Method of Traversing\
+  \ (Closed Boundary Surveys)\n\nTo map a 100-hectare community boundary, survey stations form a closed\
+  \ polygon ($A \\rightarrow B \\rightarrow C \\rightarrow D \\rightarrow A$):\n- At each station, backsight\
+  \ to the previous station, sight forward to the next, and measure distance with a 50-metre steel surveyor's\
+  \ tape.\n- **Closing Error**: When returning to station $A$, the plotted point $a'$ rarely falls exactly\
+  \ on the starting pinhole $a$.\n- If the closing error is small ($< 1/500$ of total perimeter length),\
+  \ distribute the error proportionally among all legs using **Bowditch's graphical compass rule**.\n"
 exercises:
-  - id: nav-d4-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      An expedition surveyor wants to map the exact location of a prominent rocky bluff
-      on the opposite side of a deep, crocodile-infested river gorge. Which plane table
-      surveying method maps the bluff without crossing the gorge?
-    xp_reward: 50
-    options:
-      - text: "Method of Intersection: Measure an accessible baseline A-B along the home riverbank, then sight intersecting alidade rays toward the bluff from both Station A and Station B"
-        correct: true
-        explanation: "The Method of Intersection is designed for inaccessible features. Measuring a single baseline along one side of the river and sighting rays from both ends locates the intersection point graphically on the map board without crossing."
-      - text: "Method of Radiation: Measure distance with a 100-metre tape across the river"
-        correct: false
-        explanation: "Radiation requires measuring physical distance to the target, which is impossible across the gorge."
-      - text: "Method of Leveling: Raise the plane table by 10 metres"
-        correct: false
-        explanation: "Leveling ensures the board is horizontal; it does not map distance."
-      - text: "Trough compass traversing: Walk around the river source"
-        correct: false
-        explanation: "This would take days; intersection maps it in 30 minutes from the home bank."
+- id: nav-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'An expedition surveyor wants to map the exact location of a prominent rocky bluff on the opposite
+    side of a deep, crocodile-infested river gorge. Which plane table surveying method maps the bluff
+    without crossing the gorge?
 
-  - id: nav-d4-q2
-    type: FILL_BLANK
-    prompt: >
-      At every plane table survey station, the three mandatory setup operations
-      performed in strict sequence before drawing any rays are: ___, ___, and ___.
-    xp_reward: 50
-    correct_answer: "Leveling; Centering; Orientation"
-    explanation: >
-      First make the board horizontal (Leveling), align the map pinhole over the
-      ground peg (Centering), and rotate the board to match the real world (Orientation).
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 'Method of Radiation: Measure distance with a 100-metre tape across the river'
+  - id: b
+    text: 'Method of Leveling: Raise the plane table by 10 metres'
+  - id: c
+    text: 'Trough compass traversing: Walk around the river source'
+  - id: d
+    text: 'Method of Intersection: Measure an accessible baseline A-B along the home riverbank, then sight
+      intersecting alidade rays toward the bluff from both Station A and Station B'
+  explanation: 'The Method of Intersection is designed for inaccessible features. Measuring a single baseline
+    along one side of the river and sighting rays from both ends locates the intersection point graphically
+    on the map board without crossing.
 
-  - id: nav-d4-q3
-    type: MATCH_PAIRS
-    prompt: Match each plane table surveying accessory to its precise engineering function.
-    xp_reward: 50
-    pairs:
-      - left: Sighting Alidade
-        right: Straightedge with vertical crosshair vanes used to sight landmarks and rule rays
-      - left: Plumbing Fork & Plumb-Bob
-        right: Aligns a pencil pinhole on the paper directly over a physical ground survey stake
-      - left: Trough Compass
-        right: Narrow rectangular box used to orient the drawing board to Magnetic North
-      - left: Backsighting
-        right: Aligning the table by sighting back along an existing line to a previous station
-    correct_answer: null
-    explanation: >
-      Alidade sights rays; plumbing fork centers the table over pegs; trough compass
-      finds magnetic north; backsighting provides high-precision orientation.
 
-  - id: nav-d4-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why is 'Backsighting' preferred over using a magnetic trough compass for orienting
-      a plane table when surveying a closed settlement boundary?
-    xp_reward: 50
-    options:
-      - text: "Backsighting relies strictly on optical line-of-sight between surveyed pegs, making it completely immune to local magnetic anomalies, ironstone rocks, and compass reading errors"
-        correct: true
-        explanation: "Trough compasses can be deflected by buried iron minerals, fencing, or vehicles by 1° to 3°. Backsighting directly aligns with the surveyed baseline on the ground, delivering optical orientation accuracy of minutes of arc."
-      - text: "Backsighting can be done in pitch darkness"
-        correct: false
-        explanation: "Backsighting requires visual optical line-of-sight to a ranging rod in daylight."
-      - text: "Because trough compass needles break if used outdoors"
-        correct: false
-        explanation: "Trough compasses are durable, but sensitive to magnetic distortion."
-      - text: "Backsighting automatically measures elevation contours"
-        correct: false
-        explanation: "Standard sight-rule alidades measure horizontal directions, not vertical contours."
+    Why the other options are wrong: Radiation requires measuring physical distance to the target, which
+    is impossible across the gorge. Leveling ensures the board is horizontal; it does not map distance.
+    This would take days; intersection maps it in 30 minutes from the home bank.'
+  correct_answer: d
+- id: nav-d4-q2
+  type: FILL_BLANK
+  prompt: 'At every plane table survey station, the three mandatory setup operations performed in strict
+    sequence before drawing any rays are: ___, ___, and ___.
 
-  - id: nav-d4-q5
-    type: FILL_BLANK
-    prompt: >
-      When surveying a 1:500 community base map using the Method of Radiation,
-      a measured ground distance of 35.0 metres from the central station to a water
-      well will be scaled off as exactly ___ cm along the alidade ray on the paper.
-    xp_reward: 50
-    correct_answer: "7.0"
-    explanation: >
-      At 1:500 scale, 1 cm on paper = 500 cm = 5.0 metres on ground.
-      Paper distance = 35.0 m / 5.0 m/cm = 7.0 cm.
+    '
+  xp_reward: 50
+  correct_answer:
+  - Leveling
+  - Centering
+  - Orientation
+  explanation: 'First make the board horizontal (Leveling), align the map pinhole over the ground peg
+    (Centering), and rotate the board to match the real world (Orientation).
+
+    '
+- id: nav-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each plane table surveying accessory to its precise engineering function.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Sighting Alidade
+    right:
+      id: r-1cae41
+      text: Straightedge with vertical crosshair vanes used to sight landmarks and rule rays
+  - left:
+      id: l2
+      text: Plumbing Fork & Plumb-Bob
+    right:
+      id: r-fb2259
+      text: Aligns a pencil pinhole on the paper directly over a physical ground survey stake
+  - left:
+      id: l3
+      text: Trough Compass
+    right:
+      id: r-a1c5e4
+      text: Narrow rectangular box used to orient the drawing board to Magnetic North
+  - left:
+      id: l4
+      text: Backsighting
+    right:
+      id: r-76dc2e
+      text: Aligning the table by sighting back along an existing line to a previous station
+  correct_answer:
+  - l1=r-1cae41
+  - l2=r-fb2259
+  - l3=r-a1c5e4
+  - l4=r-76dc2e
+  explanation: 'Alidade sights rays; plumbing fork centers the table over pegs; trough compass finds magnetic
+    north; backsighting provides high-precision orientation.
+
+    '
+- id: nav-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is ''Backsighting'' preferred over using a magnetic trough compass for orienting a plane
+    table when surveying a closed settlement boundary?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Backsighting can be done in pitch darkness
+  - id: b
+    text: Because trough compass needles break if used outdoors
+  - id: c
+    text: Backsighting relies strictly on optical line-of-sight between surveyed pegs, making it completely
+      immune to local magnetic anomalies, ironstone rocks, and compass reading errors
+  - id: d
+    text: Backsighting automatically measures elevation contours
+  explanation: 'Trough compasses can be deflected by buried iron minerals, fencing, or vehicles by 1°
+    to 3°. Backsighting directly aligns with the surveyed baseline on the ground, delivering optical orientation
+    accuracy of minutes of arc.
+
+
+    Why the other options are wrong: Backsighting requires visual optical line-of-sight to a ranging rod
+    in daylight. Trough compasses are durable, but sensitive to magnetic distortion. Standard sight-rule
+    alidades measure horizontal directions, not vertical contours.'
+  correct_answer: c
+- id: nav-d4-q5
+  type: FILL_BLANK
+  prompt: 'When surveying a 1:500 community base map using the Method of Radiation, a measured ground
+    distance of 35.0 metres from the central station to a water well will be scaled off as exactly ___
+    cm along the alidade ray on the paper.
+
+    '
+  xp_reward: 50
+  correct_answer: '7.0'
+  explanation: 'At 1:500 scale, 1 cm on paper = 500 cm = 5.0 metres on ground. Paper distance = 35.0 m
+    / 5.0 m/cm = 7.0 cm.
+
+    '

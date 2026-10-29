@@ -12,18 +12,16 @@ tags:
 - kenya
 - nutrition
 xp: 90
-briefing: 'Lacto-fermentation is one of humanity''s oldest food technologies — and
-  one of the most powerful. Lactic acid bacteria (LAB) convert sugars to lactic acid,
-  dropping pH below 4.0 and making food microbiologically safe without heat or refrigeration.
-  In Kenya, fermented foods (uji wa togwa, mursik, fermented cassava) underpin everyday
-  nutrition. This day decodes the microbiology and teaches safe, controlled fermentation
+briefing: 'Lacto-fermentation is one of humanity''s oldest food technologies — and one of the most powerful.
+  Lactic acid bacteria (LAB) convert sugars to lactic acid, dropping pH below 4.0 and making food microbiologically
+  safe without heat or refrigeration. In Kenya, fermented foods (uji wa togwa, mursik, fermented cassava)
+  underpin everyday nutrition. This day decodes the microbiology and teaches safe, controlled fermentation
   of grains, dairy, and vegetables.
 
   '
-briefing_sw: 'Kuchacha kwa lacto ni moja ya teknolojia za zamani zaidi za chakula
-  cha binadamu — na moja ya zenye nguvu zaidi. Bakteria ya asidi ya lactic (LAB) hubadilisha
-  sukari kuwa asidi ya lactic, kupunguza pH chini ya 4.0 na kufanya chakula kuwa salama
-  bila joto wala jokofu.
+briefing_sw: 'Kuchacha kwa lacto ni moja ya teknolojia za zamani zaidi za chakula cha binadamu — na moja
+  ya zenye nguvu zaidi. Bakteria ya asidi ya lactic (LAB) hubadilisha sukari kuwa asidi ya lactic, kupunguza
+  pH chini ya 4.0 na kufanya chakula kuwa salama bila joto wala jokofu.
 
   '
 outline: '1. Lactic acid bacteria (LAB): species, substrates, and environments
@@ -41,164 +39,157 @@ outline: '1. Lactic acid bacteria (LAB): species, substrates, and environments
   7. Probiotic benefits: LAB and gut health evidence
 
   8. Failure modes and how to recognise unsafe ferments'
-content_md: "## Lactic Acid Bacteria (LAB)\n\nLAB are gram-positive, acid-tolerant,\
-  \ non-spore-forming bacteria that ferment\nsugars to lactic acid (and sometimes\
-  \ CO₂ and ethanol in heterofermentative species).\nKey species in East African fermented\
-  \ foods:\n\n| Species | Food | Role |\n|---------|------|------|\n| *Lactobacillus\
-  \ plantarum* | Togwa, fermented vegetables | Dominant in mature ferments; very acid-tolerant\
-  \ |\n| *Lactobacillus fermentum* | Togwa, ogi | Early fermentation; heterofermentative\
-  \ (produces CO₂) |\n| *Lactococcus lactis* | Mursik | Primary acidifier in dairy\
-  \ |\n| *Leuconostoc mesenteroides* | Sauerkraut, vegetable brines | Initiates fermentation;\
-  \ produces CO₂ to flush O₂ |\n| *Streptococcus thermophilus* | Yoghurt | High-temperature\
-  \ dairy fermentation |\n\nLAB thrive between 20–40 °C. Below 15 °C fermentation\
-  \ slows dramatically;\nabove 45 °C most LAB die (exploited in pasteurisation).\n\
-  \n## The pH 4.0 Barrier\n\nThe critical protection mechanism of lacto-fermentation:\n\
-  \n- LAB produce lactic acid → pH drops from ~6.5 (fresh grain slurry) to 3.5–4.0\n\
-  - *Salmonella*, *E. coli*, *Listeria*, *Staphylococcus aureus* cannot survive pH\
-  \ < 4.5\n- *Clostridium botulinum* (botulism) cannot produce toxin below pH 4.6\
-  \ — the most critical threshold\n- Once pH ≤ 4.0 is reached, the ferment is microbiologically\
-  \ stable (but continues to sour)\n\n**Practical test**: pH strips (KSh 200–400 for\
-  \ 100 strips at Nairobi chemical suppliers)\nor a cheap digital pH meter (KSh 800–1\
-  \ 200).\n\nA properly fermented uji should reach pH 3.6–4.0 in 48–72 hours at 25–30\
-  \ °C.\n\n## Uji wa Togwa: Grain Fermentation Protocol\n\nTogwa is a thinly fermented\
-  \ sorghum/millet/maize gruel consumed across Tanzania,\nKenya, and Uganda. Rich\
-  \ in B-vitamins produced by LAB during fermentation.\n\n### Ingredients (5-litre\
-  \ batch)\n- 500 g sorghum flour (or 400 g maize + 100 g finger millet for nutrition)\n\
-  - 3.5 L clean water\n- 50 g mature togwa or sour uji from previous batch (**back-slopping**\
-  \ — optional\n  but accelerates reliable fermentation by 12–24 hours)\n\n### Equipment\n\
-  - Clay pot or food-grade plastic bucket (avoid metal — acid reacts with bare metal)\n\
-  - Clean cloth or lid that allows CO₂ to escape (do not seal airtight)\n- Wooden\
-  \ stirring spoon (dedicate to fermentation — no fat or protein residue)\n\n### Step-by-Step\n\
-  1. Mix flour with cold water into a lump-free slurry.\n2. Bring 1.5 L water to boil;\
-  \ add slurry while stirring constantly.\n3. Cook 5 minutes until thickened (this\
-  \ gelatinises starch → easier LAB access).\n4. Cool to ≤ 35 °C (back of the wrist\
-  \ test: should feel warm but not burn).\n5. Add back-slopping culture if using;\
-  \ stir well.\n6. Cover with a clean cloth; do not seal.\n7. Ferment at room temperature\
-  \ (25–30 °C) for 48–72 hours.\n8. Taste at 24 h intervals: pleasant sour tang developing.\
-  \ At pH ≤ 4.0 (or strong\n   pleasant sourness), fermentation is complete.\n9. Dilute\
-  \ with boiled water to desired consistency; sweeten with sugar or honey to taste.\n\
-  10. Consume or refrigerate (keeps 3–5 days in refrigerator; 1–2 days at room temperature\
-  \ post-completion).\n\n**Nutritional benefit of fermentation:**\n- Phytic acid (anti-nutrient\
-  \ binding iron and zinc) reduced by 30–60 %\n- B-vitamin (riboflavin, niacin, folate)\
-  \ levels increase 1.5–3×\n- Iron bioavailability roughly doubles\n\n## Mursik: Fermented\
-  \ Milk in a Smoked Gourd\n\nTraditional Kalenjin fermented milk from western Kenya\
-  \ highlands. Comparable to\nBulgarian yoghurt in LAB content; unique smoky flavour.\n\
-  \n### Process\n1. **Cure the gourd** (calabash): burn small pieces of dry olive\
-  \ wood (*Olea africana*)\n   or acacia inside the gourd for 5–10 minutes. This deposits\
-  \ charcoal and resins on the\n   inner surface, providing aroma and anti-microbial\
-  \ resins that suppress spoilage bacteria.\n2. **Partially fill** with fresh raw\
-  \ milk (cow, goat, or camel) — leave 20–30 % headspace.\n3. **Plug** with a cloth\
-  \ or carved wooden stopper — not airtight (CO₂ must escape).\n4. **Shake/churn**\
-  \ twice daily; keep in a cool dark location (a mud house maintains ~20–22 °C\n \
-  \  which is ideal).\n5. After 2–4 days the milk thickens and develops a pleasant\
-  \ sour flavour. pH will be ~3.8–4.2.\n6. Drink as is; store in the gourd up to 2\
-  \ weeks at room temperature if kept cool and re-churned daily.\n\n### Modern adaptation\
-  \ (without gourd)\nUse a clean glass jar; add a small piece of activated charcoal\
-  \ (pharmacy grade) for mild\nsmokiness. The preservation effect of the gourd resins\
-  \ is partially replaced by lower initial\nbacterial load from the clean glass environment.\n\
-  \n## Vegetable Fermentation: Brine Calculation\n\nVegetable fermentation (sukuma\
-  \ wiki/kale, cabbage, green beans) preserves the fresh crop\nfor 4–8 weeks at room\
-  \ temperature.\n\n**Critical variable: salt concentration (% w/v NaCl)**\n\n| Salt\
-  \ % (w/v) | Effect |\n|--------------|--------|\n| < 1 % | Too low — risk of spoilage\
-  \ bacteria outcompeting LAB |\n| 2–3 % | Optimal for leafy vegetables; *Leuconostoc*\
-  \ initiates fermentation |\n| 4–6 % | Slower fermentation; firmer texture; 5 % is\
-  \ traditional sauerkraut level |\n| > 8 % | Inhibits LAB; product may not acidify\
-  \ safely |\n\n**Brine recipe for 2 % solution:**\n- 20 g NaCl (about 1.5 tablespoons,\
-  \ level) per 1 L clean water\n- Dissolve fully; cool to room temperature before\
-  \ adding vegetables\n\n### Fermentation Vessel\n- Sterilise a glass jar (boiling\
-  \ water rinse) or food-grade plastic bucket\n- Pack shredded vegetables tightly\
-  \ — the physical pressure helps submerge them\n- Pour brine to cover; use a small\
-  \ clean stone or zip-lock bag filled with brine as a weight\n  to keep vegetables\
-  \ below the brine surface (air contact = mould)\n- Cover with a cloth; keep at 18–25\
-  \ °C\n\n### Timeline\n- Day 1–2: *Leuconostoc* initiates fermentation; CO₂ bubbles\
-  \ form; pH 5.5–6.0\n- Day 3–5: *Lactobacillus* takes over; pH drops to 4.0–4.5;\
-  \ pleasant sour smell\n- Day 7–14: Mature product; pH 3.5–4.0; stable and safe;\
-  \ refrigerate or consume\n\n## Fermented Cassava: Detoxifying HCN\n\nBitter cassava\
-  \ contains hydrogen cyanide (HCN) as linamarin — concentrations of\n200–500 mg HCN/kg\
-  \ fresh weight (LD₅₀ for humans: ~1 mg/kg body weight).\n**Sweet cassava** (most\
-  \ Kenyan varieties sold in markets) has < 50 mg/kg — safe\nafter cooking. However,\
-  \ during drought, cassava can accumulate higher HCN levels.\n\n**Fermentation +\
-  \ processing reduces HCN by 95–99 %:**\n1. Peel, grate, and soak grated cassava\
-  \ in water for 3–5 days (HCN gas escapes).\n2. Drain, press out excess water.\n\
-  3. Sun-dry or dry in solar tunnel.\n4. Grind into flour (gari in West Africa; kivunde\
-  \ in parts of coastal Kenya).\n5. Toast gari in a dry pan while stirring — additional\
-  \ HCN removal and kills LAB.\n\nNever give raw bitter cassava to children or livestock\
-  \ without processing.\n\n## Probiotic Benefits\n\nEvidence-based claims for LAB\
-  \ fermented foods (WHO/FAO 2006, systematic reviews):\n- Reduced duration of acute\
-  \ diarrhoea in children by 1–2 days (*L. rhamnosus* GG,\n  *L. reuteri* — also abundant\
-  \ in traditional African ferments)\n- Improved lactose tolerance: LAB pre-digest\
-  \ lactose → suitable for lactose-intolerant individuals\n- Competitive exclusion:\
-  \ LAB colonisation reduces gut pathogen load\n- Vitamin K₂ synthesis: important\
-  \ for bone mineralisation\n\n## Recognising Unsafe Ferments\n\n| Sign | Meaning\
-  \ | Action |\n|------|---------|--------|\n| Pink/red/black surface discolouration\
-  \ | Contamination by *Serratia*, *Aureobasidium*, or toxic moulds | Discard entire\
-  \ batch |\n| Soft, slimy texture without sour smell | Putrefaction (proteolytic\
-  \ bacteria outcompeted LAB) | Discard |\n| Strong alcohol smell | Uncontrolled yeast\
-  \ fermentation; pH may not have dropped safely | Test pH; if > 4.5, discard |\n\
-  | White surface bloom on vegetable ferment | Usually *Kahm yeast* — harmless; skim\
-  \ off, ferment likely safe if sour | Skim and test pH |\n| Foul, rotten, or ammonia\
-  \ smell | Dangerous contamination | Discard, clean vessel thoroughly |\n"
+content_md: "## Lactic Acid Bacteria (LAB)\n\nLAB are gram-positive, acid-tolerant, non-spore-forming\
+  \ bacteria that ferment\nsugars to lactic acid (and sometimes CO₂ and ethanol in heterofermentative\
+  \ species).\nKey species in East African fermented foods:\n\n| Species | Food | Role |\n|---------|------|------|\n\
+  | *Lactobacillus plantarum* | Togwa, fermented vegetables | Dominant in mature ferments; very acid-tolerant\
+  \ |\n| *Lactobacillus fermentum* | Togwa, ogi | Early fermentation; heterofermentative (produces CO₂)\
+  \ |\n| *Lactococcus lactis* | Mursik | Primary acidifier in dairy |\n| *Leuconostoc mesenteroides* |\
+  \ Sauerkraut, vegetable brines | Initiates fermentation; produces CO₂ to flush O₂ |\n| *Streptococcus\
+  \ thermophilus* | Yoghurt | High-temperature dairy fermentation |\n\nLAB thrive between 20–40 °C. Below\
+  \ 15 °C fermentation slows dramatically;\nabove 45 °C most LAB die (exploited in pasteurisation).\n\n\
+  ## The pH 4.0 Barrier\n\nThe critical protection mechanism of lacto-fermentation:\n\n- LAB produce lactic\
+  \ acid → pH drops from ~6.5 (fresh grain slurry) to 3.5–4.0\n- *Salmonella*, *E. coli*, *Listeria*,\
+  \ *Staphylococcus aureus* cannot survive pH < 4.5\n- *Clostridium botulinum* (botulism) cannot produce\
+  \ toxin below pH 4.6 — the most critical threshold\n- Once pH ≤ 4.0 is reached, the ferment is microbiologically\
+  \ stable (but continues to sour)\n\n**Practical test**: pH strips (KSh 200–400 for 100 strips at Nairobi\
+  \ chemical suppliers)\nor a cheap digital pH meter (KSh 800–1 200).\n\nA properly fermented uji should\
+  \ reach pH 3.6–4.0 in 48–72 hours at 25–30 °C.\n\n## Uji wa Togwa: Grain Fermentation Protocol\n\nTogwa\
+  \ is a thinly fermented sorghum/millet/maize gruel consumed across Tanzania,\nKenya, and Uganda. Rich\
+  \ in B-vitamins produced by LAB during fermentation.\n\n### Ingredients (5-litre batch)\n- 500 g sorghum\
+  \ flour (or 400 g maize + 100 g finger millet for nutrition)\n- 3.5 L clean water\n- 50 g mature togwa\
+  \ or sour uji from previous batch (**back-slopping** — optional\n  but accelerates reliable fermentation\
+  \ by 12–24 hours)\n\n### Equipment\n- Clay pot or food-grade plastic bucket (avoid metal — acid reacts\
+  \ with bare metal)\n- Clean cloth or lid that allows CO₂ to escape (do not seal airtight)\n- Wooden\
+  \ stirring spoon (dedicate to fermentation — no fat or protein residue)\n\n### Step-by-Step\n1. Mix\
+  \ flour with cold water into a lump-free slurry.\n2. Bring 1.5 L water to boil; add slurry while stirring\
+  \ constantly.\n3. Cook 5 minutes until thickened (this gelatinises starch → easier LAB access).\n4.\
+  \ Cool to ≤ 35 °C (back of the wrist test: should feel warm but not burn).\n5. Add back-slopping culture\
+  \ if using; stir well.\n6. Cover with a clean cloth; do not seal.\n7. Ferment at room temperature (25–30\
+  \ °C) for 48–72 hours.\n8. Taste at 24 h intervals: pleasant sour tang developing. At pH ≤ 4.0 (or strong\n\
+  \   pleasant sourness), fermentation is complete.\n9. Dilute with boiled water to desired consistency;\
+  \ sweeten with sugar or honey to taste.\n10. Consume or refrigerate (keeps 3–5 days in refrigerator;\
+  \ 1–2 days at room temperature post-completion).\n\n**Nutritional benefit of fermentation:**\n- Phytic\
+  \ acid (anti-nutrient binding iron and zinc) reduced by 30–60 %\n- B-vitamin (riboflavin, niacin, folate)\
+  \ levels increase 1.5–3×\n- Iron bioavailability roughly doubles\n\n## Mursik: Fermented Milk in a Smoked\
+  \ Gourd\n\nTraditional Kalenjin fermented milk from western Kenya highlands. Comparable to\nBulgarian\
+  \ yoghurt in LAB content; unique smoky flavour.\n\n### Process\n1. **Cure the gourd** (calabash): burn\
+  \ small pieces of dry olive wood (*Olea africana*)\n   or acacia inside the gourd for 5–10 minutes.\
+  \ This deposits charcoal and resins on the\n   inner surface, providing aroma and anti-microbial resins\
+  \ that suppress spoilage bacteria.\n2. **Partially fill** with fresh raw milk (cow, goat, or camel)\
+  \ — leave 20–30 % headspace.\n3. **Plug** with a cloth or carved wooden stopper — not airtight (CO₂\
+  \ must escape).\n4. **Shake/churn** twice daily; keep in a cool dark location (a mud house maintains\
+  \ ~20–22 °C\n   which is ideal).\n5. After 2–4 days the milk thickens and develops a pleasant sour flavour.\
+  \ pH will be ~3.8–4.2.\n6. Drink as is; store in the gourd up to 2 weeks at room temperature if kept\
+  \ cool and re-churned daily.\n\n### Modern adaptation (without gourd)\nUse a clean glass jar; add a\
+  \ small piece of activated charcoal (pharmacy grade) for mild\nsmokiness. The preservation effect of\
+  \ the gourd resins is partially replaced by lower initial\nbacterial load from the clean glass environment.\n\
+  \n## Vegetable Fermentation: Brine Calculation\n\nVegetable fermentation (sukuma wiki/kale, cabbage,\
+  \ green beans) preserves the fresh crop\nfor 4–8 weeks at room temperature.\n\n**Critical variable:\
+  \ salt concentration (% w/v NaCl)**\n\n| Salt % (w/v) | Effect |\n|--------------|--------|\n| < 1 %\
+  \ | Too low — risk of spoilage bacteria outcompeting LAB |\n| 2–3 % | Optimal for leafy vegetables;\
+  \ *Leuconostoc* initiates fermentation |\n| 4–6 % | Slower fermentation; firmer texture; 5 % is traditional\
+  \ sauerkraut level |\n| > 8 % | Inhibits LAB; product may not acidify safely |\n\n**Brine recipe for\
+  \ 2 % solution:**\n- 20 g NaCl (about 1.5 tablespoons, level) per 1 L clean water\n- Dissolve fully;\
+  \ cool to room temperature before adding vegetables\n\n### Fermentation Vessel\n- Sterilise a glass\
+  \ jar (boiling water rinse) or food-grade plastic bucket\n- Pack shredded vegetables tightly — the physical\
+  \ pressure helps submerge them\n- Pour brine to cover; use a small clean stone or zip-lock bag filled\
+  \ with brine as a weight\n  to keep vegetables below the brine surface (air contact = mould)\n- Cover\
+  \ with a cloth; keep at 18–25 °C\n\n### Timeline\n- Day 1–2: *Leuconostoc* initiates fermentation; CO₂\
+  \ bubbles form; pH 5.5–6.0\n- Day 3–5: *Lactobacillus* takes over; pH drops to 4.0–4.5; pleasant sour\
+  \ smell\n- Day 7–14: Mature product; pH 3.5–4.0; stable and safe; refrigerate or consume\n\n## Fermented\
+  \ Cassava: Detoxifying HCN\n\nBitter cassava contains hydrogen cyanide (HCN) as linamarin — concentrations\
+  \ of\n200–500 mg HCN/kg fresh weight (LD₅₀ for humans: ~1 mg/kg body weight).\n**Sweet cassava** (most\
+  \ Kenyan varieties sold in markets) has < 50 mg/kg — safe\nafter cooking. However, during drought, cassava\
+  \ can accumulate higher HCN levels.\n\n**Fermentation + processing reduces HCN by 95–99 %:**\n1. Peel,\
+  \ grate, and soak grated cassava in water for 3–5 days (HCN gas escapes).\n2. Drain, press out excess\
+  \ water.\n3. Sun-dry or dry in solar tunnel.\n4. Grind into flour (gari in West Africa; kivunde in parts\
+  \ of coastal Kenya).\n5. Toast gari in a dry pan while stirring — additional HCN removal and kills LAB.\n\
+  \nNever give raw bitter cassava to children or livestock without processing.\n\n## Probiotic Benefits\n\
+  \nEvidence-based claims for LAB fermented foods (WHO/FAO 2006, systematic reviews):\n- Reduced duration\
+  \ of acute diarrhoea in children by 1–2 days (*L. rhamnosus* GG,\n  *L. reuteri* — also abundant in\
+  \ traditional African ferments)\n- Improved lactose tolerance: LAB pre-digest lactose → suitable for\
+  \ lactose-intolerant individuals\n- Competitive exclusion: LAB colonisation reduces gut pathogen load\n\
+  - Vitamin K₂ synthesis: important for bone mineralisation\n\n## Recognising Unsafe Ferments\n\n| Sign\
+  \ | Meaning | Action |\n|------|---------|--------|\n| Pink/red/black surface discolouration | Contamination\
+  \ by *Serratia*, *Aureobasidium*, or toxic moulds | Discard entire batch |\n| Soft, slimy texture without\
+  \ sour smell | Putrefaction (proteolytic bacteria outcompeted LAB) | Discard |\n| Strong alcohol smell\
+  \ | Uncontrolled yeast fermentation; pH may not have dropped safely | Test pH; if > 4.5, discard |\n\
+  | White surface bloom on vegetable ferment | Usually *Kahm yeast* — harmless; skim off, ferment likely\
+  \ safe if sour | Skim and test pH |\n| Foul, rotten, or ammonia smell | Dangerous contamination | Discard,\
+  \ clean vessel thoroughly |\n"
 exercises:
 - type: MULTIPLE_CHOICE
   id: fs3-q1
   options:
-  - text: Yeasts outcompeted LAB — fermentation is alcoholic, not lactic. Discard
-      the batch; pH 5.8 is not safe for pathogen inhibition.
-    correct: true
-    explanation: Correct. Yeast fermentation produces ethanol and CO₂ but does not
-      acidify effectively. At pH 5.8, Salmonella and E. coli can still survive. Start
-      a new batch with back-slopping culture from a reliable source.
-  - text: Normal — uji always smells of alcohol in the first 72 hours. Continue fermentation
-      for 24 more hours.
-    correct: false
-    explanation: Lactic fermentation produces a clean sour smell, not an alcohol odour.
-      Dominant alcohol at 72 hours indicates yeast, not LAB, are in control.
-  - text: Safe to consume — alcohol is a natural preservative and the pH of 5.8 is
-      acceptable
-    correct: false
-    explanation: Alcohol does have antimicrobial properties at high concentrations
-      (> 10 % ABV) but the small amounts in a fermented slurry are insufficient. pH
-      5.8 is above the 4.6 safety threshold for botulism prevention.
-  - text: Add more flour to dilute the alcohol and restart fermentation
-    correct: false
-    explanation: Adding more substrate feeds the yeast further. The vessel is already
-      contaminated with yeast. Clean the vessel, sterilise with boiling water, and
-      start fresh.
-  prompt: A batch of fermented uji smells strongly of alcohol after 72 hours but has
-    no sour taste. pH strips show pH 5.8. What happened and what should you do?
+  - id: a
+    text: Normal — uji always smells of alcohol in the first 72 hours. Continue fermentation for 24 more
+      hours.
+  - id: b
+    text: Safe to consume — alcohol is a natural preservative and the pH of 5.8 is acceptable
+  - id: c
+    text: Yeasts outcompeted LAB — fermentation is alcoholic, not lactic. Discard the batch; pH 5.8 is
+      not safe for pathogen inhibition.
+  - id: d
+    text: Add more flour to dilute the alcohol and restart fermentation
+  prompt: A batch of fermented uji smells strongly of alcohol after 72 hours but has no sour taste. pH
+    strips show pH 5.8. What happened and what should you do?
   xp_reward: 30
-  correct_answer: Yeasts outcompeted LAB — fermentation is alcoholic, not lactic.
-    Discard the batch; pH 5.8 is not safe for pathogen inhibition.
+  correct_answer: c
+  explanation: 'Correct. Yeast fermentation produces ethanol and CO₂ but does not acidify effectively.
+    At pH 5.8, Salmonella and E. coli can still survive. Start a new batch with back-slopping culture
+    from a reliable source.
+
+
+    Why the other options are wrong: Lactic fermentation produces a clean sour smell, not an alcohol odour.
+    Dominant alcohol at 72 hours indicates yeast, not LAB, are in control. Alcohol does have antimicrobial
+    properties at high concentrations (> 10 % ABV) but the small amounts in a fermented slurry are insufficient.
+    pH 5.8 is above the 4.6 safety threshold for botulism prevention. Adding more substrate feeds the
+    yeast further. The vessel is already contaminated with yeast. Clean the vessel, sterilise with boiling
+    water, and start fresh.'
 - type: FILL_BLANK
   id: fs3-q2
-  prompt: The minimum safe pH for lacto-fermented food — below which *Clostridium
-    botulinum* cannot produce toxin — is ___.
-  explanation: C. botulinum produces botulinum toxin (one of the most lethal biological
-    substances known) only in anaerobic environments above pH 4.6. Lacto-fermentation
-    targets pH ≤ 4.0 — well within the safe zone.
+  prompt: The minimum safe pH for lacto-fermented food — below which *Clostridium botulinum* cannot produce
+    toxin — is ___.
+  explanation: C. botulinum produces botulinum toxin (one of the most lethal biological substances known)
+    only in anaerobic environments above pH 4.6. Lacto-fermentation targets pH ≤ 4.0 — well within the
+    safe zone.
   xp_reward: 30
   correct_answer: '4.6'
 - type: MATCH_PAIRS
   id: fs3-q3
   pairs:
-  - left: Togwa (Tanzania/Kenya)
-    right: Lactobacillus fermentum + L. plantarum — sorghum/maize gruel
-  - left: Mursik (Kalenjin, Kenya)
-    right: Lactococcus lactis — smoked gourd fermented milk
-  - left: Sauerkraut (global)
-    right: Leuconostoc mesenteroides → L. plantarum — shredded cabbage, 5% salt
-  - left: Kivunde/Gari (coastal/West Africa)
-    right: Mixed LAB — fermented, pressed, and toasted cassava flour
+  - left:
+      id: l1
+      text: Togwa (Tanzania/Kenya)
+    right:
+      id: r-feb193
+      text: Lactobacillus fermentum + L. plantarum — sorghum/maize gruel
+  - left:
+      id: l2
+      text: Mursik (Kalenjin, Kenya)
+    right:
+      id: r-8223f3
+      text: Lactococcus lactis — smoked gourd fermented milk
+  - left:
+      id: l3
+      text: Sauerkraut (global)
+    right:
+      id: r-82964f
+      text: Leuconostoc mesenteroides → L. plantarum — shredded cabbage, 5% salt
+  - left:
+      id: l4
+      text: Kivunde/Gari (coastal/West Africa)
+    right:
+      id: r-1b83ae
+      text: Mixed LAB — fermented, pressed, and toasted cassava flour
   prompt: Match each fermented food to its primary LAB species and region.
   xp_reward: 30
   correct_answer:
-  - Togwa (Tanzania/Kenya)=Lactobacillus fermentum + L. plantarum — sorghum/maize
-    gruel
-  - Mursik (Kalenjin, Kenya)=Lactococcus lactis — smoked gourd fermented milk
-  - Sauerkraut (global)=Leuconostoc mesenteroides → L. plantarum — shredded cabbage,
-    5% salt
-  - Kivunde/Gari (coastal/West Africa)=Mixed LAB — fermented, pressed, and toasted
-    cassava flour
+  - l1=r-feb193
+  - l2=r-8223f3
+  - l3=r-82964f
+  - l4=r-1b83ae
 course_id: food-security
 estimated_minutes: 55
 license: CC-BY-SA-4.0

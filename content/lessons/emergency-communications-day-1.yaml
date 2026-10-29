@@ -1,135 +1,238 @@
 id: emergency-communications-day-1
 course_id: emergency-communications
-title: "Radio Waves, Antennas & SWR"
-title_sw: "Mawimbi ya Redio, Antena na SWR"
+title: Radio Waves, Antennas & SWR
+title_sw: Mawimbi ya Redio, Antena na SWR
 week_number: 1
 day_number: 1
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [communications, radio, antennas, swr, physics, vhf, uhf, kenya]
+tags:
+- communications
+- radio
+- antennas
+- swr
+- physics
+- vhf
+- uhf
+- kenya
 xp: 85
 exam_domain: Telecommunications & RF Engineering
+briefing: 'When cellular base stations lose grid power or fiber backhauls are severed, electromagnetic
 
-briefing: |
-  When cellular base stations lose grid power or fiber backhauls are severed, electromagnetic
   radio waves remain the only medium that travels freely across terrain with zero physical
+
   infrastructure. However, connecting a transmitter to an improper antenna converts costly
+
   radio energy into destructive heat that incinerates the transmitter’s final output transistors.
+
   This day decodes radio spectrum bands (HF, VHF, UHF), electromagnetic wavelength physics,
+
   resonant antenna element calculations (quarter-wave ground plane and half-wave dipole),
+
   coaxial impedance matching (50 Ω), and Standing Wave Ratio (SWR) measurement.
-briefing_sw: |
-  Minara ya simu inapopoteza umeme au nyaya za fiber kukatika, mawimbi ya redio
+
+  '
+briefing_sw: 'Minara ya simu inapopoteza umeme au nyaya za fiber kukatika, mawimbi ya redio
+
   ndiyo njia pekee ya kuwasiliana bila miundombinu. Lakini ukiunganisha redio kwenye
+
   antena isiyo sahihi, nguvu ya redio inarudi nyuma na kuchoma transistor za redio.
+
   Siku hii inafundisha jinsi ya kukokotoa urefu wa antena na kupima SWR.
 
-outline: |
-  1. The electromagnetic spectrum: HF (3–30 MHz), VHF (30–300 MHz), and UHF (300–3000 MHz)
+  '
+outline: '1. The electromagnetic spectrum: HF (3–30 MHz), VHF (30–300 MHz), and UHF (300–3000 MHz)
+
   2. Wavelength equation: Relating frequency to physical physical antenna size (λ = 300 / f)
+
   3. The Half-Wave Dipole: Physical length formula (L = 142.5 / f) and center radiation resistance
+
   4. The 1/4-Wave Ground Plane antenna: Vertical radiator with four 45-degree droop radials
+
   5. Characteristic impedance: Why RF transmission lines are standardized at 50 Ohms
+
   6. Standing Wave Ratio (SWR): Forward power vs reflected power (safe operating thresholds)
+
   7. High SWR hazards: Thermal destruction of output RF final transistors (MOSFETs)
+
   8. Antenna tuning & dummy loads: 50 Ω non-inductive resistor testing before live transmission
 
-content_md: |
-  ## The Electromagnetic Spectrum for Resilient Communications
+  '
+content_md: '## The Electromagnetic Spectrum for Resilient Communications
 
-  Radio waves are oscillating electric and magnetic fields traveling at the speed of light ($c \approx 300,000\text{ km/s}$).
+
+  Radio waves are oscillating electric and magnetic fields traveling at the speed of light ($c \approx
+  300,000\text{ km/s}$).
+
 
   | Band | Frequency Range | Typical Propagation | Primary Emergency Application |
+
   |------|-----------------|---------------------|-------------------------------|
-  | **HF (High Frequency)** | 3 – 30 MHz | Ground wave + Ionospheric skywave refraction | Long-range (100–3,000 km) regional communication without repeaters |
-  | **VHF (Very High Frequency)** | 30 – 300 MHz | Line-of-sight + diffraction over ridges | Local community tactical comms (5–35 km); marine & aviation |
-  | **UHF (Ultra High Frequency)** | 300 – 3,000 MHz | Strict line-of-sight; penetrates buildings | Urban handhelds, LoRa packet mesh networks, and repeater links |
+
+  | **HF (High Frequency)** | 3 – 30 MHz | Ground wave + Ionospheric skywave refraction | Long-range (100–3,000
+  km) regional communication without repeaters |
+
+  | **VHF (Very High Frequency)** | 30 – 300 MHz | Line-of-sight + diffraction over ridges | Local community
+  tactical comms (5–35 km); marine & aviation |
+
+  | **UHF (Ultra High Frequency)** | 300 – 3,000 MHz | Strict line-of-sight; penetrates buildings | Urban
+  handhelds, LoRa packet mesh networks, and repeater links |
+
 
   ## The Wavelength Equation & Antenna Lengths
 
-  The fundamental speed-of-light relationship determines how long an antenna must be to resonate with a given radio frequency:
+
+  The fundamental speed-of-light relationship determines how long an antenna must be to resonate with
+  a given radio frequency:
+
 
   $$\lambda\text{ (meters)} = \frac{300}{f\text{ (MHz)}}$$
 
-  Because radio waves travel ~5% slower through copper/aluminum wire than in free vacuum (velocity factor $k \approx 0.95$), the practical formula for a **Half-Wave Dipole Antenna ($\lambda / 2$)** is:
+
+  Because radio waves travel ~5% slower through copper/aluminum wire than in free vacuum (velocity factor
+  $k \approx 0.95$), the practical formula for a **Half-Wave Dipole Antenna ($\lambda / 2$)** is:
+
 
   $$L\text{ (meters)} = \frac{142.5}{f\text{ (MHz)}}$$
 
+
   ### Worked Example: 2-Meter Emergency VHF Band (145.000 MHz)
+
   $$L = \frac{142.5}{145.0} = 0.9828\text{ meters (98.3 cm total dipole length)}$$
+
   Each quarter-wave leg of the dipole = $98.3 \div 2 = \mathbf{49.1\text{ cm}}$.
+
 
   ## The 1/4-Wave Ground Plane Antenna (Field Build)
 
-  The most durable, omni-directional field antenna can be constructed from an SO-239 chassis connector and five pieces of stiff copper wire:
-  1. **Vertical radiator ($\lambda / 4$):** Solder a stiff copper rod ($49.1\text{ cm}$ for 145 MHz) into the center pin of the connector.
-  2. **Radials ($\lambda / 4$):** Bolt four identical wire lengths ($51.5\text{ cm}$, cut 5% longer) through the four mounting holes on the connector flange.
-  3. **Angle of droop:** Bend the four radials downward at **45 degrees**. Bending the radials down from horizontal raises the feedpoint impedance from $35\text{ }\Omega$ to exactly **$50\text{ }\Omega$**, creating a perfect match for standard coaxial cables!
+
+  The most durable, omni-directional field antenna can be constructed from an SO-239 chassis connector
+  and five pieces of stiff copper wire:
+
+  1. **Vertical radiator ($\lambda / 4$):** Solder a stiff copper rod ($49.1\text{ cm}$ for 145 MHz) into
+  the center pin of the connector.
+
+  2. **Radials ($\lambda / 4$):** Bolt four identical wire lengths ($51.5\text{ cm}$, cut 5% longer) through
+  the four mounting holes on the connector flange.
+
+  3. **Angle of droop:** Bend the four radials downward at **45 degrees**. Bending the radials down from
+  horizontal raises the feedpoint impedance from $35\text{ }\Omega$ to exactly **$50\text{ }\Omega$**,
+  creating a perfect match for standard coaxial cables!
+
 
   ## Characteristic Impedance & Standing Wave Ratio (SWR)
 
-  Transceivers, coaxial cables, and antennas are engineered for a standard **$50\text{ }\Omega$ (Ohm) impedance**.
+
+  Transceivers, coaxial cables, and antennas are engineered for a standard **$50\text{ }\Omega$ (Ohm)
+  impedance**.
+
 
   When an antenna’s impedance does not match the $50\text{ }\Omega$ cable:
+
   - Part of the transmitted RF power is radiated into the air (**Forward Power**).
-  - The remaining power bounces off the antenna and travels back down the cable toward the radio (**Reflected Power**).
-  - The interference between forward and reflected waves creates standing voltage nodes, quantified as **Standing Wave Ratio (SWR)**.
+
+  - The remaining power bounces off the antenna and travels back down the cable toward the radio (**Reflected
+  Power**).
+
+  - The interference between forward and reflected waves creates standing voltage nodes, quantified as
+  **Standing Wave Ratio (SWR)**.
+
 
   | SWR Value | Reflected Power (%) | Condition & Action |
+
   |-----------|---------------------|--------------------|
+
   | **1.0 : 1** | **0.0%** | **Perfect theoretical resonance**; 100% of RF power is radiated |
-  | **1.1 – 1.5 : 1** | **< 4.0%** | **Excellent operational range**; safe for continuous transmission |
+
+  | **1.1 – 1.5 : 1** | **< 4.0%** | **Excellent operational range**; safe for continuous transmission
+  |
+
   | **1.6 – 2.0 : 1** | **4.0% – 11.1%** | **Acceptable in emergencies**; minor range loss |
-  | **2.1 – 3.0 : 1** | **11.1% – 25.0%** | **Poor**; radio will run hot; foldback protection will throttle power |
-  | **> 3.0 : 1** | **> 25.0%** | **DANGER**: High reflected voltage will destroy final amplifier transistors! |
+
+  | **2.1 – 3.0 : 1** | **11.1% – 25.0%** | **Poor**; radio will run hot; foldback protection will throttle
+  power |
+
+  | **> 3.0 : 1** | **> 25.0%** | **DANGER**: High reflected voltage will destroy final amplifier transistors!
+  |
+
 
   ## The 50 Ω Dummy Load
 
-  Never tune or test a transmitter on live frequencies without an antenna or dummy load. Transmitting into an open cable (SWR $\infty:1$) creates massive reflected voltage peaks that puncture the dielectric gates of RF power MOSFETs in milliseconds.
-  - A **dummy load** consists of a non-inductive $50\text{ }\Omega$ power resistor enclosed in a shielded can. It absorbs RF energy and converts it harmlessly into heat without radiating interference into community airwaves.
 
+  Never tune or test a transmitter on live frequencies without an antenna or dummy load. Transmitting
+  into an open cable (SWR $\infty:1$) creates massive reflected voltage peaks that puncture the dielectric
+  gates of RF power MOSFETs in milliseconds.
+
+  - A **dummy load** consists of a non-inductive $50\text{ }\Omega$ power resistor enclosed in a shielded
+  can. It absorbs RF energy and converts it harmlessly into heat without radiating interference into community
+  airwaves.
+
+  '
 exercises:
-  - id: ec1-q1
-    type: MULTIPLE_CHOICE
-    prompt: "You connect an SWR meter between a 50W VHF transceiver and an improvised antenna. The meter reads an SWR of 3.8:1 when keyed. What should you do immediately?"
-    xp_reward: 35
-    options:
-      - text: "Increase transmitter power to 100W to force the signal past the antenna resistance"
-        correct: false
-        explanation: "Increasing power will quadruple the reflected voltage, instantly destroying the final output transistors."
-      - text: "Release the transmit key immediately; inspect the antenna elements for incorrect length, short circuits, or broken coaxial connections"
-        correct: true
-        explanation: "Correct! An SWR of 3.8:1 reflects over 34% of your power directly back into the radio's sensitive power amplifier. Prolonged transmission under this mismatch will burn out the final transistors. Unkey and check antenna length and cable continuity."
-      - text: "Continue talking as long as the battery indicator shows green"
-        correct: false
-        explanation: "Battery level has no relation to RF impedance matching or transistor heat dissipation."
-      - text: "Switch from FM mode to AM mode to bypass the SWR reading"
-        correct: false
-        explanation: "SWR is a property of the antenna geometry and frequency, independent of modulation mode."
-    correct_answer: "Release the transmit key immediately; inspect the antenna elements for incorrect length, short circuits, or broken coaxial connections"
+- id: ec1-q1
+  type: MULTIPLE_CHOICE
+  prompt: You connect an SWR meter between a 50W VHF transceiver and an improvised antenna. The meter
+    reads an SWR of 3.8:1 when keyed. What should you do immediately?
+  xp_reward: 35
+  options:
+  - id: a
+    text: Increase transmitter power to 100W to force the signal past the antenna resistance
+  - id: b
+    text: Continue talking as long as the battery indicator shows green
+  - id: c
+    text: Release the transmit key immediately; inspect the antenna elements for incorrect length, short
+      circuits, or broken coaxial connections
+  - id: d
+    text: Switch from FM mode to AM mode to bypass the SWR reading
+  correct_answer: c
+  explanation: 'Correct! An SWR of 3.8:1 reflects over 34% of your power directly back into the radio''s
+    sensitive power amplifier. Prolonged transmission under this mismatch will burn out the final transistors.
+    Unkey and check antenna length and cable continuity.
 
-  - id: ec1-q2
-    type: FILL_BLANK
-    prompt: "Using the formula L = 142.5 / f(MHz), the total physical length of a half-wave dipole wire antenna for the 142.5 MHz frequency is exactly ___ meter(s)."
-    xp_reward: 20
-    correct_answer: "1"
-    explanation: "142.5 / 142.5 = 1.0 meter total wire length (each quarter-wave leg will be 0.50 meters or 50 cm long)."
 
-  - id: ec1-q3
-    type: MATCH_PAIRS
-    prompt: "Match each radio frequency band to its operational characteristic."
-    xp_reward: 30
-    pairs:
-      - left: HF Band (3–30 MHz)
-        right: Refracts off the ionosphere to provide regional communications over 100–1000+ km
-      - left: VHF Band (30–300 MHz)
-        right: Reliable line-of-sight communication over 10–50 km with compact antennas
-      - left: UHF Band (300–3000 MHz)
-        right: Superior penetration through urban concrete walls and dense forest foliage
-      - left: 50 Ohm Dummy Load
-        right: Absorbs transmitted RF power as heat for safe transmitter calibration
-    correct_answer:
-      - HF Band (3–30 MHz)=Refracts off the ionosphere to provide regional communications over 100–1000+ km
-      - VHF Band (30–300 MHz)=Reliable line-of-sight communication over 10–50 km with compact antennas
-      - UHF Band (300–3000 MHz)=Superior penetration through urban concrete walls and dense forest foliage
-      - 50 Ohm Dummy Load=Absorbs transmitted RF power as heat for safe transmitter calibration
+    Why the other options are wrong: Increasing power will quadruple the reflected voltage, instantly
+    destroying the final output transistors. Battery level has no relation to RF impedance matching or
+    transistor heat dissipation. SWR is a property of the antenna geometry and frequency, independent
+    of modulation mode.'
+- id: ec1-q2
+  type: FILL_BLANK
+  prompt: Using the formula L = 142.5 / f(MHz), the total physical length of a half-wave dipole wire antenna
+    for the 142.5 MHz frequency is exactly ___ meter(s).
+  xp_reward: 20
+  correct_answer: '1'
+  explanation: 142.5 / 142.5 = 1.0 meter total wire length (each quarter-wave leg will be 0.50 meters
+    or 50 cm long).
+- id: ec1-q3
+  type: MATCH_PAIRS
+  prompt: Match each radio frequency band to its operational characteristic.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: HF Band (3–30 MHz)
+    right:
+      id: r-68ce0f
+      text: Refracts off the ionosphere to provide regional communications over 100–1000+ km
+  - left:
+      id: l2
+      text: VHF Band (30–300 MHz)
+    right:
+      id: r-81c9e7
+      text: Reliable line-of-sight communication over 10–50 km with compact antennas
+  - left:
+      id: l3
+      text: UHF Band (300–3000 MHz)
+    right:
+      id: r-9183af
+      text: Superior penetration through urban concrete walls and dense forest foliage
+  - left:
+      id: l4
+      text: 50 Ohm Dummy Load
+    right:
+      id: r-9ffe20
+      text: Absorbs transmitted RF power as heat for safe transmitter calibration
+  correct_answer:
+  - l1=r-68ce0f
+  - l2=r-81c9e7
+  - l3=r-9183af
+  - l4=r-9ffe20

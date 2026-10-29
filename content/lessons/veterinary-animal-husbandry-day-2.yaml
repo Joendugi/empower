@@ -1,211 +1,216 @@
 id: veterinary-animal-husbandry-day-2
 course_id: veterinary-animal-husbandry
-title: "Vector-Borne Livestock Diseases — ECF & Trypanosomiasis"
-title_sw: "Magonjwa ya Mifugo Yanayoenezwa na Wadudu — Ndigana (ECF) na Nagana"
+title: Vector-Borne Livestock Diseases — ECF & Trypanosomiasis
+title_sw: Magonjwa ya Mifugo Yanayoenezwa na Wadudu — Ndigana (ECF) na Nagana
 week_number: 1
 day_number: 2
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - veterinary
-  - east-coast-fever
-  - trypanosomiasis
-  - tsetse-fly
-  - ticks
-  - buparvaquone
-  - diminazene
+- veterinary
+- east-coast-fever
+- trypanosomiasis
+- tsetse-fly
+- ticks
+- buparvaquone
+- diminazene
 xp: 250
 exam_domain: veterinary-animal-husbandry
+briefing: 'Across sub-Saharan Africa, vector-borne hemoparasites inflict devastating losses on pastoral
+  herds. East Coast Fever (ECF / Theileriosis)—transmitted by the brown ear tick—kills up to 90% of unvaccinated
+  exotic and crossbred cattle within 3 weeks of infection. Nagana (Animal African Trypanosomiasis)—transmitted
+  by the tsetse fly—causes chronic wasting, severe anaemia, and reproductive failure across 10 million
+  square kilometres of fertile grazing land. This lesson covers vector biology, field blood/lymph smear
+  microscopy, clinical staging, life-saving chemotherapeutic protocols (Buparvaquone, Diminazene Aceturate,
+  Isometamidium), and non-chemical vector control traps.
 
-briefing: >
-  Across sub-Saharan Africa, vector-borne hemoparasites inflict devastating losses
-  on pastoral herds. East Coast Fever (ECF / Theileriosis)—transmitted by the brown
-  ear tick—kills up to 90% of unvaccinated exotic and crossbred cattle within 3 weeks
-  of infection. Nagana (Animal African Trypanosomiasis)—transmitted by the tsetse fly—causes
-  chronic wasting, severe anaemia, and reproductive failure across 10 million square
-  kilometres of fertile grazing land. This lesson covers vector biology, field blood/lymph
-  smear microscopy, clinical staging, life-saving chemotherapeutic protocols (Buparvaquone,
-  Diminazene Aceturate, Isometamidium), and non-chemical vector control traps.
+  '
+outline: 'East Coast Fever (Theileria parva): vector Rhipicephalus appendiculatus (brown ear tick); pathogenesis
+  (lymphoproliferation, Koch''s Blue Bodies in lymph node aspirate smears, pulmonary oedema death); treatment:
+  Buparvaquone (2.5 mg/kg IM) + long-acting oxytetracycline; ITM (Infection and Treatment Method) live
+  vaccine protocol; Trypanosomiasis (T. congolense, T. vivax, T. brucei): vector Glossina spp. (tsetse
+  fly); clinical picture (intermittent fever, progressive cachexia, ''razor-back'', jugular pulse); diagnosis:
+  wet blood mount, buffy coat microhaematocrit centrifuge technique; curative vs prophylactic drugs: Diminazene
+  aceturate (Berenil) vs Isometamidium chloride; tsetse fly biconical / Nzi blue fabric traps with attractant
+  odor lures.
 
-outline: >
-  East Coast Fever (Theileria parva): vector Rhipicephalus appendiculatus (brown ear tick);
-  pathogenesis (lymphoproliferation, Koch's Blue Bodies in lymph node aspirate smears,
-  pulmonary oedema death); treatment: Buparvaquone (2.5 mg/kg IM) + long-acting
-  oxytetracycline; ITM (Infection and Treatment Method) live vaccine protocol;
-  Trypanosomiasis (T. congolense, T. vivax, T. brucei): vector Glossina spp. (tsetse fly);
-  clinical picture (intermittent fever, progressive cachexia, 'razor-back', jugular
-  pulse); diagnosis: wet blood mount, buffy coat microhaematocrit centrifuge technique;
-  curative vs prophylactic drugs: Diminazene aceturate (Berenil) vs Isometamidium chloride;
-  tsetse fly biconical / Nzi blue fabric traps with attractant odor lures.
-
-content_md: |
-  ## The Twin Scourges of African Rangelands
-
-  Two arthropod-vectored protozoan parasites determine livestock survival across East Africa:
-  1. **East Coast Fever (ECF / Theileriosis)**: An acute, high-mortality lymphoproliferative disease of cattle caused by *Theileria parva*, transmitted by the **Brown Ear Tick (*Rhipicephalus appendiculatus*)**.
-  2. **Trypanosomiasis (Nagana)**: A chronic, wasting disease of cattle, camels, sheep, and dogs caused by *Trypanosoma* parasites, transmitted by the **Tsetse Fly (*Glossina* spp.)**.
-
-  ---
-
-  ## Part 1: East Coast Fever (ECF / Ndiga)
-
-  ### Vector & Lifecycle:
-  - Transmitted by *Rhipicephalus appendiculatus* (the brown ear tick, which prefers feeding inside and around the ears and ear folds of cattle).
-  - Ticks pick up piroplasms from an infected bovine; parasite transforms inside tick salivary glands and infects new cattle during subsequent nymphal or adult blood meals.
-
-  ### Clinical Progression (10 to 21 Days):
-  1. **Fever**: Spikes to **40.5°C – 42.0°C**.
-  2. **Massive Lymphadenopathy**: The parotid and **prescapular lymph nodes** (in front of the shoulder) swell dramatically, becoming warm, hard, and painful.
-  3. **Corneal Opacity**: Eyes develop cloudy bluish-white corneas with weeping lacrimation.
-  4. **Pulmonary Oedema (Terminal Phase)**: Parasites flood the lungs, causing acute froth accumulation in airways. The animal stands with front legs braced wide, mouth open, head extended, coughing up **white froth from the nostrils**. Death occurs from asphyxiation.
-
-  ```
-                          ECF CLINICAL TRIAD:
-      1. Prescapular lymph node swollen to size of an orange
-      2. High spiking fever (41°C+)
-      3. White frothy nasal discharge with severe respiratory distress
-  ```
-
-  ### Microscopic Diagnosis (Field Stain):
-  - Insert a 21-gauge needle into the swollen prescapular lymph node; aspirate a drop of lymph fluid.
-  - Smear on glass slide; air-dry; stain with **Diff-Quik or 10% Giemsa for 30 minutes**.
-  - Under 1,000× oil immersion: Look for **Koch's Blue Bodies** (macroschizonts inside lymphocytes—distinctive blue circular clusters containing pink chromatin dots).
-
-  ### Treatment Protocol:
-  Timing is everything: if treatment begins before severe lung edema develops, cure rates exceed 90%.
-  - **First-Line Drug: Buparvaquone (Butalex / Bupatox)**:
-    - Dose: **2.5 mg per kg body weight** (1.0 mL per 20 kg) administered strictly via **Deep Intramuscular (IM)** injection in the neck muscle.
-    - If severe: Administer a second dose 48 hours later.
-  - **Supportive Therapy**:
-    - **Long-Acting Oxytetracycline 20%**: 20 mg/kg IM (combats secondary lung infections).
-    - **Furosemide**: 1–2 mg/kg IV/IM (diuretic to drain fluid from waterlogged lungs).
-
-  ---
-
-  ## Part 2: Animal African Trypanosomiasis (Nagana)
-
-  ### Vectors & Parasites:
-  - Transmitted by blood-sucking **Tsetse flies (*Glossina* species: *G. morsitans*, *G. pallidipes*)**.
-  - Three primary livestock species:
-    - *Trypanosoma congolense*: Intravascular; stays inside bloodstream, causing severe anemia.
-    - *Trypanosoma vivax*: Extremely active; can also be transmitted mechanically by biting stable flies (*Stomoxys*).
-    - *Trypanosoma brucei*: Tissue-invading; affects horses, dogs, and camels.
-
-  ### Clinical Signs (The Slow Waster):
-  - **Intermittent Spiking Fever**: Corresponds to waves of parasite multiplication in blood.
-  - **Progressive Emaciation (Cachexia)**: Animal develops a "razor-back" spine and sunken eyes despite eating normally.
-  - **Severe Hemolytic Anaemia**: Mucous membranes turn stark chalk-white.
-  - **Visible Jugular Pulse**: Anemia causes low blood viscosity and heart strain; the jugular vein in the neck pulses prominently with each heartbeat.
-  - **Enlarged Lymph Nodes & Rough Coat**: Hair is brittle, dry, and falls out in patches.
-
-  ### Field Diagnostic Techniques:
-  1. **Wet Blood Smear**:
-     - Prick ear vein; place drop of fresh blood on slide under coverslip.
-     - Under 400× magnification: Look for energetic, wriggling, eel-like organisms thrashing red blood cells aside.
-  2. **Buffy Coat Centrifuge Technique (Gold Standard)**:
-     - Fill a micro-haematocrit capillary tube with ear vein blood; spin at 12,000 RPM for 5 minutes.
-     - Examine the thin white "Buffy Coat" layer (between red cells and clear plasma) under a microscope. Trypanosomes concentrate in this layer.
-
-  ### Chemotherapy & Prophylaxis:
-
-  | Drug | Common Brand | Role | Dosage & Administration | Notes |
-  |---|---|---|---|---|
-  | **Diminazene Aceturate** | Berenil / Norodine | **Curative** (Treats active infection) | **3.5 mg/kg body weight** (deep IM). In refractory *T. brucei*: use 7.0 mg/kg. | Rapid clearance; protects for only 2–3 weeks. |
-  | **Isometamidium Chloride** | Samorin / Trypamidium | **Prophylactic & Curative** | **0.5 to 1.0 mg/kg body weight** (deep IM). | Forms a tissue depot; protects cattle against re-infection for **3 to 4 months** in tsetse fly belts. |
-
-  *Caution on Isometamidium*: Highly irritant! Inject strictly into deep neck muscle using a clean, dry needle; accidental subcutaneous leakage causes massive sterile abscesses and tissue necrosis.
-
-  ## Non-Chemical Vector Control: Trapping
-
-  In tsetse fly zones, chemical drugs lose efficacy due to drug resistance. Traps clear flies environmentally without insecticides:
-
-  ### The Nzi & Biconical Fabric Traps:
-  - Tsetse flies hunt visually and olfactorily.
-  - **Visual Attraction**: Royal blue fabric attracts tsetse flies from long distances; black fabric stimulates landing and entry behavior.
-  - **Odor Baits**: Hang open plastic bottles containing synthetic cow breath attractants (**Acetone + 1-octen-3-ol + 4-methylphenol**) at the base of the trap.
-  - **Trap Mechanism**: Flies enter the lower blue/black chamber, fly upward toward light into a top transparent cone, and dehydrate in a plastic collection cage under the sun.
-  - Density: Deploying **4 to 5 traps per square kilometre** slashes tsetse fly populations by > 90% within 3 to 6 months!
-
+  '
+content_md: "## The Twin Scourges of African Rangelands\n\nTwo arthropod-vectored protozoan parasites\
+  \ determine livestock survival across East Africa:\n1. **East Coast Fever (ECF / Theileriosis)**: An\
+  \ acute, high-mortality lymphoproliferative disease of cattle caused by *Theileria parva*, transmitted\
+  \ by the **Brown Ear Tick (*Rhipicephalus appendiculatus*)**.\n2. **Trypanosomiasis (Nagana)**: A chronic,\
+  \ wasting disease of cattle, camels, sheep, and dogs caused by *Trypanosoma* parasites, transmitted\
+  \ by the **Tsetse Fly (*Glossina* spp.)**.\n\n---\n\n## Part 1: East Coast Fever (ECF / Ndiga)\n\n###\
+  \ Vector & Lifecycle:\n- Transmitted by *Rhipicephalus appendiculatus* (the brown ear tick, which prefers\
+  \ feeding inside and around the ears and ear folds of cattle).\n- Ticks pick up piroplasms from an infected\
+  \ bovine; parasite transforms inside tick salivary glands and infects new cattle during subsequent nymphal\
+  \ or adult blood meals.\n\n### Clinical Progression (10 to 21 Days):\n1. **Fever**: Spikes to **40.5°C\
+  \ – 42.0°C**.\n2. **Massive Lymphadenopathy**: The parotid and **prescapular lymph nodes** (in front\
+  \ of the shoulder) swell dramatically, becoming warm, hard, and painful.\n3. **Corneal Opacity**: Eyes\
+  \ develop cloudy bluish-white corneas with weeping lacrimation.\n4. **Pulmonary Oedema (Terminal Phase)**:\
+  \ Parasites flood the lungs, causing acute froth accumulation in airways. The animal stands with front\
+  \ legs braced wide, mouth open, head extended, coughing up **white froth from the nostrils**. Death\
+  \ occurs from asphyxiation.\n\n```\n                        ECF CLINICAL TRIAD:\n    1. Prescapular\
+  \ lymph node swollen to size of an orange\n    2. High spiking fever (41°C+)\n    3. White frothy nasal\
+  \ discharge with severe respiratory distress\n```\n\n### Microscopic Diagnosis (Field Stain):\n- Insert\
+  \ a 21-gauge needle into the swollen prescapular lymph node; aspirate a drop of lymph fluid.\n- Smear\
+  \ on glass slide; air-dry; stain with **Diff-Quik or 10% Giemsa for 30 minutes**.\n- Under 1,000× oil\
+  \ immersion: Look for **Koch's Blue Bodies** (macroschizonts inside lymphocytes—distinctive blue circular\
+  \ clusters containing pink chromatin dots).\n\n### Treatment Protocol:\nTiming is everything: if treatment\
+  \ begins before severe lung edema develops, cure rates exceed 90%.\n- **First-Line Drug: Buparvaquone\
+  \ (Butalex / Bupatox)**:\n  - Dose: **2.5 mg per kg body weight** (1.0 mL per 20 kg) administered strictly\
+  \ via **Deep Intramuscular (IM)** injection in the neck muscle.\n  - If severe: Administer a second\
+  \ dose 48 hours later.\n- **Supportive Therapy**:\n  - **Long-Acting Oxytetracycline 20%**: 20 mg/kg\
+  \ IM (combats secondary lung infections).\n  - **Furosemide**: 1–2 mg/kg IV/IM (diuretic to drain fluid\
+  \ from waterlogged lungs).\n\n---\n\n## Part 2: Animal African Trypanosomiasis (Nagana)\n\n### Vectors\
+  \ & Parasites:\n- Transmitted by blood-sucking **Tsetse flies (*Glossina* species: *G. morsitans*, *G.\
+  \ pallidipes*)**.\n- Three primary livestock species:\n  - *Trypanosoma congolense*: Intravascular;\
+  \ stays inside bloodstream, causing severe anemia.\n  - *Trypanosoma vivax*: Extremely active; can also\
+  \ be transmitted mechanically by biting stable flies (*Stomoxys*).\n  - *Trypanosoma brucei*: Tissue-invading;\
+  \ affects horses, dogs, and camels.\n\n### Clinical Signs (The Slow Waster):\n- **Intermittent Spiking\
+  \ Fever**: Corresponds to waves of parasite multiplication in blood.\n- **Progressive Emaciation (Cachexia)**:\
+  \ Animal develops a \"razor-back\" spine and sunken eyes despite eating normally.\n- **Severe Hemolytic\
+  \ Anaemia**: Mucous membranes turn stark chalk-white.\n- **Visible Jugular Pulse**: Anemia causes low\
+  \ blood viscosity and heart strain; the jugular vein in the neck pulses prominently with each heartbeat.\n\
+  - **Enlarged Lymph Nodes & Rough Coat**: Hair is brittle, dry, and falls out in patches.\n\n### Field\
+  \ Diagnostic Techniques:\n1. **Wet Blood Smear**:\n   - Prick ear vein; place drop of fresh blood on\
+  \ slide under coverslip.\n   - Under 400× magnification: Look for energetic, wriggling, eel-like organisms\
+  \ thrashing red blood cells aside.\n2. **Buffy Coat Centrifuge Technique (Gold Standard)**:\n   - Fill\
+  \ a micro-haematocrit capillary tube with ear vein blood; spin at 12,000 RPM for 5 minutes.\n   - Examine\
+  \ the thin white \"Buffy Coat\" layer (between red cells and clear plasma) under a microscope. Trypanosomes\
+  \ concentrate in this layer.\n\n### Chemotherapy & Prophylaxis:\n\n| Drug | Common Brand | Role | Dosage\
+  \ & Administration | Notes |\n|---|---|---|---|---|\n| **Diminazene Aceturate** | Berenil / Norodine\
+  \ | **Curative** (Treats active infection) | **3.5 mg/kg body weight** (deep IM). In refractory *T.\
+  \ brucei*: use 7.0 mg/kg. | Rapid clearance; protects for only 2–3 weeks. |\n| **Isometamidium Chloride**\
+  \ | Samorin / Trypamidium | **Prophylactic & Curative** | **0.5 to 1.0 mg/kg body weight** (deep IM).\
+  \ | Forms a tissue depot; protects cattle against re-infection for **3 to 4 months** in tsetse fly belts.\
+  \ |\n\n*Caution on Isometamidium*: Highly irritant! Inject strictly into deep neck muscle using a clean,\
+  \ dry needle; accidental subcutaneous leakage causes massive sterile abscesses and tissue necrosis.\n\
+  \n## Non-Chemical Vector Control: Trapping\n\nIn tsetse fly zones, chemical drugs lose efficacy due\
+  \ to drug resistance. Traps clear flies environmentally without insecticides:\n\n### The Nzi & Biconical\
+  \ Fabric Traps:\n- Tsetse flies hunt visually and olfactorily.\n- **Visual Attraction**: Royal blue\
+  \ fabric attracts tsetse flies from long distances; black fabric stimulates landing and entry behavior.\n\
+  - **Odor Baits**: Hang open plastic bottles containing synthetic cow breath attractants (**Acetone +\
+  \ 1-octen-3-ol + 4-methylphenol**) at the base of the trap.\n- **Trap Mechanism**: Flies enter the lower\
+  \ blue/black chamber, fly upward toward light into a top transparent cone, and dehydrate in a plastic\
+  \ collection cage under the sun.\n- Density: Deploying **4 to 5 traps per square kilometre** slashes\
+  \ tsetse fly populations by > 90% within 3 to 6 months!\n"
 exercises:
-  - id: vet-d2-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A dairy heifer in an area endemic with brown ear ticks develops an acute 41.5°C fever,
-      swollen prescapular lymph nodes, and cloudy white eyes. A lymph aspirate reveals
-      Koch's blue bodies inside lymphocytes. What is the specific life-saving chemotherapeutic drug?
-    xp_reward: 50
-    options:
-      - text: "Buparvaquone (2.5 mg/kg deep intramuscularly)"
-        correct: true
-        explanation: "Buparvaquone is the specific antiprotozoal drug that kills Theileria parva schizonts and piroplasms. Administered at 2.5 mg/kg IM, it stops the disease if given before irreversible pulmonary edema sets in."
-      - text: "Diminazene aceturate (Berenil)"
-        correct: false
-        explanation: "Diminazene treats Trypanosomiasis and Babesiosis; it has zero efficacy against Theileria parva (ECF)."
-      - text: "Penicillin G"
-        correct: false
-        explanation: "Penicillin is an antibacterial that does not kill protozoan parasites."
-      - text: "Ivermectin injection"
-        correct: false
-        explanation: "Ivermectin treats external parasites and nematodes, not hemoprotozoa."
+- id: vet-d2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A dairy heifer in an area endemic with brown ear ticks develops an acute 41.5°C fever, swollen
+    prescapular lymph nodes, and cloudy white eyes. A lymph aspirate reveals Koch''s blue bodies inside
+    lymphocytes. What is the specific life-saving chemotherapeutic drug?
 
-  - id: vet-d2-q2
-    type: FILL_BLANK
-    prompt: >
-      The brown ear tick that transmits East Coast Fever (*Theileria parva*) in East Africa
-      is scientifically named ___ appendiculatus, while the tsetse fly vector that transmits
-      Trypanosomiasis belongs to the genus ___.
-    xp_reward: 50
-    correct_answer: "Rhipicephalus; Glossina"
-    explanation: >
-      Rhipicephalus appendiculatus vectors ECF; Glossina species (morsitans, pallidipes)
-      vector Trypanosomiasis (Nagana).
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Buparvaquone (2.5 mg/kg deep intramuscularly)
+  - id: b
+    text: Diminazene aceturate (Berenil)
+  - id: c
+    text: Penicillin G
+  - id: d
+    text: Ivermectin injection
+  explanation: 'Buparvaquone is the specific antiprotozoal drug that kills Theileria parva schizonts and
+    piroplasms. Administered at 2.5 mg/kg IM, it stops the disease if given before irreversible pulmonary
+    edema sets in.
 
-  - id: vet-d2-q3
-    type: MATCH_PAIRS
-    prompt: Match each veterinary drug to its specific clinical application.
-    xp_reward: 50
-    pairs:
-      - left: Buparvaquone
-        right: First-line curative antiprotozoal against East Coast Fever (Theileriosis)
-      - left: Diminazene Aceturate (Berenil)
-        right: Fast-acting curative therapeutic injection against active Trypanosomiasis
-      - left: Isometamidium Chloride (Samorin)
-        right: Depot prophylactic injection protecting cattle against tsetse for 3-4 months
-      - left: Long-Acting Oxytetracycline 20%
-        right: Broad-spectrum antibiotic controlling secondary bacterial lung infections
-    correct_answer: null
-    explanation: >
-      Buparvaquone cures ECF; Berenil cures active Tryps; Samorin prevents Tryps for months;
-      oxytetracycline treats secondary respiratory bacteria.
 
-  - id: vet-d2-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why are Nzi and biconical tsetse fly traps constructed specifically from royal
-      blue and black fabrics?
-    xp_reward: 50
-    options:
-      - text: "Tsetse flies possess specialized photoreceptors attracted from long distances to royal blue wavelengths, while matte black stimulates landing and upward entry into the collection cage"
-        correct: true
-        explanation: "Extensive behavioral research confirms that tsetse flies are visually lured by royal blue (which mimics large host silhouettes) and instinctively land on black surfaces before flying up into transparent light traps."
-      - text: "Blue fabric absorbs heat, warming the trap to 37°C"
-        correct: false
-        explanation: "Tsetse flies are attracted visually, not by heat generated by fabric."
-      - text: "Because blue fabric repels mosquitoes"
-        correct: false
-        explanation: "The purpose is specifically attracting and killing tsetse flies."
-      - text: "To make the traps easy for pastoralists to find in the bush"
-        correct: false
-        explanation: "The color is chosen strictly for insect optical physiology."
+    Why the other options are wrong: Diminazene treats Trypanosomiasis and Babesiosis; it has zero efficacy
+    against Theileria parva (ECF). Penicillin is an antibacterial that does not kill protozoan parasites.
+    Ivermectin treats external parasites and nematodes, not hemoprotozoa.'
+  correct_answer: a
+- id: vet-d2-q2
+  type: FILL_BLANK
+  prompt: 'The brown ear tick that transmits East Coast Fever (*Theileria parva*) in East Africa is scientifically
+    named ___ appendiculatus, while the tsetse fly vector that transmits Trypanosomiasis belongs to the
+    genus ___.
 
-  - id: vet-d2-q5
-    type: FILL_BLANK
-    prompt: >
-      In a pastoral cow with chronic Trypanosomiasis (Nagana), the hallmark physical
-      indicators include progressive emaciation with a 'razor-back' spine, chalk-white
-      mucous membranes, and a visible pulsing of the ___ vein in the lower neck.
-    xp_reward: 50
-    correct_answer: "jugular"
-    explanation: >
-      Severe hemolytic anemia thins the blood, causing turbulent venous regurgitation
-      that produces a visible bounding jugular pulse in the neck furrow.
+    '
+  xp_reward: 50
+  correct_answer:
+  - Rhipicephalus
+  - Glossina
+  explanation: 'Rhipicephalus appendiculatus vectors ECF; Glossina species (morsitans, pallidipes) vector
+    Trypanosomiasis (Nagana).
+
+    '
+- id: vet-d2-q3
+  type: MATCH_PAIRS
+  prompt: Match each veterinary drug to its specific clinical application.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Buparvaquone
+    right:
+      id: r-1f4eb5
+      text: First-line curative antiprotozoal against East Coast Fever (Theileriosis)
+  - left:
+      id: l2
+      text: Diminazene Aceturate (Berenil)
+    right:
+      id: r-377c34
+      text: Fast-acting curative therapeutic injection against active Trypanosomiasis
+  - left:
+      id: l3
+      text: Isometamidium Chloride (Samorin)
+    right:
+      id: r-3898d2
+      text: Depot prophylactic injection protecting cattle against tsetse for 3-4 months
+  - left:
+      id: l4
+      text: Long-Acting Oxytetracycline 20%
+    right:
+      id: r-50af54
+      text: Broad-spectrum antibiotic controlling secondary bacterial lung infections
+  correct_answer:
+  - l1=r-1f4eb5
+  - l2=r-377c34
+  - l3=r-3898d2
+  - l4=r-50af54
+  explanation: 'Buparvaquone cures ECF; Berenil cures active Tryps; Samorin prevents Tryps for months;
+    oxytetracycline treats secondary respiratory bacteria.
+
+    '
+- id: vet-d2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why are Nzi and biconical tsetse fly traps constructed specifically from royal blue and black
+    fabrics?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Tsetse flies possess specialized photoreceptors attracted from long distances to royal blue
+      wavelengths, while matte black stimulates landing and upward entry into the collection cage
+  - id: b
+    text: Blue fabric absorbs heat, warming the trap to 37°C
+  - id: c
+    text: Because blue fabric repels mosquitoes
+  - id: d
+    text: To make the traps easy for pastoralists to find in the bush
+  explanation: 'Extensive behavioral research confirms that tsetse flies are visually lured by royal blue
+    (which mimics large host silhouettes) and instinctively land on black surfaces before flying up into
+    transparent light traps.
+
+
+    Why the other options are wrong: Tsetse flies are attracted visually, not by heat generated by fabric.
+    The purpose is specifically attracting and killing tsetse flies. The color is chosen strictly for
+    insect optical physiology.'
+  correct_answer: a
+- id: vet-d2-q5
+  type: FILL_BLANK
+  prompt: 'In a pastoral cow with chronic Trypanosomiasis (Nagana), the hallmark physical indicators include
+    progressive emaciation with a ''razor-back'' spine, chalk-white mucous membranes, and a visible pulsing
+    of the ___ vein in the lower neck.
+
+    '
+  xp_reward: 50
+  correct_answer: jugular
+  explanation: 'Severe hemolytic anemia thins the blood, causing turbulent venous regurgitation that produces
+    a visible bounding jugular pulse in the neck furrow.
+
+    '

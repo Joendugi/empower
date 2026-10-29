@@ -110,3 +110,77 @@ exercises:
       - "Crack location/material and repair limits are explained"
       - "Final pressure and contamination checks are stated"
     min_seconds: 20
+content_md: |
+  ## Lost coolant isn't proof of a cracked block
+
+  Coolant can leave an engine in many ways, and a cracked block is one of the least common. Condemning a block without evidence can cost the customer a whole engine. Your job is to **prove** where the coolant goes, **classify** the damage, and then **recommend repair or replacement** with a written quote.
+
+  > **Safety first:** never open the cap of a hot, pressurised cooling system. Coolant above 100 °C turns to steam the moment the pressure is released. Work cold.
+
+  ## Step 1 — Record the symptoms
+
+  | Symptom | What it may point to |
+  |---|---|
+  | External drip or white crust | Hose, water pump seal, radiator, core plug, heater valve, external crack |
+  | Milky "mayonnaise" under the oil cap or on the dipstick | Coolant in oil: head gasket, oil cooler, cracked head or block |
+  | Oil film in the expansion tank | Oil in coolant: oil cooler, head gasket |
+  | White, sweet-smelling exhaust smoke | Coolant burning in a cylinder |
+  | Bubbles in the expansion tank, hoses rock-hard soon after start | Combustion gas entering the cooling system |
+  | Overheating, low compression on one or two cylinders | Head gasket, warped head, crack into a cylinder |
+
+  ## Step 2 — Rule out the common causes first
+
+  Check hoses and clamps, the water pump weep hole, the radiator and its cap, the heater core (damp carpet, misted windscreen), **core (frost) plugs**, and the thermostat housing. Many "cracked blocks" turn out to be a rusted core plug.
+
+  ## Step 3 — Test, don't guess
+
+  | Test | How | What it tells you |
+  |---|---|---|
+  | **Cooling-system pressure test** | Pump to the **cap's rated pressure** (commonly about 1 bar / 15 psi — read the cap). Never go above it. Watch the gauge for 10–15 min. | A pressure drop with no external leak means the coolant is going inside the engine |
+  | **Cap test** | Test the cap on the tester adaptor | A weak cap lets coolant boil off and looks like a leak |
+  | **UV dye** (if allowed) | Add dye, run, inspect with a UV lamp | Pinpoints small external leaks |
+  | **Combustion-leak (block) test** | Test fluid in a chamber over the filler neck draws in air from the coolant. Blue fluid changes colour (often to yellow) if exhaust gas is present. | Combustion gas in the coolant: head gasket, head or block |
+  | **Compression test** | All plugs out, throttle open, crank for a set number of strokes per cylinder | Low cylinders, or two neighbouring low cylinders (gasket between them) |
+  | **Leak-down test** | Pressurise a cylinder at top dead centre and listen | Air at the intake = inlet valve; at the exhaust = exhaust valve; at the oil filler = rings; **bubbles in the coolant = gasket, head or block** |
+
+  ## Step 4 — Inspect the stripped engine
+
+  - Check the **deck and head flatness** with a straight-edge and feeler gauges against the limit.
+  - **Dye penetrant** finds surface cracks on clean, non-porous metal: clean, apply dye, dwell, wipe, apply developer, then look for red lines.
+  - **Magnetic-particle inspection** works only on **ferrous** metal like cast iron. It doesn't work on aluminium.
+  - A **machine shop** can pressure-test the bare block in hot water, and measure the bores and deck accurately.
+
+  ## Step 5 — Classify and decide
+
+  | Crack location / condition | Usual decision |
+  |---|---|
+  | External water-jacket wall, cast iron, away from bores and bearing webs | Repairable: **cold metal stitching** by a specialist |
+  | Small crack, aluminium block, accessible | Possible **specialist TIG repair** after cleaning out contamination and planning for distortion |
+  | Through a **main-bearing web**, into a **cylinder bore**, or multiple freeze cracks | **Replace** with a new or remanufactured block or short engine |
+  | Badly distorted deck beyond the machining limit | Replace |
+
+  **Cold metal stitching (cast iron):** stop-holes are drilled at each end of the crack so it can't spread. Overlapping threaded pins and shaped **locks** are fitted across the crack, then peened, sealed, pressure-tested and machined flush.
+
+  **Hot welding cast iron** needs the engine fully stripped, controlled **preheat** of the whole casting, **nickel** filler rod, short runs, and very **slow cooling**, then machining. A quick cold bead on cast iron cools unevenly. That forms hard, brittle zones, and a new crack usually opens right beside the weld.
+
+  ## About "stop-leak"
+
+  Chemical stop-leak isn't a structural repair. It can block radiator tubes and the heater core. At most it's a temporary get-you-home measure, used only if the product and manufacturer allow it and the customer understands its limits in writing.
+
+  ## Step 6 — Prove the repair
+
+  - Pressure test **cold**, then again **hot** after a run.
+  - Check that oil and coolant are separate: no milky oil, no oil in the tank.
+  - Compression test, cooling fan switching on, no bubbles in the tank.
+  - Torque records for the head bolts (many are torque-to-yield and single use).
+  - Road test while monitoring temperature. Recheck the coolant level cold.
+
+  ## Writing the quote
+
+  Compare **repair** (stitching or welding, machining, gaskets, fluids, labour, time off the road, warranty offered) against **replacement** (block or engine, fitting, warranty). Let the customer choose with the facts in front of them, and record the decision.
+
+  ## Check yourself
+
+  - Which three tests would you use to show that combustion gas is getting into the coolant?
+  - Why should you never pressure-test above the cap rating?
+  - Name two crack locations that normally mean replacement.

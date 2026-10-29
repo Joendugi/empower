@@ -1,195 +1,200 @@
 id: civil-security-defense-day-1
 course_id: civil-security-defense
-title: "CPTED & Defensible Space Architecture"
-title_sw: "Muundo wa Mazingira Yanayozuia Uhalifu (CPTED)"
+title: CPTED & Defensible Space Architecture
+title_sw: Muundo wa Mazingira Yanayozuia Uhalifu (CPTED)
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - security
-  - cpted
-  - defensible-space
-  - civil-defense
-  - planning
-  - resilience
+- security
+- cpted
+- defensible-space
+- civil-defense
+- planning
+- resilience
 xp: 250
 exam_domain: civil-security-defense
+briefing: 'Physical security is not merely about steel gates and barbed wire; true security begins with
+  landscape architecture and spatial planning. Crime Prevention Through Environmental Design (CPTED) uses
+  natural surveillance, territorial reinforcement, and access control to deter intruders before they reach
+  a compound. By structuring concentric rings of defense, eliminating blind corners, and enforcing clear
+  sightlines, a small off-grid settlement can deter opportunists and coordinated attackers with minimal
+  manpower.
 
-briefing: >
-  Physical security is not merely about steel gates and barbed wire; true security
-  begins with landscape architecture and spatial planning. Crime Prevention Through
-  Environmental Design (CPTED) uses natural surveillance, territorial reinforcement,
-  and access control to deter intruders before they reach a compound. By structuring
-  concentric rings of defense, eliminating blind corners, and enforcing clear sightlines,
-  a small off-grid settlement can deter opportunists and coordinated attackers with
-  minimal manpower.
+  '
+outline: 'The four core pillars of CPTED (Natural Surveillance, Territorial Reinforcement, Natural Access
+  Control, Maintenance/Management); concentric rings of defense (Zone 1: Far perimeter, Zone 2: Inner
+  compound, Zone 3: Building shell, Zone 4: Hardened interior); sightline principles (the 2-metre/0.5-metre
+  landscape rule); transition zones from public to semi-private to private; lighting geometry (glare avoidance,
+  overlapping solar floodlights); eliminating concealment terrain and blind corners; community layout
+  geometry (clustered homesteads vs isolated dwellings).
 
-outline: >
-  The four core pillars of CPTED (Natural Surveillance, Territorial Reinforcement,
-  Natural Access Control, Maintenance/Management); concentric rings of defense
-  (Zone 1: Far perimeter, Zone 2: Inner compound, Zone 3: Building shell, Zone 4:
-  Hardened interior); sightline principles (the 2-metre/0.5-metre landscape rule);
-  transition zones from public to semi-private to private; lighting geometry
-  (glare avoidance, overlapping solar floodlights); eliminating concealment terrain
-  and blind corners; community layout geometry (clustered homesteads vs isolated
-  dwellings).
-
-content_md: |
-  ## The Four Core Pillars of CPTED
-
-  Crime Prevention Through Environmental Design (CPTED) is the science of designing
-  the built environment to make unauthorized entry psychologically and physically
-  difficult while maximizing natural detection:
-
-  | CPTED Principle | Tactical Mechanism | Practical Village Application |
-  |---|---|---|
-  | **1. Natural Surveillance** | Keep intruders visible at all times from normal living areas | Orienting kitchen and common-room windows directly toward entry paths and livestock bomas |
-  | **2. Territorial Reinforcement** | Clear visual boundaries declaring ownership and control | Low stone curbs, painted boundary markers, neat hedges, and prominent signage |
-  | **3. Natural Access Control** | Channel movement through a single controlled bottleneck | Dense thorny plantings, drainage swales, and single gated pedestrian pathways |
-  | **4. Maintenance & Order** | The 'Broken Windows' principle; signals active vigilance | Clearing brush, repairing damaged fences immediately, painting perimeter gates |
-
-  ## The 4 Concentric Rings of Defense
-
-  Effective security relies on **Defense in Depth**: overlapping layers of detection,
-  delay, and response. An intruder must breach multiple boundaries before reaching people or critical assets.
-
-  ```
-  [ Zone 1: Far Perimeter (Early Detection: 100m - 300m) ]
-     │
-     └── [ Zone 2: Inner Compound & Berm (Delay & Identification: 30m - 100m) ]
-            │
-            └── [ Zone 3: Building Exterior Shell (Hardened Barriers: 0m - 10m) ]
-                   │
-                   └── [ Zone 4: Safe Room / Hardened Strongpoint (Last Stand) ]
-  ```
-
-  ### Zone 1: The Outer Buffer (Early Detection):
-  - Grazing paddocks, agricultural fields, open clear-cut zones.
-  - Objective: Strip away concealment; force an approach across open terrain.
-  - Early warning: Acoustic gravel paths, tripwires, herd animal alarms (geese, donkeys, dogs).
-
-  ### Zone 2: The Inner Perimeter (Delay & Containment):
-  - Physical boundary fence, ditch-and-berm, or living thorn hedgerow.
-  - Objective: Delay breach by minimum **3 to 5 minutes**, giving defenders time to arm and assemble.
-
-  ### Zone 3: Building Shell (Structural Hardening):
-  - Solid core timber or sheet-steel doors, outward-opening frames with 3-inch anchor bolts, window bars welded inside masonry reveals.
-  - Objective: Prevent immediate breeching during dynamic entry.
-
-  ### Zone 4: The Safe Core:
-  - Reinforced interior room, ballistic shielding, emergency water, medical trauma kit, and two-way VHF radio transmitter.
-
-  ## Sightline Engineering & The 2m / 0.5m Landscape Rule
-
-  Vegetation should never provide human-sized concealment for an ambush.
-
-  ### The 2-Metre / 0.5-Metre Rule:
-  - **Prune tree branches up to 2.0 metres** above ground level (creates an unobstructed horizontal line of sight beneath the canopy).
-  - **Trim ground shrubs and hedges below 0.5 metres (knee height)** along all pathways and building perimeters.
-  - The clear vertical gap between **0.5 m and 2.0 m** ensures that any standing or crouching human is instantly visible from windows and watchtowers up to 100 metres away.
-
-  ## Lighting Architecture: Illumination without Glare
-
-  Night security lighting must be designed tactically:
-  - **Do NOT mount bright unshielded lights on building walls**:
-    Glare blinds the defender looking out through windows, creating a deep shadow corridor right outside the door where an intruder can hide unseen.
-  - **Mount floodlights pointing OUTWARD away from buildings**:
-    Project light from the inner compound perimeter directed outward across the clear-cut buffer zone.
-  - **The Silhouette Effect**: An intruder crossing from darkness into the illuminated buffer is exposed in stark silhouette against the lit background, while defenders inside the unlit buildings remain invisible in pitch darkness.
-  - **Solar DC Integration**: Power security lights with isolated 12V LiFePO4 batteries charged by dedicated solar panels so grid/generator power cuts do not blackout the perimeter.
-
-  ## Settlement Layout: Clustered Defense Geometry
-
-  Isolated homesteads scattered across a landscape are easy targets for raiding bands
-  because they cannot support one another in time:
-  - **The Clustered Radial Compound (Boma Architecture)**:
-    - Group 5 to 10 family dwellings in a central circular or oval cluster.
-    - Outer walls of living quarters and storehouses form a continuous defensive perimeter facing outward.
-    - Livestock pens, water wells, and children's play areas sit in the protected central courtyard.
-    - All entry paths converge into a single defended gate.
-    - Mutual visual coverage: A breach at any quadrant is immediately visible to neighbours on the opposite side of the circle.
-
+  '
+content_md: "## The Four Core Pillars of CPTED\n\nCrime Prevention Through Environmental Design (CPTED)\
+  \ is the science of designing\nthe built environment to make unauthorized entry psychologically and\
+  \ physically\ndifficult while maximizing natural detection:\n\n| CPTED Principle | Tactical Mechanism\
+  \ | Practical Village Application |\n|---|---|---|\n| **1. Natural Surveillance** | Keep intruders visible\
+  \ at all times from normal living areas | Orienting kitchen and common-room windows directly toward\
+  \ entry paths and livestock bomas |\n| **2. Territorial Reinforcement** | Clear visual boundaries declaring\
+  \ ownership and control | Low stone curbs, painted boundary markers, neat hedges, and prominent signage\
+  \ |\n| **3. Natural Access Control** | Channel movement through a single controlled bottleneck | Dense\
+  \ thorny plantings, drainage swales, and single gated pedestrian pathways |\n| **4. Maintenance & Order**\
+  \ | The 'Broken Windows' principle; signals active vigilance | Clearing brush, repairing damaged fences\
+  \ immediately, painting perimeter gates |\n\n## The 4 Concentric Rings of Defense\n\nEffective security\
+  \ relies on **Defense in Depth**: overlapping layers of detection,\ndelay, and response. An intruder\
+  \ must breach multiple boundaries before reaching people or critical assets.\n\n```\n[ Zone 1: Far Perimeter\
+  \ (Early Detection: 100m - 300m) ]\n   │\n   └── [ Zone 2: Inner Compound & Berm (Delay & Identification:\
+  \ 30m - 100m) ]\n          │\n          └── [ Zone 3: Building Exterior Shell (Hardened Barriers: 0m\
+  \ - 10m) ]\n                 │\n                 └── [ Zone 4: Safe Room / Hardened Strongpoint (Last\
+  \ Stand) ]\n```\n\n### Zone 1: The Outer Buffer (Early Detection):\n- Grazing paddocks, agricultural\
+  \ fields, open clear-cut zones.\n- Objective: Strip away concealment; force an approach across open\
+  \ terrain.\n- Early warning: Acoustic gravel paths, tripwires, herd animal alarms (geese, donkeys, dogs).\n\
+  \n### Zone 2: The Inner Perimeter (Delay & Containment):\n- Physical boundary fence, ditch-and-berm,\
+  \ or living thorn hedgerow.\n- Objective: Delay breach by minimum **3 to 5 minutes**, giving defenders\
+  \ time to arm and assemble.\n\n### Zone 3: Building Shell (Structural Hardening):\n- Solid core timber\
+  \ or sheet-steel doors, outward-opening frames with 3-inch anchor bolts, window bars welded inside masonry\
+  \ reveals.\n- Objective: Prevent immediate breeching during dynamic entry.\n\n### Zone 4: The Safe Core:\n\
+  - Reinforced interior room, ballistic shielding, emergency water, medical trauma kit, and two-way VHF\
+  \ radio transmitter.\n\n## Sightline Engineering & The 2m / 0.5m Landscape Rule\n\nVegetation should\
+  \ never provide human-sized concealment for an ambush.\n\n### The 2-Metre / 0.5-Metre Rule:\n- **Prune\
+  \ tree branches up to 2.0 metres** above ground level (creates an unobstructed horizontal line of sight\
+  \ beneath the canopy).\n- **Trim ground shrubs and hedges below 0.5 metres (knee height)** along all\
+  \ pathways and building perimeters.\n- The clear vertical gap between **0.5 m and 2.0 m** ensures that\
+  \ any standing or crouching human is instantly visible from windows and watchtowers up to 100 metres\
+  \ away.\n\n## Lighting Architecture: Illumination without Glare\n\nNight security lighting must be designed\
+  \ tactically:\n- **Do NOT mount bright unshielded lights on building walls**:\n  Glare blinds the defender\
+  \ looking out through windows, creating a deep shadow corridor right outside the door where an intruder\
+  \ can hide unseen.\n- **Mount floodlights pointing OUTWARD away from buildings**:\n  Project light from\
+  \ the inner compound perimeter directed outward across the clear-cut buffer zone.\n- **The Silhouette\
+  \ Effect**: An intruder crossing from darkness into the illuminated buffer is exposed in stark silhouette\
+  \ against the lit background, while defenders inside the unlit buildings remain invisible in pitch darkness.\n\
+  - **Solar DC Integration**: Power security lights with isolated 12V LiFePO4 batteries charged by dedicated\
+  \ solar panels so grid/generator power cuts do not blackout the perimeter.\n\n## Settlement Layout:\
+  \ Clustered Defense Geometry\n\nIsolated homesteads scattered across a landscape are easy targets for\
+  \ raiding bands\nbecause they cannot support one another in time:\n- **The Clustered Radial Compound\
+  \ (Boma Architecture)**:\n  - Group 5 to 10 family dwellings in a central circular or oval cluster.\n\
+  \  - Outer walls of living quarters and storehouses form a continuous defensive perimeter facing outward.\n\
+  \  - Livestock pens, water wells, and children's play areas sit in the protected central courtyard.\n\
+  \  - All entry paths converge into a single defended gate.\n  - Mutual visual coverage: A breach at\
+  \ any quadrant is immediately visible to neighbours on the opposite side of the circle.\n"
 exercises:
-  - id: sec-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      According to CPTED landscaping principles, how should perimeter vegetation
-      and trees be pruned along security approach pathways?
-    xp_reward: 50
-    options:
-      - text: "Ground shrubs kept below 0.5 m (knee height) and tree canopies pruned up to 2.0 m above ground, maintaining a clear open sightline between 0.5 m and 2.0 m"
-        correct: true
-        explanation: "The 2-metre/0.5-metre rule eliminates concealment zones for crouching or standing humans while preserving canopy shade and low ground cover."
-      - text: "Shrubs grown to 2.5 m height to block the view of the compound from outside"
-        correct: false
-        explanation: "Dense high shrubs create ambush concealment right beside the pathway."
-      - text: "All trees cut down completely within 5 kilometres of the compound"
-        correct: false
-        explanation: "Clearing 5 km is environmentally destructive and unnecessary; controlled pruning provides excellent visibility."
-      - text: "Hedges kept exactly at eye level (1.5 m)"
-        correct: false
-        explanation: "Eye-level hedges blind defenders looking out from windows while providing cover for intruders."
+- id: sec-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'According to CPTED landscaping principles, how should perimeter vegetation and trees be pruned
+    along security approach pathways?
 
-  - id: sec-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      The four concentric rings of physical defense in depth, starting from the outermost
-      boundary and moving inward, are: Zone 1 (Outer Buffer), Zone 2 (Inner Compound & Fence),
-      Zone 3 (Building ___), and Zone 4 (The ___ Room).
-    xp_reward: 50
-    correct_answer: "Shell; Safe"
-    explanation: >
-      Defense in depth moves from outer detection (Buffer) through delay (Compound Fence),
-      barrier resistance (Building Shell), into the hardened last-resort Strongpoint (Safe Room).
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Shrubs grown to 2.5 m height to block the view of the compound from outside
+  - id: b
+    text: All trees cut down completely within 5 kilometres of the compound
+  - id: c
+    text: Ground shrubs kept below 0.5 m (knee height) and tree canopies pruned up to 2.0 m above ground,
+      maintaining a clear open sightline between 0.5 m and 2.0 m
+  - id: d
+    text: Hedges kept exactly at eye level (1.5 m)
+  explanation: 'The 2-metre/0.5-metre rule eliminates concealment zones for crouching or standing humans
+    while preserving canopy shade and low ground cover.
 
-  - id: sec-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each CPTED core pillar to its corresponding physical execution.
-    xp_reward: 50
-    pairs:
-      - left: Natural Surveillance
-        right: Orienting primary living room windows toward livestock bomas and gates
-      - left: Territorial Reinforcement
-        right: Distinct stone curbs, clear boundary fences, and prominent perimeter signs
-      - left: Natural Access Control
-        right: Thorny perimeter hedges channelling visitors onto a single gravel pathway
-      - left: Maintenance & Vigilance
-        right: Immediate repair of damaged fence wire and clearing brush to show active custody
-    correct_answer: null
-    explanation: >
-      Surveillance provides visibility; territoriality shows ownership; access control
-      channels movement; maintenance signals that the compound is actively defended.
 
-  - id: sec-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why is it tactically counterproductive to mount unshielded, high-intensity
-      floodlights directly above the front door of a defensive building?
-    xp_reward: 50
-    options:
-      - text: "The bright glare blinds defenders looking out through windows into the dark yard, while casting deep protective shadows immediately adjacent to the building where intruders can hide"
-        correct: true
-        explanation: "Light shining directly into the eyes of defenders ruins their night vision and creates visual glare. Tactical lighting should point outward from the perimeter into the clear buffer zone, keeping defenders in darkness while silhouetting intruders."
-      - text: "Floodlights consume too much diesel fuel"
-        correct: false
-        explanation: "Modern LED floodlights use minimal power (10-30W); the problem is tactical optical glare."
-      - text: "Insects attracted to the light will short-circuit the electrical panel"
-        correct: false
-        explanation: "Insects are an annoyance, but the primary failure mode is tactical blindness of the occupants."
-      - text: "Floodlights attract lightning strikes"
-        correct: false
-        explanation: "Wall-mounted lights do not attract lightning any more than other metal fittings."
+    Why the other options are wrong: Dense high shrubs create ambush concealment right beside the pathway.
+    Clearing 5 km is environmentally destructive and unnecessary; controlled pruning provides excellent
+    visibility. Eye-level hedges blind defenders looking out from windows while providing cover for intruders.'
+  correct_answer: c
+- id: sec-d1-q2
+  type: FILL_BLANK
+  prompt: 'The four concentric rings of physical defense in depth, starting from the outermost boundary
+    and moving inward, are: Zone 1 (Outer Buffer), Zone 2 (Inner Compound & Fence), Zone 3 (Building ___),
+    and Zone 4 (The ___ Room).
 
-  - id: sec-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      In defensible settlement geometry, grouping homesteads in a clustered circular
-      boma layout is superior to scattered dwellings because dwellings provide mutual
-      ___ of one another's perimeters and internal livestock can be protected inside
-      a central common ___.
-    xp_reward: 50
-    correct_answer: "surveillance; courtyard"
-    explanation: >
-      Clustered circular compounds eliminate isolated blind spots, provide overlapping
-      fields of view, and protect vital assets (cattle, water cisterns) within an enclosed central courtyard.
+    '
+  xp_reward: 50
+  correct_answer:
+  - Shell
+  - Safe
+  explanation: 'Defense in depth moves from outer detection (Buffer) through delay (Compound Fence), barrier
+    resistance (Building Shell), into the hardened last-resort Strongpoint (Safe Room).
+
+    '
+- id: sec-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each CPTED core pillar to its corresponding physical execution.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Natural Surveillance
+    right:
+      id: r-d6abf5
+      text: Orienting primary living room windows toward livestock bomas and gates
+  - left:
+      id: l2
+      text: Territorial Reinforcement
+    right:
+      id: r-610152
+      text: Distinct stone curbs, clear boundary fences, and prominent perimeter signs
+  - left:
+      id: l3
+      text: Natural Access Control
+    right:
+      id: r-92414d
+      text: Thorny perimeter hedges channelling visitors onto a single gravel pathway
+  - left:
+      id: l4
+      text: Maintenance & Vigilance
+    right:
+      id: r-520899
+      text: Immediate repair of damaged fence wire and clearing brush to show active custody
+  correct_answer:
+  - l1=r-d6abf5
+  - l2=r-610152
+  - l3=r-92414d
+  - l4=r-520899
+  explanation: 'Surveillance provides visibility; territoriality shows ownership; access control channels
+    movement; maintenance signals that the compound is actively defended.
+
+    '
+- id: sec-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is it tactically counterproductive to mount unshielded, high-intensity floodlights directly
+    above the front door of a defensive building?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Floodlights consume too much diesel fuel
+  - id: b
+    text: Insects attracted to the light will short-circuit the electrical panel
+  - id: c
+    text: The bright glare blinds defenders looking out through windows into the dark yard, while casting
+      deep protective shadows immediately adjacent to the building where intruders can hide
+  - id: d
+    text: Floodlights attract lightning strikes
+  explanation: 'Light shining directly into the eyes of defenders ruins their night vision and creates
+    visual glare. Tactical lighting should point outward from the perimeter into the clear buffer zone,
+    keeping defenders in darkness while silhouetting intruders.
+
+
+    Why the other options are wrong: Modern LED floodlights use minimal power (10-30W); the problem is
+    tactical optical glare. Insects are an annoyance, but the primary failure mode is tactical blindness
+    of the occupants. Wall-mounted lights do not attract lightning any more than other metal fittings.'
+  correct_answer: c
+- id: sec-d1-q5
+  type: FILL_BLANK
+  prompt: 'In defensible settlement geometry, grouping homesteads in a clustered circular boma layout
+    is superior to scattered dwellings because dwellings provide mutual ___ of one another''s perimeters
+    and internal livestock can be protected inside a central common ___.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - surveillance
+  - courtyard
+  explanation: 'Clustered circular compounds eliminate isolated blind spots, provide overlapping fields
+    of view, and protect vital assets (cattle, water cisterns) within an enclosed central courtyard.
+
+    '

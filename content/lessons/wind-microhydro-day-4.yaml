@@ -1,0 +1,268 @@
+id: wind-microhydro-day-4
+course_id: wind-microhydro
+title: Power Electronics — Charge Controllers, Dump Loads & Battery Banks
+title_sw: Elektroniki ya Nguvu — Vidhibiti vya Chaji, Mzigo wa Ziada na Betri
+week_number: 1
+day_number: 4
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+- charge-controller
+- dump-load
+- battery-bank
+- electronic-load-controller
+- inverter
+- diversion-load
+xp: 250
+exam_domain: wind-microhydro
+briefing: 'Wind and micro-hydro generators produce variable or continuous AC or DC power that must be
+  tamed, regulated, stored, and converted to match the loads of a real community. Unlike solar PV systems
+  where power simply falls to zero when clouds block the sun, wind and hydro systems face a critical control
+  challenge: the generator keeps spinning and producing power even when all useful loads are switched
+  off. An unloaded generator overvoltage destroys battery banks, alternator rectifier diodes, and inverters
+  within seconds. The solution is the dump load (or Electronic Load Controller for AC hydro systems):
+  a resistive ballast load that absorbs all excess generation the moment batteries are full. This lesson
+  covers battery bank sizing from first principles, charge controller selection and PWM vs MPPT technology
+  comparison for wind, the Electronic Load Controller (ELC) for micro-hydro constant-load regulation,
+  inverter specifications, and system protection with fuses, circuit breakers, and earthing.
+
+  '
+outline: 'The voltage-current relationship of a battery (State of Charge vs terminal voltage curve for
+  lead-acid 12V: 11.8V empty, 12.7V full; lithium LiFePO4: 12.0V empty, 13.6V full); battery bank sizing:
+  Load (Wh/day) / (Battery voltage × DoD × efficiency) = Ampere-hours required; Depth of Discharge (DoD):
+  lead-acid maximum 50% DoD for longevity; LiFePO4 80% DoD; days of autonomy (2–5 days typical for wind/hydro
+  hybrid); battery C-rate and maximum charge current; PWM charge controllers (simple series switch; efficient
+  only when panels output == battery voltage); MPPT controllers (DC-DC boost/buck converter; 20–30% more
+  efficient for wind when generator output varies with wind speed); dump load (diversion load) controllers
+  for wind: voltage-sensing relay or MOSFET switches excess power to a resistive ballast heater when battery
+  bank reaches float voltage; the Electronic Load Controller (ELC) for micro-hydro AC systems: maintains
+  constant electrical load (ballast heating element) at exactly rated generator power to hold constant
+  turbine speed and frequency; three-phase vs single-phase ELC design; inverter types (modified sine wave
+  vs pure sine wave); sizing the inverter (VA rating = peak AC load × 1.25 safety factor); system protection:
+  main DC fuse (1.25 × maximum current), DC breakers, earthing electrode, lightning surge arrestors.
+
+  '
+content_md: "## Why Dump Loads Are Non-Negotiable for Wind and Hydro\n\nSolar PV panels are current-limited\
+  \ by physics: if no load is connected, voltage rises\nslightly above Voc but current is zero and the\
+  \ panel simply sits idle safely. Wind and\nhydro generators are fundamentally different — they are rotating\
+  \ machines driven by an\nuncontrollable primary energy source:\n\n```\nDANGER: UNLOADED WIND/HYDRO GENERATOR\n\
+  \nWind keeps blowing →→→→ Rotor keeps spinning →→→→ Alternator keeps generating voltage\n          \
+  \                                                   ↓\n                                            \
+  \  If NOTHING absorbs this power:\n                                              ├── Battery bank charges\
+  \ to 100%\n                                              ├── Voltage rises past 15V, 18V, 25V...\n \
+  \                                             ├── Battery gassing → electrolyte loss → plate damage\n\
+  \                                              ├── Rectifier diodes avalanche and fail\n           \
+  \                                   └── Inverter DC input stage destroyed\n                        \
+  \                      [RESULT: Complete system destruction in minutes]\n\nSOLUTION: DUMP LOAD CONTROLLER\n\
+  Battery approaching full → Voltage threshold reached → Controller diverts power to\nDUMP LOAD (resistive\
+  \ heater, water heating element, dummy resistor bank)\nGenerator always has a load → Voltage stays controlled\
+  \ → System protected\n```\n\n---\n\n## Battery Bank Fundamentals\n\n### Lead-Acid State of Charge vs\
+  \ Voltage (12V System, at Rest)\n```\nState of Charge │ Open-Circuit Voltage │ Specific Gravity (flooded)\n\
+  ────────────────┼──────────────────────┼────────────────────────────\n     100% (Full)│ 12.70 – 12.80\
+  \ V      │ 1.265 – 1.280\n      75%       │ 12.40 V              │ 1.230\n      50%       │ 12.20 V\
+  \              │ 1.200\n      25%       │ 12.00 V              │ 1.170\n       0% (Dead)│ 11.80 V  \
+  \            │ 1.140\n```\n\n### Battery Bank Sizing Calculation\n\n**Step 1:** Calculate total daily\
+  \ energy demand:\n$$E_{daily} = \\sum_{i}(P_i \\times t_i) \\quad \\text{(Wh/day)}$$\n\n**Step 2:**\
+  \ Calculate required battery capacity (Ampere-hours):\n$$C_{battery} = \\frac{E_{daily} \\times \\text{Days\
+  \ of Autonomy}}{V_{bank} \\times DoD \\times \\eta_{battery}}$$\n\nWhere:\n* $DoD$ = Maximum Depth of\
+  \ Discharge: **0.50 for lead-acid**, **0.80 for LiFePO4**\n* $\\eta_{battery}$ = round-trip efficiency:\
+  \ **0.85 for lead-acid**, **0.97 for LiFePO4**\n* Days of Autonomy: 2–3 days typical for sites with\
+  \ near-daily wind/hydro generation\n\n**Worked Example** — 48V system, 800 Wh/day load, 3 days autonomy,\
+  \ lead-acid:\n$$C = \\frac{800 \\times 3}{48 \\times 0.50 \\times 0.85} = \\frac{2400}{20.4} = 117.6\
+  \ \\text{ Ah}$$\n→ Select **2 × 150 Ah batteries** at 48V (4 × 12V batteries in series × 2 strings in\
+  \ parallel = 300 Ah)\n\n---\n\n## Charge Controllers: PWM vs MPPT\n\n```\nPWM CONTROLLER (Pulse Width\
+  \ Modulation)\n┌─────────────────────────────────────────────────────────────┐\n│  Generator  ──── Series\
+  \ Switch (MOSFET) ──── Battery Bank  │\n│                  ON / OFF at 50–100 Hz                   \
+  \   │\n│  \"Clamps\" generator output to battery voltage               │\n│  Advantage: Simple, cheap,\
+  \ reliable                         │\n│  Disadvantage: Generator runs at battery voltage only      \
+  \ │\n│  Best for: Wind/hydro when generator output voltage matches │\n│             battery voltage\
+  \ range                           │\n└─────────────────────────────────────────────────────────────┘\n\
+  \nMPPT CONTROLLER (Maximum Power Point Tracking)\n┌─────────────────────────────────────────────────────────────┐\n\
+  │  Generator ── DC-DC Converter (Boost or Buck) ── Battery   │\n│              Continuously adjusts\
+  \ input impedance to        │\n│              extract maximum power from generator           │\n│  Advantage:\
+  \ 20–30% more energy harvested from variable     │\n│             voltage wind generators          \
+  \               │\n│  Disadvantage: More complex, higher cost                    │\n│  Best for: Variable-speed\
+  \ wind turbines where output        │\n│             voltage varies widely with wind speed         \
+  \  │\n└─────────────────────────────────────────────────────────────┘\n```\n\n---\n\n## Dump Load (Diversion\
+  \ Load) Controller for Wind Systems\n\nThe dump load controller continuously monitors battery voltage\
+  \ and diverts excess power to\na ballast resistive element whenever the battery approaches full charge:\n\
+  \n```\nDUMP LOAD CONTROLLER OPERATION\nBattery Voltage < Float (e.g., 14.4V for 12V lead-acid):\n  \
+  \  → Full power to battery; dump load OFF\n\nBattery Voltage reaches Float Threshold (14.4V):\n    →\
+  \ MOSFET switches dump load ON\n    → Excess power (generator output minus battery maintenance current)\
+  \ dissipated as heat\n    → Heater element: a domestic water heating element (immersion heater) in a\
+  \ water tank\n      doubles as a useful domestic hot water pre-heater!\n\nBattery full + No demand load:\n\
+  \    → 100% of generator output diverted to dump load\n    → Generator always has a load (protected\
+  \ from overvoltage)\n```\n\n**Dump Load Sizing Rule:** Dump load resistive power rating ≥ 110% of maximum\
+  \ generator rated output.\nFor a 500W wind turbine: dump load = **550W minimum** (a standard 600W immersion\
+  \ heater element).\n\n---\n\n## Electronic Load Controller (ELC) for Micro-Hydro AC Systems\n\nFor AC\
+  \ micro-hydro systems where the generator outputs 3-phase or single-phase AC directly\n(no rectifier\
+  \ or battery bank), the ELC replaces the dump load controller:\n\n```\nMICRO-HYDRO ELC CONSTANT-LOAD\
+  \ PRINCIPLE\n\nPelton Wheel → Generator (AC output) → Distribution Board\n                         \
+  \       │\n                                └─── ELC (Electronic Load Controller)\n                 \
+  \                           │\n                           Ballast Heaters (proportional TRIAC control)\n\
+  \nELC maintains TOTAL connected load = CONSTANT (exactly equals rated generator output)\n├── Consumer\
+  \ switches ON a light: ELC reduces ballast heater power by same amount\n├── Consumer switches OFF a\
+  \ light: ELC increases ballast heater power to compensate\n└── Total load constant → Generator speed\
+  \ constant → Frequency constant (50 Hz ± 1%)\n```\n\n* **Why Constant Speed?**: The AC generator must\
+  \ maintain exactly 1500 RPM (for 50 Hz, 2-pole)\n  or 1000 RPM (4-pole) to produce 50 Hz frequency.\
+  \ Sudden load changes would cause speed surges.\n* **TRIAC Ballast Control**: Phase-angle firing of\
+  \ TRIACs allows proportional power reduction\n  to ballast heater elements (not just ON/OFF), maintaining\
+  \ smooth frequency regulation.\n* **ELC Ballast Power Rating**: Must equal 100–110% of generator rated\
+  \ output.\n\n---\n\n## Inverters: DC to AC Conversion\n\n| Inverter Type | Waveform | Applications |\
+  \ Notes |\n| :--- | :--- | :--- | :--- |\n| Modified Sine Wave | Stepped approximation of sine | Resistive\
+  \ loads, phone chargers | Cannot run AC motors efficiently; causes humming |\n| Pure Sine Wave | True\
+  \ 50/60 Hz sine wave | All AC loads including motors, medical equipment, audio | Required for sensitive\
+  \ electronics |\n\n**Inverter Sizing:**\n$$\\text{Inverter VA Rating} \\geq \\text{Peak AC Load (W)}\
+  \ \\times 1.25$$\n\nThe 25% safety margin accounts for:\n* Motor inrush current (3–7× running current\
+  \ at start-up)\n* Simultaneous operation of multiple loads\n* Inverter efficiency losses (typically\
+  \ 85–95% efficient)\n\n---\n\n## System Protection: Fusing, Earthing & Lightning\n\n```\nDC PROTECTION\
+  \ HIERARCHY (48V system example)\n┌────────────────────────────────────────────────────────────┐\n│\
+  \ Generator/PV ──► [MAIN FUSE: 1.25 × Imax] ──► BATTERY   │\n│                                     \
+  \               │       │\n│ Battery ──► [DC BREAKER] ──► Charge Controller    │       │\n│ Battery\
+  \ ──► [DC BREAKER] ──► Inverter             │       │\n│ Battery ──► [FUSE]       ──► DC loads     \
+  \        │       │\n│                                                    │       │\n│ Earth Electrode\
+  \ ──────────────────────────── Bonded to:   │\n│                                              - Battery\
+  \ -ve │\n│                                              - Tower steel │\n│                         \
+  \                     - Generator   │\n│                                              frame        \
+  \ │\n└────────────────────────────────────────────────────────────┘\n```\n\n* **Earthing Electrode**:\
+  \ Minimum 1.8 m copper rod driven vertically into moist soil, or 10 m\n  of 25 mm² bare copper conductor\
+  \ buried 0.5 m deep horizontally.\n* **Lightning Arrestors**: Install MOV (Metal Oxide Varistor) surge\
+  \ arrestors at wind turbine\n  base, top of tower, and AC/DC panel entry points.\n* **Tower Earthing**:\
+  \ Each guy wire anchor point bonded to system earth. Tower must be earth-bonded\n  at base and at top\
+  \ (air terminal or turbine frame).\n"
+exercises:
+- id: wind-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A wind turbine installation produces 800 Wh of energy per day on a 24V lead-acid battery system.
+    The designer wants 3 days of autonomy. Using a maximum Depth of Discharge of 50% and a battery round-trip
+    efficiency of 85%, what minimum Ampere-hour (Ah) battery bank capacity is required?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: '100 Ah because dividing daily energy by battery voltage gives capacity: 800/24 ≈ 33 Ah/day
+      × 3 days = 100 Ah'
+  - id: b
+    text: 33 Ah because the daily energy demand divided by 24 volts gives the required battery capacity
+  - id: c
+    text: Approximately 235 Ah, calculated as (800 × 3) / (24 × 0.50 × 0.85) = 2400 / 10.2 = 235 Ah
+  - id: d
+    text: 800 Ah because battery capacity must equal daily Wh divided only by the DoD factor
+  explanation: 'C = (E_daily × days_autonomy) / (V × DoD × η) = (800 × 3) / (24 × 0.50 × 0.85) = 2400
+    / 10.2 = 235 Ah. A practical selection would be 4 × 6V 250 Ah golf-cart batteries wired in two series
+    pairs for 24V at 500 Ah, providing extra margin.
+
+
+    Why the other options are wrong: This calculation ignores DoD and battery efficiency. Lead-acid discharging
+    beyond 50% DoD rapidly degrades cycle life. The full sizing formula must include DoD and efficiency.
+    33 Ah is the daily Ah consumption, not the total bank capacity. Autonomy days, DoD, and efficiency
+    factors must all be applied. Dividing 800 Wh by 0.50 DoD ignores both the battery voltage and efficiency
+    terms.'
+  correct_answer: c
+- id: wind-d4-q2
+  type: FILL_BLANK
+  prompt: 'In an AC micro-hydro system without a battery bank, the Electronic Load Controller (ELC) maintains
+    a constant turbine speed and 50 Hz output frequency by using proportional TRIAC phase-angle firing
+    to vary power delivered to a ballast ___ element, ensuring total electrical load always equals rated
+    generator output regardless of how much consumer demand changes from moment to moment.
+
+    '
+  xp_reward: 50
+  correct_answer: heater
+  explanation: 'The ELC ballast load is a resistive heater element (typically water immersion heaters
+    in a hot-water tank). TRIAC phase-angle control varies heater power proportionally, instantly compensating
+    for any consumer load changes to maintain constant total load, constant generator torque, and therefore
+    constant turbine speed and frequency.
+
+    '
+- id: wind-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each power electronics component to its primary function in a wind or micro-hydro off-grid
+    system.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Dump Load Controller
+    right:
+      id: r-7056d7
+      text: Diverts excess wind generator power to a resistive ballast when battery bank reaches float
+        voltage
+  - left:
+      id: l2
+      text: MPPT Charge Controller
+    right:
+      id: r-c619a5
+      text: DC-DC converter that continuously adjusts input impedance to extract maximum power from a
+        variable-voltage wind alternator
+  - left:
+      id: l3
+      text: Electronic Load Controller (ELC)
+    right:
+      id: r-b109c7
+      text: Maintains constant total AC load via TRIAC-controlled ballast heaters to hold turbine at rated
+        speed and frequency
+  - left:
+      id: l4
+      text: Pure Sine Wave Inverter
+    right:
+      id: r-894eef
+      text: Converts DC battery bank voltage to true 50 Hz AC sine wave suitable for AC motors and sensitive
+        electronics
+  correct_answer:
+  - l1=r-7056d7
+  - l2=r-c619a5
+  - l3=r-b109c7
+  - l4=r-894eef
+  explanation: 'Dump load protects batteries from overvoltage; MPPT maximizes variable-speed wind harvest;
+    ELC regulates micro-hydro AC frequency; pure sine inverter generates grid-quality AC output.
+
+    '
+- id: wind-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why must a wind turbine system always have a connected dump load or some other continuous resistive
+    load path, and what happens to the system if the battery bank is fully charged and all user loads
+    are simultaneously switched off with no dump load present?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The system simply stops producing power when there is no load, like a solar panel at open circuit
+  - id: b
+    text: The wind turbine rotor automatically stops spinning when it senses no electrical load
+  - id: c
+    text: Without a dump load, the unloaded alternator continues generating voltage that rises uncontrolled,
+      exceeding battery float voltage, causing electrolyte gassing and plate damage, and potentially avalanching
+      rectifier diodes to failure — destroying the entire electrical system
+  - id: d
+    text: Excess energy simply dissipates as heat in the alternator windings without any damage
+  explanation: 'A rotating alternator always generates EMF regardless of load. Without a load, current
+    from the rectifier raises battery voltage unchecked. Lead-acid batteries exposed to voltages above
+    14.8V (12V system) off-gas hydrogen, lose water, and suffer plate sulfation. Rectifier diodes exceed
+    their reverse voltage rating and fail. Overvoltage propagates to the inverter and loads.
+
+
+    Why the other options are wrong: Solar panels are passive current sources; voltage-limited at Voc.
+    Rotating alternators are active EMF sources that continue to generate rising voltage with no safe
+    natural limit. Standard wind turbines have no automatic rotor stop mechanism. The rotor continues
+    to spin with wind and the alternator continues generating. Unloaded alternator operation causes overvoltage,
+    not simply heat dissipation. The battery and rectifier bear the destructive brunt of uncontrolled
+    voltage rise.'
+  correct_answer: c
+- id: wind-d4-q5
+  type: FILL_BLANK
+  prompt: 'When selecting the rated power of a dump load resistor bank for a wind turbine system, the
+    dump load power rating must be at least ___ percent of the wind generator''s maximum rated output
+    to ensure it can always absorb the full generator output when the battery bank reaches float voltage
+    and no other loads are connected.
+
+    '
+  xp_reward: 50
+  correct_answer: '110'
+  explanation: 'The dump load must be rated at 110% (or more) of maximum generator rated output to ensure
+    it can absorb the full generation under all conditions, including generator output overshoot during
+    gusty wind events slightly above rated speed.
+
+    '

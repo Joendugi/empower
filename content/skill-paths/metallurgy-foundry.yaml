@@ -1,35 +1,52 @@
 id: metallurgy-foundry
 title: Metallurgy, Blacksmithing & Sand Casting
 titleSw: Ufundi Chuma, Uhunzi na Uyahushaji wa Vyuma (Foundry)
-description: >
-  Master the ancient and essential science of extracting, refining, forging,
+description: 'Master the ancient and essential science of extracting, refining, forging,
   heat-treating, and casting metals in remote workshops — from building charcoal-fired
-  bloomery furnaces and blacksmithing forge hearths to tool steel heat treatment
-  (quenching/tempering), greensand foundry pattern molding, and scrap bronze/aluminium
-  crucible melting for precision machine components.
+  bloomery furnaces and blacksmithing forge hearths to tool steel heat treatment (quenching/tempering),
+  greensand foundry pattern molding, and scrap bronze/aluminium crucible melting for
+  precision machine components.
+
+  '
 level: intermediate
 category: engineering
 estimatedHours: 10
 xpTotal: 1250
 license: CC-BY-SA-4.0
 nodes:
-  - day: 1
-    lessonId: metallurgy-foundry-day-1
-    title: "Iron Smelting & The Charcoal Bloomery Furnace"
-    xp: 250
-  - day: 2
-    lessonId: metallurgy-foundry-day-2
-    title: "Blacksmithing — The Forge Hearth, Anvil & Tool Crafting"
-    xp: 250
-  - day: 3
-    lessonId: metallurgy-foundry-day-3
-    title: "Heat Treatment — Annealing, Normalizing, Quenching & Tempering"
-    xp: 250
-  - day: 4
-    lessonId: metallurgy-foundry-day-4
-    title: "Greensand Mold Making & Pattern Engineering"
-    xp: 250
-  - day: 5
-    lessonId: metallurgy-foundry-day-5
-    title: "Crucible Furnace Operation & Non-Ferrous Casting"
-    xp: 250
+- day: 1
+  lessonId: metallurgy-foundry-day-1
+  title: Iron Smelting & The Charcoal Bloomery Furnace
+  xp: 250
+  id: metallurgy-foundry-day-1
+  lesson_ids:
+  - metallurgy-foundry-day-1
+- day: 2
+  lessonId: metallurgy-foundry-day-2
+  title: Blacksmithing — The Forge Hearth, Anvil & Tool Crafting
+  xp: 250
+  id: metallurgy-foundry-day-2
+  lesson_ids:
+  - metallurgy-foundry-day-2
+- day: 3
+  lessonId: metallurgy-foundry-day-3
+  title: Heat Treatment — Annealing, Normalizing, Quenching & Tempering
+  xp: 250
+  id: metallurgy-foundry-day-3
+  lesson_ids:
+  - metallurgy-foundry-day-3
+- day: 4
+  lessonId: metallurgy-foundry-day-4
+  title: Greensand Mold Making & Pattern Engineering
+  xp: 250
+  id: metallurgy-foundry-day-4
+  lesson_ids:
+  - metallurgy-foundry-day-4
+- day: 5
+  lessonId: metallurgy-foundry-day-5
+  title: Crucible Furnace Operation & Non-Ferrous Casting
+  xp: 250
+  id: metallurgy-foundry-day-5
+  lesson_ids:
+  - metallurgy-foundry-day-5
+track: trades

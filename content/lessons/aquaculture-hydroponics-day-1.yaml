@@ -1,236 +1,231 @@
 id: aquaculture-hydroponics-day-1
 course_id: aquaculture-hydroponics
-title: "Freshwater Pond Ecology, Water Chemistry & Fish Biology"
-title_sw: "Ekolojia ya Mabwawa, Kemia ya Maji na Biolojia ya Samaki"
+title: Freshwater Pond Ecology, Water Chemistry & Fish Biology
+title_sw: Ekolojia ya Mabwawa, Kemia ya Maji na Biolojia ya Samaki
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - aquaculture
-  - water-chemistry
-  - pond-construction
-  - tilapia
-  - catfish
-  - dissolved-oxygen
+- aquaculture
+- water-chemistry
+- pond-construction
+- tilapia
+- catfish
+- dissolved-oxygen
 xp: 250
 exam_domain: aquaculture-hydroponics
+briefing: 'Successful aquaculture is fundamentally water management rather than fish handling; if you
+  care for the water, the water cares for the fish. In closed earthen or lined ponds, aquatic animals
+  are trapped in their own metabolic excretions. Understanding the chemical equilibrium of dissolved oxygen
+  (DO), un-ionized ammonia (NH3), nitrite toxicity, alkalinity buffering, and photosynthetic diurnal cycles
+  is the line between a thriving commercial harvest and overnight mass mortality. This lesson establishes
+  rigorous water testing protocols, pond engineering geometry, and biological profiles for the two pillars
+  of tropical inland fisheries: Nile Tilapia (*Oreochromis niloticus*) and African Sharptooth Catfish
+  (*Clarias gariepinus*).
 
-briefing: >
-  Successful aquaculture is fundamentally water management rather than fish handling;
-  if you care for the water, the water cares for the fish. In closed earthen or lined
-  ponds, aquatic animals are trapped in their own metabolic excretions. Understanding
-  the chemical equilibrium of dissolved oxygen (DO), un-ionized ammonia (NH3), nitrite
-  toxicity, alkalinity buffering, and photosynthetic diurnal cycles is the line between
-  a thriving commercial harvest and overnight mass mortality. This lesson establishes
-  rigorous water testing protocols, pond engineering geometry, and biological profiles
-  for the two pillars of tropical inland fisheries: Nile Tilapia (*Oreochromis niloticus*)
-  and African Sharptooth Catfish (*Clarias gariepinus*).
+  '
+outline: 'Freshwater pond ecology and primary productivity; diurnal cycles of photosynthesis and respiration
+  (oxygen peak at 16:00, hypoxia crisis at 05:00); dissolved oxygen (DO) thresholds (minimum 5.0 mg/L
+  for growth, emergency aeration below 3.0 mg/L); water temperature windows for Oreochromis niloticus
+  (26-30°C) and Clarias gariepinus (25-30°C); pH scale (6.5 to 8.5) and total alkalinity as calcium carbonate
+  buffering capacity; the nitrogen equilibrium in water: Total Ammonia Nitrogen (TAN), ionization fraction
+  of lethal toxic free ammonia (NH3) versus non-toxic ammonium (NH4+) dictated by pH and temperature;
+  nitrite (NO2-) toxicity, methemoglobinemia (''brown blood disease''), and chloride salt counter-measures;
+  Secchi disk turbidity measurement and phytoplankton management (target 30-40 cm depth); earthen pond
+  engineering: clay content testing (squeeze ball and ribbon tests, 20-35% clay), dyke slope ratios (2:1
+  interior, 1.5:1 exterior), pond bottom slope (1% toward drainage), monk sluice gates, and harvest sumps.
 
-outline: >
-  Freshwater pond ecology and primary productivity; diurnal cycles of photosynthesis
-  and respiration (oxygen peak at 16:00, hypoxia crisis at 05:00); dissolved oxygen
-  (DO) thresholds (minimum 5.0 mg/L for growth, emergency aeration below 3.0 mg/L);
-  water temperature windows for Oreochromis niloticus (26-30°C) and Clarias gariepinus
-  (25-30°C); pH scale (6.5 to 8.5) and total alkalinity as calcium carbonate buffering
-  capacity; the nitrogen equilibrium in water: Total Ammonia Nitrogen (TAN), ionization
-  fraction of lethal toxic free ammonia (NH3) versus non-toxic ammonium (NH4+) dictated
-  by pH and temperature; nitrite (NO2-) toxicity, methemoglobinemia ('brown blood disease'),
-  and chloride salt counter-measures; Secchi disk turbidity measurement and phytoplankton
-  management (target 30-40 cm depth); earthen pond engineering: clay content testing
-  (squeeze ball and ribbon tests, 20-35% clay), dyke slope ratios (2:1 interior, 1.5:1 exterior),
-  pond bottom slope (1% toward drainage), monk sluice gates, and harvest sumps.
-
-content_md: |
-  ## Water Chemistry: The Living Environment
-
-  Fish breathe, excrete, feed, and reproduce in a single continuous medium. Minor shifts
-  in water chemistry trigger severe physiological stress, immune suppression, and sudden
-  fish kills.
-
-  ```
-  DIURNAL DISSOLVED OXYGEN (DO) & pH CYCLE IN STATIC PONDS
-  DO (mg/L)
-     12 ┼                               ╭───╮ (Algal photosynthesis produces O2 & consumes CO2)
-     10 ┼                             ╭─╯   ╰─╮
-      8 ┼                           ╭─╯       ╰─╮
-      6 ┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ╭─╯ ─ ─ ─ ─ ─ ╰─╮ ◄── Safe Minimum Threshold (5.0 mg/L)
-      4 ┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─ ─ ─ ─ ─ ─ ─ ─ ╰─╮ ◄── Emergency Aeration Needed (3.0 mg/L)
-      2 ┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─ ─ ─ ─ ─ ─ ─ ─ ─ ╰╮ ◄── Lethal Asphyxiation Zone (<1.5 mg/L)
-      0 ┴─────┬─────┬─────┬─────┬──┴──┬─────┬─────┬───┴─┬─────┬─────
-            00:00 03:00 06:00 09:00 12:00 15:00 18:00 21:00 24:00 (Hours)
-            [Algal Respiration Only] [Solar Photosynthesis] [Respiration Dominates]
-            *CRITICAL HYPOXIA WINDOW: 04:00 - 06:00 AM*
-  ```
-
-  ### 1. Dissolved Oxygen (DO)
-  * **Optimal Range**: 5.0 to 8.0 mg/L (ppm).
-  * **Sub-lethal Stress (3.0–4.5 mg/L)**: Fish cease feeding, growth rates drop to zero, feed conversion ratio (FCR) doubles.
-  * **Acute Lethality (< 1.5 mg/L)**: Tilapia pipe at the water surface gulping the thin air-water boundary layer; mass mortality occurs within hours.
-  * **Diurnal Inversion**: During sunshine hours, phytoplankton generate massive surplus oxygen (supersaturation > 12 mg/L). At night, both fish and billions of micro-algae consume oxygen through cellular respiration, plummeting DO to its lowest nadir right before dawn (05:00 AM).
-
-  ### 2. The Ammonia-Ammonium Equilibrium
-  Total Ammonia Nitrogen (TAN) exists in water as a chemical equilibrium between toxic un-ionized ammonia ($NH_3$) and relatively harmless ionized ammonium ($NH_4^+$):
-
-  $$NH_3 + H_2O \rightleftharpoons NH_4^+ + OH^-$$
-
-  * At **low pH (< 7.0)** and cool temperatures, almost all TAN is locked as harmless $NH_4^+$.
-  * At **high pH (> 8.5)** and warm temperatures (30°C), hydroxyl ions ($OH^-$) drive the reaction to the left, converting ammonium into lethal, lipid-soluble gas ($NH_3$) that diffuses across fish gills, destroying neurological function and gill lamellae.
-  * **Safe Limit for $NH_3$**: Must remain below **0.05 mg/L**. Concentrations exceeding 0.2 mg/L cause irreversible gill damage; > 0.5 mg/L is lethal.
-
-  ```
-  PERCENTAGE OF TOXIC UN-IONIZED AMMONIA (NH3) IN TOTAL AMMONIA AT 28°C
-  ┌───────────────┬──────────────────────────────────────────┐
-  │ Water pH      │ Toxic NH3 Percentage of TAN              │
-  ├───────────────┼──────────────────────────────────────────┤
-  │ 7.0           │ 0.7 % (Very Low Risk)                    │
-  │ 7.5           │ 2.2 %                                    │
-  │ 8.0           │ 6.5 % (Moderate Risk)                    │
-  │ 8.5           │ 18.2 % (High Risk - Watch TAN!)          │
-  │ 9.0           │ 41.2 % (Extreme Hazard - Rapid Mortality)│
-  └───────────────┴──────────────────────────────────────────┘
-  ```
-
-  ### 3. Nitrite ($NO_2^-$) and Brown Blood Disease
-  * Nitrite is an intermediate product of ammonia nitrification.
-  * Toxic limit: > 0.1 mg/L.
-  * Nitrite oxidizes functional hemoglobin into **methemoglobin**, which cannot bind oxygen. Fish blood turns chocolate-brown, and fish suffocate even if the water contains 8 mg/L dissolved oxygen.
-  * **Field Antidote**: Dissolve agricultural non-iodized salt ($NaCl$) into the pond. Chloride ions ($Cl^-$) competitively block nitrite uptake at the gill chloride cells at a ratio of 10 parts $Cl^-$ to 1 part $NO_2^-$.
-
-  ---
-
-  ## Phytoplankton & The Secchi Disk
-
-  A Secchi disk is a 20 cm diameter disk divided into alternating black and white quadrants, lowered on a calibrated cord to evaluate plankton density:
-  * **< 20 cm (Overly Dense Bloom)**: Excessive algae. Severe danger of nocturnal oxygen depletion or sudden bloom die-off (crash) turning water foul. Immediate 30% water exchange or aeration required.
-  * **30 cm to 40 cm (Ideal Bloom)**: Optimal balance of natural plankton productivity, shading against benthic weed growth, and stable day/night oxygen swing.
-  * **> 60 cm (Clear / Under-fertilized)**: Lack of primary productivity. Fingerlings starve; sunlight penetrates to pond floor, fueling rooted invasive weeds. Pond requires fertilization (organic manure or inorganic NPK).
-
-  ---
-
-  ## Earthen Pond Engineering & Soil Mechanics
-
-  Building a pond that holds water without catastrophic dyke blowout requires precise soil selection and earthworks geometry:
-
-  ```
-                       CROSS-SECTION OF ENGINEERED EARTHEN FISH POND
-                           Freeboard (0.3 - 0.5 m)
-                                ┌─────────┐ ◄── Dyke Crest (2.0 - 2.5 m wide)
-                               /           \
-                 Water Level  /             \  Dry Slope (1.5:1)
-     ════════════════════════▼               \
-                            /                 \
-       Wet Slope (2:1 or 3:1)                  \
-                          /                     \
-                         /                       ══════════════════════
-                        / ◄── Impervious Clay Core (Key Trench)
-     ──────────────────┘
-       Pond Bed (1% slope toward drain) ──► [ Harvest Sump / Monk Gate Drain ]
-  ```
-
-  1. **Soil Selection**:
-     * Minimum 20% to 35% clay content. Sand and gravel will leak water continuously.
-     * **The Squeeze Ball Test**: Moisten a handful of soil, squeeze firmly into a ball, and throw it 30 cm into the air. If it holds its shape on impact, clay content is adequate. If it shatters or crumbles, it cannot seal a pond bed without a bentonite or polyethylene liner.
-     * **The Ribbon Test**: Roll wet soil between palms into a 5 mm thick pencil. If it rolls out to 10 cm without breaking, clay content exceeds 25%.
-  2. **Geometry**:
-     * **Dyke Crest Width**: Minimum 2.0 to 2.5 metres to allow wheelbarrow or light truck access.
-     * **Inside Wet Slope**: 2:1 (for firm clay-loam) or 3:1 (for sandy soils) to prevent wave erosion from slumping dyke walls into the pond.
-     * **Pond Depth**: 1.0 m shallow end sloping down to 1.5 m at deep end. Depths exceeding 2.0 m develop thermal stratification (cold, anoxic bottom water).
-     * **Monk Drain**: A concrete U-channel equipped with two rows of stop-logs (wooden boards) and an intervening clay/sand seal. Removing top boards drains surface water; removing bottom boards flushes toxic bottom sludge without lowering pond level.
-
-  ---
-
-  ## Target Biology: Tilapia vs African Catfish
-
-  | Biological Trait | Nile Tilapia (*Oreochromis niloticus*) | African Catfish (*Clarias gariepinus*) |
-  | :--- | :--- | :--- |
-  | **Trophic Level** | Herbivore / Plankton feeder | Omnivore / Opportunistic Carnivore |
-  | **Optimum Temp** | 26°C – 30°C | 25°C – 30°C |
-  | **Low DO Tolerance** | Poor (< 2.0 mg/L causes distress) | Extreme (Possesses suprabranchial organ) |
-  | **Stocking Density** | 3 to 10 fish/m² (extensive/semi-intensive) | 20 to 100 fish/m² (high density possible) |
-  | **Reproduction** | Precocious breeder (mouthbrooder, spawns at 3 months) | Induced spawning (requires pituitary hormone) |
-  | **Major Challenge** | Overpopulation and stunting in grow-out | Cannibalism during fingerling stage |
-
+  '
+content_md: "## Water Chemistry: The Living Environment\n\nFish breathe, excrete, feed, and reproduce\
+  \ in a single continuous medium. Minor shifts\nin water chemistry trigger severe physiological stress,\
+  \ immune suppression, and sudden\nfish kills.\n\n```\nDIURNAL DISSOLVED OXYGEN (DO) & pH CYCLE IN STATIC\
+  \ PONDS\nDO (mg/L)\n   12 ┼                               ╭───╮ (Algal photosynthesis produces O2 &\
+  \ consumes CO2)\n   10 ┼                             ╭─╯   ╰─╮\n    8 ┼                           ╭─╯\
+  \       ╰─╮\n    6 ┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ╭─╯ ─ ─ ─ ─ ─ ╰─╮ ◄── Safe Minimum Threshold (5.0 mg/L)\n\
+  \    4 ┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─ ─ ─ ─ ─ ─ ─ ─ ╰─╮ ◄── Emergency Aeration Needed (3.0 mg/L)\n    2\
+  \ ┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─ ─ ─ ─ ─ ─ ─ ─ ─ ╰╮ ◄── Lethal Asphyxiation Zone (<1.5 mg/L)\n    0 ┴─────┬─────┬─────┬─────┬──┴──┬─────┬─────┬───┴─┬─────┬─────\n\
+  \          00:00 03:00 06:00 09:00 12:00 15:00 18:00 21:00 24:00 (Hours)\n          [Algal Respiration\
+  \ Only] [Solar Photosynthesis] [Respiration Dominates]\n          *CRITICAL HYPOXIA WINDOW: 04:00 -\
+  \ 06:00 AM*\n```\n\n### 1. Dissolved Oxygen (DO)\n* **Optimal Range**: 5.0 to 8.0 mg/L (ppm).\n* **Sub-lethal\
+  \ Stress (3.0–4.5 mg/L)**: Fish cease feeding, growth rates drop to zero, feed conversion ratio (FCR)\
+  \ doubles.\n* **Acute Lethality (< 1.5 mg/L)**: Tilapia pipe at the water surface gulping the thin air-water\
+  \ boundary layer; mass mortality occurs within hours.\n* **Diurnal Inversion**: During sunshine hours,\
+  \ phytoplankton generate massive surplus oxygen (supersaturation > 12 mg/L). At night, both fish and\
+  \ billions of micro-algae consume oxygen through cellular respiration, plummeting DO to its lowest nadir\
+  \ right before dawn (05:00 AM).\n\n### 2. The Ammonia-Ammonium Equilibrium\nTotal Ammonia Nitrogen (TAN)\
+  \ exists in water as a chemical equilibrium between toxic un-ionized ammonia ($NH_3$) and relatively\
+  \ harmless ionized ammonium ($NH_4^+$):\n\n$$NH_3 + H_2O \\rightleftharpoons NH_4^+ + OH^-$$\n\n* At\
+  \ **low pH (< 7.0)** and cool temperatures, almost all TAN is locked as harmless $NH_4^+$.\n* At **high\
+  \ pH (> 8.5)** and warm temperatures (30°C), hydroxyl ions ($OH^-$) drive the reaction to the left,\
+  \ converting ammonium into lethal, lipid-soluble gas ($NH_3$) that diffuses across fish gills, destroying\
+  \ neurological function and gill lamellae.\n* **Safe Limit for $NH_3$**: Must remain below **0.05 mg/L**.\
+  \ Concentrations exceeding 0.2 mg/L cause irreversible gill damage; > 0.5 mg/L is lethal.\n\n```\nPERCENTAGE\
+  \ OF TOXIC UN-IONIZED AMMONIA (NH3) IN TOTAL AMMONIA AT 28°C\n┌───────────────┬──────────────────────────────────────────┐\n\
+  │ Water pH      │ Toxic NH3 Percentage of TAN              │\n├───────────────┼──────────────────────────────────────────┤\n\
+  │ 7.0           │ 0.7 % (Very Low Risk)                    │\n│ 7.5           │ 2.2 %              \
+  \                      │\n│ 8.0           │ 6.5 % (Moderate Risk)                    │\n│ 8.5      \
+  \     │ 18.2 % (High Risk - Watch TAN!)          │\n│ 9.0           │ 41.2 % (Extreme Hazard - Rapid\
+  \ Mortality)│\n└───────────────┴──────────────────────────────────────────┘\n```\n\n### 3. Nitrite ($NO_2^-$)\
+  \ and Brown Blood Disease\n* Nitrite is an intermediate product of ammonia nitrification.\n* Toxic limit:\
+  \ > 0.1 mg/L.\n* Nitrite oxidizes functional hemoglobin into **methemoglobin**, which cannot bind oxygen.\
+  \ Fish blood turns chocolate-brown, and fish suffocate even if the water contains 8 mg/L dissolved oxygen.\n\
+  * **Field Antidote**: Dissolve agricultural non-iodized salt ($NaCl$) into the pond. Chloride ions ($Cl^-$)\
+  \ competitively block nitrite uptake at the gill chloride cells at a ratio of 10 parts $Cl^-$ to 1 part\
+  \ $NO_2^-$.\n\n---\n\n## Phytoplankton & The Secchi Disk\n\nA Secchi disk is a 20 cm diameter disk divided\
+  \ into alternating black and white quadrants, lowered on a calibrated cord to evaluate plankton density:\n\
+  * **< 20 cm (Overly Dense Bloom)**: Excessive algae. Severe danger of nocturnal oxygen depletion or\
+  \ sudden bloom die-off (crash) turning water foul. Immediate 30% water exchange or aeration required.\n\
+  * **30 cm to 40 cm (Ideal Bloom)**: Optimal balance of natural plankton productivity, shading against\
+  \ benthic weed growth, and stable day/night oxygen swing.\n* **> 60 cm (Clear / Under-fertilized)**:\
+  \ Lack of primary productivity. Fingerlings starve; sunlight penetrates to pond floor, fueling rooted\
+  \ invasive weeds. Pond requires fertilization (organic manure or inorganic NPK).\n\n---\n\n## Earthen\
+  \ Pond Engineering & Soil Mechanics\n\nBuilding a pond that holds water without catastrophic dyke blowout\
+  \ requires precise soil selection and earthworks geometry:\n\n```\n                     CROSS-SECTION\
+  \ OF ENGINEERED EARTHEN FISH POND\n                         Freeboard (0.3 - 0.5 m)\n              \
+  \                ┌─────────┐ ◄── Dyke Crest (2.0 - 2.5 m wide)\n                             /     \
+  \      \\\n               Water Level  /             \\  Dry Slope (1.5:1)\n   ════════════════════════▼\
+  \               \\\n                          /                 \\\n     Wet Slope (2:1 or 3:1)    \
+  \              \\\n                        /                     \\\n                       /      \
+  \                 ══════════════════════\n                      / ◄── Impervious Clay Core (Key Trench)\n\
+  \   ──────────────────┘\n     Pond Bed (1% slope toward drain) ──► [ Harvest Sump / Monk Gate Drain\
+  \ ]\n```\n\n1. **Soil Selection**:\n   * Minimum 20% to 35% clay content. Sand and gravel will leak\
+  \ water continuously.\n   * **The Squeeze Ball Test**: Moisten a handful of soil, squeeze firmly into\
+  \ a ball, and throw it 30 cm into the air. If it holds its shape on impact, clay content is adequate.\
+  \ If it shatters or crumbles, it cannot seal a pond bed without a bentonite or polyethylene liner.\n\
+  \   * **The Ribbon Test**: Roll wet soil between palms into a 5 mm thick pencil. If it rolls out to\
+  \ 10 cm without breaking, clay content exceeds 25%.\n2. **Geometry**:\n   * **Dyke Crest Width**: Minimum\
+  \ 2.0 to 2.5 metres to allow wheelbarrow or light truck access.\n   * **Inside Wet Slope**: 2:1 (for\
+  \ firm clay-loam) or 3:1 (for sandy soils) to prevent wave erosion from slumping dyke walls into the\
+  \ pond.\n   * **Pond Depth**: 1.0 m shallow end sloping down to 1.5 m at deep end. Depths exceeding\
+  \ 2.0 m develop thermal stratification (cold, anoxic bottom water).\n   * **Monk Drain**: A concrete\
+  \ U-channel equipped with two rows of stop-logs (wooden boards) and an intervening clay/sand seal. Removing\
+  \ top boards drains surface water; removing bottom boards flushes toxic bottom sludge without lowering\
+  \ pond level.\n\n---\n\n## Target Biology: Tilapia vs African Catfish\n\n| Biological Trait | Nile Tilapia\
+  \ (*Oreochromis niloticus*) | African Catfish (*Clarias gariepinus*) |\n| :--- | :--- | :--- |\n| **Trophic\
+  \ Level** | Herbivore / Plankton feeder | Omnivore / Opportunistic Carnivore |\n| **Optimum Temp** |\
+  \ 26°C – 30°C | 25°C – 30°C |\n| **Low DO Tolerance** | Poor (< 2.0 mg/L causes distress) | Extreme\
+  \ (Possesses suprabranchial organ) |\n| **Stocking Density** | 3 to 10 fish/m² (extensive/semi-intensive)\
+  \ | 20 to 100 fish/m² (high density possible) |\n| **Reproduction** | Precocious breeder (mouthbrooder,\
+  \ spawns at 3 months) | Induced spawning (requires pituitary hormone) |\n| **Major Challenge** | Overpopulation\
+  \ and stunting in grow-out | Cannibalism during fingerling stage |\n"
 exercises:
-  - id: aqua-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why does the dissolved oxygen (DO) concentration in an un-aerated static fish pond
-      consistently reach its most dangerously low levels between 04:00 AM and 06:00 AM just before sunrise?
-    xp_reward: 50
-    options:
-      - text: "Throughout the night, photosynthesis halts completely while both the fish and billions of phytoplankton continually consume dissolved oxygen via cellular respiration, depleting oxygen reserves until the morning sun reappears"
-        correct: true
-        explanation: "Phytoplankton produce vast oxygen during sunlight hours via photosynthesis. Once darkness falls, photosynthesis stops, but biological respiration by algae, fish, and benthic decomposers continues unabated, pulling dissolved oxygen down to its diurnal minimum right before dawn."
-      - text: "Cold night temperatures force water to expel dissolved gases into the atmosphere"
-        correct: false
-        explanation: "Cold water actually holds more dissolved gas than warm water; biological respiration is the cause of hypoxia."
-      - text: "Fish excrete more ammonia at night which chemically neutralizes all dissolved oxygen molecules"
-        correct: false
-        explanation: "Ammonia does not directly consume dissolved oxygen through non-biological chemical neutralization."
-      - text: "Pond water evaporates rapidly during nocturnal hours"
-        correct: false
-        explanation: "Evaporation is higher during hot daytime conditions and does not cause nocturnal hypoxia."
+- id: aqua-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Why does the dissolved oxygen (DO) concentration in an un-aerated static fish pond consistently
+    reach its most dangerously low levels between 04:00 AM and 06:00 AM just before sunrise?
 
-  - id: aqua-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      In pond water, Total Ammonia Nitrogen (TAN) exists as harmless ionized ammonium (NH4+)
-      and highly lethal un-ionized ammonia (NH3). When water pH rises above 8.5 and temperature
-      increases, the proportion of toxic un-ionized NH3 increases dramatically; aquaculture safety
-      standards require un-ionized NH3 to remain strictly below ___ mg/L.
-    xp_reward: 50
-    correct_answer: "0.05"
-    explanation: >
-      Un-ionized ammonia (NH3) must remain below 0.05 mg/L (ppm). Above this threshold,
-      gill epithelial hypertrophy, neurological damage, and mortality occur rapidly.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Cold night temperatures force water to expel dissolved gases into the atmosphere
+  - id: b
+    text: Throughout the night, photosynthesis halts completely while both the fish and billions of phytoplankton
+      continually consume dissolved oxygen via cellular respiration, depleting oxygen reserves until the
+      morning sun reappears
+  - id: c
+    text: Fish excrete more ammonia at night which chemically neutralizes all dissolved oxygen molecules
+  - id: d
+    text: Pond water evaporates rapidly during nocturnal hours
+  explanation: 'Phytoplankton produce vast oxygen during sunlight hours via photosynthesis. Once darkness
+    falls, photosynthesis stops, but biological respiration by algae, fish, and benthic decomposers continues
+    unabated, pulling dissolved oxygen down to its diurnal minimum right before dawn.
 
-  - id: aqua-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each water quality monitoring parameter to its critical diagnostic threshold or operational counter-measure.
-    xp_reward: 50
-    pairs:
-      - left: Secchi Disk 30 to 40 cm
-        right: Optimal phytoplankton bloom density balancing natural food and oxygen stability
-      - left: Nitrite (NO2-) > 0.1 mg/L
-        right: Induces 'brown blood disease'; countered by adding agricultural salt (NaCl)
-      - left: Secchi Disk < 20 cm
-        right: Excessive algal bloom with imminent risk of nocturnal oxygen crash or algal die-off
-      - left: Dissolved Oxygen < 3.0 mg/L
-        right: Sub-lethal stress zone; fish stop eating, requiring immediate emergency aeration
-    correct_answer: null
-    explanation: >
-      Secchi 30-40 cm is ideal; nitrite causes methemoglobinemia treatable with chloride;
-      Secchi < 20 cm warns of algal crash; DO < 3.0 mg/L halts feeding and growth.
 
-  - id: aqua-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      When excavating an earthen fish pond in clay-loam soil, what is the recommended slope
-      ratio for the inside (wet) dyke walls, and why?
-    xp_reward: 50
-    options:
-      - text: "2:1 or 3:1 (horizontal to vertical), because steeper slopes will slump and collapse into the pond under wave action and saturated soil hydrostatic pressure"
-        correct: true
-        explanation: "A slope of 2:1 (2 m horizontal for every 1 m vertical) or 3:1 prevents dyke slumping. Vertical or 1:1 slopes quickly erode and collapse into the pond basin when saturated with water."
-      - text: "1:1 vertical cut to maximize the total water holding volume of the pond"
-        correct: false
-        explanation: "A 1:1 slope in unreinforced earth will quickly wash out and cave in under wave action."
-      - text: "5:1 slope on all sides to allow fish to swim onto the grass to forage"
-        correct: false
-        explanation: "5:1 is unnecessarily shallow, wasting vast amounts of agricultural land and shallowing water."
-      - text: "Vertical timber walls backed by untreated cardboard"
-        correct: false
-        explanation: "Cardboard will dissolve instantly and timber will rot rapidly underwater."
+    Why the other options are wrong: Cold water actually holds more dissolved gas than warm water; biological
+    respiration is the cause of hypoxia. Ammonia does not directly consume dissolved oxygen through non-biological
+    chemical neutralization. Evaporation is higher during hot daytime conditions and does not cause nocturnal
+    hypoxia.'
+  correct_answer: b
+- id: aqua-d1-q2
+  type: FILL_BLANK
+  prompt: 'In pond water, Total Ammonia Nitrogen (TAN) exists as harmless ionized ammonium (NH4+) and
+    highly lethal un-ionized ammonia (NH3). When water pH rises above 8.5 and temperature increases, the
+    proportion of toxic un-ionized NH3 increases dramatically; aquaculture safety standards require un-ionized
+    NH3 to remain strictly below ___ mg/L.
 
-  - id: aqua-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      African Sharptooth Catfish (Clarias gariepinus) can survive in stagnant, zero-dissolved-oxygen
-      water and tolerate stocking densities above 50 kg/m³ because they possess a specialized
-      arborescent accessory breathing organ known as the ___ organ, allowing them to inhale atmospheric air.
-    xp_reward: 50
-    correct_answer: "suprabranchial"
-    explanation: >
-      The suprabranchial organ (or arborescent organ) located above the gills functions like
-      a primitive lung, enabling Clarias gariepinus to absorb oxygen directly from atmospheric air.
+    '
+  xp_reward: 50
+  correct_answer: '0.05'
+  explanation: 'Un-ionized ammonia (NH3) must remain below 0.05 mg/L (ppm). Above this threshold, gill
+    epithelial hypertrophy, neurological damage, and mortality occur rapidly.
+
+    '
+- id: aqua-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each water quality monitoring parameter to its critical diagnostic threshold or operational
+    counter-measure.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Secchi Disk 30 to 40 cm
+    right:
+      id: r-99faff
+      text: Optimal phytoplankton bloom density balancing natural food and oxygen stability
+  - left:
+      id: l2
+      text: Nitrite (NO2-) > 0.1 mg/L
+    right:
+      id: r-dd36be
+      text: Induces 'brown blood disease'; countered by adding agricultural salt (NaCl)
+  - left:
+      id: l3
+      text: Secchi Disk < 20 cm
+    right:
+      id: r-abbc98
+      text: Excessive algal bloom with imminent risk of nocturnal oxygen crash or algal die-off
+  - left:
+      id: l4
+      text: Dissolved Oxygen < 3.0 mg/L
+    right:
+      id: r-9fa201
+      text: Sub-lethal stress zone; fish stop eating, requiring immediate emergency aeration
+  correct_answer:
+  - l1=r-99faff
+  - l2=r-dd36be
+  - l3=r-abbc98
+  - l4=r-9fa201
+  explanation: 'Secchi 30-40 cm is ideal; nitrite causes methemoglobinemia treatable with chloride; Secchi
+    < 20 cm warns of algal crash; DO < 3.0 mg/L halts feeding and growth.
+
+    '
+- id: aqua-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'When excavating an earthen fish pond in clay-loam soil, what is the recommended slope ratio
+    for the inside (wet) dyke walls, and why?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 2:1 or 3:1 (horizontal to vertical), because steeper slopes will slump and collapse into the
+      pond under wave action and saturated soil hydrostatic pressure
+  - id: b
+    text: 1:1 vertical cut to maximize the total water holding volume of the pond
+  - id: c
+    text: 5:1 slope on all sides to allow fish to swim onto the grass to forage
+  - id: d
+    text: Vertical timber walls backed by untreated cardboard
+  explanation: 'A slope of 2:1 (2 m horizontal for every 1 m vertical) or 3:1 prevents dyke slumping.
+    Vertical or 1:1 slopes quickly erode and collapse into the pond basin when saturated with water.
+
+
+    Why the other options are wrong: A 1:1 slope in unreinforced earth will quickly wash out and cave
+    in under wave action. 5:1 is unnecessarily shallow, wasting vast amounts of agricultural land and
+    shallowing water. Cardboard will dissolve instantly and timber will rot rapidly underwater.'
+  correct_answer: a
+- id: aqua-d1-q5
+  type: FILL_BLANK
+  prompt: 'African Sharptooth Catfish (Clarias gariepinus) can survive in stagnant, zero-dissolved-oxygen
+    water and tolerate stocking densities above 50 kg/m³ because they possess a specialized arborescent
+    accessory breathing organ known as the ___ organ, allowing them to inhale atmospheric air.
+
+    '
+  xp_reward: 50
+  correct_answer: suprabranchial
+  explanation: 'The suprabranchial organ (or arborescent organ) located above the gills functions like
+    a primitive lung, enabling Clarias gariepinus to absorb oxygen directly from atmospheric air.
+
+    '

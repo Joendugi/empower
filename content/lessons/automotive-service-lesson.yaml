@@ -96,3 +96,69 @@ exercises:
     hint: "Oil is not a mechanical repair."
     explanation: "Explain options. Wrong oil can damage catalysts and still knock."
     xp_reward: 60
+content_md: |
+  ## What a routine service really is
+
+  A service is a planned inspection and replacement of wear items to the **manufacturer's schedule**. Replacing old oil with any oil you have isn't a service. The customer is paying for the right parts, the right fluids, the right torques and a record they can show at resale or for a warranty claim.
+
+  ## Choosing the right engine oil
+
+  Every engine oil has three things you must match to the vehicle data (owner's handbook, service book or a trusted information system):
+
+  | Marking | What it means | Example |
+  |---|---|---|
+  | **SAE viscosity** | How thick the oil is. The number before **W** (winter) is the cold rating; the number after is the thickness at operating temperature. | 5W-30, 10W-40, 15W-40 |
+  | **Performance specification** | Industry quality standard for petrol or diesel engines | API SP (petrol), API CK-4 (diesel), ACEA C3 |
+  | **Manufacturer approval** | Extra tests some makers demand | e.g. a VW, Mercedes or Toyota approval number |
+
+  **Low-SAPS oils** (e.g. ACEA C-grades) are needed on many modern diesels with a **diesel particulate filter (DPF)** and on catalyst-equipped petrol engines. The wrong oil can block the DPF, damage the catalyst and wear bearings, even if the engine sounds fine on the day.
+
+  > "Thicker oil" doesn't fix a knocking engine. If compression is low or a bearing is knocking, diagnose it. Putting 40W in a 5W-30 engine just hides the symptom and can starve tight-clearance parts of oil on cold starts.
+
+  ## Service sequence
+
+  1. **Protect the vehicle.** Seat cover, floor mat, wing (fender) covers.
+  2. **Record:** registration, mileage, customer complaints and any warning lights.
+  3. **Inspect before you change anything:** leaks under the car, tyre condition and pressures, lights, wipers, belts and hoses. Note defects for the customer.
+  4. **Drain the oil** with the engine warm (not hot), so it flows well. Wear gloves — hot oil burns.
+  5. **Replace the drain-plug washer** (crush or copper washer) when the data says so. A used crush washer often weeps.
+  6. **Torque the drain plug** to the specified value with a torque wrench. Many cars are in the region of 25–40 N·m, but use the data — aluminium sumps strip easily.
+  7. **Fit the oil filter:** clean the housing face, smear clean oil on the new seal, and check the old seal hasn't stuck to the engine (a double seal blows out). Tighten to the spec — often hand-tight plus a set fraction of a turn, or a torque for cartridge housings.
+  8. **Fill** with the specified quantity, slightly under at first.
+  9. **Start and run** for a minute while watching the oil-pressure light and checking for leaks at the plug and filter.
+  10. **Stop, wait a few minutes, and recheck the level** on level ground. The new filter holds oil, so the level drops after the first run. Top up to between MIN and MAX — never above MAX.
+  11. **Other schedule items:** air filter, cabin filter, spark plugs (correct type, gap and torque), fuel filter, coolant and brake fluid condition, to the schedule.
+  12. **Reset the service indicator** with the correct procedure or scan tool, fill in the service book and invoice, and road test.
+
+  ## Torque: why "tight enough" fails
+
+  **Torque** is turning force, measured in **newton-metres (N·m)**.
+
+  - **Under-torque:** the plug or filter weeps or works loose, and the oil ends up on the road.
+  - **Over-torque:** stripped sump threads, cracked filter housings and distorted seals. Repairing a stripped aluminium sump costs far more than the service.
+
+  **Using a click-type torque wrench**
+
+  - Set the value and lock the handle.
+  - Pull smoothly at the handle grip until it clicks once, then stop. Don't keep pulling after the click.
+  - Store it at its lowest setting so the spring stays accurate, and have it calibrated on schedule.
+
+  **Torque-to-yield (stretch) bolts**, often on cylinder heads and some suspension joints, are tightened to a torque plus an angle and are **single use**. If you don't have the data, you don't invent a torque.
+
+  ## Waste and the environment
+
+  Used engine oil is **hazardous waste**. It never goes down drains, onto soil or onto dusty yards to "keep the dust down". Store it in labelled, closed containers and hand it to a licensed waste handler (NEMA-licensed in Kenya). Used filters drain into the waste-oil container before disposal. Clean spills with absorbent, not water.
+
+  ## Common mistakes
+
+  - Picking oil by price or by the customer's request instead of the specification.
+  - Reusing a crush washer or leaving the old filter seal on the engine.
+  - Filling to the top of the filler neck "to be safe" — overfilling can aerate oil and damage seals and catalysts.
+  - Forgetting the level check after the first run.
+  - Not resetting the service light, so the customer gets a warning the next day.
+
+  ## Check yourself
+
+  - Where do you find the correct oil grade and drain-plug torque?
+  - Why does the oil level drop after the first engine run?
+  - What would you tell a customer who wants thicker oil to stop a knock?

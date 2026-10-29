@@ -1,53 +1,61 @@
 id: first-aid-trauma
-title: "First Aid & Trauma Care"
-title_sw: "Msaada wa Kwanza na Utunzaji wa Majeraha"
-description: >
-  Five-day hands-on unit on evidence-based first aid for East African contexts:
-  haemorrhage control and tourniquet application, airway and breathing management,
-  burns and scalds treatment, fracture immobilisation and improvised splinting,
-  and patient assessment with improvised stretcher construction. Each day equips
-  community first responders with life-saving skills applicable in rural and
-  peri-urban Kenya where EMS response times can exceed 60 minutes.
-description_sw: >
-  Kitengo cha siku tano cha vitendo cha msaada wa kwanza unaotegemea ushahidi
-  kwa muktadha wa Afrika Mashariki: udhibiti wa kutoka damu na utumiaji wa
-  tourniquet, usimamizi wa njia ya hewa na kupumua, matibabu ya kuungua,
-  kuweka splint kwa mifupa iliyovunjika, na tathmini ya mgonjwa na ujenzi
+title: First Aid & Trauma Care
+title_sw: Msaada wa Kwanza na Utunzaji wa Majeraha
+description: 'Five-day hands-on unit on evidence-based first aid for East African contexts: haemorrhage
+  control and tourniquet application, airway and breathing management, burns and scalds treatment, fracture
+  immobilisation and improvised splinting, and patient assessment with improvised stretcher construction.
+  Each day equips community first responders with life-saving skills applicable in rural and peri-urban
+  Kenya where EMS response times can exceed 60 minutes.
+
+  '
+description_sw: 'Kitengo cha siku tano cha vitendo cha msaada wa kwanza unaotegemea ushahidi kwa muktadha
+  wa Afrika Mashariki: udhibiti wa kutoka damu na utumiaji wa tourniquet, usimamizi wa njia ya hewa na
+  kupumua, matibabu ya kuungua, kuweka splint kwa mifupa iliyovunjika, na tathmini ya mgonjwa na ujenzi
   wa machela ya kubuni.
+
+  '
 level: beginner
-tags: [first-aid, trauma, health, emergency, kenya, community]
-weeks:
-  - week_number: 1
-    title: "Life-Saving First Response"
-    title_sw: "Majibu ya Kwanza ya Kuokoa Maisha"
-    nodes:
-      - id: first-aid-trauma-day-1
-        title: "Haemorrhage Control & Tourniquet"
-        title_sw: "Udhibiti wa Kutoka Damu na Tourniquet"
-        day_number: 1
-        week_number: 1
-        xp: 90
-      - id: first-aid-trauma-day-2
-        title: "Airway & Breathing Management"
-        title_sw: "Usimamizi wa Njia ya Hewa na Kupumua"
-        day_number: 2
-        week_number: 1
-        xp: 90
-      - id: first-aid-trauma-day-3
-        title: "Burns, Scalds & Wound Care"
-        title_sw: "Kuungua, Kuchemka na Utunzaji wa Majeraha"
-        day_number: 3
-        week_number: 1
-        xp: 85
-      - id: first-aid-trauma-day-4
-        title: "Fractures, Dislocations & Improvised Splinting"
-        title_sw: "Mifupa Iliyovunjika, Kutoka na Splinting ya Kubuni"
-        day_number: 4
-        week_number: 1
-        xp: 85
-      - id: first-aid-trauma-day-5
-        title: "Patient Assessment & Improvised Evacuation"
-        title_sw: "Tathmini ya Mgonjwa na Uokoaji wa Kubuni"
-        day_number: 5
-        week_number: 1
-        xp: 90
+tags:
+- first-aid
+- trauma
+- health
+- emergency
+- kenya
+- community
+track: tvet
+nodes:
+- id: first-aid-trauma-day-1
+  title: Haemorrhage Control & Tourniquet
+  title_sw: Udhibiti wa Kutoka Damu na Tourniquet
+  prerequisites: []
+  lesson_ids:
+  - first-aid-trauma-day-1
+- id: first-aid-trauma-day-2
+  title: Airway & Breathing Management
+  title_sw: Usimamizi wa Njia ya Hewa na Kupumua
+  prerequisites:
+  - first-aid-trauma-day-1
+  lesson_ids:
+  - first-aid-trauma-day-2
+- id: first-aid-trauma-day-3
+  title: Burns, Scalds & Wound Care
+  title_sw: Kuungua, Kuchemka na Utunzaji wa Majeraha
+  prerequisites:
+  - first-aid-trauma-day-2
+  lesson_ids:
+  - first-aid-trauma-day-3
+- id: first-aid-trauma-day-4
+  title: Fractures, Dislocations & Improvised Splinting
+  title_sw: Mifupa Iliyovunjika, Kutoka na Splinting ya Kubuni
+  prerequisites:
+  - first-aid-trauma-day-3
+  lesson_ids:
+  - first-aid-trauma-day-4
+- id: first-aid-trauma-day-5
+  title: Patient Assessment & Improvised Evacuation
+  title_sw: Tathmini ya Mgonjwa na Uokoaji wa Kubuni
+  prerequisites:
+  - first-aid-trauma-day-4
+  lesson_ids:
+  - first-aid-trauma-day-5
+content_version: '1'

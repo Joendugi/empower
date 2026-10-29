@@ -1,51 +1,59 @@
 id: solar-electronics
-title: "Solar Energy & Basic Electronics"
-title_sw: "Nishati ya Jua na Elektroniki ya Msingi"
-description: >
-  Five-day hands-on unit on off-grid photovoltaic systems for East Africa:
-  panel selection and tilt, battery bank design, charge controller wiring,
-  DC load circuits and safe wiring practice, and system commissioning with
-  multimeter fault-finding. Designed for technicians serving rural and
-  peri-urban households in Kenya, Tanzania, and Uganda.
-description_sw: >
-  Kitengo cha siku tano cha vitendo kuhusu mifumo ya umeme wa jua nje ya gridi
-  kwa Afrika Mashariki: uchaguzi wa paneli na pembe, muundo wa benki ya betri,
-  uwiring wa kidhibiti cha chaji, mizunguko ya mzigo wa DC na usalama wa waya,
-  na uanzishaji wa mfumo na utambuzi wa hitilafu kwa multimeter.
+title: Solar Energy & Basic Electronics
+title_sw: Nishati ya Jua na Elektroniki ya Msingi
+description: 'Five-day hands-on unit on off-grid photovoltaic systems for East Africa: panel selection
+  and tilt, battery bank design, charge controller wiring, DC load circuits and safe wiring practice,
+  and system commissioning with multimeter fault-finding. Designed for technicians serving rural and peri-urban
+  households in Kenya, Tanzania, and Uganda.
+
+  '
+description_sw: 'Kitengo cha siku tano cha vitendo kuhusu mifumo ya umeme wa jua nje ya gridi kwa Afrika
+  Mashariki: uchaguzi wa paneli na pembe, muundo wa benki ya betri, uwiring wa kidhibiti cha chaji, mizunguko
+  ya mzigo wa DC na usalama wa waya, na uanzishaji wa mfumo na utambuzi wa hitilafu kwa multimeter.
+
+  '
 level: beginner
-tags: [solar, electronics, off-grid, kenya, renewable-energy, tvet]
-weeks:
-  - week_number: 1
-    title: "Off-Grid PV Systems"
-    title_sw: "Mifumo ya Umeme wa Jua Nje ya Gridi"
-    nodes:
-      - id: solar-electronics-day-1
-        title: "PV Fundamentals & Panel Selection"
-        title_sw: "Misingi ya PV na Uchaguzi wa Paneli"
-        day_number: 1
-        week_number: 1
-        xp: 80
-      - id: solar-electronics-day-2
-        title: "Battery Systems & Bank Sizing"
-        title_sw: "Mifumo ya Betri na Upimaji wa Benki"
-        day_number: 2
-        week_number: 1
-        xp: 90
-      - id: solar-electronics-day-3
-        title: "Charge Controllers & System Sizing"
-        title_sw: "Vidhibiti vya Chaji na Upimaji wa Mfumo"
-        day_number: 3
-        week_number: 1
-        xp: 90
-      - id: solar-electronics-day-4
-        title: "DC Wiring, Fusing & Safety"
-        title_sw: "Uwiring wa DC, Fyuzi na Usalama"
-        day_number: 4
-        week_number: 1
-        xp: 85
-      - id: solar-electronics-day-5
-        title: "Commissioning & Fault-Finding"
-        title_sw: "Uanzishaji na Utambuzi wa Hitilafu"
-        day_number: 5
-        week_number: 1
-        xp: 90
+tags:
+- solar
+- electronics
+- off-grid
+- kenya
+- renewable-energy
+- tvet
+track: tvet
+nodes:
+- id: solar-electronics-day-1
+  title: PV Fundamentals & Panel Selection
+  title_sw: Misingi ya PV na Uchaguzi wa Paneli
+  prerequisites: []
+  lesson_ids:
+  - solar-electronics-day-1
+- id: solar-electronics-day-2
+  title: Battery Systems & Bank Sizing
+  title_sw: Mifumo ya Betri na Upimaji wa Benki
+  prerequisites:
+  - solar-electronics-day-1
+  lesson_ids:
+  - solar-electronics-day-2
+- id: solar-electronics-day-3
+  title: Charge Controllers & System Sizing
+  title_sw: Vidhibiti vya Chaji na Upimaji wa Mfumo
+  prerequisites:
+  - solar-electronics-day-2
+  lesson_ids:
+  - solar-electronics-day-3
+- id: solar-electronics-day-4
+  title: DC Wiring, Fusing & Safety
+  title_sw: Uwiring wa DC, Fyuzi na Usalama
+  prerequisites:
+  - solar-electronics-day-3
+  lesson_ids:
+  - solar-electronics-day-4
+- id: solar-electronics-day-5
+  title: Commissioning & Fault-Finding
+  title_sw: Uanzishaji na Utambuzi wa Hitilafu
+  prerequisites:
+  - solar-electronics-day-4
+  lesson_ids:
+  - solar-electronics-day-5
+content_version: '1'

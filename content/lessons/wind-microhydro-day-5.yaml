@@ -1,0 +1,269 @@
+id: wind-microhydro-day-5
+course_id: wind-microhydro
+title: System Integration, Load Analysis & Hybrid Wind-Solar-Hydro Design
+title_sw: Muunganiko wa Mfumo, Uchambuzi wa Mzigo na Muundo wa Mseto wa Upepo-Jua-Mto
+week_number: 1
+day_number: 5
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+- hybrid-system
+- load-analysis
+- system-integration
+- capacity-factor
+- commissioning
+- HOMER-software
+xp: 250
+exam_domain: wind-microhydro
+briefing: 'Individual renewable energy technologies — solar PV, wind turbines, micro-hydro — each carry
+  inherent intermittency or seasonal limitations. Solar fails at night and in rainy seasons. Wind is calmer
+  in humid equatorial climates during the long rains. Micro-hydro flow peaks in rainy season but may dwindle
+  in drought years. The solution is intelligent hybrid system design that combines complementary sources,
+  stores surplus in battery banks or pumped-storage, and dispatches loads intelligently. This capstone
+  lesson covers detailed load analysis using the load-scheduling spreadsheet method, matching generation
+  to load using capacity factor calculations, hybrid system architecture decisions (AC bus vs DC bus coupling),
+  generator set integration as a backup source, commissioning checklists, system monitoring with data
+  loggers, and the economics of community renewable energy co-operative ownership.
+
+  '
+outline: 'Detailed load analysis: appliance inventory (rated power W, hours/day use, Wh/day); peak load
+  analysis for inverter and cable sizing; load scheduling to shift non-essential loads to generation-rich
+  periods; system sizing methodology: energy balance over the worst-case month (minimum generation vs
+  maximum load); hybrid system architectures: DC-coupled (all sources charge a common DC battery bus via
+  charge controllers) vs AC-coupled (all sources invert to a common AC bus; AC coupling uses a grid-forming
+  inverter); micro-hydro base load + wind/solar peak supplement design; diesel/petrol generator backup
+  integration (auto-start on battery depth of discharge alarm); system monitoring: current/voltage/energy
+  data loggers; wire sizing using allowable voltage drop criterion (< 2% on DC runs, < 5% on AC runs);
+  conduit and junction box installation; community energy co-operative governance: tariff structures,
+  metering, revenue collection, maintenance fund allocation; system commissioning sequence: pre-energization
+  checks, first energization, load testing, turbine run-up procedure, protection relay testing; PHOTO_CAPTURE
+  field assessment.
+
+  '
+content_md: "## Hybrid Renewable Energy Systems: Complementary Sources\n\n```\nSEASONAL GENERATION PROFILE\
+  \ — EQUATORIAL EAST AFRICA (Schematic)\n\nPower\nOutput\nHigh ─┤   ╭─────────────╮     │╭────────────────────╮\n\
+  \      │   │ MICRO-HYDRO │     ││  MICRO-HYDRO       │\n      │  ╭╯ (Wet Season)╰╮    │╰╮(Wet Season)\
+  \       ╰╮\n      │  │               │    │ │                     │\n      │ ─╯   ────────────╰────╯\
+  \ ╰─────────────────────╯────\nLow ──┤     MICRO-HYDRO (Dry Season Reduced)\n      │\nHigh ─┤ ╭──────╮\
+  \                    ╭──────╮\n      │ │ WIND │                    │ WIND │\n      │╭╯      ╰╮─────────────────╭╯\
+  \      ╰╮───────\nLow ──┤         ╰─────────────────╯ (Calmer wet season in some sites)\n      │\nHigh\
+  \ ─┤     ╭────────────────────────────────────────────╮\n      │     │            SOLAR PV         \
+  \               │\nLow ──┤─────╯ (Lower Dec/Jan wet season)                 ╰────\n      │\n      ─────┬─────────────────────┬────────────────────────────►\n\
+  \        JAN│ ←── SHORT RAINS ──► │MAR  ← LONG RAINS → JUN\n           FEB                   APR/MAY\
+  \                  TIME\nCOMBINED: Hydro + Wind + Solar complement each other throughout the year\n\
+  ```\n\n---\n\n## Load Analysis: The Foundation of System Sizing\n\nA load analysis inventory is the\
+  \ non-negotiable starting point. No system can be accurately\nsized without knowing what it must power.\n\
+  \n**Example Community Load Inventory (50-household settlement):**\n\n| Appliance | Power (W) | Qty |\
+  \ Hours/Day | Total (Wh/day) |\n| :--- | :---: | :---: | :---: | :---: |\n| LED ceiling light (12W)\
+  \ | 12 | 150 | 5 | 9,000 |\n| Mobile phone charger | 5 | 100 | 3 | 1,500 |\n| Small radio/TV | 30 |\
+  \ 50 | 4 | 6,000 |\n| Community water pump (1 kW) | 1,000 | 1 | 4 | 4,000 |\n| Clinic refrigerator (vaccine)\
+  \ | 80 | 1 | 24 | 1,920 |\n| Grain mill motor (3 kW) | 3,000 | 1 | 2 | 6,000 |\n| Workshop power tools\
+  \ | 1,500 | 1 | 3 | 4,500 |\n| **TOTAL DAILY DEMAND** | | | | **32,920 Wh ≈ 33 kWh/day** |\n\n**Peak\
+  \ Demand** (simultaneous loads):\n* Evening peak (18:00–22:00): All lights + TVs + phone chargers =\
+  \ 150×12 + 50×30 + 100×5 = **4,300 W**\n* This peak demand determines minimum inverter/generator rating.\n\
+  \n---\n\n## System Sizing: The Worst-Case Month Energy Balance\n\nThe design must be **self-sufficient\
+  \ in the worst-case month** (minimum renewable generation,\nmaximum consumption). For East Africa, this\
+  \ is typically August–September (dry, low winds).\n\n**Energy Balance Check:**\n\n$$E_{generation} \\\
+  geq E_{load} + E_{system\\_losses}$$\n\n$$\\sum_{\\text{sources}} P_{rated} \\times CF \\times 24 \\\
+  times 30 \\geq E_{load,daily} \\times 30 \\times 1.2$$\n\nWhere:\n* $CF$ = Capacity Factor (fraction\
+  \ of time source operates at rated power)\n* $1.2$ = 20% system loss multiplier (battery charge/discharge,\
+  \ wiring, inverter)\n\n**Source Capacity Factors for Hybrid Design:**\n| Source | Typical CF (Good Site)\
+  \ | Worst Month CF |\n| :--- | :---: | :---: |\n| Micro-hydro (run-of-river, wet season) | 70–80% |\
+  \ 40–50% (dry season) |\n| Wind turbine (moderate site) | 20–30% | 15–20% |\n| Solar PV (equatorial,\
+  \ good tilt) | 18–22% | 15–18% (cloudy wet season) |\n| Diesel generator | 85–90% (on demand) | 85–90%\
+  \ |\n\n---\n\n## Hybrid System Architectures\n\n```\nOPTION 1: DC-COUPLED HYBRID (Common DC Battery\
+  \ Bus)\n┌─────────────────────────────────────────────────────────────────┐\n│ Solar PV ──── [MPPT Controller]\
+  \ ─────────────────────────────┐ │\n│ Wind PMA ──── [MPPT/Dump Controller] ──────────►  DC BUS  ◄─┘\
+  \ │\n│ Hydro PMA ─── [Rectifier + ELC dump] ──────────►  BATTERY    │ │\n│                         \
+  \                          BANK        │ │\n│ DC BUS ──► [Pure Sine Inverter] ──► AC Distribution Board\
+  \    │ │\n│ DC BUS ──► [DC loads: 12/24/48V LED, pumps]                  │ │\n└─────────────────────────────────────────────────────────────────┘\n\
+  Best for: Small rural systems < 50 kW, simple control, low cost\n\nOPTION 2: AC-COUPLED HYBRID (Common\
+  \ AC Bus)\n┌─────────────────────────────────────────────────────────────────┐\n│ Grid-Forming Inverter\
+  \ (Master) ──► AC BUS (230V, 50 Hz)       │ │\n│       ↑                                   ↑       \
+  \             │ │\n│  Battery Bank               Grid-Tie Solar Inverter            │ │\n│         \
+  \                    Grid-Tie Wind Inverter             │ │\n│                             Micro-Hydro\
+  \ ELC-Controlled Gen     │ │\n└─────────────────────────────────────────────────────────────────┘\n\
+  Best for: Larger mini-grids, AC-coupled sources > 10 kW each\n```\n\n---\n\n## Wire Sizing: Voltage\
+  \ Drop Criterion\n\nUndersized wiring causes voltage drop, energy waste, fire hazard, and appliance\
+  \ malfunction.\n\n**Allowable Voltage Drop Limits:**\n* DC circuits (12–48V systems): **maximum 2% voltage\
+  \ drop**\n* AC distribution circuits (230V): **maximum 5% voltage drop**\n\n**Wire Cross-Section Formula\
+  \ (DC):**\n$$A_{mm^2} = \\frac{2 \\times L \\times I}{\\sigma \\times \\Delta V_{max}}$$\n\nWhere:\n\
+  * $L$ = one-way cable length (m)\n* $I$ = maximum current (A)\n* $\\sigma$ = copper conductivity = 56\
+  \ × 10⁶ S/m = 56 m/Ω·mm²\n* $\\Delta V_{max}$ = maximum allowable voltage drop (V) = 2% × system voltage\n\
+  \n**Example**: 48V system, 20A circuit, 15 m cable run, 2% drop limit:\n$$A = \\frac{2 \\times 15 \\\
+  times 20}{56 \\times (0.02 \\times 48)} = \\frac{600}{56 \\times 0.96} = \\frac{600}{53.76} = 11.2 \\\
+  text{ mm}^2$$\n→ Select **16 mm² cable** (next standard size above 11.2 mm²).\n\n---\n\n## System Commissioning\
+  \ Sequence\n\n```\nPRE-ENERGIZATION CHECKS (Before connecting any power source):\n1. Verify all wiring\
+  \ connections — correct polarity; no shorts\n2. Measure insulation resistance (> 1 MΩ between conductors\
+  \ and earth)\n3. Check earthing electrode resistance (< 10 Ω to earth)\n4. Inspect all fuses and breakers\
+  \ — correct ratings\n5. Verify dump load is connected and rated correctly\n6. Install surge arrestors\
+  \ at all entry points\n\nFIRST ENERGIZATION:\n7. Connect battery bank first (smallest energy source)\n\
+  8. Check battery voltage at system bus (within 2% of nominal)\n9. Connect charge controller (wind or\
+  \ solar) — verify no over-current alarm\n10. Slowly connect generator/turbine (measure open-circuit\
+  \ voltage first)\n11. Connect dump load controller and verify activation at float voltage\n\nLOAD TESTING:\n\
+  12. Switch on loads incrementally — monitor voltage drop\n13. Verify inverter output: 230V ± 5%, 50\
+  \ Hz ± 0.5 Hz\n14. Test protection devices: pull main fuse; verify safe shutdown\n15. Test dump load\
+  \ activation by manually raising battery voltage\n\nTURBINE COMMISSIONING:\n16. Inspect all mechanical\
+  \ connections on rotor and tower\n17. Manual rotation test with blades (no wind) for bearing noise\n\
+  18. First run in low wind — measure output voltage and frequency\n19. Observe furling tail operation\
+  \ at high wind speed\n```\n\n---\n\n## Community Energy Co-operative Economics\n\nA renewable mini-grid\
+  \ is only sustainable if the community can operate and maintain it:\n\n* **Tariff Structure**: Flat\
+  \ monthly connection fee + consumption-based unit charge (e.g., KSh 50/month + KSh 30/kWh consumed).\n\
+  * **Metering**: Pre-paid smart meters (similar to mobile airtime scratch cards) eliminate collection\
+  \ problems and allow household budget control.\n* **Maintenance Reserve Fund**: Set aside 5–10% of monthly\
+  \ revenue for maintenance, spare parts (fuses, rectifier diodes, battery replacement every 5–7 years\
+  \ for lead-acid, 10–15 years for LiFePO4).\n* **Technician Training**: At least two community members\
+  \ trained to Level 3 (NVQ-equivalent) in renewable energy systems maintenance.\n* **Load Growth Plan**:\
+  \ Design the system bus and civil works for 150% of initial connected load, allowing connection of additional\
+  \ households or productive-use loads as the co-operative grows.\n"
+exercises:
+- id: wind-d5-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'In a DC-coupled hybrid system with a 48V battery bus, a 15-metre cable run carries a maximum
+    current of 25 A from the battery bank to the inverter. Using the formula A = (2 × L × I) / (σ × ΔV_max)
+    with copper conductivity of 56 m/Ω·mm² and a 2% allowable DC voltage drop limit, what minimum cable
+    cross-section is required?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 4 mm² cable because 48V systems use thin wire for all DC circuits
+  - id: b
+    text: 25 mm² because the cable cross-section in mm² must equal the maximum current in amperes
+  - id: c
+    text: 2 mm² because 48V DC systems carry lower power than 230V AC systems
+  - id: d
+    text: Approximately 14 mm², requiring selection of the next standard size of 16 mm² copper cable
+  explanation: 'ΔV_max = 0.02 × 48V = 0.96V. A = (2 × 15 × 25) / (56 × 0.96) = 750 / 53.76 = 13.95 mm².
+    Round up to the next standard cable size: 16 mm². Using undersized cable causes 4–6% voltage drop,
+    overheating, and potential fire risk.
+
+
+    Why the other options are wrong: 4 mm² would cause a voltage drop of approximately 6.7% — more than
+    3× the allowable 2% limit, with significant heat generation. Cable sizing uses the voltage drop formula,
+    not a 1:1 mm²-to-ampere relationship. The minimum required is 13.95 mm². Voltage level affects current
+    for the same power, but the cable must be sized from the actual current (25A) using the voltage drop
+    formula.'
+  correct_answer: d
+- id: wind-d5-q2
+  type: FILL_BLANK
+  prompt: 'In a community renewable energy mini-grid, the sustainability rule for maintenance funding
+    requires setting aside at least ___ to 10 percent of monthly revenue collected from electricity tariffs
+    into a dedicated maintenance reserve fund, to cover the cost of spare parts, fuse replacement, battery
+    bank renewal, and scheduled servicing.
+
+    '
+  xp_reward: 50
+  correct_answer: '5'
+  explanation: 'Industry practice for community renewable energy mini-grids is to reserve 5 to 10% of
+    monthly revenue for a maintenance and sinking fund. Lead-acid batteries require replacement every
+    5 to 7 years, which represents a major capital expenditure that must be pre-funded.
+
+    '
+- id: wind-d5-q3
+  type: MATCH_PAIRS
+  prompt: Match each hybrid system design concept to its correct definition or application.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: DC-Coupled Architecture
+    right:
+      id: r-7c0a7d
+      text: All renewable sources (wind, solar, hydro) feed a common DC battery bus via separate charge
+        controllers
+  - left:
+      id: l2
+      text: Capacity Factor
+    right:
+      id: r-b9b42a
+      text: Ratio of actual annual energy output to energy output if the generator ran at rated power
+        for all 8760 hours per year
+  - left:
+      id: l3
+      text: Worst-Case Month Sizing
+    right:
+      id: r-d4246b
+      text: Ensuring the system meets full load during the calendar month with least renewable resource
+        and greatest consumption
+  - left:
+      id: l4
+      text: Load Scheduling
+    right:
+      id: r-432ef7
+      text: Deliberately shifting high-power non-essential loads (grain milling, water pumping) to hours
+        of peak renewable generation
+  correct_answer:
+  - l1=r-7c0a7d
+  - l2=r-b9b42a
+  - l3=r-d4246b
+  - l4=r-432ef7
+  explanation: 'DC-coupled uses a shared battery bus; capacity factor measures utilisation; worst-case
+    month governs minimum system size; load scheduling improves self-consumption and reduces battery cycling.
+
+    '
+- id: wind-d5-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A hybrid system engineer is deciding whether to add a diesel generator backup to a wind-solar-hydro
+    mini-grid serving a rural health clinic that requires uninterrupted power 24 hours per day. What is
+    the primary technical justification for including the diesel backup despite its high fuel and maintenance
+    costs?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Diesel generators are always cheaper per kWh than renewable energy sources
+  - id: b
+    text: Health clinics are not permitted to use renewable energy under Kenyan medical regulations
+  - id: c
+    text: Diesel generators charge battery banks faster than renewable sources during the day
+  - id: d
+    text: Renewable sources cannot guarantee 100% reliability independently; during extended dry-season
+      drought (zero hydro), prolonged calm weather (zero wind), and rainy-season cloud cover (reduced
+      solar), a diesel generator provides the firm backup capacity to prevent critical health clinic load
+      from losing power
+  explanation: 'No single renewable source or combination can guarantee 100% uptime in every climatic
+    scenario. Extended multi-week drought can reduce micro-hydro to zero; prolonged calm and overcast
+    periods can exhaust battery autonomy. A diesel genset provides firm, despatchable backup power to
+    ensure the clinic never loses power. The correct design uses renewables for 90–95% of energy and diesel
+    only for the remaining 5–10%.
+
+
+    Why the other options are wrong: Diesel generation at isolated rural sites typically costs US$0.30
+    to 0.80/kWh — far more expensive than renewable energy at US$0.05 to 0.15/kWh once capital is paid
+    off. Kenya actively promotes renewable energy for healthcare facilities through programs like REA
+    solar for health posts. Charge speed is not the primary justification. The technical driver is firm
+    backup capacity for extended renewable shortfall periods.'
+  correct_answer: d
+- id: wind-d5-q5
+  type: PHOTO_CAPTURE
+  prompt: 'Photograph your wind turbine installation, micro-hydro site survey, penstock section, forebay
+    tank, battery bank installation, dump load assembly, or hybrid system wiring from your renewable energy
+    field practice. The image must clearly show system components, wiring quality, mechanical installations,
+    or site conditions, accompanied by written documentation recording at least three measured parameters
+    (e.g., battery voltage, output current, wind speed, water head, pipe diameter, cable cross-section,
+    turbine RPM).
+
+    '
+  xp_reward: 50
+  correct_answer: null
+  explanation: 'Photographic documentation of wind or micro-hydro system installation verifies practical
+    competency in renewable energy system design, component selection, safe wiring practice, and field
+    measurement protocols covered across this five-day curriculum unit.
+
+    '
+  rubric:
+  - criterion: Photograph clearly shows wind turbine components, micro-hydro civil works, battery bank,
+      dump load, penstock, or hybrid system wiring with sufficient detail for technical review
+    points: 15
+  - criterion: Specific system components (blades, alternator, charge controller, ELC, forebay, Pelton
+      wheel, cable terminations) are distinctly identifiable and in sharp focus
+    points: 15
+  - criterion: Written documentation records at least three measured electrical or hydraulic parameters
+      with correct units (V, A, W, m, m³/s, RPM, Hz)
+    points: 10
+  - criterion: Image is well-lit, shows safe installation practices (correct cable routing, earthing connections,
+      waterproofing), and site is free from obvious hazards
+    points: 10

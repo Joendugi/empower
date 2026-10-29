@@ -1,218 +1,226 @@
 id: metallurgy-foundry-day-3
 course_id: metallurgy-foundry
-title: "Heat Treatment — Annealing, Normalizing, Quenching & Tempering"
-title_sw: "Utireshaji Vyuma — Kupunguza Ugumu, Kurekebisha, Kuzima na Kutuliza"
+title: Heat Treatment — Annealing, Normalizing, Quenching & Tempering
+title_sw: Utireshaji Vyuma — Kupunguza Ugumu, Kurekebisha, Kuzima na Kutuliza
 week_number: 1
 day_number: 3
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - metallurgy
-  - heat-treatment
-  - quenching
-  - tempering
-  - carbon-steel
-  - martensite
+- metallurgy
+- heat-treatment
+- quenching
+- tempering
+- carbon-steel
+- martensite
 xp: 250
 exam_domain: metallurgy-foundry
+briefing: 'Forging a blade or chisel is only half the battle; without proper heat treatment, a high-carbon
+  tool is either as soft as a butter knife (bends on impact) or as brittle as glass (shatters into shrapnel
+  on the first blow). Steel is a crystalline alloy whose crystal lattice transforms between pearlite,
+  austenite, and martensite under thermal control. This lesson covers the iron-carbon phase diagram, grain
+  refinement through normalizing, stress-relief annealing, rapid water/oil quenching to trap needle-like
+  martensite, and the precise art of temper colors (straw, bronze, peacock, spring blue) to dial in edge-retention
+  versus impact toughness.
 
-briefing: >
-  Forging a blade or chisel is only half the battle; without proper heat treatment,
-  a high-carbon tool is either as soft as a butter knife (bends on impact) or as
-  brittle as glass (shatters into shrapnel on the first blow). Steel is a crystalline
-  alloy whose crystal lattice transforms between pearlite, austenite, and martensite
-  under thermal control. This lesson covers the iron-carbon phase diagram, grain
-  refinement through normalizing, stress-relief annealing, rapid water/oil quenching
-  to trap needle-like martensite, and the precise art of temper colors (straw, bronze,
-  peacock, spring blue) to dial in edge-retention versus impact toughness.
+  '
+outline: 'Iron-carbon metallurgy: Ferrite, Cementite (Fe3C), Pearlite, and Austenite (face-centered cubic
+  FCC at 727°C+); the critical transformation temperatures (A1 at 727°C, A3 curve); Full Annealing (slow
+  furnace cooling to achieve machinable softness); Normalizing (air cooling to refine coarse forged grains);
+  Quenching physics: the rapid shear transformation of Austenite into needle-hard Martensite (65 HRC);
+  quench media selection (brine, water, canola/motor oil); Quench cracking and warping prevention; Tempering
+  kinetics (sacrificing excess hardness to gain toughness); Oxide Temper Color spectrum (220°C pale straw
+  for razors, 260°C brown for axes, 290°C blue for springs and cold chisels); differential tempering.
 
-outline: >
-  Iron-carbon metallurgy: Ferrite, Cementite (Fe3C), Pearlite, and Austenite
-  (face-centered cubic FCC at 727°C+); the critical transformation temperatures
-  (A1 at 727°C, A3 curve); Full Annealing (slow furnace cooling to achieve machinable
-  softness); Normalizing (air cooling to refine coarse forged grains); Quenching
-  physics: the rapid shear transformation of Austenite into needle-hard Martensite
-  (65 HRC); quench media selection (brine, water, canola/motor oil); Quench cracking
-  and warping prevention; Tempering kinetics (sacrificing excess hardness to gain
-  toughness); Oxide Temper Color spectrum (220°C pale straw for razors, 260°C brown
-  for axes, 290°C blue for springs and cold chisels); differential tempering.
-
-content_md: |
-  ## The Microstructure of Carbon Steel
-
-  Plain carbon steel is an alloy of iron ($\text{Fe}$) and carbon ($\text{C}$, 0.1% to 1.5% by weight).
-  Its internal microscopic crystal structure changes radically with temperature:
-
-  ```
-                        Heat > 727°C (Critical Point A1)
-   [ Ferrite + Cementite ] ─────────────────────────► [ Austenite (FCC) ]
-     (Soft / Ductile)                                 (Carbon dissolved in iron)
-           ▲                                                      │
-           │ SLOW COOL (Air/Furnace)                              │ RAPID QUENCH (Water/Oil)
-           │ (Carbon diffuses out)                                ▼ (< 2 seconds)
-   [ Coarse/Fine Pearlite ]                          [ Martensite (BCT) ]
-     (Tough, Machinable)                               (Glass-hard, Brittle, 65 HRC)
-  ```
-
-  ### 1. Ferrite ($\alpha$-iron):
-  Body-Centered Cubic ($\text{BCC}$) pure iron crystals. Soft, ductile, highly magnetic. Can dissolve almost zero carbon ($< 0.022\%$).
-
-  ### 2. Cementite ($\text{Fe}_3\text{C}$):
-  Iron carbide ceramic molecule ($6.67\%\text{ Carbon}$). Extremely hard, glass-brittle, non-magnetic.
-
-  ### 3. Austenite ($\gamma$-iron):
-  When heated above the **lower critical temperature ($A_1 = 727^\circ\text{C}$)**, the iron crystal lattice rearranges into Face-Centered Cubic ($\text{FCC}$). The central pore expands, dissolving up to 2.1% carbon solid solution. **Austenite is non-magnetic**.
-
-  ### 4. Martensite:
-  When red-hot Austenite is plunged into cold oil or water, cooling happens so fast ($> 200^\circ\text{C/sec}$) that carbon atoms are trapped frozen inside the collapsing iron cage, distorting it into a stressed Body-Centered Tetragonal ($\text{BCT}$) needle matrix:
-  - **Hardness**: Jumps to **60 – 66 HRC** (scratches glass, dulls files instantly).
-  - **Flaw**: Brittle like an ice cube; internal lattice stresses will cause it to shatter if dropped on concrete.
-
-  ## The Four Heat Treatment Disciplines
-
-  | Process | Heat Range | Cooling Medium | Resulting Microstructure | Mechanical Property |
-  |---|---|---|---|---|
-  | **Full Annealing** | $800^\circ\text{C} – 850^\circ\text{C}$ (Cherry Red) | **Extremely slow in hot ash / vermiculite** (12–24 hours) | Coarse lamellar pearlite | Maximum softness; relieves all stresses; easy to saw, drill, or file |
-  | **Normalizing** | $850^\circ\text{C} – 900^\circ\text{C}$ (Bright Cherry) | **Still ambient air** | Uniform, ultra-fine pearlite | Refines coarse grains caused by forging; restores toughness |
-  | **Hardening (Quench)**| $800^\circ\text{C} – 830^\circ\text{C}$ (Non-magnetic) | **Agitated Oil or Water** | Tetragonal Martensite | Maximum hardness (65 HRC); maximum brittleness |
-  | **Tempering** | $200^\circ\text{C} – 320^\circ\text{C}$ (Sub-red heat) | Air cool or water dip | Tempered Martensite | Controlled trade-off: drops hardness to 50–58 HRC to gain high impact toughness |
-
-  ## The Quenching Protocol: Transforming to Martensite
-
-  ### Step 1: Verify Critical Austenitizing Temperature:
-  - Heat the tool steel evenly in a charcoal forge or gas furnace to bright cherry red (**800°C – 830°C**).
-  - **The Magnet Test**: Touch a permanent speaker magnet to the hot steel.
-    - *Attracted*: The steel is below 727°C; continue heating.
-    - *Non-Magnetic (Curie Point / $A_1$ passed)*: The steel has fully transformed into Austenite! Soak at this heat for 2 minutes to homogenize carbon diffusion.
-
-  ### Step 2: Choose the Correct Quench Medium:
-  | Steel Type | Carbon Content | Typical Source | Quench Medium | Danger of Wrong Quench |
-  |---|---|---|---|---|
-  | **Low Carbon (Mild)** | 0.15% – 0.25% | Construction rebar, angle iron | Water / Brine (will NOT harden significantly without case carburizing) | — |
-  | **W-Series (Water Hardening)**| 0.70% – 1.00% | Old files, plow discs, drill rod | Warm Water / 10% Salt Brine ($25^\circ\text{C} - 35^\circ\text{C}$) | Oil cools too slowly (stays soft) |
-  | **O-Series / Spring Steel** | 0.55% – 0.85% | Truck leaf springs (5160), coil springs | **Warm Vegetable / Canola Oil ($50^\circ\text{C}$)** | **Water will crack it in half violently!** |
-  | **A / D-Series (Tool Steel)**| 1.00% – 2.00% | Planer blades, D2 dies | Still Air or Gentle Oil | Water causes catastrophic explosion |
-
-  ### Step 3: Quench Agitation Technique:
-  - Plunge the hot tool vertically into the oil tank (never enter at an angle; entering sideways causes uneven cooling rates across faces, warping the blade into a banana shape).
-  - Slice the tool **forward and backward** like cutting bread (do not swirl side-to-side). This continuously breaks the insulating steam vapor jacket surrounding the red-hot steel, ensuring rapid conduction.
-
-  ## The Science of Tempering Colors
-
-  Freshly quenched martensite is too brittle for service. **Tempering** heats the steel
-  below the critical range (**200°C – 320°C**) for 30–60 minutes, allowing a portion
-  of trapped carbon to precipitate into microscopic carbides, relieving destructive lattice tension.
-
-  ### Reading the Surface Oxide Spectrum:
-  Clean the quenched steel with a sanding block until it is bare, bright silvery metal.
-  Gently warm the tool over a bed of hot coals or with a torch.
-  As oxygen reacts with the warming iron, it forms an interference oxide film whose
-  thickness and reflected color indicate internal temperature with remarkable precision:
-
-  ```
-  220°C         240°C          260°C          280°C          300°C           320°C
-  ──────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────
-     PALE STRAW     GOLDEN STRAW    PURPLE/BROWN     VIOLET       SPRING BLUE     PALE GREY
-    (Razors/Files)  (Lathe Tools)   (Axes/Knives)   (Chisels)    (Springs/Punches) (Too Soft)
-      62 HRC         60 HRC          58 HRC          55 HRC         50 HRC        < 45 HRC
-  ```
-
-  ### Matching Tool to Temper Color:
-  - **Pale Straw ($220^\circ\text{C}$, 62 HRC)**: Straight razors, wood carving chisels, scribe points (extreme edge sharpness; low impact resistance).
-  - **Golden Straw / Bronze ($240^\circ\text{C}$, 60 HRC)**: Drill bits, milling cutters, hunting knives, reamers.
-  - **Purple / Brown ($260^\circ\text{C}$, 58 HRC)**: Machetes, axe bits, wood splitting wedges, plane blades (withstands chopping impacts without chipping).
-  - **Spring Blue / Peacock ($290^\circ\text{C} – 300^\circ\text{C}$, 50 HRC)**: Cold chisels, suspension leaf springs, pry bars, crowbars (flexes under violent shock loads without snapping).
-
-  ## Differential Tempering (Hard Edge, Soft Spine)
-
-  An axe or cold chisel needs a **glass-hard cutting edge** but a **soft, ductile shock-absorbing body**:
-  1. Quench only the cutting edge: Immerse the bottom 25 mm of the chisel in water for 4 seconds, leaving the heavy shank glowing red at 800°C.
-  2. Pull the tool from the water and quickly rub the cutting edge with an abrasive sandstone block to expose bright bare metal.
-  3. **Watch the Temper Colors Walk**:
-     - Residual heat from the red-hot shank flows down into the cold cutting tip.
-     - The colors advance toward the tip like a rainbow: pale straw, golden bronze, purple, blue.
-  4. The moment the desired color (**purple-bronze for an axe, spring blue for a cold chisel**) reaches the extreme cutting edge, plunge the entire tool completely under water!
-  5. Result: A 58 HRC durable cutting edge backed by a tough 40 HRC shock-absorbing spine that will never break when struck with an 8 lb sledgehammer.
-
+  '
+content_md: "## The Microstructure of Carbon Steel\n\nPlain carbon steel is an alloy of iron ($\\text{Fe}$)\
+  \ and carbon ($\\text{C}$, 0.1% to 1.5% by weight).\nIts internal microscopic crystal structure changes\
+  \ radically with temperature:\n\n```\n                      Heat > 727°C (Critical Point A1)\n [ Ferrite\
+  \ + Cementite ] ─────────────────────────► [ Austenite (FCC) ]\n   (Soft / Ductile)                \
+  \                 (Carbon dissolved in iron)\n         ▲                                           \
+  \           │\n         │ SLOW COOL (Air/Furnace)                              │ RAPID QUENCH (Water/Oil)\n\
+  \         │ (Carbon diffuses out)                                ▼ (< 2 seconds)\n [ Coarse/Fine Pearlite\
+  \ ]                          [ Martensite (BCT) ]\n   (Tough, Machinable)                          \
+  \     (Glass-hard, Brittle, 65 HRC)\n```\n\n### 1. Ferrite ($\\alpha$-iron):\nBody-Centered Cubic ($\\\
+  text{BCC}$) pure iron crystals. Soft, ductile, highly magnetic. Can dissolve almost zero carbon ($<\
+  \ 0.022\\%$).\n\n### 2. Cementite ($\\text{Fe}_3\\text{C}$):\nIron carbide ceramic molecule ($6.67\\\
+  %\\text{ Carbon}$). Extremely hard, glass-brittle, non-magnetic.\n\n### 3. Austenite ($\\gamma$-iron):\n\
+  When heated above the **lower critical temperature ($A_1 = 727^\\circ\\text{C}$)**, the iron crystal\
+  \ lattice rearranges into Face-Centered Cubic ($\\text{FCC}$). The central pore expands, dissolving\
+  \ up to 2.1% carbon solid solution. **Austenite is non-magnetic**.\n\n### 4. Martensite:\nWhen red-hot\
+  \ Austenite is plunged into cold oil or water, cooling happens so fast ($> 200^\\circ\\text{C/sec}$)\
+  \ that carbon atoms are trapped frozen inside the collapsing iron cage, distorting it into a stressed\
+  \ Body-Centered Tetragonal ($\\text{BCT}$) needle matrix:\n- **Hardness**: Jumps to **60 – 66 HRC**\
+  \ (scratches glass, dulls files instantly).\n- **Flaw**: Brittle like an ice cube; internal lattice\
+  \ stresses will cause it to shatter if dropped on concrete.\n\n## The Four Heat Treatment Disciplines\n\
+  \n| Process | Heat Range | Cooling Medium | Resulting Microstructure | Mechanical Property |\n|---|---|---|---|---|\n\
+  | **Full Annealing** | $800^\\circ\\text{C} – 850^\\circ\\text{C}$ (Cherry Red) | **Extremely slow in\
+  \ hot ash / vermiculite** (12–24 hours) | Coarse lamellar pearlite | Maximum softness; relieves all\
+  \ stresses; easy to saw, drill, or file |\n| **Normalizing** | $850^\\circ\\text{C} – 900^\\circ\\text{C}$\
+  \ (Bright Cherry) | **Still ambient air** | Uniform, ultra-fine pearlite | Refines coarse grains caused\
+  \ by forging; restores toughness |\n| **Hardening (Quench)**| $800^\\circ\\text{C} – 830^\\circ\\text{C}$\
+  \ (Non-magnetic) | **Agitated Oil or Water** | Tetragonal Martensite | Maximum hardness (65 HRC); maximum\
+  \ brittleness |\n| **Tempering** | $200^\\circ\\text{C} – 320^\\circ\\text{C}$ (Sub-red heat) | Air\
+  \ cool or water dip | Tempered Martensite | Controlled trade-off: drops hardness to 50–58 HRC to gain\
+  \ high impact toughness |\n\n## The Quenching Protocol: Transforming to Martensite\n\n### Step 1: Verify\
+  \ Critical Austenitizing Temperature:\n- Heat the tool steel evenly in a charcoal forge or gas furnace\
+  \ to bright cherry red (**800°C – 830°C**).\n- **The Magnet Test**: Touch a permanent speaker magnet\
+  \ to the hot steel.\n  - *Attracted*: The steel is below 727°C; continue heating.\n  - *Non-Magnetic\
+  \ (Curie Point / $A_1$ passed)*: The steel has fully transformed into Austenite! Soak at this heat for\
+  \ 2 minutes to homogenize carbon diffusion.\n\n### Step 2: Choose the Correct Quench Medium:\n| Steel\
+  \ Type | Carbon Content | Typical Source | Quench Medium | Danger of Wrong Quench |\n|---|---|---|---|---|\n\
+  | **Low Carbon (Mild)** | 0.15% – 0.25% | Construction rebar, angle iron | Water / Brine (will NOT harden\
+  \ significantly without case carburizing) | — |\n| **W-Series (Water Hardening)**| 0.70% – 1.00% | Old\
+  \ files, plow discs, drill rod | Warm Water / 10% Salt Brine ($25^\\circ\\text{C} - 35^\\circ\\text{C}$)\
+  \ | Oil cools too slowly (stays soft) |\n| **O-Series / Spring Steel** | 0.55% – 0.85% | Truck leaf\
+  \ springs (5160), coil springs | **Warm Vegetable / Canola Oil ($50^\\circ\\text{C}$)** | **Water will\
+  \ crack it in half violently!** |\n| **A / D-Series (Tool Steel)**| 1.00% – 2.00% | Planer blades, D2\
+  \ dies | Still Air or Gentle Oil | Water causes catastrophic explosion |\n\n### Step 3: Quench Agitation\
+  \ Technique:\n- Plunge the hot tool vertically into the oil tank (never enter at an angle; entering\
+  \ sideways causes uneven cooling rates across faces, warping the blade into a banana shape).\n- Slice\
+  \ the tool **forward and backward** like cutting bread (do not swirl side-to-side). This continuously\
+  \ breaks the insulating steam vapor jacket surrounding the red-hot steel, ensuring rapid conduction.\n\
+  \n## The Science of Tempering Colors\n\nFreshly quenched martensite is too brittle for service. **Tempering**\
+  \ heats the steel\nbelow the critical range (**200°C – 320°C**) for 30–60 minutes, allowing a portion\n\
+  of trapped carbon to precipitate into microscopic carbides, relieving destructive lattice tension.\n\
+  \n### Reading the Surface Oxide Spectrum:\nClean the quenched steel with a sanding block until it is\
+  \ bare, bright silvery metal.\nGently warm the tool over a bed of hot coals or with a torch.\nAs oxygen\
+  \ reacts with the warming iron, it forms an interference oxide film whose\nthickness and reflected color\
+  \ indicate internal temperature with remarkable precision:\n\n```\n220°C         240°C          260°C\
+  \          280°C          300°C           320°C\n──────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────\n\
+  \   PALE STRAW     GOLDEN STRAW    PURPLE/BROWN     VIOLET       SPRING BLUE     PALE GREY\n  (Razors/Files)\
+  \  (Lathe Tools)   (Axes/Knives)   (Chisels)    (Springs/Punches) (Too Soft)\n    62 HRC         60\
+  \ HRC          58 HRC          55 HRC         50 HRC        < 45 HRC\n```\n\n### Matching Tool to Temper\
+  \ Color:\n- **Pale Straw ($220^\\circ\\text{C}$, 62 HRC)**: Straight razors, wood carving chisels, scribe\
+  \ points (extreme edge sharpness; low impact resistance).\n- **Golden Straw / Bronze ($240^\\circ\\\
+  text{C}$, 60 HRC)**: Drill bits, milling cutters, hunting knives, reamers.\n- **Purple / Brown ($260^\\\
+  circ\\text{C}$, 58 HRC)**: Machetes, axe bits, wood splitting wedges, plane blades (withstands chopping\
+  \ impacts without chipping).\n- **Spring Blue / Peacock ($290^\\circ\\text{C} – 300^\\circ\\text{C}$,\
+  \ 50 HRC)**: Cold chisels, suspension leaf springs, pry bars, crowbars (flexes under violent shock loads\
+  \ without snapping).\n\n## Differential Tempering (Hard Edge, Soft Spine)\n\nAn axe or cold chisel needs\
+  \ a **glass-hard cutting edge** but a **soft, ductile shock-absorbing body**:\n1. Quench only the cutting\
+  \ edge: Immerse the bottom 25 mm of the chisel in water for 4 seconds, leaving the heavy shank glowing\
+  \ red at 800°C.\n2. Pull the tool from the water and quickly rub the cutting edge with an abrasive sandstone\
+  \ block to expose bright bare metal.\n3. **Watch the Temper Colors Walk**:\n   - Residual heat from\
+  \ the red-hot shank flows down into the cold cutting tip.\n   - The colors advance toward the tip like\
+  \ a rainbow: pale straw, golden bronze, purple, blue.\n4. The moment the desired color (**purple-bronze\
+  \ for an axe, spring blue for a cold chisel**) reaches the extreme cutting edge, plunge the entire tool\
+  \ completely under water!\n5. Result: A 58 HRC durable cutting edge backed by a tough 40 HRC shock-absorbing\
+  \ spine that will never break when struck with an 8 lb sledgehammer.\n"
 exercises:
-  - id: met-d3-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A blacksmith forged a heavy wood-cutting axe from an automotive 5160 leaf spring.
-      After hardening the steel to martensite, to what temper color should the cutting
-      edge be tempered to withstand chopping hard acacia wood without chipping or bending?
-    xp_reward: 50
-    options:
-      - text: "Purple to Brown (approx. 260°C / 56-58 HRC), providing the ideal balance of tough impact resistance and long-lasting edge retention"
-        correct: true
-        explanation: "Pale straw (220°C / 62 HRC) is too brittle for chopping knots in hard timber and will chip out. Spring blue (300°C / 50 HRC) is too soft and the edge will roll over. Brown/purple at 260°C is the classic axe temper."
-      - text: "Pale Straw (220°C / 62 HRC)"
-        correct: false
-        explanation: "Straw heat is ideal for straight razors and surgical blades, but chips instantly under chopping shock."
-      - text: "Spring Blue (300°C / 50 HRC)"
-        correct: false
-        explanation: "Spring blue is too soft for cutting edges; the edge will dull and roll over on the first log."
-      - text: "Leave it untempered at 65 HRC"
-        correct: false
-        explanation: "Untempered martensite will shatter into dangerous fragments on the first heavy impact."
+- id: met-d3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A blacksmith forged a heavy wood-cutting axe from an automotive 5160 leaf spring. After hardening
+    the steel to martensite, to what temper color should the cutting edge be tempered to withstand chopping
+    hard acacia wood without chipping or bending?
 
-  - id: met-d3-q2
-    type: FILL_BLANK
-    prompt: >
-      When heating carbon tool steel for quench hardening, the steel fully transforms
-      into Austenite above the critical temperature of 727°C, which is verified in the
-      field because the steel completely loses its ___.
-    xp_reward: 50
-    correct_answer: "magnetism"
-    explanation: >
-      Austenite is non-magnetic. Touching a magnet to the red-hot tool verifies
-      that the Curie/A1 transformation temperature has been exceeded.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Pale Straw (220°C / 62 HRC)
+  - id: b
+    text: Spring Blue (300°C / 50 HRC)
+  - id: c
+    text: Purple to Brown (approx. 260°C / 56-58 HRC), providing the ideal balance of tough impact resistance
+      and long-lasting edge retention
+  - id: d
+    text: Leave it untempered at 65 HRC
+  explanation: 'Pale straw (220°C / 62 HRC) is too brittle for chopping knots in hard timber and will
+    chip out. Spring blue (300°C / 50 HRC) is too soft and the edge will roll over. Brown/purple at 260°C
+    is the classic axe temper.
 
-  - id: met-d3-q3
-    type: MATCH_PAIRS
-    prompt: Match each heat treatment process to its primary industrial objective.
-    xp_reward: 50
-    pairs:
-      - left: Full Annealing (Slow Ash Cool)
-        right: Produces maximum structural softness for sawing, drilling, and filing
-      - left: Normalizing (Still Air Cool)
-        right: Refines coarse crystal grains and relieves uneven forging stresses
-      - left: Rapid Quenching (Water or Oil)
-        right: Traps carbon in distorted BCT lattice to form glass-hard Martensite
-      - left: Tempering (Sub-Red Heating)
-        right: Relieves internal quench stresses to exchange excess hardness for toughness
-    correct_answer: null
-    explanation: >
-      Annealing softens; normalizing refines grain; quenching hardens; tempering toughens.
 
-  - id: met-d3-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      What catastrophic failure occurs if a blade made from high-carbon alloy spring steel
-      (5160) is quenched directly into cold ice water instead of warm oil?
-    xp_reward: 50
-    options:
-      - text: "Catastrophic quench cracking: The cooling rate of ice water is excessively violent, creating massive thermal and volume expansion stresses that crack the blade in half with an audible 'ping'"
-        correct: true
-        explanation: "Water cools steel at > 1,000°C/sec. High-carbon alloy steels have high hardenability; the rapid transformation to martensite creates severe localized volume expansion, tearing the brittle steel apart along internal stresses."
-      - text: "The steel turns into cast iron"
-        correct: false
-        explanation: "Quenching does not add carbon; carbon content is fixed."
-      - text: "The blade becomes permanently magnetized"
-        correct: false
-        explanation: "Thermal quenching does not magnetize steel."
-      - text: "The steel fails to harden at all"
-        correct: false
-        explanation: "The steel will harden, but it will simultaneously crack and shatter."
+    Why the other options are wrong: Straw heat is ideal for straight razors and surgical blades, but
+    chips instantly under chopping shock. Spring blue is too soft for cutting edges; the edge will dull
+    and roll over on the first log. Untempered martensite will shatter into dangerous fragments on the
+    first heavy impact.'
+  correct_answer: c
+- id: met-d3-q2
+  type: FILL_BLANK
+  prompt: 'When heating carbon tool steel for quench hardening, the steel fully transforms into Austenite
+    above the critical temperature of 727°C, which is verified in the field because the steel completely
+    loses its ___.
 
-  - id: met-d3-q5
-    type: FILL_BLANK
-    prompt: >
-      In differential tempering of a cold chisel, heat stored in the heavy unquenched
-      shank flows forward into the bare ground cutting edge, and the entire tool is
-      plunged into water when the oxide color reaches ___ blue (approx. 290°C to 300°C).
-    xp_reward: 50
-    correct_answer: "spring"
-    explanation: >
-      Cold chisels strike steel and stone under heavy sledgehammer blows; a spring blue
-      temper (50-52 HRC) withstands violent impact without shattering.
+    '
+  xp_reward: 50
+  correct_answer: magnetism
+  explanation: 'Austenite is non-magnetic. Touching a magnet to the red-hot tool verifies that the Curie/A1
+    transformation temperature has been exceeded.
+
+    '
+- id: met-d3-q3
+  type: MATCH_PAIRS
+  prompt: Match each heat treatment process to its primary industrial objective.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Full Annealing (Slow Ash Cool)
+    right:
+      id: r-8281fb
+      text: Produces maximum structural softness for sawing, drilling, and filing
+  - left:
+      id: l2
+      text: Normalizing (Still Air Cool)
+    right:
+      id: r-01f9f3
+      text: Refines coarse crystal grains and relieves uneven forging stresses
+  - left:
+      id: l3
+      text: Rapid Quenching (Water or Oil)
+    right:
+      id: r-393a7f
+      text: Traps carbon in distorted BCT lattice to form glass-hard Martensite
+  - left:
+      id: l4
+      text: Tempering (Sub-Red Heating)
+    right:
+      id: r-31d4d9
+      text: Relieves internal quench stresses to exchange excess hardness for toughness
+  correct_answer:
+  - l1=r-8281fb
+  - l2=r-01f9f3
+  - l3=r-393a7f
+  - l4=r-31d4d9
+  explanation: 'Annealing softens; normalizing refines grain; quenching hardens; tempering toughens.
+
+    '
+- id: met-d3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'What catastrophic failure occurs if a blade made from high-carbon alloy spring steel (5160)
+    is quenched directly into cold ice water instead of warm oil?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The steel turns into cast iron
+  - id: b
+    text: 'Catastrophic quench cracking: The cooling rate of ice water is excessively violent, creating
+      massive thermal and volume expansion stresses that crack the blade in half with an audible ''ping'''
+  - id: c
+    text: The blade becomes permanently magnetized
+  - id: d
+    text: The steel fails to harden at all
+  explanation: 'Water cools steel at > 1,000°C/sec. High-carbon alloy steels have high hardenability;
+    the rapid transformation to martensite creates severe localized volume expansion, tearing the brittle
+    steel apart along internal stresses.
+
+
+    Why the other options are wrong: Quenching does not add carbon; carbon content is fixed. Thermal quenching
+    does not magnetize steel. The steel will harden, but it will simultaneously crack and shatter.'
+  correct_answer: b
+- id: met-d3-q5
+  type: FILL_BLANK
+  prompt: 'In differential tempering of a cold chisel, heat stored in the heavy unquenched shank flows
+    forward into the bare ground cutting edge, and the entire tool is plunged into water when the oxide
+    color reaches ___ blue (approx. 290°C to 300°C).
+
+    '
+  xp_reward: 50
+  correct_answer: spring
+  explanation: 'Cold chisels strike steel and stone under heavy sledgehammer blows; a spring blue temper
+    (50-52 HRC) withstands violent impact without shattering.
+
+    '

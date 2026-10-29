@@ -1,241 +1,206 @@
 id: sustainable-agriculture-day-2
 course_id: sustainable-agriculture
-title: "Composting & Organic Soil Amendments"
-title_sw: "Kutengeneza Mboji na Marekebisho ya Udongo wa Kikaboni"
+title: Composting & Organic Soil Amendments
+title_sw: Kutengeneza Mboji na Marekebisho ya Udongo wa Kikaboni
 week_number: 1
 day_number: 2
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - composting
-  - organic-matter
-  - soil-amendment
-  - bokashi
-  - agriculture
+- composting
+- organic-matter
+- soil-amendment
+- bokashi
+- agriculture
 xp: 250
 exam_domain: sustainable-agriculture
+briefing: 'Compost is the single most powerful and cheapest soil amendment available to African smallholders.
+  A well-managed 1 m3 compost pile converts crop residues, kitchen waste, and animal manure into finished
+  compost in 6-8 weeks — providing organic matter, balanced nutrients, and billions of beneficial microorganisms
+  per gram. This lesson covers the four parameters that control composting speed, the full construction
+  sequence, and three alternative systems for water-scarce or space-limited situations.
 
-briefing: >
-  Compost is the single most powerful and cheapest soil amendment available to
-  African smallholders. A well-managed 1 m3 compost pile converts crop residues,
-  kitchen waste, and animal manure into finished compost in 6-8 weeks —
-  providing organic matter, balanced nutrients, and billions of beneficial
-  microorganisms per gram. This lesson covers the four parameters that control
-  composting speed, the full construction sequence, and three alternative
-  systems for water-scarce or space-limited situations.
+  '
+outline: 'The four composting control parameters (C:N ratio, moisture, aeration, particle size); hot aerobic
+  composting — pile construction and turning schedule; temperature monitoring and thermophilic pathogen
+  kill; finished compost quality indicators; compost tea production and application; bokashi fermentation
+  for kitchen waste; vermicompost integration; biochar — production and soil amendment properties; liquid
+  manure (slurry) from cattle dung.
 
-outline: >
-  The four composting control parameters (C:N ratio, moisture, aeration,
-  particle size); hot aerobic composting — pile construction and turning
-  schedule; temperature monitoring and thermophilic pathogen kill; finished
-  compost quality indicators; compost tea production and application;
-  bokashi fermentation for kitchen waste; vermicompost integration;
-  biochar — production and soil amendment properties; liquid manure (slurry)
-  from cattle dung.
-
-content_md: |
-  ## The Four Composting Parameters
-
-  Thermophilic composting reaches 55-70°C when four parameters are in balance:
-
-  | Parameter | Optimal range | How to fix if wrong |
-  |---|---|---|
-  | C:N ratio | 25:1 to 30:1 | Too high (dry/woody): add green material or manure; Too low (slimy): add straw or dry grass |
-  | Moisture | 50-60% ("wrung sponge" test) | Too dry: sprinkle water; Too wet: add dry carbon material and turn |
-  | Aeration | Pile must breathe | Turn pile every 3-5 days; use aeration pipes if large pile |
-  | Particle size | 2-5 cm (chopped) | Large pieces: chop with panga or machete before adding |
-
-  **Wrung sponge test**: grab a handful of compost material and squeeze firmly.
-  If water drips freely — too wet. If no moisture felt in palm — too dry.
-  If just a few drops express — correct moisture.
-
-  ## Common C:N Ratios
-
-  | Material | C:N ratio | Category |
-  |---|---|---|
-  | Fresh grass clippings | 15:1 | Green (N-rich) |
-  | Vegetable kitchen scraps | 15:1 | Green |
-  | Cattle manure | 20:1 | Green/balanced |
-  | Coffee grounds | 20:1 | Green |
-  | Straw/dry grass | 80:1 | Brown (C-rich) |
-  | Dry leaves | 60:1 | Brown |
-  | Sawdust | 400:1 | Brown |
-  | Newspaper | 170:1 | Brown |
-
-  Rule of thumb: **3 parts brown to 1 part green by volume** achieves
-  approximately 25-30:1 C:N for most mixed farm waste.
-
-  ## Compost Pile Construction (Berkeley 18-Day Method)
-
-  1. Choose a shaded site; lay 10 cm of coarse woody material as base (airflow)
-  2. Layer brown material (20 cm) then green material (10 cm), alternating
-  3. Moisten each layer as you build — target wrung-sponge moisture throughout
-  4. Total pile size: minimum 1 m x 1 m x 1 m (critical mass for heat)
-  5. Maximum size: 2 m wide x 1.5 m high (too big restricts core aeration)
-  6. Insert a wooden probe at pile centre as thermometer guide
-  7. Cover with jute sack or grass thatch to retain moisture and heat
-
-  ### Turning Schedule for Rapid (18-Day) Compost
-
-  | Day | Action | Expected temperature |
-  |---|---|---|
-  | 1 | Build pile | 20-30°C (ambient) |
-  | 2-3 | No action | Rises to 50-60°C |
-  | 4 | First turn — move outer edges to centre | 55-65°C |
-  | 7 | Second turn | 60-70°C peak |
-  | 10 | Third turn | 55-65°C |
-  | 13 | Fourth turn | 40-50°C (cooling) |
-  | 18 | Final assessment | < 35°C = finished |
-
-  **Thermophilic kill**: sustained 55°C for 3 days kills E. coli, Salmonella,
-  most weed seeds, and most plant pathogens. Ascaris eggs require 60°C or
-  longer exposure (see Day 4, Part 7).
-
-  ## Finished Compost Quality Indicators
-
-  Good finished compost:
-  - Dark brown/black colour (no recognisable original materials)
-  - Earthy smell (not ammonia, not putrid)
-  - Temperature < 35°C even after moistening and covering
-  - Crumbly texture — no slimy or fibrous zones
-  - pH 6.5-8.0 (neutral to slightly alkaline)
-
-  Typical finished compost nutrient content (per tonne):
-  - N: 10-15 kg (mostly organic N — slow release)
-  - P: 4-8 kg
-  - K: 8-15 kg
-  - Plus micronutrients and 200-400 billion CFU of beneficial bacteria per gram
-
-  Application rate: 5-10 t/ha incorporated before planting, or 2-3 kg
-  per planting hole.
-
-  ## Compost Tea
-
-  Compost tea extracts soluble nutrients and beneficial microbes for foliar or
-  soil drench application:
-
-  1. Fill a 20 L bucket 20% full with mature compost
-  2. Fill to top with non-chlorinated water (rainwater or borehole water)
-  3. Aerate with a fish-tank air pump for 24 hours (aerobic tea — higher
-     beneficial microbial counts)
-  4. Strain through cloth; apply undiluted to soil or dilute 1:5 for foliar spray
-  5. Apply within 4 hours of finishing — microbes die quickly once aeration stops
-
-  ## Bokashi Fermentation (Kitchen Waste)
-
-  Bokashi uses effective microorganisms (EM) — mainly Lactobacillus, yeasts, and
-  photosynthetic bacteria — to ferment kitchen waste including meat and dairy
-  (unlike aerobic compost which cannot accept these):
-
-  1. Layer kitchen waste in an airtight bucket with bokashi bran (EM-inoculated wheat bran)
-  2. Compress each layer firmly to exclude air; seal bucket after each addition
-  3. After 2 weeks at room temperature: pre-compost is ready (pH 4 — very acidic)
-  4. Bury pre-compost 20 cm deep in soil; it fully breaks down in 2-4 weeks
-  5. Do NOT apply directly to plant roots — acid pre-compost burns
-
-  ## Biochar — Soil Carbon Amendment
-
-  Biochar is charcoal made by pyrolysing biomass at 400-700°C with limited oxygen
-  (not burned to ash). Properties:
-
-  - Highly porous: 1 g biochar has up to 200 m2 internal surface area
-  - Stable carbon: persists in soil 100-1,000 years (sequesters carbon)
-  - Does NOT itself provide nutrients — must be charged with compost or manure
-  - Increases CEC by 20-30% in sandy soils
-  - Increases water retention in sandy soils
-
-  **Production**: flame-curtain kiln (TLUD — top-lit updraft); cover fire with
-  soil as soon as flames change from yellow to blue to quench without burning to ash.
-
-  **Application**: charge by soaking in compost tea or mixing with manure for
-  2 weeks before soil application at 1-5 t/ha.
-
+  '
+content_md: "## The Four Composting Parameters\n\nThermophilic composting reaches 55-70°C when four parameters\
+  \ are in balance:\n\n| Parameter | Optimal range | How to fix if wrong |\n|---|---|---|\n| C:N ratio\
+  \ | 25:1 to 30:1 | Too high (dry/woody): add green material or manure; Too low (slimy): add straw or\
+  \ dry grass |\n| Moisture | 50-60% (\"wrung sponge\" test) | Too dry: sprinkle water; Too wet: add dry\
+  \ carbon material and turn |\n| Aeration | Pile must breathe | Turn pile every 3-5 days; use aeration\
+  \ pipes if large pile |\n| Particle size | 2-5 cm (chopped) | Large pieces: chop with panga or machete\
+  \ before adding |\n\n**Wrung sponge test**: grab a handful of compost material and squeeze firmly.\n\
+  If water drips freely — too wet. If no moisture felt in palm — too dry.\nIf just a few drops express\
+  \ — correct moisture.\n\n## Common C:N Ratios\n\n| Material | C:N ratio | Category |\n|---|---|---|\n\
+  | Fresh grass clippings | 15:1 | Green (N-rich) |\n| Vegetable kitchen scraps | 15:1 | Green |\n| Cattle\
+  \ manure | 20:1 | Green/balanced |\n| Coffee grounds | 20:1 | Green |\n| Straw/dry grass | 80:1 | Brown\
+  \ (C-rich) |\n| Dry leaves | 60:1 | Brown |\n| Sawdust | 400:1 | Brown |\n| Newspaper | 170:1 | Brown\
+  \ |\n\nRule of thumb: **3 parts brown to 1 part green by volume** achieves\napproximately 25-30:1 C:N\
+  \ for most mixed farm waste.\n\n## Compost Pile Construction (Berkeley 18-Day Method)\n\n1. Choose a\
+  \ shaded site; lay 10 cm of coarse woody material as base (airflow)\n2. Layer brown material (20 cm)\
+  \ then green material (10 cm), alternating\n3. Moisten each layer as you build — target wrung-sponge\
+  \ moisture throughout\n4. Total pile size: minimum 1 m x 1 m x 1 m (critical mass for heat)\n5. Maximum\
+  \ size: 2 m wide x 1.5 m high (too big restricts core aeration)\n6. Insert a wooden probe at pile centre\
+  \ as thermometer guide\n7. Cover with jute sack or grass thatch to retain moisture and heat\n\n### Turning\
+  \ Schedule for Rapid (18-Day) Compost\n\n| Day | Action | Expected temperature |\n|---|---|---|\n| 1\
+  \ | Build pile | 20-30°C (ambient) |\n| 2-3 | No action | Rises to 50-60°C |\n| 4 | First turn — move\
+  \ outer edges to centre | 55-65°C |\n| 7 | Second turn | 60-70°C peak |\n| 10 | Third turn | 55-65°C\
+  \ |\n| 13 | Fourth turn | 40-50°C (cooling) |\n| 18 | Final assessment | < 35°C = finished |\n\n**Thermophilic\
+  \ kill**: sustained 55°C for 3 days kills E. coli, Salmonella,\nmost weed seeds, and most plant pathogens.\
+  \ Ascaris eggs require 60°C or\nlonger exposure (see Day 4, Part 7).\n\n## Finished Compost Quality\
+  \ Indicators\n\nGood finished compost:\n- Dark brown/black colour (no recognisable original materials)\n\
+  - Earthy smell (not ammonia, not putrid)\n- Temperature < 35°C even after moistening and covering\n\
+  - Crumbly texture — no slimy or fibrous zones\n- pH 6.5-8.0 (neutral to slightly alkaline)\n\nTypical\
+  \ finished compost nutrient content (per tonne):\n- N: 10-15 kg (mostly organic N — slow release)\n\
+  - P: 4-8 kg\n- K: 8-15 kg\n- Plus micronutrients and 200-400 billion CFU of beneficial bacteria per\
+  \ gram\n\nApplication rate: 5-10 t/ha incorporated before planting, or 2-3 kg\nper planting hole.\n\n\
+  ## Compost Tea\n\nCompost tea extracts soluble nutrients and beneficial microbes for foliar or\nsoil\
+  \ drench application:\n\n1. Fill a 20 L bucket 20% full with mature compost\n2. Fill to top with non-chlorinated\
+  \ water (rainwater or borehole water)\n3. Aerate with a fish-tank air pump for 24 hours (aerobic tea\
+  \ — higher\n   beneficial microbial counts)\n4. Strain through cloth; apply undiluted to soil or dilute\
+  \ 1:5 for foliar spray\n5. Apply within 4 hours of finishing — microbes die quickly once aeration stops\n\
+  \n## Bokashi Fermentation (Kitchen Waste)\n\nBokashi uses effective microorganisms (EM) — mainly Lactobacillus,\
+  \ yeasts, and\nphotosynthetic bacteria — to ferment kitchen waste including meat and dairy\n(unlike\
+  \ aerobic compost which cannot accept these):\n\n1. Layer kitchen waste in an airtight bucket with bokashi\
+  \ bran (EM-inoculated wheat bran)\n2. Compress each layer firmly to exclude air; seal bucket after each\
+  \ addition\n3. After 2 weeks at room temperature: pre-compost is ready (pH 4 — very acidic)\n4. Bury\
+  \ pre-compost 20 cm deep in soil; it fully breaks down in 2-4 weeks\n5. Do NOT apply directly to plant\
+  \ roots — acid pre-compost burns\n\n## Biochar — Soil Carbon Amendment\n\nBiochar is charcoal made by\
+  \ pyrolysing biomass at 400-700°C with limited oxygen\n(not burned to ash). Properties:\n\n- Highly\
+  \ porous: 1 g biochar has up to 200 m2 internal surface area\n- Stable carbon: persists in soil 100-1,000\
+  \ years (sequesters carbon)\n- Does NOT itself provide nutrients — must be charged with compost or manure\n\
+  - Increases CEC by 20-30% in sandy soils\n- Increases water retention in sandy soils\n\n**Production**:\
+  \ flame-curtain kiln (TLUD — top-lit updraft); cover fire with\nsoil as soon as flames change from yellow\
+  \ to blue to quench without burning to ash.\n\n**Application**: charge by soaking in compost tea or\
+  \ mixing with manure for\n2 weeks before soil application at 1-5 t/ha.\n"
 exercises:
-  - id: sa-d2-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A compost pile on Day 6 measures only 32°C at the centre and smells of
-      ammonia. What is the most likely cause and the correct fix?
-    xp_reward: 50
-    options:
-      - text: "C:N ratio is too low (too much green/N material) — turn pile and add dry straw or dry leaves to raise C:N"
-        correct: true
-        explanation: "Ammonia smell indicates excess nitrogen being lost as NH3 gas — classic sign of a C:N ratio below 20:1. Low temperature means decomposition is not generating sufficient heat. Adding brown carbon-rich material (straw, 80:1 C:N) and turning corrects both issues."
-      - text: "Pile is too dry — add water to reach correct moisture"
-        correct: false
-        explanation: "A dry pile would show low temperature and an earthy or dusty smell, not ammonia. Ammonia specifically indicates nitrogen excess from too much green material."
-      - text: "Pile needs more green material — the C:N is too high"
-        correct: false
-        explanation: "Ammonia loss = too much N already. Adding more green material would make the ammonia problem worse, not better."
-      - text: "Temperature is correct — 32°C is normal for Day 6"
-        correct: false
-        explanation: "By Day 4-7, a well-managed compost pile should reach 55-70°C. 32°C indicates the pile is not thermophilic — the imbalanced C:N is preventing the microbial bloom needed for heat generation."
+- id: sa-d2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A compost pile on Day 6 measures only 32°C at the centre and smells of ammonia. What is the
+    most likely cause and the correct fix?
 
-  - id: sa-d2-q2
-    type: FILL_BLANK
-    prompt: >
-      The minimum pile volume for thermophilic composting is ___ x ___ x ___
-      metres. Finished compost contains approximately ___ billion CFU of
-      beneficial bacteria per gram of compost.
-    xp_reward: 50
-    correct_answer: "1 x 1 x 1 metres; 200-400 billion"
-    explanation: >
-      Minimum 1 m3 is required to generate and retain sufficient heat for the
-      thermophilic microbial community. Smaller piles lose heat faster than they
-      generate it. The 200-400 billion CFU/g figure explains why compost is a
-      microbial inoculant as much as a nutrient source — reseeding degraded
-      soils with soil life is as important as adding N, P, and K.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Pile is too dry — add water to reach correct moisture
+  - id: b
+    text: Pile needs more green material — the C:N is too high
+  - id: c
+    text: C:N ratio is too low (too much green/N material) — turn pile and add dry straw or dry leaves
+      to raise C:N
+  - id: d
+    text: Temperature is correct — 32°C is normal for Day 6
+  explanation: 'Ammonia smell indicates excess nitrogen being lost as NH3 gas — classic sign of a C:N
+    ratio below 20:1. Low temperature means decomposition is not generating sufficient heat. Adding brown
+    carbon-rich material (straw, 80:1 C:N) and turning corrects both issues.
 
-  - id: sa-d2-q3
-    type: MATCH_PAIRS
-    prompt: Match each composting system to its best use case.
-    xp_reward: 50
-    pairs:
-      - left: Hot aerobic compost (Berkeley method)
-        right: Large volumes of farm waste; pathogen kill needed; 18-day turnaround
-      - left: Bokashi fermentation
-        right: Kitchen waste including meat and dairy; airtight bucket; no smell
-      - left: Compost tea
-        right: Quick foliar or soil drench; delivers soluble nutrients and microbes
-      - left: Biochar
-        right: Long-term carbon sequestration and CEC improvement in sandy soils
-    correct_answer: null
-    explanation: >
-      Each system targets a different situation. Hot composting is the workhorse
-      for bulk farm waste. Bokashi solves the kitchen-waste problem. Compost tea
-      provides a fast-acting liquid amendment between solid compost applications.
-      Biochar is a 100-1000 year carbon investment that changes soil structure.
 
-  - id: sa-d2-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why must biochar be charged with compost or manure before soil application?
-    xp_reward: 50
-    options:
-      - text: "Biochar itself contains no nutrients — its porous structure initially adsorbs existing soil nutrients, temporarily reducing plant-available fertility until charged"
-        correct: true
-        explanation: "Fresh biochar is a highly adsorptive carbon sponge. If applied uncharged, it will strip plant-available N, P, and K from the soil solution, causing temporary nutrient deficiency (sometimes called the 'biochar hunger'). Charging fills the pores with nutrients before application."
-      - text: "Biochar is toxic to soil microbes and must be neutralised with compost"
-        correct: false
-        explanation: "Biochar is not toxic to soil microbes. In fact, its porous structure provides ideal habitat for bacteria and fungi after charging. The concern is nutrient adsorption, not toxicity."
-      - text: "Biochar raises soil pH above 9.0 and must be buffered before application"
-        correct: false
-        explanation: "Biochar pH is typically 7-10 depending on production temperature, but at field application rates (1-5 t/ha) the pH effect on soil is minimal. The buffering concern is not the primary reason for charging."
-      - text: "Charging converts biochar into activated carbon for better filtration"
-        correct: false
-        explanation: "Activated carbon is a different product made at higher temperatures with steam activation. Composting-based charging fills biochar pores with nutrients and microbes — it does not change the physical structure."
+    Why the other options are wrong: A dry pile would show low temperature and an earthy or dusty smell,
+    not ammonia. Ammonia specifically indicates nitrogen excess from too much green material. Ammonia
+    loss = too much N already. Adding more green material would make the ammonia problem worse, not better.
+    By Day 4-7, a well-managed compost pile should reach 55-70°C. 32°C indicates the pile is not thermophilic
+    — the imbalanced C:N is preventing the microbial bloom needed for heat generation.'
+  correct_answer: c
+- id: sa-d2-q2
+  type: FILL_BLANK
+  prompt: The minimum pile volume for thermophilic (hot) composting is ___ cubic metre.
+  xp_reward: 50
+  correct_answer: '1'
+  explanation: 'Minimum 1 m3 is required to generate and retain sufficient heat for the thermophilic microbial
+    community. Smaller piles lose heat faster than they generate it. The 200-400 billion CFU/g figure
+    explains why compost is a microbial inoculant as much as a nutrient source — reseeding degraded soils
+    with soil life is as important as adding N, P, and K.
 
-  - id: sa-d2-q5
-    type: FILL_BLANK
-    prompt: >
-      Compost tea should be applied within ___ hours of finishing aeration.
-      Bokashi pre-compost has a pH of approximately ___ and must be buried at
-      least ___ cm deep to avoid burning plant roots.
-    xp_reward: 50
-    correct_answer: "4 hours; 4; 20 cm"
-    explanation: >
-      Compost tea microbes die within 4 hours once the aerator is removed —
-      the high microbial count is only maintained while oxygen is supplied.
-      Bokashi pH of 4 is highly acidic — direct root contact would burn.
-      Burying 20 cm deep protects roots while the acid pre-compost is
-      rapidly neutralised and broken down by soil microbes over 2-4 weeks.
+    '
+- id: sa-d2-q3
+  type: MATCH_PAIRS
+  prompt: Match each composting system to its best use case.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Hot aerobic compost (Berkeley method)
+    right:
+      id: r-3966bc
+      text: Large volumes of farm waste; pathogen kill needed; 18-day turnaround
+  - left:
+      id: l2
+      text: Bokashi fermentation
+    right:
+      id: r-8ce5f6
+      text: Kitchen waste including meat and dairy; airtight bucket; no smell
+  - left:
+      id: l3
+      text: Compost tea
+    right:
+      id: r-b9116b
+      text: Quick foliar or soil drench; delivers soluble nutrients and microbes
+  - left:
+      id: l4
+      text: Biochar
+    right:
+      id: r-f3f5f5
+      text: Long-term carbon sequestration and CEC improvement in sandy soils
+  correct_answer:
+  - l1=r-3966bc
+  - l2=r-8ce5f6
+  - l3=r-b9116b
+  - l4=r-f3f5f5
+  explanation: 'Each system targets a different situation. Hot composting is the workhorse for bulk farm
+    waste. Bokashi solves the kitchen-waste problem. Compost tea provides a fast-acting liquid amendment
+    between solid compost applications. Biochar is a 100-1000 year carbon investment that changes soil
+    structure.
+
+    '
+- id: sa-d2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why must biochar be charged with compost or manure before soil application?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Biochar itself contains no nutrients — its porous structure initially adsorbs existing soil
+      nutrients, temporarily reducing plant-available fertility until charged
+  - id: b
+    text: Biochar is toxic to soil microbes and must be neutralised with compost
+  - id: c
+    text: Biochar raises soil pH above 9.0 and must be buffered before application
+  - id: d
+    text: Charging converts biochar into activated carbon for better filtration
+  explanation: 'Fresh biochar is a highly adsorptive carbon sponge. If applied uncharged, it will strip
+    plant-available N, P, and K from the soil solution, causing temporary nutrient deficiency (sometimes
+    called the ''biochar hunger''). Charging fills the pores with nutrients before application.
+
+
+    Why the other options are wrong: Biochar is not toxic to soil microbes. In fact, its porous structure
+    provides ideal habitat for bacteria and fungi after charging. The concern is nutrient adsorption,
+    not toxicity. Biochar pH is typically 7-10 depending on production temperature, but at field application
+    rates (1-5 t/ha) the pH effect on soil is minimal. The buffering concern is not the primary reason
+    for charging. Activated carbon is a different product made at higher temperatures with steam activation.
+    Composting-based charging fills biochar pores with nutrients and microbes — it does not change the
+    physical structure.'
+  correct_answer: a
+- id: sa-d2-q5
+  type: FILL_BLANK
+  prompt: 'Compost tea should be applied within ___ hours of finishing aeration. Bokashi pre-compost has
+    a pH of approximately ___ and must be buried at least ___ cm deep to avoid burning plant roots.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - 4 hours
+  - '4'
+  - 20 cm
+  explanation: 'Compost tea microbes die within 4 hours once the aerator is removed — the high microbial
+    count is only maintained while oxygen is supplied. Bokashi pH of 4 is highly acidic — direct root
+    contact would burn. Burying 20 cm deep protects roots while the acid pre-compost is rapidly neutralised
+    and broken down by soil microbes over 2-4 weeks.
+
+    '

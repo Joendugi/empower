@@ -1,227 +1,214 @@
 id: chemical-engineering-day-3
 course_id: chemical-engineering
-title: "Ethanol Fermentation & Fractional Distillation"
-title_sw: "Uchachushaji wa Pombe na Utengenezaji wa Dawa kwa Kunereka"
+title: Ethanol Fermentation & Fractional Distillation
+title_sw: Uchachushaji wa Pombe na Utengenezaji wa Dawa kwa Kunereka
 week_number: 1
 day_number: 3
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - chemistry
-  - ethanol
-  - fermentation
-  - distillation
-  - fractional-column
-  - antiseptic
-  - chemical-engineering
+- chemistry
+- ethanol
+- fermentation
+- distillation
+- fractional-column
+- antiseptic
+- chemical-engineering
 xp: 250
 exam_domain: chemical-engineering
-
-briefing: >
-  High-purity ethanol (ethyl alcohol) is a strategic chemical asset in remote
-  installations: at 70% concentration it serves as a broad-spectrum medical
-  antiseptic; at 85%+ it fuels internal combustion engines; at 95% it functions as
-  an industrial solvent and chemical feedstock. Producing ethanol requires two
-  disciplines: biological anaerobic yeast fermentation of starches or sugars,
-  followed by fractional thermal distillation to overcome the boiling point
-  separation curves. This lesson covers saccharification enzymes, fermentation
-  stoichiometry, pot stills vs packed reflux columns, foreshot/head/heart/tail cuts,
+briefing: 'High-purity ethanol (ethyl alcohol) is a strategic chemical asset in remote installations:
+  at 70% concentration it serves as a broad-spectrum medical antiseptic; at 85%+ it fuels internal combustion
+  engines; at 95% it functions as an industrial solvent and chemical feedstock. Producing ethanol requires
+  two disciplines: biological anaerobic yeast fermentation of starches or sugars, followed by fractional
+  thermal distillation to overcome the boiling point separation curves. This lesson covers saccharification
+  enzymes, fermentation stoichiometry, pot stills vs packed reflux columns, foreshot/head/heart/tail cuts,
   and the 95.6% ethanol-water binary azeotrope.
 
-outline: >
-  Biochemical fermentation equation (C6H12O6 -> 2 C2H5OH + 2 CO2); feedstocks
-  (sugarcane molasses, cassava/sweet potato starch conversion using malted barley
-  amylase enzymes); yeast vitality (Saccharomyces cerevisiae, pH 4.5-5.2, 28°C-32°C);
-  distillation vapor-liquid equilibrium (ethanol bp 78.3°C vs water 100°C);
-  fractional distillation column design (reflux ratio, copper packing, height
-  equivalent to theoretical plate - HETP); cut fractions: foreshots (toxic methanol
-  at 64.7°C), heads (acetaldehyde, ethyl acetate), hearts (pure ethanol 78°C-82°C),
-  and tails (fusel oils); the 95.6% azeotrope barrier; safe alcohol hydrometer
+  '
+outline: 'Biochemical fermentation equation (C6H12O6 -> 2 C2H5OH + 2 CO2); feedstocks (sugarcane molasses,
+  cassava/sweet potato starch conversion using malted barley amylase enzymes); yeast vitality (Saccharomyces
+  cerevisiae, pH 4.5-5.2, 28°C-32°C); distillation vapor-liquid equilibrium (ethanol bp 78.3°C vs water
+  100°C); fractional distillation column design (reflux ratio, copper packing, height equivalent to theoretical
+  plate - HETP); cut fractions: foreshots (toxic methanol at 64.7°C), heads (acetaldehyde, ethyl acetate),
+  hearts (pure ethanol 78°C-82°C), and tails (fusel oils); the 95.6% azeotrope barrier; safe alcohol hydrometer
   (proof) testing.
 
-content_md: |
-  ## Anaerobic Fermentation Biochemistry
-
-  Yeasts (*Saccharomyces cerevisiae*) metabolize six-carbon simple sugars into ethanol
-  and carbon dioxide gas under strictly anaerobic conditions:
-
-  $$\text{C}_6\text{H}_{12}\text{O}_6 \xrightarrow{\text{Yeast / Zymase}} 2\,\text{C}_2\text{H}_5\text{OH} + 2\,\text{CO}_2 \uparrow + 118\text{ kJ}$$
-
-  ### Theoretical Mass Yield (Gay-Lussac):
-  180 g of glucose yields:
-  - **92 g Ethanol** ($51.1\%\text{ by mass}$)
-  - **88 g Carbon Dioxide** ($48.9\%\text{ by mass}$)
-
-  In practice, yeast consumes ~5% of sugars for cell biomass and produces trace
-  byproducts (glycerol, lactic acid, fusel alcohols), yielding an actual conversion
-  efficiency of **45% to 48% by weight**.
-
-  ## Starch Saccharification (Mashing)
-
-  Sugar crops (sugarcane, sweet sorghum, molasses) can be fermented directly.
-  Starchy tubers and grains (cassava, maize, sweet potatoes) contain complex
-  polysaccharide starches that yeast cannot digest without prior **saccharification**:
-
-  1. **Gelatinization**: Grind tubers and boil in water at **75°C – 85°C** for 30 minutes to uncoil and hydrate starch granules.
-  2. **Enzymatic Liquefaction & Mash-in**:
-     - Cool mash to **65°C**.
-     - Add 10%–15% by weight of **malted barley or sprouted sorghum grains**. Sprouted grain contains abundant **alpha-amylase** and **beta-amylase** enzymes.
-     - Hold temperature at **62°C – 66°C for 60 to 90 minutes**.
-  3. **Iodine Starch Conversion Test**:
-     - Place a drop of clear liquid from the mash onto a white plate and add a drop of tincture of iodine.
-     - *Blue / Black*: Unconverted starch remains; continue resting.
-     - *Amber / Yellow*: Complete enzymatic conversion into fermentable maltose and glucose sugars.
-
-  ## Fermentation Parameters:
-  - **Specific Gravity**: Initial starting wash SG = **1.060 to 1.080** (~15°–20° Brix, producing an 8%–12% ABV wash).
-  - **pH Window**: Acidify wash to **pH 4.5 – 5.0** (using lemon juice, lactic acid, or dilute sulfuric acid) to inhibit bacterial contamination while yeast thrives.
-  - **Temperature**: Maintain **28°C to 33°C**. Above 38°C, yeast dies; below 20°C, fermentation stalls.
-  - **End of Fermentation**: Bubbling ceases in airlock, SG drops to **0.990 – 1.000** (dry, all sugar consumed).
-
-  ## Vapor-Liquid Equilibrium & The Azeotrope
-
-  At standard atmospheric pressure (101.3 kPa / sea level):
-  - Water boils at **100.0°C**.
-  - Pure Ethanol boils at **78.37°C**.
-
-  When an 8% ethanol-water wash boils in a simple pot still, the vapor rising has a
-  higher ethanol concentration (~40% ABV). Condensing this vapor yields rough liquor.
-
-  ### The 95.6% Ethanol-Water Azeotrope:
-  At **95.63% ethanol by weight (97.2% ABV)**, the vapor and liquid compositions become identical at a boiling point of **78.15°C**.
-  **It is physically impossible to distill ethanol above 95.6% using conventional fractional distillation**, because the vapor has the exact same concentration as the boiling liquid.
-  (To produce 99.5%+ anhydrous fuel ethanol, the remaining 4.4% water must be stripped using zeolite 3A molecular sieve desiccant beds).
-
-  ## Fractional Column Architecture (Reflux Distillation)
-
-  To jump from 10% wash to 90%+ medical/fuel ethanol in a single continuous pass,
-  use a **fractional reflux column**:
-  - **Boiler**: Stainless steel or copper drum with immersion heater or sealed firebox.
-  - **Column**: Copper or stainless pipe (50 mm to 75 mm diameter, 1.0 m to 1.5 m tall).
-  - **Column Packing**: Raschig rings, marble chips, or scoured pure **copper mesh**. Copper is mandatory: it chemically reacts with and strips volatile foul-smelling ethyl carbamates and hydrogen sulfide gases.
-  - **Reflux Condenser (Dephlegmator)**: Located at column top; condenses falling liquid back down through the ascending vapor. Ascending vapors repeatedly boil and strip rising steam over hundreds of condensation-evaporation stages.
-
-  ## Distillation Cuts Protocol (Critical Safety)
-
-  Fermentation produces poisonous volatile organic compounds alongside ethanol.
-  The distillate must be strictly partitioned based on column head temperature:
-
-  ```
-   0°C                      65°C           78°C              82°C                 95°C+
-  ───┴────────────────────────┴──────────────┴─────────────────┴────────────────────┴──
-      WARM-UP / PURGE         FORESHOTS       HEADS             HEARTS (USE THIS)    TAILS
-                             (Methanol)      (Acetaldehyde)    (Medical / Fuel)     (Fusel Oils)
-  ```
-
-  1. **Foreshots (First 150 mL per 20 L wash)**:
-     - Vapor temp: **64°C – 70°C**.
-     - Contains concentrated **Methanol (bp 64.7°C)** and acetone.
-     - **DISCARD OR USE AS SOLVENT ONLY. NEVER CONSUME OR APPLY TO SKIN.** (Methanol causes permanent blindness and death).
-  2. **Heads (Next 5% of volume)**:
-     - Vapor temp: **70°C – 77°C**.
-     - Sharp solvent smell (acetaldehyde, ethyl acetate). Set aside for re-distillation or stove fuel.
-  3. **Hearts (Main Collection)**:
-     - Vapor temp: **78.0°C – 81.5°C**.
-     - Pure ethyl alcohol. Crystal clear, neutral ethanol aroma, 85%–94% ABV.
-     - Used for 70% medical antiseptic and engine fuel.
-  4. **Tails (Final Run)**:
-     - Vapor temp: **82°C – 95°C+**.
-     - Contains higher alcohols (**fusel oils**: propanol, butanol, isoamyl alcohol) and water.
-     - Cloudy oily appearance, pungent smell. Stop collecting when proof drops below 40% ABV.
-
-  ## Compounding Medical Antiseptic (70% Ethanol)
-
-  Pure 95% ethanol is a less effective germicide than 70% ethanol because 95% alcohol
-  dehydrates bacterial cell walls so quickly that it forms a protective crust before
-  penetrating the organism.
-  **70% ethanol in water** penetrates the cell membrane fully, coagulating all internal proteins.
-
-  ### WHO Recommended Rub Formulation (per 1,000 mL):
-  - **Ethanol 96%**: **833.3 mL**
-  - **Hydrogen Peroxide 3%**: **41.7 mL** (inactivates bacterial spores in the bottles)
-  - **Glycerol 98%**: **14.5 mL** (humectant to protect skin from cracking)
-  - **Distilled / Boiled Water**: Make up to 1,000 mL (approx. **110.5 mL**)
-
+  '
+content_md: "## Anaerobic Fermentation Biochemistry\n\nYeasts (*Saccharomyces cerevisiae*) metabolize\
+  \ six-carbon simple sugars into ethanol\nand carbon dioxide gas under strictly anaerobic conditions:\n\
+  \n$$\\text{C}_6\\text{H}_{12}\\text{O}_6 \\xrightarrow{\\text{Yeast / Zymase}} 2\\,\\text{C}_2\\text{H}_5\\\
+  text{OH} + 2\\,\\text{CO}_2 \\uparrow + 118\\text{ kJ}$$\n\n### Theoretical Mass Yield (Gay-Lussac):\n\
+  180 g of glucose yields:\n- **92 g Ethanol** ($51.1\\%\\text{ by mass}$)\n- **88 g Carbon Dioxide**\
+  \ ($48.9\\%\\text{ by mass}$)\n\nIn practice, yeast consumes ~5% of sugars for cell biomass and produces\
+  \ trace\nbyproducts (glycerol, lactic acid, fusel alcohols), yielding an actual conversion\nefficiency\
+  \ of **45% to 48% by weight**.\n\n## Starch Saccharification (Mashing)\n\nSugar crops (sugarcane, sweet\
+  \ sorghum, molasses) can be fermented directly.\nStarchy tubers and grains (cassava, maize, sweet potatoes)\
+  \ contain complex\npolysaccharide starches that yeast cannot digest without prior **saccharification**:\n\
+  \n1. **Gelatinization**: Grind tubers and boil in water at **75°C – 85°C** for 30 minutes to uncoil\
+  \ and hydrate starch granules.\n2. **Enzymatic Liquefaction & Mash-in**:\n   - Cool mash to **65°C**.\n\
+  \   - Add 10%–15% by weight of **malted barley or sprouted sorghum grains**. Sprouted grain contains\
+  \ abundant **alpha-amylase** and **beta-amylase** enzymes.\n   - Hold temperature at **62°C – 66°C for\
+  \ 60 to 90 minutes**.\n3. **Iodine Starch Conversion Test**:\n   - Place a drop of clear liquid from\
+  \ the mash onto a white plate and add a drop of tincture of iodine.\n   - *Blue / Black*: Unconverted\
+  \ starch remains; continue resting.\n   - *Amber / Yellow*: Complete enzymatic conversion into fermentable\
+  \ maltose and glucose sugars.\n\n## Fermentation Parameters:\n- **Specific Gravity**: Initial starting\
+  \ wash SG = **1.060 to 1.080** (~15°–20° Brix, producing an 8%–12% ABV wash).\n- **pH Window**: Acidify\
+  \ wash to **pH 4.5 – 5.0** (using lemon juice, lactic acid, or dilute sulfuric acid) to inhibit bacterial\
+  \ contamination while yeast thrives.\n- **Temperature**: Maintain **28°C to 33°C**. Above 38°C, yeast\
+  \ dies; below 20°C, fermentation stalls.\n- **End of Fermentation**: Bubbling ceases in airlock, SG\
+  \ drops to **0.990 – 1.000** (dry, all sugar consumed).\n\n## Vapor-Liquid Equilibrium & The Azeotrope\n\
+  \nAt standard atmospheric pressure (101.3 kPa / sea level):\n- Water boils at **100.0°C**.\n- Pure Ethanol\
+  \ boils at **78.37°C**.\n\nWhen an 8% ethanol-water wash boils in a simple pot still, the vapor rising\
+  \ has a\nhigher ethanol concentration (~40% ABV). Condensing this vapor yields rough liquor.\n\n###\
+  \ The 95.6% Ethanol-Water Azeotrope:\nAt **95.63% ethanol by weight (97.2% ABV)**, the vapor and liquid\
+  \ compositions become identical at a boiling point of **78.15°C**.\n**It is physically impossible to\
+  \ distill ethanol above 95.6% using conventional fractional distillation**, because the vapor has the\
+  \ exact same concentration as the boiling liquid.\n(To produce 99.5%+ anhydrous fuel ethanol, the remaining\
+  \ 4.4% water must be stripped using zeolite 3A molecular sieve desiccant beds).\n\n## Fractional Column\
+  \ Architecture (Reflux Distillation)\n\nTo jump from 10% wash to 90%+ medical/fuel ethanol in a single\
+  \ continuous pass,\nuse a **fractional reflux column**:\n- **Boiler**: Stainless steel or copper drum\
+  \ with immersion heater or sealed firebox.\n- **Column**: Copper or stainless pipe (50 mm to 75 mm diameter,\
+  \ 1.0 m to 1.5 m tall).\n- **Column Packing**: Raschig rings, marble chips, or scoured pure **copper\
+  \ mesh**. Copper is mandatory: it chemically reacts with and strips volatile foul-smelling ethyl carbamates\
+  \ and hydrogen sulfide gases.\n- **Reflux Condenser (Dephlegmator)**: Located at column top; condenses\
+  \ falling liquid back down through the ascending vapor. Ascending vapors repeatedly boil and strip rising\
+  \ steam over hundreds of condensation-evaporation stages.\n\n## Distillation Cuts Protocol (Critical\
+  \ Safety)\n\nFermentation produces poisonous volatile organic compounds alongside ethanol.\nThe distillate\
+  \ must be strictly partitioned based on column head temperature:\n\n```\n 0°C                      65°C\
+  \           78°C              82°C                 95°C+\n───┴────────────────────────┴──────────────┴─────────────────┴────────────────────┴──\n\
+  \    WARM-UP / PURGE         FORESHOTS       HEADS             HEARTS (USE THIS)    TAILS\n        \
+  \                   (Methanol)      (Acetaldehyde)    (Medical / Fuel)     (Fusel Oils)\n```\n\n1. **Foreshots\
+  \ (First 150 mL per 20 L wash)**:\n   - Vapor temp: **64°C – 70°C**.\n   - Contains concentrated **Methanol\
+  \ (bp 64.7°C)** and acetone.\n   - **DISCARD OR USE AS SOLVENT ONLY. NEVER CONSUME OR APPLY TO SKIN.**\
+  \ (Methanol causes permanent blindness and death).\n2. **Heads (Next 5% of volume)**:\n   - Vapor temp:\
+  \ **70°C – 77°C**.\n   - Sharp solvent smell (acetaldehyde, ethyl acetate). Set aside for re-distillation\
+  \ or stove fuel.\n3. **Hearts (Main Collection)**:\n   - Vapor temp: **78.0°C – 81.5°C**.\n   - Pure\
+  \ ethyl alcohol. Crystal clear, neutral ethanol aroma, 85%–94% ABV.\n   - Used for 70% medical antiseptic\
+  \ and engine fuel.\n4. **Tails (Final Run)**:\n   - Vapor temp: **82°C – 95°C+**.\n   - Contains higher\
+  \ alcohols (**fusel oils**: propanol, butanol, isoamyl alcohol) and water.\n   - Cloudy oily appearance,\
+  \ pungent smell. Stop collecting when proof drops below 40% ABV.\n\n## Compounding Medical Antiseptic\
+  \ (70% Ethanol)\n\nPure 95% ethanol is a less effective germicide than 70% ethanol because 95% alcohol\n\
+  dehydrates bacterial cell walls so quickly that it forms a protective crust before\npenetrating the\
+  \ organism.\n**70% ethanol in water** penetrates the cell membrane fully, coagulating all internal proteins.\n\
+  \n### WHO Recommended Rub Formulation (per 1,000 mL):\n- **Ethanol 96%**: **833.3 mL**\n- **Hydrogen\
+  \ Peroxide 3%**: **41.7 mL** (inactivates bacterial spores in the bottles)\n- **Glycerol 98%**: **14.5\
+  \ mL** (humectant to protect skin from cracking)\n- **Distilled / Boiled Water**: Make up to 1,000 mL\
+  \ (approx. **110.5 mL**)\n"
 exercises:
-  - id: chem-d3-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why is it impossible to distill ethanol beyond 95.6% ABV using a tall fractional
-      column operating at atmospheric pressure?
-    xp_reward: 50
-    options:
-      - text: "Ethanol and water form an azeotropic mixture at 95.6% where the vapor composition matches the boiling liquid composition, preventing further separation by distillation"
-        correct: true
-        explanation: "At 95.6% by weight, ethanol and water boil together as a minimum-boiling azeotrope (78.15°C). Boiling does not change the vapor concentration; further dehydration requires molecular sieves or entrainer distillation."
-      - text: "Water evaporates faster than ethanol above 90%"
-        correct: false
-        explanation: "Ethanol remains more volatile until the azeotropic point is reached."
-      - text: "The copper packing dissolves in high-strength alcohol"
-        correct: false
-        explanation: "Copper is chemically stable in neutral alcohol vapors."
-      - text: "Yeast enzymes contaminate the column above 90%"
-        correct: false
-        explanation: "Yeast remains inside the boiler and does not evaporate."
+- id: chem-d3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is it impossible to distill ethanol beyond 95.6% ABV using a tall fractional column operating
+    at atmospheric pressure?
 
-  - id: chem-d3-q2
-    type: FILL_BLANK
-    prompt: >
-      During the distillation of a fermented wash, the first distillate to exit
-      the condenser between 64°C and 70°C is called the ___, which contains
-      toxic ___ (bp 64.7°C) and must be discarded.
-    xp_reward: 50
-    correct_answer: "foreshots; methanol"
-    explanation: >
-      The foreshots contain low-boiling volatile poisons including methanol,
-      acetone, and esters. They must never be consumed or applied to open wounds.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Water evaporates faster than ethanol above 90%
+  - id: b
+    text: Ethanol and water form an azeotropic mixture at 95.6% where the vapor composition matches the
+      boiling liquid composition, preventing further separation by distillation
+  - id: c
+    text: The copper packing dissolves in high-strength alcohol
+  - id: d
+    text: Yeast enzymes contaminate the column above 90%
+  explanation: 'At 95.6% by weight, ethanol and water boil together as a minimum-boiling azeotrope (78.15°C).
+    Boiling does not change the vapor concentration; further dehydration requires molecular sieves or
+    entrainer distillation.
 
-  - id: chem-d3-q3
-    type: MATCH_PAIRS
-    prompt: Match each ethanol production term to its practical chemical role.
-    xp_reward: 50
-    pairs:
-      - left: Copper Mesh Column Packing
-        right: Chemically binds and removes sulfur compounds and foul ethyl carbamates
-      - left: Amylase Enzymes
-        right: Cleaves complex tuber/grain starches into fermentable simple maltose sugars
-      - left: Dephlegmator (Reflux Condenser)
-        right: Condenses rising vapors to provide liquid reflux for continuous re-boiling
-      - left: 70% ABV Concentration
-        right: Optimal dilution for penetrating bacterial cells and coagulating vital proteins
-    correct_answer: null
-    explanation: >
-      Copper scrubs sulfur; amylase unlocks starches; reflux multipliers column efficiency;
-      70% alcohol is the universal antiseptic standard.
 
-  - id: chem-d3-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      When testing a tuber mash (cassava or sweet potato) after 60 minutes of mashing
-      with malted grain, a drop of iodine tincture placed in the mash turns deep blue-black.
-      What does this indicate?
-    xp_reward: 50
-    options:
-      - text: "Starch conversion is incomplete; complex starch chains are still present, requiring more enzymatic rest time or temperature adjustment before yeast pitching"
-        correct: true
-        explanation: "Iodine complexes with amylose starch chains to turn dark blue-black. A successful conversion yields maltose/glucose, which does not react with iodine (remains yellow/amber)."
-      - text: "The mash has turned into pure alcohol"
-        correct: false
-        explanation: "Alcohol does not turn iodine blue-black; alcohol fermentation only happens after yeast is added."
-      - text: "The mash has acidified below pH 3.0"
-        correct: false
-        explanation: "Iodine tests for starch polysaccharides, not pH."
-      - text: "The enzymes were overheated and generated sugar crystals"
-        correct: false
-        explanation: "Blue-black indicates unreacted starch, not sugar crystals."
+    Why the other options are wrong: Ethanol remains more volatile until the azeotropic point is reached.
+    Copper is chemically stable in neutral alcohol vapors. Yeast remains inside the boiler and does not
+    evaporate.'
+  correct_answer: b
+- id: chem-d3-q2
+  type: FILL_BLANK
+  prompt: 'During the distillation of a fermented wash, the first distillate to exit the condenser between
+    64°C and 70°C is called the ___, which contains toxic ___ (bp 64.7°C) and must be discarded.
 
-  - id: chem-d3-q5
-    type: FILL_BLANK
-    prompt: >
-      For medical handrub formulation according to WHO guidelines, 833 mL of 96%
-      ethanol is compounded with 42 mL of 3% ___ to destroy bacterial spores and
-      15 mL of ___ to act as a skin-protecting humectant.
-    xp_reward: 50
-    correct_answer: "hydrogen peroxide; glycerol"
-    explanation: >
-      Hydrogen peroxide destroys resilient bacterial endospores that survive in alcohol,
-      while glycerol (glycerin) retains moisture to prevent nurse and patient skin cracking.
+    '
+  xp_reward: 50
+  correct_answer:
+  - foreshots
+  - methanol
+  explanation: 'The foreshots contain low-boiling volatile poisons including methanol, acetone, and esters.
+    They must never be consumed or applied to open wounds.
+
+    '
+- id: chem-d3-q3
+  type: MATCH_PAIRS
+  prompt: Match each ethanol production term to its practical chemical role.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Copper Mesh Column Packing
+    right:
+      id: r-06ec2f
+      text: Chemically binds and removes sulfur compounds and foul ethyl carbamates
+  - left:
+      id: l2
+      text: Amylase Enzymes
+    right:
+      id: r-7e5800
+      text: Cleaves complex tuber/grain starches into fermentable simple maltose sugars
+  - left:
+      id: l3
+      text: Dephlegmator (Reflux Condenser)
+    right:
+      id: r-d82d85
+      text: Condenses rising vapors to provide liquid reflux for continuous re-boiling
+  - left:
+      id: l4
+      text: 70% ABV Concentration
+    right:
+      id: r-f1f943
+      text: Optimal dilution for penetrating bacterial cells and coagulating vital proteins
+  correct_answer:
+  - l1=r-06ec2f
+  - l2=r-7e5800
+  - l3=r-d82d85
+  - l4=r-f1f943
+  explanation: 'Copper scrubs sulfur; amylase unlocks starches; reflux multipliers column efficiency;
+    70% alcohol is the universal antiseptic standard.
+
+    '
+- id: chem-d3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'When testing a tuber mash (cassava or sweet potato) after 60 minutes of mashing with malted
+    grain, a drop of iodine tincture placed in the mash turns deep blue-black. What does this indicate?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The mash has turned into pure alcohol
+  - id: b
+    text: The mash has acidified below pH 3.0
+  - id: c
+    text: The enzymes were overheated and generated sugar crystals
+  - id: d
+    text: Starch conversion is incomplete; complex starch chains are still present, requiring more enzymatic
+      rest time or temperature adjustment before yeast pitching
+  explanation: 'Iodine complexes with amylose starch chains to turn dark blue-black. A successful conversion
+    yields maltose/glucose, which does not react with iodine (remains yellow/amber).
+
+
+    Why the other options are wrong: Alcohol does not turn iodine blue-black; alcohol fermentation only
+    happens after yeast is added. Iodine tests for starch polysaccharides, not pH. Blue-black indicates
+    unreacted starch, not sugar crystals.'
+  correct_answer: d
+- id: chem-d3-q5
+  type: FILL_BLANK
+  prompt: 'For medical handrub formulation according to WHO guidelines, 833 mL of 96% ethanol is compounded
+    with 42 mL of 3% ___ to destroy bacterial spores and 15 mL of ___ to act as a skin-protecting humectant.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - hydrogen peroxide
+  - glycerol
+  explanation: 'Hydrogen peroxide destroys resilient bacterial endospores that survive in alcohol, while
+    glycerol (glycerin) retains moisture to prevent nurse and patient skin cracking.
+
+    '

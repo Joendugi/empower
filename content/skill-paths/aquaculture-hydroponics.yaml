@@ -1,40 +1,54 @@
 id: aquaculture-hydroponics
 title: Aquaculture, Inland Fisheries & Aquaponics
 title_sw: Kilimo cha Samaki, Uvuvi wa Bara na Mifumo ya Aquaponics
-description: Comprehensive practical manual for freshwater fish culture, earthen pond design, hatchery induced breeding, on-farm feed compounding, recirculating aquaculture systems (RAS), and integrated aquaponics.
+description: Comprehensive practical manual for freshwater fish culture, earthen pond design, hatchery
+  induced breeding, on-farm feed compounding, recirculating aquaculture systems (RAS), and integrated
+  aquaponics.
 category: AGRICULTURE_FOOD
-target_audience: Smallholder farmers, homesteaders, fishery extension officers, and off-grid community planners.
+target_audience: Smallholder farmers, homesteaders, fishery extension officers, and off-grid community
+  planners.
 estimated_hours: 15
 difficulty: INTERMEDIATE
 prerequisites:
-  - sustainable-agriculture
-  - water-treatment-harvesting
-lessons:
-  - id: aquaculture-hydroponics-day-1
-    title: Freshwater Pond Ecology, Water Chemistry & Fish Biology
-    title_sw: Ekolojia ya Mabwawa, Kemia ya Maji na Biolojia ya Samaki
-    order: 1
-    xp_reward: 250
-  - id: aquaculture-hydroponics-day-2
-    title: Hatchery Operations, Broodstock & Induced Spawning
-    title_sw: Uendeshaji wa Viatulio, Mifugo ya Mbegu na Upandishaji wa Kishawishi
-    order: 2
-    xp_reward: 250
-  - id: aquaculture-hydroponics-day-3
-    title: Nutrition, Pearson Square Formulation & Feed Milling
-    title_sw: Lishe ya Samaki, Mfumo wa Pearson na Utengenezaji wa Chakula
-    order: 3
-    xp_reward: 250
-  - id: aquaculture-hydroponics-day-4
-    title: Recirculating Aquaculture Systems (RAS) & Biofiltration
-    title_sw: Mifumo ya Mzunguko wa Maji (RAS) na Uchujaji wa Kibiolojia
-    order: 4
-    xp_reward: 250
-  - id: aquaculture-hydroponics-day-5
-    title: Coupled Aquaponics & Closed-Loop Deep Water Culture
-    title_sw: Kilimo Mseto cha Samaki na Mimea (Aquaponics) na Njia ya DWC
-    order: 5
-    xp_reward: 250
+- sustainable-agriculture
+- water-treatment-harvesting
 total_xp: 1250
 badge_id: aquaculture-master
 status: PUBLISHED
+track: trades
+nodes:
+- id: aquaculture-hydroponics-day-1
+  title: Freshwater Pond Ecology, Water Chemistry & Fish Biology
+  title_sw: Ekolojia ya Mabwawa, Kemia ya Maji na Biolojia ya Samaki
+  prerequisites: []
+  lesson_ids:
+  - aquaculture-hydroponics-day-1
+- id: aquaculture-hydroponics-day-2
+  title: Hatchery Operations, Broodstock & Induced Spawning
+  title_sw: Uendeshaji wa Viatulio, Mifugo ya Mbegu na Upandishaji wa Kishawishi
+  prerequisites:
+  - aquaculture-hydroponics-day-1
+  lesson_ids:
+  - aquaculture-hydroponics-day-2
+- id: aquaculture-hydroponics-day-3
+  title: Nutrition, Pearson Square Formulation & Feed Milling
+  title_sw: Lishe ya Samaki, Mfumo wa Pearson na Utengenezaji wa Chakula
+  prerequisites:
+  - aquaculture-hydroponics-day-2
+  lesson_ids:
+  - aquaculture-hydroponics-day-3
+- id: aquaculture-hydroponics-day-4
+  title: Recirculating Aquaculture Systems (RAS) & Biofiltration
+  title_sw: Mifumo ya Mzunguko wa Maji (RAS) na Uchujaji wa Kibiolojia
+  prerequisites:
+  - aquaculture-hydroponics-day-3
+  lesson_ids:
+  - aquaculture-hydroponics-day-4
+- id: aquaculture-hydroponics-day-5
+  title: Coupled Aquaponics & Closed-Loop Deep Water Culture
+  title_sw: Kilimo Mseto cha Samaki na Mimea (Aquaponics) na Njia ya DWC
+  prerequisites:
+  - aquaculture-hydroponics-day-4
+  lesson_ids:
+  - aquaculture-hydroponics-day-5
+content_version: '1'

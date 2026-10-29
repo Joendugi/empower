@@ -1,0 +1,78 @@
+id: sewing-garment-gents
+course_id: sewing-garment
+title: 'Gents Garment Construction: Shirt Collar And Cuff Assembly, Trouser Waistband,
+  Fly Front And Seam Pressing: Principles and Practical Application'
+title_sw: 'Gents Garment Construction: Shirt Collar And Cuff Assembly, Trouser Waistband,
+  Fly Front And Seam Pressing: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering Gents Garment Construction:
+  Shirt Collar and Cuff Assembly, Trouser Waistband, Fly Front and Seam Pressing requires
+  strict adherence to safety standards and sequential execution. Always inspect personal
+  protective equipment (PPE), ensure proper tool calibration, and verify that the
+  workpiece is securely mounted before commencing. Observe manufacturer specifications
+  and relevant standards. Maintain a clean work environment, store consumables dry,
+  and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa Gents Garment Construction: Shirt
+  Collar and Cuff Assembly, Trouser Waistband, Fly Front and Seam Pressing kunahitaji
+  kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga (PPE) kabla
+  ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/FDS/CR/09/5
+exam_domain: 'Gents Garment Construction: Shirt Collar And Cuff Assembly, Trouser
+  Waistband, Fly Front And Seam Pressing Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Gents Garment Construction: Shirt Collar And
+    Cuff Assembly, Trouser Waistband, Fly Front And Seam Pressing'
+- kind: animation
+  preset: gear
+  caption: 'Interactive Simulation: Gents Garment Construction: Shirt Collar And Cuff
+    Assembly, Trouser Waistband, Fly Front And Seam Pressing operation cycle'
+exercises:
+- id: sewing-garment-gents-garment-construction-shirt-collar-and-cuff-assembly-trouser-waistband-fly-front-and-seam-pressing-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting Gents Garment
+    Construction: Shirt Collar and Cuff Assembly, Trouser Waistband, Fly Front and
+    Seam Pressing?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: sewing-garment-gents-garment-construction-shirt-collar-and-cuff-assembly-trouser-waistband-fly-front-and-seam-pressing-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: sewing-garment-gents-garment-construction-shirt-collar-and-cuff-assembly-trouser-waistband-fly-front-and-seam-pressing-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in Gents Garment Construction:
+    Shirt Collar and Cuff Assembly, Trouser Waistband, Fly Front and Seam Pressing?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

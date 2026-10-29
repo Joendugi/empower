@@ -1,0 +1,240 @@
+id: wind-microhydro-day-2
+course_id: wind-microhydro
+title: HAWT Construction — Blade Carving, Alternator Winding & Furling Tail
+title_sw: Ujenzi wa Turbine ya Upepo — Kukata Mabawa, Kufunga Alternator na Mkia wa Kuzuia
+week_number: 1
+day_number: 2
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+- HAWT
+- blade-carving
+- alternator-winding
+- furling-tail
+- tip-speed-ratio
+- permanent-magnet-alternator
+xp: 250
+exam_domain: wind-microhydro
+briefing: 'A horizontal axis wind turbine (HAWT) is deceptively simple in appearance but demands precision
+  in three interdependent subsystems: the aerodynamic rotor (blades that generate lift and torque), the
+  permanent magnet alternator (PMA) that converts rotation into electricity, and the protection mechanism
+  (furling tail) that prevents destruction in storms. The Hugh Piggott open-source HAWT design — refined
+  over 30 years for self-build in rural communities without machine tools — achieves Cp values of 0.30–0.38
+  with hand-carved wooden blades and a hand-wound multi-pole axial-flux alternator using permanent ferrite
+  or neodymium magnets. This lesson covers blade aerodynamics from first principles, the Tip Speed Ratio
+  (TSR) design parameter, practical blade carving geometry, alternator coil winding calculations, and
+  passive overspeed protection via a hinged offset furling tail.
+
+  '
+outline: 'Blade aerodynamic theory: lift force on an aerofoil section (Bernoulli and circulation theories);
+  angle of attack and chord width variation from hub to tip (twist distribution); Tip Speed Ratio (TSR)
+  definition: blade tip velocity / wind speed; optimal TSR for maximum Cp (3-blade HAWT: TSR 5–8; 2-blade
+  HAWT: TSR 7–10; Savonius VAWT: TSR 0.7–1.0); blade planform design: chord width taper (wider at root,
+  narrow at tip), blade twist (higher pitch angle at root, flatter at tip); wood species selection for
+  blade carving (Sitka spruce, Douglas fir, or local hardwoods — grain straight with < 2° slope of grain);
+  carving sequence: centre-line marking, flat back face, leading edge radius, trailing edge taper, surface
+  finishing and epoxy/varnish sealing; static rotor balancing with a pivot-point balance check; axial-flux
+  permanent magnet alternator (PMA) design: multi-pole configuration (12 poles = 6 pole pairs), 3-phase
+  star-wound stator coil calculation (turns per coil from target voltage); magnet rotor casting in glass-fibre
+  reinforced polyester resin discs; coil winding machine and insulation; passive furling tail: offset
+  hinge geometry, tail boom length, and furling wind speed design target; tower and guy-wire erection
+  with gin-pole raising technique.
+
+  '
+content_md: "## Blade Aerodynamics: How Wind Turbine Blades Generate Lift\n\nA wind turbine blade is not\
+  \ a sail pushed by wind — it is a rotating aerofoil that generates\naerodynamic lift perpendicular to\
+  \ the apparent wind vector, just like an aircraft wing.\n\n```\nBLADE CROSS-SECTION (AEROFOIL PROFILE)\
+  \ AT MID-SPAN\n                                  LIFT FORCE (perpendicular to apparent wind)\n     \
+  \                                   ↑\nAPPARENT WIND →  ──────────────────────►│\n                ╭─────────────────────────────╮\n\
+  \                │  UPPER SURFACE (longer path)│ ← Lower pressure (faster airflow)\n               \
+  \ │  Leading Edge               │\n                ╰─────────────────────────────╯\n               \
+  \ LOWER SURFACE (shorter, flatter)\n                Higher pressure (slower airflow)\n             \
+  \   ──────────────────────────────────► DRAG FORCE (parallel to apparent wind)\n                [NET\
+  \ TANGENTIAL FORCE = LIFT × sin(AOA) - DRAG × cos(AOA) → DRIVES ROTATION]\n```\n\n### Tip Speed Ratio\
+  \ (TSR)\n\nThe Tip Speed Ratio is the most important blade design parameter:\n\n$$TSR = \\frac{\\Omega\
+  \ \\times R}{v_{wind}}$$\n\nWhere:\n* $\\Omega$ = rotor angular velocity (rad/s)\n* $R$ = rotor radius\
+  \ (m) — the blade tip radius\n* $v_{wind}$ = undisturbed upstream wind speed (m/s)\n\n**Why TSR Controls\
+  \ Design:**\n* If TSR is too **low**: blades are too slow, most wind passes through without interacting\
+  \ — low Cp.\n* If TSR is too **high**: blades are too fast, acting like a solid disc blocking flow —\
+  \ turbulence, drag, reduced Cp.\n* **Optimal TSR for 3-blade HAWT**: 5 to 8.\n* At TSR = 7 with a 2.0\
+  \ m rotor radius in 8 m/s wind: blade tip velocity = 7 × 8 = **56 m/s**.\n\n---\n\n## Blade Design:\
+  \ Chord Width and Twist\n\nMoving from tip to root, each blade section encounters a different apparent\
+  \ wind angle because\nthe rotational velocity increases toward the tip while the wind speed remains\
+  \ constant.\nThis means the blade must be **twisted** (higher pitch angle at root, flatter at tip) and\n\
+  **tapered** (wider chord at root, narrower at tip):\n\n```\nBLADE PLANFORM VIEW (top-down silhouette,\
+  \ hub on LEFT)\nHUB END                                                    TIP\n──────────────────────────────────────────────────────────────►\n\
+  │████████████████████████████████████████████████████████████│\n│██ Wide Chord (Root) ──────────────────►\
+  \  Narrow (Tip) ████│ Taper\n│██ High Twist (~20°) ──────────────────►  Low Twist (~3°) ██│ Twist\n\
+  └──────────────────────────────────────────────────────────────┘\n\nLeading edge is slightly rounded;\
+  \ trailing edge tapers to ~3-5 mm blunt finish\n```\n\n**Piggott Simplified Blade Design Template (for\
+  \ 2.4 m rotor radius, TSR 7):**\n| Position from Hub | Radius (m) | Chord Width (mm) | Twist Angle |\n\
+  | :--- | :---: | :---: | :---: |\n| Root | 0.15 | 200 | 22° |\n| 25% span | 0.68 | 165 | 12° |\n| 50%\
+  \ span | 1.20 | 130 | 7° |\n| 75% span | 1.72 | 100 | 4° |\n| Tip | 2.40 | 70 | 2° |\n\n---\n\n## Wood\
+  \ Selection & Blade Carving Sequence\n\n**Wood Requirements:**\n* Straight, clear grain (< 2° slope\
+  \ of grain — test by splitting a plank along the grain)\n* Density 400–600 kg/m³ (not too heavy, not\
+  \ too weak)\n* Low moisture content (< 12%); kiln or air-dried\n* Suitable local species: Red Cedar,\
+  \ Sitka Spruce, Douglas Fir, or dense local hardwoods\n  like Mvule (*Milicia excelsa*) or Grevillea\n\
+  \n**Carving Sequence:**\n```\nSTEP 1: Mark centreline and station widths on a rectangular blank\nSTEP\
+  \ 2: Rip the flat pressure-face (back) of the blade using a bench plane — keep perfectly flat\nSTEP\
+  \ 3: Mark leading edge radius, trailing edge taper lines on top face\nSTEP 4: Rough-carve the cambered\
+  \ suction-face (top surface) with draw-knife or spokeshave\n        creating a smooth convex curve from\
+  \ leading edge to trailing edge\nSTEP 5: Carve twist progressively — root sections tilted ~20°, tip\
+  \ sections nearly flat\nSTEP 6: Sand 80-grit → 120-grit → 180-grit; fill grain with sanding sealer\n\
+  STEP 7: 3 coats epoxy resin or exterior polyurethane varnish (UV protection)\nSTEP 8: STATIC BALANCE\
+  \ CHECK: Mount all 3 blades on a horizontal pivot spindle;\n        add lead sheet strips to light blade\
+  \ root until assembly hangs level\n```\n\n---\n\n## Axial-Flux Permanent Magnet Alternator (PMA)\n\n\
+  The Hugh Piggott axial-flux PMA uses two cast magnet rotor discs rotating either side of\na stationary\
+  \ 3-phase star-wound stator coil:\n\n```\nAXIAL-FLUX PMA CROSS-SECTION (SIDE VIEW)\n┌─────────────────────────────────────────────────────────────┐\n\
+  │  ╭──────────╮        ╭────────────╮        ╭──────────╮    │\n│  │FRONT     │ ←gap→  │  STATOR   \
+  \ │ ←gap→  │REAR ROTOR│    │\n│  │ROTOR DISC│        │  COILS     │        │ DISC     │    │\n│  │ (Magnets)│\
+  \        │ (3-Phase)  │        │ (Magnets)│    │\n│  ╰──────────╯        ╰────────────╯        ╰──────────╯\
+  \    │\n│         ←─────── Shaft (rotates with blades) ─────────►    │\n└─────────────────────────────────────────────────────────────┘\n\
+  N and S poles alternate around each disc; as they spin, they\ncut through the stator coil windings,\
+  \ inducing AC voltage\n```\n\n### Coil Design Calculation\n\nFor a **12-pole, 3-phase star alternator**\
+  \ with target 12V DC battery charging:\n* Number of coils in 3-phase star: 9 coils (3 per phase)\n*\
+  \ Required open-circuit AC voltage at cut-in RPM: typically 14.5 V DC → rectified from ~12 V AC RMS\
+  \ → ~17 V AC peak\n* **Turns per coil** = Target volts / (poles/2 × RPM/60 × flux_per_pole); typically\
+  \ 35–70 turns per coil for a small machine\n* Wire gauge: 1.4–2.0 mm diameter enameled copper wire\n\
+  * Coils cast in polyester resin (stator casting) to protect against weathering\n\n**Phase Connections:**\n\
+  * 3-phase star (Y connection): three coils per phase in series, neutral at centre\n* Output connected\
+  \ to 3-phase bridge rectifier (6 × diodes, 35A 200V rating) → DC bus\n\n---\n\n## Furling Tail: Passive\
+  \ Overspeed Protection\n\nWithout protection, a turbine in a 20 m/s storm generates 8× its rated power\
+  \ — destroying\nthe alternator, blades, and tower. A hinged offset furling tail automatically rotates\
+  \ the\nrotor out of the wind when wind speed exceeds the design furling speed:\n\n```\nFURLING MECHANISM\
+  \ — TOP VIEW (PLAN)\n\nNormal operation (< design wind speed):\n┌────────────────────────────────────────┐\n\
+  │  WIND →→→→→→→→→→→→→→→→→→             │\n│  →→→→→→→→  [ROTOR] ──── [Tail Boom]──[Fin]│\n│  →→→→→→→→→\
+  \  (Faces directly into wind)│\n└────────────────────────────────────────┘\n\nStorm furling (wind speed\
+  \ exceeds threshold):\n┌────────────────────────────────────────┐\n│  →→→→→→→→→→→ WIND →→→→→→→→→→→→→→→→\
+  \  │\n│  →→→→→→ [ROTOR] (turning sideways)     │\n│           ╲     [Tail Boom]──[Fin]     │\n│    \
+  \        ╲    (still faces wind)     │\n│    Rotor edge-on to wind: power drops to ~10%│\n└────────────────────────────────────────┘\n\
+  ```\n\n**Furling Design Parameters:**\n* Offset hinge angle: typically 15° to 20° from the turbine centreline\n\
+  * Tail boom length: 1.2 to 1.5 × rotor diameter\n* Tail fin area: approximately 15% of rotor swept area\n\
+  * Design furling wind speed: rated power wind speed × 1.5 (typically 10–14 m/s)\n"
+exercises:
+- id: wind-d2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A 3-blade HAWT with a 2.0-metre blade tip radius is operating at its design Tip Speed Ratio
+    of 7 in a 9 m/s wind. What is the blade tip velocity in metres per second?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 9 m/s because blade tip speed equals wind speed at the design Tip Speed Ratio
+  - id: b
+    text: 63 m/s, calculated as TSR × wind speed = 7 × 9 = 63 m/s
+  - id: c
+    text: 14 m/s because tip speed equals rotor radius multiplied by wind speed
+  - id: d
+    text: 2.0 m/s because the blade tip is rotating at the same rate as the rotor radius in metres
+  explanation: 'TSR = blade tip velocity / wind speed. Therefore blade tip velocity = TSR × wind speed
+    = 7 × 9 = 63 m/s. At a 2.0 m tip radius this corresponds to a rotor angular velocity of Ω = 63/2 =
+    31.5 rad/s = 301 RPM.
+
+
+    Why the other options are wrong: TSR of 1.0 would mean blade tip = wind speed. TSR of 7 means tip
+    moves 7 times faster than the wind. Tip speed = TSR × wind speed, not radius × wind speed. The formula
+    is v_tip = TSR × v_wind. Rotor radius (2.0 m) is a geometric dimension, not a velocity. Tip speed
+    requires TSR × wind speed.'
+  correct_answer: b
+- id: wind-d2-q2
+  type: FILL_BLANK
+  prompt: 'In a Hugh Piggott axial-flux permanent magnet alternator, the rotating magnet discs are cast
+    in fibreglass-reinforced polyester resin, while the stationary 3-phase star-wound copper coils are
+    embedded in a resin ___ casting that protects them from weathering, moisture, and mechanical vibration
+    throughout the turbine''s service life.
+
+    '
+  xp_reward: 50
+  correct_answer: stator
+  explanation: 'The stationary winding assembly — nine coils in a 3-phase star connection — is embedded
+    in a cast polyester resin ''stator'' disc that sandwiches between the two spinning magnet rotor discs
+    with a small air gap on each side.
+
+    '
+- id: wind-d2-q3
+  type: MATCH_PAIRS
+  prompt: Match each blade carving step to its primary engineering purpose in producing an aerodynamically
+    correct wind turbine blade.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Flat back (pressure) face planed perfectly flat
+    right:
+      id: r-a8bfb9
+      text: Establishes the reference datum plane for all subsequent chord width and twist angle measurements
+  - left:
+      id: l2
+      text: Convex suction-face profile carved and sanded smooth
+    right:
+      id: r-513e3d
+      text: Creates the cambered aerofoil cross-section that generates lift as apparent wind accelerates
+        over it
+  - left:
+      id: l3
+      text: Progressive twist from root (20°) to tip (2°)
+    right:
+      id: r-415416
+      text: Matches the correct angle of attack at each radial station where rotational and wind velocity
+        vectors differ
+  - left:
+      id: l4
+      text: Epoxy or polyurethane varnish coating
+    right:
+      id: r-c110cb
+      text: Seals wood grain against moisture absorption that causes warping, delamination, and blade
+        imbalance
+  correct_answer:
+  - l1=r-a8bfb9
+  - l2=r-513e3d
+  - l3=r-415416
+  - l4=r-c110cb
+  explanation: 'Flat back face = reference datum; convex suction face = aerodynamic lift; blade twist
+    = angle-of-attack optimization; epoxy sealing = moisture and UV protection.
+
+    '
+- id: wind-d2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why must a wind turbine incorporate a passive furling tail overspeed protection mechanism,
+    and how does an offset hinge furling tail physically reduce rotor power in extreme winds?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The furling tail acts as a mechanical brake that grips the rotor shaft to slow down rotation
+  - id: b
+    text: Without overspeed protection, storm winds deliver up to 8x rated power, destroying the alternator;
+      the offset hinge allows aerodynamic tail force to rotate the rotor progressively edge-on to the
+      wind, reducing swept area and power to approximately 10% of maximum
+  - id: c
+    text: The tail fin generates electricity in high winds to dump excess power as heat in load resistors
+  - id: d
+    text: The furling tail senses wind speed electronically and signals a brake actuator
+  explanation: 'Wind power scales with v³. A storm at 20 m/s delivers (20/10)³ = 8 times the power of
+    a rated 10 m/s wind. The furling tail hinge is deliberately offset so strong wind pushes the tail
+    to one side, yawing the rotor progressively out of the wind until its edge faces the wind — dramatically
+    reducing effective swept area and protecting the machine.
+
+
+    Why the other options are wrong: Furling tails have no mechanical contact with the shaft. They are
+    passive aerodynamic yaw control devices. The tail fin is a passive aerodynamic structure. Excess power
+    is dumped by electronic charge controllers, not the tail. Furling tails are entirely passive mechanical
+    devices with no electronics or actuators.'
+  correct_answer: b
+- id: wind-d2-q5
+  type: FILL_BLANK
+  prompt: 'After hand-carving all three wooden wind turbine blades, the assembled rotor must undergo a
+    static balance test by mounting all blades on a horizontal pivot spindle and adding small lead strips
+    to the ___ of any blade that hangs lower than its counterparts, until the entire three-blade assembly
+    hangs perfectly level and balanced.
+
+    '
+  xp_reward: 50
+  correct_answer: root
+  explanation: 'Lead sheet strips are added to the root (heavy hub end) of a light blade. Adding weight
+    to the root is the correct location because blade aerodynamic performance is most critical near the
+    tip and adding lead there would cause a centrifugal imbalance penalty during rotation.
+
+    '

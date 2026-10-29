@@ -1,0 +1,239 @@
+id: wind-microhydro-day-3
+course_id: wind-microhydro
+title: Micro-Hydro Site Survey, Pelton Wheel Design & Penstock Hydraulics
+title_sw: Uchunguzi wa Tovuti ya Mto, Ubunifu wa Gurudumu la Pelton na Mfumo wa Bomba
+week_number: 1
+day_number: 3
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+- micro-hydro
+- pelton-wheel
+- penstock
+- head-measurement
+- flow-measurement
+- hydraulic-power
+xp: 250
+exam_domain: wind-microhydro
+briefing: 'Micro-hydropower is the most reliable and energy-dense renewable resource available to communities
+  near streams and rivers with elevation change. Unlike solar and wind, which are intermittent, a run-of-river
+  micro-hydro scheme produces consistent rated power 24 hours a day, 365 days per year — yielding a capacity
+  factor of 50–80% compared to 15–25% for wind and 18–22% for solar. The fundamental equation is elegant:
+  power equals the product of water flow, gravitational head, and system efficiency. This lesson covers
+  field measurement of head (vertical elevation drop) using GPS, levelling staff and optical level, or
+  the float-and-stopwatch method; flow measurement via bucket-and-stopwatch, current meter, or the velocity-area
+  method; Pelton wheel design for high-head low-flow sites (net head > 20 m); Turgo runner for medium-head;
+  penstock pipe sizing from hydraulic friction loss calculations; and powerhouse electrical generator
+  coupling.
+
+  '
+outline: 'The micro-hydro power equation: P = η × ρ × g × Q × H (system efficiency η 0.55–0.80; water
+  density ρ = 1000 kg/m³; g = 9.81 m/s²; flow rate Q m³/s; net head H metres); gross head vs net head:
+  subtracting penstock friction losses (Darcy-Weisbach friction head loss formula hf = f × L/D × v²/2g);
+  site survey methods: hand level with graduated staff, Abney level, smartphone barometric altimeter,
+  differential GPS; flow measurement techniques: the bucket-and-stopwatch method (Q = volume/time); velocity-area
+  method (current meter and cross-section area); the 90-degree V-notch weir formula Q = 1.38 × tan(θ/2)
+  × h^2.5; flow duration curves and dry-season design flow (Q_design = Q_50 or Q_90 percentile); Pelton
+  wheel operating principle (impulse turbine: jets of water strike cup-shaped buckets converting kinetic
+  energy to rotation); jet velocity from Bernoulli equation Vj = Cv × √(2gH) where Cv = 0.97; Pelton wheel
+  speed: optimal bucket speed = 0.46 × Vj; bucket sizing and jet-to-wheel diameter ratio; penstock pipe
+  material selection (HDPE, galvanized steel, PVC); pipe diameter sizing using maximum allowable velocity
+  2.0–3.0 m/s; surge protection (air chambers, slow-close valve); siting the intake weir, gravel trap,
+  forebay tank, and penstock.
+
+  '
+content_md: "## The Micro-Hydro Power Equation\n\nEvery micro-hydro system converts gravitational potential\
+  \ energy of water into electrical energy.\nThe theoretical power available is:\n\n$$\\boxed{P_{output}\
+  \ = \\eta \\times \\rho \\times g \\times Q \\times H_{net}}$$\n\nWhere:\n* $\\eta$ = overall system\
+  \ efficiency (civil + mechanical + electrical): typically **0.55 to 0.80**\n* $\\rho$ = water density:\
+  \ **1,000 kg/m³**\n* $g$ = gravitational acceleration: **9.81 m/s²**\n* $Q$ = design flow rate (m³/s)\n\
+  * $H_{net}$ = net head (m) = gross head − penstock friction losses\n\n**Quick Approximation:** For a\
+  \ well-designed system ($\\eta$ ≈ 0.70):\n$$P_{kW} \\approx 7.0 \\times Q_{m³/s} \\times H_{net,m}$$\n\
+  \n**Worked Example:**\n* Stream flow: Q = 0.050 m³/s (50 litres/second)\n* Gross head: 40 m; friction\
+  \ losses: 3 m; net head: 37 m\n* Power = 0.70 × 1000 × 9.81 × 0.050 × 37 = **12.7 kW**\n\nA 12.7 kW\
+  \ system running 24/7 produces **304 kWh/day** — enough to power 50 to 80 rural households.\n\n---\n\
+  \n## Site Survey: Measuring Gross Head\n\n```\nMICRO-HYDRO SITE SCHEMATIC\n\n     ╔═══════════════╗\
+  \ ← Intake Weir (Diverts stream water)\n     ║ STREAM        ║\n     ╚═══════╤═══════╝\n           \
+  \  │ Intake channel (Gravel/sand trap)\n             ▼\n     ┌────────────────┐ ← FOREBAY TANK (Settling\
+  \ + Penstock Header)\n     │   Surface ▼    │   (Volume = 20–30 sec of flow at design Q)\n     └────────┬───────┘\n\
+  \              │ PENSTOCK (Closed pressure pipe descending)\n              │ H_gross (Elevation drop)\n\
+  \              │\n              ▼\n     ┌────────────────┐ ← POWERHOUSE\n     │   [TURBINE]    │   Pelton\
+  \ wheel + generator\n     │   [GENERATOR]  │\n     └────────────────┘\n```\n\n### Field Methods for\
+  \ Head Measurement\n\n1. **Optical Level + Graduated Staff**: Most accurate; ±20 mm precision. Set up\
+  \ level, read staff at instrument height, move forward, read again. Sum vertical differences over the\
+  \ full penstock route.\n2. **Abney Level (Clinometer)**: Handheld; measures slope angle ± 0.5°. For\
+  \ measured slope length L: Δh = L × sin(angle).\n3. **Smartphone Barometric Altimeter**: ± 1–3 m accuracy\
+  \ for head > 30 m; adequate for preliminary screening. Not for final design.\n4. **Differential GPS**:\
+  \ ± 0.3–1.0 m vertical accuracy with modern dual-frequency receivers.\n5. **Hose-and-Gauge Method**:\
+  \ A 25 mm garden hose filled with water between intake and powerhouse level acts as a water manometer;\
+  \ reading a pressure gauge at the lower end converts to metres of head.\n\n---\n\n## Stream Flow Measurement\n\
+  \n### 1. Bucket-and-Stopwatch Method\n* Suitable for flows up to ~10 litres/second where a container\
+  \ can catch the full stream.\n* Measure volume (V litres) collected in time (t seconds): $Q = V/t$ litres/second.\n\
+  * Repeat 5 times and average.\n\n### 2. Velocity-Area (Current Meter) Method\nFor larger flows. Divide\
+  \ the stream cross-section into vertical strips:\n$$Q = \\sum_{i=1}^{n} v_i \\times A_i = \\sum (v_i\
+  \ \\times w_i \\times d_i)$$\nWhere $v_i$ is measured velocity (by current meter or timed float), $w_i$\
+  \ is strip width, $d_i$ is depth.\n\n### 3. V-Notch Weir Formula\nBuild a temporary timber weir across\
+  \ the stream with a precise V-notch. Measure water depth $h$ above the notch apex:\n$$Q = 1.38 \\times\
+  \ \\tan\\!\\left(\\frac{\\theta}{2}\\right) \\times h^{2.5}$$\nFor a **90° V-notch** ($\\tan(45°) =\
+  \ 1.0$): $Q = 1.38 \\times h^{2.5}$ (Q in m³/s, h in metres)\n\n### Design Flow Selection (Flow Duration\
+  \ Curve)\n* Collect weekly flow measurements over 1 year, sort smallest to largest.\n* $Q_{50}$ (50th\
+  \ percentile): Available 50% of the time — typical design flow for run-of-river schemes.\n* $Q_{90}$\
+  \ (90th percentile): Available 90% of time — conservative design for critical power loads.\n* **Design\
+  \ flow = minimum of dry-season minimum and Q_90 for reliable power supply.**\n\n---\n\n## Pelton Wheel\
+  \ Design (High-Head Impulse Turbine)\n\nThe Pelton wheel is the preferred turbine for **net heads above\
+  \ 20 m** with relatively low flow\nrates. It is an impulse turbine — water is accelerated in a nozzle\
+  \ to create a high-velocity\njet that strikes the curved cups (buckets) of the wheel.\n\n```\nPELTON\
+  \ WHEEL PRINCIPLE\n\n   Water Jet →→→→→→→→→ ╭───────╮ ← Bucket (double-cup shape splits and\n      \
+  \      →→→→→→→→→→ │  ╭╮   │   deflects jet by ~170°, extracting maximum momentum)\n            →→→→→→→→→→\
+  \ │  ╰╯   │\n                        ╰───────╯\n                           ↓ Wheel rotates\n       \
+  \                [Wheel Rim rotating at ~0.46 × jet velocity]\n```\n\n### Jet Velocity from Bernoulli\n\
+  \n$$V_{jet} = C_v \\times \\sqrt{2 g H_{net}}$$\n\nWhere $C_v$ = nozzle velocity coefficient ≈ **0.97**\
+  \ (accounting for nozzle friction).\n\n**Example**: Net head = 37 m:\n$$V_{jet} = 0.97 \\times \\sqrt{2\
+  \ \\times 9.81 \\times 37} = 0.97 \\times 26.93 = \\textbf{26.1 m/s}$$\n\n### Optimal Wheel Speed\n\
+  Maximum power extraction occurs when bucket speed ≈ **0.46 × jet velocity**:\n$$V_{bucket} = 0.46 \\\
+  times V_{jet} = 0.46 \\times 26.1 = 12.0 \\text{ m/s}$$\n\nIf the wheel pitch circle diameter (PCD)\
+  \ is 0.40 m:\n$$RPM = \\frac{60 \\times V_{bucket}}{\\pi \\times PCD} = \\frac{60 \\times 12.0}{\\pi\
+  \ \\times 0.40} = 573 \\text{ RPM}$$\n\n---\n\n## Penstock Hydraulic Design\n\nThe penstock is the closed\
+  \ pressure pipe carrying water from the forebay tank to the turbine.\nIt must be sized to:\n1. Keep\
+  \ flow velocity at **2.0 to 3.0 m/s** to limit friction losses.\n2. Withstand **operating pressure**\
+  \ + **water hammer surge pressure**.\n\n### Pipe Diameter from Flow Velocity\n\n$$D = \\sqrt{\\frac{4Q}{\\\
+  pi \\times v}}$$\n\nFor Q = 0.050 m³/s and design velocity = 2.5 m/s:\n$$D = \\sqrt{\\frac{4 \\times\
+  \ 0.050}{\\pi \\times 2.5}} = \\sqrt{\\frac{0.200}{7.854}} = \\sqrt{0.02546} = 0.160 \\text{ m} = 160\
+  \ \\text{ mm}$$\n\n### Darcy-Weisbach Friction Head Loss\n\n$$h_f = f \\times \\frac{L}{D} \\times \\\
+  frac{v^2}{2g}$$\n\n* $f$ = Darcy friction factor (smooth HDPE pipe ≈ 0.020; galvanized steel ≈ 0.025)\n\
+  * $L$ = penstock length (m)\n* $D$ = pipe internal diameter (m)\n* $v$ = velocity (m/s)\n\n**Rule of\
+  \ Thumb**: Friction losses should not exceed **10% of gross head** for an efficient scheme.\n\n### Pipe\
+  \ Materials\n| Material | Pressure Rating | Cost | Best Application |\n| :--- | :--- | :--- | :--- |\n\
+  | HDPE (PE100) | Up to 25 bar PN25 | Medium | Heads up to 200 m; flexible; fusion-welded |\n| uPVC (Class\
+  \ C) | Up to 9 bar | Low | Low-head < 60 m; joints with solvent cement |\n| Galvanized Steel | Up to\
+  \ 80 bar | High | High-head > 100 m; flanged or threaded |\n| Cast Iron | Up to 100 bar | Very High\
+  \ | Legacy high-head installations |\n\n### Water Hammer (Surge) Protection\nWhen a valve closes rapidly,\
+  \ momentum of the flowing water column creates a pressure spike\nthat can rupture the penstock:\n$$\\\
+  Delta P_{surge} = \\rho \\times v \\times a$$\nWhere $a$ = pressure wave speed (≈ 300–1200 m/s in HDPE/steel).\n\
+  * **Mitigation**: Install a slow-close (> 30 seconds) gate valve; air chamber/surge tank at forebay;\
+  \ pressure relief valve at turbine inlet.\n"
+exercises:
+- id: wind-d3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A micro-hydro site has a gross head of 45 m, a design flow of 0.030 m³/s (30 L/s), and penstock
+    friction losses of 4 m. Using the quick approximation formula P_kW ≈ 7.0 × Q × H_net, what is the
+    estimated electrical output of this system?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 9.45 kW using the gross head of 45 m without subtracting friction losses
+  - id: b
+    text: 1.32 kW because the formula divides flow by head to find power
+  - id: c
+    text: 0.86 MW because the formula uses watts not kilowatts
+  - id: d
+    text: 'Approximately 8.6 kW, using net head of 41 m (45 − 4): P = 7.0 × 0.030 × 41 = 8.61 kW'
+  explanation: 'Net head = 45 − 4 = 41 m. P = 7.0 × Q × H_net = 7.0 × 0.030 × 41 = 8.61 kW. The quick
+    formula (P_kW ≈ 7 × Q × H) assumes η ≈ 0.70 — a reasonable assumption for a well-designed Pelton wheel
+    system.
+
+
+    Why the other options are wrong: Net head must be used: gross head minus all penstock friction and
+    minor losses. Ignoring friction losses overstates power output. The formula multiplies Q × H, not
+    divides. P = 7 × 0.030 × 41 = 8.61 kW. The quick formula P_kW ≈ 7 × Q × H directly gives kilowatts.
+    8.61 kW, not megawatts.'
+  correct_answer: d
+- id: wind-d3-q2
+  type: FILL_BLANK
+  prompt: 'In Pelton wheel turbine design, maximum power extraction from the water jet occurs when the
+    peripheral bucket speed is approximately ___ times the jet velocity. For a jet velocity of 30 m/s,
+    the optimal bucket rim speed would therefore be approximately 13.8 m/s.
+
+    '
+  xp_reward: 50
+  correct_answer: '0.46'
+  explanation: 'The Pelton wheel achieves maximum hydraulic efficiency when bucket peripheral speed =
+    0.46 × jet velocity. At this ratio, water leaves the buckets with near-zero absolute velocity, meaning
+    the turbine has captured the maximum possible momentum from the water jet.
+
+    '
+- id: wind-d3-q3
+  type: MATCH_PAIRS
+  prompt: Match each micro-hydro system component to its primary hydraulic engineering function.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Forebay Tank
+    right:
+      id: r-37ae74
+      text: Settling reservoir at penstock inlet that provides a stable static head and allows grit to
+        sink
+  - left:
+      id: l2
+      text: V-Notch Weir
+    right:
+      id: r-86e990
+      text: Temporary dam with a precisely cut notch used to measure stream discharge using Q = 1.38 ×
+        h^2.5
+  - left:
+      id: l3
+      text: Surge/Air Chamber
+    right:
+      id: r-167a87
+      text: Sealed air-cushion vessel near turbine inlet that absorbs water hammer pressure spikes on
+        valve closure
+  - left:
+      id: l4
+      text: Flow Duration Curve
+    right:
+      id: r-4df40d
+      text: Statistical ranking of daily stream flows showing the percentage of time a given flow is exceeded
+  correct_answer:
+  - l1=r-37ae74
+  - l2=r-86e990
+  - l3=r-167a87
+  - l4=r-4df40d
+  explanation: 'Forebay provides settled static head; V-notch measures discharge; surge chamber absorbs
+    water hammer; flow duration curve identifies reliable design flow.
+
+    '
+- id: wind-d3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'When sizing a penstock pipe for a micro-hydro scheme carrying 0.040 m³/s at a design flow velocity
+    of 2.5 m/s, what is the minimum required internal pipe diameter?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Approximately 143 mm (0.143 m), calculated from D = √(4Q / π × v) = √(0.160/7.854) = √0.02037
+      ≈ 0.143 m
+  - id: b
+    text: 250 mm because pipe diameter must always exceed 5 × the design flow in litres per second
+  - id: c
+    text: 40 mm because pipe diameter in mm equals flow in litres per second
+  - id: d
+    text: 100 mm because that is the standard rural micro-hydro penstock specification
+  explanation: 'D = √(4 × 0.040 / (π × 2.5)) = √(0.160/7.854) = √0.02037 = 0.1427 m ≈ 143 mm. Select the
+    next standard pipe size above this (typically 160 mm DN160 HDPE) to stay below the 2.5 m/s design
+    velocity.
+
+
+    Why the other options are wrong: No such rule exists. Pipe diameter is calculated from the cross-sectional
+    area required for a given flow and velocity. Flow in L/s has no direct mm-equivalent. Pipe diameter
+    must be calculated from the continuity equation Q = A × v. There is no single standard size; diameter
+    depends on site-specific flow rate and velocity target.'
+  correct_answer: a
+- id: wind-d3-q5
+  type: FILL_BLANK
+  prompt: 'The Darcy-Weisbach friction head loss formula hf = f × (L/D) × (v²/2g) predicts penstock pipe
+    friction losses. As a design guideline for an efficient micro-hydro scheme, these friction losses
+    should not exceed ___ percent of the gross head, because greater losses represent wasted elevation
+    and permanently reduce system electrical output.
+
+    '
+  xp_reward: 50
+  correct_answer: '10'
+  explanation: 'Standard micro-hydro design practice limits penstock friction head losses to 10% of gross
+    head. Losses above this threshold indicate the pipe is undersized; the penalty is a permanent reduction
+    in net head and power output equivalent to the excess loss percentage.
+
+    '

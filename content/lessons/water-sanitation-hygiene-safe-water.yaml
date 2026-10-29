@@ -1,0 +1,80 @@
+id: water-sanitation-hygiene-safe-water
+course_id: water-sanitation-hygiene
+title: 'Safe Water Chain From Source To Cup: Catchment Protection, Treatment Options
+  (Boiling, Chlorination, Sodis, Filtration): Principles and Practical Application'
+title_sw: 'Safe Water Chain From Source To Cup: Catchment Protection, Treatment Options
+  (Boiling, Chlorination, Sodis, Filtration): Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering Safe Water Chain from Source
+  to Cup: Catchment Protection, Treatment Options (Boiling, Chlorination, SODIS, Filtration)
+  requires strict adherence to safety standards and sequential execution. Always inspect
+  personal protective equipment (PPE), ensure proper tool calibration, and verify
+  that the workpiece is securely mounted before commencing. Observe manufacturer specifications
+  and relevant standards. Maintain a clean work environment, store consumables dry,
+  and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa Safe Water Chain from Source to Cup:
+  Catchment Protection, Treatment Options (Boiling, Chlorination, SODIS, Filtration)
+  kunahitaji kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga
+  (PPE) kabla ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/WSH/CR/01/5
+exam_domain: 'Safe Water Chain From Source To Cup: Catchment Protection, Treatment
+  Options (Boiling, Chlorination, Sodis, Filtration) Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Safe Water Chain From Source To Cup: Catchment
+    Protection, Treatment Options (Boiling, Chlorination, Sodis, Filtration)'
+- kind: animation
+  preset: gear
+  caption: 'Interactive Simulation: Safe Water Chain From Source To Cup: Catchment
+    Protection, Treatment Options (Boiling, Chlorination, Sodis, Filtration) operation
+    cycle'
+exercises:
+- id: water-sanitation-hygiene-safe-water-chain-from-source-to-cup-catchment-protection-treatment-options-boiling-chlorination-sodis-filtration-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting Safe Water
+    Chain from Source to Cup: Catchment Protection, Treatment Options (Boiling, Chlorination,
+    SODIS, Filtration)?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: water-sanitation-hygiene-safe-water-chain-from-source-to-cup-catchment-protection-treatment-options-boiling-chlorination-sodis-filtration-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: water-sanitation-hygiene-safe-water-chain-from-source-to-cup-catchment-protection-treatment-options-boiling-chlorination-sodis-filtration-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in Safe Water Chain from
+    Source to Cup: Catchment Protection, Treatment Options (Boiling, Chlorination,
+    SODIS, Filtration)?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

@@ -1,0 +1,80 @@
+id: vehicle-anatomy-brakes
+course_id: vehicle-anatomy
+title: 'Brakes And Steering Anatomy: Hydraulic Master Cylinder, Calliper, Disc, Rack
+  And Pinion, Power Steering And Abs Basics: Principles and Practical Application'
+title_sw: 'Brakes And Steering Anatomy: Hydraulic Master Cylinder, Calliper, Disc,
+  Rack And Pinion, Power Steering And Abs Basics: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering Brakes and Steering Anatomy:
+  Hydraulic Master Cylinder, Calliper, Disc, Rack and Pinion, Power Steering and ABS
+  Basics requires strict adherence to safety standards and sequential execution. Always
+  inspect personal protective equipment (PPE), ensure proper tool calibration, and
+  verify that the workpiece is securely mounted before commencing. Observe manufacturer
+  specifications and relevant standards. Maintain a clean work environment, store
+  consumables dry, and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa Brakes and Steering Anatomy: Hydraulic
+  Master Cylinder, Calliper, Disc, Rack and Pinion, Power Steering and ABS Basics
+  kunahitaji kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga
+  (PPE) kabla ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/AUT/CR/11/5
+exam_domain: 'Brakes And Steering Anatomy: Hydraulic Master Cylinder, Calliper, Disc,
+  Rack And Pinion, Power Steering And Abs Basics Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Brakes And Steering Anatomy: Hydraulic Master
+    Cylinder, Calliper, Disc, Rack And Pinion, Power Steering And Abs Basics'
+- kind: animation
+  preset: gear
+  caption: 'Interactive Simulation: Brakes And Steering Anatomy: Hydraulic Master
+    Cylinder, Calliper, Disc, Rack And Pinion, Power Steering And Abs Basics operation
+    cycle'
+exercises:
+- id: vehicle-anatomy-brakes-and-steering-anatomy-hydraulic-master-cylinder-calliper-disc-rack-and-pinion-power-steering-and-abs-basics-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting Brakes and
+    Steering Anatomy: Hydraulic Master Cylinder, Calliper, Disc, Rack and Pinion,
+    Power Steering and ABS Basics?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: vehicle-anatomy-brakes-and-steering-anatomy-hydraulic-master-cylinder-calliper-disc-rack-and-pinion-power-steering-and-abs-basics-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: vehicle-anatomy-brakes-and-steering-anatomy-hydraulic-master-cylinder-calliper-disc-rack-and-pinion-power-steering-and-abs-basics-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in Brakes and Steering
+    Anatomy: Hydraulic Master Cylinder, Calliper, Disc, Rack and Pinion, Power Steering
+    and ABS Basics?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

@@ -1,245 +1,233 @@
 id: forestry-timber-technology-day-3
 course_id: forestry-timber-technology
-title: "Wood Anatomy, Moisture Physics & Solar Kiln Seasoning"
-title_sw: "Anatomia ya Mbao, Fizikia ya Unyevu na Kukausha kwa Tanuri ya Jua"
+title: Wood Anatomy, Moisture Physics & Solar Kiln Seasoning
+title_sw: Anatomia ya Mbao, Fizikia ya Unyevu na Kukausha kwa Tanuri ya Jua
 week_number: 1
 day_number: 3
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - forestry
-  - wood-drying
-  - solar-kiln
-  - moisture-content
-  - timber-seasoning
-  - shrinkage
+- forestry
+- wood-drying
+- solar-kiln
+- moisture-content
+- timber-seasoning
+- shrinkage
 xp: 250
 exam_domain: forestry-timber-technology
+briefing: 'Building a house or bridge with freshly milled ''green'' lumber guarantees disaster: as the
+  wood dries, doors jam, wall joints pull apart, trusses twist into corkscrews, and severe fungal rot
+  sets in. Freshly cut wood contains up to 100% moisture by dry weight. Timber does not shrink uniformly;
+  it shrinks twice as much tangentially along growth rings as it does radially, creating massive internal
+  drying stresses. This lesson covers wood cell anatomy, Free Water vs Bound Water, the Fiber Saturation
+  Point (FSP at ~28%), calculating Moisture Content (MC%), stacking protocols with stickers, and building
+  a low-cost passive greenhouse Solar Lumber Kiln that seasons timber to 12% MC in 3 weeks.
 
-briefing: >
-  Building a house or bridge with freshly milled 'green' lumber guarantees disaster:
-  as the wood dries, doors jam, wall joints pull apart, trusses twist into corkscrews,
-  and severe fungal rot sets in. Freshly cut wood contains up to 100% moisture by
-  dry weight. Timber does not shrink uniformly; it shrinks twice as much tangentially
-  along growth rings as it does radially, creating massive internal drying stresses.
-  This lesson covers wood cell anatomy, Free Water vs Bound Water, the Fiber Saturation
-  Point (FSP at ~28%), calculating Moisture Content (MC%), stacking protocols with
-  stickers, and building a low-cost passive greenhouse Solar Lumber Kiln that seasons
-  timber to 12% MC in 3 weeks.
+  '
+outline: 'Wood microstructure: Heartwood (dead, durable, dense) vs Sapwood (living, sap-filled, vulnerable
+  to beetles); microscopic tracheids and vessels; the physics of wood moisture: Free Water (inside cell
+  cavities) vs Bound Water (adsorbed chemically in cell walls); the Fiber Saturation Point (FSP = 28%
+  to 30% MC) where shrinkage begins; Moisture Content formula: MC% = [(Wet Weight - Dry Weight) / Dry
+  Weight] * 100; differential shrinkage ratio (Tangential 8% vs Radial 4% vs Longitudinal 0.1%); air drying
+  stacking architecture (level foundation, 25 mm square stickers aligned vertically, overhang roofs, weighted
+  stacks); greenhouse solar kiln construction (semi-transparent corrugated poly roof, black heat-absorber
+  baffle wall, solar-powered 12V circulation fans).
 
-outline: >
-  Wood microstructure: Heartwood (dead, durable, dense) vs Sapwood (living, sap-filled,
-  vulnerable to beetles); microscopic tracheids and vessels; the physics of wood moisture:
-  Free Water (inside cell cavities) vs Bound Water (adsorbed chemically in cell walls);
-  the Fiber Saturation Point (FSP = 28% to 30% MC) where shrinkage begins; Moisture
-  Content formula: MC% = [(Wet Weight - Dry Weight) / Dry Weight] * 100; differential
-  shrinkage ratio (Tangential 8% vs Radial 4% vs Longitudinal 0.1%); air drying
-  stacking architecture (level foundation, 25 mm square stickers aligned vertically,
-  overhang roofs, weighted stacks); greenhouse solar kiln construction (semi-transparent
-  corrugated poly roof, black heat-absorber baffle wall, solar-powered 12V circulation fans).
-
-content_md: |
-  ## The Cellular Anatomy of Timber
-
-  Wood is not a uniform solid; it is an anisotropic bundle of hollow cellulose tubes
-  glued together with lignin:
-
-  ```
-                          TRANSVERSE LOG CROSS-SECTION
-                 ┌──────────────────────────────────────┐
-                 │       Outer Bark & Living Phloem      │
-                 │   ┌──────────────────────────────┐   │
-                 │   │     Sapwood (Active Xylem)   │   │  ◄── High moisture, rot-prone
-                 │   │   ┌──────────────────────┐   │   │
-                 │   │   │     HEARTWOOD        │   │   │  ◄── Natural extractives,
-                 │   │   │   (Dense, Durable)   │   │   │      rot-resistant, stable
-                 │   │   │         (•)          │   │   │
-                 │   │   │        Pith          │   │   │
-  ```
-
-  1. **Sapwood**: The outer pale ring of living wood that conducts water from roots to leaves. Highly porous, packed with starches and sugars that attract wood-boring beetles and fungal spores.
-  2. **Heartwood**: The dark, dense central core. As the tree matures, inner sapwood cells die and plug with natural preservative extractives (tannins, terpenes, resins). Heartwood is **naturally rot-resistant and dimensionally stable**; it is the only wood that should be used for ground-contact structural posts.
-
-  ## The Physics of Wood Moisture: Free Water vs Bound Water
-
-  A living tree trunk can contain **80% to 150% moisture** (it can weigh more than double
-  its bone-dry weight!). Water exists in two distinct physical states:
-
-  ```
-         GREEN LUMBER (80% - 120% MC)
-         ┌──────────────────────────────┐
-         │ Cell Cavities FULL of Water  │ ◄── FREE WATER (Leaves first; causes ZERO shrinkage)
-         │ Cell Walls SATURATED         │
-         └──────────────┬───────────────┘
-                        │ Drying down to 28%
-                        ▼
-         FIBER SATURATION POINT (FSP = 28% - 30% MC)
-         ┌──────────────────────────────┐
-         │ Cell Cavities EMPTY of Water │ ◄── ALL FREE WATER GONE
-         │ Cell Walls REMAIN SATURATED  │ ◄── SHRINKAGE BEGINS HERE!
-         └──────────────┬───────────────┘
-                        │ Drying down to 12%
-                        ▼
-         SEASONED STRUCTURAL TIMBER (10% - 12% MC)
-         ┌──────────────────────────────┐
-         │ Bound Water Removed from     │ ◄── BOUND WATER (Evaporation pulls cell
-         │ Cell Walls (Walls Shrink)    │     walls together, causing shrinkage and warping)
-         └──────────────────────────────┘
-  ```
-
-  ### 1. Free Water (Liquid in Cell Cavities):
-  - Water held by capillary action inside the hollow tubes (lumens).
-  - Evaporates first during drying.
-  - **Crucial Rule**: The loss of free water causes **ZERO volumetric shrinkage** in the wood! It only reduces the physical weight of the board.
-
-  ### 2. The Fiber Saturation Point (FSP):
-  - The critical tipping point, occurring universally at approximately **28% to 30% Moisture Content**.
-  - All hollow cell lumens are empty, but the cellulose cell walls remain 100% saturated with chemically bound water.
-
-  ### 3. Bound Water (Moisture Inside Cell Walls):
-  - Water chemically adsorbed between the cellulose microfibrils in cell walls.
-  - When timber dries below FSP (< 28%), bound water evaporates.
-  - **As bound water leaves, the cell walls collapse closer together, triggering dimensional SHRINKAGE, CUPPING, and WARPING.**
-
-  ## Calculating Moisture Content (MC%)
-
-  Moisture content is always expressed as a percentage of the **oven-dry weight** of the wood:
-
-  $$\text{Moisture Content (MC \%)} = \frac{\text{Wet Green Weight} - \text{Oven-Dry Weight}}{\text{Oven-Dry Weight}} \times 100$$
-
-  *Example*: A test sample of green cedar weighs **420 grams**. After baking in an oven at 103°C for 24 hours until its weight stops changing, the bone-dry block weighs **250 grams**:
-  $$\text{MC \%} = \frac{420 - 250}{250} \times 100 = \frac{170}{250} \times 100 = \mathbf{68.0\%}$$
-
-  ### Equilibrium Moisture Content (EMC):
-  Wood is hygroscopic; it breathes, absorbing and releasing moisture until it matches the surrounding air humidity:
-  - In Nairobi / Kenyan Highlands: Average outdoor **$\text{EMC} = 12\text{ to } 14\%$**.
-  - In Mombasa / Coast: **$\text{EMC} = 15\text{ to } 18\%$**.
-  - In Lodwar / Garissa Arid Zones: **$\text{EMC} = 8\text{ to } 10\%$**.
-  - **Rule of Seasoning**: Never install lumber until it has reached the local **Equilibrium Moisture Content (EMC)**!
-
-  ## Differential Shrinkage: Why Boards Warp
-
-  Wood does not shrink equally in all directions as it dries below 28% MC:
-  - **Longitudinal (Along grain length)**: **0.1%** (Negligible; a 4-metre beam shrinks by only 4 mm).
-  - **Radial (Across growth rings, from center to bark)**: **3.5% to 5.0%**.
-  - **Tangential (Along the growth rings)**: **7.0% to 10.0%** (Roughly **TWICE the radial shrinkage**!).
-
-  ### The Cause of Cupping:
-  Because the outer bark side of a flat-sawn board has longer growth rings than the inner heart side, the outer face shrinks twice as much, curling the edges upward into a trough (**cupping**).
-
-  ## Stacking Protocols for Air Drying
-
-  Before building with timber, green boards must be seasoned in properly engineered stacks:
-
-  ```
-                       [ Corrugated Metal Roof Overhang ]
-                       ══════════════════════════════════
-                       ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ◄── Heavy Concrete Weights (50 kg)
-                       [Board]   [Board]   [Board]   [Board]
-                       ══════════════════════════════════  ◄── Stickers (25mm x 25mm Dry Battens)
-                       [Board]   [Board]   [Board]   [Board]
-                       ══════════════════════════════════  ◄── Stickers Placed in Strict Vertical Line
-                       [Board]   [Board]   [Board]   [Board]
-                    ═══╧═════════╧═════════╧═════════╧═══  ◄── Level Heavy Foundation (45 cm Above Ground)
-  ```
-
-  1. **Elevated Level Foundation**: Set heavy concrete piers or treated logs **minimum 45 cm above ground**. Clear all grass and weeds underneath (ground moisture and fungi destroy bottom boards).
-  2. **Stickers (Separation Spacers)**:
-     - Place dry, uniform wooden strips (**25 mm × 25 mm**) between every layer of boards, spaced **45 cm to 60 cm apart**.
-     - **The Golden Alignment Rule**: Stickers must sit in **dead vertical alignment directly over each other and directly over the foundation piers**. Misaligned stickers create permanent wavy dips in drying boards under the stack's weight!
-  3. **Stack Weighting**: Place 100 kg to 200 kg of heavy stones or concrete blocks on top of the stack. This downward pressure forces boards to stay dead flat as they shrink, preventing cupping and twisting.
-  4. **Overhanging Roof**: Cover stack with a corrugated metal sheet overhanging 30 cm on all sides to shed rain and shield boards from direct tropical sun (which bakes the surface, causing severe honeycomb splitting).
-
-  ## The Greenhouse Solar Lumber Kiln
-
-  Open-air drying in humid zones takes **6 to 12 months** and rarely drops below 16% MC.
-  A low-cost **Passive Solar Kiln** seasons lumber to **10%–12% MC in 3 to 4 weeks**:
-
-  ### Construction Architecture:
-  - **Frame**: A timber shed oriented facing **True North or South** (tilted toward the Equator).
-  - **Glazing Roof**: Clear corrugated polycarbonate or heavy UV-resistant greenhouse plastic tilted at an angle equal to **Latitude + 10°**.
-  - **The Solar Absorber Baffle**: A black-painted corrugated sheet metal baffle hung 30 cm below the roof. Sunlight strikes the black metal, heating the air to **55°C – 65°C**.
-  - **Air Circulation**: Two 12V automotive radiator cooling fans (powered by a single 100W solar panel) blow air down through the heated baffle, across the stickered lumber pile, and back up the rear wall in a continuous convective loop.
-  - **Controlled Venting**: Adjustable moisture vents at the top let out hot, humid air while pulling in fresh dry air.
-
+  '
+content_md: "## The Cellular Anatomy of Timber\n\nWood is not a uniform solid; it is an anisotropic bundle\
+  \ of hollow cellulose tubes\nglued together with lignin:\n\n```\n                        TRANSVERSE\
+  \ LOG CROSS-SECTION\n               ┌──────────────────────────────────────┐\n               │     \
+  \  Outer Bark & Living Phloem      │\n               │   ┌──────────────────────────────┐   │\n    \
+  \           │   │     Sapwood (Active Xylem)   │   │  ◄── High moisture, rot-prone\n               │\
+  \   │   ┌──────────────────────┐   │   │\n               │   │   │     HEARTWOOD        │   │   │  ◄──\
+  \ Natural extractives,\n               │   │   │   (Dense, Durable)   │   │   │      rot-resistant,\
+  \ stable\n               │   │   │         (•)          │   │   │\n               │   │   │        Pith\
+  \          │   │   │\n```\n\n1. **Sapwood**: The outer pale ring of living wood that conducts water\
+  \ from roots to leaves. Highly porous, packed with starches and sugars that attract wood-boring beetles\
+  \ and fungal spores.\n2. **Heartwood**: The dark, dense central core. As the tree matures, inner sapwood\
+  \ cells die and plug with natural preservative extractives (tannins, terpenes, resins). Heartwood is\
+  \ **naturally rot-resistant and dimensionally stable**; it is the only wood that should be used for\
+  \ ground-contact structural posts.\n\n## The Physics of Wood Moisture: Free Water vs Bound Water\n\n\
+  A living tree trunk can contain **80% to 150% moisture** (it can weigh more than double\nits bone-dry\
+  \ weight!). Water exists in two distinct physical states:\n\n```\n       GREEN LUMBER (80% - 120% MC)\n\
+  \       ┌──────────────────────────────┐\n       │ Cell Cavities FULL of Water  │ ◄── FREE WATER (Leaves\
+  \ first; causes ZERO shrinkage)\n       │ Cell Walls SATURATED         │\n       └──────────────┬───────────────┘\n\
+  \                      │ Drying down to 28%\n                      ▼\n       FIBER SATURATION POINT\
+  \ (FSP = 28% - 30% MC)\n       ┌──────────────────────────────┐\n       │ Cell Cavities EMPTY of Water\
+  \ │ ◄── ALL FREE WATER GONE\n       │ Cell Walls REMAIN SATURATED  │ ◄── SHRINKAGE BEGINS HERE!\n  \
+  \     └──────────────┬───────────────┘\n                      │ Drying down to 12%\n               \
+  \       ▼\n       SEASONED STRUCTURAL TIMBER (10% - 12% MC)\n       ┌──────────────────────────────┐\n\
+  \       │ Bound Water Removed from     │ ◄── BOUND WATER (Evaporation pulls cell\n       │ Cell Walls\
+  \ (Walls Shrink)    │     walls together, causing shrinkage and warping)\n       └──────────────────────────────┘\n\
+  ```\n\n### 1. Free Water (Liquid in Cell Cavities):\n- Water held by capillary action inside the hollow\
+  \ tubes (lumens).\n- Evaporates first during drying.\n- **Crucial Rule**: The loss of free water causes\
+  \ **ZERO volumetric shrinkage** in the wood! It only reduces the physical weight of the board.\n\n###\
+  \ 2. The Fiber Saturation Point (FSP):\n- The critical tipping point, occurring universally at approximately\
+  \ **28% to 30% Moisture Content**.\n- All hollow cell lumens are empty, but the cellulose cell walls\
+  \ remain 100% saturated with chemically bound water.\n\n### 3. Bound Water (Moisture Inside Cell Walls):\n\
+  - Water chemically adsorbed between the cellulose microfibrils in cell walls.\n- When timber dries below\
+  \ FSP (< 28%), bound water evaporates.\n- **As bound water leaves, the cell walls collapse closer together,\
+  \ triggering dimensional SHRINKAGE, CUPPING, and WARPING.**\n\n## Calculating Moisture Content (MC%)\n\
+  \nMoisture content is always expressed as a percentage of the **oven-dry weight** of the wood:\n\n$$\\\
+  text{Moisture Content (MC \\%)} = \\frac{\\text{Wet Green Weight} - \\text{Oven-Dry Weight}}{\\text{Oven-Dry\
+  \ Weight}} \\times 100$$\n\n*Example*: A test sample of green cedar weighs **420 grams**. After baking\
+  \ in an oven at 103°C for 24 hours until its weight stops changing, the bone-dry block weighs **250\
+  \ grams**:\n$$\\text{MC \\%} = \\frac{420 - 250}{250} \\times 100 = \\frac{170}{250} \\times 100 = \\\
+  mathbf{68.0\\%}$$\n\n### Equilibrium Moisture Content (EMC):\nWood is hygroscopic; it breathes, absorbing\
+  \ and releasing moisture until it matches the surrounding air humidity:\n- In Nairobi / Kenyan Highlands:\
+  \ Average outdoor **$\\text{EMC} = 12\\text{ to } 14\\%$**.\n- In Mombasa / Coast: **$\\text{EMC} =\
+  \ 15\\text{ to } 18\\%$**.\n- In Lodwar / Garissa Arid Zones: **$\\text{EMC} = 8\\text{ to } 10\\%$**.\n\
+  - **Rule of Seasoning**: Never install lumber until it has reached the local **Equilibrium Moisture\
+  \ Content (EMC)**!\n\n## Differential Shrinkage: Why Boards Warp\n\nWood does not shrink equally in\
+  \ all directions as it dries below 28% MC:\n- **Longitudinal (Along grain length)**: **0.1%** (Negligible;\
+  \ a 4-metre beam shrinks by only 4 mm).\n- **Radial (Across growth rings, from center to bark)**: **3.5%\
+  \ to 5.0%**.\n- **Tangential (Along the growth rings)**: **7.0% to 10.0%** (Roughly **TWICE the radial\
+  \ shrinkage**!).\n\n### The Cause of Cupping:\nBecause the outer bark side of a flat-sawn board has\
+  \ longer growth rings than the inner heart side, the outer face shrinks twice as much, curling the edges\
+  \ upward into a trough (**cupping**).\n\n## Stacking Protocols for Air Drying\n\nBefore building with\
+  \ timber, green boards must be seasoned in properly engineered stacks:\n\n```\n                    \
+  \ [ Corrugated Metal Roof Overhang ]\n                     ══════════════════════════════════\n    \
+  \                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ◄── Heavy Concrete Weights (50 kg)\n         \
+  \            [Board]   [Board]   [Board]   [Board]\n                     ══════════════════════════════════\
+  \  ◄── Stickers (25mm x 25mm Dry Battens)\n                     [Board]   [Board]   [Board]   [Board]\n\
+  \                     ══════════════════════════════════  ◄── Stickers Placed in Strict Vertical Line\n\
+  \                     [Board]   [Board]   [Board]   [Board]\n                  ═══╧═════════╧═════════╧═════════╧═══\
+  \  ◄── Level Heavy Foundation (45 cm Above Ground)\n```\n\n1. **Elevated Level Foundation**: Set heavy\
+  \ concrete piers or treated logs **minimum 45 cm above ground**. Clear all grass and weeds underneath\
+  \ (ground moisture and fungi destroy bottom boards).\n2. **Stickers (Separation Spacers)**:\n   - Place\
+  \ dry, uniform wooden strips (**25 mm × 25 mm**) between every layer of boards, spaced **45 cm to 60\
+  \ cm apart**.\n   - **The Golden Alignment Rule**: Stickers must sit in **dead vertical alignment directly\
+  \ over each other and directly over the foundation piers**. Misaligned stickers create permanent wavy\
+  \ dips in drying boards under the stack's weight!\n3. **Stack Weighting**: Place 100 kg to 200 kg of\
+  \ heavy stones or concrete blocks on top of the stack. This downward pressure forces boards to stay\
+  \ dead flat as they shrink, preventing cupping and twisting.\n4. **Overhanging Roof**: Cover stack with\
+  \ a corrugated metal sheet overhanging 30 cm on all sides to shed rain and shield boards from direct\
+  \ tropical sun (which bakes the surface, causing severe honeycomb splitting).\n\n## The Greenhouse Solar\
+  \ Lumber Kiln\n\nOpen-air drying in humid zones takes **6 to 12 months** and rarely drops below 16%\
+  \ MC.\nA low-cost **Passive Solar Kiln** seasons lumber to **10%–12% MC in 3 to 4 weeks**:\n\n### Construction\
+  \ Architecture:\n- **Frame**: A timber shed oriented facing **True North or South** (tilted toward the\
+  \ Equator).\n- **Glazing Roof**: Clear corrugated polycarbonate or heavy UV-resistant greenhouse plastic\
+  \ tilted at an angle equal to **Latitude + 10°**.\n- **The Solar Absorber Baffle**: A black-painted\
+  \ corrugated sheet metal baffle hung 30 cm below the roof. Sunlight strikes the black metal, heating\
+  \ the air to **55°C – 65°C**.\n- **Air Circulation**: Two 12V automotive radiator cooling fans (powered\
+  \ by a single 100W solar panel) blow air down through the heated baffle, across the stickered lumber\
+  \ pile, and back up the rear wall in a continuous convective loop.\n- **Controlled Venting**: Adjustable\
+  \ moisture vents at the top let out hot, humid air while pulling in fresh dry air.\n"
 exercises:
-  - id: for-d3-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A woodworker mills green eucalyptus lumber at 80% moisture content. As the wood
-      dries down from 80% to 30%, what happens to the physical dimensions of the boards?
-    xp_reward: 50
-    options:
-      - text: "The boards lose physical weight but experience virtually zero dimensional shrinkage, because only 'free water' in the hollow cell cavities is evaporating, while cell walls remain fully saturated"
-        correct: true
-        explanation: "Between initial green moisture (>80%) and the Fiber Saturation Point (approx. 28-30%), water leaves only the open lumens. Dimensional shrinkage begins strictly when 'bound water' starts leaving the cell walls below 28% MC."
-      - text: "The boards shrink by half their width"
-        correct: false
-        explanation: "Shrinkage does not occur above the Fiber Saturation Point."
-      - text: "The boards swell and become thicker"
-        correct: false
-        explanation: "Drying never causes swelling; water loss causes weight loss and subsequent shrinkage."
-      - text: "The boards develop severe internal honeycomb cracks"
-        correct: false
-        explanation: "Honeycombing occurs during rapid high-heat drying below FSP, not during initial free-water loss."
+- id: for-d3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A woodworker mills green eucalyptus lumber at 80% moisture content. As the wood dries down
+    from 80% to 30%, what happens to the physical dimensions of the boards?
 
-  - id: for-d3-q2
-    type: FILL_BLANK
-    prompt: >
-      The critical threshold in timber seasoning where all free water has left the cell
-      cavities but the cell walls remain fully saturated with bound water—occurring at
-      approximately 28% to 30% moisture content—is called the Fiber ___ Point.
-    xp_reward: 50
-    correct_answer: "Saturation"
-    explanation: >
-      The Fiber Saturation Point (FSP, ~28% MC) is the exact physical boundary
-      where all wood shrinkage and strength gains begin.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The boards shrink by half their width
+  - id: b
+    text: The boards swell and become thicker
+  - id: c
+    text: The boards lose physical weight but experience virtually zero dimensional shrinkage, because
+      only 'free water' in the hollow cell cavities is evaporating, while cell walls remain fully saturated
+  - id: d
+    text: The boards develop severe internal honeycomb cracks
+  explanation: 'Between initial green moisture (>80%) and the Fiber Saturation Point (approx. 28-30%),
+    water leaves only the open lumens. Dimensional shrinkage begins strictly when ''bound water'' starts
+    leaving the cell walls below 28% MC.
 
-  - id: for-d3-q3
-    type: MATCH_PAIRS
-    prompt: Match each timber moisture concept to its scientific definition.
-    xp_reward: 50
-    pairs:
-      - left: Heartwood
-        right: Dense, chemically plugged central tree core naturally resistant to rot
-      - left: Sapwood
-        right: Outer living ring of water-conducting wood highly vulnerable to beetles
-      - left: Bound Water
-        right: Moisture chemically adsorbed within cell walls whose loss triggers shrinkage
-      - left: Tangential Shrinkage
-        right: Shrinkage along growth rings (approx. twice radial shrinkage) causing cupping
-    correct_answer: null
-    explanation: >
-      Heartwood is durable; sapwood is bug-prone; bound water causes shrinkage;
-      tangential shrinkage causes boards to cup.
 
-  - id: for-d3-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      When stacking green timber for air seasoning, why must the thin wooden spacer
-      strips ('stickers') be placed in dead vertical alignment directly above each other?
-    xp_reward: 50
-    options:
-      - text: "Misaligned stickers cause the immense weight of the stacked lumber to act as an un-supported bending load on the wet boards, permanently bending and warping the timber into wavy sags as it dries"
-        correct: true
-        explanation: "Wet wood is plastic and deforms easily under load. If stickers are staggered, downward weight bends the planks between supports. Once dry, the wavy bends set permanently into the wood, ruining structural flatness."
-      - text: "To make the stack easier to climb"
-        correct: false
-        explanation: "Climbing lumber stacks is a safety violation; stickers are purely for airflow and support."
-      - text: "To keep termites from walking across the boards"
-        correct: false
-        explanation: "Stickers provide no termite barrier; foundation elevation achieves that."
-      - text: "To change the color of the lumber"
-        correct: false
-        explanation: "Stickers actually risk leaving 'sticker stain' marks if wet; alignment is purely for mechanical straightness."
+    Why the other options are wrong: Shrinkage does not occur above the Fiber Saturation Point. Drying
+    never causes swelling; water loss causes weight loss and subsequent shrinkage. Honeycombing occurs
+    during rapid high-heat drying below FSP, not during initial free-water loss.'
+  correct_answer: c
+- id: for-d3-q2
+  type: FILL_BLANK
+  prompt: 'The critical threshold in timber seasoning where all free water has left the cell cavities
+    but the cell walls remain fully saturated with bound water—occurring at approximately 28% to 30% moisture
+    content—is called the Fiber ___ Point.
 
-  - id: for-d3-q5
-    type: FILL_BLANK
-    prompt: >
-      A small test block of green timber weighs 360 grams. After baking in an oven
-      at 103°C until all moisture is driven out, its constant dry weight is 200 grams.
-      The moisture content (MC %) of the timber was ___ percent.
-    xp_reward: 50
-    correct_answer: "80"
-    explanation: >
-      MC % = [(360 - 200) / 200] × 100 = (160 / 200) × 100 = 0.80 × 100 = 80%.
+    '
+  xp_reward: 50
+  correct_answer: Saturation
+  explanation: 'The Fiber Saturation Point (FSP, ~28% MC) is the exact physical boundary where all wood
+    shrinkage and strength gains begin.
+
+    '
+- id: for-d3-q3
+  type: MATCH_PAIRS
+  prompt: Match each timber moisture concept to its scientific definition.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Heartwood
+    right:
+      id: r-c38345
+      text: Dense, chemically plugged central tree core naturally resistant to rot
+  - left:
+      id: l2
+      text: Sapwood
+    right:
+      id: r-246e7c
+      text: Outer living ring of water-conducting wood highly vulnerable to beetles
+  - left:
+      id: l3
+      text: Bound Water
+    right:
+      id: r-24c426
+      text: Moisture chemically adsorbed within cell walls whose loss triggers shrinkage
+  - left:
+      id: l4
+      text: Tangential Shrinkage
+    right:
+      id: r-574d25
+      text: Shrinkage along growth rings (approx. twice radial shrinkage) causing cupping
+  correct_answer:
+  - l1=r-c38345
+  - l2=r-246e7c
+  - l3=r-24c426
+  - l4=r-574d25
+  explanation: 'Heartwood is durable; sapwood is bug-prone; bound water causes shrinkage; tangential shrinkage
+    causes boards to cup.
+
+    '
+- id: for-d3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'When stacking green timber for air seasoning, why must the thin wooden spacer strips (''stickers'')
+    be placed in dead vertical alignment directly above each other?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: To make the stack easier to climb
+  - id: b
+    text: To keep termites from walking across the boards
+  - id: c
+    text: Misaligned stickers cause the immense weight of the stacked lumber to act as an un-supported
+      bending load on the wet boards, permanently bending and warping the timber into wavy sags as it
+      dries
+  - id: d
+    text: To change the color of the lumber
+  explanation: 'Wet wood is plastic and deforms easily under load. If stickers are staggered, downward
+    weight bends the planks between supports. Once dry, the wavy bends set permanently into the wood,
+    ruining structural flatness.
+
+
+    Why the other options are wrong: Climbing lumber stacks is a safety violation; stickers are purely
+    for airflow and support. Stickers provide no termite barrier; foundation elevation achieves that.
+    Stickers actually risk leaving ''sticker stain'' marks if wet; alignment is purely for mechanical
+    straightness.'
+  correct_answer: c
+- id: for-d3-q5
+  type: FILL_BLANK
+  prompt: 'A small test block of green timber weighs 360 grams. After baking in an oven at 103°C until
+    all moisture is driven out, its constant dry weight is 200 grams. The moisture content (MC %) of the
+    timber was ___ percent.
+
+    '
+  xp_reward: 50
+  correct_answer: '80'
+  explanation: 'MC % = [(360 - 200) / 200] × 100 = (160 / 200) × 100 = 0.80 × 100 = 80%.
+
+    '

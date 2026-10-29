@@ -1,218 +1,224 @@
 id: forestry-timber-technology-day-4
 course_id: forestry-timber-technology
-title: "Timber Preservation — Borates, Pyroligneous Tar & Termite Defense"
-title_sw: "Kuhifadhi Mbao — Dawa ya Borate, Lami ya Asili na Kuzuia Mchwa"
+title: Timber Preservation — Borates, Pyroligneous Tar & Termite Defense
+title_sw: Kuhifadhi Mbao — Dawa ya Borate, Lami ya Asili na Kuzuia Mchwa
 week_number: 1
 day_number: 4
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - forestry
-  - wood-preservation
-  - borates
-  - termites
-  - wood-borers
-  - sap-displacement
-  - resilience
+- forestry
+- wood-preservation
+- borates
+- termites
+- wood-borers
+- sap-displacement
+- resilience
 xp: 250
 exam_domain: forestry-timber-technology
+briefing: 'In tropical East Africa, untreated softwood or sapwood timber installed in the ground is hollowed
+  out by subterranean termites (*Macrotermes*) and powder-post beetles within 12 to 24 months. Industrial
+  chromated copper arsenate (CCA) pressure treatment is toxic and unavailable off-grid. A self-reliant
+  community must deploy sustainable wood preservation: diffusion borate salts (disodium octaborate tetrahydrate),
+  hot wood-pyrolysis creosote/tar coatings, char-and-soak ground post hardening, the Boucherie sap-displacement
+  method for green poles, and physical galvanized metal ''termite shields'' on foundation masonry.
 
-briefing: >
-  In tropical East Africa, untreated softwood or sapwood timber installed in the
-  ground is hollowed out by subterranean termites (*Macrotermes*) and powder-post
-  beetles within 12 to 24 months. Industrial chromated copper arsenate (CCA) pressure
-  treatment is toxic and unavailable off-grid. A self-reliant community must deploy
-  sustainable wood preservation: diffusion borate salts (disodium octaborate
-  tetrahydrate), hot wood-pyrolysis creosote/tar coatings, char-and-soak ground post
-  hardening, the Boucherie sap-displacement method for green poles, and physical
-  galvanized metal 'termite shields' on foundation masonry.
+  '
+outline: 'The biological enemies of timber: Subterranean Termites (Macrotermes, workers building shelter
+  mud tubes), Powder-Post Beetles (Lyctus, Bostrichidae infesting high-starch sapwood), and Brown Rot
+  / White Rot fungi; chemical preservation classes: Water-Borne Borates (DOT: Disodium Octaborate Tetrahydrate)
+  for interior framing, and Oil-Borne Preservatives (refined wood tar creosote from Day 5 pyrolysis +
+  motor oil) for ground contact; the Boucherie Sap Displacement method (gravity tank displacing sap in
+  green poles with copper sulfate/borate); hot-and-cold bath thermal soaking; the Char-and-Tar fence post
+  protocol; mechanical termite shields (ant caps: 26-gauge galvanized steel turned down at 45°); building
+  design biosecurity (200 mm clearance above grade).
 
-outline: >
-  The biological enemies of timber: Subterranean Termites (Macrotermes, workers building
-  shelter mud tubes), Powder-Post Beetles (Lyctus, Bostrichidae infesting high-starch
-  sapwood), and Brown Rot / White Rot fungi; chemical preservation classes: Water-Borne
-  Borates (DOT: Disodium Octaborate Tetrahydrate) for interior framing, and Oil-Borne
-  Preservatives (refined wood tar creosote from Day 5 pyrolysis + motor oil) for ground
-  contact; the Boucherie Sap Displacement method (gravity tank displacing sap in green
-  poles with copper sulfate/borate); hot-and-cold bath thermal soaking; the Char-and-Tar
-  fence post protocol; mechanical termite shields (ant caps: 26-gauge galvanized steel
-  turned down at 45°); building design biosecurity (200 mm clearance above grade).
-
-content_md: |
-  ## The Biological Enemies of Tropical Timber
-
-  In tropical environments, structural timber is attacked by three distinct biological agents:
-
-  | Organism | Attacking Species | Damage Pattern | Vulnerable Wood Zone |
-  |---|---|---|---|
-  | **Subterranean Termites** | *Macrotermes* / *Odontotermes* | Excavate hollow galleries inside wood, packing voids with mud; structural strength drops to zero while outer paint shell looks intact | Any wood in ground contact or bridged by mud tubes |
-  | **Powder-Post Beetles** | *Lyctus* / *Bostrichidae* | Adults lay eggs in pores; larvae bore tunnels, turning wood interior into fine, flour-like powder (frass) with 1 mm flight exit pinholes | High-starch **Sapwood** of hardwoods (Eucalyptus, Grevillea) |
-  | **Wood-Decay Fungi** | Brown Rot (attacks cellulose) / White Rot (attacks lignin) | Wood crumbles into cubical brown chunks or spongy white fibers; requires **Moisture Content > 20%** and oxygen | Damp roof leaks, unventilated crawlspaces, ground-contact posts |
-
-  ---
-
-  ## Chemical Preservation Classes
-
-  ### 1. Water-Borne Borate Salts (For Interior & Roof Framing):
-  Borates (Disodium Octaborate Tetrahydrate - **DOT**, or a 1:1 mix of **Borax [$\text{Na}_2\text{B}_4\text{O}_7\cdot 10\text{H}_2\text{O}$] + Boric Acid [$\text{H}_3\text{BO}_3$]**):
-  - **Mechanism of Action**: Boron acts as a metabolic stomach poison to termites and wood-boring beetle larvae, and sterilizes fungal enzyme pathways. Virtually non-toxic to humans and mammals.
-  - **Natural Diffusion**: Borates dissolve in water and diffuse deep into the wet cellular heart of green timber over 2 to 3 weeks.
-  - **Critical Limitation**: Borates are water-soluble; they do NOT fix permanently to wood cells. **If exposed to outdoor rain, the borate washes out within months**.
-  - **Application**: The gold standard for all indoor framing, roof trusses, purlins, floorboards, and ceiling joists sheltered from rain.
-
-  ### 2. Oil-Borne Preservatives (For Ground-Contact Fence Posts & Poles):
-  Timber set in damp ground requires a heavy, water-insoluble, non-leaching biocide:
-  - **Sedimentary Wood Tar (Pyroligneous Pitch)**:
-    - Collected from the bottom layer of the biochar retort condenser (Part 11, Day 5).
-    - Rich in natural wood creosote, high-boiling phenols, and guaiacol.
-    - Blend **50% Wood Tar Pitch + 50% Clean Waste Engine Oil / Diesel** (dilutes viscosity to permit deep wood soaking).
-
-  ---
-
-  ## The Boucherie Sap-Displacement Method (Green Pole Treatment)
-
-  Standard dry soaking takes weeks and barely penetrates green roundwood.
-  The **Boucherie Method** treats fresh, green, unseasoned eucalyptus poles within 24 hours
-  by using hydraulic head pressure to push preservative liquid straight through the
-  log's living water-conducting sapwood vessels:
-
-  ```
-                       [ Elevated Chemical Reservoir ]
-                       (5 to 10 Metres High Head Tank)
-                                      │
-                                      ▼  Flexible High-Pressure Hose
-                   ┌──────────────────┴──────────────────┐
-                   │ Rubber Cap Clamped to Log Butt End  │
-                   └──────────────────┬──────────────────┘
-                                      │
-     ═════════════════════════════════╪═════════════════════════════════
-      GREEN ROUNDWOOD POLE SLOPED DOWNWARD (Sapwood Vessels Conduct)
-     ═════════════════════════════════╪═════════════════════════════════
-                                      │
-                                      ▼
-                        [ Displaced Sap & Excess Chemical ]
-                        (Collected in Sump for Recycling)
-  ```
-
-  ### Procedure:
-  1. Fell a healthy, straight eucalyptus, pine, or bamboo pole. **Treat within 24 hours** (before sap begins to coagulate in the vessels).
-  2. Leave the bark ON (bark prevents chemical leaking out the sides).
-  3. Clamp a heavy, reinforced rubber sleeve cap securely over the large butt end using double worm-drive radiator hose clamps.
-  4. Connect a hose leading to an elevated barrel of preservative (**5% Copper Sulfate solution or 10% Borate solution**) set 5 to 10 metres high (providing 0.5 to 1.0 bar gravity pressure).
-  5. As hydrostatic pressure forces the chemical in, fresh natural tree sap drips out the far small end of the pole.
-  6. **Completion**: When the dripping liquid turns the bright blue color of copper sulfate (or tests positive for borate with turmeric indicator paper), 100% of the sap has been displaced by preservative!
-  7. Peel bark, dry pole, and install. Lifespan increases from **2 years to 25+ years in ground contact**.
-
-  ## The Char-and-Tar Protocol for Fence Posts
-
-  For off-grid fence posts where chemicals are scarce, deploy the ancient two-step barrier:
-  1. **Superficial Carbonization (Charring)**:
-     - Peel bark off the bottom 75 cm of the hardwood post (the section entering the ground plus 15 cm above ground).
-     - Place over a hot wood fire, rotating continuously until a **3 mm to 5 mm layer of black charcoal** coats the wood.
-     - *Why*: Termites and wood-decay fungi cannot eat pure elemental carbon.
-  2. **Hot-Tar Impregnation**:
-     - Immediately while the charred wood is still sizzling hot (**150°C**), plunge the post into a drum of hot wood tar / asphalt pitch.
-     - As the hot air inside the wood pores cools and contracts, it creates a powerful partial vacuum that sucks the heavy antiseptic tar deep into the wood grain.
-
-  ## Architectural Biosecurity: Mechanical Termite Shields
-
-  Subterranean termites live underground and build brown, earthen **shelter mud tubes**
-  up concrete foundation piers to reach wooden floorboards unseen.
-
-  ### The Galvanized Metal "Ant Cap" (Termite Shield):
-  - Fit a continuous sheet of **26-gauge (0.5 mm) galvanized steel or copper** over the top of every foundation pier and masonry wall before laying wooden sills:
-    - The metal sheet must extend **50 mm horizontally outward** past the masonry wall.
-    - The outer edge must be bent **downward at a sharp 45-degree angle**.
-  - **The Biological Defense Mechanism**:
-    - Termite workers build vertical mud tubes up the concrete pier.
-    - When they hit the smooth downward 45° metal lip, they cannot bend their mud tunnel upside-down around the razor-sharp edge without breaking their tunnel.
-    - The mud tube is forced out into the open air where it is immediately spotted during monthly under-floor flashlight inspections and scraped away.
-
-  ### The 200 mm Ground Clearance Rule:
-  - Untreated structural timber must **never sit within 200 mm of bare soil**.
-  - All wooden posts must rest on elevated concrete footings equipped with steel standoff saddles to break moisture wicking and keep wood dry.
-
+  '
+content_md: "## The Biological Enemies of Tropical Timber\n\nIn tropical environments, structural timber\
+  \ is attacked by three distinct biological agents:\n\n| Organism | Attacking Species | Damage Pattern\
+  \ | Vulnerable Wood Zone |\n|---|---|---|---|\n| **Subterranean Termites** | *Macrotermes* / *Odontotermes*\
+  \ | Excavate hollow galleries inside wood, packing voids with mud; structural strength drops to zero\
+  \ while outer paint shell looks intact | Any wood in ground contact or bridged by mud tubes |\n| **Powder-Post\
+  \ Beetles** | *Lyctus* / *Bostrichidae* | Adults lay eggs in pores; larvae bore tunnels, turning wood\
+  \ interior into fine, flour-like powder (frass) with 1 mm flight exit pinholes | High-starch **Sapwood**\
+  \ of hardwoods (Eucalyptus, Grevillea) |\n| **Wood-Decay Fungi** | Brown Rot (attacks cellulose) / White\
+  \ Rot (attacks lignin) | Wood crumbles into cubical brown chunks or spongy white fibers; requires **Moisture\
+  \ Content > 20%** and oxygen | Damp roof leaks, unventilated crawlspaces, ground-contact posts |\n\n\
+  ---\n\n## Chemical Preservation Classes\n\n### 1. Water-Borne Borate Salts (For Interior & Roof Framing):\n\
+  Borates (Disodium Octaborate Tetrahydrate - **DOT**, or a 1:1 mix of **Borax [$\\text{Na}_2\\text{B}_4\\\
+  text{O}_7\\cdot 10\\text{H}_2\\text{O}$] + Boric Acid [$\\text{H}_3\\text{BO}_3$]**):\n- **Mechanism\
+  \ of Action**: Boron acts as a metabolic stomach poison to termites and wood-boring beetle larvae, and\
+  \ sterilizes fungal enzyme pathways. Virtually non-toxic to humans and mammals.\n- **Natural Diffusion**:\
+  \ Borates dissolve in water and diffuse deep into the wet cellular heart of green timber over 2 to 3\
+  \ weeks.\n- **Critical Limitation**: Borates are water-soluble; they do NOT fix permanently to wood\
+  \ cells. **If exposed to outdoor rain, the borate washes out within months**.\n- **Application**: The\
+  \ gold standard for all indoor framing, roof trusses, purlins, floorboards, and ceiling joists sheltered\
+  \ from rain.\n\n### 2. Oil-Borne Preservatives (For Ground-Contact Fence Posts & Poles):\nTimber set\
+  \ in damp ground requires a heavy, water-insoluble, non-leaching biocide:\n- **Sedimentary Wood Tar\
+  \ (Pyroligneous Pitch)**:\n  - Collected from the bottom layer of the biochar retort condenser (Part\
+  \ 11, Day 5).\n  - Rich in natural wood creosote, high-boiling phenols, and guaiacol.\n  - Blend **50%\
+  \ Wood Tar Pitch + 50% Clean Waste Engine Oil / Diesel** (dilutes viscosity to permit deep wood soaking).\n\
+  \n---\n\n## The Boucherie Sap-Displacement Method (Green Pole Treatment)\n\nStandard dry soaking takes\
+  \ weeks and barely penetrates green roundwood.\nThe **Boucherie Method** treats fresh, green, unseasoned\
+  \ eucalyptus poles within 24 hours\nby using hydraulic head pressure to push preservative liquid straight\
+  \ through the\nlog's living water-conducting sapwood vessels:\n\n```\n                     [ Elevated\
+  \ Chemical Reservoir ]\n                     (5 to 10 Metres High Head Tank)\n                     \
+  \               │\n                                    ▼  Flexible High-Pressure Hose\n            \
+  \     ┌──────────────────┴──────────────────┐\n                 │ Rubber Cap Clamped to Log Butt End\
+  \  │\n                 └──────────────────┬──────────────────┘\n                                   \
+  \ │\n   ═════════════════════════════════╪═════════════════════════════════\n    GREEN ROUNDWOOD POLE\
+  \ SLOPED DOWNWARD (Sapwood Vessels Conduct)\n   ═════════════════════════════════╪═════════════════════════════════\n\
+  \                                    │\n                                    ▼\n                    \
+  \  [ Displaced Sap & Excess Chemical ]\n                      (Collected in Sump for Recycling)\n```\n\
+  \n### Procedure:\n1. Fell a healthy, straight eucalyptus, pine, or bamboo pole. **Treat within 24 hours**\
+  \ (before sap begins to coagulate in the vessels).\n2. Leave the bark ON (bark prevents chemical leaking\
+  \ out the sides).\n3. Clamp a heavy, reinforced rubber sleeve cap securely over the large butt end using\
+  \ double worm-drive radiator hose clamps.\n4. Connect a hose leading to an elevated barrel of preservative\
+  \ (**5% Copper Sulfate solution or 10% Borate solution**) set 5 to 10 metres high (providing 0.5 to\
+  \ 1.0 bar gravity pressure).\n5. As hydrostatic pressure forces the chemical in, fresh natural tree\
+  \ sap drips out the far small end of the pole.\n6. **Completion**: When the dripping liquid turns the\
+  \ bright blue color of copper sulfate (or tests positive for borate with turmeric indicator paper),\
+  \ 100% of the sap has been displaced by preservative!\n7. Peel bark, dry pole, and install. Lifespan\
+  \ increases from **2 years to 25+ years in ground contact**.\n\n## The Char-and-Tar Protocol for Fence\
+  \ Posts\n\nFor off-grid fence posts where chemicals are scarce, deploy the ancient two-step barrier:\n\
+  1. **Superficial Carbonization (Charring)**:\n   - Peel bark off the bottom 75 cm of the hardwood post\
+  \ (the section entering the ground plus 15 cm above ground).\n   - Place over a hot wood fire, rotating\
+  \ continuously until a **3 mm to 5 mm layer of black charcoal** coats the wood.\n   - *Why*: Termites\
+  \ and wood-decay fungi cannot eat pure elemental carbon.\n2. **Hot-Tar Impregnation**:\n   - Immediately\
+  \ while the charred wood is still sizzling hot (**150°C**), plunge the post into a drum of hot wood\
+  \ tar / asphalt pitch.\n   - As the hot air inside the wood pores cools and contracts, it creates a\
+  \ powerful partial vacuum that sucks the heavy antiseptic tar deep into the wood grain.\n\n## Architectural\
+  \ Biosecurity: Mechanical Termite Shields\n\nSubterranean termites live underground and build brown,\
+  \ earthen **shelter mud tubes**\nup concrete foundation piers to reach wooden floorboards unseen.\n\n\
+  ### The Galvanized Metal \"Ant Cap\" (Termite Shield):\n- Fit a continuous sheet of **26-gauge (0.5\
+  \ mm) galvanized steel or copper** over the top of every foundation pier and masonry wall before laying\
+  \ wooden sills:\n  - The metal sheet must extend **50 mm horizontally outward** past the masonry wall.\n\
+  \  - The outer edge must be bent **downward at a sharp 45-degree angle**.\n- **The Biological Defense\
+  \ Mechanism**:\n  - Termite workers build vertical mud tubes up the concrete pier.\n  - When they hit\
+  \ the smooth downward 45° metal lip, they cannot bend their mud tunnel upside-down around the razor-sharp\
+  \ edge without breaking their tunnel.\n  - The mud tube is forced out into the open air where it is\
+  \ immediately spotted during monthly under-floor flashlight inspections and scraped away.\n\n### The\
+  \ 200 mm Ground Clearance Rule:\n- Untreated structural timber must **never sit within 200 mm of bare\
+  \ soil**.\n- All wooden posts must rest on elevated concrete footings equipped with steel standoff saddles\
+  \ to break moisture wicking and keep wood dry.\n"
 exercises:
-  - id: for-d4-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A builder uses a 10% disodium octaborate tetrahydrate (borate) solution to treat
-      timber. Why can borate-treated lumber be used for interior roof trusses and wall
-      studs, but is strictly prohibited for outdoor ground-contact fence posts?
-    xp_reward: 50
-    options:
-      - text: "Borate salts remain water-soluble and do not chemically fix to wood fibers; outdoor rainfall and ground moisture will leach the preservative out into the soil within months, leaving the post completely unprotected against subterranean termites"
-        correct: true
-        explanation: "Borates are fantastic, non-toxic, deep-penetrating insecticides, but they are fully leachable. Under roof cover, borates last for centuries. Outdoors in ground contact, rain leaches the boron away, allowing termites and fungi to destroy the wood."
-      - text: "Borates attract lightning strikes outdoors"
-        correct: false
-        explanation: "Borates are non-metallic mineral salts; they have no lightning attraction."
-      - text: "Outdoor sunlight turns borate into acid that dissolves wood"
-        correct: false
-        explanation: "Borates are chemically stable under UV radiation."
-      - text: "Borate turns timber black which looks unattractive"
-        correct: false
-        explanation: "Borate solutions dry completely clear and colorless."
+- id: for-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A builder uses a 10% disodium octaborate tetrahydrate (borate) solution to treat timber. Why
+    can borate-treated lumber be used for interior roof trusses and wall studs, but is strictly prohibited
+    for outdoor ground-contact fence posts?
 
-  - id: for-d4-q2
-    type: FILL_BLANK
-    prompt: >
-      In the Boucherie sap-displacement method for treating green eucalyptus poles,
-      preservative liquid is fed from an elevated reservoir under ___ pressure into
-      one end of the fresh log, pushing the natural tree ___ out the opposite end.
-    xp_reward: 50
-    correct_answer: "gravity; sap"
-    explanation: >
-      Gravity head pressure (0.5 to 1.0 bar from a 5-10 m high tank) pushes chemical
-      solution straight through the living open sapwood vessels, displacing the sap.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Borates attract lightning strikes outdoors
+  - id: b
+    text: Outdoor sunlight turns borate into acid that dissolves wood
+  - id: c
+    text: Borate turns timber black which looks unattractive
+  - id: d
+    text: Borate salts remain water-soluble and do not chemically fix to wood fibers; outdoor rainfall
+      and ground moisture will leach the preservative out into the soil within months, leaving the post
+      completely unprotected against subterranean termites
+  explanation: 'Borates are fantastic, non-toxic, deep-penetrating insecticides, but they are fully leachable.
+    Under roof cover, borates last for centuries. Outdoors in ground contact, rain leaches the boron away,
+    allowing termites and fungi to destroy the wood.
 
-  - id: for-d4-q3
-    type: MATCH_PAIRS
-    prompt: Match each timber preservation method to its operational mechanism.
-    xp_reward: 50
-    pairs:
-      - left: Galvanized Metal Termite Shield
-        right: 45° downward metal lip blocking subterranean termite shelter mud tubes
-      - left: Char-and-Tar Post Treatment
-        right: Creates a 3mm carbonized non-edible layer soaked in hot antiseptic wood pitch
-      - left: Disodium Octaborate (DOT)
-        right: Water-borne metabolic stomach poison for termites in interior framing
-      - left: 200 mm Ground Clearance Rule
-        right: Elevating timber framing on concrete piers to prevent ground moisture wicking
-    correct_answer: null
-    explanation: >
-      Termite shields block tubes; char-and-tar protects posts; borates protect indoor wood;
-      clearance prevents ground rot.
 
-  - id: for-d4-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A homeowner inspects a wooden building and finds piles of fine, flour-like wood
-      powder (frass) beneath the structural beams, accompanied by tiny 1 mm round pinholes
-      in the wood. What pest has infested the timber?
-    xp_reward: 50
-    options:
-      - text: "Powder-post beetles (Lyctus / Bostrichidae), whose internal larvae feed on starch in the sapwood, turning the interior into powder and leaving exit pinholes"
-        correct: true
-        explanation: "Powder-post beetles attack high-starch sapwood. The larvae bore invisible tunnels for months, packing them with fine flour-like frass, and adults chew round 1 mm pinholes when emerging."
-      - text: "Subterranean termites"
-        correct: false
-        explanation: "Termites construct mud tubes and leave hollow cavities filled with brown soil, not dry flour powder and clean pinholes."
-      - text: "Woodpeckers"
-        correct: false
-        explanation: "Woodpeckers leave large jagged ragged holes, not 1 mm pinholes."
-      - text: "Carpenter ants"
-        correct: false
-        explanation: "Carpenter ants kick out coarse wood shavings like pencil sharpenings, not fine flour-like frass."
+    Why the other options are wrong: Borates are non-metallic mineral salts; they have no lightning attraction.
+    Borates are chemically stable under UV radiation. Borate solutions dry completely clear and colorless.'
+  correct_answer: d
+- id: for-d4-q2
+  type: FILL_BLANK
+  prompt: 'In the Boucherie sap-displacement method for treating green eucalyptus poles, preservative
+    liquid is fed from an elevated reservoir under ___ pressure into one end of the fresh log, pushing
+    the natural tree ___ out the opposite end.
 
-  - id: for-d4-q5
-    type: FILL_BLANK
-    prompt: >
-      Wood-decay fungi (brown rot and white rot) cannot survive or digest timber if
-      the wood's moisture content is maintained below ___ percent, reinforcing the
-      importance of proper roof overhangs and sub-floor ventilation.
-    xp_reward: 50
-    correct_answer: "20"
-    explanation: >
-      Wood-destroying fungi require liquid water in the cell walls; dry wood below
-      20% MC is biologically immune to fungal decay.
+    '
+  xp_reward: 50
+  correct_answer:
+  - gravity
+  - sap
+  explanation: 'Gravity head pressure (0.5 to 1.0 bar from a 5-10 m high tank) pushes chemical solution
+    straight through the living open sapwood vessels, displacing the sap.
+
+    '
+- id: for-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each timber preservation method to its operational mechanism.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Galvanized Metal Termite Shield
+    right:
+      id: r-5a3631
+      text: 45° downward metal lip blocking subterranean termite shelter mud tubes
+  - left:
+      id: l2
+      text: Char-and-Tar Post Treatment
+    right:
+      id: r-0b6be7
+      text: Creates a 3mm carbonized non-edible layer soaked in hot antiseptic wood pitch
+  - left:
+      id: l3
+      text: Disodium Octaborate (DOT)
+    right:
+      id: r-30ec92
+      text: Water-borne metabolic stomach poison for termites in interior framing
+  - left:
+      id: l4
+      text: 200 mm Ground Clearance Rule
+    right:
+      id: r-cbcc87
+      text: Elevating timber framing on concrete piers to prevent ground moisture wicking
+  correct_answer:
+  - l1=r-5a3631
+  - l2=r-0b6be7
+  - l3=r-30ec92
+  - l4=r-cbcc87
+  explanation: 'Termite shields block tubes; char-and-tar protects posts; borates protect indoor wood;
+    clearance prevents ground rot.
+
+    '
+- id: for-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A homeowner inspects a wooden building and finds piles of fine, flour-like wood powder (frass)
+    beneath the structural beams, accompanied by tiny 1 mm round pinholes in the wood. What pest has infested
+    the timber?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Subterranean termites
+  - id: b
+    text: Powder-post beetles (Lyctus / Bostrichidae), whose internal larvae feed on starch in the sapwood,
+      turning the interior into powder and leaving exit pinholes
+  - id: c
+    text: Woodpeckers
+  - id: d
+    text: Carpenter ants
+  explanation: 'Powder-post beetles attack high-starch sapwood. The larvae bore invisible tunnels for
+    months, packing them with fine flour-like frass, and adults chew round 1 mm pinholes when emerging.
+
+
+    Why the other options are wrong: Termites construct mud tubes and leave hollow cavities filled with
+    brown soil, not dry flour powder and clean pinholes. Woodpeckers leave large jagged ragged holes,
+    not 1 mm pinholes. Carpenter ants kick out coarse wood shavings like pencil sharpenings, not fine
+    flour-like frass.'
+  correct_answer: b
+- id: for-d4-q5
+  type: FILL_BLANK
+  prompt: 'Wood-decay fungi (brown rot and white rot) cannot survive or digest timber if the wood''s moisture
+    content is maintained below ___ percent, reinforcing the importance of proper roof overhangs and sub-floor
+    ventilation.
+
+    '
+  xp_reward: 50
+  correct_answer: '20'
+  explanation: 'Wood-destroying fungi require liquid water in the cell walls; dry wood below 20% MC is
+    biologically immune to fungal decay.
+
+    '

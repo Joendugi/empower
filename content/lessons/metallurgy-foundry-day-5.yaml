@@ -1,244 +1,241 @@
 id: metallurgy-foundry-day-5
 course_id: metallurgy-foundry
-title: "Crucible Furnace Operation & Non-Ferrous Casting"
-title_sw: "Uendeshaji wa Tanuri ya Crucible na Uyahushaji wa Vyuma (Alumini na Shaba)"
+title: Crucible Furnace Operation & Non-Ferrous Casting
+title_sw: Uendeshaji wa Tanuri ya Crucible na Uyahushaji wa Vyuma (Alumini na Shaba)
 week_number: 1
 day_number: 5
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - metallurgy
-  - foundry
-  - crucible-furnace
-  - aluminium-casting
-  - bronze-casting
-  - degassing
-  - safety
+- metallurgy
+- foundry
+- crucible-furnace
+- aluminium-casting
+- bronze-casting
+- degassing
+- safety
 xp: 250
 exam_domain: metallurgy-foundry
+briefing: 'Pouring liquid metal at 700°C to 1,150°C is an industrial operation where a single drop of
+  sweat or moisture can cause a catastrophic steam explosion. Non-ferrous alloys—aluminium (melting point
+  660°C) and bronze/brass (melting point 950°C–1,050°C)—are the lifeblood of remote machine repair, producing
+  corrosion-resistant pump impellers, bushings, valves, and electrical fittings. This capstone lesson
+  covers refractory crucible furnace construction, clay-graphite crucible handling, fluxing and degassing
+  (removing dissolved hydrogen gas), dross skimming, pouring mechanics, safety PPE, and comprehensive
+  inspection rubrics.
 
-briefing: >
-  Pouring liquid metal at 700°C to 1,150°C is an industrial operation where a single
-  drop of sweat or moisture can cause a catastrophic steam explosion. Non-ferrous
-  alloys—aluminium (melting point 660°C) and bronze/brass (melting point 950°C–1,050°C)—are
-  the lifeblood of remote machine repair, producing corrosion-resistant pump impellers,
-  bushings, valves, and electrical fittings. This capstone lesson covers refractory
-  crucible furnace construction, clay-graphite crucible handling, fluxing and degassing
-  (removing dissolved hydrogen gas), dross skimming, pouring mechanics, safety PPE,
-  and comprehensive inspection rubrics.
+  '
+outline: 'Crucible furnace design: tangential burner inlet, refractory lining (kaolin / castable refractory,
+  1,300°C rated), forced-air waste oil or charcoal burner; clay-graphite and silicon carbide crucible
+  selection and preheating (preventing spalling fractures); melting thermodynamics of Aluminium (660°C)
+  and Silicon-Bronze (1,000°C); hydrogen gas solubility and degassing protocols (degassing tablets or
+  dry table salt + potassium chloride flux); dross skimming tools; pouring ergonomics: two-man lifting
+  shank and pouring tongs; absolute moisture safety rules (preheating all charging scrap and skimmers);
+  shake-out inspection and cleaning; PHOTO_CAPTURE assessment rubric of workshop foundry mold, crucible
+  melt, or finished cast component.
 
-outline: >
-  Crucible furnace design: tangential burner inlet, refractory lining (kaolin / castable
-  refractory, 1,300°C rated), forced-air waste oil or charcoal burner; clay-graphite
-  and silicon carbide crucible selection and preheating (preventing spalling fractures);
-  melting thermodynamics of Aluminium (660°C) and Silicon-Bronze (1,000°C); hydrogen gas
-  solubility and degassing protocols (degassing tablets or dry table salt + potassium
-  chloride flux); dross skimming tools; pouring ergonomics: two-man lifting shank and
-  pouring tongs; absolute moisture safety rules (preheating all charging scrap and skimmers);
-  shake-out inspection and cleaning; PHOTO_CAPTURE assessment rubric of workshop foundry
-  mold, crucible melt, or finished cast component.
-
-content_md: |
-  ## The Crucible Furnace
-
-  A foundry crucible furnace holds a heat-resistant pot (**crucible**) containing scrap
-  metal inside a super-heated cylindrical chamber.
-
-  ```
-                       [ Removable Refractory Lid ]
-                       ┌───────────▼───────────┐
-                       │                       │
-                       │     ┌───────────┐     │
-                       │     │  CRUCIBLE │     │  Exhaust Flue Hole
-                       │     │ (Graphite)│     │
-                       │     │           │     │
-                       │     └─────┬─────┘     │
-                       │           │ Plinth    │
-     Tangential Air/   │           ▼           │
-     Oil Burner ─────► │ [Swirling Flame Zone] │
-                       └───────────────────────┘
-  ```
-
-  ### Furnace Architecture:
-  - **Refractory Chamber**: An empty 200 L steel drum lined with a **75 mm thick wall of refractory concrete** (50% crushed firebrick, 30% fireclay, 20% alumina cement).
-  - **Tangential Burner Entry**: The burner tube enters at the bottom **tangential to the curved inner wall**. This forces flames to spiral in a cyclone vortex around the crucible, maximizing convective heat transfer without flame-impinging directly onto the pot.
-  - **Fuel Options**:
-    - High-grade hardwood charcoal with forced blower air (reaches 1,100°C easily).
-    - Waste automotive motor oil dripped into a high-pressure blower stream (reaches 1,300°C+, melts bronze and cast iron).
-
-  ## Crucible Selection, Care & Preheating
-
-  Crucibles are made from **Clay-Graphite** or **Silicon Carbide (SiC)**:
-  - High thermal conductivity, non-wetting to molten metal, withstands up to 1,500°C.
-  - **DANGER: Thermal Shock Spalling**:
-    Clay-graphite absorbs moisture from humid air. If a cold, damp crucible is dropped
-    into a roaring 1,000°C furnace, trapped steam flashes violently, shattering the
-    crucible into exploding ceramic shards and dumping molten metal onto the floor!
-
-  ### The 3-Stage Crucible Curing Rule:
-  1. Store all crucibles in a bone-dry, elevated rack.
-  2. Before a melt, place the crucible on the exhaust lid of the furnace to warm gently to **150°C** for 30 minutes (evaporates moisture).
-  3. Lower into the furnace at low flame; ramp temperature slowly to dull red (**700°C**) before charging any cold scrap metal.
-
-  ## Melting Non-Ferrous Alloys
-
-  | Alloy | Composition | Melting Point | Pouring Temperature | Common Machine Use |
-  |---|---|---|---|---|
-  | **Cast Aluminium (Al-Si 356)** | 93% Al, 7% Si | **660°C** | **720°C – 750°C** | Engine cylinder heads, pump housings, pulleys |
-  | **Cast Aluminium (Piston Scrap)** | High Silicon Al | **650°C** | **730°C** | Wear-resistant machine brackets, handles |
-  | **Silicon Bronze** | 95% Cu, 4% Si, 1% Mn | **980°C** | **1,060°C – 1,120°C**| Marine fittings, Pelton runner buckets, impellers |
-  | **Bearing Bronze (Phosphor)** | 88% Cu, 10% Sn, 2% Zn | **1,000°C** | **1,100°C – 1,150°C**| Heavy shaft bushings, sleeve bearings, worm gears |
-  | **Yellow Brass** | 65% Cu, 35% Zn | **930°C** | **1,020°C** | Pipe fittings, valve bodies (Caution: Zinc fumes!) |
-
-  ## Fluxing, Degassing & Dross Skimming
-
-  ### 1. The Hydrogen Gas Porosity Problem (Aluminium):
-  Molten aluminium has an extreme affinity for hydrogen. Steam in combustion gases
-  dissolves into liquid aluminium as atomic hydrogen ($\text{H}$).
-  When the casting freezes, the solubility of hydrogen drops by **95%**: the gas
-  comes bubbling out of solution, riddling the solid casting with millions of microscopic
-  pinholes (swiss-cheese porosity) that cause pressure leaks and structural failure.
-
-  ### 2. Degassing Protocol:
-  - Add **Degassing Tablets (Hexachloroethane)** or a dry mix of **50% Potassium Chloride ($\text{KCl}$) + 50% Sodium Chloride ($\text{NaCl}$)**.
-  - Submerge the flux to the bottom of the crucible using an iron plunging rod.
-  - The flux decomposes, releasing bubbles of chlorine/argon gas that rise through the molten bath.
-  - Dissolved hydrogen diffuses into the rising bubbles and escapes harmlessly into the exhaust.
-
-  ### 3. Dross Skimming:
-  - Aluminum oxidizes on contact with air, forming a light, fluffy grey crust (**Dross** / $\text{Al}_2\text{O}_3$).
-  - Sprinkle cover flux over the surface to separate trapped clean metal from oxide.
-  - Skim the floating dross off with a perforated, preheated steel ladle into an iron dross bucket immediately before pouring.
-
-  ## Foundry Safety & The Golden Moisture Rule
-
-  **WATER + MOLTEN METAL = CATASTROPHIC STEAM EXPLOSION**
-  When liquid aluminium (700°C) or bronze (1,100°C) traps water, the liquid water
-  expands into steam by **1,700 times its volume in less than 5 milliseconds**.
-  This creates an instantaneous explosive blast that violently launches molten metal
-  across the workshop.
-
-  ### Unbreakable Safety Directives:
-  1. **All Ingot & Scrap Metal Must Be Preheated**:
-     - Never drop a cold scrap part into a pot of molten metal! Condensation on the scrap will trigger an explosion.
-     - Rest all cold scrap metal on the furnace lid for 10 minutes to reach 150°C+ before dropping it into the crucible.
-  2. **Skimmers and Tongs Must Be Preheated & Painted with Lime**:
-     - Cold steel tools plunged into liquid metal will spit and erupt.
-  3. **Foundry Floor Must Be Dry Sand or Dirt**:
-     - **NEVER pour over wet concrete**. Spilled molten metal causes moisture trapped in concrete pores to flash-boil, blowing craters in the concrete and spraying shrapnel.
-  4. **Mandatory PPE**:
-     - Heavy split-cowhide leather welding spats over steel-toed leather boots.
-     - Heavy leather foundry jacket or full-length apron.
-     - Full-face polycarbonate thermal shield with shade 5 tinted glass.
-     - Heavy aluminized heat-reflective gauntlet gloves.
-
-  ## The Pouring Sequence
-
-  1. **Lifting the Crucible**:
-     - Turn off the burner blower. Remove furnace lid.
-     - Two operators grasp the crucible using **Heavy Curved-Jaw Lifting Tongs** fitted precisely to the crucible belly.
-     - Lift smoothly vertically out of the furnace; set the crucible into a **Two-Man Pouring Shank Ring**.
-  2. **The Pour**:
-     - Move with steady, deliberate footsteps to the weighted greensand mold.
-     - Keep the crucible pouring lip **no higher than 25 mm above the pouring basin** (high pours cause turbulent splashing and entrap air bubbles).
-     - Pour in an unbroken, steady stream, filling the sprue basin to the brim instantly and keeping it full.
-     - Stop pouring the moment liquid metal wells up to the top of the **Riser**.
-  3. **Cooling & Shake-Out**:
-     - Allow aluminium castings to cool undisturbed for **minimum 30 minutes** (bronze: 60 minutes).
-     - Separate the flask; dump the casting onto a wire mesh shake-out screen.
-     - Knock away sand with a brass hammer. Cut off sprues and risers with a metal hacksaw; the gating metal goes directly back into the scrap bin for the next melt!
-
+  '
+content_md: "## The Crucible Furnace\n\nA foundry crucible furnace holds a heat-resistant pot (**crucible**)\
+  \ containing scrap\nmetal inside a super-heated cylindrical chamber.\n\n```\n                     [\
+  \ Removable Refractory Lid ]\n                     ┌───────────▼───────────┐\n                     │\
+  \                       │\n                     │     ┌───────────┐     │\n                     │  \
+  \   │  CRUCIBLE │     │  Exhaust Flue Hole\n                     │     │ (Graphite)│     │\n       \
+  \              │     │           │     │\n                     │     └─────┬─────┘     │\n         \
+  \            │           │ Plinth    │\n   Tangential Air/   │           ▼           │\n   Oil Burner\
+  \ ─────► │ [Swirling Flame Zone] │\n                     └───────────────────────┘\n```\n\n### Furnace\
+  \ Architecture:\n- **Refractory Chamber**: An empty 200 L steel drum lined with a **75 mm thick wall\
+  \ of refractory concrete** (50% crushed firebrick, 30% fireclay, 20% alumina cement).\n- **Tangential\
+  \ Burner Entry**: The burner tube enters at the bottom **tangential to the curved inner wall**. This\
+  \ forces flames to spiral in a cyclone vortex around the crucible, maximizing convective heat transfer\
+  \ without flame-impinging directly onto the pot.\n- **Fuel Options**:\n  - High-grade hardwood charcoal\
+  \ with forced blower air (reaches 1,100°C easily).\n  - Waste automotive motor oil dripped into a high-pressure\
+  \ blower stream (reaches 1,300°C+, melts bronze and cast iron).\n\n## Crucible Selection, Care & Preheating\n\
+  \nCrucibles are made from **Clay-Graphite** or **Silicon Carbide (SiC)**:\n- High thermal conductivity,\
+  \ non-wetting to molten metal, withstands up to 1,500°C.\n- **DANGER: Thermal Shock Spalling**:\n  Clay-graphite\
+  \ absorbs moisture from humid air. If a cold, damp crucible is dropped\n  into a roaring 1,000°C furnace,\
+  \ trapped steam flashes violently, shattering the\n  crucible into exploding ceramic shards and dumping\
+  \ molten metal onto the floor!\n\n### The 3-Stage Crucible Curing Rule:\n1. Store all crucibles in a\
+  \ bone-dry, elevated rack.\n2. Before a melt, place the crucible on the exhaust lid of the furnace to\
+  \ warm gently to **150°C** for 30 minutes (evaporates moisture).\n3. Lower into the furnace at low flame;\
+  \ ramp temperature slowly to dull red (**700°C**) before charging any cold scrap metal.\n\n## Melting\
+  \ Non-Ferrous Alloys\n\n| Alloy | Composition | Melting Point | Pouring Temperature | Common Machine\
+  \ Use |\n|---|---|---|---|---|\n| **Cast Aluminium (Al-Si 356)** | 93% Al, 7% Si | **660°C** | **720°C\
+  \ – 750°C** | Engine cylinder heads, pump housings, pulleys |\n| **Cast Aluminium (Piston Scrap)** |\
+  \ High Silicon Al | **650°C** | **730°C** | Wear-resistant machine brackets, handles |\n| **Silicon\
+  \ Bronze** | 95% Cu, 4% Si, 1% Mn | **980°C** | **1,060°C – 1,120°C**| Marine fittings, Pelton runner\
+  \ buckets, impellers |\n| **Bearing Bronze (Phosphor)** | 88% Cu, 10% Sn, 2% Zn | **1,000°C** | **1,100°C\
+  \ – 1,150°C**| Heavy shaft bushings, sleeve bearings, worm gears |\n| **Yellow Brass** | 65% Cu, 35%\
+  \ Zn | **930°C** | **1,020°C** | Pipe fittings, valve bodies (Caution: Zinc fumes!) |\n\n## Fluxing,\
+  \ Degassing & Dross Skimming\n\n### 1. The Hydrogen Gas Porosity Problem (Aluminium):\nMolten aluminium\
+  \ has an extreme affinity for hydrogen. Steam in combustion gases\ndissolves into liquid aluminium as\
+  \ atomic hydrogen ($\\text{H}$).\nWhen the casting freezes, the solubility of hydrogen drops by **95%**:\
+  \ the gas\ncomes bubbling out of solution, riddling the solid casting with millions of microscopic\n\
+  pinholes (swiss-cheese porosity) that cause pressure leaks and structural failure.\n\n### 2. Degassing\
+  \ Protocol:\n- Add **Degassing Tablets (Hexachloroethane)** or a dry mix of **50% Potassium Chloride\
+  \ ($\\text{KCl}$) + 50% Sodium Chloride ($\\text{NaCl}$)**.\n- Submerge the flux to the bottom of the\
+  \ crucible using an iron plunging rod.\n- The flux decomposes, releasing bubbles of chlorine/argon gas\
+  \ that rise through the molten bath.\n- Dissolved hydrogen diffuses into the rising bubbles and escapes\
+  \ harmlessly into the exhaust.\n\n### 3. Dross Skimming:\n- Aluminum oxidizes on contact with air, forming\
+  \ a light, fluffy grey crust (**Dross** / $\\text{Al}_2\\text{O}_3$).\n- Sprinkle cover flux over the\
+  \ surface to separate trapped clean metal from oxide.\n- Skim the floating dross off with a perforated,\
+  \ preheated steel ladle into an iron dross bucket immediately before pouring.\n\n## Foundry Safety &\
+  \ The Golden Moisture Rule\n\n**WATER + MOLTEN METAL = CATASTROPHIC STEAM EXPLOSION**\nWhen liquid aluminium\
+  \ (700°C) or bronze (1,100°C) traps water, the liquid water\nexpands into steam by **1,700 times its\
+  \ volume in less than 5 milliseconds**.\nThis creates an instantaneous explosive blast that violently\
+  \ launches molten metal\nacross the workshop.\n\n### Unbreakable Safety Directives:\n1. **All Ingot\
+  \ & Scrap Metal Must Be Preheated**:\n   - Never drop a cold scrap part into a pot of molten metal!\
+  \ Condensation on the scrap will trigger an explosion.\n   - Rest all cold scrap metal on the furnace\
+  \ lid for 10 minutes to reach 150°C+ before dropping it into the crucible.\n2. **Skimmers and Tongs\
+  \ Must Be Preheated & Painted with Lime**:\n   - Cold steel tools plunged into liquid metal will spit\
+  \ and erupt.\n3. **Foundry Floor Must Be Dry Sand or Dirt**:\n   - **NEVER pour over wet concrete**.\
+  \ Spilled molten metal causes moisture trapped in concrete pores to flash-boil, blowing craters in the\
+  \ concrete and spraying shrapnel.\n4. **Mandatory PPE**:\n   - Heavy split-cowhide leather welding spats\
+  \ over steel-toed leather boots.\n   - Heavy leather foundry jacket or full-length apron.\n   - Full-face\
+  \ polycarbonate thermal shield with shade 5 tinted glass.\n   - Heavy aluminized heat-reflective gauntlet\
+  \ gloves.\n\n## The Pouring Sequence\n\n1. **Lifting the Crucible**:\n   - Turn off the burner blower.\
+  \ Remove furnace lid.\n   - Two operators grasp the crucible using **Heavy Curved-Jaw Lifting Tongs**\
+  \ fitted precisely to the crucible belly.\n   - Lift smoothly vertically out of the furnace; set the\
+  \ crucible into a **Two-Man Pouring Shank Ring**.\n2. **The Pour**:\n   - Move with steady, deliberate\
+  \ footsteps to the weighted greensand mold.\n   - Keep the crucible pouring lip **no higher than 25\
+  \ mm above the pouring basin** (high pours cause turbulent splashing and entrap air bubbles).\n   -\
+  \ Pour in an unbroken, steady stream, filling the sprue basin to the brim instantly and keeping it full.\n\
+  \   - Stop pouring the moment liquid metal wells up to the top of the **Riser**.\n3. **Cooling & Shake-Out**:\n\
+  \   - Allow aluminium castings to cool undisturbed for **minimum 30 minutes** (bronze: 60 minutes).\n\
+  \   - Separate the flask; dump the casting onto a wire mesh shake-out screen.\n   - Knock away sand\
+  \ with a brass hammer. Cut off sprues and risers with a metal hacksaw; the gating metal goes directly\
+  \ back into the scrap bin for the next melt!\n"
 exercises:
-  - id: met-d5-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why is it strictly mandatory in foundry practice to preheat all cold scrap metal
-      and steel skimming tools on the furnace lid before plunging them into a crucible
-      of molten aluminium or bronze?
-    xp_reward: 50
-    options:
-      - text: "To eliminate invisible trace moisture and condensation; water trapped beneath molten metal instantly vaporizes into steam with a 1,700-fold volume expansion, triggering a violent molten metal steam explosion"
-        correct: true
-        explanation: "Moisture trapped under molten metal flashes to high-pressure steam in milliseconds. The explosive 1,700× volumetric expansion acts like a blast charge, ejecting 1,000°C molten metal across the entire shop floor."
-      - text: "To make the scrap metal easier to cut with a hacksaw"
-        correct: false
-        explanation: "Scrap is added directly into the crucible to melt; hacksawing is not performed during the melt."
-      - text: "To cool down the crucible so the pot does not crack"
-        correct: false
-        explanation: "Crucibles must stay hot; cooling is the opposite of the objective."
-      - text: "Because cold scrap magnetizes the liquid aluminium"
-        correct: false
-        explanation: "Aluminium is non-ferrous and non-magnetic in both solid and liquid states."
+- id: met-d5-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is it strictly mandatory in foundry practice to preheat all cold scrap metal and steel
+    skimming tools on the furnace lid before plunging them into a crucible of molten aluminium or bronze?
 
-  - id: met-d5-q2
-    type: FILL_BLANK
-    prompt: >
-      In molten aluminium casting, dissolved ___ gas causes severe microscopic pinhole
-      porosity in the finished casting, which is eliminated prior to pouring by bubbling
-      ___ flux tablets through the melt.
-    xp_reward: 50
-    correct_answer: "hydrogen; degassing"
-    explanation: >
-      Hydrogen dissolves in liquid aluminium and precipitates as gas bubbles during
-      freezing. Degassing agents bubble through the bath, stripping out dissolved hydrogen.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: To make the scrap metal easier to cut with a hacksaw
+  - id: b
+    text: To cool down the crucible so the pot does not crack
+  - id: c
+    text: Because cold scrap magnetizes the liquid aluminium
+  - id: d
+    text: To eliminate invisible trace moisture and condensation; water trapped beneath molten metal instantly
+      vaporizes into steam with a 1,700-fold volume expansion, triggering a violent molten metal steam
+      explosion
+  explanation: 'Moisture trapped under molten metal flashes to high-pressure steam in milliseconds. The
+    explosive 1,700× volumetric expansion acts like a blast charge, ejecting 1,000°C molten metal across
+    the entire shop floor.
 
-  - id: met-d5-q3
-    type: MATCH_PAIRS
-    prompt: Match each foundry operation to its critical technical purpose.
-    xp_reward: 50
-    pairs:
-      - left: Tangential Burner Inlet
-        right: Creates a swirling cyclonic vortex flame around the crucible for uniform heating
-      - left: Dross Skimming
-        right: Removes light floating aluminium oxide crust before metal enters the mold
-      - left: Pouring Shank Ring
-        right: Two-man rigid steel carrier allowing smooth, controlled tilting of the crucible
-      - left: Dry Dirt / Sand Floor
-        right: Prevents catastrophic concrete spalling explosions if molten metal spills
-    correct_answer: null
-    explanation: >
-      Tangential burners optimize heat transfer; skimming cleans oxides; shanks control
-      crucibles; sand floors absorb spills safely.
 
-  - id: met-d5-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      When pouring molten aluminium into a greensand mold, why should the pouring lip
-      of the crucible be kept as low as possible (under 25 mm) above the pouring basin?
-    xp_reward: 50
-    options:
-      - text: "Low pouring height minimizes turbulence and prevents the metal stream from breaking into droplets that trap air and fold surface oxide dross into the mold cavity"
-        correct: true
-        explanation: "Pouring from a high distance creates turbulent splashing that entrains air and folds heavy oxide skins into the liquid metal, causing severe internal inclusion defects and cold shuts in the casting."
-      - text: "Because high pours cause the sand flask to float"
-        correct: false
-        explanation: "Flask floating is caused by hydrostatic head pressure inside the mold, not the height of the ladle."
-      - text: "To make the crucible lighter to hold"
-        correct: false
-        explanation: "The weight of the crucible is identical regardless of pouring height."
-      - text: "To prevent the metal from freezing in mid-air"
-        correct: false
-        explanation: "Liquid metal at 750°C will not freeze during a 30 cm fall, but the turbulence ruins the casting."
+    Why the other options are wrong: Scrap is added directly into the crucible to melt; hacksawing is
+    not performed during the melt. Crucibles must stay hot; cooling is the opposite of the objective.
+    Aluminium is non-ferrous and non-magnetic in both solid and liquid states.'
+  correct_answer: d
+- id: met-d5-q2
+  type: FILL_BLANK
+  prompt: 'In molten aluminium casting, dissolved ___ gas causes severe microscopic pinhole porosity in
+    the finished casting, which is eliminated prior to pouring by bubbling ___ flux tablets through the
+    melt.
 
-  - id: met-d5-q5
-    type: PHOTO_CAPTURE
-    prompt: >
-      Photograph a metal casting, greensand mold cavity, blacksmithing forge operation,
-      or heat-treated forged tool from your workshop practice. Ensure the image clearly
-      displays clean parting lines, surface finish, gating details, or heat-treating oxide
-      temper colors, and include your written processing log.
-    xp_reward: 50
-    correct_answer: null
-    explanation: >
-      Photographic documentation of foundry molds, crucible melts, or heat-treated
-      tools verifies practical mastery of dimensional accuracy, clean casting surfaces,
-      and correct metallurgical phase transformations in workshop practice.
-    rubric:
-      - criterion: "Photograph clearly shows greensand mold, crucible furnace, forged workpiece, or finished cast component"
-        points: 15
-      - criterion: "Foundry details (parting line, sprue/riser cutoff, draft angles) or blacksmithing features (temper colors, hammer finish) are distinct"
-        points: 15
-      - criterion: "Written report records alloy composition, pouring/forging temperatures, quench media, and dimensional tolerances"
-        points: 10
-      - criterion: "Image is well-lit, in sharp focus, showing clean metallurgical texture and professional workshop safety practice"
-        points: 10
+    '
+  xp_reward: 50
+  correct_answer:
+  - hydrogen
+  - degassing
+  explanation: 'Hydrogen dissolves in liquid aluminium and precipitates as gas bubbles during freezing.
+    Degassing agents bubble through the bath, stripping out dissolved hydrogen.
+
+    '
+- id: met-d5-q3
+  type: MATCH_PAIRS
+  prompt: Match each foundry operation to its critical technical purpose.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Tangential Burner Inlet
+    right:
+      id: r-8b2bfa
+      text: Creates a swirling cyclonic vortex flame around the crucible for uniform heating
+  - left:
+      id: l2
+      text: Dross Skimming
+    right:
+      id: r-b7c769
+      text: Removes light floating aluminium oxide crust before metal enters the mold
+  - left:
+      id: l3
+      text: Pouring Shank Ring
+    right:
+      id: r-536f58
+      text: Two-man rigid steel carrier allowing smooth, controlled tilting of the crucible
+  - left:
+      id: l4
+      text: Dry Dirt / Sand Floor
+    right:
+      id: r-f51599
+      text: Prevents catastrophic concrete spalling explosions if molten metal spills
+  correct_answer:
+  - l1=r-8b2bfa
+  - l2=r-b7c769
+  - l3=r-536f58
+  - l4=r-f51599
+  explanation: 'Tangential burners optimize heat transfer; skimming cleans oxides; shanks control crucibles;
+    sand floors absorb spills safely.
+
+    '
+- id: met-d5-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'When pouring molten aluminium into a greensand mold, why should the pouring lip of the crucible
+    be kept as low as possible (under 25 mm) above the pouring basin?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Low pouring height minimizes turbulence and prevents the metal stream from breaking into droplets
+      that trap air and fold surface oxide dross into the mold cavity
+  - id: b
+    text: Because high pours cause the sand flask to float
+  - id: c
+    text: To make the crucible lighter to hold
+  - id: d
+    text: To prevent the metal from freezing in mid-air
+  explanation: 'Pouring from a high distance creates turbulent splashing that entrains air and folds heavy
+    oxide skins into the liquid metal, causing severe internal inclusion defects and cold shuts in the
+    casting.
+
+
+    Why the other options are wrong: Flask floating is caused by hydrostatic head pressure inside the
+    mold, not the height of the ladle. The weight of the crucible is identical regardless of pouring height.
+    Liquid metal at 750°C will not freeze during a 30 cm fall, but the turbulence ruins the casting.'
+  correct_answer: a
+- id: met-d5-q5
+  type: PHOTO_CAPTURE
+  prompt: 'Photograph a metal casting, greensand mold cavity, blacksmithing forge operation, or heat-treated
+    forged tool from your workshop practice. Ensure the image clearly displays clean parting lines, surface
+    finish, gating details, or heat-treating oxide temper colors, and include your written processing
+    log.
+
+    '
+  xp_reward: 50
+  correct_answer: null
+  explanation: 'Photographic documentation of foundry molds, crucible melts, or heat-treated tools verifies
+    practical mastery of dimensional accuracy, clean casting surfaces, and correct metallurgical phase
+    transformations in workshop practice.
+
+    '
+  rubric:
+  - criterion: Photograph clearly shows greensand mold, crucible furnace, forged workpiece, or finished
+      cast component
+    points: 15
+  - criterion: Foundry details (parting line, sprue/riser cutoff, draft angles) or blacksmithing features
+      (temper colors, hammer finish) are distinct
+    points: 15
+  - criterion: Written report records alloy composition, pouring/forging temperatures, quench media, and
+      dimensional tolerances
+    points: 10
+  - criterion: Image is well-lit, in sharp focus, showing clean metallurgical texture and professional
+      workshop safety practice
+    points: 10

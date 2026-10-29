@@ -1,223 +1,227 @@
 id: electrical-power-systems-day-4
 course_id: electrical-power-systems
-title: "Distribution Panels, MCB/RCD Protection & Earthing"
-title_sw: "Mbao za Usambazaji, Ulinzi wa MCB/RCD na Mfumo wa Earth"
+title: Distribution Panels, MCB/RCD Protection & Earthing
+title_sw: Mbao za Usambazaji, Ulinzi wa MCB/RCD na Mfumo wa Earth
 week_number: 1
 day_number: 4
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - electrical
-  - earthing
-  - mcb
-  - rcd
-  - safety
-  - distribution-board
-  - engineering
+- electrical
+- earthing
+- mcb
+- rcd
+- safety
+- distribution-board
+- engineering
 xp: 250
 exam_domain: electrical-power-systems
+briefing: 'Electrical power without rigorous protective architecture causes deadly shocks and structural
+  fires. In an off-grid village grid, where earthing ground resistance is often high in dry volcanic or
+  sandy soils, circuit protection cannot be left to chance. This lesson covers consumer unit distribution
+  boards, Miniature Circuit Breakers (MCB tripping curves B, C, D), Residual Current Devices (RCD / GFCI)
+  that trip at 30 mA to prevent fatal ventricular fibrillation, earthing regimes (TN-S, TN-C-S, TT), earth
+  electrode rod installation, and soil resistivity testing.
 
-briefing: >
-  Electrical power without rigorous protective architecture causes deadly shocks
-  and structural fires. In an off-grid village grid, where earthing ground resistance
-  is often high in dry volcanic or sandy soils, circuit protection cannot be left
-  to chance. This lesson covers consumer unit distribution boards, Miniature Circuit
-  Breakers (MCB tripping curves B, C, D), Residual Current Devices (RCD / GFCI)
-  that trip at 30 mA to prevent fatal ventricular fibrillation, earthing regimes
-  (TN-S, TN-C-S, TT), earth electrode rod installation, and soil resistivity testing.
+  '
+outline: 'Distribution board (Consumer Unit) internal architecture (busbars, main switch, neutral link,
+  earth bar); Miniature Circuit Breakers (MCB) dual trip mechanisms: thermal bimetallic strip (overload)
+  vs magnetic solenoid (short circuit); MCB trip curves (Type B for lighting, Type C for general power/pumps,
+  Type D for heavy welders/motors); Residual Current Devices (RCD): toroidal core differential current
+  sensing, 30 mA human life safety threshold, 40 ms trip time; Earthing systems: TN-S, TN-C-S (PME), and
+  TT isolated earthing; driving copper-clad earth rods; reducing earth resistance using bentonite clay
+  and salt; earth loop impedance testing.
 
-outline: >
-  Distribution board (Consumer Unit) internal architecture (busbars, main switch,
-  neutral link, earth bar); Miniature Circuit Breakers (MCB) dual trip mechanisms:
-  thermal bimetallic strip (overload) vs magnetic solenoid (short circuit); MCB
-  trip curves (Type B for lighting, Type C for general power/pumps, Type D for heavy
-  welders/motors); Residual Current Devices (RCD): toroidal core differential current
-  sensing, 30 mA human life safety threshold, 40 ms trip time; Earthing systems:
-  TN-S, TN-C-S (PME), and TT isolated earthing; driving copper-clad earth rods;
-  reducing earth resistance using bentonite clay and salt; earth loop impedance testing.
-
-content_md: |
-  ## The Consumer Unit (Distribution Board) Architecture
-
-  A distribution board safely divides incoming 230V/400V power into discrete branch
-  circuits while providing central isolation and multi-stage fault protection:
-
-  ```
-                        Incoming Mains (230V L + N + PE)
-                                       │
-                         [Double-Pole Main Switch (63A)]
-                                       │
-                      [Residual Current Device (RCD 30mA)]
-                                       │
-            ┌──────────────────────────┴──────────────────────────┐
-            │ Live Busbar                                         │ Neutral Bar
-            ├───────────────┬───────────────┬─────────────────┐   └──────────┐
-      [MCB 6A (B)]   [MCB 16A (C)]   [MCB 20A (C)]     [MCB 32A (C)]         │
-            │               │               │                 │              │
-      Lighting Circ.   Socket Outlets  Water Heater      Posho Mill Motor    │
-            │               │               │                 │              │
-            └───────────────┴───────────────┴─────────────────┴──────────────┘
-  ```
-
-  ### Critical Wiring Standards (Kenya / BS 7671 Harmonized):
-  - **Live (Phase)**: Brown wire (or Red in old installations).
-  - **Neutral**: Blue wire (or Black in old installations).
-  - **Earth (Protective Conductor)**: Green / Yellow striped wire.
-
-  ## Miniature Circuit Breakers (MCB): Dual Trip Physics
-
-  An MCB protects cables from overheating and catching fire. It features **two independent
-  internal tripping mechanisms**:
-  1. **Thermal Trip (Bimetallic Strip)**:
-     - Protects against **prolonged moderate overloads** (e.g., pulling 20A through a 16A breaker).
-     - Current heats two bonded dissimilar metals. Unequal expansion bends the strip, mechanically releasing the latch after several seconds or minutes.
-  2. **Magnetic Trip (Electromagnetic Solenoid)**:
-     - Protects against **catastrophic short circuits** (hundreds of amps).
-     - High current produces an instantaneous electromagnetic pulse that throws a plunger, tripping the contacts in **less than 20 milliseconds (0.02 s)** before cables melt.
-
-  ### MCB Trip Curve Classifications:
-  Breakers are rated by their nominal current ($I_n$, e.g., `B10`, `C16`, `D32`) and their magnetic instantaneous trip multiple:
-
-  | MCB Type | Magnetic Trip Threshold | Ideal Off-Grid Application |
-  |---|---|---|
-  | **Type B** | **$3\text{ to } 5 \times I_n$** | Domestic lighting, pure resistive heating, computer networks |
-  | **Type C** | **$5\text{ to } 10 \times I_n$** | General domestic sockets, refrigerators, water pumps, small power tools (withstands moderate motor starting inrush) |
-  | **Type D** | **$10\text{ to } 20 \times I_n$** | Industrial arc welders, large milling induction motors, high-inrush step-up transformers |
-
-  *Rule of Thumb*: Never install a Type D breaker on standard domestic house wiring; if a dead short occurs, thin 1.5 mm² wire will ignite into flames before a Type D breaker sees enough multiple to trip!
-
-  ## Residual Current Devices (RCD / GFCI)
-
-  While MCBs protect **wires from fire**, RCDs protect **human lives from electrocution**.
-
-  ### How an RCD Works:
-  - Both the Live and Neutral conductors pass together through a toroidal magnetic iron ring core (current transformer).
-  - In a healthy circuit, the current entering through the Live wire must exactly equal the current returning through the Neutral wire:
-    $$I_{\text{Live}} - I_{\text{Neutral}} = 0$$
-  - The magnetic flux fields generated by the two wires oppose and cancel out.
-  - **The Ground Fault Event**: If a person touches a frayed wire, or water enters an electric kettle, a portion of the electric current leaks through the person's body into the Earth ground.
-  - The returning neutral current is now smaller than the incoming live current:
-    $$\Delta I = I_{\text{Live}} - I_{\text{Neutral}} > 0$$
-  - This differential current induces a magnetic pulse in the toroidal sensing coil, triggering an ultra-fast relay that snaps open the circuit in **less than 40 milliseconds (0.04 s)**.
-
-  ### Human Electrical Safety Thresholds:
-  - **1 mA – 5 mA**: Barely perceptible tingling sensation.
-  - **10 mA – 15 mA**: "Can't let go" threshold; involuntary muscular contraction prevents releasing the wire.
-  - **30 mA**: Onset of **Ventricular Fibrillation** (heart spasms uncoordinatedly; death within minutes).
-  - **50 mA – 100 mA+**: Fatal electrocution, severe internal thermal burns.
-  - **Standard RCD Sensitivity**: **$30\text{ mA}$ trip threshold** (mandatory for all socket circuits and human-accessible appliances).
-
-  ## Earthing Regimes in Mini-Grids
-
-  An earth system ensures that if a live conductor touches a metal equipment chassis,
-  fault current flows harmlessly to ground, instantly tripping the breaker rather than
-  leaving the appliance electrified at 230V waiting to shock someone:
-
-  ### 1. TT Earthing System (Isolated Ground):
-  - Common in rural and off-grid mini-grids.
-  - The generator/transformer neutral is grounded at the powerhouse.
-  - Each individual homestead has its own separate earth rod driving into the ground with no neutral-to-earth bond at the consumer unit.
-  - **MANDATORY**: Because soil resistance is often 20–100 $\Omega$, earth fault currents are too weak to trip an MCB. **Every TT installation must have a 30 mA RCD on the incoming mains** to clear ground faults.
-
-  ### 2. TN-S / TN-C-S (Protective Multiple Earthing - PME):
-  - The neutral and earth are bonded together at the main generator/transformer neutral bus.
-  - Fault current returns directly through metallic copper/aluminium conductors, creating high fault currents (hundreds of amps) that instantly trip standard MCBs.
-
-  ## Driving and Testing Earth Rods
-
-  The electrical resistance of the building earthing system should be **less than $10\,\Omega$**
-  (and strictly below $200\,\Omega$ for TT systems with RCDs).
-
-  ### Installation Protocol:
-  1. Use a **copper-bonded steel rod (minimum 16 mm diameter, 2.4 metres long)**.
-  2. Drive vertically into undisturbed moist ground outside the building eaves (where rain runoff keeps the soil damp).
-  3. Connect a continuous **$10\text{ mm}^2$ to $16\text{ mm}^2$ stranded green/yellow copper conductor** from the rod clamp directly to the consumer unit Earth Bar.
-  4. Enclose the top clamp inside an inspection earth pit with a removable lid.
-
-  ### Lowering Earth Resistance in Dry/Rocky Soil:
-  - **Bentonite Clay**: Excavate a 150 mm auger hole, insert the rod, and backfill with sodium bentonite slurry. Bentonite absorbs surrounding moisture, swelling and maintaining a low-resistance conductive envelope.
-  - **Charcoal and Salt Ring**: Surrounding the rod with alternate layers of crushed wood charcoal and agricultural rock salt draws moisture and provides free ions, cutting ground resistance by 50%–70%.
-
+  '
+content_md: "## The Consumer Unit (Distribution Board) Architecture\n\nA distribution board safely divides\
+  \ incoming 230V/400V power into discrete branch\ncircuits while providing central isolation and multi-stage\
+  \ fault protection:\n\n```\n                      Incoming Mains (230V L + N + PE)\n               \
+  \                      │\n                       [Double-Pole Main Switch (63A)]\n                 \
+  \                    │\n                    [Residual Current Device (RCD 30mA)]\n                 \
+  \                    │\n          ┌──────────────────────────┴──────────────────────────┐\n        \
+  \  │ Live Busbar                                         │ Neutral Bar\n          ├───────────────┬───────────────┬─────────────────┐\
+  \   └──────────┐\n    [MCB 6A (B)]   [MCB 16A (C)]   [MCB 20A (C)]     [MCB 32A (C)]         │\n   \
+  \       │               │               │                 │              │\n    Lighting Circ.   Socket\
+  \ Outlets  Water Heater      Posho Mill Motor    │\n          │               │               │    \
+  \             │              │\n          └───────────────┴───────────────┴─────────────────┴──────────────┘\n\
+  ```\n\n### Critical Wiring Standards (Kenya / BS 7671 Harmonized):\n- **Live (Phase)**: Brown wire (or\
+  \ Red in old installations).\n- **Neutral**: Blue wire (or Black in old installations).\n- **Earth (Protective\
+  \ Conductor)**: Green / Yellow striped wire.\n\n## Miniature Circuit Breakers (MCB): Dual Trip Physics\n\
+  \nAn MCB protects cables from overheating and catching fire. It features **two independent\ninternal\
+  \ tripping mechanisms**:\n1. **Thermal Trip (Bimetallic Strip)**:\n   - Protects against **prolonged\
+  \ moderate overloads** (e.g., pulling 20A through a 16A breaker).\n   - Current heats two bonded dissimilar\
+  \ metals. Unequal expansion bends the strip, mechanically releasing the latch after several seconds\
+  \ or minutes.\n2. **Magnetic Trip (Electromagnetic Solenoid)**:\n   - Protects against **catastrophic\
+  \ short circuits** (hundreds of amps).\n   - High current produces an instantaneous electromagnetic\
+  \ pulse that throws a plunger, tripping the contacts in **less than 20 milliseconds (0.02 s)** before\
+  \ cables melt.\n\n### MCB Trip Curve Classifications:\nBreakers are rated by their nominal current ($I_n$,\
+  \ e.g., `B10`, `C16`, `D32`) and their magnetic instantaneous trip multiple:\n\n| MCB Type | Magnetic\
+  \ Trip Threshold | Ideal Off-Grid Application |\n|---|---|---|\n| **Type B** | **$3\\text{ to } 5 \\\
+  times I_n$** | Domestic lighting, pure resistive heating, computer networks |\n| **Type C** | **$5\\\
+  text{ to } 10 \\times I_n$** | General domestic sockets, refrigerators, water pumps, small power tools\
+  \ (withstands moderate motor starting inrush) |\n| **Type D** | **$10\\text{ to } 20 \\times I_n$**\
+  \ | Industrial arc welders, large milling induction motors, high-inrush step-up transformers |\n\n*Rule\
+  \ of Thumb*: Never install a Type D breaker on standard domestic house wiring; if a dead short occurs,\
+  \ thin 1.5 mm² wire will ignite into flames before a Type D breaker sees enough multiple to trip!\n\n\
+  ## Residual Current Devices (RCD / GFCI)\n\nWhile MCBs protect **wires from fire**, RCDs protect **human\
+  \ lives from electrocution**.\n\n### How an RCD Works:\n- Both the Live and Neutral conductors pass\
+  \ together through a toroidal magnetic iron ring core (current transformer).\n- In a healthy circuit,\
+  \ the current entering through the Live wire must exactly equal the current returning through the Neutral\
+  \ wire:\n  $$I_{\\text{Live}} - I_{\\text{Neutral}} = 0$$\n- The magnetic flux fields generated by the\
+  \ two wires oppose and cancel out.\n- **The Ground Fault Event**: If a person touches a frayed wire,\
+  \ or water enters an electric kettle, a portion of the electric current leaks through the person's body\
+  \ into the Earth ground.\n- The returning neutral current is now smaller than the incoming live current:\n\
+  \  $$\\Delta I = I_{\\text{Live}} - I_{\\text{Neutral}} > 0$$\n- This differential current induces a\
+  \ magnetic pulse in the toroidal sensing coil, triggering an ultra-fast relay that snaps open the circuit\
+  \ in **less than 40 milliseconds (0.04 s)**.\n\n### Human Electrical Safety Thresholds:\n- **1 mA –\
+  \ 5 mA**: Barely perceptible tingling sensation.\n- **10 mA – 15 mA**: \"Can't let go\" threshold; involuntary\
+  \ muscular contraction prevents releasing the wire.\n- **30 mA**: Onset of **Ventricular Fibrillation**\
+  \ (heart spasms uncoordinatedly; death within minutes).\n- **50 mA – 100 mA+**: Fatal electrocution,\
+  \ severe internal thermal burns.\n- **Standard RCD Sensitivity**: **$30\\text{ mA}$ trip threshold**\
+  \ (mandatory for all socket circuits and human-accessible appliances).\n\n## Earthing Regimes in Mini-Grids\n\
+  \nAn earth system ensures that if a live conductor touches a metal equipment chassis,\nfault current\
+  \ flows harmlessly to ground, instantly tripping the breaker rather than\nleaving the appliance electrified\
+  \ at 230V waiting to shock someone:\n\n### 1. TT Earthing System (Isolated Ground):\n- Common in rural\
+  \ and off-grid mini-grids.\n- The generator/transformer neutral is grounded at the powerhouse.\n- Each\
+  \ individual homestead has its own separate earth rod driving into the ground with no neutral-to-earth\
+  \ bond at the consumer unit.\n- **MANDATORY**: Because soil resistance is often 20–100 $\\Omega$, earth\
+  \ fault currents are too weak to trip an MCB. **Every TT installation must have a 30 mA RCD on the incoming\
+  \ mains** to clear ground faults.\n\n### 2. TN-S / TN-C-S (Protective Multiple Earthing - PME):\n- The\
+  \ neutral and earth are bonded together at the main generator/transformer neutral bus.\n- Fault current\
+  \ returns directly through metallic copper/aluminium conductors, creating high fault currents (hundreds\
+  \ of amps) that instantly trip standard MCBs.\n\n## Driving and Testing Earth Rods\n\nThe electrical\
+  \ resistance of the building earthing system should be **less than $10\\,\\Omega$**\n(and strictly below\
+  \ $200\\,\\Omega$ for TT systems with RCDs).\n\n### Installation Protocol:\n1. Use a **copper-bonded\
+  \ steel rod (minimum 16 mm diameter, 2.4 metres long)**.\n2. Drive vertically into undisturbed moist\
+  \ ground outside the building eaves (where rain runoff keeps the soil damp).\n3. Connect a continuous\
+  \ **$10\\text{ mm}^2$ to $16\\text{ mm}^2$ stranded green/yellow copper conductor** from the rod clamp\
+  \ directly to the consumer unit Earth Bar.\n4. Enclose the top clamp inside an inspection earth pit\
+  \ with a removable lid.\n\n### Lowering Earth Resistance in Dry/Rocky Soil:\n- **Bentonite Clay**: Excavate\
+  \ a 150 mm auger hole, insert the rod, and backfill with sodium bentonite slurry. Bentonite absorbs\
+  \ surrounding moisture, swelling and maintaining a low-resistance conductive envelope.\n- **Charcoal\
+  \ and Salt Ring**: Surrounding the rod with alternate layers of crushed wood charcoal and agricultural\
+  \ rock salt draws moisture and provides free ions, cutting ground resistance by 50%–70%.\n"
 exercises:
-  - id: elec-d4-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A person standing barefoot on damp soil accidentally touches a live 230 V wire.
-      A standard 30 mA Residual Current Device (RCD) is installed on the circuit.
-      What happens?
-    xp_reward: 50
-    options:
-      - text: "The RCD detects that the neutral return current is lower than the live feed current (current leaking to ground) and trips within 40 ms, disconnecting power before fatal ventricular fibrillation can occur"
-        correct: true
-        explanation: "The RCD measures differential current between Live and Neutral. Current leaking through the human body creates an imbalance. When this leak exceeds 30 mA, the sensing coil snaps the circuit open in < 40 ms, preventing lethal cardiac arrest."
-      - text: "The MCB trips because the person acts as a dead short circuit"
-        correct: false
-        explanation: "Human body resistance is approx 1,000-2,000 ohms, drawing only 0.1-0.2 A. An MCB rated at 16 A or 20 A will never notice this tiny current and will NOT trip!"
-      - text: "The neutral wire absorbs the voltage surge"
-        correct: false
-        explanation: "Current is bypassing the neutral wire through the earth; this is why the RCD trips."
-      - text: "The generator slows down to 25 Hz"
-        correct: false
-        explanation: "A fraction of an amp has zero noticeable load effect on a generator."
+- id: elec-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A person standing barefoot on damp soil accidentally touches a live 230 V wire. A standard
+    30 mA Residual Current Device (RCD) is installed on the circuit. What happens?
 
-  - id: elec-d4-q2
-    type: FILL_BLANK
-    prompt: >
-      An MCB incorporates two independent trip mechanisms: a bimetallic strip that
-      bends under prolonged moderate ___ conditions, and an electromagnetic solenoid
-      that snaps open in milliseconds during a massive ___.
-    xp_reward: 50
-    correct_answer: "overload; short circuit"
-    explanation: >
-      Thermal bimetal bends under sustained overload; the electromagnetic coil
-      trips instantaneously under high short-circuit currents.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The MCB trips because the person acts as a dead short circuit
+  - id: b
+    text: The neutral wire absorbs the voltage surge
+  - id: c
+    text: The generator slows down to 25 Hz
+  - id: d
+    text: The RCD detects that the neutral return current is lower than the live feed current (current
+      leaking to ground) and trips within 40 ms, disconnecting power before fatal ventricular fibrillation
+      can occur
+  explanation: 'The RCD measures differential current between Live and Neutral. Current leaking through
+    the human body creates an imbalance. When this leak exceeds 30 mA, the sensing coil snaps the circuit
+    open in < 40 ms, preventing lethal cardiac arrest.
 
-  - id: elec-d4-q3
-    type: MATCH_PAIRS
-    prompt: Match each MCB trip curve type to its designated electrical load profile.
-    xp_reward: 50
-    pairs:
-      - left: Type B MCB (3 to 5x In)
-        right: Domestic lighting, electronic workstations, pure resistive heaters
-      - left: Type C MCB (5 to 10x In)
-        right: General household sockets, water pumps, refrigerators, small power tools
-      - left: Type D MCB (10 to 20x In)
-        right: Heavy industrial arc welders, grain mills, high-inrush step-up transformers
-      - left: 30 mA RCD
-        right: Human life electrocution protection tripping within 40 milliseconds
-    correct_answer: null
-    explanation: >
-      Type B is sensitive for resistive loads; Type C handles normal motor inrush;
-      Type D handles extreme transformer and welder surges; RCD protects human life.
 
-  - id: elec-d4-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why is a 30 mA RCD strictly mandatory on every installation using a TT
-      (isolated earth rod) earthing system?
-    xp_reward: 50
-    options:
-      - text: "Earth fault loop impedance through rural soil is often 20-100 ohms, limiting fault current to only a few amperes—far too low to trip a standard 16 A or 20 A MCB"
-        correct: true
-        explanation: "In a TT system, fault current must travel through earth soil back to the generator neutral rod. By Ohm's law: I = 230V / 50 ohms = 4.6 A. A 16 A MCB will never trip on 4.6 A, leaving appliance metalwork energized at 230 V indefinitely! An RCD trips at 0.030 A, clearing the fault instantly."
-      - text: "TT systems have no neutral connection"
-        correct: false
-        explanation: "TT systems have a standard neutral wire; only the earthing conductor is isolated from the generator neutral."
-      - text: "RCDs generate the earth connection internally"
-        correct: false
-        explanation: "An RCD does not provide an earth; it requires a functional earth or human path to detect fault differential current."
-      - text: "Because TT systems operate strictly on DC current"
-        correct: false
-        explanation: "TT is a standard AC distribution earthing regime."
+    Why the other options are wrong: Human body resistance is approx 1,000-2,000 ohms, drawing only 0.1-0.2
+    A. An MCB rated at 16 A or 20 A will never notice this tiny current and will NOT trip! Current is
+    bypassing the neutral wire through the earth; this is why the RCD trips. A fraction of an amp has
+    zero noticeable load effect on a generator.'
+  correct_answer: d
+- id: elec-d4-q2
+  type: FILL_BLANK
+  prompt: 'An MCB incorporates two independent trip mechanisms: a bimetallic strip that bends under prolonged
+    moderate ___ conditions, and an electromagnetic solenoid that snaps open in milliseconds during a
+    massive ___.
 
-  - id: elec-d4-q5
-    type: FILL_BLANK
-    prompt: >
-      To reduce electrical resistance around a driven copper earth rod in dry or
-      rocky soils, the rod can be backfilled with water-swelling ___ clay, or treated
-      with alternating layers of crushed wood ___ and rock salt.
-    xp_reward: 50
-    correct_answer: "bentonite; charcoal"
-    explanation: >
-      Sodium bentonite clay retains moisture indefinitely; crushed charcoal and
-      salt create an electrolyte-rich conductive envelope around the earth electrode.
+    '
+  xp_reward: 50
+  correct_answer:
+  - overload
+  - short circuit
+  explanation: 'Thermal bimetal bends under sustained overload; the electromagnetic coil trips instantaneously
+    under high short-circuit currents.
+
+    '
+- id: elec-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each MCB trip curve type to its designated electrical load profile.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Type B MCB (3 to 5x In)
+    right:
+      id: r-71250b
+      text: Domestic lighting, electronic workstations, pure resistive heaters
+  - left:
+      id: l2
+      text: Type C MCB (5 to 10x In)
+    right:
+      id: r-3bf174
+      text: General household sockets, water pumps, refrigerators, small power tools
+  - left:
+      id: l3
+      text: Type D MCB (10 to 20x In)
+    right:
+      id: r-3e81c2
+      text: Heavy industrial arc welders, grain mills, high-inrush step-up transformers
+  - left:
+      id: l4
+      text: 30 mA RCD
+    right:
+      id: r-25a19e
+      text: Human life electrocution protection tripping within 40 milliseconds
+  correct_answer:
+  - l1=r-71250b
+  - l2=r-3bf174
+  - l3=r-3e81c2
+  - l4=r-25a19e
+  explanation: 'Type B is sensitive for resistive loads; Type C handles normal motor inrush; Type D handles
+    extreme transformer and welder surges; RCD protects human life.
+
+    '
+- id: elec-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is a 30 mA RCD strictly mandatory on every installation using a TT (isolated earth rod)
+    earthing system?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: TT systems have no neutral connection
+  - id: b
+    text: RCDs generate the earth connection internally
+  - id: c
+    text: Earth fault loop impedance through rural soil is often 20-100 ohms, limiting fault current to
+      only a few amperes—far too low to trip a standard 16 A or 20 A MCB
+  - id: d
+    text: Because TT systems operate strictly on DC current
+  explanation: 'In a TT system, fault current must travel through earth soil back to the generator neutral
+    rod. By Ohm''s law: I = 230V / 50 ohms = 4.6 A. A 16 A MCB will never trip on 4.6 A, leaving appliance
+    metalwork energized at 230 V indefinitely! An RCD trips at 0.030 A, clearing the fault instantly.
+
+
+    Why the other options are wrong: TT systems have a standard neutral wire; only the earthing conductor
+    is isolated from the generator neutral. An RCD does not provide an earth; it requires a functional
+    earth or human path to detect fault differential current. TT is a standard AC distribution earthing
+    regime.'
+  correct_answer: c
+- id: elec-d4-q5
+  type: FILL_BLANK
+  prompt: 'To reduce electrical resistance around a driven copper earth rod in dry or rocky soils, the
+    rod can be backfilled with water-swelling ___ clay, or treated with alternating layers of crushed
+    wood ___ and rock salt.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - bentonite
+  - charcoal
+  explanation: 'Sodium bentonite clay retains moisture indefinitely; crushed charcoal and salt create
+    an electrolyte-rich conductive envelope around the earth electrode.
+
+    '

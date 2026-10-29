@@ -1,0 +1,234 @@
+id: wind-microhydro-day-1
+course_id: wind-microhydro
+title: Wind Resource Assessment, Turbine Aerodynamics & Site Selection
+title_sw: Tathmini ya Rasilimali ya Upepo, Aerodynamics ya Turbine na Uchaguzi wa Tovuti
+week_number: 1
+day_number: 1
+estimated_minutes: 120
+license: CC-BY-SA-4.0
+tags:
+- wind-energy
+- betz-limit
+- wind-resource
+- aerodynamics
+- site-selection
+- power-density
+xp: 250
+exam_domain: wind-microhydro
+briefing: 'Wind turbines extract kinetic energy from moving air — but not all of it. A fundamental law
+  of fluid mechanics called the Betz Limit places a hard theoretical ceiling of 59.3% on how much kinetic
+  power any turbine can extract from a free wind stream, regardless of mechanical ingenuity. Before spending
+  money on hardware, a site engineer must rigorously characterize the local wind resource: average wind
+  speed, its statistical distribution using the Weibull function, turbulence intensity from ground obstacles,
+  and the relationship between tower height and wind shear. A site with a beautiful average wind speed
+  of 5 m/s produces eight times the power of a site at 2.5 m/s — because wind power scales as the cube
+  of velocity. This lesson establishes the physics, statistics, and field measurement protocols that separate
+  viable wind sites from expensive disappointments.
+
+  '
+outline: 'Wind as kinetic energy in moving air mass; the wind power density equation P = 0.5 × ρ × A ×
+  v³ (air density ρ = 1.225 kg/m³ at sea level, 15°C); the cubic velocity relationship and its dramatic
+  implications (doubling wind speed multiplies power by 8x); the Betz Limit derivation (Albert Betz, 1919):
+  maximum theoretical power extraction coefficient Cp(max) = 16/27 = 0.593; real turbine Cp values (well-designed
+  HAWT 0.35–0.45); wind resource statistics: mean wind speed, Weibull distribution shape (k) and scale
+  (c) parameters; capacity factor definition; wind shear and the wind speed profile power law exponent
+  α (roughness coefficient 0.10 for open flat terrain, 0.25 for wooded agricultural land, 0.40 for forests
+  and suburban areas); tower height calculation and the 10/90 rule (10% increase in height yields approximately
+  1% increase in mean wind speed in flat terrain); turbulence intensity (TI) measurement and maximum acceptable
+  TI < 18% for grid-connected; site selection criteria: topographic acceleration on ridgelines and hill
+  summits, wind roses, obstacle clearance (2H rule and 10D rule); anemometer data logging protocols and
+  wind data quality control.
+
+  '
+content_md: "## Wind Power Physics: The Cube Law\n\nWind is a moving mass of air. Its kinetic energy per\
+  \ unit volume is:\n\n$$KE = \\frac{1}{2} \\rho v^2 \\quad \\text{(J/m}^3\\text{)}$$\n\nThe power flux\
+  \ through a swept area $A$ (the disc swept by turbine blades) is:\n\n$$\\boxed{P_{wind} = \\frac{1}{2}\
+  \ \\rho A v^3}$$\n\nWhere:\n* $\\rho$ = air density (kg/m³): 1.225 at sea level and 15°C; decreases\
+  \ by ~1.2% per 100 m altitude\n* $A$ = rotor swept area (m²) = $\\pi r^2$\n* $v$ = wind speed (m/s)\n\
+  \n**The Cube Law's Dramatic Consequences:**\n\n```\nWIND POWER vs. WIND SPEED (2-metre rotor radius,\
+  \ sea-level air density)\nWind Speed │ Power Available │ Ratio to 5 m/s Case\n───────────┼─────────────────┼────────────────────\n\
+  \  3.0 m/s  │      42  W      │   0.22 ×\n  4.0 m/s  │     100  W      │   0.51 ×\n  5.0 m/s  │    \
+  \ 192  W      │   1.00 × (baseline)\n  6.0 m/s  │     332  W      │   1.73 ×\n  7.0 m/s  │     526 \
+  \ W      │   2.74 ×\n  8.0 m/s  │     779  W      │   4.06 ×\n 10.0 m/s  │   1,924  W      │   8.00\
+  \ × (double speed = 8× power!)\n 12.0 m/s  │   3,321  W      │  17.3 ×\n```\n\nA site offering a mean\
+  \ wind speed of 7 m/s instead of 5 m/s yields **2.74× more** annual energy\nfrom the exact same turbine.\
+  \ Site selection is the single highest-return investment in wind energy.\n\n---\n\n## The Betz Limit:\
+  \ The Theoretical Maximum\n\nIn 1919, German physicist Albert Betz proved that no turbine can extract\
+  \ all kinetic energy from\na wind stream. If it did, the air behind the rotor would stop dead, blocking\
+  \ further wind from\nreaching the blades. The mathematics of upstream and downstream flow continuity\
+  \ impose a hard\nceiling:\n\n$$C_{P,max} = \\frac{16}{27} \\approx 0.593$$\n\nThis means a perfect theoretical\
+  \ turbine can only harvest **59.3%** of wind kinetic power at maximum.\n\n```\nBETZ LIMIT VISUALIZATION\n\
+  \nFREE WIND STREAM                    DOWNSTREAM (WAKE)\n──────────────────────────►         Slower,\
+  \ wider flow\nv_upstream                Rotor     v_downstream = v_upstream/3\n──────────────────────────►\
+  \ (Disc)  ──────────────────────────►\n                            ↑\n                  [TURBINE EXTRACTS\
+  \ 59.3% OF KINETIC POWER]\n                  Remaining 40.7% must be carried away in the wake\n    \
+  \              to allow continuous flow through the rotor disc\n```\n\n**Practical Turbine Efficiencies:**\n\
+  | Turbine Type | Typical $C_P$ Range |\n| :--- | :--- |\n| Well-designed 3-blade HAWT | 0.35 – 0.45\
+  \ |\n| DIY carved wood HAWT | 0.25 – 0.35 |\n| 2-blade HAWT | 0.30 – 0.40 |\n| Savonius VAWT (drag type)\
+  \ | 0.10 – 0.18 |\n| Darrieus VAWT (lift type) | 0.20 – 0.35 |\n\n**Turbine output power formula:**\n\
+  $$P_{turbine} = C_P \\times \\frac{1}{2} \\rho A v^3$$\n\n---\n\n## Wind Speed Statistics: The Weibull\
+  \ Distribution\n\nReal wind is not constant. Wind speed at any site follows a statistical distribution\
+  \ well\napproximated by the **Weibull probability distribution**:\n\n$$f(v) = \\frac{k}{c}\\left(\\\
+  frac{v}{c}\\right)^{k-1} \\exp\\left[-\\left(\\frac{v}{c}\\right)^k\\right]$$\n\n* **k (shape parameter)**:\
+  \ describes how uniform or gusty the wind is. k = 2 is the *Rayleigh*\n  distribution (typical for most\
+  \ temperate sites). k > 2.5 indicates a narrow, steady trade-wind\n  site; k < 1.5 indicates erratic,\
+  \ gusty conditions.\n* **c (scale parameter)**: related to the mean wind speed. For a Rayleigh distribution\
+  \ (k=2):\n  mean wind speed $\\bar{v} \\approx 0.886c$.\n\n---\n\n## Wind Shear: Why Height Matters\
+  \ Enormously\n\nWind speed increases with height above ground because friction with the Earth's surface\
+  \ slows\nthe lower air layers. This vertical wind speed profile follows the **Power Law**:\n\n$$\\frac{v_2}{v_1}\
+  \ = \\left(\\frac{h_2}{h_1}\\right)^\\alpha$$\n\nWhere $\\alpha$ is the *roughness exponent*:\n\n```\n\
+  WIND SHEAR ROUGHNESS EXPONENTS BY TERRAIN TYPE\n┌──────────────────────────────────────┬───────────────┐\n\
+  │ Terrain Description                  │ α (exponent)  │\n├──────────────────────────────────────┼───────────────┤\n\
+  │ Open water, smooth flat desert       │ 0.10 – 0.11   │\n│ Flat open grassland / airstrip       │ 0.13\
+  \ – 0.16   │\n│ Agricultural land with sparse hedges │ 0.20           │\n│ Scattered trees and farmland\
+  \ hedges  │ 0.25           │\n│ Forest and suburban built-up areas   │ 0.30 – 0.40   │\n└──────────────────────────────────────┴───────────────┘\n\
+  ```\n\n**Practical Example** — raising hub height from 10 m to 30 m over agricultural land (α = 0.25):\n\
+  $$\\frac{v_{30}}{v_{10}} = \\left(\\frac{30}{10}\\right)^{0.25} = 3^{0.25} = 1.316$$\n\nA site with\
+  \ 5.0 m/s at 10 m height has **6.6 m/s at 30 m height** — yielding $1.316^3 = 2.28\\times$\nmore power\
+  \ from the same rotor, simply by raising the tower 20 metres.\n\n---\n\n## Site Selection: Maximizing\
+  \ Wind Resource\n\n```\nTOPOGRAPHIC EFFECTS ON WIND SPEED\n\n╭────────────────────────────────────────────────────────╮\n\
+  │                                            ← RIDGELINE  │ ← WIND ACCELERATES HERE\n│             \
+  \                              ╱             │   (Speed-up factor 1.3–2.0×)\n│                     \
+  \   ╱────────────────╱               │\n│        ╱──────────────╱                                 │\n\
+  │───────╱       VALLEY (wind shadow — AVOID)              │\n╰────────────────────────────────────────────────────────╯\n\
+  \nOBSTACLE CLEARANCE RULES:\n1. The \"2H Rule\": Hub height must exceed 2× the height of any obstacle\
+  \ within 150 m upwind\n2. The \"10D Rule\": Site turbine at least 10 rotor diameters from any upwind\
+  \ obstacle\n   (prevents turbulent wake ingestion)\n```\n\n**Turbulence Intensity (TI)**:\n$$TI = \\\
+  frac{\\sigma_v}{\\bar{v}}$$\nWhere $\\sigma_v$ is the standard deviation of wind speed and $\\bar{v}$\
+  \ is the mean.\n* TI < 10%: Excellent (smooth laminar flow)\n* TI 10–18%: Acceptable (standard IEC design\
+  \ turbulence class)\n* TI > 20%: Severe — drastically reduces blade fatigue life; structural failure\
+  \ risk\n\n---\n\n## Field Wind Measurement Protocol\n\n1. **Instrument**: Cup anemometer + wind vane\
+  \ data logger, mounted at proposed hub height.\n2. **Logging Interval**: 10-minute average recordings\
+  \ (IEC 61400-12 standard).\n3. **Minimum Record Duration**: 12 months for bankable site assessment;\
+  \ 3 months for informal\n   screening (apply 10–15% uncertainty margin to energy estimates).\n4. **Quality\
+  \ Control**: Discard periods with instrument icing, cable faults, or anemometer\n   shadow sector contamination\
+  \ (turbulence from met-mast tower in upwind 30° sectors).\n5. **Wind Rose Construction**: Plot directional\
+  \ frequency histogram showing % of hours per\n   compass sector and mean power density per sector.\n\
+  6. **Capacity Factor Estimation**: Annual energy output / (Rated power × 8,760 hours/year).\n   Good\
+  \ wind sites achieve capacity factors of 25–40%; average is 18–25%.\n"
+exercises:
+- id: wind-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A homesteader is choosing between two hilltop sites for a 3-metre rotor diameter wind turbine.
+    Site A has a mean wind speed of 6 m/s; Site B has a mean wind speed of 4 m/s. Assuming identical air
+    density and turbine efficiency, approximately how much more power does Site A produce compared to
+    Site B?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Site A produces 1.5 times more power because it has 50% higher wind speed
+  - id: b
+    text: Site A produces 2.25 times more power because wind power scales with velocity squared
+  - id: c
+    text: Site A produces approximately 3.375 times more power (6³/4³ = 216/64 = 3.375), because wind
+      power scales with the cube of wind speed
+  - id: d
+    text: Both sites produce the same power because the rotor size is identical
+  explanation: 'Wind power P = 0.5 × ρ × A × v³. Ratio = (6/4)³ = 1.5³ = 3.375. A seemingly modest 50%
+    increase in mean wind speed multiplies available power by 3.375 times. The cube law makes site selection
+    the most important economic decision in wind energy.
+
+
+    Why the other options are wrong: Power scales with the CUBE of velocity, not linearly. (6/4)³ = 3.375,
+    not 1.5. Wind power follows v³ (cube), not v² (square). Kinetic energy is 0.5mv² but power flux through
+    a swept area adds another factor of v, giving v³. Rotor swept area is identical but wind speed is
+    not; power is proportional to both area AND v³.'
+  correct_answer: c
+- id: wind-d1-q2
+  type: FILL_BLANK
+  prompt: 'Albert Betz proved in 1919 that no wind turbine — regardless of design perfection — can extract
+    more than ___ % of the kinetic power contained in a free-streaming wind, because downstream air must
+    retain enough momentum to flow away and allow continuous fresh wind to reach the rotor disc.
+
+    '
+  xp_reward: 50
+  correct_answer: '59.3'
+  explanation: 'The Betz Limit is 16/27 ≈ 0.593 = 59.3%. This is a fundamental thermodynamic constraint
+    on wind power extraction, not a mechanical limitation that can be engineered away.
+
+    '
+- id: wind-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each wind engineering parameter to its correct definition or formula.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Power Coefficient (Cp)
+    right:
+      id: r-6a6395
+      text: Ratio of actual turbine output power to total wind power passing through rotor disc
+  - left:
+      id: l2
+      text: Wind Shear Exponent (alpha)
+    right:
+      id: r-079f72
+      text: Terrain roughness parameter in the power law v2/v1 = (h2/h1)^alpha describing height-speed
+        profile
+  - left:
+      id: l3
+      text: Turbulence Intensity (TI)
+    right:
+      id: r-c5c0a5
+      text: Standard deviation of wind speed divided by mean wind speed; must stay below 18%
+  - left:
+      id: l4
+      text: Weibull k Parameter
+    right:
+      id: r-a2c8f9
+      text: Shape factor describing the spread of wind speed distribution (k=2 is typical Rayleigh)
+  correct_answer:
+  - l1=r-6a6395
+  - l2=r-079f72
+  - l3=r-c5c0a5
+  - l4=r-a2c8f9
+  explanation: 'Cp is turbine power extraction efficiency; wind shear exponent describes vertical speed
+    profile; TI measures gustiness and fatigue loading; Weibull k describes the statistical wind speed
+    distribution.
+
+    '
+- id: wind-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A wind measurement at 10 m height over wooded agricultural land records an average wind speed
+    of 4.0 m/s. Using a wind shear roughness exponent of 0.25, what is the estimated wind speed at a proposed
+    25-metre tower hub height?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 10.0 m/s because the hub height is 2.5 times higher, and wind speed scales proportionally
+  - id: b
+    text: 4.0 m/s because wind speed is uniform at all heights in wooded terrain
+  - id: c
+    text: 6.0 m/s from applying the standard 2-to-1 height-doubling rule for all terrain types
+  - id: d
+    text: Approximately 5.0 m/s, calculated as 4.0 × (25/10)^0.25 = 4.0 × 2.5^0.25 = 4.0 × 1.257 ≈ 5.03
+      m/s
+  explanation: 'Using the power law: v₂ = v₁ × (h₂/h₁)^α = 4.0 × (25/10)^0.25 = 4.0 × 2.5^0.25 = 4.0 ×
+    1.257 ≈ 5.03 m/s. This represents a 26% speed increase and approximately (1.257)³ = 1.99× the available
+    wind power at hub height.
+
+
+    Why the other options are wrong: Wind speed does not scale linearly with height. The power law with
+    α = 0.25 gives 1.257×, not 2.5×. Wind shear always increases speed with height; wooded terrain has
+    higher shear exponents than open ground. There is no universal 2-to-1 height-doubling rule. The wind
+    shear exponent α varies by terrain type.'
+  correct_answer: d
+- id: wind-d1-q5
+  type: FILL_BLANK
+  prompt: 'According to the standard obstacle clearance rule for wind turbine micrositing, the turbine
+    hub height must be at least ___ times the height of any solid obstacle (trees, buildings, embankments)
+    located within 150 metres in the prevailing upwind direction, to prevent ingestion of turbulent wake
+    and avoid structural fatigue damage to blades.
+
+    '
+  xp_reward: 50
+  correct_answer: '2'
+  explanation: 'The ''2H Rule'' specifies hub height >= 2× the height of upwind obstacles within 150 m.
+    Failure to observe this clearance exposes the turbine to turbulent wakes that dramatically increase
+    blade fatigue loading, vibration, and premature structural failure.
+
+    '

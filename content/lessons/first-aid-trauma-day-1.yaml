@@ -1,215 +1,204 @@
 id: first-aid-trauma-day-1
 course_id: first-aid-trauma
-title: "Haemorrhage Control & Tourniquet Application"
-title_sw: "Udhibiti wa Kutoka Damu na Utumiaji wa Tourniquet"
+title: Haemorrhage Control & Tourniquet Application
+title_sw: Udhibiti wa Kutoka Damu na Utumiaji wa Tourniquet
 week_number: 1
 day_number: 1
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [first-aid, bleeding, tourniquet, haemorrhage, trauma, kenya]
+tags:
+- first-aid
+- bleeding
+- tourniquet
+- haemorrhage
+- trauma
+- kenya
 xp: 90
 exam_domain: Pre-Hospital Emergency Care
+briefing: 'Uncontrolled haemorrhage is the leading cause of preventable death in trauma —
 
-briefing: |
-  Uncontrolled haemorrhage is the leading cause of preventable death in trauma —
   responsible for 30–40% of all trauma fatalities globally, and the majority of
+
   battlefield and road-traffic-accident deaths that occur before hospital arrival.
+
   In Kenya, where an EMS ambulance in rural areas can take 60–90 minutes or never
+
   arrive, bystander haemorrhage control is a literal life-or-death skill. This day
+
   teaches the physiology of blood loss, the three-step haemorrhage control hierarchy,
+
   correct tourniquet application, and wound packing with improvised materials.
-briefing_sw: |
-  Kutoka damu bila kudhibitiwa ndiyo sababu kuu ya vifo vinavyoweza kuzuiwa katika
+
+  '
+briefing_sw: 'Kutoka damu bila kudhibitiwa ndiyo sababu kuu ya vifo vinavyoweza kuzuiwa katika
+
   majeraha — inawajibika kwa asilimia 30–40 ya vifo vyote vya majeraha duniani.
+
   Nchini Kenya, ambapo ambulensi ya EMS katika maeneo ya vijijini inaweza kuchukua
+
   dakika 60–90, udhibiti wa kutoka damu na watu wa kawaida ni ujuzi wa kweli wa
+
   kuokoa maisha.
 
-outline: |
-  1. Blood loss physiology: classes of haemorrhage (I–IV) and their clinical signs
+  '
+outline: '1. Blood loss physiology: classes of haemorrhage (I–IV) and their clinical signs
+
   2. The haemorrhage control hierarchy: direct pressure → wound packing → tourniquet
+
   3. Direct pressure: technique, duration, and when to escalate
+
   4. Wound packing: improvised materials, packing technique, haemostatic agents
+
   5. Tourniquet anatomy: commercial CAT/SOFTT-W vs improvised windlass tourniquet
+
   6. Tourniquet application: limb selection, placement, tightening, time recording
+
   7. Tourniquet myths debunked: ischaemia time, limb loss, when NOT to remove
+
   8. Junctional wounds (groin, axilla, neck): pressure and improvised approaches
 
-content_md: |
-  ## Blood Loss Physiology: Classes of Haemorrhage
-
-  The human body contains approximately 5 L of blood (70 mL/kg). Loss of blood
-  triggers compensatory responses that can mask severity until collapse:
-
-  | Class | Blood loss | Signs | Action |
-  |-------|-----------|-------|--------|
-  | I | < 750 mL (< 15%) | Normal pulse, BP, and breathing; slight anxiety | Direct pressure |
-  | II | 750–1 500 mL (15–30%) | HR > 100; increased RR; decreased pulse pressure; anxiety | Direct pressure + wound packing |
-  | III | 1 500–2 000 mL (30–40%) | HR > 120; low BP; confused; pale, cold, clammy | Tourniquet + urgent evacuation |
-  | IV | > 2 000 mL (> 40%) | HR > 140 or undetectable; unconscious; no BP | Immediate tourniquet; survival unlikely without surgery |
-
-  **The compensated shock trap:** a healthy adult can lose 1 500 mL and still have
-  a near-normal blood pressure. Do not wait for low BP to act — by then the patient
-  is in Class III or IV and the "golden hour" has passed.
-
-  **Signs of serious bleeding visible to a bystander:**
-  - Blood soaking through clothing and pooling on the ground
-  - Spurting or pulsatile bleeding (arterial — most dangerous)
-  - Large wound with visible depth
-  - Limb hanging at abnormal angle (fracture with vascular injury common)
-
-  ## The Haemorrhage Control Hierarchy
-
-  Use this sequence — each step escalates only if the previous step fails to control:
-
-  ```
-  1. DIRECT PRESSURE (all wounds)
-     ↓ bleeding not controlled after 3 minutes?
-  2. WOUND PACKING (deep wounds)
-     ↓ limb wound still bleeding?
-  3. TOURNIQUET (limb wounds only)
-  ```
-
-  For junctional wounds (groin, axilla, neck) where tourniquet cannot be applied:
-  use sustained firm direct pressure or improvised junctional pressure devices.
-
-  ## Step 1: Direct Pressure
-
-  **Technique:**
-  1. Use the cleanest material available — ideally sterile dressing; if not: clean cloth,
-     clothing, sanitary pad (highly absorbent and often available)
-  2. Apply firm, uninterrupted pressure directly over the wound
-  3. Press with the heel of your hand — use your body weight, not just arm strength
-  4. Maintain for a **minimum of 10 minutes without lifting the dressing to check**
-     — lifting restarts the clotting process
-  5. If blood soaks through, add more material on top — do NOT remove the soaked dressing
-
-  **When to escalate to wound packing:**
-  - Wound is deeper than 2–3 cm (simple surface pressure doesn't reach the bleeding source)
-  - Wound has irregular shape or cavity
-
-  ## Step 2: Wound Packing
-
-  Deep wounds (stab wounds, gunshot wounds, goring injuries from animals) bleed from
-  deep vessels that surface pressure cannot reach.
-
-  **Technique:**
-  1. Identify the deepest part of the wound
-  2. Push packing material (rolled gauze, clean cloth strips) firmly into the deepest
-     point first — use your finger to press it to the bottom
-  3. Pack layer by layer, working outward, pressing each layer down firmly
-  4. Continue until the wound is completely filled and slightly overfilled (mounded above skin level)
-  5. Apply firm direct pressure over the packed wound for 3–5 minutes
-  6. If bleeding slows or stops: maintain pressure; do not remove packing
-
-  **Haemostatic agents** (if available):
-  - **QuikClot (kaolin-impregnated gauze)**: activates clotting cascade; effective in 3 minutes
-  - **HemCon / ChitoCel (chitosan)**: creates a physical barrier + activates platelets
-  - Available from medical supply shops in Nairobi; KSh 800–2 500 per dressing
-  - Use haemostatic gauze exactly like regular gauze — same packing technique
-
-  ## Step 3: Tourniquet
-
-  A tourniquet is a circumferential constricting device that stops all blood flow
-  distal to (below) its application point by compressing the artery against the bone.
-
-  ### Commercial Tourniquets (Kenya)
-  - **CAT (Combat Application Tourniquet)**: one-hand applicable; windlass stick mechanism;
-    recommended by Stop The Bleed® and TCCC. Cost: KSh 2 500–4 500 (genuine); many fakes exist
-  - **SOFTT-W**: two-person application; stronger windlass; wider strap — preferred for
-    large thighs
-
-  ### Improvised Windlass Tourniquet (when no commercial device available)
-
-  **Materials:**
-  - Cloth strip ≥ 4 cm wide and ≥ 60 cm long (narrower causes more tissue damage without
-    better haemostasis — do not use wire, rope, or cord < 2 cm wide)
-  - A rigid stick, pen, or rod for the windlass (at least 15 cm long)
-
-  **Application (5 steps):**
-  1. **Place** 5–7 cm above the wound (never over a joint). For life-threatening
-     haemorrhage with an unknown wound: apply high and tight (groin crease for thigh;
-     armpit crease for upper arm) — you can move it down later
-  2. **Wrap** the cloth twice around the limb and tie a half-knot
-  3. **Place** the stick on the half-knot and tie a full knot over the stick to secure it
-  4. **Twist** the stick until bleeding stops — this typically requires 6–12 full rotations
-     for a thigh, 4–8 for an arm
-  5. **Secure** the stick so it cannot unwind (tie the ends of the stick to the limb with
-     another strip, or tuck under the wraps)
-  6. **Record time of application** on the patient's forehead with a marker or blood:
-     "TK 14:35" — this is critical information for the receiving hospital
-
-  ### Tourniquet Myths — Debunked
-
-  | Myth | Reality |
-  |------|---------|
-  | "Tourniquets cause limb loss" | Properly applied tourniquets for < 2 hours cause no permanent damage. Uncontrolled haemorrhage causes death. |
-  | "Loosen every 15–30 minutes" | Never loosen a tourniquet in the field — clot disruption resumes bleeding; only remove if trained medic decides to convert to wound packing |
-  | "Only use as last resort" | Modern TCCC (Tactical Combat Casualty Care) protocol: tourniquet first for any life-threatening limb bleed — don't waste time on pressure that fails |
-  | "A tourniquet is painful — patient will refuse" | A patient in Class III shock is often confused and may not feel pain; a dead patient feels nothing |
-
-  ### Maximum Safe Tourniquet Time
-  - **< 2 hours**: no significant risk of permanent damage in most patients
-  - **2–6 hours**: increasing risk of nerve and muscle damage; hospital conversion needed
-  - **> 6 hours**: limb viability at serious risk — but patient survival still prioritised
-    over limb; never remove a tourniquet to "save the limb" in the field
-
-  ## Junctional Wounds
-
-  Groin, axilla (armpit), and neck wounds cannot be tourniqueted. Options:
-
-  **Groin:** Place the heel of your hand in the groin crease pressing the femoral artery
-  against the pelvis. Use full body weight. A second responder can help by maintaining
-  pressure while you manage other injuries.
-
-  **Neck:** Cover and hold — do NOT apply circumferential pressure (strangulation risk).
-  Hold a large dressing over the wound with firm lateral (side) pressure only. Lay
-  patient on the injured side — gravity helps.
-
-  **Axilla:** Deep packing with very firm pressure; no tourniquet possible.
-
+  '
+content_md: "## Blood Loss Physiology: Classes of Haemorrhage\n\nThe human body contains approximately\
+  \ 5 L of blood (70 mL/kg). Loss of blood\ntriggers compensatory responses that can mask severity until\
+  \ collapse:\n\n| Class | Blood loss | Signs | Action |\n|-------|-----------|-------|--------|\n| I\
+  \ | < 750 mL (< 15%) | Normal pulse, BP, and breathing; slight anxiety | Direct pressure |\n| II | 750–1\
+  \ 500 mL (15–30%) | HR > 100; increased RR; decreased pulse pressure; anxiety | Direct pressure + wound\
+  \ packing |\n| III | 1 500–2 000 mL (30–40%) | HR > 120; low BP; confused; pale, cold, clammy | Tourniquet\
+  \ + urgent evacuation |\n| IV | > 2 000 mL (> 40%) | HR > 140 or undetectable; unconscious; no BP |\
+  \ Immediate tourniquet; survival unlikely without surgery |\n\n**The compensated shock trap:** a healthy\
+  \ adult can lose 1 500 mL and still have\na near-normal blood pressure. Do not wait for low BP to act\
+  \ — by then the patient\nis in Class III or IV and the \"golden hour\" has passed.\n\n**Signs of serious\
+  \ bleeding visible to a bystander:**\n- Blood soaking through clothing and pooling on the ground\n-\
+  \ Spurting or pulsatile bleeding (arterial — most dangerous)\n- Large wound with visible depth\n- Limb\
+  \ hanging at abnormal angle (fracture with vascular injury common)\n\n## The Haemorrhage Control Hierarchy\n\
+  \nUse this sequence — each step escalates only if the previous step fails to control:\n\n```\n1. DIRECT\
+  \ PRESSURE (all wounds)\n   ↓ bleeding not controlled after 3 minutes?\n2. WOUND PACKING (deep wounds)\n\
+  \   ↓ limb wound still bleeding?\n3. TOURNIQUET (limb wounds only)\n```\n\nFor junctional wounds (groin,\
+  \ axilla, neck) where tourniquet cannot be applied:\nuse sustained firm direct pressure or improvised\
+  \ junctional pressure devices.\n\n## Step 1: Direct Pressure\n\n**Technique:**\n1. Use the cleanest\
+  \ material available — ideally sterile dressing; if not: clean cloth,\n   clothing, sanitary pad (highly\
+  \ absorbent and often available)\n2. Apply firm, uninterrupted pressure directly over the wound\n3.\
+  \ Press with the heel of your hand — use your body weight, not just arm strength\n4. Maintain for a\
+  \ **minimum of 10 minutes without lifting the dressing to check**\n   — lifting restarts the clotting\
+  \ process\n5. If blood soaks through, add more material on top — do NOT remove the soaked dressing\n\
+  \n**When to escalate to wound packing:**\n- Wound is deeper than 2–3 cm (simple surface pressure doesn't\
+  \ reach the bleeding source)\n- Wound has irregular shape or cavity\n\n## Step 2: Wound Packing\n\n\
+  Deep wounds (stab wounds, gunshot wounds, goring injuries from animals) bleed from\ndeep vessels that\
+  \ surface pressure cannot reach.\n\n**Technique:**\n1. Identify the deepest part of the wound\n2. Push\
+  \ packing material (rolled gauze, clean cloth strips) firmly into the deepest\n   point first — use\
+  \ your finger to press it to the bottom\n3. Pack layer by layer, working outward, pressing each layer\
+  \ down firmly\n4. Continue until the wound is completely filled and slightly overfilled (mounded above\
+  \ skin level)\n5. Apply firm direct pressure over the packed wound for 3–5 minutes\n6. If bleeding slows\
+  \ or stops: maintain pressure; do not remove packing\n\n**Haemostatic agents** (if available):\n- **QuikClot\
+  \ (kaolin-impregnated gauze)**: activates clotting cascade; effective in 3 minutes\n- **HemCon / ChitoCel\
+  \ (chitosan)**: creates a physical barrier + activates platelets\n- Available from medical supply shops\
+  \ in Nairobi; KSh 800–2 500 per dressing\n- Use haemostatic gauze exactly like regular gauze — same\
+  \ packing technique\n\n## Step 3: Tourniquet\n\nA tourniquet is a circumferential constricting device\
+  \ that stops all blood flow\ndistal to (below) its application point by compressing the artery against\
+  \ the bone.\n\n### Commercial Tourniquets (Kenya)\n- **CAT (Combat Application Tourniquet)**: one-hand\
+  \ applicable; windlass stick mechanism;\n  recommended by Stop The Bleed® and TCCC. Cost: KSh 2 500–4\
+  \ 500 (genuine); many fakes exist\n- **SOFTT-W**: two-person application; stronger windlass; wider strap\
+  \ — preferred for\n  large thighs\n\n### Improvised Windlass Tourniquet (when no commercial device available)\n\
+  \n**Materials:**\n- Cloth strip ≥ 4 cm wide and ≥ 60 cm long (narrower causes more tissue damage without\n\
+  \  better haemostasis — do not use wire, rope, or cord < 2 cm wide)\n- A rigid stick, pen, or rod for\
+  \ the windlass (at least 15 cm long)\n\n**Application (5 steps):**\n1. **Place** 5–7 cm above the wound\
+  \ (never over a joint). For life-threatening\n   haemorrhage with an unknown wound: apply high and tight\
+  \ (groin crease for thigh;\n   armpit crease for upper arm) — you can move it down later\n2. **Wrap**\
+  \ the cloth twice around the limb and tie a half-knot\n3. **Place** the stick on the half-knot and tie\
+  \ a full knot over the stick to secure it\n4. **Twist** the stick until bleeding stops — this typically\
+  \ requires 6–12 full rotations\n   for a thigh, 4–8 for an arm\n5. **Secure** the stick so it cannot\
+  \ unwind (tie the ends of the stick to the limb with\n   another strip, or tuck under the wraps)\n6.\
+  \ **Record time of application** on the patient's forehead with a marker or blood:\n   \"TK 14:35\"\
+  \ — this is critical information for the receiving hospital\n\n### Tourniquet Myths — Debunked\n\n|\
+  \ Myth | Reality |\n|------|---------|\n| \"Tourniquets cause limb loss\" | Properly applied tourniquets\
+  \ for < 2 hours cause no permanent damage. Uncontrolled haemorrhage causes death. |\n| \"Loosen every\
+  \ 15–30 minutes\" | Never loosen a tourniquet in the field — clot disruption resumes bleeding; only\
+  \ remove if trained medic decides to convert to wound packing |\n| \"Only use as last resort\" | Modern\
+  \ TCCC (Tactical Combat Casualty Care) protocol: tourniquet first for any life-threatening limb bleed\
+  \ — don't waste time on pressure that fails |\n| \"A tourniquet is painful — patient will refuse\" |\
+  \ A patient in Class III shock is often confused and may not feel pain; a dead patient feels nothing\
+  \ |\n\n### Maximum Safe Tourniquet Time\n- **< 2 hours**: no significant risk of permanent damage in\
+  \ most patients\n- **2–6 hours**: increasing risk of nerve and muscle damage; hospital conversion needed\n\
+  - **> 6 hours**: limb viability at serious risk — but patient survival still prioritised\n  over limb;\
+  \ never remove a tourniquet to \"save the limb\" in the field\n\n## Junctional Wounds\n\nGroin, axilla\
+  \ (armpit), and neck wounds cannot be tourniqueted. Options:\n\n**Groin:** Place the heel of your hand\
+  \ in the groin crease pressing the femoral artery\nagainst the pelvis. Use full body weight. A second\
+  \ responder can help by maintaining\npressure while you manage other injuries.\n\n**Neck:** Cover and\
+  \ hold — do NOT apply circumferential pressure (strangulation risk).\nHold a large dressing over the\
+  \ wound with firm lateral (side) pressure only. Lay\npatient on the injured side — gravity helps.\n\n\
+  **Axilla:** Deep packing with very firm pressure; no tourniquet possible.\n"
 exercises:
-  - id: fa1-q1
-    type: MULTIPLE_CHOICE
-    prompt: "A road accident patient has a deep thigh laceration with pulsatile bleeding. You apply direct pressure with your shirt for 3 minutes — blood soaks through and is pooling rapidly. What is the correct next step?"
-    xp_reward: 35
-    options:
-      - text: "Remove the soaked shirt, replace with fresh material, and continue direct pressure for another 10 minutes"
-        correct: false
-        explanation: "Removing the soaked dressing disrupts the early clot forming at the wound base. Add fresh material on top of the soaked shirt. More importantly, pulsatile arterial bleeding from a deep thigh wound has already failed direct pressure — escalate to wound packing or tourniquet."
-      - text: "Apply an improvised tourniquet 5–7 cm above the wound immediately — pulsatile arterial bleeding from the thigh that has soaked through direct pressure is life-threatening"
-        correct: true
-        explanation: "Correct. Pulsatile bleeding is arterial. A deep thigh laceration with arterial bleeding that overwhelms direct pressure in 3 minutes indicates Class II–III haemorrhage. This is a clear tourniquet indication. Apply high and tight if exact wound extent is unclear."
-      - text: "Call an ambulance and wait — moving the patient may worsen the bleeding"
-        correct: false
-        explanation: "Calling for help is important but does not stop bleeding. In rural Kenya, EMS may be 60+ minutes away. A patient losing 250 mL/minute from an arterial thigh wound will be in Class IV cardiac arrest within 8–10 minutes without intervention."
-      - text: "Elevate the leg above heart level to reduce blood pressure at the wound"
-        correct: false
-        explanation: "Elevation reduces venous pressure but has minimal effect on arterial haemorrhage. The femoral artery runs at nearly aortic pressure — elevation will not control pulsatile arterial bleeding from a thigh laceration."
-    correct_answer: "Apply an improvised tourniquet 5–7 cm above the wound immediately — pulsatile arterial bleeding from the thigh that has soaked through direct pressure is life-threatening"
+- id: fa1-q1
+  type: MULTIPLE_CHOICE
+  prompt: A road accident patient has a deep thigh laceration with pulsatile bleeding. You apply direct
+    pressure with your shirt for 3 minutes — blood soaks through and is pooling rapidly. What is the correct
+    next step?
+  xp_reward: 35
+  options:
+  - id: a
+    text: Remove the soaked shirt, replace with fresh material, and continue direct pressure for another
+      10 minutes
+  - id: b
+    text: Call an ambulance and wait — moving the patient may worsen the bleeding
+  - id: c
+    text: Elevate the leg above heart level to reduce blood pressure at the wound
+  - id: d
+    text: Apply an improvised tourniquet 5–7 cm above the wound immediately — pulsatile arterial bleeding
+      from the thigh that has soaked through direct pressure is life-threatening
+  correct_answer: d
+  explanation: 'Correct. Pulsatile bleeding is arterial. A deep thigh laceration with arterial bleeding
+    that overwhelms direct pressure in 3 minutes indicates Class II–III haemorrhage. This is a clear tourniquet
+    indication. Apply high and tight if exact wound extent is unclear.
 
-  - id: fa1-q2
-    type: FILL_BLANK
-    prompt: "After applying a tourniquet, you must record the time of application on the patient's ___ using a marker or blood so the receiving hospital knows how long it has been in place."
-    xp_reward: 20
-    correct_answer: forehead
-    explanation: "Time of tourniquet application (written as 'TK HH:MM') on the forehead is the international standard. The forehead is always visible, not covered by clothing or dressings, and survives transport. It allows any receiving clinician to immediately calculate ischaemia time."
 
-  - id: fa1-q3
-    type: MATCH_PAIRS
-    prompt: "Match each haemorrhage class to its characteristic signs and appropriate first aid response."
-    xp_reward: 35
-    pairs:
-      - left: Class I (< 15% blood loss)
-        right: Normal vitals, mild anxiety — direct pressure sufficient
-      - left: Class II (15–30% blood loss)
-        right: HR > 100, anxiety, decreased pulse pressure — pressure + packing
-      - left: Class III (30–40% blood loss)
-        right: HR > 120, low BP, confusion — tourniquet + urgent evacuation
-      - left: Class IV (> 40% blood loss)
-        right: Unconscious, no BP — immediate tourniquet; near-fatal without surgery
-    correct_answer:
-      - Class I (< 15% blood loss)=Normal vitals, mild anxiety — direct pressure sufficient
-      - Class II (15–30% blood loss)=HR > 100, anxiety, decreased pulse pressure — pressure + packing
-      - Class III (30–40% blood loss)=HR > 120, low BP, confusion — tourniquet + urgent evacuation
-      - Class IV (> 40% blood loss)=Unconscious, no BP — immediate tourniquet; near-fatal without surgery
+    Why the other options are wrong: Removing the soaked dressing disrupts the early clot forming at the
+    wound base. Add fresh material on top of the soaked shirt. More importantly, pulsatile arterial bleeding
+    from a deep thigh wound has already failed direct pressure — escalate to wound packing or tourniquet.
+    Calling for help is important but does not stop bleeding. In rural Kenya, EMS may be 60+ minutes away.
+    A patient losing 250 mL/minute from an arterial thigh wound will be in Class IV cardiac arrest within
+    8–10 minutes without intervention. Elevation reduces venous pressure but has minimal effect on arterial
+    haemorrhage. The femoral artery runs at nearly aortic pressure — elevation will not control pulsatile
+    arterial bleeding from a thigh laceration.'
+- id: fa1-q2
+  type: FILL_BLANK
+  prompt: After applying a tourniquet, you must record the time of application on the patient's ___ using
+    a marker or blood so the receiving hospital knows how long it has been in place.
+  xp_reward: 20
+  correct_answer: forehead
+  explanation: Time of tourniquet application (written as 'TK HH:MM') on the forehead is the international
+    standard. The forehead is always visible, not covered by clothing or dressings, and survives transport.
+    It allows any receiving clinician to immediately calculate ischaemia time.
+- id: fa1-q3
+  type: MATCH_PAIRS
+  prompt: Match each haemorrhage class to its characteristic signs and appropriate first aid response.
+  xp_reward: 35
+  pairs:
+  - left:
+      id: l1
+      text: Class I (< 15% blood loss)
+    right:
+      id: r-bdde3e
+      text: Normal vitals, mild anxiety — direct pressure sufficient
+  - left:
+      id: l2
+      text: Class II (15–30% blood loss)
+    right:
+      id: r-0c4765
+      text: HR > 100, anxiety, decreased pulse pressure — pressure + packing
+  - left:
+      id: l3
+      text: Class III (30–40% blood loss)
+    right:
+      id: r-801b97
+      text: HR > 120, low BP, confusion — tourniquet + urgent evacuation
+  - left:
+      id: l4
+      text: Class IV (> 40% blood loss)
+    right:
+      id: r-06b07a
+      text: Unconscious, no BP — immediate tourniquet; near-fatal without surgery
+  correct_answer:
+  - l1=r-bdde3e
+  - l2=r-0c4765
+  - l3=r-801b97
+  - l4=r-06b07a

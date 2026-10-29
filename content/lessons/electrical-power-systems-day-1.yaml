@@ -1,244 +1,217 @@
 id: electrical-power-systems-day-1
 course_id: electrical-power-systems
-title: "AC Fundamentals — Single-Phase vs 3-Phase & Power Factor"
-title_sw: "Misingi ya Umeme wa AC — Awamu Moja, Awamu Tatu na Power Factor"
+title: AC Fundamentals — Single-Phase vs 3-Phase & Power Factor
+title_sw: Misingi ya Umeme wa AC — Awamu Moja, Awamu Tatu na Power Factor
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - electrical
-  - ac-power
-  - 3-phase
-  - power-factor
-  - engineering
-  - micro-grid
+- electrical
+- ac-power
+- 3-phase
+- power-factor
+- engineering
+- micro-grid
 xp: 250
 exam_domain: electrical-power-systems
+briefing: 'Direct current (DC) powers localized battery banks and electronics, but alternating current
+  (AC) dominates power distribution because transformers can step AC voltages up to transmission levels
+  with minimal copper conductor losses. In off-grid mini-grids, an electrical technician must master single-phase
+  (230V) and three-phase (400V) line-to-line relationships, the power triangle (kW, kVA, kVAR), and reactive
+  power compensation. Operating inductive motors with poor power factor overheats generators, trips breakers,
+  and wastes up to 40% of precious generated capacity.
 
-briefing: >
-  Direct current (DC) powers localized battery banks and electronics, but alternating
-  current (AC) dominates power distribution because transformers can step AC voltages
-  up to transmission levels with minimal copper conductor losses. In off-grid mini-grids,
-  an electrical technician must master single-phase (230V) and three-phase (400V)
-  line-to-line relationships, the power triangle (kW, kVA, kVAR), and reactive power
-  compensation. Operating inductive motors with poor power factor overheats generators,
-  trips breakers, and wastes up to 40% of precious generated capacity.
+  '
+outline: 'Sinusoidal alternating waveforms (frequency, period, RMS voltage Vrms = Vpeak / sqrt(2)); single-phase
+  230V systems vs 3-phase 400V star (wye) and delta configurations; the line-to-line vs line-to-neutral
+  relationship (V_LL = sqrt(3) * V_LN); neutral conductor currents and phase balancing; the AC power triangle:
+  Real Power (P in kW), Reactive Power (Q in kVAR), Apparent Power (S in kVA); Power Factor (cos phi);
+  inductive vs capacitive loads; calculating power factor correction capacitor banks to restore 0.70 PF
+  up to 0.95 PF.
 
-outline: >
-  Sinusoidal alternating waveforms (frequency, period, RMS voltage Vrms = Vpeak / sqrt(2));
-  single-phase 230V systems vs 3-phase 400V star (wye) and delta configurations;
-  the line-to-line vs line-to-neutral relationship (V_LL = sqrt(3) * V_LN); neutral
-  conductor currents and phase balancing; the AC power triangle: Real Power (P in kW),
-  Reactive Power (Q in kVAR), Apparent Power (S in kVA); Power Factor (cos phi);
-  inductive vs capacitive loads; calculating power factor correction capacitor banks
-  to restore 0.70 PF up to 0.95 PF.
-
-content_md: |
-  ## Sinusoidal AC Voltage & Root Mean Square (RMS)
-
-  Unlike steady DC, alternating current continuously oscillates in magnitude and
-  reverses direction periodically:
-
-  $$v(t) = V_{\text{peak}} \times \sin(\omega t) = V_{\text{peak}} \times \sin(2\pi f t)$$
-
-  In Kenya and East Africa, the standard grid and mini-grid frequency is **$f = 50\text{ Hz}$**
-  (period $T = 1/50 = 20\text{ ms}$ per full cycle).
-
-  ### RMS (Effective) Voltage:
-  The Root Mean Square (RMS) voltage is the equivalent steady DC voltage that produces
-  the exact same thermal heating power across a resistive resistor:
-
-  $$V_{\text{RMS}} = \frac{V_{\text{peak}}}{\sqrt{2}} \approx 0.7071 \times V_{\text{peak}}$$
-  $$V_{\text{peak}} = V_{\text{RMS}} \times \sqrt{2} \approx 1.414 \times V_{\text{RMS}}$$
-
-  - In a standard **230V RMS** single-phase socket:
-    $$V_{\text{peak}} = 230 \times 1.414 \approx 325.2\text{ Volts}$$
-  - Insulation, capacitors, and semiconductors must withstand the peak voltage (325V+),
-    not merely the nominal RMS rating.
-
-  ## Single-Phase vs Three-Phase Power
-
-  A 3-phase AC generator contains three sets of stator coils spaced physically **120° apart**
-  around the rotor perimeter, generating three identical sinusoidal voltages shifted in
-  time by one-third of a cycle ($120^\circ$ or $6.67\text{ ms}$ at 50 Hz).
-
-  ```
-  Phase L1:  v1(t) = Vp * sin(wt)
-  Phase L2:  v2(t) = Vp * sin(wt - 120°)
-  Phase L3:  v3(t) = Vp * sin(wt - 240°)
-  ```
-
-  ### Why 3-Phase Is Superior for Grids:
-  1. **Constant Power**: Instantaneous single-phase power pulses at 100 Hz ($P = V \times I$ drops to zero twice per cycle), causing mechanical vibration in motors. 3-phase instantaneous power is completely constant ($P_{\text{total}} = 3 \times V_{\text{LN}} \times I_{\text{LN}}$), giving smooth, vibration-free torque.
-  2. **Conductor Economy**: Transmitting a given kilowatt load via 3-phase requires **25% less copper weight** than equivalent single-phase lines.
-  3. **Self-Starting Motors**: 3-phase current creates a naturally rotating magnetic field (RMF) inside induction motors without requiring failure-prone start capacitors or centrifugal switches.
-
-  ## Star (Wye) vs Delta Connections
-
-  ### 1. Star / Wye ($\text{Y}$) Connection:
-  All three coil return ends tie together at a central common **Neutral ($N$)** point:
-  - **Line-to-Neutral Voltage ($V_{\text{LN}}$)**: Standard residential voltage (e.g., $230\text{ V}$).
-  - **Line-to-Line Voltage ($V_{\text{LL}}$)**: Measured across any two phase wires ($L_1-L_2$, $L_2-L_3$, or $L_3-L_1$):
-    $$V_{\text{LL}} = \sqrt{3} \times V_{\text{LN}} \approx 1.732 \times 230\text{ V} = 398.4\text{ V} \approx 400\text{ V}$$
-  - **Current Relationship**: Line current equals phase current ($I_{\text{Line}} = I_{\text{Phase}}$).
-  - **Neutral Current in Balanced System**: If loads on $L_1$, $L_2$, and $L_3$ are equal:
-    $$I_N = I_{L1} + I_{L2} + I_{L3} = 0\text{ Amperes}$$
-    In an off-grid mini-grid, keeping household loads evenly distributed across the 3 phases minimizes neutral current and avoids overheating the neutral wire.
-
-  ### 2. Delta ($\Delta$) Connection:
-  Coils connect end-to-end in a closed loop (no neutral wire):
-  - $V_{\text{Line}} = V_{\text{Phase}} = 400\text{ V}$
-  - $I_{\text{Line}} = \sqrt{3} \times I_{\text{Phase}}$
-  - Used for heavy industrial motors, deep-well borehole submersible pumps, and grain mills.
-
-  ## The AC Power Triangle & Power Factor
-
-  When AC voltage powers purely resistive loads (incandescent bulbs, electric heaters),
-  current and voltage oscillate in perfect phase ($\theta = 0^\circ$).
-  When powering **inductive loads** (electric motors, transformers, fluorescent ballasts),
-  the magnetic fields cause the alternating current to **lag behind the voltage** by an angle $\theta$.
-
-  ```
-                       /|
-                      / |
-   Apparent Power    /  |  Reactive Power
-   S (kVA)          /   |  Q (kVAR)  (Magnetic work)
-                   /    |
-                  / θ   |
-                 /──────┘
-               Real Power P (kW)  (Actual mechanical work)
-  ```
-
-  ### 1. Real / Active Power ($P$):
-  The energy converted into actual physical work (heat, light, mechanical rotation):
-  $$P = V \times I \times \cos(\theta) \quad (\text{Single-Phase, in Watts / kW})$$
-  $$P = \sqrt{3} \times V_{\text{LL}} \times I_{\text{Line}} \times \cos(\theta) \quad (\text{Three-Phase, in Watts / kW})$$
-
-  ### 2. Reactive Power ($Q$):
-  Non-working power absorbed to sustain magnetic flux fields in motor stator cores every half-cycle:
-  $$Q = V \times I \times \sin(\theta) \quad (\text{Volt-Amps Reactive / kVAR})$$
-
-  ### 3. Apparent Power ($S$):
-  The total volt-ampere vector load that generators, inverters, and distribution cables must support:
-  $$S = V \times I \quad (\text{Single-Phase, in VA / kVA})$$
-  $$S = \sqrt{3} \times V_{\text{LL}} \times I_{\text{Line}} \quad (\text{Three-Phase, in VA / kVA})$$
-  $$S = \sqrt{P^2 + Q^2}$$
-
-  ### 4. Power Factor ($\text{PF}$):
-  $$\text{PF} = \cos(\theta) = \frac{\text{Real Power } P\text{ (kW)}}{\text{Apparent Power } S\text{ (kVA)}}$$
-
-  ## The Danger of Poor Power Factor in Mini-Grids
-
-  Consider an off-grid maize posho mill driven by a 15 kW motor with an uncompensated
-  lagging power factor of **$\text{PF} = 0.70$**:
-  $$S = \frac{P}{\text{PF}} = \frac{15\text{ kW}}{0.70} = 21.4\text{ kVA}$$
-  - The off-grid diesel/hydro generator must supply **21.4 kVA** of apparent power to deliver only 15 kW of milling work.
-  - Line current increases by **43%** ($21.4 / 15 = 1.43$).
-  - Resistive cable losses ($I^2 R$) increase by **104%** ($1.43^2 = 2.04$), causing voltage drops and tripping generator thermal overloads.
-
-  ## Sizing Power Factor Correction Capacitors
-
-  Capacitors supply leading reactive current, cancelling out the lagging reactive
-  current demanded by motor inductors:
-
-  $$\text{Required Capacitor kVAR} = P_{\text{kW}} \times \left[\tan(\theta_1) - \tan(\theta_2)\right]$$
-
-  Where:
-  - $\theta_1 = \arccos(\text{Initial PF})$
-  - $\theta_2 = \arccos(\text{Target PF})$ (standard target is **0.95 lagging**)
-
-  *Example Calculation*:
-  Correcting a 15 kW motor from $\text{PF}_1 = 0.70$ to $\text{PF}_2 = 0.95$:
-  - $\theta_1 = \arccos(0.70) = 45.57^\circ \rightarrow \tan(45.57^\circ) = 1.020$
-  - $\theta_2 = \arccos(0.95) = 18.19^\circ \rightarrow \tan(18.19^\circ) = 0.329$
-  $$Q_c = 15\text{ kW} \times (1.020 - 0.329) = 15 \times 0.691 = 10.36\text{ kVAR}$$
-  Connecting a **10 kVAR 3-phase delta capacitor bank** across the motor terminals
-  reduces apparent power from 21.4 kVA down to 15.8 kVA, freeing up 5.6 kVA of generator
-  capacity for other village households without installing larger engines!
-
+  '
+content_md: "## Sinusoidal AC Voltage & Root Mean Square (RMS)\n\nUnlike steady DC, alternating current\
+  \ continuously oscillates in magnitude and\nreverses direction periodically:\n\n$$v(t) = V_{\\text{peak}}\
+  \ \\times \\sin(\\omega t) = V_{\\text{peak}} \\times \\sin(2\\pi f t)$$\n\nIn Kenya and East Africa,\
+  \ the standard grid and mini-grid frequency is **$f = 50\\text{ Hz}$**\n(period $T = 1/50 = 20\\text{\
+  \ ms}$ per full cycle).\n\n### RMS (Effective) Voltage:\nThe Root Mean Square (RMS) voltage is the equivalent\
+  \ steady DC voltage that produces\nthe exact same thermal heating power across a resistive resistor:\n\
+  \n$$V_{\\text{RMS}} = \\frac{V_{\\text{peak}}}{\\sqrt{2}} \\approx 0.7071 \\times V_{\\text{peak}}$$\n\
+  $$V_{\\text{peak}} = V_{\\text{RMS}} \\times \\sqrt{2} \\approx 1.414 \\times V_{\\text{RMS}}$$\n\n\
+  - In a standard **230V RMS** single-phase socket:\n  $$V_{\\text{peak}} = 230 \\times 1.414 \\approx\
+  \ 325.2\\text{ Volts}$$\n- Insulation, capacitors, and semiconductors must withstand the peak voltage\
+  \ (325V+),\n  not merely the nominal RMS rating.\n\n## Single-Phase vs Three-Phase Power\n\nA 3-phase\
+  \ AC generator contains three sets of stator coils spaced physically **120° apart**\naround the rotor\
+  \ perimeter, generating three identical sinusoidal voltages shifted in\ntime by one-third of a cycle\
+  \ ($120^\\circ$ or $6.67\\text{ ms}$ at 50 Hz).\n\n```\nPhase L1:  v1(t) = Vp * sin(wt)\nPhase L2: \
+  \ v2(t) = Vp * sin(wt - 120°)\nPhase L3:  v3(t) = Vp * sin(wt - 240°)\n```\n\n### Why 3-Phase Is Superior\
+  \ for Grids:\n1. **Constant Power**: Instantaneous single-phase power pulses at 100 Hz ($P = V \\times\
+  \ I$ drops to zero twice per cycle), causing mechanical vibration in motors. 3-phase instantaneous power\
+  \ is completely constant ($P_{\\text{total}} = 3 \\times V_{\\text{LN}} \\times I_{\\text{LN}}$), giving\
+  \ smooth, vibration-free torque.\n2. **Conductor Economy**: Transmitting a given kilowatt load via 3-phase\
+  \ requires **25% less copper weight** than equivalent single-phase lines.\n3. **Self-Starting Motors**:\
+  \ 3-phase current creates a naturally rotating magnetic field (RMF) inside induction motors without\
+  \ requiring failure-prone start capacitors or centrifugal switches.\n\n## Star (Wye) vs Delta Connections\n\
+  \n### 1. Star / Wye ($\\text{Y}$) Connection:\nAll three coil return ends tie together at a central\
+  \ common **Neutral ($N$)** point:\n- **Line-to-Neutral Voltage ($V_{\\text{LN}}$)**: Standard residential\
+  \ voltage (e.g., $230\\text{ V}$).\n- **Line-to-Line Voltage ($V_{\\text{LL}}$)**: Measured across any\
+  \ two phase wires ($L_1-L_2$, $L_2-L_3$, or $L_3-L_1$):\n  $$V_{\\text{LL}} = \\sqrt{3} \\times V_{\\\
+  text{LN}} \\approx 1.732 \\times 230\\text{ V} = 398.4\\text{ V} \\approx 400\\text{ V}$$\n- **Current\
+  \ Relationship**: Line current equals phase current ($I_{\\text{Line}} = I_{\\text{Phase}}$).\n- **Neutral\
+  \ Current in Balanced System**: If loads on $L_1$, $L_2$, and $L_3$ are equal:\n  $$I_N = I_{L1} + I_{L2}\
+  \ + I_{L3} = 0\\text{ Amperes}$$\n  In an off-grid mini-grid, keeping household loads evenly distributed\
+  \ across the 3 phases minimizes neutral current and avoids overheating the neutral wire.\n\n### 2. Delta\
+  \ ($\\Delta$) Connection:\nCoils connect end-to-end in a closed loop (no neutral wire):\n- $V_{\\text{Line}}\
+  \ = V_{\\text{Phase}} = 400\\text{ V}$\n- $I_{\\text{Line}} = \\sqrt{3} \\times I_{\\text{Phase}}$\n\
+  - Used for heavy industrial motors, deep-well borehole submersible pumps, and grain mills.\n\n## The\
+  \ AC Power Triangle & Power Factor\n\nWhen AC voltage powers purely resistive loads (incandescent bulbs,\
+  \ electric heaters),\ncurrent and voltage oscillate in perfect phase ($\\theta = 0^\\circ$).\nWhen powering\
+  \ **inductive loads** (electric motors, transformers, fluorescent ballasts),\nthe magnetic fields cause\
+  \ the alternating current to **lag behind the voltage** by an angle $\\theta$.\n\n```\n            \
+  \         /|\n                    / |\n Apparent Power    /  |  Reactive Power\n S (kVA)          /\
+  \   |  Q (kVAR)  (Magnetic work)\n                 /    |\n                / θ   |\n               /──────┘\n\
+  \             Real Power P (kW)  (Actual mechanical work)\n```\n\n### 1. Real / Active Power ($P$):\n\
+  The energy converted into actual physical work (heat, light, mechanical rotation):\n$$P = V \\times\
+  \ I \\times \\cos(\\theta) \\quad (\\text{Single-Phase, in Watts / kW})$$\n$$P = \\sqrt{3} \\times V_{\\\
+  text{LL}} \\times I_{\\text{Line}} \\times \\cos(\\theta) \\quad (\\text{Three-Phase, in Watts / kW})$$\n\
+  \n### 2. Reactive Power ($Q$):\nNon-working power absorbed to sustain magnetic flux fields in motor\
+  \ stator cores every half-cycle:\n$$Q = V \\times I \\times \\sin(\\theta) \\quad (\\text{Volt-Amps\
+  \ Reactive / kVAR})$$\n\n### 3. Apparent Power ($S$):\nThe total volt-ampere vector load that generators,\
+  \ inverters, and distribution cables must support:\n$$S = V \\times I \\quad (\\text{Single-Phase, in\
+  \ VA / kVA})$$\n$$S = \\sqrt{3} \\times V_{\\text{LL}} \\times I_{\\text{Line}} \\quad (\\text{Three-Phase,\
+  \ in VA / kVA})$$\n$$S = \\sqrt{P^2 + Q^2}$$\n\n### 4. Power Factor ($\\text{PF}$):\n$$\\text{PF} =\
+  \ \\cos(\\theta) = \\frac{\\text{Real Power } P\\text{ (kW)}}{\\text{Apparent Power } S\\text{ (kVA)}}$$\n\
+  \n## The Danger of Poor Power Factor in Mini-Grids\n\nConsider an off-grid maize posho mill driven by\
+  \ a 15 kW motor with an uncompensated\nlagging power factor of **$\\text{PF} = 0.70$**:\n$$S = \\frac{P}{\\\
+  text{PF}} = \\frac{15\\text{ kW}}{0.70} = 21.4\\text{ kVA}$$\n- The off-grid diesel/hydro generator\
+  \ must supply **21.4 kVA** of apparent power to deliver only 15 kW of milling work.\n- Line current\
+  \ increases by **43%** ($21.4 / 15 = 1.43$).\n- Resistive cable losses ($I^2 R$) increase by **104%**\
+  \ ($1.43^2 = 2.04$), causing voltage drops and tripping generator thermal overloads.\n\n## Sizing Power\
+  \ Factor Correction Capacitors\n\nCapacitors supply leading reactive current, cancelling out the lagging\
+  \ reactive\ncurrent demanded by motor inductors:\n\n$$\\text{Required Capacitor kVAR} = P_{\\text{kW}}\
+  \ \\times \\left[\\tan(\\theta_1) - \\tan(\\theta_2)\\right]$$\n\nWhere:\n- $\\theta_1 = \\arccos(\\\
+  text{Initial PF})$\n- $\\theta_2 = \\arccos(\\text{Target PF})$ (standard target is **0.95 lagging**)\n\
+  \n*Example Calculation*:\nCorrecting a 15 kW motor from $\\text{PF}_1 = 0.70$ to $\\text{PF}_2 = 0.95$:\n\
+  - $\\theta_1 = \\arccos(0.70) = 45.57^\\circ \\rightarrow \\tan(45.57^\\circ) = 1.020$\n- $\\theta_2\
+  \ = \\arccos(0.95) = 18.19^\\circ \\rightarrow \\tan(18.19^\\circ) = 0.329$\n$$Q_c = 15\\text{ kW} \\\
+  times (1.020 - 0.329) = 15 \\times 0.691 = 10.36\\text{ kVAR}$$\nConnecting a **10 kVAR 3-phase delta\
+  \ capacitor bank** across the motor terminals\nreduces apparent power from 21.4 kVA down to 15.8 kVA,\
+  \ freeing up 5.6 kVA of generator\ncapacity for other village households without installing larger engines!\n"
 exercises:
-  - id: elec-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A 3-phase star (wye) mini-grid distribution line in Kenya delivers 230 V
-      from each phase conductor to the neutral wire. What is the line-to-line
-      voltage measured between Phase 1 and Phase 2?
-    xp_reward: 50
-    options:
-      - text: "Approximately 400 V (230 V × √3)"
-        correct: true
-        explanation: "In a 3-phase star system, line-to-line voltage is √3 times the line-to-neutral voltage: V_LL = 230 × 1.732 ≈ 398.4 V (standardized as 400 V)."
-      - text: "460 V (230 V + 230 V)"
-        correct: false
-        explanation: "Phase voltages are 120° apart in time, not in phase; simple arithmetic addition is incorrect. Vector addition yields √3 × V_LN."
-      - text: "230 V"
-        correct: false
-        explanation: "230 V is the line-to-neutral voltage, not line-to-line."
-      - text: "325 V (230 V × √2)"
-        correct: false
-        explanation: "325 V is the peak voltage of a 230 V RMS wave, not the 3-phase line-to-line relationship."
+- id: elec-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A 3-phase star (wye) mini-grid distribution line in Kenya delivers 230 V from each phase conductor
+    to the neutral wire. What is the line-to-line voltage measured between Phase 1 and Phase 2?
 
-  - id: elec-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      In a sinusoidal 230 V RMS AC electrical system, the peak voltage reached
-      during each oscillation crest is approximately ___ Volts. If an inductive motor
-      draws 10 kW at a power factor of 0.80, the apparent power load imposed on the
-      generator is ___ kVA.
-    xp_reward: 50
-    correct_answer: "325; 12.5"
-    explanation: >
-      V_peak = V_RMS × √2 = 230 × 1.414 ≈ 325.2 V. Apparent power S = P / PF = 10 kW / 0.80 = 12.5 kVA.
-      The generator must supply 12.5 kVA of winding and magnetic capacity to deliver 10 kW of shaft work.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 460 V (230 V + 230 V)
+  - id: b
+    text: 230 V
+  - id: c
+    text: Approximately 400 V (230 V × √3)
+  - id: d
+    text: 325 V (230 V × √2)
+  explanation: 'In a 3-phase star system, line-to-line voltage is √3 times the line-to-neutral voltage:
+    V_LL = 230 × 1.732 ≈ 398.4 V (standardized as 400 V).
 
-  - id: elec-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each AC electrical power parameter to its unit and physical meaning.
-    xp_reward: 50
-    pairs:
-      - left: Real / Active Power (P)
-        right: Kilowatts (kW) — actual mechanical work, heating, and light
-      - left: Reactive Power (Q)
-        right: kVAR — magnetic field energy oscillating between motor and source
-      - left: Apparent Power (S)
-        right: kVA — vector sum total load capacity required from generators
-      - left: Power Factor (cos phi)
-        right: Dimensionless ratio of real power divided by apparent power (kW / kVA)
-    correct_answer: null
-    explanation: >
-      P does physical work (kW); Q sustains magnetizing flux (kVAR); S is the total vector
-      volt-amperes (kVA); PF indicates system efficiency.
 
-  - id: elec-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why does connecting a capacitor bank across the terminal box of a heavy
-      induction motor improve the performance of an off-grid diesel generator?
-    xp_reward: 50
-    options:
-      - text: "Capacitors supply local leading reactive current directly to the motor's magnetic field, reducing lagging kVAR drawn through the cables and lowering generator winding heat"
-        correct: true
-        explanation: "Induction motors require reactive power (kVAR) to magnetize their stators. Sourcing this reactive current locally from parallel capacitors eliminates the need to transmit kVAR from the generator, reducing total line current, line voltage drops, and generator rotor heating."
-      - text: "Capacitors convert AC current into pure DC power inside the motor"
-        correct: false
-        explanation: "Induction motors operate strictly on alternating current; capacitors do not rectify to DC."
-      - text: "Capacitors increase the engine RPM of the diesel generator"
-        correct: false
-        explanation: "Engine RPM is controlled by the mechanical governor (governing frequency at 50 Hz)."
-      - text: "Capacitors step up the frequency from 50 Hz to 60 Hz"
-        correct: false
-        explanation: "Capacitors have no effect on AC frequency."
+    Why the other options are wrong: Phase voltages are 120° apart in time, not in phase; simple arithmetic
+    addition is incorrect. Vector addition yields √3 × V_LN. 230 V is the line-to-neutral voltage, not
+    line-to-line. 325 V is the peak voltage of a 230 V RMS wave, not the 3-phase line-to-line relationship.'
+  correct_answer: c
+- id: elec-d1-q2
+  type: FILL_BLANK
+  prompt: 'In a sinusoidal 230 V RMS AC electrical system, the peak voltage reached during each oscillation
+    crest is approximately ___ Volts. If an inductive motor draws 10 kW at a power factor of 0.80, the
+    apparent power load imposed on the generator is ___ kVA.
 
-  - id: elec-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      In a balanced 3-phase 4-wire star distribution mini-grid with identical 10 A
-      resistive loads on each of the three phases, the current flowing back through
-      the neutral wire is ___ Amperes.
-    xp_reward: 50
-    correct_answer: "0"
-    explanation: >
-      Because the three phase currents are equal in amplitude and separated by exactly
-      120 degrees, their instantaneous vector sum cancels out completely:
-      I_N = I_1 + I_2 + I_3 = 0 A.
+    '
+  xp_reward: 50
+  correct_answer:
+  - '325'
+  - '12.5'
+  explanation: 'V_peak = V_RMS × √2 = 230 × 1.414 ≈ 325.2 V. Apparent power S = P / PF = 10 kW / 0.80
+    = 12.5 kVA. The generator must supply 12.5 kVA of winding and magnetic capacity to deliver 10 kW of
+    shaft work.
+
+    '
+- id: elec-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each AC electrical power parameter to its unit and physical meaning.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Real / Active Power (P)
+    right:
+      id: r-9a6207
+      text: Kilowatts (kW) — actual mechanical work, heating, and light
+  - left:
+      id: l2
+      text: Reactive Power (Q)
+    right:
+      id: r-e89da0
+      text: kVAR — magnetic field energy oscillating between motor and source
+  - left:
+      id: l3
+      text: Apparent Power (S)
+    right:
+      id: r-655171
+      text: kVA — vector sum total load capacity required from generators
+  - left:
+      id: l4
+      text: Power Factor (cos phi)
+    right:
+      id: r-6b1f48
+      text: Dimensionless ratio of real power divided by apparent power (kW / kVA)
+  correct_answer:
+  - l1=r-9a6207
+  - l2=r-e89da0
+  - l3=r-655171
+  - l4=r-6b1f48
+  explanation: 'P does physical work (kW); Q sustains magnetizing flux (kVAR); S is the total vector volt-amperes
+    (kVA); PF indicates system efficiency.
+
+    '
+- id: elec-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why does connecting a capacitor bank across the terminal box of a heavy induction motor improve
+    the performance of an off-grid diesel generator?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Capacitors convert AC current into pure DC power inside the motor
+  - id: b
+    text: Capacitors increase the engine RPM of the diesel generator
+  - id: c
+    text: Capacitors step up the frequency from 50 Hz to 60 Hz
+  - id: d
+    text: Capacitors supply local leading reactive current directly to the motor's magnetic field, reducing
+      lagging kVAR drawn through the cables and lowering generator winding heat
+  explanation: 'Induction motors require reactive power (kVAR) to magnetize their stators. Sourcing this
+    reactive current locally from parallel capacitors eliminates the need to transmit kVAR from the generator,
+    reducing total line current, line voltage drops, and generator rotor heating.
+
+
+    Why the other options are wrong: Induction motors operate strictly on alternating current; capacitors
+    do not rectify to DC. Engine RPM is controlled by the mechanical governor (governing frequency at
+    50 Hz). Capacitors have no effect on AC frequency.'
+  correct_answer: d
+- id: elec-d1-q5
+  type: FILL_BLANK
+  prompt: 'In a balanced 3-phase 4-wire star distribution mini-grid with identical 10 A resistive loads
+    on each of the three phases, the current flowing back through the neutral wire is ___ Amperes.
+
+    '
+  xp_reward: 50
+  correct_answer: '0'
+  explanation: 'Because the three phase currents are equal in amplitude and separated by exactly 120 degrees,
+    their instantaneous vector sum cancels out completely: I_N = I_1 + I_2 + I_3 = 0 A.
+
+    '

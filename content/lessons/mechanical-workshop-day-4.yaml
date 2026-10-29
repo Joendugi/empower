@@ -1,190 +1,192 @@
 id: mechanical-workshop-day-4
 course_id: mechanical-workshop
-title: "Power Transmission — Bearings, Shafts & Belt Alignment"
-title_sw: "Usafirishaji wa Nguvu — Fani, Mihimili na Mipangilio ya Mikanda"
+title: Power Transmission — Bearings, Shafts & Belt Alignment
+title_sw: Usafirishaji wa Nguvu — Fani, Mihimili na Mipangilio ya Mikanda
 week_number: 1
 day_number: 4
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - mechanical
-  - bearings
-  - shaft-alignment
-  - v-belts
-  - power-transmission
-  - maintenance
+- mechanical
+- bearings
+- shaft-alignment
+- v-belts
+- power-transmission
+- maintenance
 xp: 250
 exam_domain: mechanical-workshop
+briefing: 'Over 60% of rotating machinery breakdowns in mills, pumps, and generators stem from shaft misalignment,
+  incorrect belt tension, or improper bearing installation. Pounding a rolling element bearing onto a
+  shaft with a hammer deforms raceways instantly. This lesson covers rolling bearing classification (deep-groove
+  ball, spherical roller, taper roller), thermal and mechanical mounting techniques, shaft keyway standards,
+  dial indicator rim-and-face shaft alignment, and V-belt sheave deflection testing.
 
-briefing: >
-  Over 60% of rotating machinery breakdowns in mills, pumps, and generators stem
-  from shaft misalignment, incorrect belt tension, or improper bearing installation.
-  Pounding a rolling element bearing onto a shaft with a hammer deforms raceways
-  instantly. This lesson covers rolling bearing classification (deep-groove ball,
-  spherical roller, taper roller), thermal and mechanical mounting techniques,
-  shaft keyway standards, dial indicator rim-and-face shaft alignment, and V-belt
-  sheave deflection testing.
+  '
+outline: 'Bearing classifications and load vectors (radial vs axial/thrust); standard bearing numbering
+  code system (e.g., 6205, 6308); bearing fits and mounting methods (induction heaters, hot oil baths
+  at 110°C, mechanical bearing fitting tools — never press across rolling elements); shaft keyways (parallel,
+  woodruff, feather) and failure modes; shaft alignment principles (angular vs parallel offset); straightedge,
+  feeler gauge, and rim-and-face dial indicator methods; V-belt drive alignment, sheave wear, and tension
+  testing (16 mm deflection per metre of span).
 
-outline: >
-  Bearing classifications and load vectors (radial vs axial/thrust); standard
-  bearing numbering code system (e.g., 6205, 6308); bearing fits and mounting
-  methods (induction heaters, hot oil baths at 110°C, mechanical bearing fitting
-  tools — never press across rolling elements); shaft keyways (parallel, woodruff,
-  feather) and failure modes; shaft alignment principles (angular vs parallel offset);
-  straightedge, feeler gauge, and rim-and-face dial indicator methods; V-belt drive
-  alignment, sheave wear, and tension testing (16 mm deflection per metre of span).
-
-content_md: |
-  ## Bearing Types & Load Vectors
-
-  Rotating shafts experience three primary load conditions:
-  - **Radial load**: Acting perpendicular to the shaft axis (e.g., belt pull, gear meshing).
-  - **Axial (Thrust) load**: Acting parallel along the shaft axis (e.g., hydro turbine water thrust, propeller shafts).
-  - **Combined load**: Simultaneous radial and axial force vectors.
-
-  | Bearing Type | Radial Capacity | Axial Capacity | Common Application |
-  |---|---|---|---|
-  | **Deep-Groove Ball (6000 series)** | High | Moderate (both directions) | Electric motors, centrifugal water pumps |
-  | **Cylindrical Roller (N/NU series)** | Very high | Zero (unless flange-guided) | Heavy reduction gearboxes, conveyor head drives |
-  | **Tapered Roller (30000 series)** | Very high | Very high (one direction) | Vehicle wheel hubs, mill main shafts (mounted in opposed pairs) |
-  | **Spherical Roller (20000 series)** | Extreme | High (self-aligning) | Crushing mills, turbine shafts with frame flex |
-  | **Pillow Block (UCP series)** | Moderate | Light (self-aligning insert) | Agricultural conveyors, grain augers |
-
-  ## Decoding Standard Bearing Numbers (e.g., 6205-2RS-C3)
-
-  - **First digit (`6`)**: Bearing type (`6` = Deep-groove single-row ball bearing).
-  - **Second digit (`2`)**: Series / robustness (`0` = extra light, `2` = light, `3` = medium, `4` = heavy).
-  - **Last two digits (`05`)**: Bore diameter.
-    - Code `00` = 10 mm bore
-    - Code `01` = 12 mm bore
-    - Code `02` = 15 mm bore
-    - Code `03` = 17 mm bore
-    - **Codes `04` and above**: Multiply the last two digits by **5 mm**.
-      - `05` $\times 5 =$ **25 mm bore**.
-      - `08` $\times 5 =$ **40 mm bore**.
-      - `12` $\times 5 =$ **60 mm bore**.
-  - **Suffixes**:
-    - `2RS`: Dual rubber contact seals (dustproof, pre-greased for life).
-    - `ZZ` or `2Z`: Dual stamped non-contact metal shields.
-    - `C3`: Internal radial clearance greater than normal (used where heat expands inner race).
-
-  ## Precision Bearing Mounting Protocol
-
-  The golden rule of bearing installation:
-  **NEVER TRANSMIT MOUNTING FORCE THROUGH THE ROLLING ELEMENTS.**
-  - If pressing onto a **shaft (interference fit on inner ring)**: Apply force strictly to the **inner ring**.
-  - If pressing into a **housing (interference fit on outer ring)**: Apply force strictly to the **outer ring**.
-
-  ### Thermal Mounting (The Professional Method):
-  1. Heat the bearing uniformly to **100°C – 110°C** using an induction heater or clean mineral oil bath.
-  2. *Caution*: **Never exceed 120°C**; overheating softens the hardened bearing steel and melts synthetic seals.
-  3. Thermal expansion enlarges the inner ring by ~0.03 mm, allowing the bearing to slide effortlessly onto the shaft journal without pressing.
-  4. Hold firmly against the shaft shoulder until it cools and grips.
-
-  ## Shaft Alignment Fundamentals
-
-  Two coupled shafts (e.g., electric motor driving a water pump) suffer from two forms of misalignment:
-  - **Parallel Misalignment (Offset)**: Shaft axes are parallel but displaced laterally.
-  - **Angular Misalignment**: Shaft axes meet at an angle.
-
-  ### Alignment Tolerances:
-  At 1500–3000 RPM, acceptable offset is **< 0.05 mm** and angularity is **< 0.04 mm / 100 mm**.
-
-  ### Rim-and-Face Method with Dial Indicator:
-  1. Mount dial indicator magnetic base on driver hub; place probe tip against driven hub perimeter (Rim = parallel offset).
-  2. Mount second dial indicator probe on driven hub face (Face = angularity).
-  3. Zero both dials at 12 o'clock (0°).
-  4. Rotate both shafts simultaneously 360°, recording readings at 3 o'clock (90°), 6 o'clock (180°), and 9 o'clock (270°).
-  5. Correct vertical errors by placing precision stainless steel shims under motor feet; correct horizontal errors using side jack bolts.
-
-  ## V-Belt Drive Maintenance
-
-  V-belts transmit torque via wedging friction against sheave sidewalls, not by bottoming out.
-  - **Bottoming Out**: If the belt rides on the bottom of the pulley groove, replace the worn sheave immediately; torque capability drops by 70%.
-  - **Sheave Alignment**: Check with a straightedge across both pulley faces. The four contact points must touch within 0.5 mm.
-  - **Tension Rule of Thumb**:
-    Deflect the belt at mid-span using a spring scale. The belt should deflect **16 mm per 1 metre of center-to-center span** under standard thumb pressure (~20–40 N depending on belt section A, B, or C).
-
+  '
+content_md: "## Bearing Types & Load Vectors\n\nRotating shafts experience three primary load conditions:\n\
+  - **Radial load**: Acting perpendicular to the shaft axis (e.g., belt pull, gear meshing).\n- **Axial\
+  \ (Thrust) load**: Acting parallel along the shaft axis (e.g., hydro turbine water thrust, propeller\
+  \ shafts).\n- **Combined load**: Simultaneous radial and axial force vectors.\n\n| Bearing Type | Radial\
+  \ Capacity | Axial Capacity | Common Application |\n|---|---|---|---|\n| **Deep-Groove Ball (6000 series)**\
+  \ | High | Moderate (both directions) | Electric motors, centrifugal water pumps |\n| **Cylindrical\
+  \ Roller (N/NU series)** | Very high | Zero (unless flange-guided) | Heavy reduction gearboxes, conveyor\
+  \ head drives |\n| **Tapered Roller (30000 series)** | Very high | Very high (one direction) | Vehicle\
+  \ wheel hubs, mill main shafts (mounted in opposed pairs) |\n| **Spherical Roller (20000 series)** |\
+  \ Extreme | High (self-aligning) | Crushing mills, turbine shafts with frame flex |\n| **Pillow Block\
+  \ (UCP series)** | Moderate | Light (self-aligning insert) | Agricultural conveyors, grain augers |\n\
+  \n## Decoding Standard Bearing Numbers (e.g., 6205-2RS-C3)\n\n- **First digit (`6`)**: Bearing type\
+  \ (`6` = Deep-groove single-row ball bearing).\n- **Second digit (`2`)**: Series / robustness (`0` =\
+  \ extra light, `2` = light, `3` = medium, `4` = heavy).\n- **Last two digits (`05`)**: Bore diameter.\n\
+  \  - Code `00` = 10 mm bore\n  - Code `01` = 12 mm bore\n  - Code `02` = 15 mm bore\n  - Code `03` =\
+  \ 17 mm bore\n  - **Codes `04` and above**: Multiply the last two digits by **5 mm**.\n    - `05` $\\\
+  times 5 =$ **25 mm bore**.\n    - `08` $\\times 5 =$ **40 mm bore**.\n    - `12` $\\times 5 =$ **60\
+  \ mm bore**.\n- **Suffixes**:\n  - `2RS`: Dual rubber contact seals (dustproof, pre-greased for life).\n\
+  \  - `ZZ` or `2Z`: Dual stamped non-contact metal shields.\n  - `C3`: Internal radial clearance greater\
+  \ than normal (used where heat expands inner race).\n\n## Precision Bearing Mounting Protocol\n\nThe\
+  \ golden rule of bearing installation:\n**NEVER TRANSMIT MOUNTING FORCE THROUGH THE ROLLING ELEMENTS.**\n\
+  - If pressing onto a **shaft (interference fit on inner ring)**: Apply force strictly to the **inner\
+  \ ring**.\n- If pressing into a **housing (interference fit on outer ring)**: Apply force strictly to\
+  \ the **outer ring**.\n\n### Thermal Mounting (The Professional Method):\n1. Heat the bearing uniformly\
+  \ to **100°C – 110°C** using an induction heater or clean mineral oil bath.\n2. *Caution*: **Never exceed\
+  \ 120°C**; overheating softens the hardened bearing steel and melts synthetic seals.\n3. Thermal expansion\
+  \ enlarges the inner ring by ~0.03 mm, allowing the bearing to slide effortlessly onto the shaft journal\
+  \ without pressing.\n4. Hold firmly against the shaft shoulder until it cools and grips.\n\n## Shaft\
+  \ Alignment Fundamentals\n\nTwo coupled shafts (e.g., electric motor driving a water pump) suffer from\
+  \ two forms of misalignment:\n- **Parallel Misalignment (Offset)**: Shaft axes are parallel but displaced\
+  \ laterally.\n- **Angular Misalignment**: Shaft axes meet at an angle.\n\n### Alignment Tolerances:\n\
+  At 1500–3000 RPM, acceptable offset is **< 0.05 mm** and angularity is **< 0.04 mm / 100 mm**.\n\n###\
+  \ Rim-and-Face Method with Dial Indicator:\n1. Mount dial indicator magnetic base on driver hub; place\
+  \ probe tip against driven hub perimeter (Rim = parallel offset).\n2. Mount second dial indicator probe\
+  \ on driven hub face (Face = angularity).\n3. Zero both dials at 12 o'clock (0°).\n4. Rotate both shafts\
+  \ simultaneously 360°, recording readings at 3 o'clock (90°), 6 o'clock (180°), and 9 o'clock (270°).\n\
+  5. Correct vertical errors by placing precision stainless steel shims under motor feet; correct horizontal\
+  \ errors using side jack bolts.\n\n## V-Belt Drive Maintenance\n\nV-belts transmit torque via wedging\
+  \ friction against sheave sidewalls, not by bottoming out.\n- **Bottoming Out**: If the belt rides on\
+  \ the bottom of the pulley groove, replace the worn sheave immediately; torque capability drops by 70%.\n\
+  - **Sheave Alignment**: Check with a straightedge across both pulley faces. The four contact points\
+  \ must touch within 0.5 mm.\n- **Tension Rule of Thumb**:\n  Deflect the belt at mid-span using a spring\
+  \ scale. The belt should deflect **16 mm per 1 metre of center-to-center span** under standard thumb\
+  \ pressure (~20–40 N depending on belt section A, B, or C).\n"
 exercises:
-  - id: mech-d4-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A technician orders a deep-groove ball bearing stamped '6308-2RS'. What is
-      the internal bore diameter of this bearing?
-    xp_reward: 50
-    options:
-      - text: "40 mm"
-        correct: true
-        explanation: "For bearing codes 04 and higher, multiply the last two digits by 5 mm. Bore = 08 × 5 = 40 mm. (6 = deep groove, 3 = medium series, 2RS = dual rubber contact seals)."
-      - text: "8 mm"
-        correct: false
-        explanation: "08 does not mean 8 mm; 8 mm is not a standard bearing code."
-      - text: "30 mm"
-        correct: false
-        explanation: "30 mm bore corresponds to code 06 (06 × 5 = 30)."
-      - text: "63 mm"
-        correct: false
-        explanation: "The first two digits indicate type and series, not bore size."
+- id: mech-d4-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A technician orders a deep-groove ball bearing stamped ''6308-2RS''. What is the internal bore
+    diameter of this bearing?
 
-  - id: mech-d4-q2
-    type: FILL_BLANK
-    prompt: >
-      When heating a ball bearing in an oil bath or induction heater for interference
-      mounting onto a shaft, the maximum allowable temperature is ___ degrees C,
-      because exceeding this threshold anneals the hardened steel raceways and melts
-      internal seals.
-    xp_reward: 50
-    correct_answer: "120 degrees C"
-    explanation: >
-      Bearing steels are tempered between 150°C and 200°C. Exceeding 120°C risks
-      structural metallurgic softening, dimensional distortion, and damage to pre-lubricated seals.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 8 mm
+  - id: b
+    text: 30 mm
+  - id: c
+    text: 63 mm
+  - id: d
+    text: 40 mm
+  explanation: 'For bearing codes 04 and higher, multiply the last two digits by 5 mm. Bore = 08 × 5 =
+    40 mm. (6 = deep groove, 3 = medium series, 2RS = dual rubber contact seals).
 
-  - id: mech-d4-q3
-    type: MATCH_PAIRS
-    prompt: Match each bearing installation and drive practice to its technical rule.
-    xp_reward: 50
-    pairs:
-      - left: Shaft interference press-fit
-        right: Apply pressing force strictly to the inner ring
-      - left: Housing interference press-fit
-        right: Apply pressing force strictly to the outer ring
-      - left: V-Belt tension rule
-        right: Deflect 16 mm per 1 metre of centre-to-centre pulley span
-      - left: Sheave groove wear
-        right: Belt must never ride on or touch the bottom floor of the pulley groove
-    correct_answer: null
-    explanation: >
-      Force must never pass across the balls/rollers, as this causes brinelling indentations.
-      V-belts drive strictly on sidewall wedging.
 
-  - id: mech-d4-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      What damage occurs if an apprentice uses a steel sledgehammer to drive a bearing
-      onto a shaft by striking the outer race?
-    xp_reward: 50
-    options:
-      - text: "True Brinelling — the high impact forces are transmitted through the ball bearings into the raceways, denting the precision ground races and causing early noisy bearing failure"
-        correct: true
-        explanation: "Striking the outer ring to drive the inner ring forces the balls to transmit the sledgehammer shock. The hardened steel balls indent the precision raceway (true brinelling), leading to rapid fatigue spalling within hours of operation."
-      - text: "The bearing shaft will bend but the bearing remains undamaged"
-        correct: false
-        explanation: "The bearing raceways are severely damaged long before a solid shaft bends."
-      - text: "The outer race becomes magnetic"
-        correct: false
-        explanation: "Impact does not magnetize hardened bearing steel."
-      - text: "The clearance increases from C3 to C4"
-        correct: false
-        explanation: "Radial clearance is not widened; rather, raceway geometry is destroyed by craters."
+    Why the other options are wrong: 08 does not mean 8 mm; 8 mm is not a standard bearing code. 30 mm
+    bore corresponds to code 06 (06 × 5 = 30). The first two digits indicate type and series, not bore
+    size.'
+  correct_answer: d
+- id: mech-d4-q2
+  type: FILL_BLANK
+  prompt: 'When heating a ball bearing in an oil bath or induction heater for interference mounting onto
+    a shaft, the maximum allowable temperature is ___ degrees C, because exceeding this threshold anneals
+    the hardened steel raceways and melts internal seals.
 
-  - id: mech-d4-q5
-    type: FILL_BLANK
-    prompt: >
-      The two types of shaft misalignment measured during rim-and-face dial indicator
-      coupling checks are ___ misalignment (offset) and ___ misalignment.
-    xp_reward: 50
-    correct_answer: "parallel; angular"
-    explanation: >
-      Parallel offset represents center-to-center lateral axis displacement, while
-      angularity represents non-parallel shaft intersection. Both must be corrected
-      with shims and lateral adjustment.
+    '
+  xp_reward: 50
+  correct_answer: 120 degrees C
+  explanation: 'Bearing steels are tempered between 150°C and 200°C. Exceeding 120°C risks structural
+    metallurgic softening, dimensional distortion, and damage to pre-lubricated seals.
+
+    '
+- id: mech-d4-q3
+  type: MATCH_PAIRS
+  prompt: Match each bearing installation and drive practice to its technical rule.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Shaft interference press-fit
+    right:
+      id: r-733669
+      text: Apply pressing force strictly to the inner ring
+  - left:
+      id: l2
+      text: Housing interference press-fit
+    right:
+      id: r-54301e
+      text: Apply pressing force strictly to the outer ring
+  - left:
+      id: l3
+      text: V-Belt tension rule
+    right:
+      id: r-42ea57
+      text: Deflect 16 mm per 1 metre of centre-to-centre pulley span
+  - left:
+      id: l4
+      text: Sheave groove wear
+    right:
+      id: r-6ae408
+      text: Belt must never ride on or touch the bottom floor of the pulley groove
+  correct_answer:
+  - l1=r-733669
+  - l2=r-54301e
+  - l3=r-42ea57
+  - l4=r-6ae408
+  explanation: 'Force must never pass across the balls/rollers, as this causes brinelling indentations.
+    V-belts drive strictly on sidewall wedging.
+
+    '
+- id: mech-d4-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'What damage occurs if an apprentice uses a steel sledgehammer to drive a bearing onto a shaft
+    by striking the outer race?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: True Brinelling — the high impact forces are transmitted through the ball bearings into the
+      raceways, denting the precision ground races and causing early noisy bearing failure
+  - id: b
+    text: The bearing shaft will bend but the bearing remains undamaged
+  - id: c
+    text: The outer race becomes magnetic
+  - id: d
+    text: The clearance increases from C3 to C4
+  explanation: 'Striking the outer ring to drive the inner ring forces the balls to transmit the sledgehammer
+    shock. The hardened steel balls indent the precision raceway (true brinelling), leading to rapid fatigue
+    spalling within hours of operation.
+
+
+    Why the other options are wrong: The bearing raceways are severely damaged long before a solid shaft
+    bends. Impact does not magnetize hardened bearing steel. Radial clearance is not widened; rather,
+    raceway geometry is destroyed by craters.'
+  correct_answer: a
+- id: mech-d4-q5
+  type: FILL_BLANK
+  prompt: 'The two types of shaft misalignment measured during rim-and-face dial indicator coupling checks
+    are ___ misalignment (offset) and ___ misalignment.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - parallel
+  - angular
+  explanation: 'Parallel offset represents center-to-center lateral axis displacement, while angularity
+    represents non-parallel shaft intersection. Both must be corrected with shims and lateral adjustment.
+
+    '

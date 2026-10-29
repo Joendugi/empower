@@ -1,219 +1,225 @@
 id: veterinary-animal-husbandry-day-3
 course_id: veterinary-animal-husbandry
-title: "Pastoral Vaccine Management & Biosecurity Protocols"
-title_sw: "Usimamizi wa Chanjo za Mifugo na Mipango ya Kuzuia Magonjwa (Biosecurity)"
+title: Pastoral Vaccine Management & Biosecurity Protocols
+title_sw: Usimamizi wa Chanjo za Mifugo na Mipango ya Kuzuia Magonjwa (Biosecurity)
 week_number: 1
 day_number: 3
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - veterinary
-  - vaccines
-  - cold-chain
-  - anthrax
-  - blackquarter
-  - cbpp
-  - biosecurity
+- veterinary
+- vaccines
+- cold-chain
+- anthrax
+- blackquarter
+- cbpp
+- biosecurity
 xp: 250
 exam_domain: veterinary-animal-husbandry
+briefing: 'In pastoral ecosystems, acute epidemic diseases—Anthrax, Blackquarter (Blackleg), Contagious
+  Bovine Pleuropneumonia (CBPP), and Peste des Petits Ruminants (PPR)—can decimate 50% of a district''s
+  livestock population within weeks. Prevention via mass immunization is infinitely cheaper than treatment.
+  However, veterinary vaccines consist of delicate live-attenuated organisms or fragile protein toxoids
+  that instantly denature if exposed to direct sunlight or ambient desert heat above 8°C. This lesson
+  covers high-consequence pastoral epizootics, the solar-direct drive vaccine cold chain, reconstitution
+  protocols, needle hygiene, and carcass disposal biosecurity (never opening an Anthrax carcass).
 
-briefing: >
-  In pastoral ecosystems, acute epidemic diseases—Anthrax, Blackquarter (Blackleg),
-  Contagious Bovine Pleuropneumonia (CBPP), and Peste des Petits Ruminants (PPR)—can
-  decimate 50% of a district's livestock population within weeks. Prevention via mass
-  immunization is infinitely cheaper than treatment. However, veterinary vaccines
-  consist of delicate live-attenuated organisms or fragile protein toxoids that
-  instantly denature if exposed to direct sunlight or ambient desert heat above 8°C.
-  This lesson covers high-consequence pastoral epizootics, the solar-direct drive
-  vaccine cold chain, reconstitution protocols, needle hygiene, and carcass disposal
-  biosecurity (never opening an Anthrax carcass).
+  '
+outline: 'High-consequence pastoral epizootics: Anthrax (Bacillus anthracis), Blackquarter (Clostridium
+  chauvoei), CBPP (Mycoplasma mycoides), Foot-and-Mouth Disease (FMD), and PPR (goat plague); the veterinary
+  cold chain (+2°C to +8°C requirements, conditioned icepacks in vaccine carriers); live lyophilized vaccines
+  vs killed bacterin toxoids; reconstitution rules (sterile diluents, 2-hour field viability window);
+  injection site anatomy: Subcutaneous (SC) loose neck tenting vs Intramuscular (IM) triangular neck zone;
+  syringe calibration and automatic multi-dose drenchers; the fatal Anthrax biosecurity rule: sudden death
+  with dark unclotted blood from orifices, strict prohibition of necropsy/slaughter, and 2-metre deep
+  pit burial with quicklime.
 
-outline: >
-  High-consequence pastoral epizootics: Anthrax (Bacillus anthracis), Blackquarter
-  (Clostridium chauvoei), CBPP (Mycoplasma mycoides), Foot-and-Mouth Disease (FMD),
-  and PPR (goat plague); the veterinary cold chain (+2°C to +8°C requirements,
-  conditioned icepacks in vaccine carriers); live lyophilized vaccines vs killed
-  bacterin toxoids; reconstitution rules (sterile diluents, 2-hour field viability
-  window); injection site anatomy: Subcutaneous (SC) loose neck tenting vs Intramuscular
-  (IM) triangular neck zone; syringe calibration and automatic multi-dose drenchers;
-  the fatal Anthrax biosecurity rule: sudden death with dark unclotted blood from orifices,
-  strict prohibition of necropsy/slaughter, and 2-metre deep pit burial with quicklime.
-
-content_md: |
-  ## High-Consequence Pastoral Epizootics
-
-  Pastoral paravets must rapidly differentiate five deadly herd diseases:
-
-  | Disease | Pathogen Type | Target Species | Cardinal Clinical Signs | Post-Mortem / Danger |
-  |---|---|---|---|---|
-  | **Anthrax** (*Kimeta*) | Spore-forming bacterium (*Bacillus anthracis*) | All mammals, humans (Zoonotic!) | Sudden death; dark, tarry, **unclotted blood oozing from mouth, nose, anus**; zero rigor mortis | **DO NOT OPEN CARCASS!** Air exposure triggers indestructible spores |
-  | **Blackquarter (Blackleg)** | Anaerobic spore bacterium (*Clostridium chauvoei*) | Young cattle (6 to 24 months) | Severe lameness, hot painful swelling on thigh/shoulder that becomes cold, painless, and **crackles under skin (crepitation)** | Muscle is black, dry, porous, smelling of rancid butter |
-  | **CBPP** (*Homa ya Mapafu*) | Mollicute (*Mycoplasma mycoides*) | Cattle only | High fever, painful coughing, breathing with outstretched neck, elbow abduction | Lungs look like marbled granite; massive yellow pleural fluid |
-  | **Peste des Petits Ruminants (PPR)** | Morbillivirus | Sheep and Goats | High fever, crusty ocular/nasal discharge, necrotic mouth ulcers, explosive foul diarrhea | High mortality (50–80%) in small ruminants |
-  | **Foot-and-Mouth (FMD)** | Aphthovirus | Cattle, pigs, sheep | Excessive ropy salivation (drooling), painful vesicles/blisters on tongue, dental pad, and coronary band above hooves | Highly contagious; lameness, production drop |
-
-  ---
-
-  ## The Veterinary Vaccine Cold Chain (+2°C to +8°C)
-
-  Vaccines are biological agents. Exposure to heat denatures antigens, turning a costly
-  immunization campaign into an injection of useless sterile water.
-
-  ### Temperature Standards:
-  - **Storage Window**: Strictly **+2°C to +8°C** at all times.
-  - **Freezing Damage**:
-    - **Never freeze liquid toxoid/adjuvanted vaccines** (Anthrax-Blackquarter combined, FMD). Freezing causes aluminum hydroxide adjuvants to precipitate into coarse, irreversible crystals that destroy potency.
-    - Freeze-dried (lyophilized) live vaccines (CBPP T1/44, PPR, Sheep Pox) can be stored frozen ($-20^\circ\text{C}$) at central depots, but must remain at **+2°C to +8°C** once transported to field carriers.
-
-  ### Vaccine Carrier Packing Protocol:
-  1. Remove hard-frozen water packs from the freezer; leave at room temperature until water droplets form and ice inside sloshes (**Conditioned Icepacks** at 0°C).
-  2. Line the four walls of the insulated vaccine carrier with conditioned packs.
-  3. Place vaccines inside a waterproof plastic container in the center (never touching icepacks directly).
-  4. Keep a dial stem thermometer or electronic data logger inside the carrier.
-  5. Keep the carrier in deep vehicle shade; open only momentarily when drawing doses.
-
-  ## Reconstitution & Field Viability Protocols
-
-  1. **Sterile Diluent Only**: Reconstitute freeze-dried pellets (PPR, CBPP) strictly with the manufacturer's supplied sterile buffered saline. Never use tap water, rainwater, or borehole water (trace minerals or chlorine kill live vaccine strains instantly).
-  2. **Equalize Temperatures**: Ensure diluent is at the same temperature (+2°C to +8°C) as the vaccine vial before mixing.
-  3. **The 2-Hour Expiration Rule**:
-     - Once reconstituted, **live vaccines must be administered within 2 hours**.
-     - Keep the reconstituted vial sitting inside an insulated ice water hole in the field.
-     - Discard any unused reconstituted vaccine after 2 hours; live viral/mycoplasma titers drop below protective immunogenic thresholds.
-
-  ## Safe Injection Routes & Anatomical Zones
-
-  Proper injection prevents muscle damage that ruins commercial meat cuts and avoids
-  hitting major nerves or blood vessels:
-
-  ```
-                       BOVINE NECK INJECTION ZONES
-                 ┌──────────────────────────────────────┐
-                 │    Upper Boundary: Nuchal Ligament   │
-                 │   \                                / │
-                 │    \    TRIANGLE FOR IM INJECTION /  │
-                 │     \                            /   │
-                 │      \                          /    │
-                 │       \                        /     │
-                 │   Lower: Cervical Vertebrae  Front: Shoulder Joint
-                 └──────────────────────────────────────┘
-  ```
-
-  ### 1. Subcutaneous (SC) Injection — Loose Skin Tenting:
-  - Used for vaccines (Anthrax, Blackquarter) and certain parasiticides (Ivermectin).
-  - Site: The loose skin on the side of the neck in front of the shoulder.
-  - **Technique**: Lift a triangular fold of skin with your non-dominant hand (**the tent**). Insert an 18-gauge 25 mm needle at a **45° angle** directly into the hollow base of the tent under the skin.
-  - Depress plunger; release skin. Feel that the fluid pocket sits freely under the skin without leaking.
-
-  ### 2. Intramuscular (IM) Injection — The Safe Neck Triangle:
-  - Used for antibiotics (Oxytetracycline, Penicillin) and antiprotozoals (Buparvaquone, Diminazene).
-  - Site: The **Muscular Triangle of the Neck**:
-    - **Top boundary**: Below the nuchal crest ligament (spine of neck).
-    - **Bottom boundary**: Above the cervical vertebrae bones.
-    - **Back boundary**: In front of the shoulder blade edge.
-  - **Technique**: Strike the muscle firmly twice with your knuckles to desensitize the animal, then plunge an 18-gauge 38 mm (1.5-inch) needle perpendicular at **90° deep into the muscle**.
-  - **Aspirate before injecting**: Pull back on plunger. If blood appears in the syringe, you have hit a blood vessel! Withdraw needle 10 mm, redirect, verify no blood, then inject slowly.
-
-  ## Biosecurity & Carcass Disposal: The Anthrax Rule
-
-  **CRITICAL BIOSECURITY WARNING: SUSPECTED ANTHRAX**
-  If a cow, sheep, or goat dies suddenly with dark, tar-like, unclotted blood oozing
-  from the nostrils, mouth, or rectum:
-
-  ### THE GOLDEN RULE: NEVER OPEN THE CARCASS!
-  - Inside the intact dead body, vegetative *Bacillus anthracis* bacteria are trapped in an anaerobic environment and die within 48 to 72 hours from putrefaction.
-  - **If the carcass is opened (by cutting, butchering for meat, or scavenger animals)**:
-    Contact with atmospheric oxygen triggers the bacteria to transform into **indestructible bacterial spores** that contaminate the soil for **over 50 to 70 years**, poisoning all future herds that graze there.
-
-  ### Safe Field Disposal Protocol:
-  1. Do not butcher! Do not skin! Do not drag along the ground!
-  2. Excavate a burial pit **minimum 2.0 metres (6 feet) deep**.
-  3. Line the pit floor with a 50 mm layer of **powdered quicklime (calcium oxide, CaO)** or unslaked lime.
-  4. Roll the whole, unopened carcass into the pit.
-  5. Cover the carcass generously with another heavy layer of quicklime.
-  6. Backfill with soil, packing it into an elevated mound so rain does not wash into the pit, and surround with thorny acacia branches to deter hyenas and dogs.
-
+  '
+content_md: "## High-Consequence Pastoral Epizootics\n\nPastoral paravets must rapidly differentiate five\
+  \ deadly herd diseases:\n\n| Disease | Pathogen Type | Target Species | Cardinal Clinical Signs | Post-Mortem\
+  \ / Danger |\n|---|---|---|---|---|\n| **Anthrax** (*Kimeta*) | Spore-forming bacterium (*Bacillus anthracis*)\
+  \ | All mammals, humans (Zoonotic!) | Sudden death; dark, tarry, **unclotted blood oozing from mouth,\
+  \ nose, anus**; zero rigor mortis | **DO NOT OPEN CARCASS!** Air exposure triggers indestructible spores\
+  \ |\n| **Blackquarter (Blackleg)** | Anaerobic spore bacterium (*Clostridium chauvoei*) | Young cattle\
+  \ (6 to 24 months) | Severe lameness, hot painful swelling on thigh/shoulder that becomes cold, painless,\
+  \ and **crackles under skin (crepitation)** | Muscle is black, dry, porous, smelling of rancid butter\
+  \ |\n| **CBPP** (*Homa ya Mapafu*) | Mollicute (*Mycoplasma mycoides*) | Cattle only | High fever, painful\
+  \ coughing, breathing with outstretched neck, elbow abduction | Lungs look like marbled granite; massive\
+  \ yellow pleural fluid |\n| **Peste des Petits Ruminants (PPR)** | Morbillivirus | Sheep and Goats |\
+  \ High fever, crusty ocular/nasal discharge, necrotic mouth ulcers, explosive foul diarrhea | High mortality\
+  \ (50–80%) in small ruminants |\n| **Foot-and-Mouth (FMD)** | Aphthovirus | Cattle, pigs, sheep | Excessive\
+  \ ropy salivation (drooling), painful vesicles/blisters on tongue, dental pad, and coronary band above\
+  \ hooves | Highly contagious; lameness, production drop |\n\n---\n\n## The Veterinary Vaccine Cold Chain\
+  \ (+2°C to +8°C)\n\nVaccines are biological agents. Exposure to heat denatures antigens, turning a costly\n\
+  immunization campaign into an injection of useless sterile water.\n\n### Temperature Standards:\n- **Storage\
+  \ Window**: Strictly **+2°C to +8°C** at all times.\n- **Freezing Damage**:\n  - **Never freeze liquid\
+  \ toxoid/adjuvanted vaccines** (Anthrax-Blackquarter combined, FMD). Freezing causes aluminum hydroxide\
+  \ adjuvants to precipitate into coarse, irreversible crystals that destroy potency.\n  - Freeze-dried\
+  \ (lyophilized) live vaccines (CBPP T1/44, PPR, Sheep Pox) can be stored frozen ($-20^\\circ\\text{C}$)\
+  \ at central depots, but must remain at **+2°C to +8°C** once transported to field carriers.\n\n###\
+  \ Vaccine Carrier Packing Protocol:\n1. Remove hard-frozen water packs from the freezer; leave at room\
+  \ temperature until water droplets form and ice inside sloshes (**Conditioned Icepacks** at 0°C).\n\
+  2. Line the four walls of the insulated vaccine carrier with conditioned packs.\n3. Place vaccines inside\
+  \ a waterproof plastic container in the center (never touching icepacks directly).\n4. Keep a dial stem\
+  \ thermometer or electronic data logger inside the carrier.\n5. Keep the carrier in deep vehicle shade;\
+  \ open only momentarily when drawing doses.\n\n## Reconstitution & Field Viability Protocols\n\n1. **Sterile\
+  \ Diluent Only**: Reconstitute freeze-dried pellets (PPR, CBPP) strictly with the manufacturer's supplied\
+  \ sterile buffered saline. Never use tap water, rainwater, or borehole water (trace minerals or chlorine\
+  \ kill live vaccine strains instantly).\n2. **Equalize Temperatures**: Ensure diluent is at the same\
+  \ temperature (+2°C to +8°C) as the vaccine vial before mixing.\n3. **The 2-Hour Expiration Rule**:\n\
+  \   - Once reconstituted, **live vaccines must be administered within 2 hours**.\n   - Keep the reconstituted\
+  \ vial sitting inside an insulated ice water hole in the field.\n   - Discard any unused reconstituted\
+  \ vaccine after 2 hours; live viral/mycoplasma titers drop below protective immunogenic thresholds.\n\
+  \n## Safe Injection Routes & Anatomical Zones\n\nProper injection prevents muscle damage that ruins\
+  \ commercial meat cuts and avoids\nhitting major nerves or blood vessels:\n\n```\n                 \
+  \    BOVINE NECK INJECTION ZONES\n               ┌──────────────────────────────────────┐\n        \
+  \       │    Upper Boundary: Nuchal Ligament   │\n               │   \\                            \
+  \    / │\n               │    \\    TRIANGLE FOR IM INJECTION /  │\n               │     \\        \
+  \                    /   │\n               │      \\                          /    │\n             \
+  \  │       \\                        /     │\n               │   Lower: Cervical Vertebrae  Front: Shoulder\
+  \ Joint\n               └──────────────────────────────────────┘\n```\n\n### 1. Subcutaneous (SC) Injection\
+  \ — Loose Skin Tenting:\n- Used for vaccines (Anthrax, Blackquarter) and certain parasiticides (Ivermectin).\n\
+  - Site: The loose skin on the side of the neck in front of the shoulder.\n- **Technique**: Lift a triangular\
+  \ fold of skin with your non-dominant hand (**the tent**). Insert an 18-gauge 25 mm needle at a **45°\
+  \ angle** directly into the hollow base of the tent under the skin.\n- Depress plunger; release skin.\
+  \ Feel that the fluid pocket sits freely under the skin without leaking.\n\n### 2. Intramuscular (IM)\
+  \ Injection — The Safe Neck Triangle:\n- Used for antibiotics (Oxytetracycline, Penicillin) and antiprotozoals\
+  \ (Buparvaquone, Diminazene).\n- Site: The **Muscular Triangle of the Neck**:\n  - **Top boundary**:\
+  \ Below the nuchal crest ligament (spine of neck).\n  - **Bottom boundary**: Above the cervical vertebrae\
+  \ bones.\n  - **Back boundary**: In front of the shoulder blade edge.\n- **Technique**: Strike the muscle\
+  \ firmly twice with your knuckles to desensitize the animal, then plunge an 18-gauge 38 mm (1.5-inch)\
+  \ needle perpendicular at **90° deep into the muscle**.\n- **Aspirate before injecting**: Pull back\
+  \ on plunger. If blood appears in the syringe, you have hit a blood vessel! Withdraw needle 10 mm, redirect,\
+  \ verify no blood, then inject slowly.\n\n## Biosecurity & Carcass Disposal: The Anthrax Rule\n\n**CRITICAL\
+  \ BIOSECURITY WARNING: SUSPECTED ANTHRAX**\nIf a cow, sheep, or goat dies suddenly with dark, tar-like,\
+  \ unclotted blood oozing\nfrom the nostrils, mouth, or rectum:\n\n### THE GOLDEN RULE: NEVER OPEN THE\
+  \ CARCASS!\n- Inside the intact dead body, vegetative *Bacillus anthracis* bacteria are trapped in an\
+  \ anaerobic environment and die within 48 to 72 hours from putrefaction.\n- **If the carcass is opened\
+  \ (by cutting, butchering for meat, or scavenger animals)**:\n  Contact with atmospheric oxygen triggers\
+  \ the bacteria to transform into **indestructible bacterial spores** that contaminate the soil for **over\
+  \ 50 to 70 years**, poisoning all future herds that graze there.\n\n### Safe Field Disposal Protocol:\n\
+  1. Do not butcher! Do not skin! Do not drag along the ground!\n2. Excavate a burial pit **minimum 2.0\
+  \ metres (6 feet) deep**.\n3. Line the pit floor with a 50 mm layer of **powdered quicklime (calcium\
+  \ oxide, CaO)** or unslaked lime.\n4. Roll the whole, unopened carcass into the pit.\n5. Cover the carcass\
+  \ generously with another heavy layer of quicklime.\n6. Backfill with soil, packing it into an elevated\
+  \ mound so rain does not wash into the pit, and surround with thorny acacia branches to deter hyenas\
+  \ and dogs.\n"
 exercises:
-  - id: vet-d3-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A pastoralist finds an adult cow dead in the pasture with no prior illness.
-      Dark, tarry blood is slowly oozing from the nose and rectum, and the blood shows
-      no signs of clotting. What action must the paravet enforce immediately?
-    xp_reward: 50
-    options:
-      - text: "Strictly forbid butchering, opening, or skinning the carcass; bury the whole unopened carcass at least 2 metres deep covered in quicklime, as opening it exposes Bacillus anthracis to oxygen, triggering deadly soil-contaminating spores"
-        correct: true
-        explanation: "Anthrax (Bacillus anthracis) produces indestructible spores only upon exposure to atmospheric oxygen. Opening or butchering the carcass contaminates the soil for decades and exposes humans to lethal cutaneous, gastrointestinal, or pulmonary anthrax."
-      - text: "Perform an immediate post-mortem necropsy to examine the liver"
-        correct: false
-        explanation: "Performing a necropsy is the single most dangerous mistake; it spreads anthrax spores across the entire pasture."
-      - text: "Butcher the meat quickly and boil it for human consumption"
-        correct: false
-        explanation: "Consuming anthrax meat causes severe intestinal anthrax with near 100% human mortality."
-      - text: "Drag the carcass into the nearest river to wash it away"
-        correct: false
-        explanation: "This poisons the entire downstream water supply for hundreds of people and livestock."
+- id: vet-d3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A pastoralist finds an adult cow dead in the pasture with no prior illness. Dark, tarry blood
+    is slowly oozing from the nose and rectum, and the blood shows no signs of clotting. What action must
+    the paravet enforce immediately?
 
-  - id: vet-d3-q2
-    type: FILL_BLANK
-    prompt: >
-      Once a live lyophilized veterinary vaccine (such as CBPP or PPR) is reconstituted
-      with sterile diluent in the field, it must be administered to the livestock within
-      a maximum window of ___ hours, after which remaining vaccine must be discarded.
-    xp_reward: 50
-    correct_answer: "2"
-    explanation: >
-      Live attenuated vaccine organisms lose viability rapidly once rehydrated at field
-      temperatures. Potency drops below protective thresholds beyond 2 hours.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Perform an immediate post-mortem necropsy to examine the liver
+  - id: b
+    text: Butcher the meat quickly and boil it for human consumption
+  - id: c
+    text: Drag the carcass into the nearest river to wash it away
+  - id: d
+    text: Strictly forbid butchering, opening, or skinning the carcass; bury the whole unopened carcass
+      at least 2 metres deep covered in quicklime, as opening it exposes Bacillus anthracis to oxygen,
+      triggering deadly soil-contaminating spores
+  explanation: 'Anthrax (Bacillus anthracis) produces indestructible spores only upon exposure to atmospheric
+    oxygen. Opening or butchering the carcass contaminates the soil for decades and exposes humans to
+    lethal cutaneous, gastrointestinal, or pulmonary anthrax.
 
-  - id: vet-d3-q3
-    type: MATCH_PAIRS
-    prompt: Match each pastoral livestock disease to its characteristic clinical indicator.
-    xp_reward: 50
-    pairs:
-      - left: Anthrax (Bacillus anthracis)
-        right: Sudden death with dark unclotted tar-like blood oozing from all body orifices
-      - left: Blackquarter (Clostridium chauvoei)
-        right: Hot painful thigh/shoulder swelling that becomes cold and crackles with gas (crepitation)
-      - left: Contagious Bovine Pleuropneumonia (CBPP)
-        right: Severe painful coughing with outstretched neck; marbled lungs on post-mortem
-      - left: Foot-and-Mouth Disease (FMD)
-        right: Excessive ropy salivation (drooling) and painful blisters on dental pad and hooves
-    correct_answer: null
-    explanation: >
-      Anthrax oozes dark unclotted blood; Blackquarter crackles with gas; CBPP produces marbled
-      lung pneumonia; FMD causes mouth drooling and foot blisters.
 
-  - id: vet-d3-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      When administering an intramuscular (IM) injection of an antibiotic or curative
-      drug to cattle, where is the anatomically correct and safe location on the animal?
-    xp_reward: 50
-    options:
-      - text: "The muscular triangle of the neck (bounded above by the nuchal ligament, below by cervical vertebrae, and behind by the shoulder joint)"
-        correct: true
-        explanation: "The neck triangle avoids major nerves (sciatic nerve in rump) and preserves expensive prime rump/hindquarter meat cuts from injection abscesses."
-      - text: "Directly into the center of the rump muscle"
-        correct: false
-        explanation: "Rump injections risk damaging the sciatic nerve (causing permanent leg paralysis) and devalue prime beef cuts."
-      - text: "Directly into the abdominal wall near the navel"
-        correct: false
-        explanation: "This risks puncturing intestines or causing peritonitis."
-      - text: "Into the tail muscle"
-        correct: false
-        explanation: "The tail has insufficient muscle mass and causes intense pain."
+    Why the other options are wrong: Performing a necropsy is the single most dangerous mistake; it spreads
+    anthrax spores across the entire pasture. Consuming anthrax meat causes severe intestinal anthrax
+    with near 100% human mortality. This poisons the entire downstream water supply for hundreds of people
+    and livestock.'
+  correct_answer: d
+- id: vet-d3-q2
+  type: FILL_BLANK
+  prompt: 'Once a live lyophilized veterinary vaccine (such as CBPP or PPR) is reconstituted with sterile
+    diluent in the field, it must be administered to the livestock within a maximum window of ___ hours,
+    after which remaining vaccine must be discarded.
 
-  - id: vet-d3-q5
-    type: FILL_BLANK
-    prompt: >
-      Veterinary vaccines containing aluminum hydroxide adjuvants (such as Blackquarter
-      bacterins) must be kept between +2°C and +8°C and must NEVER be allowed to ___,
-      because low temperatures precipitate the adjuvant into irreversible crystals that
-      destroy vaccine potency.
-    xp_reward: 50
-    correct_answer: "freeze"
-    explanation: >
-      Freezing ruins killed adjuvanted vaccines. Conditioned icepacks (at 0°C with free
-      water droplets) must be used instead of deep-frozen sub-zero icepacks.
+    '
+  xp_reward: 50
+  correct_answer: '2'
+  explanation: 'Live attenuated vaccine organisms lose viability rapidly once rehydrated at field temperatures.
+    Potency drops below protective thresholds beyond 2 hours.
+
+    '
+- id: vet-d3-q3
+  type: MATCH_PAIRS
+  prompt: Match each pastoral livestock disease to its characteristic clinical indicator.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Anthrax (Bacillus anthracis)
+    right:
+      id: r-aab6ae
+      text: Sudden death with dark unclotted tar-like blood oozing from all body orifices
+  - left:
+      id: l2
+      text: Blackquarter (Clostridium chauvoei)
+    right:
+      id: r-daef56
+      text: Hot painful thigh/shoulder swelling that becomes cold and crackles with gas (crepitation)
+  - left:
+      id: l3
+      text: Contagious Bovine Pleuropneumonia (CBPP)
+    right:
+      id: r-12b254
+      text: Severe painful coughing with outstretched neck; marbled lungs on post-mortem
+  - left:
+      id: l4
+      text: Foot-and-Mouth Disease (FMD)
+    right:
+      id: r-edd90d
+      text: Excessive ropy salivation (drooling) and painful blisters on dental pad and hooves
+  correct_answer:
+  - l1=r-aab6ae
+  - l2=r-daef56
+  - l3=r-12b254
+  - l4=r-edd90d
+  explanation: 'Anthrax oozes dark unclotted blood; Blackquarter crackles with gas; CBPP produces marbled
+    lung pneumonia; FMD causes mouth drooling and foot blisters.
+
+    '
+- id: vet-d3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'When administering an intramuscular (IM) injection of an antibiotic or curative drug to cattle,
+    where is the anatomically correct and safe location on the animal?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Directly into the center of the rump muscle
+  - id: b
+    text: The muscular triangle of the neck (bounded above by the nuchal ligament, below by cervical vertebrae,
+      and behind by the shoulder joint)
+  - id: c
+    text: Directly into the abdominal wall near the navel
+  - id: d
+    text: Into the tail muscle
+  explanation: 'The neck triangle avoids major nerves (sciatic nerve in rump) and preserves expensive
+    prime rump/hindquarter meat cuts from injection abscesses.
+
+
+    Why the other options are wrong: Rump injections risk damaging the sciatic nerve (causing permanent
+    leg paralysis) and devalue prime beef cuts. This risks puncturing intestines or causing peritonitis.
+    The tail has insufficient muscle mass and causes intense pain.'
+  correct_answer: b
+- id: vet-d3-q5
+  type: FILL_BLANK
+  prompt: 'Veterinary vaccines containing aluminum hydroxide adjuvants (such as Blackquarter bacterins)
+    must be kept between +2°C and +8°C and must NEVER be allowed to ___, because low temperatures precipitate
+    the adjuvant into irreversible crystals that destroy vaccine potency.
+
+    '
+  xp_reward: 50
+  correct_answer: freeze
+  explanation: 'Freezing ruins killed adjuvanted vaccines. Conditioned icepacks (at 0°C with free water
+    droplets) must be used instead of deep-frozen sub-zero icepacks.
+
+    '

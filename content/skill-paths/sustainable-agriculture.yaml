@@ -1,34 +1,50 @@
 id: sustainable-agriculture
 title: Sustainable Agriculture & Soil Science
 titleSw: Kilimo Endelevu na Sayansi ya Udongo
-description: >
-  Master the soil science, water-wise farming, composting, agroforestry, and
-  seed-saving skills that build long-term food sovereignty — transforming
-  degraded land into productive, drought-resilient smallholder farms without
-  synthetic inputs.
+description: 'Master the soil science, water-wise farming, composting, agroforestry,
+  and seed-saving skills that build long-term food sovereignty — transforming degraded
+  land into productive, drought-resilient smallholder farms without synthetic inputs.
+
+  '
 level: intermediate
 category: agriculture
 estimatedHours: 10
 xpTotal: 1250
 license: CC-BY-SA-4.0
 nodes:
-  - day: 1
-    lessonId: sustainable-agriculture-day-1
-    title: "Soil Science — Texture, Structure, pH & Field Testing"
-    xp: 250
-  - day: 2
-    lessonId: sustainable-agriculture-day-2
-    title: "Composting & Organic Soil Amendments"
-    xp: 250
-  - day: 3
-    lessonId: sustainable-agriculture-day-3
-    title: "Water-Wise Farming — Zai Pits, Swales & Drip Irrigation"
-    xp: 250
-  - day: 4
-    lessonId: sustainable-agriculture-day-4
-    title: "Agroforestry & Nitrogen-Fixing Trees"
-    xp: 250
-  - day: 5
-    lessonId: sustainable-agriculture-day-5
-    title: "Seed Saving, Variety Selection & Open-Pollinated Crops"
-    xp: 250
+- day: 1
+  lessonId: sustainable-agriculture-day-1
+  title: Soil Science — Texture, Structure, pH & Field Testing
+  xp: 250
+  id: sustainable-agriculture-day-1
+  lesson_ids:
+  - sustainable-agriculture-day-1
+- day: 2
+  lessonId: sustainable-agriculture-day-2
+  title: Composting & Organic Soil Amendments
+  xp: 250
+  id: sustainable-agriculture-day-2
+  lesson_ids:
+  - sustainable-agriculture-day-2
+- day: 3
+  lessonId: sustainable-agriculture-day-3
+  title: Water-Wise Farming — Zai Pits, Swales & Drip Irrigation
+  xp: 250
+  id: sustainable-agriculture-day-3
+  lesson_ids:
+  - sustainable-agriculture-day-3
+- day: 4
+  lessonId: sustainable-agriculture-day-4
+  title: Agroforestry & Nitrogen-Fixing Trees
+  xp: 250
+  id: sustainable-agriculture-day-4
+  lesson_ids:
+  - sustainable-agriculture-day-4
+- day: 5
+  lessonId: sustainable-agriculture-day-5
+  title: Seed Saving, Variety Selection & Open-Pollinated Crops
+  xp: 250
+  id: sustainable-agriculture-day-5
+  lesson_ids:
+  - sustainable-agriculture-day-5
+track: trades

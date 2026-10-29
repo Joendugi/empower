@@ -1,213 +1,311 @@
 id: community-health-day-1
 course_id: community-health
-title: "Disease Transmission & the Epidemiological Triangle"
-title_sw: "Uenezaji wa Magonjwa na Pembetatu ya Ugonjwa"
+title: Disease Transmission & the Epidemiological Triangle
+title_sw: Uenezaji wa Magonjwa na Pembetatu ya Ugonjwa
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - epidemiology
-  - transmission
-  - R0
-  - herd-immunity
-  - community-health
+- epidemiology
+- transmission
+- R0
+- herd-immunity
+- community-health
 xp: 250
 exam_domain: community-health
+briefing: 'Every disease outbreak follows predictable rules governed by the relationship between a pathogen,
+  a susceptible host, and the environment. Understanding the epidemiological triangle, basic reproduction
+  number (R0), herd immunity thresholds, and transmission routes is the foundation for all community disease
+  prevention and outbreak control work.
 
-briefing: >
-  Every disease outbreak follows predictable rules governed by the relationship
-  between a pathogen, a susceptible host, and the environment. Understanding
-  the epidemiological triangle, basic reproduction number (R0), herd immunity
-  thresholds, and transmission routes is the foundation for all community
-  disease prevention and outbreak control work.
-
-outline: >
-  The epidemiological triangle (agent, host, environment); transmission routes
-  (direct contact, droplet, airborne, faecal-oral, vector-borne, fomite);
-  R0 and R_eff — what they mean for outbreak dynamics; herd immunity threshold
-  formula; attack rate and case fatality rate; incubation period vs infectious
+  '
+outline: 'The epidemiological triangle (agent, host, environment); transmission routes (direct contact,
+  droplet, airborne, faecal-oral, vector-borne, fomite); R0 and R_eff — what they mean for outbreak dynamics;
+  herd immunity threshold formula; attack rate and case fatality rate; incubation period vs infectious
   period; the disease iceberg (symptomatic vs asymptomatic).
 
-content_md: |
-  ## The Epidemiological Triangle
+  '
+content_md: '## The Epidemiological Triangle
+
 
   Every infectious disease requires three elements to sustain transmission:
 
+
   | Element | Definition | Example levers |
+
   |---|---|---|
+
   | Agent | The pathogen (virus, bacterium, parasite, prion) | Antibiotic/antiviral treatment |
+
   | Host | The susceptible person or animal | Vaccination, nutrition, immune status |
-  | Environment | The physical/social conditions enabling contact | Sanitation, housing, vector control |
+
+  | Environment | The physical/social conditions enabling contact | Sanitation, housing, vector control
+  |
+
 
   Removing or weakening **any one** side of the triangle breaks transmission.
 
+
   ## Transmission Routes
 
+
   | Route | Mechanism | Typical pathogens |
+
   |---|---|---|
+
   | Direct contact | Skin-to-skin, mucous membrane | Scabies, STIs, ringworm |
+
   | Droplet | Particles > 5 microns, range < 1 m | Influenza, COVID-19, meningococcal |
+
   | Airborne | Particles < 5 microns (aerosols), long range | TB, measles, chickenpox |
+
   | Faecal-oral | Contaminated water or food | Cholera, typhoid, hepatitis A |
+
   | Vector-borne | Arthropod bite transmits pathogen | Malaria (Anopheles), dengue (Aedes) |
+
   | Fomite | Contaminated surface, object | Norovirus, RSV, C. difficile |
 
+
   Understanding route is critical: a droplet disease like influenza is controlled
+
   by masks and spacing; an airborne disease like TB requires negative-pressure
+
   ventilation.
+
 
   ## Basic Reproduction Number (R0)
 
+
   R0 = average number of secondary cases one infectious person generates in a
+
   fully susceptible population.
 
+
   | Disease | R0 | Control difficulty |
+
   |---|---|---|
+
   | Measles | 12-18 | Very high |
+
   | Pertussis (whooping cough) | 12-17 | Very high |
+
   | Chickenpox | 10-12 | High |
+
   | COVID-19 (original) | 2-4 | Moderate |
+
   | Influenza (seasonal) | 1.2-1.4 | Low |
+
   | Ebola | 1.5-2.5 | Moderate (if no isolation) |
+
   | Cholera | 2-6 | Moderate |
 
+
   When R_eff (effective R0 after interventions) drops below 1.0, the outbreak
+
   collapses. Every intervention — vaccination, isolation, hygiene — reduces R_eff.
+
 
   ## Herd Immunity Threshold
 
+
   The proportion of the population that must be immune to prevent sustained
+
   transmission:
+
 
   HIT = 1 - (1 / R0)
 
+
   | Disease | R0 | HIT required |
+
   |---|---|---|
+
   | Measles | 15 | 93% |
+
   | Polio | 6 | 83% |
+
   | COVID-19 (Delta) | 5-6 | 80-83% |
+
   | Influenza | 1.3 | 23% |
 
+
   This is why measles outbreaks reappear in communities where vaccination
+
   coverage drops even slightly below 93% — there is almost no margin.
+
 
   ## Attack Rate & Case Fatality Rate
 
+
   **Attack Rate (AR)**: proportion of exposed people who develop disease.
+
 
   AR = (cases / exposed population) x 100%
 
+
   **Case Fatality Rate (CFR)**: proportion of confirmed cases who die.
+
 
   CFR = (deaths / confirmed cases) x 100%
 
+
   | Disease | Typical CFR (untreated) | CFR with treatment |
+
   |---|---|---|
+
   | Cholera | 25-50% | < 1% |
+
   | Malaria (severe) | 20-30% | 10-15% |
+
   | Meningococcal disease | 50% | 5-10% |
+
   | Measles (malnourished children) | 10-30% | 1-5% |
+
 
   These dramatic CFR reductions show the life-saving value of early treatment.
 
+
   ## The Disease Iceberg
 
+
   Most infectious diseases have a large proportion of asymptomatic or mild cases
+
   below the "waterline" — invisible to passive surveillance:
 
+
   - Polio: 1 paralytic case per 200 infected (0.5% visible)
+
   - COVID-19: 30-80% asymptomatic depending on variant
+
   - Typhoid: ~10% symptomatic
+
   - Cholera: ~75% asymptomatic (El Tor biotype)
 
+
   Implications: case counts always underestimate true infection burden;
+
   asymptomatic carriers sustain transmission silently.
 
+  '
 exercises:
-  - id: ch-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Measles has an R0 of approximately 15. A community of 1,000 children
-      has 88% vaccination coverage. Is this sufficient to prevent an outbreak?
-    xp_reward: 50
-    options:
-      - text: "No — the herd immunity threshold for measles is 93%, so at 88% coverage an outbreak can still spread"
-        correct: true
-        explanation: "HIT = 1 - (1/15) = 1 - 0.067 = 0.933 = 93.3%. At 88% coverage, 12% are susceptible — above the 6.7% threshold needed to sustain transmission. An outbreak is possible."
-      - text: "Yes — 88% coverage is well above the 80% threshold for most diseases"
-        correct: false
-        explanation: "The 80% figure applies to diseases with R0 of 5-6. Measles R0 of 15 requires 93% coverage, not 80%."
-      - text: "Yes — once coverage exceeds 50% the outbreak will collapse"
-        correct: false
-        explanation: "50% corresponds to diseases with R0 = 2. For measles R0 = 15, even 90% coverage leaves enough susceptibles to sustain spread."
-      - text: "It depends on nutrition status, not vaccination coverage"
-        correct: false
-        explanation: "Nutrition affects severity (CFR) but not whether measles spreads. Coverage against a threshold is the transmission control mechanism."
+- id: ch-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Measles has an R0 of approximately 15. A community of 1,000 children has 88% vaccination coverage.
+    Is this sufficient to prevent an outbreak?
 
-  - id: ch-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      The herd immunity threshold formula is HIT = 1 - (1 / R0). For cholera
-      with R0 = 4, the HIT is ___%. For seasonal influenza with R0 = 1.3,
-      the HIT is approximately ___%.
-    xp_reward: 50
-    correct_answer: "75%; 23%"
-    explanation: >
-      Cholera: HIT = 1 - (1/4) = 0.75 = 75%. Influenza: HIT = 1 - (1/1.3) = 1 - 0.769 = 0.231 = 23%.
-      The low influenza HIT explains why annual flu campaigns with even moderate
-      uptake can significantly reduce transmission.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: No — the herd immunity threshold for measles is 93%, so at 88% coverage an outbreak can still
+      spread
+  - id: b
+    text: Yes — 88% coverage is well above the 80% threshold for most diseases
+  - id: c
+    text: Yes — once coverage exceeds 50% the outbreak will collapse
+  - id: d
+    text: It depends on nutrition status, not vaccination coverage
+  explanation: 'HIT = 1 - (1/15) = 1 - 0.067 = 0.933 = 93.3%. At 88% coverage, 12% are susceptible — above
+    the 6.7% threshold needed to sustain transmission. An outbreak is possible.
 
-  - id: ch-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each transmission route to its primary control intervention.
-    xp_reward: 50
-    pairs:
-      - left: Airborne (TB, measles)
-        right: Negative-pressure isolation rooms and N95 respirators
-      - left: Faecal-oral (cholera, typhoid)
-        right: Safe water, sanitation, and handwashing (WASH)
-      - left: Vector-borne (malaria, dengue)
-        right: Insecticide-treated bed nets and indoor residual spraying
-      - left: Droplet (influenza, meningococcal)
-        right: Surgical masks, 1 m physical distancing
-    correct_answer: null
-    explanation: >
-      Matching the intervention to the route is the first step in outbreak
-      control. Wrong interventions waste resources without breaking transmission.
 
-  - id: ch-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      During a cholera outbreak, 3,200 people drank water from a contaminated
-      river. 480 developed cholera. 12 of those died. What are the attack rate
-      and case fatality rate?
-    xp_reward: 50
-    options:
-      - text: "AR = 15%, CFR = 2.5%"
-        correct: true
-        explanation: "AR = 480/3200 x 100 = 15%. CFR = 12/480 x 100 = 2.5%. A CFR of 2.5% indicates some access to ORT treatment (untreated cholera CFR is 25-50%)."
-      - text: "AR = 2.5%, CFR = 15%"
-        correct: false
-        explanation: "These are reversed. AR uses the exposed population (3,200) as denominator; CFR uses confirmed cases (480) as denominator."
-      - text: "AR = 15%, CFR = 0.37%"
-        correct: false
-        explanation: "AR is correct. CFR is not deaths/exposed but deaths/confirmed cases: 12/480 = 2.5%, not 0.37%."
-      - text: "AR = 0.37%, CFR = 2.5%"
-        correct: false
-        explanation: "0.37% would be deaths/exposed (12/3200). AR is cases/exposed = 480/3200 = 15%."
+    Why the other options are wrong: The 80% figure applies to diseases with R0 of 5-6. Measles R0 of
+    15 requires 93% coverage, not 80%. 50% corresponds to diseases with R0 = 2. For measles R0 = 15, even
+    90% coverage leaves enough susceptibles to sustain spread. Nutrition affects severity (CFR) but not
+    whether measles spreads. Coverage against a threshold is the transmission control mechanism.'
+  correct_answer: a
+- id: ch-d1-q2
+  type: FILL_BLANK
+  prompt: 'The herd immunity threshold formula is HIT = 1 - (1 / R0). For cholera with R0 = 4, the HIT
+    is ___%. For seasonal influenza with R0 = 1.3, the HIT is approximately ___%.
 
-  - id: ch-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      For every 1 paralytic polio case seen, approximately ___ people are
-      actually infected (the disease iceberg). During a COVID-19 wave where
-      30% of infections are symptomatic, if a clinic records 600 symptomatic
-      cases, the estimated true infection count is ___.
-    xp_reward: 50
-    correct_answer: "200; 2000"
-    explanation: >
-      Polio: 1 paralytic per 200 infected = iceberg ratio of 200.
-      COVID-19: 600 symptomatic = 30% of total; total = 600/0.30 = 2,000 true infections.
-      This undercounting has major implications for surveillance — reported cases
-      are always a fraction of true burden.
+    '
+  xp_reward: 50
+  correct_answer:
+  - 75%
+  - 23%
+  explanation: 'Cholera: HIT = 1 - (1/4) = 0.75 = 75%. Influenza: HIT = 1 - (1/1.3) = 1 - 0.769 = 0.231
+    = 23%. The low influenza HIT explains why annual flu campaigns with even moderate uptake can significantly
+    reduce transmission.
+
+    '
+- id: ch-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each transmission route to its primary control intervention.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Airborne (TB, measles)
+    right:
+      id: r-bd317e
+      text: Negative-pressure isolation rooms and N95 respirators
+  - left:
+      id: l2
+      text: Faecal-oral (cholera, typhoid)
+    right:
+      id: r-fcfb4d
+      text: Safe water, sanitation, and handwashing (WASH)
+  - left:
+      id: l3
+      text: Vector-borne (malaria, dengue)
+    right:
+      id: r-034283
+      text: Insecticide-treated bed nets and indoor residual spraying
+  - left:
+      id: l4
+      text: Droplet (influenza, meningococcal)
+    right:
+      id: r-98585b
+      text: Surgical masks, 1 m physical distancing
+  correct_answer:
+  - l1=r-bd317e
+  - l2=r-fcfb4d
+  - l3=r-034283
+  - l4=r-98585b
+  explanation: 'Matching the intervention to the route is the first step in outbreak control. Wrong interventions
+    waste resources without breaking transmission.
+
+    '
+- id: ch-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'During a cholera outbreak, 3,200 people drank water from a contaminated river. 480 developed
+    cholera. 12 of those died. What are the attack rate and case fatality rate?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: AR = 15%, CFR = 2.5%
+  - id: b
+    text: AR = 2.5%, CFR = 15%
+  - id: c
+    text: AR = 15%, CFR = 0.37%
+  - id: d
+    text: AR = 0.37%, CFR = 2.5%
+  explanation: 'AR = 480/3200 x 100 = 15%. CFR = 12/480 x 100 = 2.5%. A CFR of 2.5% indicates some access
+    to ORT treatment (untreated cholera CFR is 25-50%).
+
+
+    Why the other options are wrong: These are reversed. AR uses the exposed population (3,200) as denominator;
+    CFR uses confirmed cases (480) as denominator. AR is correct. CFR is not deaths/exposed but deaths/confirmed
+    cases: 12/480 = 2.5%, not 0.37%. 0.37% would be deaths/exposed (12/3200). AR is cases/exposed = 480/3200
+    = 15%.'
+  correct_answer: a
+- id: ch-d1-q5
+  type: FILL_BLANK
+  prompt: 'For every 1 paralytic polio case seen, approximately ___ people are actually infected (the
+    disease iceberg). During a COVID-19 wave where 30% of infections are symptomatic, if a clinic records
+    600 symptomatic cases, the estimated true infection count is ___.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - '200'
+  - '2000'
+  explanation: 'Polio: 1 paralytic per 200 infected = iceberg ratio of 200. COVID-19: 600 symptomatic
+    = 30% of total; total = 600/0.30 = 2,000 true infections. This undercounting has major implications
+    for surveillance — reported cases are always a fraction of true burden.
+
+    '

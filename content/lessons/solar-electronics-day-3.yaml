@@ -1,224 +1,190 @@
 id: solar-electronics-day-3
 course_id: solar-electronics
-title: "Charge Controllers & System Sizing"
-title_sw: "Vidhibiti vya Chaji na Upimaji wa Mfumo"
+title: Charge Controllers & System Sizing
+title_sw: Vidhibiti vya Chaji na Upimaji wa Mfumo
 week_number: 1
 day_number: 3
 estimated_minutes: 55
 license: CC-BY-SA-4.0
-tags: [solar, mppt, pwm, charge-controller, system-sizing, kenya]
+tags:
+- solar
+- mppt
+- pwm
+- charge-controller
+- system-sizing
+- kenya
 xp: 90
 exam_domain: Renewable Energy Systems
+briefing: 'The charge controller is the brain of the solar system. It protects the battery from
 
-briefing: |
-  The charge controller is the brain of the solar system. It protects the battery from
-  overcharge and over-discharge, tracks the panel's maximum power point, and provides
+  overcharge and over-discharge, tracks the panel''s maximum power point, and provides
+
   load control outputs. Choosing the wrong controller — or sizing it incorrectly — wastes
+
   10–30% of your available solar energy or destroys your battery bank. This day covers
+
   PWM vs MPPT operation, controller rating arithmetic, and a complete system sizing
+
   worksheet from load survey to component selection.
-briefing_sw: |
-  Kidhibiti cha chaji ni ubongo wa mfumo wa jua. Inalinda betri dhidi ya kuchajwa
+
+  '
+briefing_sw: 'Kidhibiti cha chaji ni ubongo wa mfumo wa jua. Inalinda betri dhidi ya kuchajwa
+
   kupita kiasi na kutochajwa kupita kiasi, inafuatilia hatua ya nguvu ya juu ya paneli,
+
   na kutoa matokeo ya udhibiti wa mzigo. Kuchagua kidhibiti kibaya — au kukipima vibaya —
+
   inapoteza asilimia 10–30 ya nishati ya jua inayopatikana.
 
-outline: |
-  1. PWM (Pulse Width Modulation) controllers: operation, losses, when to use
+  '
+outline: '1. PWM (Pulse Width Modulation) controllers: operation, losses, when to use
+
   2. MPPT (Maximum Power Point Tracking) controllers: operation, 10-30% energy gain
+
   3. Controller current rating: panel Isc × 1.25 safety factor
+
   4. MPPT voltage window: Voc array must not exceed controller Voc input rating
+
   5. Load survey: auditing household loads accurately
+
   6. Panel array sizing: peak sun hours for Kenya, derating factors
+
   7. Complete worked example: 12 V 150 W system for a rural household
+
   8. System wiring order and common mistakes that destroy controllers
 
-content_md: |
-  ## PWM Controllers
-
-  A PWM (Pulse Width Modulation) controller works like a fast-switching switch between
-  the panel and the battery. When the battery is low, the switch is fully ON — the panel
-  connects directly to the battery. As the battery charges, the controller rapidly switches
-  ON and OFF (at 20 kHz or higher), reducing average current. When the battery is full,
-  the switch is OFF.
-
-  **Critical limitation:** The panel is effectively pulled down to the battery voltage.
-  A 12 V nominal panel (Vmp ≈ 18 V) is forced to operate at ~14.4 V (absorption charge
-  voltage). The panel operates well below its maximum power point.
-
-  **Efficiency:** PWM captures approximately 75–80 % of available panel energy.
-
-  **When to use PWM:**
-  - Small systems (≤ 200 W) where the cost saving is worthwhile
-  - Panel Vmp is close to battery voltage (12 V nominal panels on 12 V system)
-  - Budget-constrained installations
-
-  ## MPPT Controllers
-
-  An MPPT controller uses DC-DC conversion circuitry to decouple the panel voltage from
-  the battery voltage. The controller actively sweeps the I-V curve and holds the panel
-  at its Vmp (maximum power point) regardless of battery voltage.
-
-  **How DC-DC conversion helps:**
-  If a 24 V panel (Vmp = 36 V, Imp = 5.56 A → 200 W) charges a 12 V battery:
-  - PWM forces panel to 14 V → power extracted ≈ 14 × 5.56 = **77 W** (60 % loss!)
-  - MPPT holds panel at 36 V, converts to 14 V: P_in = 200 W → I_out = 200 ÷ 14 ≈ **14.3 A at 14 V** (nearly 95 % efficient)
-
-  **Energy gain from MPPT vs PWM: 10–30 % more energy**, highest when:
-  - Battery is significantly lower voltage than panel Vmp
-  - Cold mornings (Voc rises in cold → MPPT captures the extra energy, PWM cannot)
-  - Higher voltage panels used (24 V, 36 V panels on 12 V battery)
-
-  **When to use MPPT:**
-  - Systems ≥ 200 W (efficiency gain pays for higher controller cost quickly)
-  - Mismatched panel voltage and battery voltage
-  - Cold climates or large seasonal temperature variation
-
-  ## Controller Rating: Current Sizing
-
-  **PWM controller rating (A):**
-  > Rating ≥ Total panel Isc × 1.25
-
-  The 1.25 safety factor accounts for irradiance spikes above 1 000 W/m² (reflection
-  from clouds, snow, or bright surfaces can push irradiance to 1 200+ W/m²).
-
-  Example: 3 × 100 W panels, each Isc = 5.98 A, wired in parallel:
-  > Total Isc = 3 × 5.98 = 17.94 A × 1.25 = **22.4 A → use 30 A controller**
-
-  **MPPT controller rating (A output to battery):**
-  MPPT controllers are rated by their **output current** (to battery), not input current.
-  > Output current = (Total panel power × MPPT efficiency) ÷ Battery voltage
-  > = (300 W × 0.95) ÷ 12 V = **23.75 A → use 30 A MPPT**
-
-  **MPPT input voltage (Voc) rating:**
-  The controller's maximum input Voc must exceed the array open-circuit voltage, including
-  cold-temperature correction (Voc rises when cold):
-
-  > Cold Voc = Voc_STC × [1 + (Temp_coeff_V × (T_min − 25))]
-
-  For a Nairobi panel with Voc = 22.5 V and Temp_coeff = −0.30 %/°C at T_min = 10 °C:
-  > Cold Voc = 22.5 × [1 + (−0.003 × (10 − 25))] = 22.5 × 1.045 = **23.5 V**
-
-  Three such panels in series: 23.5 × 3 = **70.5 V → use a controller rated ≥ 75 V Voc**
-
-  ## Load Survey: Auditing Household Loads
-
-  A load survey is the foundation of correct system sizing. Many installations fail
-  because loads are underestimated.
-
-  **Steps:**
-  1. List every electrical device in the household
-  2. Record rated power (from label or measured with clamp meter)
-  3. Estimate realistic daily hours of use (interview family members)
-  4. Add 10–15 % for cable losses, inverter losses, and forgotten loads
-
-  **Common underestimated loads in Kenya:**
-  - Mobile chargers: each phone draws 10–18 W for 1.5–2 hours per charge; most households
-    charge 3–5 phones daily
-  - Security lights (if LED PIR): 8–12 W, may run 8–10 hours per night
-  - Hair clippers/dryers: 200–500 W — a single weekly use = 100–250 Wh/week ÷ 7 = 14–36 Wh/day
-  - Refrigerator: 60–150 W average but runs 8–12 hours/day cycling = 480–1 200 Wh/day
-    (a fridge alone may require a complete system upgrade)
-
-  ## Panel Array Sizing
-
-  **Formula:**
-  > Panels needed = Daily load (Wh) ÷ (Peak Sun Hours × Panel Wattage × Derating factor)
-
-  **Peak Sun Hours (PSH) for Kenya** (average annual; use lowest month for conservative design):
-
-  | Location | Annual avg PSH | Lowest month PSH |
-  |----------|----------------|-----------------|
-  | Nairobi | 5.5 | 4.5 (July) |
-  | Mombasa | 5.8 | 4.8 (May) |
-  | Kisumu | 5.2 | 4.0 (July) |
-  | Garissa | 6.5 | 5.5 |
-  | Eldoret | 5.3 | 4.2 (August) |
-
-  **Derating factors (multiply together):**
-  - Temperature derate: 0.87 (≈ 13 % loss at 55 °C cell temp, monocrystalline)
-  - Dust / soiling: 0.92 (8 % loss average; more in dry season)
-  - Cable losses: 0.97 (3 % if wired correctly)
-  - Combined derate: 0.87 × 0.92 × 0.97 = **0.78**
-
-  ## Complete Worked Example: Rural Household System
-
-  **Load survey result:** 400 Wh/day (from Day 2 example)
-
-  **Battery bank (from Day 2):** 100 Ah @ 24 V AGM, 2 days autonomy
-
-  **Panel sizing (Nairobi, 24 V system, using lowest month PSH = 4.5 h):**
-  > Panels = 400 Wh ÷ (4.5 h × 100 W × 0.78) = 400 ÷ 351 = **1.14 panels**
-  > → Use **2 × 100 W panels** (114 % of minimum — good margin for cloudy days)
-
-  Total array: 200 W; Vmp = 36 V (two 18 V panels in series for 24 V system); Isc = 11.96 A
-
-  **Controller selection (MPPT for 200 W system):**
-  > Output current = (200 × 0.95) ÷ 24 = 7.9 A → use **10 A MPPT** (minimum)
-  > Input Voc (cold): 23.5 V × 2 panels in series = 47 V → controller Voc rating ≥ 50 V
-
-  **Recommended:** Renogy Rover 10 A MPPT (Voc input 50 V, widely available Kenya); cost KSh 4 000–6 000
-
-  ## Wiring Order — Critical for Controller Safety
-
-  **Correct sequence when connecting:**
-  1. Connect battery to controller first (controller initialises, detects battery voltage)
-  2. Connect panels to controller second (controller now knows what voltage to regulate to)
-  3. Connect loads last
-
-  **Correct sequence when disconnecting:**
-  1. Disconnect loads
-  2. Disconnect panels
-  3. Disconnect battery
-
-  **Never connect panels to MPPT controller without battery connected** — the controller
-  has no voltage reference and may be damaged by the panel's open-circuit voltage.
-
-  **Never short-circuit the panel output** — solar panels are current sources; shorting
-  causes full Isc to flow, potentially burning cables or the controller input.
-
+  '
+content_md: "## PWM Controllers\n\nA PWM (Pulse Width Modulation) controller works like a fast-switching\
+  \ switch between\nthe panel and the battery. When the battery is low, the switch is fully ON — the panel\n\
+  connects directly to the battery. As the battery charges, the controller rapidly switches\nON and OFF\
+  \ (at 20 kHz or higher), reducing average current. When the battery is full,\nthe switch is OFF.\n\n\
+  **Critical limitation:** The panel is effectively pulled down to the battery voltage.\nA 12 V nominal\
+  \ panel (Vmp ≈ 18 V) is forced to operate at ~14.4 V (absorption charge\nvoltage). The panel operates\
+  \ well below its maximum power point.\n\n**Efficiency:** PWM captures approximately 75–80 % of available\
+  \ panel energy.\n\n**When to use PWM:**\n- Small systems (≤ 200 W) where the cost saving is worthwhile\n\
+  - Panel Vmp is close to battery voltage (12 V nominal panels on 12 V system)\n- Budget-constrained installations\n\
+  \n## MPPT Controllers\n\nAn MPPT controller uses DC-DC conversion circuitry to decouple the panel voltage\
+  \ from\nthe battery voltage. The controller actively sweeps the I-V curve and holds the panel\nat its\
+  \ Vmp (maximum power point) regardless of battery voltage.\n\n**How DC-DC conversion helps:**\nIf a\
+  \ 24 V panel (Vmp = 36 V, Imp = 5.56 A → 200 W) charges a 12 V battery:\n- PWM forces panel to 14 V\
+  \ → power extracted ≈ 14 × 5.56 = **77 W** (60 % loss!)\n- MPPT holds panel at 36 V, converts to 14\
+  \ V: P_in = 200 W → I_out = 200 ÷ 14 ≈ **14.3 A at 14 V** (nearly 95 % efficient)\n\n**Energy gain from\
+  \ MPPT vs PWM: 10–30 % more energy**, highest when:\n- Battery is significantly lower voltage than panel\
+  \ Vmp\n- Cold mornings (Voc rises in cold → MPPT captures the extra energy, PWM cannot)\n- Higher voltage\
+  \ panels used (24 V, 36 V panels on 12 V battery)\n\n**When to use MPPT:**\n- Systems ≥ 200 W (efficiency\
+  \ gain pays for higher controller cost quickly)\n- Mismatched panel voltage and battery voltage\n- Cold\
+  \ climates or large seasonal temperature variation\n\n## Controller Rating: Current Sizing\n\n**PWM\
+  \ controller rating (A):**\n> Rating ≥ Total panel Isc × 1.25\n\nThe 1.25 safety factor accounts for\
+  \ irradiance spikes above 1 000 W/m² (reflection\nfrom clouds, snow, or bright surfaces can push irradiance\
+  \ to 1 200+ W/m²).\n\nExample: 3 × 100 W panels, each Isc = 5.98 A, wired in parallel:\n> Total Isc\
+  \ = 3 × 5.98 = 17.94 A × 1.25 = **22.4 A → use 30 A controller**\n\n**MPPT controller rating (A output\
+  \ to battery):**\nMPPT controllers are rated by their **output current** (to battery), not input current.\n\
+  > Output current = (Total panel power × MPPT efficiency) ÷ Battery voltage\n> = (300 W × 0.95) ÷ 12\
+  \ V = **23.75 A → use 30 A MPPT**\n\n**MPPT input voltage (Voc) rating:**\nThe controller's maximum\
+  \ input Voc must exceed the array open-circuit voltage, including\ncold-temperature correction (Voc\
+  \ rises when cold):\n\n> Cold Voc = Voc_STC × [1 + (Temp_coeff_V × (T_min − 25))]\n\nFor a Nairobi panel\
+  \ with Voc = 22.5 V and Temp_coeff = −0.30 %/°C at T_min = 10 °C:\n> Cold Voc = 22.5 × [1 + (−0.003\
+  \ × (10 − 25))] = 22.5 × 1.045 = **23.5 V**\n\nThree such panels in series: 23.5 × 3 = **70.5 V → use\
+  \ a controller rated ≥ 75 V Voc**\n\n## Load Survey: Auditing Household Loads\n\nA load survey is the\
+  \ foundation of correct system sizing. Many installations fail\nbecause loads are underestimated.\n\n\
+  **Steps:**\n1. List every electrical device in the household\n2. Record rated power (from label or measured\
+  \ with clamp meter)\n3. Estimate realistic daily hours of use (interview family members)\n4. Add 10–15\
+  \ % for cable losses, inverter losses, and forgotten loads\n\n**Common underestimated loads in Kenya:**\n\
+  - Mobile chargers: each phone draws 10–18 W for 1.5–2 hours per charge; most households\n  charge 3–5\
+  \ phones daily\n- Security lights (if LED PIR): 8–12 W, may run 8–10 hours per night\n- Hair clippers/dryers:\
+  \ 200–500 W — a single weekly use = 100–250 Wh/week ÷ 7 = 14–36 Wh/day\n- Refrigerator: 60–150 W average\
+  \ but runs 8–12 hours/day cycling = 480–1 200 Wh/day\n  (a fridge alone may require a complete system\
+  \ upgrade)\n\n## Panel Array Sizing\n\n**Formula:**\n> Panels needed = Daily load (Wh) ÷ (Peak Sun Hours\
+  \ × Panel Wattage × Derating factor)\n\n**Peak Sun Hours (PSH) for Kenya** (average annual; use lowest\
+  \ month for conservative design):\n\n| Location | Annual avg PSH | Lowest month PSH |\n|----------|----------------|-----------------|\n\
+  | Nairobi | 5.5 | 4.5 (July) |\n| Mombasa | 5.8 | 4.8 (May) |\n| Kisumu | 5.2 | 4.0 (July) |\n| Garissa\
+  \ | 6.5 | 5.5 |\n| Eldoret | 5.3 | 4.2 (August) |\n\n**Derating factors (multiply together):**\n- Temperature\
+  \ derate: 0.87 (≈ 13 % loss at 55 °C cell temp, monocrystalline)\n- Dust / soiling: 0.92 (8 % loss average;\
+  \ more in dry season)\n- Cable losses: 0.97 (3 % if wired correctly)\n- Combined derate: 0.87 × 0.92\
+  \ × 0.97 = **0.78**\n\n## Complete Worked Example: Rural Household System\n\n**Load survey result:**\
+  \ 400 Wh/day (from Day 2 example)\n\n**Battery bank (from Day 2):** 100 Ah @ 24 V AGM, 2 days autonomy\n\
+  \n**Panel sizing (Nairobi, 24 V system, using lowest month PSH = 4.5 h):**\n> Panels = 400 Wh ÷ (4.5\
+  \ h × 100 W × 0.78) = 400 ÷ 351 = **1.14 panels**\n> → Use **2 × 100 W panels** (114 % of minimum —\
+  \ good margin for cloudy days)\n\nTotal array: 200 W; Vmp = 36 V (two 18 V panels in series for 24 V\
+  \ system); Isc = 11.96 A\n\n**Controller selection (MPPT for 200 W system):**\n> Output current = (200\
+  \ × 0.95) ÷ 24 = 7.9 A → use **10 A MPPT** (minimum)\n> Input Voc (cold): 23.5 V × 2 panels in series\
+  \ = 47 V → controller Voc rating ≥ 50 V\n\n**Recommended:** Renogy Rover 10 A MPPT (Voc input 50 V,\
+  \ widely available Kenya); cost KSh 4 000–6 000\n\n## Wiring Order — Critical for Controller Safety\n\
+  \n**Correct sequence when connecting:**\n1. Connect battery to controller first (controller initialises,\
+  \ detects battery voltage)\n2. Connect panels to controller second (controller now knows what voltage\
+  \ to regulate to)\n3. Connect loads last\n\n**Correct sequence when disconnecting:**\n1. Disconnect\
+  \ loads\n2. Disconnect panels\n3. Disconnect battery\n\n**Never connect panels to MPPT controller without\
+  \ battery connected** — the controller\nhas no voltage reference and may be damaged by the panel's open-circuit\
+  \ voltage.\n\n**Never short-circuit the panel output** — solar panels are current sources; shorting\n\
+  causes full Isc to flow, potentially burning cables or the controller input.\n"
 exercises:
-  - id: se3-q1
-    type: MULTIPLE_CHOICE
-    prompt: "A customer has two 200 W, 24 V nominal panels (Vmp 36 V, Voc 44 V, Isc 5.8 A) wired in series connected to a 24 V AGM battery bank. Which controller is correct?"
-    xp_reward: 40
-    options:
-      - text: "A 30 A PWM controller rated 12/24 V"
-        correct: false
-        explanation: "Two 24 V panels in series gives an array Voc of 88 V. A 30 A PWM controller rated 12/24 V typically has a maximum input of 55 V — it would be instantly destroyed by 88 V. Also, PWM would force the 36 V Vmp panels to charge at 28 V, wasting 22 % of power."
-      - text: "A 20 A MPPT controller with Voc input rating ≥ 100 V and output current ≥ 16 A"
-        correct: true
-        explanation: "Two 44 V panels in series = 88 V Voc (plus cold temperature correction ≈ 91 V). A 100 V Voc rated MPPT is correct. Output current: (400 W × 0.95) ÷ 24 V = 15.8 A → 20 A MPPT is the correct minimum rating."
-      - text: "A 10 A MPPT controller — two 200 W panels = 400 W which at 24 V is only 16.7 A"
-        correct: false
-        explanation: "The output current calculation is correct (16.7 A) but a 10 A controller is undersized. Always select the next standard size above calculated minimum: 20 A. A 10 A controller would overheat and fail."
-      - text: "No controller needed — two panels in series automatically regulate voltage to 24 V"
-        correct: false
-        explanation: "Solar panels do not self-regulate. Without a charge controller, panels will overcharge the battery to Voc (88 V for this series string), destroying it within hours."
-    correct_answer: "A 20 A MPPT controller with Voc input rating ≥ 100 V and output current ≥ 16 A"
+- id: se3-q1
+  type: MULTIPLE_CHOICE
+  prompt: A customer has two 200 W, 24 V nominal panels (Vmp 36 V, Voc 44 V, Isc 5.8 A) wired in series
+    connected to a 24 V AGM battery bank. Which controller is correct?
+  xp_reward: 40
+  options:
+  - id: a
+    text: A 20 A MPPT controller with Voc input rating ≥ 100 V and output current ≥ 16 A
+  - id: b
+    text: A 30 A PWM controller rated 12/24 V
+  - id: c
+    text: A 10 A MPPT controller — two 200 W panels = 400 W which at 24 V is only 16.7 A
+  - id: d
+    text: No controller needed — two panels in series automatically regulate voltage to 24 V
+  correct_answer: a
+  explanation: 'Two 44 V panels in series = 88 V Voc (plus cold temperature correction ≈ 91 V). A 100
+    V Voc rated MPPT is correct. Output current: (400 W × 0.95) ÷ 24 V = 15.8 A → 20 A MPPT is the correct
+    minimum rating.
 
-  - id: se3-q2
-    type: FILL_BLANK
-    prompt: "When installing a solar system, the correct first connection is: battery to controller. The second connection is: ___ to controller."
-    xp_reward: 20
-    correct_answer: panels
-    explanation: "The battery must be connected first so the MPPT controller can detect the system voltage and initialise correctly. Connecting panels first to an MPPT without a battery can expose the controller to full Voc with no load — potentially damaging the input stage."
 
-  - id: se3-q3
-    type: MATCH_PAIRS
-    prompt: "Match each system sizing parameter to its correct description or formula."
-    xp_reward: 30
-    pairs:
-      - left: Peak Sun Hours (PSH)
-        right: Hours per day of 1 000 W/m² equivalent irradiance at a location
-      - left: System derating factor
-        right: Combined loss multiplier for temperature, dust, and cable losses (~0.78)
-      - left: MPPT output current
-        right: "(Total panel watts × 0.95) ÷ Battery bank voltage"
-      - left: PWM controller rating
-        right: Total array Isc × 1.25 safety factor
-    correct_answer:
-      - Peak Sun Hours (PSH)=Hours per day of 1 000 W/m² equivalent irradiance at a location
-      - System derating factor=Combined loss multiplier for temperature, dust, and cable losses (~0.78)
-      - MPPT output current=(Total panel watts × 0.95) ÷ Battery bank voltage
-      - PWM controller rating=Total array Isc × 1.25 safety factor
+    Why the other options are wrong: Two 24 V panels in series gives an array Voc of 88 V. A 30 A PWM
+    controller rated 12/24 V typically has a maximum input of 55 V — it would be instantly destroyed by
+    88 V. Also, PWM would force the 36 V Vmp panels to charge at 28 V, wasting 22 % of power. The output
+    current calculation is correct (16.7 A) but a 10 A controller is undersized. Always select the next
+    standard size above calculated minimum: 20 A. A 10 A controller would overheat and fail. Solar panels
+    do not self-regulate. Without a charge controller, panels will overcharge the battery to Voc (88 V
+    for this series string), destroying it within hours.'
+- id: se3-q2
+  type: FILL_BLANK
+  prompt: 'When installing a solar system, the correct first connection is: battery to controller. The
+    second connection is: ___ to controller.'
+  xp_reward: 20
+  correct_answer: panels
+  explanation: The battery must be connected first so the MPPT controller can detect the system voltage
+    and initialise correctly. Connecting panels first to an MPPT without a battery can expose the controller
+    to full Voc with no load — potentially damaging the input stage.
+- id: se3-q3
+  type: MATCH_PAIRS
+  prompt: Match each system sizing parameter to its correct description or formula.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Peak Sun Hours (PSH)
+    right:
+      id: r-fa9711
+      text: Hours per day of 1 000 W/m² equivalent irradiance at a location
+  - left:
+      id: l2
+      text: System derating factor
+    right:
+      id: r-5fe599
+      text: Combined loss multiplier for temperature, dust, and cable losses (~0.78)
+  - left:
+      id: l3
+      text: MPPT output current
+    right:
+      id: r-3f9374
+      text: (Total panel watts × 0.95) ÷ Battery bank voltage
+  - left:
+      id: l4
+      text: PWM controller rating
+    right:
+      id: r-b73145
+      text: Total array Isc × 1.25 safety factor
+  correct_answer:
+  - l1=r-fa9711
+  - l2=r-5fe599
+  - l3=r-3f9374
+  - l4=r-b73145

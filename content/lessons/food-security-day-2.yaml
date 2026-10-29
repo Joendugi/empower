@@ -11,16 +11,15 @@ tags:
 - kenya
 - fish
 xp: 80
-briefing: 'Sun-drying reduces water activity in food from ~0.99 to below 0.60, making
-  it impossible for bacteria, moulds, and yeasts to grow. Done correctly, solar drying
-  preserves fish for 6–12 months and fruits/vegetables for 3–6 months without electricity
-  or refrigeration. This day covers dryer design, pre-treatment chemistry, and the
-  critical hygiene practices that prevent contamination.
+briefing: 'Sun-drying reduces water activity in food from ~0.99 to below 0.60, making it impossible for
+  bacteria, moulds, and yeasts to grow. Done correctly, solar drying preserves fish for 6–12 months and
+  fruits/vegetables for 3–6 months without electricity or refrigeration. This day covers dryer design,
+  pre-treatment chemistry, and the critical hygiene practices that prevent contamination.
 
   '
-briefing_sw: 'Ukaushaji wa jua hupunguza shughuli ya maji katika chakula kutoka ~0.99
-  hadi chini ya 0.60, na kuifanya kuwa haiwezekani kwa bakteria, ukungu, na chachu
-  kukua. Ikifanywa vizuri, ukaushaji wa jua huhifadhi samaki kwa miezi 6–12.
+briefing_sw: 'Ukaushaji wa jua hupunguza shughuli ya maji katika chakula kutoka ~0.99 hadi chini ya 0.60,
+  na kuifanya kuwa haiwezekani kwa bakteria, ukungu, na chachu kukua. Ikifanywa vizuri, ukaushaji wa jua
+  huhifadhi samaki kwa miezi 6–12.
 
   '
 outline: '1. Water activity (Aᵥ) and microbial safety thresholds
@@ -38,139 +37,121 @@ outline: '1. Water activity (Aᵥ) and microbial safety thresholds
   7. Dryness test and packaging for long storage
 
   8. Rehydration and nutritional retention data'
-content_md: "## Water Activity and Microbial Growth\n\nFood spoils because microorganisms\
-  \ need liquid water to metabolise. We measure\ntheir access to that water as **water\
-  \ activity (Aᵥ)**:\n\n| Aᵥ | Organisms that can grow | Typical food |\n|----|------------------------|--------------|\n\
-  | > 0.95 | All bacteria, yeasts, moulds | Fresh meat, fish |\n| 0.85–0.95 | Staphylococcus\
-  \ aureus | Salami |\n| 0.70–0.85 | Halophilic bacteria, xerophilic moulds | Salted\
-  \ fish, jam |\n| < 0.60 | None — microbiologically stable | Dried grain, biscuits\
-  \ |\n\n**Target for preserved food: Aᵥ ≤ 0.60.**\nAt 13 % moisture content, grain\
-  \ is at roughly Aᵥ = 0.65; well-dried fish\n(< 15 % moisture) sits near Aᵥ = 0.75\
-  \ and is safe for 6 months with\nmoderate salt content.\n\n## Dryer Types\n\n###\
-  \ Open-Air Ground Drying (worst practice)\n- Grain/fish spread directly on soil\
-  \ or concrete\n- Contamination: dust, insects, animal faeces, re-wetting by dew\n\
-  - Losses: 10–25 % additional post-drying contamination\n- **Do not use for human\
-  \ food.**\n\n### Raised Rack (simple improvement)\n- Wire mesh or split bamboo rack\
-  \ 60–90 cm above ground\n- Improved airflow under the product; reduces insect access\n\
-  - Cover with fine muslin in the evening against dew and insects\n- Acceptable for\
-  \ vegetables and fruits; marginal for fish\n\n### Solar Tunnel Dryer (best practice,\
-  \ low cost)\nDeveloped by GTZ/Hohenheim; extensively adopted in Kenya, Tanzania,\
-  \ and Uganda.\n\n**Construction materials (10 m tunnel, 1.2 m wide):**\n- 10 × 1.2\
-  \ m galvanised wire mesh rack (hardware cloth, 6 mm opening)\n- UV-stabilised transparent\
-  \ polythene film (200 micron, 12 m × 1.5 m roll): KSh 800–1 200\n- 20 × 50 mm timber\
-  \ or bamboo for the frame\n- Black-painted corrugated iron sheet for the base (absorbs\
-  \ solar IR)\n- Inlet vents (10 cm gap) at the low end; outlet vents at the high\
-  \ end\n\n**Principle:** The black base heats air inside to 50–70 °C (cf. ambient\
-  \ 25–35 °C),\naccelerating evaporation 2–3× versus open-air drying. The polythene\
-  \ roof keeps\ninsects and rain out. Chimney effect draws hot humid air out the upper\
-  \ vents.\n\n**Capacity:** 60–80 kg fresh fish per tunnel load → 15–20 kg dried.\n\
-  Drying time: 2–3 days (fish), 1–2 days (sliced mango/banana).\n\n## Pre-treatment\n\
-  \nPre-treatment reduces browning, kills surface bacteria, and preserves colour.\n\
-  \n### Salting (fish and some vegetables)\n- Dry salt rub or brine (10–20 % w/v NaCl,\
-  \ ~3 tablespoons per litre)\n- Brine fish for 2–8 hours depending on thickness;\
-  \ rinse and drain before drying\n- Salt reduces Aᵥ slightly and draws moisture to\
-  \ the surface by osmosis\n\n### Blanching (vegetables)\n- Immerse in boiling water\
-  \ for 2–4 minutes; immediately plunge into cold water\n- Deactivates enzymes (peroxidase,\
-  \ polyphenol oxidase) that cause browning\n- Kills surface bacteria: > 2 log₁₀ reduction\
-  \ in aerobic plate count\n- Softens tissue → faster drying\n\n### Ascorbic acid\
-  \ / lemon juice (fruits)\n- 0.5 % ascorbic acid solution (5 g/L) or pure lemon juice\
-  \ (natural ascorbate)\n- Dip sliced fruit for 5 minutes before loading onto the\
-  \ dryer rack\n- Prevents enzymatic browning; retains Vitamin C\n\n### Sulphiting\
-  \ (commercial, optional)\n- 0.1 % sodium metabisulphite dip — very effective colour\
-  \ retention\n- Not recommended for home/community scale without exact measurement;\n\
-  \  over-use causes respiratory distress in asthma sufferers\n\n## Slicing Geometry\n\
-  \nThinner slices dry faster but lose structural integrity.\n\n| Product | Recommended\
-  \ thickness | Drying time (solar tunnel, sunny day) |\n|---------|-----------------------|----------------------------------------|\n\
-  | Mango | 4–6 mm | 12–18 hours |\n| Banana | 8–10 mm | 18–24 hours |\n| Tomato (half)\
-  \ | leave whole, cut-side up | 24–36 hours |\n| Tilapia (whole, < 200 g) | split\
-  \ and butterfly | 36–48 hours |\n| Omena / dagaa (small fish) | whole, spread single\
-  \ layer | 18–24 hours |\n\n**Surface area rule:** doubling slice thickness quadruples\
-  \ drying time\n(moisture must diffuse twice as far through twice as much material).\n\
-  \n## Fish Drying: Step-by-Step\n\n1. **Gut and clean** fish within 2 hours of catch\
-  \ — gut bacteria are the primary\n   source of spoilage. Remove gills (harbour bacteria,\
-  \ cause off-flavours).\n2. **Butterfly** larger fish: score along the spine, open\
-  \ flat. Tilapia > 200 g:\n   make parallel cuts 2 cm apart across the flesh to increase\
-  \ surface area.\n3. **Brine**: 15 % NaCl brine, 4 hours minimum for tilapia; 2 hours\
-  \ for omena.\n4. **Drain**: 30 minutes on a rack before loading.\n5. **Load single\
-  \ layer** on mesh. Fish must not touch.\n6. **Cover immediately** with fine muslin\
-  \ net (1 mm mesh) to exclude flies.\n   Blow-fly eggs hatch in < 8 hours on warm\
-  \ protein — a single uncovered hour\n   can ruin a full day's drying.\n7. **Turn**\
-  \ fish once daily (morning). Inspect for soft spots — discard any fish\n   with\
-  \ grey moist patches inside the flesh.\n8. **Dryness test**: dried fish is rigid,\
-  \ snaps when bent, no moist interior.\n   Final moisture ≤ 20 % for omena; ≤ 25\
-  \ % for large fish.\n\n## Packaging and Storage\n\nDried product must be packed\
-  \ before morning dew forms:\n- Pack into food-grade polythene bags; remove as much\
-  \ air as possible.\n- Heat-seal or tie tightly; place bag inside a sealed tin or\
-  \ PICS bag.\n- Store in a cool, dry, dark location.\n- Shelf life: dried omena 6–12\
-  \ months; dried mango/banana 3–6 months.\n\n**Check monthly**: if product feels\
-  \ soft or smells musty, re-dry or discard.\n\n## Nutritional Retention\n\n| Nutrient\
-  \ | Retention after solar drying |\n|----------|------------------------------|\n\
-  | Protein | > 95 % (not heat-sensitive) |\n| Iron, Zinc | ~ 95 % |\n| Vitamin A\
-  \ (beta-carotene) | 70–85 % (light-sensitive; minimise direct sunlight on cut face)\
-  \ |\n| Vitamin C | 40–60 % (oxidises on drying) — supplement with fresh citrus at\
-  \ consumption |\n| B-vitamins | 60–80 % |\n"
+content_md: "## Water Activity and Microbial Growth\n\nFood spoils because microorganisms need liquid\
+  \ water to metabolise. We measure\ntheir access to that water as **water activity (Aᵥ)**:\n\n| Aᵥ |\
+  \ Organisms that can grow | Typical food |\n|----|------------------------|--------------|\n| > 0.95\
+  \ | All bacteria, yeasts, moulds | Fresh meat, fish |\n| 0.85–0.95 | Staphylococcus aureus | Salami\
+  \ |\n| 0.70–0.85 | Halophilic bacteria, xerophilic moulds | Salted fish, jam |\n| < 0.60 | None — microbiologically\
+  \ stable | Dried grain, biscuits |\n\n**Target for preserved food: Aᵥ ≤ 0.60.**\nAt 13 % moisture content,\
+  \ grain is at roughly Aᵥ = 0.65; well-dried fish\n(< 15 % moisture) sits near Aᵥ = 0.75 and is safe\
+  \ for 6 months with\nmoderate salt content.\n\n## Dryer Types\n\n### Open-Air Ground Drying (worst practice)\n\
+  - Grain/fish spread directly on soil or concrete\n- Contamination: dust, insects, animal faeces, re-wetting\
+  \ by dew\n- Losses: 10–25 % additional post-drying contamination\n- **Do not use for human food.**\n\
+  \n### Raised Rack (simple improvement)\n- Wire mesh or split bamboo rack 60–90 cm above ground\n- Improved\
+  \ airflow under the product; reduces insect access\n- Cover with fine muslin in the evening against\
+  \ dew and insects\n- Acceptable for vegetables and fruits; marginal for fish\n\n### Solar Tunnel Dryer\
+  \ (best practice, low cost)\nDeveloped by GTZ/Hohenheim; extensively adopted in Kenya, Tanzania, and\
+  \ Uganda.\n\n**Construction materials (10 m tunnel, 1.2 m wide):**\n- 10 × 1.2 m galvanised wire mesh\
+  \ rack (hardware cloth, 6 mm opening)\n- UV-stabilised transparent polythene film (200 micron, 12 m\
+  \ × 1.5 m roll): KSh 800–1 200\n- 20 × 50 mm timber or bamboo for the frame\n- Black-painted corrugated\
+  \ iron sheet for the base (absorbs solar IR)\n- Inlet vents (10 cm gap) at the low end; outlet vents\
+  \ at the high end\n\n**Principle:** The black base heats air inside to 50–70 °C (cf. ambient 25–35 °C),\n\
+  accelerating evaporation 2–3× versus open-air drying. The polythene roof keeps\ninsects and rain out.\
+  \ Chimney effect draws hot humid air out the upper vents.\n\n**Capacity:** 60–80 kg fresh fish per tunnel\
+  \ load → 15–20 kg dried.\nDrying time: 2–3 days (fish), 1–2 days (sliced mango/banana).\n\n## Pre-treatment\n\
+  \nPre-treatment reduces browning, kills surface bacteria, and preserves colour.\n\n### Salting (fish\
+  \ and some vegetables)\n- Dry salt rub or brine (10–20 % w/v NaCl, ~3 tablespoons per litre)\n- Brine\
+  \ fish for 2–8 hours depending on thickness; rinse and drain before drying\n- Salt reduces Aᵥ slightly\
+  \ and draws moisture to the surface by osmosis\n\n### Blanching (vegetables)\n- Immerse in boiling water\
+  \ for 2–4 minutes; immediately plunge into cold water\n- Deactivates enzymes (peroxidase, polyphenol\
+  \ oxidase) that cause browning\n- Kills surface bacteria: > 2 log₁₀ reduction in aerobic plate count\n\
+  - Softens tissue → faster drying\n\n### Ascorbic acid / lemon juice (fruits)\n- 0.5 % ascorbic acid\
+  \ solution (5 g/L) or pure lemon juice (natural ascorbate)\n- Dip sliced fruit for 5 minutes before\
+  \ loading onto the dryer rack\n- Prevents enzymatic browning; retains Vitamin C\n\n### Sulphiting (commercial,\
+  \ optional)\n- 0.1 % sodium metabisulphite dip — very effective colour retention\n- Not recommended\
+  \ for home/community scale without exact measurement;\n  over-use causes respiratory distress in asthma\
+  \ sufferers\n\n## Slicing Geometry\n\nThinner slices dry faster but lose structural integrity.\n\n|\
+  \ Product | Recommended thickness | Drying time (solar tunnel, sunny day) |\n|---------|-----------------------|----------------------------------------|\n\
+  | Mango | 4–6 mm | 12–18 hours |\n| Banana | 8–10 mm | 18–24 hours |\n| Tomato (half) | leave whole,\
+  \ cut-side up | 24–36 hours |\n| Tilapia (whole, < 200 g) | split and butterfly | 36–48 hours |\n| Omena\
+  \ / dagaa (small fish) | whole, spread single layer | 18–24 hours |\n\n**Surface area rule:** doubling\
+  \ slice thickness quadruples drying time\n(moisture must diffuse twice as far through twice as much\
+  \ material).\n\n## Fish Drying: Step-by-Step\n\n1. **Gut and clean** fish within 2 hours of catch —\
+  \ gut bacteria are the primary\n   source of spoilage. Remove gills (harbour bacteria, cause off-flavours).\n\
+  2. **Butterfly** larger fish: score along the spine, open flat. Tilapia > 200 g:\n   make parallel cuts\
+  \ 2 cm apart across the flesh to increase surface area.\n3. **Brine**: 15 % NaCl brine, 4 hours minimum\
+  \ for tilapia; 2 hours for omena.\n4. **Drain**: 30 minutes on a rack before loading.\n5. **Load single\
+  \ layer** on mesh. Fish must not touch.\n6. **Cover immediately** with fine muslin net (1 mm mesh) to\
+  \ exclude flies.\n   Blow-fly eggs hatch in < 8 hours on warm protein — a single uncovered hour\n  \
+  \ can ruin a full day's drying.\n7. **Turn** fish once daily (morning). Inspect for soft spots — discard\
+  \ any fish\n   with grey moist patches inside the flesh.\n8. **Dryness test**: dried fish is rigid,\
+  \ snaps when bent, no moist interior.\n   Final moisture ≤ 20 % for omena; ≤ 25 % for large fish.\n\n\
+  ## Packaging and Storage\n\nDried product must be packed before morning dew forms:\n- Pack into food-grade\
+  \ polythene bags; remove as much air as possible.\n- Heat-seal or tie tightly; place bag inside a sealed\
+  \ tin or PICS bag.\n- Store in a cool, dry, dark location.\n- Shelf life: dried omena 6–12 months; dried\
+  \ mango/banana 3–6 months.\n\n**Check monthly**: if product feels soft or smells musty, re-dry or discard.\n\
+  \n## Nutritional Retention\n\n| Nutrient | Retention after solar drying |\n|----------|------------------------------|\n\
+  | Protein | > 95 % (not heat-sensitive) |\n| Iron, Zinc | ~ 95 % |\n| Vitamin A (beta-carotene) | 70–85\
+  \ % (light-sensitive; minimise direct sunlight on cut face) |\n| Vitamin C | 40–60 % (oxidises on drying)\
+  \ — supplement with fresh citrus at consumption |\n| B-vitamins | 60–80 % |\n"
 exercises:
 - type: MULTIPLE_CHOICE
   id: fs2-q1
   options:
-  - text: No — too much weight lost; the fish has been over-dried and is ruined
-    correct: false
-    explanation: Fresh fish is ~ 75 % water. A 75 % mass reduction from 200 kg yields
-      50 kg. 58 kg (71 % reduction) is within normal range — well-dried fish.
-  - text: Yes — fresh fish is ~75 % water; 50–60 kg output from 200 kg fresh is normal
-    correct: true
-    explanation: 'Correct. Fish loses 70–75 % of its fresh weight on drying. The dried
-      product is nutrient-dense: 58 kg of dried omena contains the protein of ~230
-      kg fresh.'
-  - text: No — losses should be less than 30 %; something went wrong
-    correct: false
-    explanation: A 30 % loss would mean 140 kg remaining — that fish would be dangerously
-      wet (Aᵥ > 0.90) and would spoil within days.
-  - text: Yes — but only because the solar tunnel is more efficient than expected
-    correct: false
-    explanation: The weight loss is driven by the water content of the fish, not by
-      dryer efficiency. Solar tunnel efficiency affects speed, not final mass.
-  prompt: A community dryer has 200 kg of fresh tilapia. After 3 days of solar drying
-    the batch weighs 58 kg. Is this expected?
+  - id: a
+    text: No — too much weight lost; the fish has been over-dried and is ruined
+  - id: b
+    text: No — losses should be less than 30 %; something went wrong
+  - id: c
+    text: Yes — fresh fish is ~75 % water; 50–60 kg output from 200 kg fresh is normal
+  - id: d
+    text: Yes — but only because the solar tunnel is more efficient than expected
+  prompt: A community dryer has 200 kg of fresh tilapia. After 3 days of solar drying the batch weighs
+    58 kg. Is this expected?
   xp_reward: 30
-  correct_answer: Yes — fresh fish is ~75 % water; 50–60 kg output from 200 kg fresh
-    is normal
+  correct_answer: c
+  explanation: 'Correct. Fish loses 70–75 % of its fresh weight on drying. The dried product is nutrient-dense:
+    58 kg of dried omena contains the protein of ~230 kg fresh.
+
+
+    Why the other options are wrong: Fresh fish is ~ 75 % water. A 75 % mass reduction from 200 kg yields
+    50 kg. 58 kg (71 % reduction) is within normal range — well-dried fish. A 30 % loss would mean 140
+    kg remaining — that fish would be dangerously wet (Aᵥ > 0.90) and would spoil within days. The weight
+    loss is driven by the water content of the fish, not by dryer efficiency. Solar tunnel efficiency
+    affects speed, not final mass.'
 - type: FILL_BLANK
   id: fs2-q2
-  prompt: Blanching vegetables in boiling water for 2–4 minutes before solar drying
-    deactivates ___ that cause browning.
-  explanation: Peroxidase and polyphenol oxidase are heat-labile enzymes responsible
-    for enzymatic browning. Blanching denatures them, preserving the product's colour
-    and extending shelf life.
+  prompt: Blanching vegetables in boiling water for 2–4 minutes before solar drying deactivates ___ that
+    cause browning.
+  explanation: Peroxidase and polyphenol oxidase are heat-labile enzymes responsible for enzymatic browning.
+    Blanching denatures them, preserving the product's colour and extending shelf life.
   xp_reward: 30
   correct_answer: enzymes
 - type: MULTIPLE_CHOICE
   id: fs2-q3
   options:
-  - text: Negligible — one fly cannot lay enough eggs to cause visible damage
-    correct: false
-    explanation: A single Calliphora or Lucilia female can lay 200–300 eggs in a single
-      batch. At 35 °C eggs hatch in 6–8 hours into maggots that penetrate flesh rapidly.
-  - text: Serious — blow-fly eggs can hatch within 6–8 hours; the exposed fish should
-      be inspected and the affected area removed
-    correct: true
-    explanation: Correct. Inspect immediately. If eggs are visible (tiny white rice-grain
-      specks), remove and discard that portion of flesh. Cover the remaining product
-      and continue drying.
-  - text: Moderate — flies only contaminate fish with bacteria, not eggs
-    correct: false
-    explanation: Blow-flies deposit eggs directly on protein-rich surfaces. Bacterial
-      contamination is secondary; the primary concern is larval infestation.
-  - text: None — the high temperature inside the solar tunnel kills eggs on contact
-    correct: false
-    explanation: Tunnel temperatures reach 50–70 °C at the black base but the fish
-      surface where eggs are laid may be cooler. Eggs are also relatively heat-tolerant
-      in the first hours.
-  prompt: A single blow-fly lands on fresh fish in the solar dryer for one hour before
-    the muslin cover is replaced. What is the risk?
+  - id: a
+    text: Negligible — one fly cannot lay enough eggs to cause visible damage
+  - id: b
+    text: Moderate — flies only contaminate fish with bacteria, not eggs
+  - id: c
+    text: None — the high temperature inside the solar tunnel kills eggs on contact
+  - id: d
+    text: Serious — blow-fly eggs can hatch within 6–8 hours; the exposed fish should be inspected and
+      the affected area removed
+  prompt: A single blow-fly lands on fresh fish in the solar dryer for one hour before the muslin cover
+    is replaced. What is the risk?
   xp_reward: 30
-  correct_answer: Serious — blow-fly eggs can hatch within 6–8 hours; the exposed
-    fish should be inspected and the affected area removed
+  correct_answer: d
+  explanation: 'Correct. Inspect immediately. If eggs are visible (tiny white rice-grain specks), remove
+    and discard that portion of flesh. Cover the remaining product and continue drying.
+
+
+    Why the other options are wrong: A single Calliphora or Lucilia female can lay 200–300 eggs in a single
+    batch. At 35 °C eggs hatch in 6–8 hours into maggots that penetrate flesh rapidly. Blow-flies deposit
+    eggs directly on protein-rich surfaces. Bacterial contamination is secondary; the primary concern
+    is larval infestation. Tunnel temperatures reach 50–70 °C at the black base but the fish surface where
+    eggs are laid may be cooler. Eggs are also relatively heat-tolerant in the first hours.'
 course_id: food-security
 estimated_minutes: 50
 license: CC-BY-SA-4.0

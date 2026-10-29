@@ -1,35 +1,52 @@
 id: veterinary-animal-husbandry
 title: Veterinary Medicine & Pastoral Animal Husbandry
 titleSw: Tiba ya Mifugo na Ufugaji Bora
-description: >
-  Master the essential clinical, nutritional, and surgical skills required to maintain
-  the health, productivity, and biosecurity of livestock in pastoral and smallholder
-  communities — from vital sign triage and ruminant digestive physiology to East Coast
-  Fever / Trypanosomiasis diagnosis, vaccine cold chain management, dystocia obstetrics,
-  and tick acaricide plunge-dip management.
+description: 'Master the essential clinical, nutritional, and surgical skills required
+  to maintain the health, productivity, and biosecurity of livestock in pastoral and
+  smallholder communities — from vital sign triage and ruminant digestive physiology
+  to East Coast Fever / Trypanosomiasis diagnosis, vaccine cold chain management,
+  dystocia obstetrics, and tick acaricide plunge-dip management.
+
+  '
 level: intermediate
 category: agriculture
 estimatedHours: 10
 xpTotal: 1250
 license: CC-BY-SA-4.0
 nodes:
-  - day: 1
-    lessonId: veterinary-animal-husbandry-day-1
-    title: "Clinical Examination, Vital Signs & Ruminant Physiology"
-    xp: 250
-  - day: 2
-    lessonId: veterinary-animal-husbandry-day-2
-    title: "Vector-Borne Livestock Diseases — ECF & Trypanosomiasis"
-    xp: 250
-  - day: 3
-    lessonId: veterinary-animal-husbandry-day-3
-    title: "Pastoral Vaccine Management & Biosecurity Protocols"
-    xp: 250
-  - day: 4
-    lessonId: veterinary-animal-husbandry-day-4
-    title: "Livestock Obstetrics, Dystocia & Emergency Wound Care"
-    xp: 250
-  - day: 5
-    lessonId: veterinary-animal-husbandry-day-5
-    title: "Acaricide Plunge Dips & Parasite Resistance Management"
-    xp: 250
+- day: 1
+  lessonId: veterinary-animal-husbandry-day-1
+  title: Clinical Examination, Vital Signs & Ruminant Physiology
+  xp: 250
+  id: veterinary-animal-husbandry-day-1
+  lesson_ids:
+  - veterinary-animal-husbandry-day-1
+- day: 2
+  lessonId: veterinary-animal-husbandry-day-2
+  title: Vector-Borne Livestock Diseases — ECF & Trypanosomiasis
+  xp: 250
+  id: veterinary-animal-husbandry-day-2
+  lesson_ids:
+  - veterinary-animal-husbandry-day-2
+- day: 3
+  lessonId: veterinary-animal-husbandry-day-3
+  title: Pastoral Vaccine Management & Biosecurity Protocols
+  xp: 250
+  id: veterinary-animal-husbandry-day-3
+  lesson_ids:
+  - veterinary-animal-husbandry-day-3
+- day: 4
+  lessonId: veterinary-animal-husbandry-day-4
+  title: Livestock Obstetrics, Dystocia & Emergency Wound Care
+  xp: 250
+  id: veterinary-animal-husbandry-day-4
+  lesson_ids:
+  - veterinary-animal-husbandry-day-4
+- day: 5
+  lessonId: veterinary-animal-husbandry-day-5
+  title: Acaricide Plunge Dips & Parasite Resistance Management
+  xp: 250
+  id: veterinary-animal-husbandry-day-5
+  lesson_ids:
+  - veterinary-animal-husbandry-day-5
+track: trades

@@ -1,201 +1,300 @@
 id: mechanical-workshop-day-2
 course_id: mechanical-workshop
-title: "Drilling, Tapping & Fasteners"
-title_sw: "Kuchimba, Kutengeneza Nyuzi na Vifungo vya Mitambo"
+title: Drilling, Tapping & Fasteners
+title_sw: Kuchimba, Kutengeneza Nyuzi na Vifungo vya Mitambo
 week_number: 1
 day_number: 2
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - mechanical
-  - drilling
-  - tapping
-  - threading
-  - fasteners
-  - cutting-speeds
+- mechanical
+- drilling
+- tapping
+- threading
+- fasteners
+- cutting-speeds
 xp: 250
 exam_domain: mechanical-workshop
+briefing: 'Drilling round, clean holes on pitch and cutting strong internal and external threads are foundational
+  machining operations. Incorrect drill speeds overheat high-speed steel (HSS) tools, while improper tap
+  drill sizing results in stripped threads or broken taps seized deep inside expensive castings. This
+  lesson delivers the mathematics of spindle RPM calculation, pilot hole sequencing, 3-stage tap progressions,
+  cutting fluids, and bolt grade torque specifications.
 
-briefing: >
-  Drilling round, clean holes on pitch and cutting strong internal and external
-  threads are foundational machining operations. Incorrect drill speeds overheat
-  high-speed steel (HSS) tools, while improper tap drill sizing results in stripped
-  threads or broken taps seized deep inside expensive castings. This lesson
-  delivers the mathematics of spindle RPM calculation, pilot hole sequencing,
-  3-stage tap progressions, cutting fluids, and bolt grade torque specifications.
+  '
+outline: 'Twist drill geometry (118° point angle, lip relief, web thinning); cutting speed formula RPM
+  = (1000 × V) / (pi × D); pilot hole rules for drills over 10 mm; work holding safety and drill press
+  vises; tap drill calculation formula (TDS = D - P); 3-piece tap set sequence (taper, intermediate/plug,
+  bottoming); tap wrench technique and chip breaking (half-turn back); die stocks and external threading;
+  metric bolt strength grades (4.8, 8.8, 10.9, 12.9) and torque tightening fundamentals.
 
-outline: >
-  Twist drill geometry (118° point angle, lip relief, web thinning); cutting speed
-  formula RPM = (1000 × V) / (pi × D); pilot hole rules for drills over 10 mm;
-  work holding safety and drill press vises; tap drill calculation formula (TDS = D - P);
-  3-piece tap set sequence (taper, intermediate/plug, bottoming); tap wrench technique
-  and chip breaking (half-turn back); die stocks and external threading; metric bolt
-  strength grades (4.8, 8.8, 10.9, 12.9) and torque tightening fundamentals.
+  '
+content_md: '## Twist Drill Anatomy & Geometry
 
-content_md: |
-  ## Twist Drill Anatomy & Geometry
 
   High-Speed Steel (HSS) twist drills are standard workshop cutters:
-  - **Point Angle**: Standard is **118°** for mild steel, cast iron, and general alloys. (135° split-point for stainless steel and tough alloys).
-  - **Lip Clearance Angle**: 8° to 12°. If too small, the drill rubs and will not penetrate; if too large, the cutting edges chip under load.
+
+  - **Point Angle**: Standard is **118°** for mild steel, cast iron, and general alloys. (135° split-point
+  for stainless steel and tough alloys).
+
+  - **Lip Clearance Angle**: 8° to 12°. If too small, the drill rubs and will not penetrate; if too large,
+  the cutting edges chip under load.
+
   - **Chisel Edge & Web**: The non-cutting central web at the tip does not cut; it extrudes metal.
-  - **Pilot Drilling**: For holes larger than **10 mm**, always drill a pilot hole equal to or slightly larger than the chisel web width of the main drill (typically 3–5 mm). This eliminates drilling thrust force by 50%.
+
+  - **Pilot Drilling**: For holes larger than **10 mm**, always drill a pilot hole equal to or slightly
+  larger than the chisel web width of the main drill (typically 3–5 mm). This eliminates drilling thrust
+  force by 50%.
+
 
   ## Spindle Speed (RPM) Calculation
 
-  Running a drill too fast burns the cutting lips, destroying temper; running too slow work-hardens stainless and reduces productivity.
+
+  Running a drill too fast burns the cutting lips, destroying temper; running too slow work-hardens stainless
+  and reduces productivity.
+
 
   ### Formula:
+
   $$N = \frac{1000 \times V_c}{\pi \times D}$$
 
+
   Where:
+
   - $N$ = Spindle speed in revolutions per minute (RPM)
+
   - $V_c$ = Recommended cutting speed in metres per minute (m/min)
+
   - $D$ = Drill diameter in millimetres (mm)
+
   - $\pi \approx 3.1416$
 
+
   ### Standard HSS Cutting Speeds ($V_c$):
+
   - Mild steel (low carbon): **25 – 30 m/min**
+
   - Cast iron: **18 – 22 m/min**
+
   - Aluminium & brass: **60 – 90 m/min**
+
   - Stainless steel: **10 – 15 m/min**
 
+
   *Example*: Sizing a 12 mm drill in mild steel ($V_c = 28\text{ m/min}$):
+
   $$N = \frac{1000 \times 28}{3.1416 \times 12} = \frac{28000}{37.7} \approx 742\text{ RPM}$$
+
   Select the nearest lower pulley step on the drill press (e.g., 680 or 720 RPM).
+
 
   ## Cutting Fluids & Coolants
 
+
   | Material | Preferred Cutting Fluid |
+
   |---|---|
+
   | Mild Steel | Soluble oil emulsion (1:10) or neat sulfurized mineral oil |
+
   | Aluminium | Kerosene, WD-40, or alcohol (prevents chip welding) |
+
   | Cast Iron | Run dry or compressed air (liquid fluid creates abrasive paste) |
+
   | Stainless Steel | High-pressure chlorinated/sulfurized cutting paste |
+
 
   ## Internal Threading (Tapping)
 
-  To create an internal thread that holds full proof load without seizing, drill the hole to the **Tap Drill Size (TDS)**:
+
+  To create an internal thread that holds full proof load without seizing, drill the hole to the **Tap
+  Drill Size (TDS)**:
+
 
   ### Formula (Metric 60° Threads):
+
   $$\text{TDS} = D - P$$
 
+
   Where:
+
   - $D$ = Major nominal bolt diameter (mm)
+
   - $P$ = Thread pitch in mm
 
+
   *Examples*:
+
   - **M6 × 1.0**: $\text{TDS} = 6.0 - 1.0 = 5.0\text{ mm}$ drill.
+
   - **M8 × 1.25**: $\text{TDS} = 8.0 - 1.25 = 6.75\text{ mm}$ (use standard 6.8 mm drill).
+
   - **M10 × 1.5**: $\text{TDS} = 10.0 - 1.5 = 8.5\text{ mm}$ drill.
+
   - **M12 × 1.75**: $\text{TDS} = 12.0 - 1.75 = 10.25\text{ mm}$ (use 10.2 mm or 10.3 mm drill).
 
-  *Warning*: Drilling smaller than TDS increases tapping torque exponentially, breaking the tap inside the hole.
+
+  *Warning*: Drilling smaller than TDS increases tapping torque exponentially, breaking the tap inside
+  the hole.
+
 
   ### Tap Progression:
-  1. **Taper Tap (1st Tap)**: 4° chamfer over 7–10 threads. Starts square and cuts initial shallow thread form.
+
+  1. **Taper Tap (1st Tap)**: 4° chamfer over 7–10 threads. Starts square and cuts initial shallow thread
+  form.
+
   2. **Intermediate / Plug Tap (2nd Tap)**: 8° chamfer over 3–5 threads. Deepens threads to full profile.
-  3. **Bottoming Tap (3rd Tap)**: 23° chamfer over 1–1.5 threads. Only used to cut full threads to the bottom of a blind hole.
+
+  3. **Bottoming Tap (3rd Tap)**: 23° chamfer over 1–1.5 threads. Only used to cut full threads to the
+  bottom of a blind hole.
+
 
   ### Tapping Rules:
-  - Check squareness with an engineer's square after 2 turns.
+
+  - Check squareness with an engineer''s square after 2 turns.
+
   - Apply generous cutting oil.
-  - **Break the chip**: Rotate forward 1/2 turn, then back reverse 1/4 turn until you feel/hear the curled chip snap off.
+
+  - **Break the chip**: Rotate forward 1/2 turn, then back reverse 1/4 turn until you feel/hear the curled
+  chip snap off.
+
 
   ## Metric Fastener Grades & Torques
 
+
   Metric bolt heads are stamped with two numbers separated by a decimal point (e.g., `8.8`, `10.9`):
+
   - **First digit**: Nominal tensile strength in hundreds of MPa ($8 \times 100 = 800\text{ MPa}$).
-  - **Second digit**: Ratio of yield strength to tensile strength in tenths ($0.8 \times 800 = 640\text{ MPa}$ yield point).
+
+  - **Second digit**: Ratio of yield strength to tensile strength in tenths ($0.8 \times 800 = 640\text{
+  MPa}$ yield point).
+
 
   | Bolt Grade | Yield Strength | Tensile Strength | Application |
+
   |---|---|---|---|
+
   | **4.8** | 320 MPa | 400 MPa | Light brackets, sheet metal, non-structural |
+
   | **8.8** | 640 MPa | 800 MPa | Standard machinery, automotive suspensions, framing |
+
   | **10.9** | 900 MPa | 1000 MPa | High-stress engine cylinder heads, structural flanges |
+
   | **12.9** | 1080 MPa | 1200 MPa | Socket head cap screws, high-vibration dies |
 
+  '
 exercises:
-  - id: mech-d2-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      You need to drill a 10 mm hole through a mild steel bracket using an HSS drill.
-      Recommended cutting speed is 28 m/min. What is the calculated spindle speed in RPM?
-    xp_reward: 50
-    options:
-      - text: "Approximately 891 RPM"
-        correct: true
-        explanation: "N = (1000 × 28) / (3.1416 × 10) = 28,000 / 31.416 ≈ 891.2 RPM."
-      - text: "Approximately 280 RPM"
-        correct: false
-        explanation: "This neglects the 1000 conversion factor and pi calculation."
-      - text: "Approximately 1,780 RPM"
-        correct: false
-        explanation: "This doubles the correct speed and would quickly burn the HSS drill lips."
-      - text: "Approximately 445 RPM"
-        correct: false
-        explanation: "This is half of the correct speed."
+- id: mech-d2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'You need to drill a 10 mm hole through a mild steel bracket using an HSS drill. Recommended
+    cutting speed is 28 m/min. What is the calculated spindle speed in RPM?
 
-  - id: mech-d2-q2
-    type: FILL_BLANK
-    prompt: >
-      To tap an M10 × 1.5 standard coarse thread in steel, the required tap drill
-      size is ___ mm. For tapping blind holes to full thread depth, the final tap
-      used in the 3-piece progression is the ___ tap.
-    xp_reward: 50
-    correct_answer: "8.5 mm; bottoming"
-    explanation: >
-      TDS = D - P = 10.0 - 1.5 = 8.5 mm. The bottoming tap (or plug/finisher) has
-      lead chamfer on only 1 to 1.5 threads, enabling thread forming right to the
-      floor of a blind hole.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Approximately 280 RPM
+  - id: b
+    text: Approximately 1,780 RPM
+  - id: c
+    text: Approximately 891 RPM
+  - id: d
+    text: Approximately 445 RPM
+  explanation: 'N = (1000 × 28) / (3.1416 × 10) = 28,000 / 31.416 ≈ 891.2 RPM.
 
-  - id: mech-d2-q3
-    type: MATCH_PAIRS
-    prompt: Match each metric bolt grade stamping to its engineering mechanical specification.
-    xp_reward: 50
-    pairs:
-      - left: Grade 4.8
-        right: 400 MPa tensile strength, 320 MPa yield strength (mild low-stress)
-      - left: Grade 8.8
-        right: 800 MPa tensile strength, 640 MPa yield strength (standard high-tensile)
-      - left: Grade 10.9
-        right: 1000 MPa tensile strength, 900 MPa yield strength (high-stress structural)
-      - left: Grade 12.9
-        right: 1200 MPa tensile strength, 1080 MPa yield strength (hardened alloy cap screws)
-    correct_answer: null
-    explanation: >
-      The first digit gives tensile strength × 100 MPa; the second gives yield strength
-      as a percentage of tensile strength. Grade 8.8 is the minimum grade used in
-      dynamic machine frames and structural joints.
 
-  - id: mech-d2-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why must you reverse a hand tap 1/4 to 1/2 turn after every half-turn of
-      forward cutting?
-    xp_reward: 50
-    options:
-      - text: "To snap off and clear curled metal chips from the tap flutes, preventing chips from packing tight and snapping the hardened tap"
-        correct: true
-        explanation: "Continuous forward rotation causes long chips to pack into the flutes. As chip pressure rises, torsional shear stresses exceed the tap's yield point, snapping the brittle hardened tap inside the workpiece."
-      - text: "To cool down the cutting edge with atmospheric air"
-        correct: false
-        explanation: "Cooling is achieved through cutting fluids, not by reversing."
-      - text: "To measure the pitch with the tap flutes"
-        correct: false
-        explanation: "Pitch is fixed by the tool geometry."
-      - text: "To clean the cutting fluid off the threads"
-        correct: false
-        explanation: "Cutting fluid should remain in the hole to lubricate cutting action."
+    Why the other options are wrong: This neglects the 1000 conversion factor and pi calculation. This
+    doubles the correct speed and would quickly burn the HSS drill lips. This is half of the correct speed.'
+  correct_answer: c
+- id: mech-d2-q2
+  type: FILL_BLANK
+  prompt: 'To tap an M10 × 1.5 standard coarse thread in steel, the required tap drill size is ___ mm.
+    For tapping blind holes to full thread depth, the final tap used in the 3-piece progression is the
+    ___ tap.
 
-  - id: mech-d2-q5
-    type: FILL_BLANK
-    prompt: >
-      When drilling holes larger than 10 mm in mild steel, you should first drill a
-      ___ hole sized to match the chisel ___ of the larger drill to reduce feeding
-      thrust force by up to 50%.
-    xp_reward: 50
-    correct_answer: "pilot; web"
-    explanation: >
-      The chisel edge across the central drill web does not cut cleanly; it extrudes
-      metal. A pilot hole sized to the web width eliminates this resistance.
+    '
+  xp_reward: 50
+  correct_answer:
+  - 8.5 mm
+  - bottoming
+  explanation: 'TDS = D - P = 10.0 - 1.5 = 8.5 mm. The bottoming tap (or plug/finisher) has lead chamfer
+    on only 1 to 1.5 threads, enabling thread forming right to the floor of a blind hole.
+
+    '
+- id: mech-d2-q3
+  type: MATCH_PAIRS
+  prompt: Match each metric bolt grade stamping to its engineering mechanical specification.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Grade 4.8
+    right:
+      id: r-22859e
+      text: 400 MPa tensile strength, 320 MPa yield strength (mild low-stress)
+  - left:
+      id: l2
+      text: Grade 8.8
+    right:
+      id: r-b87156
+      text: 800 MPa tensile strength, 640 MPa yield strength (standard high-tensile)
+  - left:
+      id: l3
+      text: Grade 10.9
+    right:
+      id: r-7e9df3
+      text: 1000 MPa tensile strength, 900 MPa yield strength (high-stress structural)
+  - left:
+      id: l4
+      text: Grade 12.9
+    right:
+      id: r-a4524f
+      text: 1200 MPa tensile strength, 1080 MPa yield strength (hardened alloy cap screws)
+  correct_answer:
+  - l1=r-22859e
+  - l2=r-b87156
+  - l3=r-7e9df3
+  - l4=r-a4524f
+  explanation: 'The first digit gives tensile strength × 100 MPa; the second gives yield strength as a
+    percentage of tensile strength. Grade 8.8 is the minimum grade used in dynamic machine frames and
+    structural joints.
+
+    '
+- id: mech-d2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why must you reverse a hand tap 1/4 to 1/2 turn after every half-turn of forward cutting?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: To cool down the cutting edge with atmospheric air
+  - id: b
+    text: To measure the pitch with the tap flutes
+  - id: c
+    text: To clean the cutting fluid off the threads
+  - id: d
+    text: To snap off and clear curled metal chips from the tap flutes, preventing chips from packing
+      tight and snapping the hardened tap
+  explanation: 'Continuous forward rotation causes long chips to pack into the flutes. As chip pressure
+    rises, torsional shear stresses exceed the tap''s yield point, snapping the brittle hardened tap inside
+    the workpiece.
+
+
+    Why the other options are wrong: Cooling is achieved through cutting fluids, not by reversing. Pitch
+    is fixed by the tool geometry. Cutting fluid should remain in the hole to lubricate cutting action.'
+  correct_answer: d
+- id: mech-d2-q5
+  type: FILL_BLANK
+  prompt: 'When drilling holes larger than 10 mm in mild steel, you should first drill a ___ hole sized
+    to match the chisel ___ of the larger drill to reduce feeding thrust force by up to 50%.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - pilot
+  - web
+  explanation: 'The chisel edge across the central drill web does not cut cleanly; it extrudes metal.
+    A pilot hole sized to the web width eliminates this resistance.
+
+    '

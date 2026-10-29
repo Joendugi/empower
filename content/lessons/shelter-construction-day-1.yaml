@@ -1,138 +1,163 @@
 id: shelter-construction-day-1
 course_id: shelter-construction
-title: "Soil Composition & Foundation Sizing"
-title_sw: "Muundo wa Udongo na Upimaji wa Msingi"
+title: Soil Composition & Foundation Sizing
+title_sw: Muundo wa Udongo na Upimaji wa Msingi
 week_number: 1
 day_number: 1
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [shelter, construction, soil-testing, foundations, civil-engineering, kenya]
+tags:
+- shelter
+- construction
+- soil-testing
+- foundations
+- civil-engineering
+- kenya
 xp: 85
 exam_domain: Civil & Structural Engineering
+briefing: 'All structural durability begins with the ground. In East Africa, building failures
 
-briefing: |
-  All structural durability begins with the ground. In East Africa, building failures
   routinely stem from building on expansive black cotton soil (montmorillonite clay)
+
   without proper moisture isolation or foundation depth. Before manufacturing blocks
+
   or digging trenches, a builder must classify the subsoil: the sand-to-clay ratio
+
   determines whether soil can support load or will heave and crack masonry. This day
+
   teaches field soil classification tests (ribbon test, drop ball test, 24-hour glass
+
   jar sedimentation) and foundation engineering (rubble trench with French drains).
-briefing_sw: |
-  Uimara wote wa jengo huanzia ardhini. Katika Afrika Mashariki, majengo mengi huanguka
-  au kupasuka kwa sababu ya kujengwa kwenye udongo wa 'black cotton' unaovimba na
+
+  '
+briefing_sw: 'Uimara wote wa jengo huanzia ardhini. Katika Afrika Mashariki, majengo mengi huanguka
+
+  au kupasuka kwa sababu ya kujengwa kwenye udongo wa ''black cotton'' unaovimba na
+
   kupasuka wakati wa mvua. Siku hii inafundisha jinsi ya kupima udongo kwa kutumia chupa
+
   ya kioo (jar sedimentation) na kujenga misingi imara ya mawe ya rubble trench.
 
-outline: |
-  1. Soil mineral fractions: gravel, coarse/fine sand, silt, and cohesive clay
+  '
+outline: '1. Soil mineral fractions: gravel, coarse/fine sand, silt, and cohesive clay
+
   2. The black cotton soil hazard: expansive montmorillonite clay in Kenya
+
   3. Rapid field test 1: The ribbon test (extruding moist soil between thumb and finger)
+
   4. Rapid field test 2: The drop ball test from 1.0 meter height
+
   5. Definitive volumetric test: The 24-hour glass jar sedimentation test
+
   6. Soil bearing capacities: bedrock vs gravel vs firm clay vs loose sand (kN/m²)
+
   7. The Rubble Trench foundation: porous rock bed with perforated drain pipe
+
   8. Stem wall (plinth) construction: elevating earthen walls at least 30 cm above ground grade
 
-content_md: |
-  ## Soil Fractions and Engineering Behaviour
-
-  Subsoil consists of four mineral particle sizes:
-
-  | Particle Type | Diameter Size | Structural Behavior |
-  |---------------|---------------|---------------------|
-  | **Gravel** | > 2.0 mm | Excellent internal drainage, zero plasticity, high shear strength |
-  | **Sand** | 0.06 – 2.0 mm | Frictional load-bearing matrix, does not shrink or swell |
-  | **Silt** | 0.002 – 0.06 mm | Micro-aggregate, poor cohesion, erodes easily under running water |
-  | **Clay** | < 0.002 mm | **Binder / Glue**: highly cohesive, plastic when wet, binds sand together |
-
-  **The Optimal Building Mix (for Compressed Earth Blocks & Adobe):**
-  - **Sand/Aggregate:** 65% – 75% (provides rigid skeletal strength)
-  - **Clay:** 15% – 25% (provides binding cohesion)
-  - **Silt:** 10% – 15% (fills microscopic voids)
-
-  ## The Expansive Soil Hazard: Black Cotton Soil
-
-  In Nairobi, Machakos, Athi River, and parts of the Rift Valley, subsoils are dominated by **black cotton soil (vertisol)** containing montmorillonite clay.
-  - In wet seasons: Expands by up to 30% in volume, exerting up to 250 kN/m² of swelling pressure.
-  - In dry seasons: Shrinks severely, leaving deep open fissures up to 10 cm wide.
-  - **Rule:** Never build directly on black cotton topsoil. Dig down to the stable shale, murram, or bedrock horizon, or replace topsoil with compacted gravel.
-
-  ## Field Soil Identification Tests
-
-  ### 1. The Ribbon Test (Cohesion & Clay Content)
-  1. Take a golf-ball-sized sample of subsoil (remove gravel and organic roots).
-  2. Add water drop by drop until it reaches moist putty consistency (not sticky).
-  3. Roll into a cigar/sausage shape 1.5 cm thick.
-  4. Flatten and extrude the soil ribbon between thumb and forefinger over the edge of your hand until it breaks under its own weight.
-  - **Breaks at < 2.5 cm:** Sandy loam (insufficient clay for raw adobe; needs clay or cement).
-  - **Ribbon extends 2.5 – 5.0 cm:** Ideal clay loam for earthen construction!
-  - **Ribbon extends > 7.5 cm:** Heavy clay (will shrink and crack severely; must be cut with coarse sand).
-
-  ### 2. The 24-Hour Jar Sedimentation Test (Precise Proportions)
-  1. Fill a straight-sided glass jar 1/3 full with dry, sieved subsoil.
-  2. Add clean water until 4/5 full, plus 1 teaspoon of table salt (electrolyte flocculant).
-  3. Shake vigorously for 2 minutes to disperse all particles.
-  4. Place jar on a level table.
-  - **At 1 minute:** Coarse sand and gravel settle to the bottom. Mark the layer line with a marker.
-  - **At 2 hours:** Silt settles atop the sand layer. Mark the second line.
-  - **At 24–48 hours:** Fine clay settles as a dense top layer; water clears. Mark the third line.
-  5. Calculate percentages:
-     `% Fraction = (Layer Height ÷ Total Soil Height) × 100`
-
-  ## Foundation Engineering: The Rubble Trench
-
-  Instead of expensive solid reinforced concrete footings, the **Rubble Trench Foundation** (originated by Frank Lloyd Wright and used in earthbag building worldwide) provides earthquake resistance and permanent drainage:
-
-  1. Excavate trench below the local frost/erosion line (typically 45–60 cm deep, 45 cm wide).
-  2. Slope trench bottom 1% toward a low-lying daylight exit or soak pit.
-  3. Lay a 10 cm perforated PVC pipe (or bamboo drain) wrapped in geotextile filter fabric along the bottom.
-  4. Fill trench to ground level with washed coarse crushed stones (25–50 mm diameter).
-  5. Compact stones with a heavy hand tamper.
-  6. **Cap with a 30 cm stone or concrete stem wall (plinth)** to lift the base of earthen walls well above rain splashing and surface runoff.
-
+  '
+content_md: "## Soil Fractions and Engineering Behaviour\n\nSubsoil consists of four mineral particle\
+  \ sizes:\n\n| Particle Type | Diameter Size | Structural Behavior |\n|---------------|---------------|---------------------|\n\
+  | **Gravel** | > 2.0 mm | Excellent internal drainage, zero plasticity, high shear strength |\n| **Sand**\
+  \ | 0.06 – 2.0 mm | Frictional load-bearing matrix, does not shrink or swell |\n| **Silt** | 0.002 –\
+  \ 0.06 mm | Micro-aggregate, poor cohesion, erodes easily under running water |\n| **Clay** | < 0.002\
+  \ mm | **Binder / Glue**: highly cohesive, plastic when wet, binds sand together |\n\n**The Optimal\
+  \ Building Mix (for Compressed Earth Blocks & Adobe):**\n- **Sand/Aggregate:** 65% – 75% (provides rigid\
+  \ skeletal strength)\n- **Clay:** 15% – 25% (provides binding cohesion)\n- **Silt:** 10% – 15% (fills\
+  \ microscopic voids)\n\n## The Expansive Soil Hazard: Black Cotton Soil\n\nIn Nairobi, Machakos, Athi\
+  \ River, and parts of the Rift Valley, subsoils are dominated by **black cotton soil (vertisol)** containing\
+  \ montmorillonite clay.\n- In wet seasons: Expands by up to 30% in volume, exerting up to 250 kN/m²\
+  \ of swelling pressure.\n- In dry seasons: Shrinks severely, leaving deep open fissures up to 10 cm\
+  \ wide.\n- **Rule:** Never build directly on black cotton topsoil. Dig down to the stable shale, murram,\
+  \ or bedrock horizon, or replace topsoil with compacted gravel.\n\n## Field Soil Identification Tests\n\
+  \n### 1. The Ribbon Test (Cohesion & Clay Content)\n1. Take a golf-ball-sized sample of subsoil (remove\
+  \ gravel and organic roots).\n2. Add water drop by drop until it reaches moist putty consistency (not\
+  \ sticky).\n3. Roll into a cigar/sausage shape 1.5 cm thick.\n4. Flatten and extrude the soil ribbon\
+  \ between thumb and forefinger over the edge of your hand until it breaks under its own weight.\n- **Breaks\
+  \ at < 2.5 cm:** Sandy loam (insufficient clay for raw adobe; needs clay or cement).\n- **Ribbon extends\
+  \ 2.5 – 5.0 cm:** Ideal clay loam for earthen construction!\n- **Ribbon extends > 7.5 cm:** Heavy clay\
+  \ (will shrink and crack severely; must be cut with coarse sand).\n\n### 2. The 24-Hour Jar Sedimentation\
+  \ Test (Precise Proportions)\n1. Fill a straight-sided glass jar 1/3 full with dry, sieved subsoil.\n\
+  2. Add clean water until 4/5 full, plus 1 teaspoon of table salt (electrolyte flocculant).\n3. Shake\
+  \ vigorously for 2 minutes to disperse all particles.\n4. Place jar on a level table.\n- **At 1 minute:**\
+  \ Coarse sand and gravel settle to the bottom. Mark the layer line with a marker.\n- **At 2 hours:**\
+  \ Silt settles atop the sand layer. Mark the second line.\n- **At 24–48 hours:** Fine clay settles as\
+  \ a dense top layer; water clears. Mark the third line.\n5. Calculate percentages:\n   `% Fraction =\
+  \ (Layer Height ÷ Total Soil Height) × 100`\n\n## Foundation Engineering: The Rubble Trench\n\nInstead\
+  \ of expensive solid reinforced concrete footings, the **Rubble Trench Foundation** (originated by Frank\
+  \ Lloyd Wright and used in earthbag building worldwide) provides earthquake resistance and permanent\
+  \ drainage:\n\n1. Excavate trench below the local frost/erosion line (typically 45–60 cm deep, 45 cm\
+  \ wide).\n2. Slope trench bottom 1% toward a low-lying daylight exit or soak pit.\n3. Lay a 10 cm perforated\
+  \ PVC pipe (or bamboo drain) wrapped in geotextile filter fabric along the bottom.\n4. Fill trench to\
+  \ ground level with washed coarse crushed stones (25–50 mm diameter).\n5. Compact stones with a heavy\
+  \ hand tamper.\n6. **Cap with a 30 cm stone or concrete stem wall (plinth)** to lift the base of earthen\
+  \ walls well above rain splashing and surface runoff.\n"
 exercises:
-  - id: sc1-q1
-    type: MULTIPLE_CHOICE
-    prompt: "You perform a 24-hour jar test on a Kenyan subsoil sample. The total settled depth is 10 cm: the bottom sand layer is 7 cm, the middle silt layer is 1 cm, and the top clay layer is 2 cm. What is your engineering assessment of this soil for compressed earth blocks?"
-    xp_reward: 35
-    options:
-      - text: "Unusable — the soil contains far too much clay and will crack"
-        correct: false
-        explanation: "2 cm out of 10 cm is 20% clay, which is well within the safe 15–25% binder range."
-      - text: "Excellent — 70% sand and 20% clay is near the ideal structural ratio for stabilized compressed earth blocks"
-        correct: true
-        explanation: "Correct! 70% sand provides the load-bearing aggregate skeleton, and 20% clay provides natural cohesion. With 5-8% cement or lime stabilization, this soil will yield high compressive strength blocks."
-      - text: "Too sandy — the block will crumble because clay must be at least 50%"
-        correct: false
-        explanation: "Soil with 50% clay shrinks massively during drying, causing extensive structural fissures."
-      - text: "The soil requires addition of organic matter like manure"
-        correct: false
-        explanation: "Organic matter decays and decomposes, leaving voids that compromise compressive strength. Structural earth must be entirely mineral subsoil."
-    correct_answer: "Excellent — 70% sand and 20% clay is near the ideal structural ratio for stabilized compressed earth blocks"
+- id: sc1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'You perform a 24-hour jar test on a Kenyan subsoil sample. The total settled depth is 10 cm:
+    the bottom sand layer is 7 cm, the middle silt layer is 1 cm, and the top clay layer is 2 cm. What
+    is your engineering assessment of this soil for compressed earth blocks?'
+  xp_reward: 35
+  options:
+  - id: a
+    text: Unusable — the soil contains far too much clay and will crack
+  - id: b
+    text: Too sandy — the block will crumble because clay must be at least 50%
+  - id: c
+    text: The soil requires addition of organic matter like manure
+  - id: d
+    text: Excellent — 70% sand and 20% clay is near the ideal structural ratio for stabilized compressed
+      earth blocks
+  correct_answer: d
+  explanation: 'Correct! 70% sand provides the load-bearing aggregate skeleton, and 20% clay provides
+    natural cohesion. With 5-8% cement or lime stabilization, this soil will yield high compressive strength
+    blocks.
 
-  - id: sc1-q2
-    type: FILL_BLANK
-    prompt: "A stone or concrete stem wall (plinth) must elevate earthen walls at least ___ cm above ground grade to protect against rainwater splash and surface erosion."
-    xp_reward: 20
-    correct_answer: "30"
-    explanation: "Water bouncing off hard soil during torrential rains causes severe splash erosion on earthen wall bases. Elevating the base 30 cm (12 inches) on a stone or concrete stem wall prevents wall undermining."
 
-  - id: sc1-q3
-    type: MATCH_PAIRS
-    prompt: "Match each soil test to its diagnostic purpose."
-    xp_reward: 30
-    pairs:
-      - left: 24-Hour Jar Sedimentation
-        right: Precise volumetric percentage of sand, silt, and clay fractions
-      - left: Ribbon extrusion test
-        right: Rapid qualitative assessment of soil cohesion and clay plasticity
-      - left: Drop ball test
-        right: Cohesion test where a moist 4 cm ball is dropped from 1m to observe shattering
-      - left: Rubble trench excavation
-        right: Free-draining stone footing that prevents frost heave and water pooling
-    correct_answer:
-      - 24-Hour Jar Sedimentation=Precise volumetric percentage of sand, silt, and clay fractions
-      - Ribbon extrusion test=Rapid qualitative assessment of soil cohesion and clay plasticity
-      - Drop ball test=Cohesion test where a moist 4 cm ball is dropped from 1m to observe shattering
-      - Rubble trench excavation=Free-draining stone footing that prevents frost heave and water pooling
+    Why the other options are wrong: 2 cm out of 10 cm is 20% clay, which is well within the safe 15–25%
+    binder range. Soil with 50% clay shrinks massively during drying, causing extensive structural fissures.
+    Organic matter decays and decomposes, leaving voids that compromise compressive strength. Structural
+    earth must be entirely mineral subsoil.'
+- id: sc1-q2
+  type: FILL_BLANK
+  prompt: A stone or concrete stem wall (plinth) must elevate earthen walls at least ___ cm above ground
+    grade to protect against rainwater splash and surface erosion.
+  xp_reward: 20
+  correct_answer: '30'
+  explanation: Water bouncing off hard soil during torrential rains causes severe splash erosion on earthen
+    wall bases. Elevating the base 30 cm (12 inches) on a stone or concrete stem wall prevents wall undermining.
+- id: sc1-q3
+  type: MATCH_PAIRS
+  prompt: Match each soil test to its diagnostic purpose.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: 24-Hour Jar Sedimentation
+    right:
+      id: r-336b1e
+      text: Precise volumetric percentage of sand, silt, and clay fractions
+  - left:
+      id: l2
+      text: Ribbon extrusion test
+    right:
+      id: r-5384ed
+      text: Rapid qualitative assessment of soil cohesion and clay plasticity
+  - left:
+      id: l3
+      text: Drop ball test
+    right:
+      id: r-9a466d
+      text: Cohesion test where a moist 4 cm ball is dropped from 1m to observe shattering
+  - left:
+      id: l4
+      text: Rubble trench excavation
+    right:
+      id: r-fb2fcd
+      text: Free-draining stone footing that prevents frost heave and water pooling
+  correct_answer:
+  - l1=r-336b1e
+  - l2=r-5384ed
+  - l3=r-9a466d
+  - l4=r-fb2fcd

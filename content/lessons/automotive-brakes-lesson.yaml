@@ -96,3 +96,87 @@ exercises:
     hint: "Soft pedal."
     explanation: "A floor pedal is a danger. Stay on the job."
     xp_reward: 60
+content_md: |
+  ## How hydraulic brakes work
+
+  Pressing the pedal pushes a piston in the **master cylinder**. Brake fluid can't be compressed, so the pressure travels through steel **brake lines** and flexible **hoses** to the **calipers** (disc brakes) or **wheel cylinders** (drum brakes). There it pushes the friction material against the disc or drum. A **servo (booster)** multiplies your foot force, and **ABS** adjusts the pressure at each wheel to stop it locking.
+
+  ```
+   Pedal ─► Servo ─► Master cylinder ─┬─► Line ─► Hose ─► Front calipers
+                      (reservoir)     └─► Line ─► Hose ─► Rear calipers / wheel cylinders
+                                           (ABS modulator in between on most cars)
+  ```
+
+  **Air** in the system *can* be compressed. That's why air gives a soft or spongy pedal, and why bleeding matters.
+
+  ## Brake fluid
+
+  Brake fluid is **hygroscopic**: it absorbs water from the air over time. Water lowers the fluid's boiling point. Under hard braking the water can boil into vapour, and the pedal goes to the floor (**fade**). Water also corrodes calipers and ABS units from inside.
+
+  | Type | Base | Mixes with | Minimum dry boiling point |
+  |---|---|---|---|
+  | DOT 3 | Glycol | DOT 4, DOT 5.1 | 205 °C |
+  | DOT 4 | Glycol | DOT 3, DOT 5.1 | 230 °C |
+  | DOT 5.1 | Glycol | DOT 3, DOT 4 | 260 °C |
+  | **DOT 5** | **Silicone** | **Nothing above** | 260 °C |
+
+  - Use the type printed on the **reservoir cap** or in the vehicle data.
+  - **Never mix DOT 5 silicone into a glycol (DOT 3/4/5.1) system.** They don't mix, they can gel, and seals can fail.
+  - Use fluid from a **sealed** container. An opened bottle on the shelf has been absorbing moisture.
+  - Many manufacturers specify a fluid change about every **2 years**.
+  - Brake fluid **damages paint**. Cover the wings, and wash any spill off straight away with plenty of water.
+
+  ## Pads, discs and drums
+
+  **Inspect and measure, don't guess:**
+
+  - **Pad thickness** against the minimum in the data. Look for wear indicators and uneven wear: inner pad worn more than outer suggests sticking slides or a sticking piston.
+  - **Disc thickness** with a micrometer against the **MIN TH** value stamped on the disc. Check for scoring, cracks, blue heat spots and the lip at the edge.
+  - **Disc run-out** with a dial indicator. Too much run-out pushes the pads back and causes a pulsing pedal.
+  - **Contamination:** oil or brake fluid on the friction material can't be cleaned out. Replace pads in axle sets, and fix the leak.
+  - **Brake dust:** don't blow it off with compressed air. Older linings may contain asbestos, and all brake dust is harmful to breathe. Use brake cleaner or a wet method, and wear a mask.
+
+  ## The diagnosis path
+
+  Assessors look for this sequence. "Parts cannon" — changing parts until the fault goes away — fails assessments and wastes the customer's money.
+
+  1. **Complaint:** what does the customer notice, and when?
+  2. **Evidence:** road test if it's safe, and check for warning lights.
+  3. **Inspect:** tyres, pads, discs, calipers, hoses, lines and fluid level.
+  4. **Measure:** thickness, run-out, tyre pressures, and scan data for ABS.
+  5. **Cause:** what explains *all* the evidence?
+  6. **Correction:** repair the cause, not just the symptom.
+  7. **Retest:** prove the fix on a road test and record it.
+
+  **A car that pulls to one side under braking** is usually a one-sided problem:
+
+  | Likely cause | Evidence |
+  |---|---|
+  | Seized caliper piston or slides | That wheel runs hot after a drive; uneven pad wear |
+  | Internally collapsed hose | Brake drags or releases slowly on one side |
+  | Contaminated pad | Oil or fluid on the lining; grease from a leaking hub seal |
+  | Tyre pressure or tyre difference | Low tyre, or mismatched tyres across the axle |
+  | Suspension or alignment | Worn bushes; pulls when driving as well as braking |
+
+  **ABS faults** need scan-tool data, such as wheel-speed sensor readings. Unplugging the ABS "to stop the pull" isn't a repair. It removes a safety system and is an assessment fail.
+
+  ## Bleeding
+
+  - Follow the manufacturer's **bleed sequence**. A common rule is to start at the wheel **furthest from the master cylinder** and finish at the nearest. Many ABS systems need a scan tool to cycle the modulator.
+  - Keep the reservoir topped up the whole time. If it runs dry, air goes back in.
+  - Bleed each wheel until the fluid comes out **clean and free of bubbles**.
+  - Finish with a **firm, high pedal** that holds under steady pressure.
+
+  ## Before you hand the car back
+
+  - Pump the pedal to push the pistons out **before** moving the car. After a pad change the first press goes to the floor.
+  - **A pedal that goes to the floor after pumping is a danger.** Don't release the car. Find the leak, or bleed it properly.
+  - Check the fluid level, wheel-nut torque, and that no lines are rubbing.
+  - **Bed in** new pads to the pad maker's procedure, avoiding hard stops for the first distance.
+  - Road test, then record the work and measurements.
+
+  ## Check yourself
+
+  - Why does water in brake fluid cause fade?
+  - Name three one-sided causes of a pull under braking.
+  - What do you do if the pedal goes to the floor after a pad change?

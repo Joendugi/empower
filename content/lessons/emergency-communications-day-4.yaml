@@ -1,124 +1,220 @@
 id: emergency-communications-day-4
 course_id: emergency-communications
-title: "Off-Grid Digital LoRa Mesh Networks"
-title_sw: "Mitandao ya Kidijitali ya LoRa Mesh Nje ya Gridi"
+title: Off-Grid Digital LoRa Mesh Networks
+title_sw: Mitandao ya Kidijitali ya LoRa Mesh Nje ya Gridi
 week_number: 1
 day_number: 4
 estimated_minutes: 55
 license: CC-BY-SA-4.0
-tags: [communications, lora, meshtastic, packet-radio, encryption, off-grid, mesh, kenya]
+tags:
+- communications
+- lora
+- meshtastic
+- packet-radio
+- encryption
+- off-grid
+- mesh
+- kenya
 xp: 90
 exam_domain: Telecommunications & RF Engineering
+briefing: 'When cellular towers go dark and mobile data networks collapse, modern low-cost digital
 
-briefing: |
-  When cellular towers go dark and mobile data networks collapse, modern low-cost digital
   packet radio can maintain encrypted community messaging, GPS distress beacons, and sensor
+
   telemetry across entire counties without internet or subscriptions. LoRa (Long Range)
+
   uses Chirp Spread Spectrum modulation to decode digital packets buried 20 dB below the
+
   ambient noise floor. Running open-source Meshtastic firmware on low-power battery nodes
+
   (costing under KSh 3,500), each device automatically routes and repeats encrypted packets
+
   from peer to peer. This day covers LoRa modulation, mesh routing protocols, AES-256
+
   encryption, solar-powered hilltop repeater nodes, and field telemetry bridges.
-briefing_sw: |
-  Minara ya Safaricom au Airtel ikizimika, teknolojia ya LoRa (Long Range) na Meshtastic
+
+  '
+briefing_sw: 'Minara ya Safaricom au Airtel ikizimika, teknolojia ya LoRa (Long Range) na Meshtastic
+
   inaruhusu kutuma ujumbe wa maandishi, mahali ulipo (GPS), na taarifa za dharura kwa
+
   simu za kawaida kupitia Bluetooth bila intaneti, bila vocha, na bila minara ya simu.
+
   Kila kifaa kidogo cha KSh 3,000 kinajenga mtandao wa bure unaorudia mawimbi.
 
-outline: |
-  1. The LoRa revolution: Chirp Spread Spectrum (CSS) and decoding signals below noise floor (-20 dB)
+  '
+outline: '1. The LoRa revolution: Chirp Spread Spectrum (CSS) and decoding signals below noise floor (-20
+  dB)
+
   2. Frequency allocation in Kenya: 433 MHz and 868 MHz ISM bands (license-exempt power limits)
+
   3. The Meshtastic protocol: Decentralized flooding and managed mesh routing (zero internet required)
+
   4. Node roles: Client (handheld with smartphone app), Router (permanent high-elevation relay)
+
   5. Cryptographic security: AES-256 pre-shared keys for private channels and unencrypted broadcast nets
+
   6. Hardware architectures: ESP32 + SX1262 (Heltec V3) vs Ultra-low-power nRF52 (RAK4631)
+
   7. Solar repeater engineering: 5W solar panel + TP4056 charge controller + dual 18650 Li-ion cells
+
   8. Offline data integration: Bridging LoRa text packets to offline local campus servers (Kiwix / PWA)
 
-content_md: |
-  ## What is LoRa & Chirp Spread Spectrum?
+  '
+content_md: '## What is LoRa & Chirp Spread Spectrum?
+
 
   Conventional radio modems send data on a fixed frequency. High noise or interference drowns them out.
+
   **LoRa (Long Range)** modulates digital bits using **Chirp Spread Spectrum (CSS)**:
-  - The signal frequency continuously sweeps (chirps) up or down across a bandwidth (e.g. 125 kHz or 250 kHz).
-  - The receiver uses mathematical correlation to lock onto the chirp pattern even when the signal power is **20 dB weaker than the background thermal noise floor**!
+
+  - The signal frequency continuously sweeps (chirps) up or down across a bandwidth (e.g. 125 kHz or 250
+  kHz).
+
+  - The receiver uses mathematical correlation to lock onto the chirp pattern even when the signal power
+  is **20 dB weaker than the background thermal noise floor**!
+
   - Transmit power of only **100 milliwatts (0.1 W)** regularly achieves **15 to 40+ km line-of-sight**.
 
+
   ### Frequency Bands for East Africa (ITU Region 1):
-  - **433 MHz Band:** Excellent tree canopy and terrain penetration; shared with amateur radio and car remotes.
-  - **868 MHz Band:** Standard European/African license-exempt Industrial, Scientific, and Medical (ISM) band. Max allowable ERP: 25–500 mW.
+
+  - **433 MHz Band:** Excellent tree canopy and terrain penetration; shared with amateur radio and car
+  remotes.
+
+  - **868 MHz Band:** Standard European/African license-exempt Industrial, Scientific, and Medical (ISM)
+  band. Max allowable ERP: 25–500 mW.
+
 
   ## The Meshtastic Decentralized Mesh Architecture
 
+
   Unlike cellular networks that depend on central towers:
+
   - In a **Meshtastic mesh**, every single node is both a client and a **packet repeater**.
-  - When Node A sends an encrypted message to Node D (out of direct range), Node B and Node C automatically receive the packet, verify its packet ID has not been seen before, and re-transmit it with a decremented **Hop Limit** (typically 3–5 hops max).
-  - If a relay node is destroyed, packets automatically find alternative routes through other community members’ nodes.
+
+  - When Node A sends an encrypted message to Node D (out of direct range), Node B and Node C automatically
+  receive the packet, verify its packet ID has not been seen before, and re-transmit it with a decremented
+  **Hop Limit** (typically 3–5 hops max).
+
+  - If a relay node is destroyed, packets automatically find alternative routes through other community
+  members’ nodes.
+
 
   ### Node Roles:
-  - **CLIENT:** The normal portable node. Connects via Bluetooth Low Energy (BLE) to an Android or iPhone running the free Meshtastic app. You type SMS-style messages on your phone; the LoRa radio transmits them over the air.
-  - **ROUTER / REPEATER:** A dedicated, permanently mounted node placed on a tall tree, water tank, or mountain summit. It does not connect to a phone; its sole purpose is to listen 24/7 and re-transmit packets with prioritized antenna elevation.
+
+  - **CLIENT:** The normal portable node. Connects via Bluetooth Low Energy (BLE) to an Android or iPhone
+  running the free Meshtastic app. You type SMS-style messages on your phone; the LoRa radio transmits
+  them over the air.
+
+  - **ROUTER / REPEATER:** A dedicated, permanently mounted node placed on a tall tree, water tank, or
+  mountain summit. It does not connect to a phone; its sole purpose is to listen 24/7 and re-transmit
+  packets with prioritized antenna elevation.
+
 
   ## Security: AES-256 Encryption
 
+
   Community radio is traditionally open to eavesdropping. Meshtastic solves this with military-grade cryptography:
-  - **Public Channel (Default):** Uses a well-known default key (`AQ==`). Used for disaster distress beacons, weather alerts, and coordinating with arriving relief workers.
+
+  - **Public Channel (Default):** Uses a well-known default key (`AQ==`). Used for disaster distress beacons,
+  weather alerts, and coordinating with arriving relief workers.
+
   - **Private Channels:** Encrypted using a randomly generated **AES-256-bit symmetric key**.
-  - A 256-bit key shared via QR code allows community leaders, medical clinics, or security patrols to communicate across the shared mesh with complete privacy. Unauthenticated third parties see only scrambled pseudo-random noise packets.
+
+  - A 256-bit key shared via QR code allows community leaders, medical clinics, or security patrols to
+  communicate across the shared mesh with complete privacy. Unauthenticated third parties see only scrambled
+  pseudo-random noise packets.
+
 
   ## Building an Autonomous Solar Mountain Node
 
-  A single solar-powered LoRa relay placed atop an escarpment or water tower can link an entire rural district:
+
+  A single solar-powered LoRa relay placed atop an escarpment or water tower can link an entire rural
+  district:
+
 
   ### Hardware Components:
-  1. **Radio Module:** RAK Wireless WisBlock (nRF52840 + SX1262 LoRa). Consumes only **15 microamps ($\mu\text{A}$)** in deep sleep — 100× more efficient than ESP32 boards!
-  2. **Energy Storage:** Two Panasonic 18650 Li-ion cells (3,400 mAh each in parallel = 6,800 mAh at 3.7V). Provides **14 days of continuous operation in complete darkness**.
+
+  1. **Radio Module:** RAK Wireless WisBlock (nRF52840 + SX1262 LoRa). Consumes only **15 microamps ($\mu\text{A}$)**
+  in deep sleep — 100× more efficient than ESP32 boards!
+
+  2. **Energy Storage:** Two Panasonic 18650 Li-ion cells (3,400 mAh each in parallel = 6,800 mAh at 3.7V).
+  Provides **14 days of continuous operation in complete darkness**.
+
   3. **Solar Harvest:** 5 Watt, 6 Volt monocrystalline solar panel with an onboard solar MPPT charge controller.
-  4. **Antenna:** High-gain fiberglass collinear antenna (3 dBi to 5.8 dBi) mounted vertically at the top of a bamboo or PVC conduit mast.
+
+  4. **Antenna:** High-gain fiberglass collinear antenna (3 dBi to 5.8 dBi) mounted vertically at the
+  top of a bamboo or PVC conduit mast.
+
   5. **Weatherproof Housing:** IP67 polycarbonate electrical junction box with silicone cable glands.
 
+  '
 exercises:
-  - id: ec4-q1
-    type: MULTIPLE_CHOICE
-    prompt: "How does LoRa Chirp Spread Spectrum (CSS) modulation achieve reliable communication over 30+ km with only 100 milliwatts of transmit power?"
-    xp_reward: 35
-    options:
-      - text: "It uses satellite cellular uplinks provided by Starlink"
-        correct: false
-        explanation: "LoRa is a peer-to-peer terrestrial packet radio system completely independent of satellites."
-      - text: "It sweeps carrier frequency across a wide bandwidth, allowing mathematical correlators to decode packets even when signal strength is 20 dB below background noise"
-        correct: true
-        explanation: "Correct! Chirp Spread Spectrum modulation provides substantial processing gain. The receiver correlates known frequency chirps out of thermal noise, enabling decoding at negative Signal-to-Noise Ratios (-20 dB SNR) that would completely garble standard FM or AM voice."
-      - text: "It pulses extremely high microwave voltages that burn through foliage"
-        correct: false
-        explanation: "LoRa uses fractions of a watt (0.1W) and does not emit high microwave voltages."
-      - text: "It converts radio waves into ultrasonic sound waves"
-        correct: false
-        explanation: "LoRa transmits electromagnetic radio waves, not mechanical acoustic sound waves."
-    correct_answer: "It sweeps carrier frequency across a wide bandwidth, allowing mathematical correlators to decode packets even when signal strength is 20 dB below background noise"
+- id: ec4-q1
+  type: MULTIPLE_CHOICE
+  prompt: How does LoRa Chirp Spread Spectrum (CSS) modulation achieve reliable communication over 30+
+    km with only 100 milliwatts of transmit power?
+  xp_reward: 35
+  options:
+  - id: a
+    text: It uses satellite cellular uplinks provided by Starlink
+  - id: b
+    text: It pulses extremely high microwave voltages that burn through foliage
+  - id: c
+    text: It converts radio waves into ultrasonic sound waves
+  - id: d
+    text: It sweeps carrier frequency across a wide bandwidth, allowing mathematical correlators to decode
+      packets even when signal strength is 20 dB below background noise
+  correct_answer: d
+  explanation: 'Correct! Chirp Spread Spectrum modulation provides substantial processing gain. The receiver
+    correlates known frequency chirps out of thermal noise, enabling decoding at negative Signal-to-Noise
+    Ratios (-20 dB SNR) that would completely garble standard FM or AM voice.
 
-  - id: ec4-q2
-    type: FILL_BLANK
-    prompt: "Meshtastic private group channels are encrypted using the industry-standard ___ symmetric encryption cipher to prevent unauthorized eavesdropping on the open airwaves."
-    xp_reward: 20
-    correct_answer: AES-256
-    explanation: "Meshtastic supports AES-256 bit symmetric key encryption. Sharing the encryption key securely (via offline QR code or secure transfer) allows private group communications that cannot be read by other mesh participants."
 
-  - id: ec4-q3
-    type: MATCH_PAIRS
-    prompt: "Match each Meshtastic mesh networking element to its role."
-    xp_reward: 30
-    pairs:
-      - left: Client Node
-        right: Handheld radio connected via Bluetooth to a smartphone for text messaging
-      - left: Router / Repeater Node
-        right: Autonomous solar-powered radio on a high vantage point to relay packets
-      - left: Hop Limit counter
-        right: Prevents packets from bouncing indefinitely in infinite loops across the mesh
-      - left: 868 MHz ISM band
-        right: License-exempt frequency band allocated for digital packet radio in ITU Region 1
-    correct_answer:
-      - Client Node=Handheld radio connected via Bluetooth to a smartphone for text messaging
-      - Router / Repeater Node=Autonomous solar-powered radio on a high vantage point to relay packets
-      - Hop Limit counter=Prevents packets from bouncing indefinitely in infinite loops across the mesh
-      - 868 MHz ISM band=License-exempt frequency band allocated for digital packet radio in ITU Region 1
+    Why the other options are wrong: LoRa is a peer-to-peer terrestrial packet radio system completely
+    independent of satellites. LoRa uses fractions of a watt (0.1W) and does not emit high microwave voltages.
+    LoRa transmits electromagnetic radio waves, not mechanical acoustic sound waves.'
+- id: ec4-q2
+  type: FILL_BLANK
+  prompt: Meshtastic private group channels are encrypted using the industry-standard ___ symmetric encryption
+    cipher to prevent unauthorized eavesdropping on the open airwaves.
+  xp_reward: 20
+  correct_answer: AES-256
+  explanation: Meshtastic supports AES-256 bit symmetric key encryption. Sharing the encryption key securely
+    (via offline QR code or secure transfer) allows private group communications that cannot be read by
+    other mesh participants.
+- id: ec4-q3
+  type: MATCH_PAIRS
+  prompt: Match each Meshtastic mesh networking element to its role.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Client Node
+    right:
+      id: r-82269b
+      text: Handheld radio connected via Bluetooth to a smartphone for text messaging
+  - left:
+      id: l2
+      text: Router / Repeater Node
+    right:
+      id: r-661e7e
+      text: Autonomous solar-powered radio on a high vantage point to relay packets
+  - left:
+      id: l3
+      text: Hop Limit counter
+    right:
+      id: r-dd3b89
+      text: Prevents packets from bouncing indefinitely in infinite loops across the mesh
+  - left:
+      id: l4
+      text: 868 MHz ISM band
+    right:
+      id: r-1ae05d
+      text: License-exempt frequency band allocated for digital packet radio in ITU Region 1
+  correct_answer:
+  - l1=r-82269b
+  - l2=r-661e7e
+  - l3=r-dd3b89
+  - l4=r-1ae05d

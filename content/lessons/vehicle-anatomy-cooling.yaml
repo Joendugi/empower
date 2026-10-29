@@ -1,0 +1,80 @@
+id: vehicle-anatomy-cooling
+course_id: vehicle-anatomy
+title: 'Cooling And Lubrication Systems: Coolant Circuit, Thermostat Operation, Oil
+  Pump, Oil Galleries And Service Intervals: Principles and Practical Application'
+title_sw: 'Cooling And Lubrication Systems: Coolant Circuit, Thermostat Operation,
+  Oil Pump, Oil Galleries And Service Intervals: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering Cooling and Lubrication Systems:
+  Coolant Circuit, Thermostat Operation, Oil Pump, Oil Galleries and Service Intervals
+  requires strict adherence to safety standards and sequential execution. Always inspect
+  personal protective equipment (PPE), ensure proper tool calibration, and verify
+  that the workpiece is securely mounted before commencing. Observe manufacturer specifications
+  and relevant standards. Maintain a clean work environment, store consumables dry,
+  and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa Cooling and Lubrication Systems: Coolant
+  Circuit, Thermostat Operation, Oil Pump, Oil Galleries and Service Intervals kunahitaji
+  kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga (PPE) kabla
+  ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/AUT/CR/09/5
+exam_domain: 'Cooling And Lubrication Systems: Coolant Circuit, Thermostat Operation,
+  Oil Pump, Oil Galleries And Service Intervals Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Cooling And Lubrication Systems: Coolant Circuit,
+    Thermostat Operation, Oil Pump, Oil Galleries And Service Intervals'
+- kind: animation
+  preset: gear
+  caption: 'Interactive Simulation: Cooling And Lubrication Systems: Coolant Circuit,
+    Thermostat Operation, Oil Pump, Oil Galleries And Service Intervals operation
+    cycle'
+exercises:
+- id: vehicle-anatomy-cooling-and-lubrication-systems-coolant-circuit-thermostat-operation-oil-pump-oil-galleries-and-service-intervals-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting Cooling and
+    Lubrication Systems: Coolant Circuit, Thermostat Operation, Oil Pump, Oil Galleries
+    and Service Intervals?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: vehicle-anatomy-cooling-and-lubrication-systems-coolant-circuit-thermostat-operation-oil-pump-oil-galleries-and-service-intervals-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: vehicle-anatomy-cooling-and-lubrication-systems-coolant-circuit-thermostat-operation-oil-pump-oil-galleries-and-service-intervals-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in Cooling and Lubrication
+    Systems: Coolant Circuit, Thermostat Operation, Oil Pump, Oil Galleries and Service
+    Intervals?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

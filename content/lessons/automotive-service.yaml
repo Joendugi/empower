@@ -1,0 +1,79 @@
+id: automotive-service
+course_id: automotive
+title: 'Vehicle Servicing To Manufacturer Data: Service Schedule, Oil And Filter Change,
+  Torque Specs And Service History: Principles and Practical Application'
+title_sw: 'Vehicle Servicing To Manufacturer Data: Service Schedule, Oil And Filter
+  Change, Torque Specs And Service History: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering Vehicle Servicing to Manufacturer
+  Data: Service Schedule, Oil and Filter Change, Torque Specs and Service History
+  requires strict adherence to safety standards and sequential execution. Always inspect
+  personal protective equipment (PPE), ensure proper tool calibration, and verify
+  that the workpiece is securely mounted before commencing. Observe manufacturer specifications
+  and relevant standards. Maintain a clean work environment, store consumables dry,
+  and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa Vehicle Servicing to Manufacturer
+  Data: Service Schedule, Oil and Filter Change, Torque Specs and Service History
+  kunahitaji kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga
+  (PPE) kabla ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/AUT/CR/02/5
+exam_domain: 'Vehicle Servicing To Manufacturer Data: Service Schedule, Oil And Filter
+  Change, Torque Specs And Service History Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Vehicle Servicing To Manufacturer Data: Service
+    Schedule, Oil And Filter Change, Torque Specs And Service History'
+- kind: animation
+  preset: gear
+  caption: 'Interactive Simulation: Vehicle Servicing To Manufacturer Data: Service
+    Schedule, Oil And Filter Change, Torque Specs And Service History operation cycle'
+exercises:
+- id: automotive-vehicle-servicing-to-manufacturer-data-service-schedule-oil-and-filter-change-torque-specs-and-service-history-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting Vehicle Servicing
+    to Manufacturer Data: Service Schedule, Oil and Filter Change, Torque Specs and
+    Service History?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: automotive-vehicle-servicing-to-manufacturer-data-service-schedule-oil-and-filter-change-torque-specs-and-service-history-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: automotive-vehicle-servicing-to-manufacturer-data-service-schedule-oil-and-filter-change-torque-specs-and-service-history-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in Vehicle Servicing to
+    Manufacturer Data: Service Schedule, Oil and Filter Change, Torque Specs and Service
+    History?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

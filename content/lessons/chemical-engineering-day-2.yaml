@@ -1,219 +1,213 @@
 id: chemical-engineering-day-2
 course_id: chemical-engineering
-title: "Saponification — Soap & Glycerol Production"
-title_sw: "Kutengeneza Sabuni na Glycerol (Saponification)"
+title: Saponification — Soap & Glycerol Production
+title_sw: Kutengeneza Sabuni na Glycerol (Saponification)
 week_number: 1
 day_number: 2
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - chemistry
-  - saponification
-  - soap-making
-  - lye
-  - glycerol
-  - chemical-engineering
+- chemistry
+- saponification
+- soap-making
+- lye
+- glycerol
+- chemical-engineering
 xp: 250
 exam_domain: chemical-engineering
+briefing: 'Soap is the foremost chemical weapon against infectious disease, physically dissolving the
+  lipid bilayer envelopes of viruses and bacteria. When commercial supply chains collapse, soap can be
+  manufactured entirely from two raw inputs: animal or vegetable triglycerides (tallow, coconut oil, palm
+  oil) and strong alkaline lye extracted from hardwood ash (potassium hydroxide) or slaked lime treated
+  with soda ash (sodium hydroxide). This lesson covers lye leaching, titration/specific gravity hydrometer
+  verification, saponification stoichiometry, cold-process soap casting, and crude glycerol separation.
 
-briefing: >
-  Soap is the foremost chemical weapon against infectious disease, physically
-  dissolving the lipid bilayer envelopes of viruses and bacteria. When commercial
-  supply chains collapse, soap can be manufactured entirely from two raw inputs:
-  animal or vegetable triglycerides (tallow, coconut oil, palm oil) and strong
-  alkaline lye extracted from hardwood ash (potassium hydroxide) or slaked lime
-  treated with soda ash (sodium hydroxide). This lesson covers lye leaching,
-  titration/specific gravity hydrometer verification, saponification stoichiometry,
-  cold-process soap casting, and crude glycerol separation.
+  '
+outline: 'Triglyceride ester hydrolysis equation (fat + 3 NaOH -> glycerol + 3 soap molecules); leaching
+  potassium carbonate/hydroxide lye from hardwood ash (the floating egg density test); converting potassium
+  lye to sodium hydroxide using slaked lime (causticization: K2CO3 + Ca(OH)2 -> 2 KOH + CaCO3); SAP (saponification)
+  values of common oils (tallow, coconut, sunflower, palm); superfatting calculation (5%-8% excess oil
+  for skin gentleness); cold-process method (trace identification, mould pouring, curing for 4-6 weeks);
+  hot-process soap making and salt-out (graining) for pure soap curd and glycerol extraction.
 
-outline: >
-  Triglyceride ester hydrolysis equation (fat + 3 NaOH -> glycerol + 3 soap molecules);
-  leaching potassium carbonate/hydroxide lye from hardwood ash (the floating egg
-  density test); converting potassium lye to sodium hydroxide using slaked lime
-  (causticization: K2CO3 + Ca(OH)2 -> 2 KOH + CaCO3); SAP (saponification) values
-  of common oils (tallow, coconut, sunflower, palm); superfatting calculation
-  (5%-8% excess oil for skin gentleness); cold-process method (trace identification,
-  mould pouring, curing for 4-6 weeks); hot-process soap making and salt-out
-  (graining) for pure soap curd and glycerol extraction.
-
-content_md: |
-  ## The Saponification Reaction
-
-  Soap is a salt of a long-chain fatty acid. Saponification is the alkaline hydrolysis
-  of a triglyceride ester into glycerol (glycerin) and three carboxylate salts:
-
-  $$\begin{matrix}
-  \text{CH}_2-\text{OOC}-\text{R}_1 \\
-  \mid \\
-  \text{CH}-\text{OOC}-\text{R}_2 \\
-  \mid \\
-  \text{CH}_2-\text{OOC}-\text{R}_3
-  \end{matrix}
-  + 3\,\text{NaOH} \longrightarrow
-  \begin{matrix}
-  \text{CH}_2-\text{OH} \\
-  \mid \\
-  \text{CH}-\text{OH} \\
-  \mid \\
-  \text{CH}_2-\text{OH}
-  \end{matrix}
-  +
-  \begin{matrix}
-  \text{R}_1-\text{COO}^-\text{Na}^+ \\
-  \text{R}_2-\text{COO}^-\text{Na}^+ \\
-  \text{R}_3-\text{COO}^-\text{Na}^+
-  \end{matrix}$$
-
-  $$\text{Triglyceride} + 3\,\text{Alkali} \longrightarrow \text{Glycerol} + 3\,\text{Soap Molecules}$$
-
-  ### Sodium Hydroxide ($\text{NaOH}$) vs Potassium Hydroxide ($\text{KOH}$):
-  - **$\text{NaOH}$ (Caustic Soda)**: Yields **hard bar soap** (insoluble sodium salts).
-  - **$\text{KOH}$ (Potash)**: Yields **soft / liquid soap** (potassium salts have higher water solubility).
-
-  ## Producing Lye from Off-Grid Resources
-
-  ### 1. Wood Ash Leaching (Potassium Carbonate / Hydroxide):
-  Hardwoods (Acacia, Eucalyptus, Oak) contain 10%–15% water-soluble alkaline salts
-  (predominantly $\text{K}_2\text{CO}_3$ and $\text{KOH}$).
-  1. Pack dry hardwood ash into a perforated wooden barrel lined with a straw filter.
-  2. Pour boiling soft rainwater slowly over the ash.
-  3. Collect the dark brown liquid (leachate lye) draining from the bottom tap.
-  4. **The Traditional Density Hydrometer Test**:
-     - Float a fresh, uncooked chicken egg in the collected lye.
-     - *Too weak*: Egg sinks to the bottom. Boil the leachate down to evaporate water and concentrate.
-     - *Correct strength*: The egg floats with an area roughly the size of a coin (approx. 20 mm diameter) protruding above the liquid surface (specific gravity $\approx 1.08\text{ to } 1.10\text{ g/cm}^3$, approx. 10%–12% alkali).
-     - *Too strong*: Egg floats completely on its side; dilute with rainwater.
-
-  ### 2. Causticizing Potash to Hydroxide:
-  Crude ash leachate is mostly $\text{K}_2\text{CO}_3$. Adding slaked lime putty ($\text{Ca(OH)}_2$) precipitates insoluble chalk and converts the carbonate to pure caustic hydroxide:
-  $$\text{K}_2\text{CO}_3 + \text{Ca(OH)}_2 \longrightarrow 2\,\text{KOH} + \text{CaCO}_3 \downarrow$$
-
-  ## Saponification Values (SAP Table)
-
-  The **SAP value** is the milligrams of pure $\text{KOH}$ required to saponify 1 gram of fat.
-  To find the $\text{NaOH}$ requirement, divide the KOH SAP value by **1.403** (the ratio of molecular weights, $56.11 / 40.00$):
-
-  | Fat / Oil Source | KOH SAP Value | NaOH SAP Value | Properties in Soap |
-  |---|---|---|---|
-  | **Beef Tallow** | 197 mg/g | **0.140 g/g** | Hard, long-lasting bar, creamy stable lather |
-  | **Coconut Oil** | 257 mg/g | **0.183 g/g** | Abundant fluffy lather, cleans even in seawater; drying if > 30% |
-  | **Palm Oil** | 199 mg/g | **0.142 g/g** | Hard bar, stable lather, rich in palmitic acid |
-  | **Sunflower / Soy** | 189 mg/g | **0.135 g/g** | Soft conditioning bar; prone to rancidity if > 20% |
-  | **Neem Seed Oil** | 193 mg/g | **0.138 g/g** | Antiseptic, insect-repellent, strong medicinal odour |
-
-  ### Superfatting Calculation (Safety Margin):
-  Raw lye in soap burns human skin. A **5% to 8% superfat** ensures that 100% of the caustic lye reacts completely, leaving 5%–8% unreacted free oils to moisturize skin:
-  $$\text{Actual NaOH to Add} = (\text{Total Fat Weight} \times \text{SAP}_{\text{NaOH}}) \times (1 - 0.05)$$
-
-  *Example*: Saponifying 1,000 g of tallow with a 5% superfat:
-  $$\text{NaOH} = (1000 \times 0.140) \times 0.95 = 140 \times 0.95 = 133.0\text{ grams NaOH}$$
-  Dissolve in approximately 2.5 times its weight in water ($133 \times 2.5 = 332\text{ mL water}$).
-
-  ## Cold-Process Manufacturing Sequence
-
-  1. **Safety Protocol**: Eye goggles, chemical neoprene gloves. **Always pour lye crystals into water**, never water into lye (prevents explosive boiling splattering). Reaction reaches ~80°C.
-  2. **Equalize Temperatures**: Cool lye solution to **40°C – 45°C**; gently warm melted fats to **40°C – 45°C**.
-  3. **Blending & "Trace"**:
-     - Pour lye water into the oils in a steady stream, stirring continuously.
-     - Stir manually with a wooden paddle (or mechanical mixer) for 15–45 minutes until the emulsion reaches **Trace**: drizzling a spoonful of the batter across the surface leaves a raised visible trail that remains for several seconds.
-  4. **Moulding & Gel Phase**:
-     - Pour batter into wooden boxes lined with parchment paper or banana leaves.
-     - Wrap the mould in blankets for 24 hours to insulate. Internal saponification generates heat (60°C–70°C), entering the translucent "gel phase".
-  5. **Demoulding & Curing**:
-     - Unmould after 24–48 hours; cut into bars with a taut steel guitar wire.
-     - Place on wooden racks with good airflow. **Cure for 4 to 6 weeks**: this allows excess moisture to evaporate (hardening the bar) and ensures any residual trace lye completely neutralizes.
-
-  ## Hot-Process & Glycerol Extraction (Salting Out)
-
-  For industrial applications (antiseptics, lubricants, nitroglycerin feedstocks), glycerol must be separated from soap:
-  1. Boil fat and lye in an iron cauldron for 2–3 hours until completely saponified.
-  2. **Salting Out (Graining)**: Add coarse sodium chloride ($\text{NaCl}$) salt (~10%–15% of the total batch weight).
-  3. Sodium ions dramatically decrease soap solubility (common ion effect).
-  4. Pure solid soap curd precipitates and floats to the surface.
-  5. The dense bottom liquid layer (**spent lye**) contains dissolved salt, excess alkali, and **crude glycerol** (approx. 8%–15% purity).
-  6. Skim the floating soap for bars; drain the bottom liquor and concentrate by boiling off water to recover crude viscous glycerol.
-
+  '
+content_md: "## The Saponification Reaction\n\nSoap is a salt of a long-chain fatty acid. Saponification\
+  \ is the alkaline hydrolysis\nof a triglyceride ester into glycerol (glycerin) and three carboxylate\
+  \ salts:\n\n$$\\begin{matrix}\n\\text{CH}_2-\\text{OOC}-\\text{R}_1 \\\\\n\\mid \\\\\n\\text{CH}-\\\
+  text{OOC}-\\text{R}_2 \\\\\n\\mid \\\\\n\\text{CH}_2-\\text{OOC}-\\text{R}_3\n\\end{matrix}\n+ 3\\,\\\
+  text{NaOH} \\longrightarrow\n\\begin{matrix}\n\\text{CH}_2-\\text{OH} \\\\\n\\mid \\\\\n\\text{CH}-\\\
+  text{OH} \\\\\n\\mid \\\\\n\\text{CH}_2-\\text{OH}\n\\end{matrix}\n+\n\\begin{matrix}\n\\text{R}_1-\\\
+  text{COO}^-\\text{Na}^+ \\\\\n\\text{R}_2-\\text{COO}^-\\text{Na}^+ \\\\\n\\text{R}_3-\\text{COO}^-\\\
+  text{Na}^+\n\\end{matrix}$$\n\n$$\\text{Triglyceride} + 3\\,\\text{Alkali} \\longrightarrow \\text{Glycerol}\
+  \ + 3\\,\\text{Soap Molecules}$$\n\n### Sodium Hydroxide ($\\text{NaOH}$) vs Potassium Hydroxide ($\\\
+  text{KOH}$):\n- **$\\text{NaOH}$ (Caustic Soda)**: Yields **hard bar soap** (insoluble sodium salts).\n\
+  - **$\\text{KOH}$ (Potash)**: Yields **soft / liquid soap** (potassium salts have higher water solubility).\n\
+  \n## Producing Lye from Off-Grid Resources\n\n### 1. Wood Ash Leaching (Potassium Carbonate / Hydroxide):\n\
+  Hardwoods (Acacia, Eucalyptus, Oak) contain 10%–15% water-soluble alkaline salts\n(predominantly $\\\
+  text{K}_2\\text{CO}_3$ and $\\text{KOH}$).\n1. Pack dry hardwood ash into a perforated wooden barrel\
+  \ lined with a straw filter.\n2. Pour boiling soft rainwater slowly over the ash.\n3. Collect the dark\
+  \ brown liquid (leachate lye) draining from the bottom tap.\n4. **The Traditional Density Hydrometer\
+  \ Test**:\n   - Float a fresh, uncooked chicken egg in the collected lye.\n   - *Too weak*: Egg sinks\
+  \ to the bottom. Boil the leachate down to evaporate water and concentrate.\n   - *Correct strength*:\
+  \ The egg floats with an area roughly the size of a coin (approx. 20 mm diameter) protruding above the\
+  \ liquid surface (specific gravity $\\approx 1.08\\text{ to } 1.10\\text{ g/cm}^3$, approx. 10%–12%\
+  \ alkali).\n   - *Too strong*: Egg floats completely on its side; dilute with rainwater.\n\n### 2. Causticizing\
+  \ Potash to Hydroxide:\nCrude ash leachate is mostly $\\text{K}_2\\text{CO}_3$. Adding slaked lime putty\
+  \ ($\\text{Ca(OH)}_2$) precipitates insoluble chalk and converts the carbonate to pure caustic hydroxide:\n\
+  $$\\text{K}_2\\text{CO}_3 + \\text{Ca(OH)}_2 \\longrightarrow 2\\,\\text{KOH} + \\text{CaCO}_3 \\downarrow$$\n\
+  \n## Saponification Values (SAP Table)\n\nThe **SAP value** is the milligrams of pure $\\text{KOH}$\
+  \ required to saponify 1 gram of fat.\nTo find the $\\text{NaOH}$ requirement, divide the KOH SAP value\
+  \ by **1.403** (the ratio of molecular weights, $56.11 / 40.00$):\n\n| Fat / Oil Source | KOH SAP Value\
+  \ | NaOH SAP Value | Properties in Soap |\n|---|---|---|---|\n| **Beef Tallow** | 197 mg/g | **0.140\
+  \ g/g** | Hard, long-lasting bar, creamy stable lather |\n| **Coconut Oil** | 257 mg/g | **0.183 g/g**\
+  \ | Abundant fluffy lather, cleans even in seawater; drying if > 30% |\n| **Palm Oil** | 199 mg/g |\
+  \ **0.142 g/g** | Hard bar, stable lather, rich in palmitic acid |\n| **Sunflower / Soy** | 189 mg/g\
+  \ | **0.135 g/g** | Soft conditioning bar; prone to rancidity if > 20% |\n| **Neem Seed Oil** | 193\
+  \ mg/g | **0.138 g/g** | Antiseptic, insect-repellent, strong medicinal odour |\n\n### Superfatting\
+  \ Calculation (Safety Margin):\nRaw lye in soap burns human skin. A **5% to 8% superfat** ensures that\
+  \ 100% of the caustic lye reacts completely, leaving 5%–8% unreacted free oils to moisturize skin:\n\
+  $$\\text{Actual NaOH to Add} = (\\text{Total Fat Weight} \\times \\text{SAP}_{\\text{NaOH}}) \\times\
+  \ (1 - 0.05)$$\n\n*Example*: Saponifying 1,000 g of tallow with a 5% superfat:\n$$\\text{NaOH} = (1000\
+  \ \\times 0.140) \\times 0.95 = 140 \\times 0.95 = 133.0\\text{ grams NaOH}$$\nDissolve in approximately\
+  \ 2.5 times its weight in water ($133 \\times 2.5 = 332\\text{ mL water}$).\n\n## Cold-Process Manufacturing\
+  \ Sequence\n\n1. **Safety Protocol**: Eye goggles, chemical neoprene gloves. **Always pour lye crystals\
+  \ into water**, never water into lye (prevents explosive boiling splattering). Reaction reaches ~80°C.\n\
+  2. **Equalize Temperatures**: Cool lye solution to **40°C – 45°C**; gently warm melted fats to **40°C\
+  \ – 45°C**.\n3. **Blending & \"Trace\"**:\n   - Pour lye water into the oils in a steady stream, stirring\
+  \ continuously.\n   - Stir manually with a wooden paddle (or mechanical mixer) for 15–45 minutes until\
+  \ the emulsion reaches **Trace**: drizzling a spoonful of the batter across the surface leaves a raised\
+  \ visible trail that remains for several seconds.\n4. **Moulding & Gel Phase**:\n   - Pour batter into\
+  \ wooden boxes lined with parchment paper or banana leaves.\n   - Wrap the mould in blankets for 24\
+  \ hours to insulate. Internal saponification generates heat (60°C–70°C), entering the translucent \"\
+  gel phase\".\n5. **Demoulding & Curing**:\n   - Unmould after 24–48 hours; cut into bars with a taut\
+  \ steel guitar wire.\n   - Place on wooden racks with good airflow. **Cure for 4 to 6 weeks**: this\
+  \ allows excess moisture to evaporate (hardening the bar) and ensures any residual trace lye completely\
+  \ neutralizes.\n\n## Hot-Process & Glycerol Extraction (Salting Out)\n\nFor industrial applications\
+  \ (antiseptics, lubricants, nitroglycerin feedstocks), glycerol must be separated from soap:\n1. Boil\
+  \ fat and lye in an iron cauldron for 2–3 hours until completely saponified.\n2. **Salting Out (Graining)**:\
+  \ Add coarse sodium chloride ($\\text{NaCl}$) salt (~10%–15% of the total batch weight).\n3. Sodium\
+  \ ions dramatically decrease soap solubility (common ion effect).\n4. Pure solid soap curd precipitates\
+  \ and floats to the surface.\n5. The dense bottom liquid layer (**spent lye**) contains dissolved salt,\
+  \ excess alkali, and **crude glycerol** (approx. 8%–15% purity).\n6. Skim the floating soap for bars;\
+  \ drain the bottom liquor and concentrate by boiling off water to recover crude viscous glycerol.\n"
 exercises:
-  - id: chem-d2-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A soap maker wants to make hard bar soap from pure coconut oil using a 6%
-      superfat. For 500 grams of coconut oil (NaOH SAP value = 0.183), how much
-      pure sodium hydroxide (NaOH) crystals should be weighed out?
-    xp_reward: 50
-    options:
-      - text: "86.0 grams"
-        correct: true
-        explanation: "Baseline NaOH = 500 g × 0.183 = 91.5 g. With 6% superfat: 91.5 × (1 - 0.06) = 91.5 × 0.94 = 86.01 g."
-      - text: "91.5 grams"
-        correct: false
-        explanation: "91.5 g represents 0% superfat (zero safety margin, leaving risk of harsh lye-heavy soap)."
-      - text: "183.0 grams"
-        correct: false
-        explanation: "This neglects the 500 g mass factor and simply doubles the SAP value."
-      - text: "75.2 grams"
-        correct: false
-        explanation: "This would represent an excessive 18% superfat, leaving a soft and greasy bar."
+- id: chem-d2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A soap maker wants to make hard bar soap from pure coconut oil using a 6% superfat. For 500
+    grams of coconut oil (NaOH SAP value = 0.183), how much pure sodium hydroxide (NaOH) crystals should
+    be weighed out?
 
-  - id: chem-d2-q2
-    type: FILL_BLANK
-    prompt: >
-      When dissolving sodium hydroxide or potassium hydroxide crystals, you must
-      always add ___ into ___, never the reverse, because the violent exothermic
-      dissolution can cause caustic liquid to flash boil and splatter into eyes.
-    xp_reward: 50
-    correct_answer: "lye; water"
-    explanation: >
-      Always add lye to water. Pouring water onto dry caustic causes immediate
-      localized steam generation and explosive splattering of boiling alkali.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: 86.0 grams
+  - id: b
+    text: 91.5 grams
+  - id: c
+    text: 183.0 grams
+  - id: d
+    text: 75.2 grams
+  explanation: 'Baseline NaOH = 500 g × 0.183 = 91.5 g. With 6% superfat: 91.5 × (1 - 0.06) = 91.5 × 0.94
+    = 86.01 g.
 
-  - id: chem-d2-q3
-    type: MATCH_PAIRS
-    prompt: Match each soap-making term to its chemical and practical definition.
-    xp_reward: 50
-    pairs:
-      - left: Trace
-        right: Point where oil and lye emulsion thickens so a drizzle leaves a raised mark
-      - left: Superfatting
-        right: Formulating with 5-8% excess oil to ensure no harsh unreacted lye remains
-      - left: Salting Out (Graining)
-        right: Adding NaCl to precipitate floating soap curds and liberate aqueous glycerol
-      - left: Curing (4-6 weeks)
-        right: Air-drying cold-process bars to evaporate water and complete mild carbonation
-    correct_answer: null
-    explanation: >
-      Trace marks stable emulsification before casting; superfatting ensures skin safety;
-      salting out precipitates soap; curing cures and hardens the bar.
 
-  - id: chem-d2-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      In off-grid lye production, wood ash leachate produces primarily soft liquid soap.
-      What chemical reagent is added to convert crude wood-ash potassium carbonate (K2CO3)
-      into sodium hydroxide (NaOH) for hard bars?
-    xp_reward: 50
-    options:
-      - text: "Slaked lime [Ca(OH)2] to convert carbonate to caustic hydroxide, followed by common salt (NaCl) brine to exchange potassium ions for sodium ions"
-        correct: true
-        explanation: "Causticization with Ca(OH)2 yields soluble KOH while precipitating CaCO3 chalk. Introducing NaCl salt brine to the boiling soap batch exchanges K+ for Na+ via the common-ion effect, precipitating hard sodium soap."
-      - text: "Sulfuric acid to neutralize the potassium"
-        correct: false
-        explanation: "Acid destroys alkali, turning it into neutral potassium sulfate which cannot make soap."
-      - text: "Charcoal dust to absorb the excess potassium"
-        correct: false
-        explanation: "Charcoal filters colour and organics, but does not chemically convert potassium ions."
-      - text: "Hydrogen peroxide to oxidize the ash liquid"
-        correct: false
-        explanation: "Peroxide is a bleaching and oxidizing agent, not a cation-exchange or causticizing reagent."
+    Why the other options are wrong: 91.5 g represents 0% superfat (zero safety margin, leaving risk of
+    harsh lye-heavy soap). This neglects the 500 g mass factor and simply doubles the SAP value. This
+    would represent an excessive 18% superfat, leaving a soft and greasy bar.'
+  correct_answer: a
+- id: chem-d2-q2
+  type: FILL_BLANK
+  prompt: 'When dissolving sodium hydroxide or potassium hydroxide crystals, you must always add ___ into
+    ___, never the reverse, because the violent exothermic dissolution can cause caustic liquid to flash
+    boil and splatter into eyes.
 
-  - id: chem-d2-q5
-    type: FILL_BLANK
-    prompt: >
-      When testing the concentration of wood-ash lye with an uncooked egg, the egg
-      should float with an exposed crown roughly the diameter of a ___ (approx. 20 mm),
-      indicating a specific gravity of approximately ___ to 1.10 g/cm3.
-    xp_reward: 50
-    correct_answer: "coin; 1.08"
-    explanation: >
-      An egg floats at a specific gravity of approx 1.08 g/cm3 when the solution
-      contains about 10%-12% dissolved potassium salts, the optimal strength for saponification.
+    '
+  xp_reward: 50
+  correct_answer:
+  - lye
+  - water
+  explanation: 'Always add lye to water. Pouring water onto dry caustic causes immediate localized steam
+    generation and explosive splattering of boiling alkali.
+
+    '
+- id: chem-d2-q3
+  type: MATCH_PAIRS
+  prompt: Match each soap-making term to its chemical and practical definition.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Trace
+    right:
+      id: r-695926
+      text: Point where oil and lye emulsion thickens so a drizzle leaves a raised mark
+  - left:
+      id: l2
+      text: Superfatting
+    right:
+      id: r-5a8bf6
+      text: Formulating with 5-8% excess oil to ensure no harsh unreacted lye remains
+  - left:
+      id: l3
+      text: Salting Out (Graining)
+    right:
+      id: r-a5aec0
+      text: Adding NaCl to precipitate floating soap curds and liberate aqueous glycerol
+  - left:
+      id: l4
+      text: Curing (4-6 weeks)
+    right:
+      id: r-05c465
+      text: Air-drying cold-process bars to evaporate water and complete mild carbonation
+  correct_answer:
+  - l1=r-695926
+  - l2=r-5a8bf6
+  - l3=r-a5aec0
+  - l4=r-05c465
+  explanation: 'Trace marks stable emulsification before casting; superfatting ensures skin safety; salting
+    out precipitates soap; curing cures and hardens the bar.
+
+    '
+- id: chem-d2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'In off-grid lye production, wood ash leachate produces primarily soft liquid soap. What chemical
+    reagent is added to convert crude wood-ash potassium carbonate (K2CO3) into sodium hydroxide (NaOH)
+    for hard bars?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Sulfuric acid to neutralize the potassium
+  - id: b
+    text: Slaked lime [Ca(OH)2] to convert carbonate to caustic hydroxide, followed by common salt (NaCl)
+      brine to exchange potassium ions for sodium ions
+  - id: c
+    text: Charcoal dust to absorb the excess potassium
+  - id: d
+    text: Hydrogen peroxide to oxidize the ash liquid
+  explanation: 'Causticization with Ca(OH)2 yields soluble KOH while precipitating CaCO3 chalk. Introducing
+    NaCl salt brine to the boiling soap batch exchanges K+ for Na+ via the common-ion effect, precipitating
+    hard sodium soap.
+
+
+    Why the other options are wrong: Acid destroys alkali, turning it into neutral potassium sulfate which
+    cannot make soap. Charcoal filters colour and organics, but does not chemically convert potassium
+    ions. Peroxide is a bleaching and oxidizing agent, not a cation-exchange or causticizing reagent.'
+  correct_answer: b
+- id: chem-d2-q5
+  type: FILL_BLANK
+  prompt: 'When testing the concentration of wood-ash lye with an uncooked egg, the egg should float with
+    an exposed crown roughly the diameter of a ___ (approx. 20 mm), indicating a specific gravity of approximately
+    ___ to 1.10 g/cm3.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - coin
+  - '1.08'
+  explanation: 'An egg floats at a specific gravity of approx 1.08 g/cm3 when the solution contains about
+    10%-12% dissolved potassium salts, the optimal strength for saponification.
+
+    '

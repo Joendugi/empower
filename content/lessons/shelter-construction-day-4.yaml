@@ -1,127 +1,162 @@
 id: shelter-construction-day-4
 course_id: shelter-construction
-title: "Timber Trusses & Thermal Insulation"
-title_sw: "Paa za Mbao na Kuzuia Joto"
+title: Timber Trusses & Thermal Insulation
+title_sw: Paa za Mbao na Kuzuia Joto
 week_number: 1
 day_number: 4
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [shelter, timber, trusses, roofing, passive-cooling, insulation, kenya]
+tags:
+- shelter
+- timber
+- trusses
+- roofing
+- passive-cooling
+- insulation
+- kenya
 xp: 85
 exam_domain: Civil & Structural Engineering
+briefing: 'In East Africa, the ubiquitous uninsulated corrugated iron (mabati) roof turns homes
 
-briefing: |
-  In East Africa, the ubiquitous uninsulated corrugated iron (mabati) roof turns homes
   into ovens by day and refrigerators by night, with roof sheets reaching 60–70 °C under
+
   equatorial sun. Furthermore, weak roof-to-wall connections cause entire roofs to tear
+
   away during annual thunderstorm microbursts. This day teaches the structural mechanics
+
   of timber trusses (King Post and Howe configurations), timber preservative treatments
+
   against termites and borers, hurricane tie strapping, and passive thermal control
+
   strategies (generous overhang eaves, radiant barrier foil, and convective ridge vents).
-briefing_sw: |
-  Nchini Kenya, mabati yasiyo na insulation hufanya nyumba kuwa kama tanuru wakati wa
-  mchana na baridi kali usiku. Upepo mkali wa dhoruba pia hung'oa mapaa yasiyofungwa
+
+  '
+briefing_sw: 'Nchini Kenya, mabati yasiyo na insulation hufanya nyumba kuwa kama tanuru wakati wa
+
+  mchana na baridi kali usiku. Upepo mkali wa dhoruba pia hung''oa mapaa yasiyofungwa
+
   kwa hurricane ties. Siku hii inafundisha uhandisi wa nguzo za mbao za paa (King post
+
   truss), matibabu ya mbao dhidi ya mchwa, na mbinu za kupunguza joto ndani ya nyumba.
 
-outline: |
-  1. Truss triangulation principles: Converting bending moments into pure axial tension/compression
+  '
+outline: '1. Truss triangulation principles: Converting bending moments into pure axial tension/compression
+
   2. The King Post Truss anatomy: Top rafters, horizontal tie beam, central king post, and diagonal struts
+
   3. Timber species in Kenya: Cypress (Cupressus lusitanica), Blue Gum (Eucalyptus saligna), and Pine
+
   4. Wood preservation: Boron salt diffusion (anti-termite/borer) vs copper naphthenate
+
   5. Connection engineering: Through-bolts, 2 mm steel gusset plates, and galvanized hurricane ties
+
   6. Wind uplift calculations: Why roofs blow OFF rather than collapse IN
+
   7. The 60 cm overhang rule: Shading mud/CEB walls from torrential vertical rains
+
   8. Passive convective cooling: Continuous ridge vents and ventilated double roofs
 
-content_md: |
-  ## Triangulation & Truss Mechanics
-
-  A rectangle subjected to lateral forces will rack and collapse into a parallelogram. A triangle is geometrically rigid: its angles cannot change unless the lengths of its members change.
-
-  ### King Post Truss Members:
-  - **Top Rafters (Principal Rafters):** In **compression**. Transfers gravity and roof sheet loads down toward the walls.
-  - **Tie Beam (Bottom Chord):** In **tension**. Prevents the rafters from spreading outward and pushing the walls over.
-  - **King Post (Central Vertical):** In **tension**. Suspends the middle of the long horizontal tie beam, preventing it from sagging under its own weight.
-  - **Struts (Diagonals):** In **compression**. Supports the midpoint of the rafters against bending.
-
-  ## Timber Selection & Termite Preservation (Kenya)
-
-  ### Species:
-  - **Cypress (*Cupressus lusitanica*):** Light, straight grain, easy to work with hand tools; moderate strength. Requires preservative treatment.
-  - **Eucalyptus / Blue Gum (*Eucalyptus saligna*):** Dense, very high bending strength (ideal for long purlins and tie beams), but prone to twisting and splitting if not seasoned.
-  - **Pine (*Pinus patula*):** Economical, softer, lightweight; must be treated.
-
-  ### Preservation Against Termites and Wood-Boring Beetles:
-  1. **Seasoning:** Stack timber with spacers (stickers) in covered, breezy shade until moisture content drops below 15% (3–6 weeks). Never build trusses with green sapwood.
-  2. **Boron Salt Dip-Diffusion:** 10% disodium octaborate tetrahydrate (DOT) solution in water. Soaking fresh timber penetrates deeply; non-toxic to humans, lethal to subterranean termites and powder-post beetles (*Lyctus*).
-  3. **End-Grain Sealing:** The end grain sucks water 100× faster than side grain. Paint rafter ends with bitumen or zinc naphthenate before erection.
-
-  ## Wind Uplift & Hurricane Strapping
-
-  **Physics of Roof Failures:**
-  Fast wind blowing over a pitched roof acts like an airplane wing: high velocity creates **negative aerodynamic pressure (Bernoulli uplift)**. In Kenya, roofs do not collapse from downward wind; they are **sucked upward and ripped off the walls**.
-
-  ### Standard Securement Protocol:
-  - Plain wire nails driven straight down offer negligible withdrawal resistance under suction.
-  - Anchor the wall plate to masonry walls using **12 mm threaded steel anchor rods** cast into the reinforced concrete ring beam (beam tie) every 1.5 meters.
-  - Fasten each truss to the wall plate using **galvanized steel hurricane ties (twisted strapping)** with four ring-shank nails on each flange.
-  - Fasten corrugated iron sheets (mabati) with **twisted roofing nails with rubber washers** driven through the **crest (ridge)** of the corrugation, never the valley where water drains.
-
-  ## Passive Thermal Control Strategies
-
-  Unshaded galvanized iron sheets reach **65 °C** at noon, radiating long-wave infrared downwards into living spaces.
-
-  1. **60–80 cm Overhang Eaves:**
-     - Blocks direct solar radiation through windows between 10 AM and 3 PM.
-     - Keeps driving tropical rain away from earth/plastered walls.
-  2. **Reflective Radiant Barrier:**
-     - Lay aluminum radiant barrier foil (or woven sisal insulation foil) under purlins. Reflects 95% of downward radiant heat back toward the sky.
-  3. **Convective Ridge Ventilation:**
-     - Leave a 5 cm continuous gap at the roof ridge under a raised ridge cap. Hot air rises naturally by buoyancy (stack effect) and exhausts out the top, drawing cooler air in through low wall vents.
-
+  '
+content_md: "## Triangulation & Truss Mechanics\n\nA rectangle subjected to lateral forces will rack and\
+  \ collapse into a parallelogram. A triangle is geometrically rigid: its angles cannot change unless\
+  \ the lengths of its members change.\n\n### King Post Truss Members:\n- **Top Rafters (Principal Rafters):**\
+  \ In **compression**. Transfers gravity and roof sheet loads down toward the walls.\n- **Tie Beam (Bottom\
+  \ Chord):** In **tension**. Prevents the rafters from spreading outward and pushing the walls over.\n\
+  - **King Post (Central Vertical):** In **tension**. Suspends the middle of the long horizontal tie beam,\
+  \ preventing it from sagging under its own weight.\n- **Struts (Diagonals):** In **compression**. Supports\
+  \ the midpoint of the rafters against bending.\n\n## Timber Selection & Termite Preservation (Kenya)\n\
+  \n### Species:\n- **Cypress (*Cupressus lusitanica*):** Light, straight grain, easy to work with hand\
+  \ tools; moderate strength. Requires preservative treatment.\n- **Eucalyptus / Blue Gum (*Eucalyptus\
+  \ saligna*):** Dense, very high bending strength (ideal for long purlins and tie beams), but prone to\
+  \ twisting and splitting if not seasoned.\n- **Pine (*Pinus patula*):** Economical, softer, lightweight;\
+  \ must be treated.\n\n### Preservation Against Termites and Wood-Boring Beetles:\n1. **Seasoning:**\
+  \ Stack timber with spacers (stickers) in covered, breezy shade until moisture content drops below 15%\
+  \ (3–6 weeks). Never build trusses with green sapwood.\n2. **Boron Salt Dip-Diffusion:** 10% disodium\
+  \ octaborate tetrahydrate (DOT) solution in water. Soaking fresh timber penetrates deeply; non-toxic\
+  \ to humans, lethal to subterranean termites and powder-post beetles (*Lyctus*).\n3. **End-Grain Sealing:**\
+  \ The end grain sucks water 100× faster than side grain. Paint rafter ends with bitumen or zinc naphthenate\
+  \ before erection.\n\n## Wind Uplift & Hurricane Strapping\n\n**Physics of Roof Failures:**\nFast wind\
+  \ blowing over a pitched roof acts like an airplane wing: high velocity creates **negative aerodynamic\
+  \ pressure (Bernoulli uplift)**. In Kenya, roofs do not collapse from downward wind; they are **sucked\
+  \ upward and ripped off the walls**.\n\n### Standard Securement Protocol:\n- Plain wire nails driven\
+  \ straight down offer negligible withdrawal resistance under suction.\n- Anchor the wall plate to masonry\
+  \ walls using **12 mm threaded steel anchor rods** cast into the reinforced concrete ring beam (beam\
+  \ tie) every 1.5 meters.\n- Fasten each truss to the wall plate using **galvanized steel hurricane ties\
+  \ (twisted strapping)** with four ring-shank nails on each flange.\n- Fasten corrugated iron sheets\
+  \ (mabati) with **twisted roofing nails with rubber washers** driven through the **crest (ridge)** of\
+  \ the corrugation, never the valley where water drains.\n\n## Passive Thermal Control Strategies\n\n\
+  Unshaded galvanized iron sheets reach **65 °C** at noon, radiating long-wave infrared downwards into\
+  \ living spaces.\n\n1. **60–80 cm Overhang Eaves:**\n   - Blocks direct solar radiation through windows\
+  \ between 10 AM and 3 PM.\n   - Keeps driving tropical rain away from earth/plastered walls.\n2. **Reflective\
+  \ Radiant Barrier:**\n   - Lay aluminum radiant barrier foil (or woven sisal insulation foil) under\
+  \ purlins. Reflects 95% of downward radiant heat back toward the sky.\n3. **Convective Ridge Ventilation:**\n\
+  \   - Leave a 5 cm continuous gap at the roof ridge under a raised ridge cap. Hot air rises naturally\
+  \ by buoyancy (stack effect) and exhausts out the top, drawing cooler air in through low wall vents.\n"
 exercises:
-  - id: sc4-q1
-    type: MULTIPLE_CHOICE
-    prompt: "During a severe thunderstorm, a metal roof is ripped off a house. Structural forensic analysis shows the trusses lifted vertically off the wall plate while the walls remained intact. What caused this failure?"
-    xp_reward: 35
-    options:
-      - text: "The roof was too heavy for the supporting timber trusses"
-        correct: false
-        explanation: "Excessive weight causes downward bending collapse, not upward detachment."
-      - text: "Wind passing over the roof slope created aerodynamic negative pressure (suction), which overwhelmed plain nailed connections lacking hurricane tie strapping"
-        correct: true
-        explanation: "Correct! High wind generates powerful Bernoulli suction lift. Plain wire nails possess minimal pull-out resistance under upward tension. Trusses must be anchored to ring beams with heavy galvanized hurricane ties or bolted straps."
-      - text: "The pitch of the roof was too steep for rainwater runoff"
-        correct: false
-        explanation: "Steep pitches improve rainwater shedding and do not cause uplift failures on their own."
-      - text: "Termites consumed the corrugated iron metal sheets"
-        correct: false
-        explanation: "Termites digest cellulose in wood, not galvanized steel sheets."
-    correct_answer: "Wind passing over the roof slope created aerodynamic negative pressure (suction), which overwhelmed plain nailed connections lacking hurricane tie strapping"
+- id: sc4-q1
+  type: MULTIPLE_CHOICE
+  prompt: During a severe thunderstorm, a metal roof is ripped off a house. Structural forensic analysis
+    shows the trusses lifted vertically off the wall plate while the walls remained intact. What caused
+    this failure?
+  xp_reward: 35
+  options:
+  - id: a
+    text: Wind passing over the roof slope created aerodynamic negative pressure (suction), which overwhelmed
+      plain nailed connections lacking hurricane tie strapping
+  - id: b
+    text: The roof was too heavy for the supporting timber trusses
+  - id: c
+    text: The pitch of the roof was too steep for rainwater runoff
+  - id: d
+    text: Termites consumed the corrugated iron metal sheets
+  correct_answer: a
+  explanation: 'Correct! High wind generates powerful Bernoulli suction lift. Plain wire nails possess
+    minimal pull-out resistance under upward tension. Trusses must be anchored to ring beams with heavy
+    galvanized hurricane ties or bolted straps.
 
-  - id: sc4-q2
-    type: FILL_BLANK
-    prompt: "In a traditional King Post roof truss, the central vertical King Post member is under pure ___ (tension/compression) as it suspends the horizontal tie beam."
-    xp_reward: 20
-    correct_answer: tension
-    explanation: "The central king post acts as a suspension hanger. It is under axial tension, holding up the center of the bottom chord (tie beam) so it cannot sag under its own weight or ceiling loads."
 
-  - id: sc4-q3
-    type: MATCH_PAIRS
-    prompt: "Match each passive roof design element to its cooling or structural benefit."
-    xp_reward: 30
-    pairs:
-      - left: 60-80 cm eave overhang
-        right: Shades windows from midday sun and protects earthen walls from driving rain
-      - left: Convective ridge vent
-        right: Allows buoyant hot ceiling air to exhaust out the roof apex continuously
-      - left: Aluminum radiant barrier foil
-        right: Reflects 95% of solar infrared radiation back toward the sky
-      - left: Wall plate hurricane tie
-        right: Resists aerodynamic wind uplift forces during severe thunderstorm gusts
-    correct_answer:
-      - 60-80 cm eave overhang=Shades windows from midday sun and protects earthen walls from driving rain
-      - Convective ridge vent=Allows buoyant hot ceiling air to exhaust out the roof apex continuously
-      - Aluminum radiant barrier foil=Reflects 95% of solar infrared radiation back toward the sky
-      - Wall plate hurricane tie=Resists aerodynamic wind uplift forces during severe thunderstorm gusts
+    Why the other options are wrong: Excessive weight causes downward bending collapse, not upward detachment.
+    Steep pitches improve rainwater shedding and do not cause uplift failures on their own. Termites digest
+    cellulose in wood, not galvanized steel sheets.'
+- id: sc4-q2
+  type: FILL_BLANK
+  prompt: In a traditional King Post roof truss, the central vertical King Post member is under pure ___
+    (tension/compression) as it suspends the horizontal tie beam.
+  xp_reward: 20
+  correct_answer: tension
+  explanation: The central king post acts as a suspension hanger. It is under axial tension, holding up
+    the center of the bottom chord (tie beam) so it cannot sag under its own weight or ceiling loads.
+- id: sc4-q3
+  type: MATCH_PAIRS
+  prompt: Match each passive roof design element to its cooling or structural benefit.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: 60-80 cm eave overhang
+    right:
+      id: r-4f32f5
+      text: Shades windows from midday sun and protects earthen walls from driving rain
+  - left:
+      id: l2
+      text: Convective ridge vent
+    right:
+      id: r-529232
+      text: Allows buoyant hot ceiling air to exhaust out the roof apex continuously
+  - left:
+      id: l3
+      text: Aluminum radiant barrier foil
+    right:
+      id: r-28c2b9
+      text: Reflects 95% of solar infrared radiation back toward the sky
+  - left:
+      id: l4
+      text: Wall plate hurricane tie
+    right:
+      id: r-1f4f32
+      text: Resists aerodynamic wind uplift forces during severe thunderstorm gusts
+  correct_answer:
+  - l1=r-4f32f5
+  - l2=r-529232
+  - l3=r-28c2b9
+  - l4=r-1f4f32

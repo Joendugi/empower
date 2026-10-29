@@ -1,116 +1,141 @@
 id: shelter-construction-day-5
 course_id: shelter-construction
-title: "Ferro-Cement Engineering & Stormproofing"
-title_sw: "Uhandisi wa Ferro-Cement na Kukabili Dhoruba"
+title: Ferro-Cement Engineering & Stormproofing
+title_sw: Uhandisi wa Ferro-Cement na Kukabili Dhoruba
 week_number: 1
 day_number: 5
 estimated_minutes: 55
 license: CC-BY-SA-4.0
-tags: [shelter, ferro-cement, cisterns, water-tanks, civil-engineering, stormproofing, kenya]
+tags:
+- shelter
+- ferro-cement
+- cisterns
+- water-tanks
+- civil-engineering
+- stormproofing
+- kenya
 xp: 90
 exam_domain: Civil & Structural Engineering
+briefing: 'Ferro-cement is a specialized form of reinforced concrete utilizing closely spaced
 
-briefing: |
-  Ferro-cement is a specialized form of reinforced concrete utilizing closely spaced
   layers of flexible galvanized wire mesh and light skeletal steel impregnated with a rich
+
   cement-sand mortar. With wall thicknesses of just 20 to 35 mm, ferro-cement exhibits
+
   unmatched tensile ductility, high impact resistance, and crack control. In East Africa,
+
   it is the premier technology for constructing low-cost, 10,000-to-50,000-litre rainwater
+
   harvesting cisterns (at one-third the cost of plastic rotomolded tanks), curved cyclone
+
   storm shelters, and hygienic biogas digesters. This final day covers armature framing,
+
   mesh layering, mortar formulation (1:2 ratio, low w/c), plaster penetration, damp curing,
+
   and a practical structural building assessment.
-briefing_sw: |
-  Ferro-cement ni teknolojia ya saruji nyembamba (milimita 20-35) iliyoimarishwa kwa tabaka
+
+  '
+briefing_sw: 'Ferro-cement ni teknolojia ya saruji nyembamba (milimita 20-35) iliyoimarishwa kwa tabaka
+
   nyingi za waya wa kuku (chicken wire) na mesh ya chuma. Nchini Kenya, ndiyo teknolojia
+
   bora zaidi ya kujenga matanki makubwa ya maji ya mvua ya lita 10,000 hadi 50,000 kwa
+
   gharama ya theluthi moja ya matanki ya plastiki, na vyumba thabiti vya dhoruba.
 
-outline: |
-  1. The ferro-cement principle: High specific surface area of reinforcement vs conventional RCC
+  '
+outline: '1. The ferro-cement principle: High specific surface area of reinforcement vs conventional RCC
+
   2. Materials: 6 mm mild steel skeletal rebar + 4 layers of 12 mm hexagonal galvanized chicken wire
+
   3. Mortar formulation: 1:2 to 1:2.5 Portland cement to clean quartz sand (water/cement ratio ≤ 0.40)
+
   4. Workability without water excess: Using superplasticizers or liquid dish soap as field surfactant
+
   5. The plastering sequence: Forcing mortar from both sides to eliminate internal voids
+
   6. The 21-day underwater curing rule for zero-leakage water cisterns
+
   7. Storm-resistant design: Aerodynamic rounded profiles that deflect 150 km/h wind shear
+
   8. PHOTO_CAPTURE practical: Construct and document a ferro-cement or stabilized earth structural specimen
 
-content_md: |
-  ## The Ferro-Cement Principle
-
-  Conventional Reinforced Concrete (RCC) places heavy steel rebar (12–25 mm) deep within thick concrete (150–300 mm). When tensile stress exceeds concrete’s limits, wide cracks open up.
-
-  **Ferro-Cement operates on opposite physics:**
-  - Steel reinforcement is distributed uniformly in all directions across thin layers (20–30 mm total thickness).
-  - High **specific surface of reinforcement** (ratio of wire surface area to mortar volume) arrests micro-cracks before they propagate.
-  - Result: High tensile ductility, water-impermeability, and flexibility under structural shock.
-
-  ## Material Specifications (Rainwater Cistern or Storm Shell)
-
-  1. **Skeletal Steel Framework:**
-     - 6 mm or 8 mm mild steel rebar bent into vertical rings and horizontal hoops at 20 cm grid spacing.
-  2. **Mesh Layers:**
-     - 2 layers of 12 mm (1/2 inch) galvanized hexagonal wire netting (chicken wire) on the outside.
-     - 2 layers of 12 mm chicken wire on the inside (total: 4 layers sandwiching the rebar).
-     - Ties: 16-gauge galvanized tie wire placed every 10–15 cm, cinched tight with pliers until the armature is rigid enough to walk on.
-  3. **Mortar Formulation:**
-     - **Cement to Sand:** 1:2 by weight (1 bag 50 kg OPC to 100 kg clean, sharp quartz sand, sieved through 2 mm mesh).
-     - **Water-Cement Ratio:** strictly **0.38 to 0.42**. Excess water causes shrinkage micro-channels that leak water!
-     - *Field Workability Tip:* Add 50 mL liquid dish soap per 50 kg bag of cement as a plasticizing surfactant to increase slump without adding extra water.
-
-  ## Application Technique (Plastering)
-
-  1. **Two-Person Opposed Plastering:**
-     - Worker A pushes stiff mortar firmly into the mesh from the exterior with a steel trowel.
-     - Worker B holds a flat wooden backing board against the interior face to prevent mortar fall-out and ensure every wire is 100% encapsulated.
-     - Reverse the operation for the interior pass.
-  2. **Total Cover:**
-     - Ensure minimum 3 mm of smooth mortar covers the outermost wire mesh to prevent rust.
-  3. **Curing (The Waterproofing Secret):**
-     - Keep surfaces continuously soaked under wet burlap sacks or polythene sheets for **14 to 21 continuous days**.
-     - If building a water cistern, fill slowly with 30 cm of water after day 3 so the floor cures under water.
-
+  '
+content_md: "## The Ferro-Cement Principle\n\nConventional Reinforced Concrete (RCC) places heavy steel\
+  \ rebar (12–25 mm) deep within thick concrete (150–300 mm). When tensile stress exceeds concrete’s limits,\
+  \ wide cracks open up.\n\n**Ferro-Cement operates on opposite physics:**\n- Steel reinforcement is distributed\
+  \ uniformly in all directions across thin layers (20–30 mm total thickness).\n- High **specific surface\
+  \ of reinforcement** (ratio of wire surface area to mortar volume) arrests micro-cracks before they\
+  \ propagate.\n- Result: High tensile ductility, water-impermeability, and flexibility under structural\
+  \ shock.\n\n## Material Specifications (Rainwater Cistern or Storm Shell)\n\n1. **Skeletal Steel Framework:**\n\
+  \   - 6 mm or 8 mm mild steel rebar bent into vertical rings and horizontal hoops at 20 cm grid spacing.\n\
+  2. **Mesh Layers:**\n   - 2 layers of 12 mm (1/2 inch) galvanized hexagonal wire netting (chicken wire)\
+  \ on the outside.\n   - 2 layers of 12 mm chicken wire on the inside (total: 4 layers sandwiching the\
+  \ rebar).\n   - Ties: 16-gauge galvanized tie wire placed every 10–15 cm, cinched tight with pliers\
+  \ until the armature is rigid enough to walk on.\n3. **Mortar Formulation:**\n   - **Cement to Sand:**\
+  \ 1:2 by weight (1 bag 50 kg OPC to 100 kg clean, sharp quartz sand, sieved through 2 mm mesh).\n  \
+  \ - **Water-Cement Ratio:** strictly **0.38 to 0.42**. Excess water causes shrinkage micro-channels\
+  \ that leak water!\n   - *Field Workability Tip:* Add 50 mL liquid dish soap per 50 kg bag of cement\
+  \ as a plasticizing surfactant to increase slump without adding extra water.\n\n## Application Technique\
+  \ (Plastering)\n\n1. **Two-Person Opposed Plastering:**\n   - Worker A pushes stiff mortar firmly into\
+  \ the mesh from the exterior with a steel trowel.\n   - Worker B holds a flat wooden backing board against\
+  \ the interior face to prevent mortar fall-out and ensure every wire is 100% encapsulated.\n   - Reverse\
+  \ the operation for the interior pass.\n2. **Total Cover:**\n   - Ensure minimum 3 mm of smooth mortar\
+  \ covers the outermost wire mesh to prevent rust.\n3. **Curing (The Waterproofing Secret):**\n   - Keep\
+  \ surfaces continuously soaked under wet burlap sacks or polythene sheets for **14 to 21 continuous\
+  \ days**.\n   - If building a water cistern, fill slowly with 30 cm of water after day 3 so the floor\
+  \ cures under water.\n"
 exercises:
-  - id: sc5-q1
-    type: MULTIPLE_CHOICE
-    prompt: "Why must the water-cement ratio in a ferro-cement water storage tank mortar strictly be kept at or below 0.42?"
-    xp_reward: 35
-    options:
-      - text: "Higher water content makes the mortar set too quickly before it can be applied"
-        correct: false
-        explanation: "Higher water content delays setting time, not accelerates it."
-      - text: "Excess mixing water evaporates after setting, leaving microscopic capillary channels that cause porosity, water leaks, and rusting of wire mesh"
-        correct: true
-        explanation: "Correct! Only about 0.25–0.28 water-cement ratio is chemically needed to hydrate cement. Any excess water beyond 0.40 occupies physical volume that evaporates, leaving porous capillary networks that leak stored water and allow air to rust the inner mesh."
-      - text: "Water reacts chemically with the galvanized zinc wire coating to produce explosive gas"
-        correct: false
-        explanation: "Small amounts of hydrogen form initially with zinc, but keeping water low does not eliminate chemical reaction."
-      - text: "Cement requires zero water to bond with wire mesh"
-        correct: false
-        explanation: "Cement is a hydraulic binder and cannot harden without water."
-    correct_answer: "Excess mixing water evaporates after setting, leaving microscopic capillary channels that cause porosity, water leaks, and rusting of wire mesh"
+- id: sc5-q1
+  type: MULTIPLE_CHOICE
+  prompt: Why must the water-cement ratio in a ferro-cement water storage tank mortar strictly be kept
+    at or below 0.42?
+  xp_reward: 35
+  options:
+  - id: a
+    text: Excess mixing water evaporates after setting, leaving microscopic capillary channels that cause
+      porosity, water leaks, and rusting of wire mesh
+  - id: b
+    text: Higher water content makes the mortar set too quickly before it can be applied
+  - id: c
+    text: Water reacts chemically with the galvanized zinc wire coating to produce explosive gas
+  - id: d
+    text: Cement requires zero water to bond with wire mesh
+  correct_answer: a
+  explanation: 'Correct! Only about 0.25–0.28 water-cement ratio is chemically needed to hydrate cement.
+    Any excess water beyond 0.40 occupies physical volume that evaporates, leaving porous capillary networks
+    that leak stored water and allow air to rust the inner mesh.
 
-  - id: sc5-q2
-    type: FILL_BLANK
-    prompt: "A ferro-cement armature typically consists of light skeletal steel rebar sandwiched between ___ layers of galvanized hexagonal wire netting."
-    xp_reward: 20
-    correct_answer: "4"
-    explanation: "Two layers of galvanized hexagonal mesh on each face (4 layers total) sandwiching the central rebar frame provides the optimal high specific surface area required for crack arrest and high tensile ductility."
 
-  - id: sc5-practical
-    type: PHOTO_CAPTURE
-    prompt: "Practical Assessment: Document your construction test sample (Ferro-Cement specimen or Stabilized Earth Block/Soil Jar Test)."
-    xp_reward: 50
-    correct_answer: null
-    rubric:
-      - criterion: "Specimen prepared according to technical instructions (Jar test with marked layers, compressed test block, or wired mesh test panel)"
-        points: 3
-      - criterion: "Photo clearly shows material details (sedimentation levels marked on glass, smooth tamped block surfaces, or wire encapsulation)"
-        points: 3
-      - criterion: "Measurement tool (ruler, tape measure, or caliper) visible alongside specimen for scale"
-        points: 3
-      - criterion: "Handwritten note with student ID, date, and local material origin visible in frame"
-        points: 3
-      - criterion: "Brief written caption explaining the observed soil ratio, block moisture behavior, or mesh layering count"
-        points: 3
+    Why the other options are wrong: Higher water content delays setting time, not accelerates it. Small
+    amounts of hydrogen form initially with zinc, but keeping water low does not eliminate chemical reaction.
+    Cement is a hydraulic binder and cannot harden without water.'
+- id: sc5-q2
+  type: FILL_BLANK
+  prompt: A ferro-cement armature typically consists of light skeletal steel rebar sandwiched between
+    ___ layers of galvanized hexagonal wire netting.
+  xp_reward: 20
+  correct_answer: '4'
+  explanation: Two layers of galvanized hexagonal mesh on each face (4 layers total) sandwiching the central
+    rebar frame provides the optimal high specific surface area required for crack arrest and high tensile
+    ductility.
+- id: sc5-practical
+  type: PHOTO_CAPTURE
+  prompt: 'Practical Assessment: Document your construction test sample (Ferro-Cement specimen or Stabilized
+    Earth Block/Soil Jar Test).'
+  xp_reward: 50
+  correct_answer: null
+  rubric:
+  - criterion: Specimen prepared according to technical instructions (Jar test with marked layers, compressed
+      test block, or wired mesh test panel)
+    points: 3
+  - criterion: Photo clearly shows material details (sedimentation levels marked on glass, smooth tamped
+      block surfaces, or wire encapsulation)
+    points: 3
+  - criterion: Measurement tool (ruler, tape measure, or caliper) visible alongside specimen for scale
+    points: 3
+  - criterion: Handwritten note with student ID, date, and local material origin visible in frame
+    points: 3
+  - criterion: Brief written caption explaining the observed soil ratio, block moisture behavior, or mesh
+      layering count
+    points: 3

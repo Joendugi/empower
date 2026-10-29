@@ -110,3 +110,78 @@ exercises:
       - "Repair and replacement limits are explained"
       - "Coolant recovery, bleeding, and hot verification are included"
     min_seconds: 20
+content_md: |
+  ## The cooling system at a glance
+
+  The water pump pushes coolant through the engine's water jacket. The **thermostat** stays closed until the engine reaches operating temperature, then opens to send hot coolant to the **radiator**. Air flowing through the radiator fins (from road speed or the **fan**, guided by the **shroud**) removes heat. The **pressure cap** raises the boiling point, and the **expansion (recovery) bottle** takes up the extra volume as coolant heats.
+
+  ```
+  Engine water jacket ─► Thermostat ─► Top hose ─► Radiator (fins + tubes) ─► Bottom hose ─► Water pump ─┐
+          ▲                                                                                              │
+          └──────────────────────────────────────────────────────────────────────────────────────────────┘
+                         Heater core in a parallel loop · Cap + expansion bottle on the radiator or tank
+  ```
+
+  > Work **cold**. Never open the cap on a hot system — escaping coolant flashes into steam.
+
+  ## Step 1 — Inspect before you test
+
+  With the engine cold, look and feel at:
+
+  - the cap seal and the filler neck seat
+  - top and bottom tanks, and the tank-to-core seams or crimps
+  - the **tube-to-header** joints across the core
+  - the drain plug, mounting rubbers, fan shroud and hoses
+  - crusty white, green or pink staining, which marks old leaks
+
+  ## Step 2 — Pressure testing
+
+  - **On the vehicle:** fit the tester to the filler neck and pump to the **rated cap pressure only**. Too much pressure can split a tank and create the leak you're trying to find.
+  - **Test the cap** too. A weak cap lowers the boiling point and lets coolant escape to the bottle and then overboard.
+  - **On the bench:** plug the openings and use a **regulated** air or water supply. Never connect unregulated shop air: a compressor can deliver 8 bar or more, enough to burst the core and injure you. For a **submersion test**, apply low regulated pressure, put the radiator in a tank, and watch for bubbles.
+
+  ## Step 3 — Identify the construction
+
+  Construction decides the repair method.
+
+  | Construction | Typical repairs | Not suitable |
+  |---|---|---|
+  | **Copper/brass core, brass tanks** (older vehicles, many trucks) | De-solder, clean to bright metal, flux and **soft-solder** seams and tube-to-header joints; block off a few damaged tubes; **re-core** if many are damaged | Excessive heat that melts nearby solder joints |
+  | **Aluminium core, crimped plastic tanks** (most modern cars) | Replace the **tank and gasket** (specialist re-crimp) or the whole radiator | Torch heat near plastic; epoxy as a lasting fix on a pressurised tank |
+  | **All-aluminium, brazed** | Specialist aluminium brazing or TIG on suitable areas | Ordinary soft solder; unskilled heat (thin tubes burn through) |
+
+  **Soldering a copper/brass seam:** drain and dry, clean to bright metal, apply flux, and heat evenly with controlled heat so the solder flows into the joint. Then **wash off all the flux**, because flux residue keeps corroding. Pressure-test again before refitting.
+
+  **Blocking tubes:** pinching and sealing a damaged tube is acceptable only up to a small share of the core. Too many blocked tubes cut cooling and the engine overheats under load. That's when you **re-core**: replace the whole tube-and-fin centre and keep the good tanks.
+
+  ## Step 4 — Overheating without a leak
+
+  Many overheating complaints aren't leaks at all:
+
+  | Cause | Evidence |
+  |---|---|
+  | **Internal blockage** | Infrared temperature scan of a hot radiator shows **cold vertical bands** |
+  | External blockage | Mud, insects or leaves between the fins; bent fins (straighten them gently with a fin comb) |
+  | Fan / shroud | Fan not switching on, wrong rotation, or shroud missing (air goes round the core, not through it) |
+  | Thermostat | Stuck closed (top hose stays cool) or stuck open (slow warm-up) |
+  | Water pump | Corroded or slipping impeller: poor flow even at high revs |
+  | Air lock | Gurgling heater, no cabin heat, temperature swings |
+  | Head gasket | Bubbles in the tank, combustion gas detected |
+  | Wrong mix or weak cap | Coolant boils below normal temperature |
+
+  **Example:** a taxi overheats climbing hills. There's no leak and the fan works, but the scan shows half the core cold. A higher-pressure cap only hides the problem and stresses the hoses. Confirm the restriction, then re-core or replace the radiator, and find out why it blocked (wrong coolant, mixed coolant types, or plain water causing scale).
+
+  ## Step 5 — Refill, bleed and prove
+
+  1. Use the **correct coolant type**. Long-life OAT/HOAT coolants and traditional types shouldn't be mixed. Use the **specified ratio**, often 50/50 with clean or distilled water.
+  2. Fill slowly. Open any **bleed screws**, set the heater to full hot, and follow the manufacturer's bleed procedure.
+  3. Run to operating temperature. Check that the **cabin heater blows hot**, the **fan cycles**, and there are no bubbles or leaks.
+  4. Road test, watching the temperature gauge on a climb or under load.
+  5. Let it cool fully, then **recheck the bottle level** and top up.
+  6. **Dispose of old coolant as hazardous waste.** It's toxic to animals and children, and it tastes sweet. It never goes onto soil or into drains.
+
+  ## Check yourself
+
+  - Why must bench-test air be regulated?
+  - What does a cold band on a thermal scan tell you?
+  - Which radiator construction suits soft soldering, and which doesn't?

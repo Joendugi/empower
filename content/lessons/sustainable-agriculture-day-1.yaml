@@ -1,235 +1,215 @@
 id: sustainable-agriculture-day-1
 course_id: sustainable-agriculture
-title: "Soil Science — Texture, Structure, pH & Field Testing"
-title_sw: "Sayansi ya Udongo — Muundo, pH na Majaribio ya Shambani"
+title: Soil Science — Texture, Structure, pH & Field Testing
+title_sw: Sayansi ya Udongo — Muundo, pH na Majaribio ya Shambani
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - soil-science
-  - soil-texture
-  - pH
-  - field-testing
-  - agriculture
+- soil-science
+- soil-texture
+- pH
+- field-testing
+- agriculture
 xp: 250
 exam_domain: sustainable-agriculture
+briefing: 'Healthy soil is the foundation of food security. Before a farmer adds any amendment or plants
+  any crop, they must understand what their soil actually is: its texture class, its structure, its organic
+  matter content, and its pH. These four parameters determine water-holding capacity, nutrient availability,
+  and biological activity — the three pillars of soil fertility. All four can be assessed accurately with
+  no laboratory equipment.
 
-briefing: >
-  Healthy soil is the foundation of food security. Before a farmer adds any
-  amendment or plants any crop, they must understand what their soil actually is:
-  its texture class, its structure, its organic matter content, and its pH. These
-  four parameters determine water-holding capacity, nutrient availability, and
-  biological activity — the three pillars of soil fertility. All four can be
-  assessed accurately with no laboratory equipment.
+  '
+outline: 'Soil mineral fractions (sand, silt, clay) and texture triangle; field ribbon test and jar sedimentation
+  test; soil structure types (granular, blocky, platy, massive) and their fertility implications; soil
+  organic matter (SOM) and its role in CEC and water retention; pH scale and nutrient availability window;
+  field pH testing with indicator strips; liming (CaCO3) and acidification correction; soil colour and
+  Munsell chart interpretation.
 
-outline: >
-  Soil mineral fractions (sand, silt, clay) and texture triangle; field ribbon
-  test and jar sedimentation test; soil structure types (granular, blocky,
-  platy, massive) and their fertility implications; soil organic matter (SOM)
-  and its role in CEC and water retention; pH scale and nutrient availability
-  window; field pH testing with indicator strips; liming (CaCO3) and acidification
-  correction; soil colour and Munsell chart interpretation.
-
-content_md: |
-  ## Soil Mineral Fractions
-
-  Mineral soil consists of three particle size classes:
-
-  | Fraction | Particle diameter | Properties |
-  |---|---|---|
-  | Sand | 0.05 – 2.0 mm | Large pores; drains fast; low CEC; poor water retention |
-  | Silt | 0.002 – 0.05 mm | Medium pores; moderate drainage; moderate CEC |
-  | Clay | < 0.002 mm | Tiny pores; drains slowly; high CEC; sticky when wet; cracks when dry |
-
-  **Cation Exchange Capacity (CEC)**: clay particles carry negative charges that
-  hold positively charged nutrient cations (K+, Ca2+, Mg2+, NH4+). Higher clay
-  and organic matter = higher CEC = higher fertility potential.
-
-  ## USDA Soil Texture Triangle
-
-  Twelve texture classes are defined by sand/silt/clay percentages. The three
-  most important for East African smallholders:
-
-  | Texture class | Approx. composition | Farming implication |
-  |---|---|---|
-  | Sandy loam | 60% sand, 25% silt, 15% clay | Good drainage; needs frequent irrigation and organic matter |
-  | Clay loam | 30% sand, 35% silt, 35% clay | Good fertility; may compact; add organic matter for structure |
-  | Loam | 40% sand, 40% silt, 20% clay | Ideal — balanced drainage, aeration, and fertility |
-
-  ## Field Ribbon Test (No Equipment)
-
-  1. Take a golf-ball-sized soil sample; moisten to consistency of putty
-  2. Squeeze soil between thumb and forefinger, pushing forward
-  3. Measure the ribbon length before it breaks:
-     - **< 2.5 cm**: Sandy loam or loamy sand — low clay
-     - **2.5 – 5.0 cm**: Loam or clay loam — moderate clay
-     - **> 5.0 cm**: Clay or silty clay — high clay content
-  4. Feel the ribbon: gritty = sand dominant; smooth/silky = silt; sticky/plastic = clay
-
-  ## Jar Sedimentation Test (24-hour)
-
-  1. Fill a clear 1-litre jar one-third full with soil
-  2. Add water to near-full; add 1 teaspoon of salt (flocculates clay)
-  3. Shake vigorously for 2 minutes; stand undisturbed
-  4. Measure layer thicknesses after sedimentation:
-     - **2 minutes**: sand settles first (bottom layer)
-     - **1-2 hours**: silt settles (middle layer)
-     - **24 hours**: clay settles (top mineral layer)
-     - Organic matter floats
-  5. Calculate percentages: each layer thickness / total mineral thickness x 100
-
-  ## Soil Structure
-
-  | Structure type | Appearance | Fertility implication |
-  |---|---|---|
-  | Granular | Round aggregates, crumbly | Excellent — good pore space, drainage, and root penetration |
-  | Blocky (angular) | Angular blocks with flat faces | Moderate — common in clay soils; can be improved with organic matter |
-  | Platy | Flat horizontal layers | Poor — restricts drainage and root growth; often indicates compaction |
-  | Massive | No visible structure, hard clod | Very poor — compacted or degraded; needs deep tillage and organic matter |
-
-  Target structure for crop production: **granular**, at least 20 cm deep.
-
-  ## Soil Organic Matter (SOM) and Its Role
-
-  SOM typically represents 1-5% of soil mass but drives:
-  - CEC: 1% SOM adds approximately 2-4 cmol/kg CEC (equivalent to high-clay soil)
-  - Water retention: 1% SOM increase retains approximately 20 L extra water per m2 per 30 cm depth
-  - Biological activity: carbon source for soil microbes that cycle nutrients
-
-  **Visual SOM indicator**: dark brown/black colour in topsoil = high SOM.
-  Light tan or grey = low SOM. Kenyan smallholder soils typically have < 1% SOM
-  due to burning, tillage, and residue removal — rebuilding is the central task.
-
-  ## Soil pH and Nutrient Availability
-
-  pH scale runs 0 (acid) to 14 (alkaline); optimal crop range is 6.0-7.0.
-
-  | pH range | Nutrient availability | Common in East Africa |
-  |---|---|---|
-  | < 5.5 (strongly acid) | Al3+ and Mn2+ toxic; P locked; Mo deficient | Highland tea zones, old volcanic soils |
-  | 5.5 – 6.5 (slightly acid) | Most nutrients available; ideal for maize | Western Kenya, some Rift Valley |
-  | 6.5 – 7.5 (neutral) | Optimal availability for all major nutrients | Best farmland; aim for this range |
-  | > 7.5 (alkaline) | Fe, Mn, B, Zn locked; P precipitates | Semi-arid areas with calcareous soils |
-
-  ## Field pH Testing
-
-  1. Take 1 tablespoon of fresh soil into a white dish
-  2. Add a few drops of distilled or rain water (not tap water — often pH 7.5+)
-  3. Dip pH indicator strip into the muddy water for 5 seconds
-  4. Compare colour against reference chart — read to nearest 0.5 pH unit
-  5. Repeat with 3 samples across the field; average the readings
-
-  ## Liming for Acid Soils
-
-  Agricultural lime (calcium carbonate, CaCO3) raises soil pH:
-
-  | Current pH | Target pH 6.5 | Lime rate (tonnes/ha) for clay loam |
-  |---|---|---|
-  | 4.5 | 6.5 | 4-6 t/ha |
-  | 5.0 | 6.5 | 2-4 t/ha |
-  | 5.5 | 6.5 | 1-2 t/ha |
-
-  Incorporate lime 3-6 months before planting; takes one season to fully react.
-  Dolomitic lime (CaCO3 + MgCO3) also supplies magnesium — preferred where
-  magnesium deficiency is common (light green youngest leaves = Mg deficiency).
-
-  ## Soil Colour and Munsell Chart
-
-  Colour tells the story of soil chemistry:
-  - **Dark brown/black**: high organic matter
-  - **Red/orange**: well-oxidised iron (good drainage, often acidic)
-  - **Yellow**: hydrated iron oxides (imperfect drainage)
-  - **Grey/blue-green mottles**: waterlogged, reducing conditions (poor drainage)
-  - **White patches**: calcium carbonate accumulation (alkaline)
-
+  '
+content_md: "## Soil Mineral Fractions\n\nMineral soil consists of three particle size classes:\n\n| Fraction\
+  \ | Particle diameter | Properties |\n|---|---|---|\n| Sand | 0.05 – 2.0 mm | Large pores; drains fast;\
+  \ low CEC; poor water retention |\n| Silt | 0.002 – 0.05 mm | Medium pores; moderate drainage; moderate\
+  \ CEC |\n| Clay | < 0.002 mm | Tiny pores; drains slowly; high CEC; sticky when wet; cracks when dry\
+  \ |\n\n**Cation Exchange Capacity (CEC)**: clay particles carry negative charges that\nhold positively\
+  \ charged nutrient cations (K+, Ca2+, Mg2+, NH4+). Higher clay\nand organic matter = higher CEC = higher\
+  \ fertility potential.\n\n## USDA Soil Texture Triangle\n\nTwelve texture classes are defined by sand/silt/clay\
+  \ percentages. The three\nmost important for East African smallholders:\n\n| Texture class | Approx.\
+  \ composition | Farming implication |\n|---|---|---|\n| Sandy loam | 60% sand, 25% silt, 15% clay |\
+  \ Good drainage; needs frequent irrigation and organic matter |\n| Clay loam | 30% sand, 35% silt, 35%\
+  \ clay | Good fertility; may compact; add organic matter for structure |\n| Loam | 40% sand, 40% silt,\
+  \ 20% clay | Ideal — balanced drainage, aeration, and fertility |\n\n## Field Ribbon Test (No Equipment)\n\
+  \n1. Take a golf-ball-sized soil sample; moisten to consistency of putty\n2. Squeeze soil between thumb\
+  \ and forefinger, pushing forward\n3. Measure the ribbon length before it breaks:\n   - **< 2.5 cm**:\
+  \ Sandy loam or loamy sand — low clay\n   - **2.5 – 5.0 cm**: Loam or clay loam — moderate clay\n  \
+  \ - **> 5.0 cm**: Clay or silty clay — high clay content\n4. Feel the ribbon: gritty = sand dominant;\
+  \ smooth/silky = silt; sticky/plastic = clay\n\n## Jar Sedimentation Test (24-hour)\n\n1. Fill a clear\
+  \ 1-litre jar one-third full with soil\n2. Add water to near-full; add 1 teaspoon of salt (flocculates\
+  \ clay)\n3. Shake vigorously for 2 minutes; stand undisturbed\n4. Measure layer thicknesses after sedimentation:\n\
+  \   - **2 minutes**: sand settles first (bottom layer)\n   - **1-2 hours**: silt settles (middle layer)\n\
+  \   - **24 hours**: clay settles (top mineral layer)\n   - Organic matter floats\n5. Calculate percentages:\
+  \ each layer thickness / total mineral thickness x 100\n\n## Soil Structure\n\n| Structure type | Appearance\
+  \ | Fertility implication |\n|---|---|---|\n| Granular | Round aggregates, crumbly | Excellent — good\
+  \ pore space, drainage, and root penetration |\n| Blocky (angular) | Angular blocks with flat faces\
+  \ | Moderate — common in clay soils; can be improved with organic matter |\n| Platy | Flat horizontal\
+  \ layers | Poor — restricts drainage and root growth; often indicates compaction |\n| Massive | No visible\
+  \ structure, hard clod | Very poor — compacted or degraded; needs deep tillage and organic matter |\n\
+  \nTarget structure for crop production: **granular**, at least 20 cm deep.\n\n## Soil Organic Matter\
+  \ (SOM) and Its Role\n\nSOM typically represents 1-5% of soil mass but drives:\n- CEC: 1% SOM adds approximately\
+  \ 2-4 cmol/kg CEC (equivalent to high-clay soil)\n- Water retention: 1% SOM increase retains approximately\
+  \ 20 L extra water per m2 per 30 cm depth\n- Biological activity: carbon source for soil microbes that\
+  \ cycle nutrients\n\n**Visual SOM indicator**: dark brown/black colour in topsoil = high SOM.\nLight\
+  \ tan or grey = low SOM. Kenyan smallholder soils typically have < 1% SOM\ndue to burning, tillage,\
+  \ and residue removal — rebuilding is the central task.\n\n## Soil pH and Nutrient Availability\n\n\
+  pH scale runs 0 (acid) to 14 (alkaline); optimal crop range is 6.0-7.0.\n\n| pH range | Nutrient availability\
+  \ | Common in East Africa |\n|---|---|---|\n| < 5.5 (strongly acid) | Al3+ and Mn2+ toxic; P locked;\
+  \ Mo deficient | Highland tea zones, old volcanic soils |\n| 5.5 – 6.5 (slightly acid) | Most nutrients\
+  \ available; ideal for maize | Western Kenya, some Rift Valley |\n| 6.5 – 7.5 (neutral) | Optimal availability\
+  \ for all major nutrients | Best farmland; aim for this range |\n| > 7.5 (alkaline) | Fe, Mn, B, Zn\
+  \ locked; P precipitates | Semi-arid areas with calcareous soils |\n\n## Field pH Testing\n\n1. Take\
+  \ 1 tablespoon of fresh soil into a white dish\n2. Add a few drops of distilled or rain water (not tap\
+  \ water — often pH 7.5+)\n3. Dip pH indicator strip into the muddy water for 5 seconds\n4. Compare colour\
+  \ against reference chart — read to nearest 0.5 pH unit\n5. Repeat with 3 samples across the field;\
+  \ average the readings\n\n## Liming for Acid Soils\n\nAgricultural lime (calcium carbonate, CaCO3) raises\
+  \ soil pH:\n\n| Current pH | Target pH 6.5 | Lime rate (tonnes/ha) for clay loam |\n|---|---|---|\n\
+  | 4.5 | 6.5 | 4-6 t/ha |\n| 5.0 | 6.5 | 2-4 t/ha |\n| 5.5 | 6.5 | 1-2 t/ha |\n\nIncorporate lime 3-6\
+  \ months before planting; takes one season to fully react.\nDolomitic lime (CaCO3 + MgCO3) also supplies\
+  \ magnesium — preferred where\nmagnesium deficiency is common (light green youngest leaves = Mg deficiency).\n\
+  \n## Soil Colour and Munsell Chart\n\nColour tells the story of soil chemistry:\n- **Dark brown/black**:\
+  \ high organic matter\n- **Red/orange**: well-oxidised iron (good drainage, often acidic)\n- **Yellow**:\
+  \ hydrated iron oxides (imperfect drainage)\n- **Grey/blue-green mottles**: waterlogged, reducing conditions\
+  \ (poor drainage)\n- **White patches**: calcium carbonate accumulation (alkaline)\n"
 exercises:
-  - id: sa-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A farmer squeezes moistened soil and produces a ribbon of 6 cm before
-      it breaks. The ribbon feels sticky and slightly gritty. What texture
-      class is most likely, and what is the primary farming challenge?
-    xp_reward: 50
-    options:
-      - text: "Clay or clay loam — good fertility but prone to compaction and waterlogging; add organic matter to improve structure"
-        correct: true
-        explanation: "A ribbon > 5 cm indicates high clay content. Sticky feel confirms clay dominance. Clay soils have high CEC (fertility) but compact easily, drain slowly, and crack when dry. Organic matter additions improve structure and drainage."
-      - text: "Sandy loam — poor water retention; needs frequent irrigation"
-        correct: false
-        explanation: "Sandy soils produce ribbons < 2.5 cm and feel gritty. A 6 cm sticky ribbon indicates clay, not sand."
-      - text: "Loam — ideal balanced soil requiring no amendment"
-        correct: false
-        explanation: "Loam ribbons are 2.5-5.0 cm and feel neither particularly gritty nor particularly sticky. 6 cm places this firmly in the clay range."
-      - text: "Silt loam — silky feel indicates high silt with no drainage concerns"
-        correct: false
-        explanation: "Silt feels silky and smooth, not sticky. A 6 cm ribbon that is sticky indicates clay dominance, not silt."
+- id: sa-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A farmer squeezes moistened soil and produces a ribbon of 6 cm before it breaks. The ribbon
+    feels sticky and slightly gritty. What texture class is most likely, and what is the primary farming
+    challenge?
 
-  - id: sa-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      In the 24-hour jar sedimentation test, sand settles within ___ minutes,
-      silt within ___ hours, and clay within ___ hours. The optimal soil pH
-      range for most food crops is ___ to ___.
-    xp_reward: 50
-    correct_answer: "2 minutes; 1-2 hours; 24 hours; 6.0; 7.0"
-    explanation: >
-      Settling time reflects particle size and density: sand (largest) settles
-      fastest, clay (smallest) slowest. pH 6.0-7.0 is optimal because most
-      macro and micronutrients are simultaneously available in this range;
-      outside it, either aluminium toxicity (< 5.5) or iron/zinc lockout (> 7.5) reduces yields.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Sandy loam — poor water retention; needs frequent irrigation
+  - id: b
+    text: Loam — ideal balanced soil requiring no amendment
+  - id: c
+    text: Clay or clay loam — good fertility but prone to compaction and waterlogging; add organic matter
+      to improve structure
+  - id: d
+    text: Silt loam — silky feel indicates high silt with no drainage concerns
+  explanation: 'A ribbon > 5 cm indicates high clay content. Sticky feel confirms clay dominance. Clay
+    soils have high CEC (fertility) but compact easily, drain slowly, and crack when dry. Organic matter
+    additions improve structure and drainage.
 
-  - id: sa-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each soil structure type to its fertility implication.
-    xp_reward: 50
-    pairs:
-      - left: Granular
-        right: Excellent — crumbly aggregates with good pore space for roots and drainage
-      - left: Platy
-        right: Poor — horizontal layers restrict drainage and root penetration
-      - left: Massive
-        right: Very poor — compacted with no visible structure; needs deep tillage
-      - left: Blocky (angular)
-        right: Moderate — common in clay; improves with organic matter additions
-    correct_answer: null
-    explanation: >
-      Granular structure is the goal of all soil management. Platy structure
-      is often caused by livestock trampling, heavy machinery, or tillage when
-      soil is too wet. Massive structure indicates severe compaction or
-      destruction of all aggregates.
 
-  - id: sa-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A field pH test returns 5.2 on clay loam soil destined for maize.
-      What action and approximate lime rate are appropriate?
-    xp_reward: 50
-    options:
-      - text: "Apply 2-4 t/ha of agricultural lime, incorporate 3-6 months before planting — this raises pH from 5.0 toward the optimal 6.5"
-        correct: true
-        explanation: "pH 5.2 is in the 5.0-5.5 range. For clay loam, the Kenya MOH/KALRO guidance recommends 2-4 t/ha CaCO3 to raise to 6.5. Incorporation 3-6 months ahead allows full chemical reaction with the soil before crop establishment."
-      - text: "Apply sulfur to lower the pH further — maize prefers acid soils"
-        correct: false
-        explanation: "Maize optimal pH is 6.0-6.8. Below 5.5, aluminium toxicity reduces root development and phosphorus availability. Sulfur would worsen the problem."
-      - text: "No action needed — pH 5.2 is adequate for all crops"
-        correct: false
-        explanation: "pH 5.2 is strongly acid. Aluminium (Al3+) becomes toxic below 5.5, and phosphorus is locked by aluminium ions, significantly reducing maize yields."
-      - text: "Apply 6-8 t/ha lime immediately before planting for fastest response"
-        correct: false
-        explanation: "The correct rate for pH 5.0-5.5 is 2-4 t/ha, not 6-8 t/ha. Over-liming can raise pH above 7.5 causing micronutrient deficiencies. Also, lime must be incorporated 3-6 months before planting to react fully."
+    Why the other options are wrong: Sandy soils produce ribbons < 2.5 cm and feel gritty. A 6 cm sticky
+    ribbon indicates clay, not sand. Loam ribbons are 2.5-5.0 cm and feel neither particularly gritty
+    nor particularly sticky. 6 cm places this firmly in the clay range. Silt feels silky and smooth, not
+    sticky. A 6 cm ribbon that is sticky indicates clay dominance, not silt.'
+  correct_answer: c
+- id: sa-d1-q2
+  type: FILL_BLANK
+  prompt: 'In the 24-hour jar sedimentation test, sand settles within ___ minutes, silt within ___ hours,
+    and clay within ___ hours. The optimal soil pH range for most food crops is ___ to ___.
 
-  - id: sa-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      Each 1% increase in soil organic matter retains approximately ___ litres
-      of additional water per square metre per 30 cm depth. A typical Kenyan
-      smallholder soil depleted by burning and tillage has SOM below ___%.
-    xp_reward: 50
-    correct_answer: "20 litres; 1%"
-    explanation: >
-      SOM's water retention: 1% SOM holds 20 L/m2/30cm — equivalent to 2 mm
-      of additional rain stored in the root zone. This can extend the effective
-      growing season by days to weeks during dry spells. Kenyan smallholder soils
-      often measure 0.5-0.8% SOM due to residue burning and continuous tillage
-      — rebuilding to 2-3% is achievable with compost additions over 3-5 seasons.
+    '
+  xp_reward: 50
+  correct_answer:
+  - 2 minutes
+  - 1-2 hours
+  - 24 hours
+  - '6.0'
+  - '7.0'
+  explanation: 'Settling time reflects particle size and density: sand (largest) settles fastest, clay
+    (smallest) slowest. pH 6.0-7.0 is optimal because most macro and micronutrients are simultaneously
+    available in this range; outside it, either aluminium toxicity (< 5.5) or iron/zinc lockout (> 7.5)
+    reduces yields.
+
+    '
+- id: sa-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each soil structure type to its fertility implication.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Granular
+    right:
+      id: r-66c77a
+      text: Excellent — crumbly aggregates with good pore space for roots and drainage
+  - left:
+      id: l2
+      text: Platy
+    right:
+      id: r-176e17
+      text: Poor — horizontal layers restrict drainage and root penetration
+  - left:
+      id: l3
+      text: Massive
+    right:
+      id: r-4949f2
+      text: Very poor — compacted with no visible structure; needs deep tillage
+  - left:
+      id: l4
+      text: Blocky (angular)
+    right:
+      id: r-bf03ab
+      text: Moderate — common in clay; improves with organic matter additions
+  correct_answer:
+  - l1=r-66c77a
+  - l2=r-176e17
+  - l3=r-4949f2
+  - l4=r-bf03ab
+  explanation: 'Granular structure is the goal of all soil management. Platy structure is often caused
+    by livestock trampling, heavy machinery, or tillage when soil is too wet. Massive structure indicates
+    severe compaction or destruction of all aggregates.
+
+    '
+- id: sa-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A field pH test returns 5.2 on clay loam soil destined for maize. What action and approximate
+    lime rate are appropriate?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Apply sulfur to lower the pH further — maize prefers acid soils
+  - id: b
+    text: No action needed — pH 5.2 is adequate for all crops
+  - id: c
+    text: Apply 2-4 t/ha of agricultural lime, incorporate 3-6 months before planting — this raises pH
+      from 5.0 toward the optimal 6.5
+  - id: d
+    text: Apply 6-8 t/ha lime immediately before planting for fastest response
+  explanation: 'pH 5.2 is in the 5.0-5.5 range. For clay loam, the Kenya MOH/KALRO guidance recommends
+    2-4 t/ha CaCO3 to raise to 6.5. Incorporation 3-6 months ahead allows full chemical reaction with
+    the soil before crop establishment.
+
+
+    Why the other options are wrong: Maize optimal pH is 6.0-6.8. Below 5.5, aluminium toxicity reduces
+    root development and phosphorus availability. Sulfur would worsen the problem. pH 5.2 is strongly
+    acid. Aluminium (Al3+) becomes toxic below 5.5, and phosphorus is locked by aluminium ions, significantly
+    reducing maize yields. The correct rate for pH 5.0-5.5 is 2-4 t/ha, not 6-8 t/ha. Over-liming can
+    raise pH above 7.5 causing micronutrient deficiencies. Also, lime must be incorporated 3-6 months
+    before planting to react fully.'
+  correct_answer: c
+- id: sa-d1-q5
+  type: FILL_BLANK
+  prompt: 'Each 1% increase in soil organic matter retains approximately ___ litres of additional water
+    per square metre per 30 cm depth. A typical Kenyan smallholder soil depleted by burning and tillage
+    has SOM below ___%.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - 20 litres
+  - 1%
+  explanation: 'SOM''s water retention: 1% SOM holds 20 L/m2/30cm — equivalent to 2 mm of additional rain
+    stored in the root zone. This can extend the effective growing season by days to weeks during dry
+    spells. Kenyan smallholder soils often measure 0.5-0.8% SOM due to residue burning and continuous
+    tillage — rebuilding to 2-3% is achievable with compost additions over 3-5 seasons.
+
+    '

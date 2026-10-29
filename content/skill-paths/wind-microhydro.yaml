@@ -1,0 +1,54 @@
+id: wind-microhydro
+title: Wind Energy & Micro-Hydropower Systems
+title_sw: Nishati ya Upepo na Mifumo ya Umeme wa Mto Mdogo
+description: 'End-to-end engineering manual for designing, building, and operating off-grid wind turbines
+  and micro-hydropower systems: wind resource analysis, HAWT blade aerodynamics, alternator winding, micro-hydro
+  head/flow measurement, Pelton wheel construction, penstock hydraulics, and power electronics integration.'
+category: ENERGY_TECHNOLOGY
+target_audience: Off-grid rural electrification engineers, smallholder homesteaders, community energy
+  co-operatives, and solar-plus-wind hybrid system operators.
+estimated_hours: 15
+difficulty: INTERMEDIATE
+prerequisites:
+- solar-photovoltaic
+- electrical-power-systems
+total_xp: 1250
+badge_id: renewable-energy-master
+status: PUBLISHED
+track: tvet
+nodes:
+- id: wind-microhydro-day-1
+  title: Wind Resource Assessment, Turbine Aerodynamics & Site Selection
+  title_sw: Tathmini ya Rasilimali ya Upepo, Aerodynamics ya Turbine na Uchaguzi wa Tovuti
+  prerequisites: []
+  lesson_ids:
+  - wind-microhydro-day-1
+- id: wind-microhydro-day-2
+  title: HAWT Construction — Blade Carving, Alternator Winding & Furling Tail
+  title_sw: Ujenzi wa Turbine ya Upepo — Kukata Mabawa, Kufunga Alternator na Mkia wa Kuzuia
+  prerequisites:
+  - wind-microhydro-day-1
+  lesson_ids:
+  - wind-microhydro-day-2
+- id: wind-microhydro-day-3
+  title: Micro-Hydro Site Survey, Pelton Wheel Design & Penstock Hydraulics
+  title_sw: Uchunguzi wa Tovuti ya Mto, Ubunifu wa Gurudumu la Pelton na Mfumo wa Bomba
+  prerequisites:
+  - wind-microhydro-day-2
+  lesson_ids:
+  - wind-microhydro-day-3
+- id: wind-microhydro-day-4
+  title: Power Electronics — Charge Controllers, Dump Loads & Battery Banks
+  title_sw: Elektroniki ya Nguvu — Vidhibiti vya Chaji, Mzigo wa Ziada na Betri
+  prerequisites:
+  - wind-microhydro-day-3
+  lesson_ids:
+  - wind-microhydro-day-4
+- id: wind-microhydro-day-5
+  title: System Integration, Load Analysis & Hybrid Wind-Solar-Hydro Design
+  title_sw: Muunganiko wa Mfumo, Uchambuzi wa Mzigo na Muundo wa Mseto wa Upepo-Jua-Mto
+  prerequisites:
+  - wind-microhydro-day-4
+  lesson_ids:
+  - wind-microhydro-day-5
+content_version: '1'

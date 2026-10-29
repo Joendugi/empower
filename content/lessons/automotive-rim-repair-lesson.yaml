@@ -110,3 +110,88 @@ exercises:
       - "Radial versus lateral run-out is explained"
       - "Hub/spoke cracks, severe distortion, and unsafe prior repairs are rejected"
     min_seconds: 20
+content_md: |
+  ## A rim is safety-critical
+
+  A wheel carries the vehicle's weight, braking and cornering loads while it turns hundreds of times a minute. A cracked or badly repaired rim can fail suddenly at speed. When in doubt, **reject the wheel**. Rims are cheaper than crashes.
+
+  ## Step 1 — Check the basics first
+
+  Many "bent rim" vibrations are something else. Before blaming the wheel, check:
+
+  - tyre condition, bulges, uneven wear and **pressure**
+  - **wheel-nut torque**, and missing or wrong nuts
+  - the **hub face**: rust or dirt between the hub and wheel makes it run out of true
+  - **wheel-bearing play** (rock the wheel at 12 and 6 o'clock)
+  - impact history: potholes, kerbs, accidents
+
+  ## Step 2 — Inspect for cracks
+
+  Remove the tyre whenever you suspect damage. Clean the wheel, but don't grind or sand away the evidence. Inspect:
+
+  | Area | What to look for |
+  |---|---|
+  | Bead seats and flanges | Bends, flat spots, chips that stop the tyre sealing |
+  | **Inner barrel / inner lip** | Hairline cracks — a common hiding place on alloys |
+  | Spokes | Cracks at the spoke roots |
+  | Centre bore and **stud holes** | Elongated holes, cracks spreading from the holes |
+  | Previous repairs | Weld marks, filler, repainting over damage |
+
+  **Dye penetrant** works on clean, non-porous alloy (clean, dye, dwell, wipe, develop). **Magnetic-particle** testing works only on ferrous steel wheels.
+
+  ## Step 3 — Measure run-out
+
+  Mount the clean wheel on a balancer or hub and use a **dial indicator**:
+
+  ```
+              Radial run-out (up/down)            Lateral run-out (side-to-side)
+                     ▲                                     ◄──►
+                ┌─────────┐                           ┌─────────┐
+                │  WHEEL  │  dial on the bead seat    │  WHEEL  │  dial on the rim face / flange
+                └─────────┘                           └─────────┘
+  ```
+
+  - **Radial run-out:** the wheel moving **up and down**, so it isn't perfectly round.
+  - **Lateral run-out:** the wheel moving **side to side**, a wobble at the rim face.
+  - Compare both against the **vehicle or wheel maker's limits**. Don't guess them.
+
+  **Balancing doesn't fix a bent rim.** Balancing only adds weights to correct **mass** imbalance. A bent wheel still runs out of true. If a wheel needs a lot of weight, treat that as a warning sign and inspect it.
+
+  ## Step 4 — Decide: straighten, repair or reject
+
+  | Condition | Decision |
+  |---|---|
+  | Steel rim, limited flange bend, no cracks | **Cold straightening** by trained staff with controlled equipment, then crack check, run-out and bead-leak test |
+  | Alloy rim, minor bend | Specialist straightening only, to the wheel repairer's procedure |
+  | Alloy inner-lip crack in a permitted area | Only a qualified wheel repairer: identify the alloy, controlled **TIG** procedure, machining, penetrant re-test, leak and run-out test |
+  | Crack in a **spoke**, the **hub or stud area**, multiple cracks, severe distortion, unknown old welds, or repair banned by the manufacturer | **Reject and replace** |
+
+  **Never heat a modern wheel with a torch to straighten it.** Heat changes the metal's heat treatment, makes it weaker or brittle, and can start a crack.
+
+  ## Hot work is deadly with a tyre fitted
+
+  **Never weld or heat a rim with the tyre fitted or inflated.** Heat raises the air pressure, tyre sealants and rubber can ignite, and the assembly can **explode**. Before any authorised hot work:
+
+  1. Deflate fully and **remove the valve core**.
+  2. **Demount the tyre** completely.
+  3. Clean off tyre sealant, lubricant and other flammable residue.
+  4. Identify the wheel material and follow the approved procedure.
+
+  ## Step 5 — Refit correctly
+
+  - Check the replacement wheel's **size, offset (ET), centre bore, stud pattern and load rating** against the vehicle data.
+  - Clean the hub face and the wheel's mounting face.
+  - **Hand-start** every nut. Cross-threading starts with a rattle gun.
+  - Tighten in a **star (criss-cross) sequence** to the specified torque with a calibrated **torque wrench**. Impact guns over-tighten and distort discs.
+  - Set tyre pressures to the placard, which is usually on the driver's door pillar.
+  - Follow the workshop **re-torque policy**, often a check after the first short distance.
+
+  ## Record and control rejected wheels
+
+  Mark a rejected wheel clearly (for example "SCRAP — DO NOT FIT"), record it on the job card, and store it away from serviceable stock. Otherwise it can end up back on a car.
+
+  ## Check yourself
+
+  - What is the difference between radial and lateral run-out?
+  - Why can't balancing correct a bent rim?
+  - List three conditions that mean a wheel must be rejected.

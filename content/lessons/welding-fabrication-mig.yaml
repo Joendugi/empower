@@ -1,0 +1,79 @@
+id: welding-fabrication-mig
+course_id: welding-fabrication
+title: 'Gmaw Mig Welding: Gas Selection, Wire Feed, Voltage And Wire Speed Settings,
+  Shielding Gas Covers And Spatter Control: Principles and Practical Application'
+title_sw: 'Gmaw Mig Welding: Gas Selection, Wire Feed, Voltage And Wire Speed Settings,
+  Shielding Gas Covers And Spatter Control: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering GMAW MIG Welding: Gas Selection,
+  Wire Feed, Voltage and Wire Speed Settings, Shielding Gas Covers and Spatter Control
+  requires strict adherence to safety standards and sequential execution. Always inspect
+  personal protective equipment (PPE), ensure proper tool calibration, and verify
+  that the workpiece is securely mounted before commencing. Observe manufacturer specifications
+  and relevant standards. Maintain a clean work environment, store consumables dry,
+  and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa GMAW MIG Welding: Gas Selection, Wire
+  Feed, Voltage and Wire Speed Settings, Shielding Gas Covers and Spatter Control
+  kunahitaji kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga
+  (PPE) kabla ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/WEL/CR/05/5
+exam_domain: 'Gmaw Mig Welding: Gas Selection, Wire Feed, Voltage And Wire Speed Settings,
+  Shielding Gas Covers And Spatter Control Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Gmaw Mig Welding: Gas Selection, Wire Feed, Voltage
+    And Wire Speed Settings, Shielding Gas Covers And Spatter Control'
+- kind: animation
+  preset: weld
+  caption: 'Interactive Simulation: Gmaw Mig Welding: Gas Selection, Wire Feed, Voltage
+    And Wire Speed Settings, Shielding Gas Covers And Spatter Control operation cycle'
+exercises:
+- id: welding-fabrication-gmaw-mig-welding-gas-selection-wire-feed-voltage-and-wire-speed-settings-shielding-gas-covers-and-spatter-control-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting GMAW MIG
+    Welding: Gas Selection, Wire Feed, Voltage and Wire Speed Settings, Shielding
+    Gas Covers and Spatter Control?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: welding-fabrication-gmaw-mig-welding-gas-selection-wire-feed-voltage-and-wire-speed-settings-shielding-gas-covers-and-spatter-control-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: welding-fabrication-gmaw-mig-welding-gas-selection-wire-feed-voltage-and-wire-speed-settings-shielding-gas-covers-and-spatter-control-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in GMAW MIG Welding: Gas
+    Selection, Wire Feed, Voltage and Wire Speed Settings, Shielding Gas Covers and
+    Spatter Control?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

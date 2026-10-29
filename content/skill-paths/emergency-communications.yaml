@@ -1,51 +1,63 @@
 id: emergency-communications
-title: "Off-Grid Communications, Radio & Mesh Networks"
-title_sw: "Mawasiliano Nje ya Gridi, Redio na Mitandao ya Mesh"
-description: >
-  Five-day hands-on unit on resilient emergency communications for decentralized
-  communities across East Africa: radio wave propagation, handheld VHF/UHF transceiver
-  operation (Baofeng / Simplex / Repeaters), regional HF Near Vertical Incidence
-  Skywave (NVIS), decentralized solar LoRa packet mesh networks (Meshtastic), and
-  antenna engineering with lightning ground protection.
-description_sw: >
-  Kitengo cha siku tano cha vitendo kuhusu mawasiliano ya dharura nje ya gridi
-  kwa jamii za Afrika Mashariki: fizikia ya mawimbi ya redio, uendeshaji wa redio
-  za mkono za VHF/UHF, mawasiliano ya masafa marefu ya HF (NVIS), mitandao ya kidijitali
-  ya LoRa (Meshtastic) bila intaneti, na ujenzi wa minara na kuzuia radi.
+title: Off-Grid Communications, Radio & Mesh Networks
+title_sw: Mawasiliano Nje ya Gridi, Redio na Mitandao ya Mesh
+description: 'Five-day hands-on unit on resilient emergency communications for decentralized communities
+  across East Africa: radio wave propagation, handheld VHF/UHF transceiver operation (Baofeng / Simplex
+  / Repeaters), regional HF Near Vertical Incidence Skywave (NVIS), decentralized solar LoRa packet mesh
+  networks (Meshtastic), and antenna engineering with lightning ground protection.
+
+  '
+description_sw: 'Kitengo cha siku tano cha vitendo kuhusu mawasiliano ya dharura nje ya gridi kwa jamii
+  za Afrika Mashariki: fizikia ya mawimbi ya redio, uendeshaji wa redio za mkono za VHF/UHF, mawasiliano
+  ya masafa marefu ya HF (NVIS), mitandao ya kidijitali ya LoRa (Meshtastic) bila intaneti, na ujenzi
+  wa minara na kuzuia radi.
+
+  '
 level: beginner
-tags: [communications, radio, mesh, lora, vhf, uhf, emergency, tvet, kenya]
-weeks:
-  - week_number: 1
-    title: "Resilient Radio & Mesh Engineering"
-    title_sw: "Uhandisi wa Redio na Mesh Thabiti"
-    nodes:
-      - id: emergency-communications-day-1
-        title: "Radio Waves, Antennas & SWR"
-        title_sw: "Mawimbi ya Redio, Antena na SWR"
-        day_number: 1
-        week_number: 1
-        xp: 85
-      - id: emergency-communications-day-2
-        title: "Handheld VHF/UHF & Field Protocols"
-        title_sw: "Redio za Mkono za VHF/UHF na Kanuni za Uwanjani"
-        day_number: 2
-        week_number: 1
-        xp: 85
-      - id: emergency-communications-day-3
-        title: "Long-Range HF & NVIS Propagation"
-        title_sw: "Mawasiliano ya Masafa Marefu ya HF na NVIS"
-        day_number: 3
-        week_number: 1
-        xp: 90
-      - id: emergency-communications-day-4
-        title: "Off-Grid Digital LoRa Mesh Networks"
-        title_sw: "Mitandao ya Kidijitali ya LoRa Mesh Nje ya Gridi"
-        day_number: 4
-        week_number: 1
-        xp: 90
-      - id: emergency-communications-day-5
-        title: "Antenna Masts, Lightning & Grounding"
-        title_sw: "Minara ya Antena, Radi na Upimaji wa Earth"
-        day_number: 5
-        week_number: 1
-        xp: 90
+tags:
+- communications
+- radio
+- mesh
+- lora
+- vhf
+- uhf
+- emergency
+- tvet
+- kenya
+track: cybersecurity
+nodes:
+- id: emergency-communications-day-1
+  title: Radio Waves, Antennas & SWR
+  title_sw: Mawimbi ya Redio, Antena na SWR
+  prerequisites: []
+  lesson_ids:
+  - emergency-communications-day-1
+- id: emergency-communications-day-2
+  title: Handheld VHF/UHF & Field Protocols
+  title_sw: Redio za Mkono za VHF/UHF na Kanuni za Uwanjani
+  prerequisites:
+  - emergency-communications-day-1
+  lesson_ids:
+  - emergency-communications-day-2
+- id: emergency-communications-day-3
+  title: Long-Range HF & NVIS Propagation
+  title_sw: Mawasiliano ya Masafa Marefu ya HF na NVIS
+  prerequisites:
+  - emergency-communications-day-2
+  lesson_ids:
+  - emergency-communications-day-3
+- id: emergency-communications-day-4
+  title: Off-Grid Digital LoRa Mesh Networks
+  title_sw: Mitandao ya Kidijitali ya LoRa Mesh Nje ya Gridi
+  prerequisites:
+  - emergency-communications-day-3
+  lesson_ids:
+  - emergency-communications-day-4
+- id: emergency-communications-day-5
+  title: Antenna Masts, Lightning & Grounding
+  title_sw: Minara ya Antena, Radi na Upimaji wa Earth
+  prerequisites:
+  - emergency-communications-day-4
+  lesson_ids:
+  - emergency-communications-day-5
+content_version: '1'

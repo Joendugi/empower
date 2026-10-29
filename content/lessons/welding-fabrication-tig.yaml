@@ -1,0 +1,80 @@
+id: welding-fabrication-tig
+course_id: welding-fabrication
+title: 'Gtaw Tig Welding: Tungsten Preparation, Argon Coverage, Foot Pedal Control,
+  Filler Rod Technique And Stainless Welding: Principles and Practical Application'
+title_sw: 'Gtaw Tig Welding: Tungsten Preparation, Argon Coverage, Foot Pedal Control,
+  Filler Rod Technique And Stainless Welding: Kanuni na Utendaji wa Vitendo'
+briefing: 'In professional workshop practice, mastering GTAW TIG Welding: Tungsten
+  Preparation, Argon Coverage, Foot Pedal Control, Filler Rod Technique and Stainless
+  Welding requires strict adherence to safety standards and sequential execution.
+  Always inspect personal protective equipment (PPE), ensure proper tool calibration,
+  and verify that the workpiece is securely mounted before commencing. Observe manufacturer
+  specifications and relevant standards. Maintain a clean work environment, store
+  consumables dry, and double-check your alignment.'
+briefing_sw: 'Katika mazoezi ya warsha, kuelewa GTAW TIG Welding: Tungsten Preparation,
+  Argon Coverage, Foot Pedal Control, Filler Rod Technique and Stainless Welding kunahitaji
+  kufuata sheria za usalama na mpangilio sahihi. Kagua vifaa vya kujikinga (PPE) kabla
+  ya kuanza kazi.'
+estimated_minutes: 20
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/WEL/CR/06/5
+exam_domain: 'Gtaw Tig Welding: Tungsten Preparation, Argon Coverage, Foot Pedal Control,
+  Filler Rod Technique And Stainless Welding Competency'
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=0kH8X9_w2_c
+  caption: 'Practical Demonstration: Gtaw Tig Welding: Tungsten Preparation, Argon
+    Coverage, Foot Pedal Control, Filler Rod Technique And Stainless Welding'
+- kind: animation
+  preset: weld
+  caption: 'Interactive Simulation: Gtaw Tig Welding: Tungsten Preparation, Argon
+    Coverage, Foot Pedal Control, Filler Rod Technique And Stainless Welding operation
+    cycle'
+exercises:
+- id: welding-fabrication-gtaw-tig-welding-tungsten-preparation-argon-coverage-foot-pedal-control-filler-rod-technique-and-stainless-welding-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the first step a technician must take before starting GTAW TIG
+    Welding: Tungsten Preparation, Argon Coverage, Foot Pedal Control, Filler Rod
+    Technique and Stainless Welding?'
+  options:
+  - id: a
+    text: Begin operation immediately without inspection
+  - id: b
+    text: Inspect PPE, workspace ventilation, and machine guards
+  - id: c
+    text: Disable circuit breakers to save power
+  - id: d
+    text: Paint the workpiece
+  correct_answer: b
+  hint: Safety and equipment inspection always precede tool contact.
+  explanation: Workplace health and safety regulations require pre-operational checks
+    of all tools and PPE.
+  xp_reward: 50
+- id: welding-fabrication-gtaw-tig-welding-tungsten-preparation-argon-coverage-foot-pedal-control-filler-rod-technique-and-stainless-welding-q2
+  type: FILL_BLANK
+  prompt: Personal protective equipment (PPE) must always be worn to prevent ___ in
+    the workshop.
+  correct_answer: injury
+  hint: Physical harm or accident.
+  explanation: Rated PPE shields the operator from electrical, chemical, and physical
+    hazards.
+  xp_reward: 50
+- id: welding-fabrication-gtaw-tig-welding-tungsten-preparation-argon-coverage-foot-pedal-control-filler-rod-technique-and-stainless-welding-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Why is calibration and clean alignment critical in GTAW TIG Welding: Tungsten
+    Preparation, Argon Coverage, Foot Pedal Control, Filler Rod Technique and Stainless
+    Welding?'
+  options:
+  - id: a
+    text: To ensure precision, prevent joint defects, and guarantee durability
+  - id: b
+    text: It is only required for cosmetic reasons
+  - id: c
+    text: It uses more consumables
+  - id: d
+    text: No reason; alignment does not affect quality
+  correct_answer: a
+  hint: Accuracy leads to high-grade workmanship.
+  explanation: Precise setout prevents structural failure, porosity, and tolerance
+    issues.
+  xp_reward: 50

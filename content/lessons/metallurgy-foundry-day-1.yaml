@@ -1,227 +1,218 @@
 id: metallurgy-foundry-day-1
 course_id: metallurgy-foundry
-title: "Iron Smelting & The Charcoal Bloomery Furnace"
-title_sw: "Kuyeyusha Chuma na Tanuri ya Bloomery ya Mkaa"
+title: Iron Smelting & The Charcoal Bloomery Furnace
+title_sw: Kuyeyusha Chuma na Tanuri ya Bloomery ya Mkaa
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - metallurgy
-  - iron-smelting
-  - bloomery
-  - charcoal
-  - bog-iron
-  - direct-reduction
+- metallurgy
+- iron-smelting
+- bloomery
+- charcoal
+- bog-iron
+- direct-reduction
 xp: 250
 exam_domain: metallurgy-foundry
+briefing: 'When scrap metal supplies are exhausted, a technological civilization must possess the ability
+  to extract new elemental iron directly from raw ore. Before modern industrial blast furnaces, humanity
+  smelted iron for 3,000 years using the Bloomery process—a direct chemical reduction furnace that produces
+  solid sponge iron (a "bloom") without ever melting the metal into liquid iron. This lesson covers prospecting
+  iron ores (magnetite, hematite, laterite ironstones), refractory clay furnace construction, forced-air
+  tuyere dynamics, charcoal-to-ore chemical reduction kinetics (1,150°C to 1,250°C), fayalite slag tapping,
+  and consolidation forging.
 
-briefing: >
-  When scrap metal supplies are exhausted, a technological civilization must possess
-  the ability to extract new elemental iron directly from raw ore. Before modern industrial
-  blast furnaces, humanity smelted iron for 3,000 years using the Bloomery process—a
-  direct chemical reduction furnace that produces solid sponge iron (a "bloom")
-  without ever melting the metal into liquid iron. This lesson covers prospecting
-  iron ores (magnetite, hematite, laterite ironstones), refractory clay furnace
-  construction, forced-air tuyere dynamics, charcoal-to-ore chemical reduction
-  kinetics (1,150°C to 1,250°C), fayalite slag tapping, and consolidation forging.
+  '
+outline: 'The chemical thermodynamics of iron direct reduction (Fe2O3 + 3 CO -> 2 Fe + 3 CO2); identifying
+  iron ores in East Africa (banded ironstone, red hematite laterite, black magnetite river sands); ore
+  roasting and crushing; bloomery shaft furnace design (1.2 m height, 30 cm internal bore, 15° inclined
+  ceramic tuyere); refractory furnace mud formulations (termite mound clay + quartz sand + dry straw);
+  the 1,200°C solid-state sponge iron bloom vs liquid fayalite slag (2FeO·SiO2); furnace run sequence
+  (preheating, charging 1:1 ore-to-charcoal ratio, continuous air blast); slag tapping protocols; extracting
+  and heavy sledgehammer consolidation forging to squeeze out liquid glass slag.
 
-outline: >
-  The chemical thermodynamics of iron direct reduction (Fe2O3 + 3 CO -> 2 Fe + 3 CO2);
-  identifying iron ores in East Africa (banded ironstone, red hematite laterite, black
-  magnetite river sands); ore roasting and crushing; bloomery shaft furnace design
-  (1.2 m height, 30 cm internal bore, 15° inclined ceramic tuyere); refractory furnace
-  mud formulations (termite mound clay + quartz sand + dry straw); the 1,200°C
-  solid-state sponge iron bloom vs liquid fayalite slag (2FeO·SiO2); furnace run
-  sequence (preheating, charging 1:1 ore-to-charcoal ratio, continuous air blast);
-  slag tapping protocols; extracting and heavy sledgehammer consolidation forging
-  to squeeze out liquid glass slag.
-
-content_md: |
-  ## The Principle of Direct Iron Reduction (The Bloomery)
-
-  Pure iron melts at **1,538°C**—a temperature impossible to reach in primitive
-  charcoal furnaces. Modern blast furnaces dissolve 4% carbon into iron to lower its
-  melting point to 1,150°C, producing brittle liquid cast iron.
-  The ancient **Bloomery Furnace** bypasses melting entirely: it operates at **1,150°C to 1,250°C**,
-  reducing solid iron oxides directly into a spongy, semi-solid mass of pure low-carbon
-  wrought iron called a **Bloom**:
-
-  ```
-  Charcoal Combustion:        C + O2 ─────────> CO2
-  Boudouard Reaction:         CO2 + C ────────> 2 CO (Reducing Gas)
-  Direct Iron Reduction:      Fe2O3 + 3 CO ───> 2 Fe (Solid Sponge) + 3 CO2 ↑
-  Slag Liquefaction:          2 FeO + SiO2 ───> Fe2SiO4 (Liquid Fayalite Slag @ 1,180°C)
-  ```
-
-  Because the iron never liquefies, it absorbs virtually zero carbon (< 0.1% C),
-  producing malleable, rust-resistant, ultra-tough **wrought iron**.
-
-  ## Prospecting & Preparing Iron Ore in East Africa
-
-  Iron is the fourth most abundant element in the Earth's crust, occurring in three
-  primary regional ore forms:
-
-  | Ore Type | Mineral Formula | Field Appearance | Provenance in Kenya |
-  |---|---|---|---|
-  | **Magnetite** | $\text{Fe}_3\text{O}_4$ (72% Fe) | Heavy, black, strongly magnetic sand grains | River beds draining volcanic ranges (Rift Valley, Aberdares) |
-  | **Hematite** | $\text{Fe}_2\text{O}_3$ (70% Fe) | Red-brown, dark metallic stones; leaves a bright red streak on unglazed porcelain | Kitui, Taita Hills, Homa Bay |
-  | **Laterite (Murram Ironstone)** | $\text{FeO(OH)}\cdot n\text{H}_2\text{O}$ (~35-50% Fe) | Porous, pebbly, rusty-red/purple rock crusts | Universal across western and central red soil zones |
-
-  ### Ore Preparation Protocol:
-  1. **Roasting (The Fire-Crack)**:
-     - Pile raw ironstone rocks on an open wood bonfire and heat to cherry red (**700°C – 800°C**) for 2 hours.
-     - Douse with water. The thermal shock shatters the rock and drives off trapped moisture and sulfur gases, converting dense hematite into porous, highly reactive magnetic oxides.
-  2. **Crushing & Grading**:
-     - Crush the roasted ore with iron hand pestles or heavy stones down to **pea-sized gravel (3 mm to 8 mm)**.
-     - *Why*: Fine dust suffocates the furnace draft; large stones do not reduce to their core before reaching the bottom.
-
-  ## Constructing the Shaft Bloomery Furnace
-
-  The furnace is a vertical clay chimney built directly over an excavated slag bowl:
-
-  ```
-                     [ Furnace Open Top (Charging) ]
-                             ┌───────┐
-                             │       │
-                             │   O   │  Descending Ore & Charcoal
-                             │   R   │
-                             │   E   │
-                             │       │
-                             │ 1200° │  High-Heat Reduction Zone
-                             │       │
-        Hand Bellows ───►  \ └───────┘ /  ◄─── Auxiliary Blast
-        or 12V Blower       \  TUYERE /
-                             │       │
-                             │ [BLOOM]│  Solid Sponge Iron Consolidates
-                      ┌──────┴───────┴──────┐
-                      │  Liquid Slag Basin  │ ────► Slag Tap Arch
-                      └─────────────────────┘
-  ```
-
-  ### Dimensions:
-  - **Internal Bore**: 30 cm diameter inside.
-  - **Height**: 1.2 m to 1.5 m from ground base to top rim.
-  - **Wall Thickness**: 10 cm at base, tapering to 6 cm at the top.
-
-  ### Refractory Mud Formulation:
-  Standard soil cracks and crumbles at 1,000°C. Mix a resilient refractory paste:
-  - **40% Subsoil / Termite Mound Clay** (rich in alumina-silicate clay binders).
-  - **40% Sharp Quartz River Sand** (prevents shrinkage cracking during firing).
-  - **20% Chopped Dry Grass, Rice Straw, or Horse/Donkey Manure** (carbonizes during firing, creating insulating micro-pores).
-  - Build the shaft in concentric rings (coiling method), letting each 30 cm lift sun-dry for 24 hours before adding the next.
-
-  ### The Tuyere (Air Injection Pipe):
-  - Made from rolled high-alumina clay baked hard, or heavy galvanized 40 mm iron pipe wrapped in wet refractory clay.
-  - Sited **25 cm above the furnace floor**, angled **downward at 15° to 20°** toward the center.
-  - Continuous forced air: Delivered by double-chamber leather hand bellows, or a 12V automotive radiator cooling blower powered by a solar battery bank.
-
-  ## The Smelting Run Sequence (8 to 10 Hours)
-
-  1. **Preheating (Charcoal Burn)**:
-     - Pack the furnace with dry wood and light from the bottom.
-     - Slowly fill with coarse hardwood charcoal over 3 hours until the entire chimney is glowing cherry red (900°C), driving out all residual moisture from the clay walls.
-  2. **The Charge Cycle**:
-     - Once up to temperature, start the high-pressure air blast (tuyere zone turns dazzling incandescent white, **> 1,200°C**).
-     - Charge in alternating batches:
-       - **1.5 kg Hardwood Charcoal** (sized to 25 mm walnut-size chunks).
-       - **1.5 kg Crushed Roasted Ore** ($1:1\text{ ratio by weight}$).
-     - Add a fresh charge every 15 to 20 minutes as the burden descends.
-  3. **Slag Tapping (The Molten Flow)**:
-     - Silica in the ore reacts with unreduced iron oxide to create black, molten **Fayalite Slag ($\text{Fe}_2\text{SiO}_4$)** which melts at 1,180°C and trickles to the bottom.
-     - Slag protects the growing sponge iron from re-oxidizing in the air blast.
-     - When the slag level threatens to flood the tuyere, breach the clay taphole at the base with a steel bar. Liquid glowing red slag bursts out like lava, draining into a pit.
-
-  ## Extracting & Consolidating the Bloom
-
-  At the end of an 8-hour smelt (consuming ~40 kg ore and 50 kg charcoal):
-  1. Shut off the air blast. Tear open the front lower extraction arch of the clay furnace.
-  2. Reach in with heavy iron tongs; grip the glowing **White-Hot Bloom** (typically 6 kg to 10 kg of spongy iron saturated with liquid slag).
-  3. **The Consolidation Hammering (Crucial Step)**:
-     - Drag the bloom immediately onto a broad flat anvil stone or heavy iron log.
-     - **DANGER: Flying Molten Slag**. Sledgehammer operators must wear heavy leather aprons, face shields, and gauntlets.
-     - Strike the bloom firmly with rhythmic 5 kg sledgehammers.
-     - Liquid glassy slag squirts out under the impacts like water squeezed from a sponge.
-     - The porous iron cavities weld together under the blows into a solid, dense, rectangular **Iron Billet**.
-  4. The refined billet can now be sheared, folded, forge-welded, and shaped into axes, plowshares, knives, and machine keys.
-
+  '
+content_md: "## The Principle of Direct Iron Reduction (The Bloomery)\n\nPure iron melts at **1,538°C**—a\
+  \ temperature impossible to reach in primitive\ncharcoal furnaces. Modern blast furnaces dissolve 4%\
+  \ carbon into iron to lower its\nmelting point to 1,150°C, producing brittle liquid cast iron.\nThe\
+  \ ancient **Bloomery Furnace** bypasses melting entirely: it operates at **1,150°C to 1,250°C**,\nreducing\
+  \ solid iron oxides directly into a spongy, semi-solid mass of pure low-carbon\nwrought iron called\
+  \ a **Bloom**:\n\n```\nCharcoal Combustion:        C + O2 ─────────> CO2\nBoudouard Reaction:      \
+  \   CO2 + C ────────> 2 CO (Reducing Gas)\nDirect Iron Reduction:      Fe2O3 + 3 CO ───> 2 Fe (Solid\
+  \ Sponge) + 3 CO2 ↑\nSlag Liquefaction:          2 FeO + SiO2 ───> Fe2SiO4 (Liquid Fayalite Slag @ 1,180°C)\n\
+  ```\n\nBecause the iron never liquefies, it absorbs virtually zero carbon (< 0.1% C),\nproducing malleable,\
+  \ rust-resistant, ultra-tough **wrought iron**.\n\n## Prospecting & Preparing Iron Ore in East Africa\n\
+  \nIron is the fourth most abundant element in the Earth's crust, occurring in three\nprimary regional\
+  \ ore forms:\n\n| Ore Type | Mineral Formula | Field Appearance | Provenance in Kenya |\n|---|---|---|---|\n\
+  | **Magnetite** | $\\text{Fe}_3\\text{O}_4$ (72% Fe) | Heavy, black, strongly magnetic sand grains |\
+  \ River beds draining volcanic ranges (Rift Valley, Aberdares) |\n| **Hematite** | $\\text{Fe}_2\\text{O}_3$\
+  \ (70% Fe) | Red-brown, dark metallic stones; leaves a bright red streak on unglazed porcelain | Kitui,\
+  \ Taita Hills, Homa Bay |\n| **Laterite (Murram Ironstone)** | $\\text{FeO(OH)}\\cdot n\\text{H}_2\\\
+  text{O}$ (~35-50% Fe) | Porous, pebbly, rusty-red/purple rock crusts | Universal across western and\
+  \ central red soil zones |\n\n### Ore Preparation Protocol:\n1. **Roasting (The Fire-Crack)**:\n   -\
+  \ Pile raw ironstone rocks on an open wood bonfire and heat to cherry red (**700°C – 800°C**) for 2\
+  \ hours.\n   - Douse with water. The thermal shock shatters the rock and drives off trapped moisture\
+  \ and sulfur gases, converting dense hematite into porous, highly reactive magnetic oxides.\n2. **Crushing\
+  \ & Grading**:\n   - Crush the roasted ore with iron hand pestles or heavy stones down to **pea-sized\
+  \ gravel (3 mm to 8 mm)**.\n   - *Why*: Fine dust suffocates the furnace draft; large stones do not\
+  \ reduce to their core before reaching the bottom.\n\n## Constructing the Shaft Bloomery Furnace\n\n\
+  The furnace is a vertical clay chimney built directly over an excavated slag bowl:\n\n```\n        \
+  \           [ Furnace Open Top (Charging) ]\n                           ┌───────┐\n                \
+  \           │       │\n                           │   O   │  Descending Ore & Charcoal\n           \
+  \                │   R   │\n                           │   E   │\n                           │     \
+  \  │\n                           │ 1200° │  High-Heat Reduction Zone\n                           │ \
+  \      │\n      Hand Bellows ───►  \\ └───────┘ /  ◄─── Auxiliary Blast\n      or 12V Blower       \\\
+  \  TUYERE /\n                           │       │\n                           │ [BLOOM]│  Solid Sponge\
+  \ Iron Consolidates\n                    ┌──────┴───────┴──────┐\n                    │  Liquid Slag\
+  \ Basin  │ ────► Slag Tap Arch\n                    └─────────────────────┘\n```\n\n### Dimensions:\n\
+  - **Internal Bore**: 30 cm diameter inside.\n- **Height**: 1.2 m to 1.5 m from ground base to top rim.\n\
+  - **Wall Thickness**: 10 cm at base, tapering to 6 cm at the top.\n\n### Refractory Mud Formulation:\n\
+  Standard soil cracks and crumbles at 1,000°C. Mix a resilient refractory paste:\n- **40% Subsoil / Termite\
+  \ Mound Clay** (rich in alumina-silicate clay binders).\n- **40% Sharp Quartz River Sand** (prevents\
+  \ shrinkage cracking during firing).\n- **20% Chopped Dry Grass, Rice Straw, or Horse/Donkey Manure**\
+  \ (carbonizes during firing, creating insulating micro-pores).\n- Build the shaft in concentric rings\
+  \ (coiling method), letting each 30 cm lift sun-dry for 24 hours before adding the next.\n\n### The\
+  \ Tuyere (Air Injection Pipe):\n- Made from rolled high-alumina clay baked hard, or heavy galvanized\
+  \ 40 mm iron pipe wrapped in wet refractory clay.\n- Sited **25 cm above the furnace floor**, angled\
+  \ **downward at 15° to 20°** toward the center.\n- Continuous forced air: Delivered by double-chamber\
+  \ leather hand bellows, or a 12V automotive radiator cooling blower powered by a solar battery bank.\n\
+  \n## The Smelting Run Sequence (8 to 10 Hours)\n\n1. **Preheating (Charcoal Burn)**:\n   - Pack the\
+  \ furnace with dry wood and light from the bottom.\n   - Slowly fill with coarse hardwood charcoal over\
+  \ 3 hours until the entire chimney is glowing cherry red (900°C), driving out all residual moisture\
+  \ from the clay walls.\n2. **The Charge Cycle**:\n   - Once up to temperature, start the high-pressure\
+  \ air blast (tuyere zone turns dazzling incandescent white, **> 1,200°C**).\n   - Charge in alternating\
+  \ batches:\n     - **1.5 kg Hardwood Charcoal** (sized to 25 mm walnut-size chunks).\n     - **1.5 kg\
+  \ Crushed Roasted Ore** ($1:1\\text{ ratio by weight}$).\n   - Add a fresh charge every 15 to 20 minutes\
+  \ as the burden descends.\n3. **Slag Tapping (The Molten Flow)**:\n   - Silica in the ore reacts with\
+  \ unreduced iron oxide to create black, molten **Fayalite Slag ($\\text{Fe}_2\\text{SiO}_4$)** which\
+  \ melts at 1,180°C and trickles to the bottom.\n   - Slag protects the growing sponge iron from re-oxidizing\
+  \ in the air blast.\n   - When the slag level threatens to flood the tuyere, breach the clay taphole\
+  \ at the base with a steel bar. Liquid glowing red slag bursts out like lava, draining into a pit.\n\
+  \n## Extracting & Consolidating the Bloom\n\nAt the end of an 8-hour smelt (consuming ~40 kg ore and\
+  \ 50 kg charcoal):\n1. Shut off the air blast. Tear open the front lower extraction arch of the clay\
+  \ furnace.\n2. Reach in with heavy iron tongs; grip the glowing **White-Hot Bloom** (typically 6 kg\
+  \ to 10 kg of spongy iron saturated with liquid slag).\n3. **The Consolidation Hammering (Crucial Step)**:\n\
+  \   - Drag the bloom immediately onto a broad flat anvil stone or heavy iron log.\n   - **DANGER: Flying\
+  \ Molten Slag**. Sledgehammer operators must wear heavy leather aprons, face shields, and gauntlets.\n\
+  \   - Strike the bloom firmly with rhythmic 5 kg sledgehammers.\n   - Liquid glassy slag squirts out\
+  \ under the impacts like water squeezed from a sponge.\n   - The porous iron cavities weld together\
+  \ under the blows into a solid, dense, rectangular **Iron Billet**.\n4. The refined billet can now be\
+  \ sheared, folded, forge-welded, and shaped into axes, plowshares, knives, and machine keys.\n"
 exercises:
-  - id: met-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why does a traditional charcoal bloomery furnace produce malleable, solid
-      wrought iron at 1,200°C rather than melting into liquid cast iron like a blast furnace?
-    xp_reward: 50
-    options:
-      - text: "The bloomery operates below the melting point of pure iron (1,538°C); carbon monoxide reduces the ore in the solid state, forming a sponge of low-carbon iron that never absorbs high amounts of carbon"
-        correct: true
-        explanation: "Blast furnaces operate at > 1,400°C where iron melts and absorbs 3-4% carbon (cast iron). The bloomery operates at 1,150-1,250°C, producing solid-state direct reduction where pure iron grains weld together without carbon absorption."
-      - text: "Because charcoal does not contain carbon"
-        correct: false
-        explanation: "Charcoal is almost pure carbon (80-90% C)."
-      - text: "Because the furnace walls absorb all the molten metal"
-        correct: false
-        explanation: "Furnace walls are refractory clay; metal does not soak into the walls."
-      - text: "Because iron cannot melt in the presence of air"
-        correct: false
-        explanation: "Iron melts easily if temperature exceeds 1,538°C regardless of air."
+- id: met-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Why does a traditional charcoal bloomery furnace produce malleable, solid wrought iron at 1,200°C
+    rather than melting into liquid cast iron like a blast furnace?
 
-  - id: met-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      In a bloomery furnace, the liquid waste by-product that melts at 1,180°C and
-      drains to the bottom, composed primarily of iron silicate, is called ___ slag.
-    xp_reward: 50
-    correct_answer: "fayalite"
-    explanation: >
-      Fayalite slag (2FeO·SiO2) is a low-melting-point iron-silicate glass that
-      fluxes out impurities and protects the growing metallic iron bloom.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Because charcoal does not contain carbon
+  - id: b
+    text: Because the furnace walls absorb all the molten metal
+  - id: c
+    text: Because iron cannot melt in the presence of air
+  - id: d
+    text: The bloomery operates below the melting point of pure iron (1,538°C); carbon monoxide reduces
+      the ore in the solid state, forming a sponge of low-carbon iron that never absorbs high amounts
+      of carbon
+  explanation: 'Blast furnaces operate at > 1,400°C where iron melts and absorbs 3-4% carbon (cast iron).
+    The bloomery operates at 1,150-1,250°C, producing solid-state direct reduction where pure iron grains
+    weld together without carbon absorption.
 
-  - id: met-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each iron smelting stage to its operational purpose.
-    xp_reward: 50
-    pairs:
-      - left: Ore Bonfire Roasting
-        right: Drives off moisture/sulfur and fractures dense rock into porous brittle gravel
-      - left: Boudouard Reaction (C + CO2 -> 2CO)
-        right: Generates carbon monoxide gas that strips oxygen atoms from iron oxide
-      - left: Slag Tapping
-        right: Drains excess liquid iron-silicate out the base to prevent drowning the tuyere
-      - left: Consolidation Hammering
-        right: Squeezes liquid glassy slag from the hot sponge bloom and welds iron pores
-    correct_answer: null
-    explanation: >
-      Roasting cracks ore; CO reduces iron; tapping clears slag; hammering welds the solid bloom.
 
-  - id: met-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      What is the purpose of adding chopped straw or dry animal manure to the clay
-      and sand mix when building a refractory bloomery furnace wall?
-    xp_reward: 50
-    options:
-      - text: "The organic fibers burn away during initial firing, leaving microscopic insulating air voids that increase thermal efficiency while preventing catastrophic structural shrinkage cracking"
-        correct: true
-        explanation: "Clay shrinks up to 10% when fired, causing severe cracks. Sand provides non-shrinking aggregate, and organic fibers burn out to leave millions of tiny insulating voids, lowering thermal conductivity."
-      - text: "To make the furnace walls conduct magnetic currents"
-        correct: false
-        explanation: "Organic fibers have zero magnetic properties."
-      - text: "To turn the clay into Portland cement"
-        correct: false
-        explanation: "Clay does not turn into cement; it hardens via ceramic sintering."
-      - text: "To attract oxygen into the combustion zone"
-        correct: false
-        explanation: "Air is supplied mechanically via the tuyere, not through porous clay walls."
+    Why the other options are wrong: Charcoal is almost pure carbon (80-90% C). Furnace walls are refractory
+    clay; metal does not soak into the walls. Iron melts easily if temperature exceeds 1,538°C regardless
+    of air.'
+  correct_answer: d
+- id: met-d1-q2
+  type: FILL_BLANK
+  prompt: 'In a bloomery furnace, the liquid waste by-product that melts at 1,180°C and drains to the
+    bottom, composed primarily of iron silicate, is called ___ slag.
 
-  - id: met-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      The ceramic air pipe that injects high-pressure air from the bellows into the
-      hottest combustion zone of a bloomery furnace is called a ___, and is angled
-      downward at approximately ___ to 20 degrees.
-    xp_reward: 50
-    correct_answer: "tuyere; 15"
-    explanation: >
-      The tuyere injects the air blast. Angling downward 15°-20° concentrates the
-      intense 1,250°C reaction zone right above the accumulating bloom.
+    '
+  xp_reward: 50
+  correct_answer: fayalite
+  explanation: 'Fayalite slag (2FeO·SiO2) is a low-melting-point iron-silicate glass that fluxes out impurities
+    and protects the growing metallic iron bloom.
+
+    '
+- id: met-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each iron smelting stage to its operational purpose.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Ore Bonfire Roasting
+    right:
+      id: r-091857
+      text: Drives off moisture/sulfur and fractures dense rock into porous brittle gravel
+  - left:
+      id: l2
+      text: Boudouard Reaction (C + CO2 -> 2CO)
+    right:
+      id: r-6fe106
+      text: Generates carbon monoxide gas that strips oxygen atoms from iron oxide
+  - left:
+      id: l3
+      text: Slag Tapping
+    right:
+      id: r-836c55
+      text: Drains excess liquid iron-silicate out the base to prevent drowning the tuyere
+  - left:
+      id: l4
+      text: Consolidation Hammering
+    right:
+      id: r-fe365c
+      text: Squeezes liquid glassy slag from the hot sponge bloom and welds iron pores
+  correct_answer:
+  - l1=r-091857
+  - l2=r-6fe106
+  - l3=r-836c55
+  - l4=r-fe365c
+  explanation: 'Roasting cracks ore; CO reduces iron; tapping clears slag; hammering welds the solid bloom.
+
+    '
+- id: met-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'What is the purpose of adding chopped straw or dry animal manure to the clay and sand mix when
+    building a refractory bloomery furnace wall?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: To make the furnace walls conduct magnetic currents
+  - id: b
+    text: To turn the clay into Portland cement
+  - id: c
+    text: To attract oxygen into the combustion zone
+  - id: d
+    text: The organic fibers burn away during initial firing, leaving microscopic insulating air voids
+      that increase thermal efficiency while preventing catastrophic structural shrinkage cracking
+  explanation: 'Clay shrinks up to 10% when fired, causing severe cracks. Sand provides non-shrinking
+    aggregate, and organic fibers burn out to leave millions of tiny insulating voids, lowering thermal
+    conductivity.
+
+
+    Why the other options are wrong: Organic fibers have zero magnetic properties. Clay does not turn
+    into cement; it hardens via ceramic sintering. Air is supplied mechanically via the tuyere, not through
+    porous clay walls.'
+  correct_answer: d
+- id: met-d1-q5
+  type: FILL_BLANK
+  prompt: 'The ceramic air pipe that injects high-pressure air from the bellows into the hottest combustion
+    zone of a bloomery furnace is called a ___, and is angled downward at approximately ___ to 20 degrees.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - tuyere
+  - '15'
+  explanation: 'The tuyere injects the air blast. Angling downward 15°-20° concentrates the intense 1,250°C
+    reaction zone right above the accumulating bloom.
+
+    '

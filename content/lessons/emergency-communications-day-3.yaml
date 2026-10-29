@@ -1,134 +1,165 @@
 id: emergency-communications-day-3
 course_id: emergency-communications
-title: "Long-Range HF & NVIS Propagation"
-title_sw: "Mawasiliano ya Masafa Marefu ya HF na NVIS"
+title: Long-Range HF & NVIS Propagation
+title_sw: Mawasiliano ya Masafa Marefu ya HF na NVIS
 week_number: 1
 day_number: 3
 estimated_minutes: 55
 license: CC-BY-SA-4.0
-tags: [communications, hf, nvis, ionosphere, skywave, morse-code, kenya]
+tags:
+- communications
+- hf
+- nvis
+- ionosphere
+- skywave
+- morse-code
+- kenya
 xp: 90
 exam_domain: Telecommunications & RF Engineering
+briefing: 'In rugged East African topographies — spanning the Rift Valley escarpment, Mount Kenya,
 
-briefing: |
-  In rugged East African topographies — spanning the Rift Valley escarpment, Mount Kenya,
   and the Aberdare ranges — line-of-sight VHF/UHF signals cannot penetrate high volcanic
+
   ridges. Standard long-range HF radio fires waves at shallow angles, creating a deadly
+
   "skip zone" where signals bounce 1,000 km away, leaving the critical 50 to 400 km regional
+
   zone completely deaf. Near Vertical Incidence Skywave (NVIS) overcomes this by firing
+
   radio waves nearly straight up (70°–90°) into the ionospheric F-layer, reflecting them
+
   straight down like an umbrella to blanket deep valleys and mountain passes. This day
+
   teaches ionospheric refraction layers, NVIS antenna design, and Continuous Wave (CW).
-briefing_sw: |
-  Kwenye milima na mabonde kama Bonde la Ufa na Mlima Kenya, redio za kawaida za VHF/UHF
+
+  '
+briefing_sw: 'Kwenye milima na mabonde kama Bonde la Ufa na Mlima Kenya, redio za kawaida za VHF/UHF
+
   haziwezi kupita milimani. Teknolojia ya NVIS (Near Vertical Incidence Skywave) hurusha
+
   mawimbi ya HF moja kwa moja angani (nyuzi 70-90) yakigonga ionosphere na kurudi chini
+
   kufunika eneo lote la kilomita 50 hadi 400 bila kizuizi cha milima.
 
-outline: |
-  1. The ionospheric layers: D-layer (daytime absorption), E-layer, and F1/F2 refracting layers
+  '
+outline: '1. The ionospheric layers: D-layer (daytime absorption), E-layer, and F1/F2 refracting layers
+
   2. The Skip Zone dilemma: Ground wave fading at 30 km while skywave lands at 800 km
+
   3. The NVIS principle: High-angle radiation (70°–90°) reflecting downwards like an umbrella
+
   4. NVIS frequency window: Critical frequency (foF2) — 80m (3.5–4.0 MHz) night, 40m (7.0–7.3 MHz) day
+
   5. The Low-Slung Dipole: Erecting a horizontal wire only 2 to 4 meters above ground
+
   6. Ground reflector wire: Enhancing upward signal reflection by 3 dB
+
   7. Continuous Wave (CW / Morse Code): 100 Hz bandwidth advantage over 2.8 kHz SSB voice
+
   8. International distress Morse: S-O-S (... --- ...) transmission mechanics and tone recognition
 
-content_md: |
-  ## The Ionosphere & The Skip Zone Dilemma
-
-  The upper atmosphere (60 to 400 km above Earth) is ionized by solar ultraviolet radiation into distinct layers:
-  - **D-Layer (60–90 km):** Present only in daytime; absorbs lower HF frequencies (below 5 MHz). Disappears at dusk.
-  - **E-Layer (90–150 km):** Moderately ionized; supports medium-range hops.
-  - **F-Layer (150–400 km):** Splits into F1 and F2 by day, combines at night. **The primary mirror for long-range HF skywaves.**
-
-  ### The Disaster of the "Skip Zone":
-  Standard HF antennas fire waves at low angles (10°–30°) toward the horizon.
-  - The **ground wave** dies out after 20–40 km due to soil attenuation.
-  - The **skywave** hits the ionosphere at a shallow angle and reflects back down at 800–2,000 km.
-  - The area between 40 km and 800 km is the **Skip Zone (Dead Zone)** — complete silence! If an earthquake or flood occurs in Nakuru or Nyeri, a low-angle HF station in Nairobi cannot reach them.
-
-  ## Near Vertical Incidence Skywave (NVIS)
-
-  NVIS solves the skip zone by altering antenna geometry to direct radiation **straight up (70° to 90° above horizontal)**:
-  - The radio energy strikes the F-layer almost perpendicular to the ionospheric boundary.
-  - As long as the frequency is below the **Critical Frequency ($f_o\text{F2}$)**, the wave refracts directly downward, blanketing a circular area from **0 to 400 km radius** without any dead zones.
-  - Volcanic mountain ranges, deep canyons, and heavy forest canopies are completely irrelevant — the signal arrives from straight above!
-
-  ### Operating Frequency Rules (East Africa):
-  - **Daytime (high solar ionization):** Use **7.0 – 7.3 MHz (40-meter band)**. D-layer absorption is overcome; $f_o\text{F2}$ is high.
-  - **Nighttime (ionization drops, D-layer vanishes):** Drop down to **3.5 – 3.8 MHz (80-meter band)**.
-
-  ## The Low-Slung NVIS Dipole (Field Build)
-
-  Standard wisdom says an antenna must be elevated as high as possible. **NVIS requires the exact opposite!**
-
-  1. **Antenna Height:** Hang a half-wave dipole only **0.1 to 0.2 wavelengths above ground**:
-     - On 40 meters (7.1 MHz): $\lambda = 42\text{ m} \rightarrow$ Height = **3 to 4 meters off the ground** (suspended on tree branches or bamboo).
-     - At this low height, the earth beneath the antenna acts as an RF reflector, focusing the radiation pattern straight upward into the sky.
-  2. **Ground Reflector Wire (Gain Booster):**
-     - Lay a single bare wire along the ground directly beneath the suspended dipole, cut 5% longer than the antenna.
-     - The earth reflector directs an additional 3 dB of RF power straight up into the ionosphere.
-
-  ## Continuous Wave (CW / Morse Code)
-
-  When solar storms disrupt the ionosphere or transmitter battery reserves drop to 5 Watts, voice (SSB) communication fails. **CW (Continuous Wave / Morse Code) remains audible when all voice is unreadable.**
-
-  ### Why CW Outperforms Voice:
-  - **Bandwidth:** SSB voice requires **2,800 Hz** of receiver bandwidth. CW requires only **100 Hz**.
-  - **Signal-to-Noise Ratio (SNR):** Concentrating 5 Watts into a 100 Hz bandwidth delivers an effective **14 dB gain** over voice — equivalent to a 25-fold increase in transmitter power!
-  - A human ear can decode a pure audio tone buried deep beneath background static.
-
-  ### Universal Emergency Morse Signal:
-  $$\mathbf{S\text{ (}\cdot\cdot\cdot\text{) }\quad O\text{ (---) }\quad S\text{ (}\cdot\cdot\cdot\text{)}}$$
-  - 3 short dits (units of 1)
-  - 3 long dahs (each equal to 3 dits)
-  - 3 short dits
-  - Standard pause between letters = 3 dits; between words = 7 dits.
-
+  '
+content_md: "## The Ionosphere & The Skip Zone Dilemma\n\nThe upper atmosphere (60 to 400 km above Earth)\
+  \ is ionized by solar ultraviolet radiation into distinct layers:\n- **D-Layer (60–90 km):** Present\
+  \ only in daytime; absorbs lower HF frequencies (below 5 MHz). Disappears at dusk.\n- **E-Layer (90–150\
+  \ km):** Moderately ionized; supports medium-range hops.\n- **F-Layer (150–400 km):** Splits into F1\
+  \ and F2 by day, combines at night. **The primary mirror for long-range HF skywaves.**\n\n### The Disaster\
+  \ of the \"Skip Zone\":\nStandard HF antennas fire waves at low angles (10°–30°) toward the horizon.\n\
+  - The **ground wave** dies out after 20–40 km due to soil attenuation.\n- The **skywave** hits the ionosphere\
+  \ at a shallow angle and reflects back down at 800–2,000 km.\n- The area between 40 km and 800 km is\
+  \ the **Skip Zone (Dead Zone)** — complete silence! If an earthquake or flood occurs in Nakuru or Nyeri,\
+  \ a low-angle HF station in Nairobi cannot reach them.\n\n## Near Vertical Incidence Skywave (NVIS)\n\
+  \nNVIS solves the skip zone by altering antenna geometry to direct radiation **straight up (70° to 90°\
+  \ above horizontal)**:\n- The radio energy strikes the F-layer almost perpendicular to the ionospheric\
+  \ boundary.\n- As long as the frequency is below the **Critical Frequency ($f_o\\text{F2}$)**, the wave\
+  \ refracts directly downward, blanketing a circular area from **0 to 400 km radius** without any dead\
+  \ zones.\n- Volcanic mountain ranges, deep canyons, and heavy forest canopies are completely irrelevant\
+  \ — the signal arrives from straight above!\n\n### Operating Frequency Rules (East Africa):\n- **Daytime\
+  \ (high solar ionization):** Use **7.0 – 7.3 MHz (40-meter band)**. D-layer absorption is overcome;\
+  \ $f_o\\text{F2}$ is high.\n- **Nighttime (ionization drops, D-layer vanishes):** Drop down to **3.5\
+  \ – 3.8 MHz (80-meter band)**.\n\n## The Low-Slung NVIS Dipole (Field Build)\n\nStandard wisdom says\
+  \ an antenna must be elevated as high as possible. **NVIS requires the exact opposite!**\n\n1. **Antenna\
+  \ Height:** Hang a half-wave dipole only **0.1 to 0.2 wavelengths above ground**:\n   - On 40 meters\
+  \ (7.1 MHz): $\\lambda = 42\\text{ m} \\rightarrow$ Height = **3 to 4 meters off the ground** (suspended\
+  \ on tree branches or bamboo).\n   - At this low height, the earth beneath the antenna acts as an RF\
+  \ reflector, focusing the radiation pattern straight upward into the sky.\n2. **Ground Reflector Wire\
+  \ (Gain Booster):**\n   - Lay a single bare wire along the ground directly beneath the suspended dipole,\
+  \ cut 5% longer than the antenna.\n   - The earth reflector directs an additional 3 dB of RF power straight\
+  \ up into the ionosphere.\n\n## Continuous Wave (CW / Morse Code)\n\nWhen solar storms disrupt the ionosphere\
+  \ or transmitter battery reserves drop to 5 Watts, voice (SSB) communication fails. **CW (Continuous\
+  \ Wave / Morse Code) remains audible when all voice is unreadable.**\n\n### Why CW Outperforms Voice:\n\
+  - **Bandwidth:** SSB voice requires **2,800 Hz** of receiver bandwidth. CW requires only **100 Hz**.\n\
+  - **Signal-to-Noise Ratio (SNR):** Concentrating 5 Watts into a 100 Hz bandwidth delivers an effective\
+  \ **14 dB gain** over voice — equivalent to a 25-fold increase in transmitter power!\n- A human ear\
+  \ can decode a pure audio tone buried deep beneath background static.\n\n### Universal Emergency Morse\
+  \ Signal:\n$$\\mathbf{S\\text{ (}\\cdot\\cdot\\cdot\\text{) }\\quad O\\text{ (---) }\\quad S\\text{\
+  \ (}\\cdot\\cdot\\cdot\\text{)}}$$\n- 3 short dits (units of 1)\n- 3 long dahs (each equal to 3 dits)\n\
+  - 3 short dits\n- Standard pause between letters = 3 dits; between words = 7 dits.\n"
 exercises:
-  - id: ec3-q1
-    type: MULTIPLE_CHOICE
-    prompt: "Why must a Near Vertical Incidence Skywave (NVIS) dipole antenna be hung close to the ground (only 2 to 4 meters high) rather than mounted atop a high tower?"
-    xp_reward: 35
-    options:
-      - text: "To protect the antenna wire from lightning strikes"
-        correct: false
-        explanation: "While lower antennas have lower strike probability, that is not the RF engineering reason."
-      - text: "The proximity of the conductive earth acts as a ground reflector, beaming the radio waves straight up into the ionosphere at steep 70-90 degree angles"
-        correct: true
-        explanation: "Correct! Placing a horizontal dipole 0.1 to 0.2 wavelengths above ground uses ground reflection to cancel low-angle horizon radiation and direct almost all RF energy upward into the ionospheric F-layer."
-      - text: "Because low frequencies travel faster along the surface of moist soil"
-        correct: false
-        explanation: "NVIS is a skywave mode that travels through the ionosphere, not a surface ground wave."
-      - text: "Handheld transceivers cannot supply enough voltage to pump signals up a tall tower"
-        correct: false
-        explanation: "Tower height does not affect the voltage requirements of a transmitter."
-    correct_answer: "The proximity of the conductive earth acts as a ground reflector, beaming the radio waves straight up into the ionosphere at steep 70-90 degree angles"
+- id: ec3-q1
+  type: MULTIPLE_CHOICE
+  prompt: Why must a Near Vertical Incidence Skywave (NVIS) dipole antenna be hung close to the ground
+    (only 2 to 4 meters high) rather than mounted atop a high tower?
+  xp_reward: 35
+  options:
+  - id: a
+    text: To protect the antenna wire from lightning strikes
+  - id: b
+    text: Because low frequencies travel faster along the surface of moist soil
+  - id: c
+    text: The proximity of the conductive earth acts as a ground reflector, beaming the radio waves straight
+      up into the ionosphere at steep 70-90 degree angles
+  - id: d
+    text: Handheld transceivers cannot supply enough voltage to pump signals up a tall tower
+  correct_answer: c
+  explanation: 'Correct! Placing a horizontal dipole 0.1 to 0.2 wavelengths above ground uses ground reflection
+    to cancel low-angle horizon radiation and direct almost all RF energy upward into the ionospheric
+    F-layer.
 
-  - id: ec3-q2
-    type: FILL_BLANK
-    prompt: "During daytime in East Africa, the primary NVIS frequency band used to communicate regionally over 0 to 400 km is the ___ meter band (around 7 MHz)."
-    xp_reward: 20
-    correct_answer: "40"
-    explanation: "The 40-meter band (7.0 to 7.3 MHz) is the universal daytime NVIS band in equatorial regions. At night, as ionospheric electron density drops, operators switch to the 80-meter band (3.5 to 3.8 MHz)."
 
-  - id: ec3-q3
-    type: MATCH_PAIRS
-    prompt: "Match each long-range radio concept to its definition."
-    xp_reward: 30
-    pairs:
-      - left: Skip Zone (Dead Zone)
-        right: The silent gap between the end of the ground wave and the first skywave return
-      - left: Critical Frequency (foF2)
-        right: The highest frequency that reflects back down when sent vertically into the ionosphere
-      - left: CW (Morse Code)
-        right: Ultra-narrow 100 Hz transmission mode with a 14 dB signal-to-noise advantage over voice
-      - left: Ground reflector wire
-        right: Wire laid on the earth below an NVIS dipole to boost upward radiation by 3 dB
-    correct_answer:
-      - Skip Zone (Dead Zone)=The silent gap between the end of the ground wave and the first skywave return
-      - Critical Frequency (foF2)=The highest frequency that reflects back down when sent vertically into the ionosphere
-      - CW (Morse Code)=Ultra-narrow 100 Hz transmission mode with a 14 dB signal-to-noise advantage over voice
-      - Ground reflector wire=Wire laid on the earth below an NVIS dipole to boost upward radiation by 3 dB
+    Why the other options are wrong: While lower antennas have lower strike probability, that is not the
+    RF engineering reason. NVIS is a skywave mode that travels through the ionosphere, not a surface ground
+    wave. Tower height does not affect the voltage requirements of a transmitter.'
+- id: ec3-q2
+  type: FILL_BLANK
+  prompt: During daytime in East Africa, the primary NVIS frequency band used to communicate regionally
+    over 0 to 400 km is the ___ meter band (around 7 MHz).
+  xp_reward: 20
+  correct_answer: '40'
+  explanation: The 40-meter band (7.0 to 7.3 MHz) is the universal daytime NVIS band in equatorial regions.
+    At night, as ionospheric electron density drops, operators switch to the 80-meter band (3.5 to 3.8
+    MHz).
+- id: ec3-q3
+  type: MATCH_PAIRS
+  prompt: Match each long-range radio concept to its definition.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Skip Zone (Dead Zone)
+    right:
+      id: r-e525e6
+      text: The silent gap between the end of the ground wave and the first skywave return
+  - left:
+      id: l2
+      text: Critical Frequency (foF2)
+    right:
+      id: r-d9a8ed
+      text: The highest frequency that reflects back down when sent vertically into the ionosphere
+  - left:
+      id: l3
+      text: CW (Morse Code)
+    right:
+      id: r-364b49
+      text: Ultra-narrow 100 Hz transmission mode with a 14 dB signal-to-noise advantage over voice
+  - left:
+      id: l4
+      text: Ground reflector wire
+    right:
+      id: r-6bf9d7
+      text: Wire laid on the earth below an NVIS dipole to boost upward radiation by 3 dB
+  correct_answer:
+  - l1=r-e525e6
+  - l2=r-d9a8ed
+  - l3=r-364b49
+  - l4=r-6bf9d7

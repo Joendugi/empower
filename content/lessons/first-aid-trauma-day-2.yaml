@@ -1,139 +1,169 @@
 id: first-aid-trauma-day-2
 course_id: first-aid-trauma
-title: "Airway & Breathing Management"
-title_sw: "Usimamizi wa Njia ya Hewa na Kupumua"
+title: Airway & Breathing Management
+title_sw: Usimamizi wa Njia ya Hewa na Kupumua
 week_number: 1
 day_number: 2
 estimated_minutes: 50
 license: CC-BY-SA-4.0
-tags: [first-aid, airway, breathing, cpr, recovery-position, trauma, kenya]
+tags:
+- first-aid
+- airway
+- breathing
+- cpr
+- recovery-position
+- trauma
+- kenya
 xp: 90
 exam_domain: Pre-Hospital Emergency Care
+briefing: 'An occluded airway causes irreversible brain damage in 4 to 6 minutes and death
 
-briefing: |
-  An occluded airway causes irreversible brain damage in 4 to 6 minutes and death
   shortly after. In trauma, unconsciousness allows the tongue to fall backward against
+
   the pharyngeal wall, producing complete mechanical airway obstruction. In road
+
   traffic crashes and falls, cervical spine trauma must be assumed, meaning standard
+
   head-tilt chin-lift maneuvers can cause quadriplegia. This day teaches manual airway
+
   maneuvers (jaw-thrust vs head-tilt), recovery position, tension pneumothorax
+
   recognition, chest seals for sucking chest wounds, and rescue breathing protocols.
-briefing_sw: |
-  Njia ya hewa iliyoziba husababisha uharibifu wa kudumu wa ubongo ndani ya dakika 4
+
+  '
+briefing_sw: 'Njia ya hewa iliyoziba husababisha uharibifu wa kudumu wa ubongo ndani ya dakika 4
+
   hadi 6 na kifo baada ya muda mfupi. Katika majeraha, kupoteza fahamu huruhusu ulimi
+
   kuanguka nyuma na kuzuia njia ya hewa. Siku hii inafundisha mbinu za kufungua njia
+
   ya hewa kwa mikono (jaw-thrust vs head-tilt), mkao wa kurejesha fahamu (recovery position),
+
   na matibabu ya jeraha la kifua.
 
-outline: |
-  1. Anatomy of upper airway obstruction: the tongue, foreign bodies, secretions, and blood
+  '
+outline: '1. Anatomy of upper airway obstruction: the tongue, foreign bodies, secretions, and blood
+
   2. Suspected spinal injury: Jaw-Thrust maneuver vs non-trauma Head-Tilt Chin-Lift
+
   3. Airway clearance: digital sweep precautions, suction, and postural drainage
+
   4. The Recovery Position (lateral recumbent): biomechanics and step-by-step procedure
+
   5. Sucking chest wounds (open pneumothorax): pathophysiology and 3-sided occlusive dressings
+
   6. Tension pneumothorax red flags: tracheal deviation, unilateral breath sounds, jugular distension
+
   7. Rescue breathing and hands-only CPR fundamentals for adult bystanders
+
   8. Choking protocols (Heimlich abdominal thrusts and back blows in conscious vs unconscious)
 
-content_md: |
-  ## Mechanism of Airway Obstruction in Trauma
-
-  The most common cause of airway obstruction in an unconscious patient is **flaccid tongue displacement** due to loss of submandibular muscle tone. The tongue adheres to the epiglottis, sealing the laryngeal inlet.
-
-  Secondary obstructions include:
-  - Aspirated gastric contents (vomit)
-  - Clotted blood and dental fragments from facial fractures
-  - Soft-tissue oedema from thermal airway burns or direct blunt neck impact
-
-  ## Manual Airway Opening: Jaw-Thrust vs Head-Tilt
-
-  | Maneuver | Indication | Technique | Cervical Spine Risk |
-  |----------|------------|-----------|---------------------|
-  | **Jaw-Thrust** | **All trauma cases** (RTA, falls > 1m, assault) | Kneel at head. Place index/middle fingers at angles of mandible; lift upward while thumbs displace chin downward without neck extension | **Minimal** — maintains in-line neutral stabilisation |
-  | **Head-Tilt Chin-Lift** | Medical arrest only (drowning, cardiac, no trauma) | One hand on forehead pressing backward; two fingers under bony chin lifting upward | **High** — hyperextends cervical spine, potentially transecting damaged spinal cord |
-
-  **Golden Rule in Trauma:** If the mechanism of injury involves kinetic energy (motorcycle crash, fall from height, vehicular impact), **never tilt the head**. Use the modified jaw-thrust exclusively.
-
-  ## The Lateral Recovery Position
-
-  When a patient is unconscious, breathing spontaneously, has no catastrophic bleeding, and requires monitoring:
-  1. Kneel beside patient; straighten both legs.
-  2. Extend the near arm at a right angle to body, palm facing up.
-  3. Bring the far arm across chest; hold the back of their far hand against their near cheek.
-  4. With your other hand, grasp the far knee and pull upward until foot is flat on ground.
-  5. Pull the bent knee toward you, rolling patient smoothly onto their side toward you.
-  6. Tilt head slightly back (if non-trauma) to maintain open airway; ensure mouth points downward so vomit and secretions drain by gravity.
-  7. Adjust upper leg to right angles at hip and knee to anchor the body.
-
-  *Note in suspected spinal trauma:* Log-roll as a unified team of 3-4 responders with axial traction rather than single-operator twisting.
-
-  ## Sucking Chest Wounds (Open Pneumothorax)
-
-  When penetrating trauma (spear, knife, gunshot, sharp metal) breaches the thoracic wall:
-  - Atmospheric air enters the pleural space during inhalation due to negative intrathoracic pressure.
-  - The lung collapses; gas exchange plummets.
-  - Audible sucking or bubbling sound occurs during respiration.
-
-  ### Improvised 3-Sided Occlusive Dressing:
-  1. Place an airtight barrier (plastic wrapper, laminated card, heavy polythene sheet) directly over wound.
-  2. Tape down **three sides only**, leaving the bottom side open.
-  3. **Flutter valve action:** During inhalation, negative pressure sucks the plastic tight against skin, blocking incoming air. During exhalation, positive pressure vents trapped pleural air out the untaped bottom flap.
-  4. If commercial chest seals with one-way valving (FoxSeal, Halo, Chest Seal) are available, apply per manufacturer instructions.
-
-  ## Tension Pneumothorax: Emergency Recognition
-
-  If an open wound is sealed completely without a venting valve, or internal lung tissue ruptures creating a one-way tissue flap:
-  - Air accumulates progressively inside the hemithorax under positive pressure.
-  - The mediastinum shifts contralaterally, compressing the vena cava and collapsing cardiac return.
-  - **Clinical Triad:**
-    1. Severe progressive dyspnoea and cyanosis
-    2. Absent breath sounds on affected side + hyper-resonance
-    3. Jugular venous distension (JVD) + late tracheal deviation away from injured side
-
-  *Field Action:* Immediately unseal any chest dressing to burp accumulated pressure. In remote environments where emergency medical services are hours away, needle decompression by trained personnel (14G needle, 2nd intercostal space mid-clavicular or 5th intercostal anterior-axillary) is life-saving.
-
+  '
+content_md: "## Mechanism of Airway Obstruction in Trauma\n\nThe most common cause of airway obstruction\
+  \ in an unconscious patient is **flaccid tongue displacement** due to loss of submandibular muscle tone.\
+  \ The tongue adheres to the epiglottis, sealing the laryngeal inlet.\n\nSecondary obstructions include:\n\
+  - Aspirated gastric contents (vomit)\n- Clotted blood and dental fragments from facial fractures\n-\
+  \ Soft-tissue oedema from thermal airway burns or direct blunt neck impact\n\n## Manual Airway Opening:\
+  \ Jaw-Thrust vs Head-Tilt\n\n| Maneuver | Indication | Technique | Cervical Spine Risk |\n|----------|------------|-----------|---------------------|\n\
+  | **Jaw-Thrust** | **All trauma cases** (RTA, falls > 1m, assault) | Kneel at head. Place index/middle\
+  \ fingers at angles of mandible; lift upward while thumbs displace chin downward without neck extension\
+  \ | **Minimal** — maintains in-line neutral stabilisation |\n| **Head-Tilt Chin-Lift** | Medical arrest\
+  \ only (drowning, cardiac, no trauma) | One hand on forehead pressing backward; two fingers under bony\
+  \ chin lifting upward | **High** — hyperextends cervical spine, potentially transecting damaged spinal\
+  \ cord |\n\n**Golden Rule in Trauma:** If the mechanism of injury involves kinetic energy (motorcycle\
+  \ crash, fall from height, vehicular impact), **never tilt the head**. Use the modified jaw-thrust exclusively.\n\
+  \n## The Lateral Recovery Position\n\nWhen a patient is unconscious, breathing spontaneously, has no\
+  \ catastrophic bleeding, and requires monitoring:\n1. Kneel beside patient; straighten both legs.\n\
+  2. Extend the near arm at a right angle to body, palm facing up.\n3. Bring the far arm across chest;\
+  \ hold the back of their far hand against their near cheek.\n4. With your other hand, grasp the far\
+  \ knee and pull upward until foot is flat on ground.\n5. Pull the bent knee toward you, rolling patient\
+  \ smoothly onto their side toward you.\n6. Tilt head slightly back (if non-trauma) to maintain open\
+  \ airway; ensure mouth points downward so vomit and secretions drain by gravity.\n7. Adjust upper leg\
+  \ to right angles at hip and knee to anchor the body.\n\n*Note in suspected spinal trauma:* Log-roll\
+  \ as a unified team of 3-4 responders with axial traction rather than single-operator twisting.\n\n\
+  ## Sucking Chest Wounds (Open Pneumothorax)\n\nWhen penetrating trauma (spear, knife, gunshot, sharp\
+  \ metal) breaches the thoracic wall:\n- Atmospheric air enters the pleural space during inhalation due\
+  \ to negative intrathoracic pressure.\n- The lung collapses; gas exchange plummets.\n- Audible sucking\
+  \ or bubbling sound occurs during respiration.\n\n### Improvised 3-Sided Occlusive Dressing:\n1. Place\
+  \ an airtight barrier (plastic wrapper, laminated card, heavy polythene sheet) directly over wound.\n\
+  2. Tape down **three sides only**, leaving the bottom side open.\n3. **Flutter valve action:** During\
+  \ inhalation, negative pressure sucks the plastic tight against skin, blocking incoming air. During\
+  \ exhalation, positive pressure vents trapped pleural air out the untaped bottom flap.\n4. If commercial\
+  \ chest seals with one-way valving (FoxSeal, Halo, Chest Seal) are available, apply per manufacturer\
+  \ instructions.\n\n## Tension Pneumothorax: Emergency Recognition\n\nIf an open wound is sealed completely\
+  \ without a venting valve, or internal lung tissue ruptures creating a one-way tissue flap:\n- Air accumulates\
+  \ progressively inside the hemithorax under positive pressure.\n- The mediastinum shifts contralaterally,\
+  \ compressing the vena cava and collapsing cardiac return.\n- **Clinical Triad:**\n  1. Severe progressive\
+  \ dyspnoea and cyanosis\n  2. Absent breath sounds on affected side + hyper-resonance\n  3. Jugular\
+  \ venous distension (JVD) + late tracheal deviation away from injured side\n\n*Field Action:* Immediately\
+  \ unseal any chest dressing to burp accumulated pressure. In remote environments where emergency medical\
+  \ services are hours away, needle decompression by trained personnel (14G needle, 2nd intercostal space\
+  \ mid-clavicular or 5th intercostal anterior-axillary) is life-saving.\n"
 exercises:
-  - id: fa2-q1
-    type: MULTIPLE_CHOICE
-    prompt: "You arrive at a motorcycle crash scene. The driver is unresponsive, lying on their back, making gurgling/snoring respirations. How should you open their airway?"
-    xp_reward: 35
-    options:
-      - text: "Apply a vigorous Head-Tilt Chin-Lift to maximize airway diameter"
-        correct: false
-        explanation: "Head-tilt hyperextends the cervical vertebrae. In a vehicular crash, cervical fracture must be assumed; hyperextension risks spinal cord transection."
-      - text: "Perform a modified Jaw-Thrust while maintaining head and neck in neutral alignment"
-        correct: true
-        explanation: "Correct. Jaw-thrust displaces the mandible and tongue forward without moving the cervical spine, protecting against secondary spinal cord injury."
-      - text: "Immediately force the mouth open and execute a blind finger sweep"
-        correct: false
-        explanation: "Blind finger sweeps can push foreign bodies or broken teeth deeper into the larynx, converting a partial obstruction into a complete one."
-      - text: "Sit the patient upright and slap their back"
-        correct: false
-        explanation: "Sitting an unconscious trauma patient upright collapses airway tone further and endangers an un-stabilized spine."
-    correct_answer: "Perform a modified Jaw-Thrust while maintaining head and neck in neutral alignment"
+- id: fa2-q1
+  type: MULTIPLE_CHOICE
+  prompt: You arrive at a motorcycle crash scene. The driver is unresponsive, lying on their back, making
+    gurgling/snoring respirations. How should you open their airway?
+  xp_reward: 35
+  options:
+  - id: a
+    text: Apply a vigorous Head-Tilt Chin-Lift to maximize airway diameter
+  - id: b
+    text: Immediately force the mouth open and execute a blind finger sweep
+  - id: c
+    text: Perform a modified Jaw-Thrust while maintaining head and neck in neutral alignment
+  - id: d
+    text: Sit the patient upright and slap their back
+  correct_answer: c
+  explanation: 'Correct. Jaw-thrust displaces the mandible and tongue forward without moving the cervical
+    spine, protecting against secondary spinal cord injury.
 
-  - id: fa2-q2
-    type: FILL_BLANK
-    prompt: "When improvising an occlusive dressing for a penetrating sucking chest wound, you should tape down ___ sides of the plastic wrapper to create a flutter valve."
-    xp_reward: 25
-    correct_answer: "3"
-    explanation: "Taping three sides creates a one-way flutter valve: it blocks air entry during inhalation while allowing trapped air and blood to vent out the open fourth side during exhalation, preventing tension pneumothorax."
 
-  - id: fa2-q3
-    type: MATCH_PAIRS
-    prompt: "Match each respiratory trauma condition to its primary emergency intervention."
-    xp_reward: 30
-    pairs:
-      - left: Unconscious breathing patient (vomiting risk)
-        right: Lateral recovery position to enable gravitational drainage
-      - left: Penetrating chest wound with bubbling blood
-        right: 3-sided vented occlusive dressing
-      - left: Traumatic cardiac arrest (no pulse, no breathing)
-        right: High-quality chest compressions at 100-120 bpm, 5-6 cm depth
-      - left: Conscious adult with complete airway obstruction
-        right: Alternating 5 back blows and 5 abdominal thrusts (Heimlich)
-    correct_answer:
-      - Unconscious breathing patient (vomiting risk)=Lateral recovery position to enable gravitational drainage
-      - Penetrating chest wound with bubbling blood=3-sided vented occlusive dressing
-      - Traumatic cardiac arrest (no pulse, no breathing)=High-quality chest compressions at 100-120 bpm, 5-6 cm depth
-      - Conscious adult with complete airway obstruction=Alternating 5 back blows and 5 abdominal thrusts (Heimlich)
+    Why the other options are wrong: Head-tilt hyperextends the cervical vertebrae. In a vehicular crash,
+    cervical fracture must be assumed; hyperextension risks spinal cord transection. Blind finger sweeps
+    can push foreign bodies or broken teeth deeper into the larynx, converting a partial obstruction into
+    a complete one. Sitting an unconscious trauma patient upright collapses airway tone further and endangers
+    an un-stabilized spine.'
+- id: fa2-q2
+  type: FILL_BLANK
+  prompt: When improvising an occlusive dressing for a penetrating sucking chest wound, you should tape
+    down ___ sides of the plastic wrapper to create a flutter valve.
+  xp_reward: 25
+  correct_answer: '3'
+  explanation: 'Taping three sides creates a one-way flutter valve: it blocks air entry during inhalation
+    while allowing trapped air and blood to vent out the open fourth side during exhalation, preventing
+    tension pneumothorax.'
+- id: fa2-q3
+  type: MATCH_PAIRS
+  prompt: Match each respiratory trauma condition to its primary emergency intervention.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Unconscious breathing patient (vomiting risk)
+    right:
+      id: r-e99ba8
+      text: Lateral recovery position to enable gravitational drainage
+  - left:
+      id: l2
+      text: Penetrating chest wound with bubbling blood
+    right:
+      id: r-a788c2
+      text: 3-sided vented occlusive dressing
+  - left:
+      id: l3
+      text: Traumatic cardiac arrest (no pulse, no breathing)
+    right:
+      id: r-5b493f
+      text: High-quality chest compressions at 100-120 bpm, 5-6 cm depth
+  - left:
+      id: l4
+      text: Conscious adult with complete airway obstruction
+    right:
+      id: r-81f164
+      text: Alternating 5 back blows and 5 abdominal thrusts (Heimlich)
+  correct_answer:
+  - l1=r-e99ba8
+  - l2=r-a788c2
+  - l3=r-5b493f
+  - l4=r-81f164

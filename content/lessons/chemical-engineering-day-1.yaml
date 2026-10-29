@@ -1,199 +1,207 @@
 id: chemical-engineering-day-1
 course_id: chemical-engineering
-title: "Lime Chemistry & Calcination Kilns"
-title_sw: "Kemia ya Chokaa na Tanuri za Kuchoma"
+title: Lime Chemistry & Calcination Kilns
+title_sw: Kemia ya Chokaa na Tanuri za Kuchoma
 week_number: 1
 day_number: 1
 estimated_minutes: 120
 license: CC-BY-SA-4.0
 tags:
-  - chemistry
-  - lime
-  - calcination
-  - mortar
-  - kiln
-  - chemical-engineering
+- chemistry
+- lime
+- calcination
+- mortar
+- kiln
+- chemical-engineering
 xp: 250
 exam_domain: chemical-engineering
+briefing: 'Before the invention of Portland cement, civilization was built on the lime cycle. Calcium
+  carbonate (limestone or seashells) thermal calcination yields quicklime (calcium oxide), a reactive
+  chemical used in water purification, acid soil neutralization, sanitation disinfection, and hydraulic
+  mortars that harden over centuries. This lesson covers the thermodynamics of the calcium cycle, limestone
+  assaying, mixed-feed vertical shaft kiln construction, exothermic slaking, and pozzolanic hydraulic
+  lime mortar formulations.
 
-briefing: >
-  Before the invention of Portland cement, civilization was built on the lime cycle.
-  Calcium carbonate (limestone or seashells) thermal calcination yields quicklime
-  (calcium oxide), a reactive chemical used in water purification, acid soil
-  neutralization, sanitation disinfection, and hydraulic mortars that harden over
-  centuries. This lesson covers the thermodynamics of the calcium cycle, limestone
-  assaying, mixed-feed vertical shaft kiln construction, exothermic slaking, and
-  pozzolanic hydraulic lime mortar formulations.
+  '
+outline: 'The chemical lime cycle (CaCO3 -> CaO -> Ca(OH)2 -> CaCO3); calcination temperatures (850°C-1000°C)
+  and enthalpy (+178 kJ/mol); limestone prospecting (acid effervescence test with 10% HCl or vinegar);
+  vertical shaft mixed-feed kiln geometry (1:3 diameter-to-height ratio, tuyeres, refractory lining);
+  slaking quicklime (highly exothermic reaction generating boiling heat and steam); safety PPE (chemical
+  burn hazards from caustic CaO); hydraulic vs non-hydraulic lime; natural pozzolans (volcanic ash / pumice
+  from the Rift Valley, pulverized clay brick dust).
 
-outline: >
-  The chemical lime cycle (CaCO3 -> CaO -> Ca(OH)2 -> CaCO3); calcination
-  temperatures (850°C-1000°C) and enthalpy (+178 kJ/mol); limestone prospecting
-  (acid effervescence test with 10% HCl or vinegar); vertical shaft mixed-feed
-  kiln geometry (1:3 diameter-to-height ratio, tuyeres, refractory lining);
-  slaking quicklime (highly exothermic reaction generating boiling heat and steam);
-  safety PPE (chemical burn hazards from caustic CaO); hydraulic vs non-hydraulic
-  lime; natural pozzolans (volcanic ash / pumice from the Rift Valley, pulverized
-  clay brick dust).
-
-content_md: |
-  ## The Chemical Lime Cycle
-
-  The production and use of lime is a closed chemical loop powered by thermal energy:
-
-  ```
-               Heat (900°C - 1000°C)
-  CaCO3 (Limestone) ───────────────> CaO (Quicklime) + CO2 (gas)
-        ▲                                    │
-        │ Carbonation                        │ Exothermic Slaking
-        │ (Absorbs atmospheric CO2)          ▼ (+ H2O + 65 kJ/mol)
-        └────────────────────────────── Ca(OH)2 (Slaked Lime / Hydrate)
-  ```
-
-  ### 1. Calcination (Endothermic Decomposition):
-  $$\text{CaCO}_3 + \Delta H (178\text{ kJ/mol}) \xrightarrow{900^\circ\text{C}} \text{CaO} + \text{CO}_2 \uparrow$$
-  At atmospheric pressure, limestone begins to dissociate at 825°C, but efficient shaft kiln production requires **900°C to 1,000°C**. Exceeding 1,150°C causes "dead-burning", where the crystal structure sinters tight, preventing water penetration during slaking.
-
-  ### 2. Slaking (Exothermic Hydration):
-  $$\text{CaO} + \text{H}_2\text{O} \rightarrow \text{Ca(OH)}_2 + \text{Heat} \quad (\Delta H = -65.2\text{ kJ/mol})$$
-  Adding water to quicklime produces boiling heat (water reaches 100°C instantly) and high-pressure steam, swelling the solid to 2.5–3 times its dry volume as it crumbles into a fine white powder or viscous lime putty.
-
-  ### 3. Setting / Carbonation:
-  $$\text{Ca(OH)}_2 + \text{CO}_2 \rightarrow \text{CaCO}_3 + \text{H}_2\text{O}$$
-  Unlike modern cement which cures via hydration, non-hydraulic lime mortar cures by slowly absorbing carbon dioxide from the air over months, turning back into crystalline limestone rock.
-
-  ## Identifying Limestone in the Field
-
-  1. **Hydrochloric Acid / Vinegar Effervescence**:
-     - Place a few drops of 10% dilute HCl (or concentrated vinegar) onto a fresh rock fracture.
-     - **Vigorous bubbling and frothing**: High-purity calcite limestone ($\text{CaCO}_3$).
-     - **Weak bubbling only when scratched/powdered**: Dolomitic limestone ($\text{CaMg(CO}_3)_2$).
-     - **Zero bubbling**: Quartz sandstone, granite, or basalt.
-  2. **Alternative Sources**: Sea snail shells, oyster shells, and eggshells are over 95% pure $\text{CaCO}_3$ and calcinate rapidly due to thin shell geometry.
-
-  ## Vertical Shaft Mixed-Feed Kiln Design
-
-  A low-cost, continuous vertical shaft kiln constructed from common bricks and clay:
-  - **Internal Dimensions**: 0.8 m internal diameter, 2.5 m to 3.0 m height (approx. **1:3 to 1:4 aspect ratio** for optimal counter-current heat exchange).
-  - **Insulation**: Outer wall of sun-dried adobe or volcanic pumice mortar to minimize thermal radiation losses.
-  - **Loading Architecture**:
-    - Alternating layers of fuel (hardwood charcoal or high-calorific wood chunks, 50–75 mm) and broken limestone (sized to 40–80 mm fist-size chunks).
-    - Fuel-to-rock ratio: typically **1 kg charcoal per 4–5 kg limestone**.
-  - **Bottom Discharge & Tuyeres**:
-    - Air inlets at the base supply combustion oxygen via natural chimney draft.
-    - Cold incoming combustion air cools the descending finished quicklime at the bottom, preheating itself before entering the 950°C fire zone.
-
-  ## Slaking Protocols & Safety
-
-  **DANGER: Chemical & Thermal Burn Hazard**
-  Quicklime ($\text{CaO}$) has extreme affinity for water. Contact with sweat, tears, or mucous membranes causes immediate 3rd-degree thermal-chemical burns.
-  - Always wear sealed safety goggles, dust respirators, and heavy leather gauntlets.
-  - Keep an emergency eyewash station (bottled water with 1% dilute boric acid or vinegar rinse) on hand.
-
-  ### Producing Lime Putty (Slaking to Excess Water):
-  1. Add clean water into an iron drum or masonry slaking trough first.
-  2. Gradually shovel in quicklime chunks (never dump water onto a pile of dry quicklime; it can explode into violent boiling slurry).
-  3. Stir continuously with a long wooden hoe as the mixture boils vigorously.
-  4. Strain the slurry through a 2 mm wire mesh screen into a pit or sealed drum.
-  5. Settle under a layer of standing water for **minimum 14 days** (months or years produce silky, premium lime putty).
-
-  ## Hydraulic Lime & Natural Pozzolan Mortars
-
-  Pure lime mortar will never set underwater or inside thick walls without air exposure. To create **hydraulic lime** that sets chemically in wet conditions:
-
-  ### The Pozzolanic Reaction:
-  Amorphous reactive silica ($\text{SiO}_2$) and alumina ($\text{Al}_2\text{O}_3$) react with calcium hydroxide in the presence of water to form calcium silicate hydrates ($\text{C-S-H}$):
-  $$\text{Ca(OH)}_2 + \text{SiO}_2 + \text{H}_2\text{O} \rightarrow \text{C-S-H Gel}$$
-
-  ### Regional Pozzolan Sources in East Africa:
-  - **Volcanic Tuff / Pumice**: Fine-grained volcanic ash deposits along the Kenyan Great Rift Valley (Longonot, Suswa, Menengai). Pulverized and sieved to < 0.1 mm.
-  - **Surkhi (Brick Dust)**: Waste clay bricks burned at 600°C–800°C, finely ground.
-  - **Rice Husk Ash (RHA)**: Controlled burning of rice hulls yields > 85% amorphous reactive silica.
-
-  ### Roman Hydraulic Mortar Mix Ratio (by volume):
-  - **1 Part Lime Putty** (well-aged)
-  - **2 Parts Pozzolan** (finely ground volcanic ash or brick dust)
-  - **2 Parts Sharp Quartz Sand** (0.5 – 2.0 mm)
-  - Sets under water within 3–7 days and achieves stone-like compressive strength over decades.
-
+  '
+content_md: "## The Chemical Lime Cycle\n\nThe production and use of lime is a closed chemical loop powered\
+  \ by thermal energy:\n\n```\n             Heat (900°C - 1000°C)\nCaCO3 (Limestone) ───────────────>\
+  \ CaO (Quicklime) + CO2 (gas)\n      ▲                                    │\n      │ Carbonation   \
+  \                     │ Exothermic Slaking\n      │ (Absorbs atmospheric CO2)          ▼ (+ H2O + 65\
+  \ kJ/mol)\n      └────────────────────────────── Ca(OH)2 (Slaked Lime / Hydrate)\n```\n\n### 1. Calcination\
+  \ (Endothermic Decomposition):\n$$\\text{CaCO}_3 + \\Delta H (178\\text{ kJ/mol}) \\xrightarrow{900^\\\
+  circ\\text{C}} \\text{CaO} + \\text{CO}_2 \\uparrow$$\nAt atmospheric pressure, limestone begins to\
+  \ dissociate at 825°C, but efficient shaft kiln production requires **900°C to 1,000°C**. Exceeding\
+  \ 1,150°C causes \"dead-burning\", where the crystal structure sinters tight, preventing water penetration\
+  \ during slaking.\n\n### 2. Slaking (Exothermic Hydration):\n$$\\text{CaO} + \\text{H}_2\\text{O} \\\
+  rightarrow \\text{Ca(OH)}_2 + \\text{Heat} \\quad (\\Delta H = -65.2\\text{ kJ/mol})$$\nAdding water\
+  \ to quicklime produces boiling heat (water reaches 100°C instantly) and high-pressure steam, swelling\
+  \ the solid to 2.5–3 times its dry volume as it crumbles into a fine white powder or viscous lime putty.\n\
+  \n### 3. Setting / Carbonation:\n$$\\text{Ca(OH)}_2 + \\text{CO}_2 \\rightarrow \\text{CaCO}_3 + \\\
+  text{H}_2\\text{O}$$\nUnlike modern cement which cures via hydration, non-hydraulic lime mortar cures\
+  \ by slowly absorbing carbon dioxide from the air over months, turning back into crystalline limestone\
+  \ rock.\n\n## Identifying Limestone in the Field\n\n1. **Hydrochloric Acid / Vinegar Effervescence**:\n\
+  \   - Place a few drops of 10% dilute HCl (or concentrated vinegar) onto a fresh rock fracture.\n  \
+  \ - **Vigorous bubbling and frothing**: High-purity calcite limestone ($\\text{CaCO}_3$).\n   - **Weak\
+  \ bubbling only when scratched/powdered**: Dolomitic limestone ($\\text{CaMg(CO}_3)_2$).\n   - **Zero\
+  \ bubbling**: Quartz sandstone, granite, or basalt.\n2. **Alternative Sources**: Sea snail shells, oyster\
+  \ shells, and eggshells are over 95% pure $\\text{CaCO}_3$ and calcinate rapidly due to thin shell geometry.\n\
+  \n## Vertical Shaft Mixed-Feed Kiln Design\n\nA low-cost, continuous vertical shaft kiln constructed\
+  \ from common bricks and clay:\n- **Internal Dimensions**: 0.8 m internal diameter, 2.5 m to 3.0 m height\
+  \ (approx. **1:3 to 1:4 aspect ratio** for optimal counter-current heat exchange).\n- **Insulation**:\
+  \ Outer wall of sun-dried adobe or volcanic pumice mortar to minimize thermal radiation losses.\n- **Loading\
+  \ Architecture**:\n  - Alternating layers of fuel (hardwood charcoal or high-calorific wood chunks,\
+  \ 50–75 mm) and broken limestone (sized to 40–80 mm fist-size chunks).\n  - Fuel-to-rock ratio: typically\
+  \ **1 kg charcoal per 4–5 kg limestone**.\n- **Bottom Discharge & Tuyeres**:\n  - Air inlets at the\
+  \ base supply combustion oxygen via natural chimney draft.\n  - Cold incoming combustion air cools the\
+  \ descending finished quicklime at the bottom, preheating itself before entering the 950°C fire zone.\n\
+  \n## Slaking Protocols & Safety\n\n**DANGER: Chemical & Thermal Burn Hazard**\nQuicklime ($\\text{CaO}$)\
+  \ has extreme affinity for water. Contact with sweat, tears, or mucous membranes causes immediate 3rd-degree\
+  \ thermal-chemical burns.\n- Always wear sealed safety goggles, dust respirators, and heavy leather\
+  \ gauntlets.\n- Keep an emergency eyewash station (bottled water with 1% dilute boric acid or vinegar\
+  \ rinse) on hand.\n\n### Producing Lime Putty (Slaking to Excess Water):\n1. Add clean water into an\
+  \ iron drum or masonry slaking trough first.\n2. Gradually shovel in quicklime chunks (never dump water\
+  \ onto a pile of dry quicklime; it can explode into violent boiling slurry).\n3. Stir continuously with\
+  \ a long wooden hoe as the mixture boils vigorously.\n4. Strain the slurry through a 2 mm wire mesh\
+  \ screen into a pit or sealed drum.\n5. Settle under a layer of standing water for **minimum 14 days**\
+  \ (months or years produce silky, premium lime putty).\n\n## Hydraulic Lime & Natural Pozzolan Mortars\n\
+  \nPure lime mortar will never set underwater or inside thick walls without air exposure. To create **hydraulic\
+  \ lime** that sets chemically in wet conditions:\n\n### The Pozzolanic Reaction:\nAmorphous reactive\
+  \ silica ($\\text{SiO}_2$) and alumina ($\\text{Al}_2\\text{O}_3$) react with calcium hydroxide in the\
+  \ presence of water to form calcium silicate hydrates ($\\text{C-S-H}$):\n$$\\text{Ca(OH)}_2 + \\text{SiO}_2\
+  \ + \\text{H}_2\\text{O} \\rightarrow \\text{C-S-H Gel}$$\n\n### Regional Pozzolan Sources in East Africa:\n\
+  - **Volcanic Tuff / Pumice**: Fine-grained volcanic ash deposits along the Kenyan Great Rift Valley\
+  \ (Longonot, Suswa, Menengai). Pulverized and sieved to < 0.1 mm.\n- **Surkhi (Brick Dust)**: Waste\
+  \ clay bricks burned at 600°C–800°C, finely ground.\n- **Rice Husk Ash (RHA)**: Controlled burning of\
+  \ rice hulls yields > 85% amorphous reactive silica.\n\n### Roman Hydraulic Mortar Mix Ratio (by volume):\n\
+  - **1 Part Lime Putty** (well-aged)\n- **2 Parts Pozzolan** (finely ground volcanic ash or brick dust)\n\
+  - **2 Parts Sharp Quartz Sand** (0.5 – 2.0 mm)\n- Sets under water within 3–7 days and achieves stone-like\
+  \ compressive strength over decades.\n"
 exercises:
-  - id: chem-d1-q1
-    type: MULTIPLE_CHOICE
-    prompt: >
-      A lime kiln operator allows the combustion zone to reach 1,250°C for several
-      hours. When the discharged quicklime is later mixed with water, it fails to
-      boil or slake properly. What happened chemically?
-    xp_reward: 50
-    options:
-      - text: "The lime became 'dead-burned' (over-burned); excessive temperature sintered the CaO crystal matrix into dense crystalline grains with minimal surface area, preventing water penetration"
-        correct: true
-        explanation: "Normal reactive quicklime is calcined at 900°C-1000°C, leaving a porous, high-surface-area sponge. Sintering above 1150°C fuses pores, reducing slaking reactivity from minutes to days or weeks."
-      - text: "The calcium oxide evaporated into the exhaust gases"
-        correct: false
-        explanation: "CaO has a boiling point of 2,850°C and does not evaporate at 1,250°C."
-      - text: "The limestone re-absorbed carbon dioxide at high temperature"
-        correct: false
-        explanation: "High temperature drives CO2 off; carbonation only occurs when temperatures drop below 500°C in the presence of CO2."
-      - text: "The calcium turned into metallic calcium"
-        correct: false
-        explanation: "Reducing CaO to calcium metal requires electrolysis or extreme reducing conditions (e.g., thermal vacuum with aluminium)."
+- id: chem-d1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A lime kiln operator allows the combustion zone to reach 1,250°C for several hours. When the
+    discharged quicklime is later mixed with water, it fails to boil or slake properly. What happened
+    chemically?
 
-  - id: chem-d1-q2
-    type: FILL_BLANK
-    prompt: >
-      The thermal decomposition of limestone begins around 825°C, requiring approximately
-      ___ kJ/mol of endothermic heat, whereas slaking quicklime with water is violently
-      ___, releasing 65.2 kJ/mol of heat.
-    xp_reward: 50
-    correct_answer: "178; exothermic"
-    explanation: >
-      Calcination is strongly endothermic (requires 178 kJ/mol heat input), while
-      slaking is violently exothermic, boiling water and generating steam.
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: The calcium oxide evaporated into the exhaust gases
+  - id: b
+    text: The lime became 'dead-burned' (over-burned); excessive temperature sintered the CaO crystal
+      matrix into dense crystalline grains with minimal surface area, preventing water penetration
+  - id: c
+    text: The limestone re-absorbed carbon dioxide at high temperature
+  - id: d
+    text: The calcium turned into metallic calcium
+  explanation: 'Normal reactive quicklime is calcined at 900°C-1000°C, leaving a porous, high-surface-area
+    sponge. Sintering above 1150°C fuses pores, reducing slaking reactivity from minutes to days or weeks.
 
-  - id: chem-d1-q3
-    type: MATCH_PAIRS
-    prompt: Match each stage of the lime cycle to its corresponding chemical compound and reaction.
-    xp_reward: 50
-    pairs:
-      - left: Raw Quarry Limestone
-        right: Calcium Carbonate (CaCO3)
-      - left: Kiln Output (Quicklime)
-        right: Calcium Oxide (CaO)
-      - left: Slaked Hydrated Lime Putty
-        right: Calcium Hydroxide (Ca(OH)2)
-      - left: Hardened Cured Mortar
-        right: Recrystallized Calcium Carbonate (CaCO3) via air carbonation
-    correct_answer: null
-    explanation: >
-      The classic lime cycle: CaCO3 (stone) -> CaO (quicklime) -> Ca(OH)2 (slaked) -> CaCO3 (stone).
 
-  - id: chem-d1-q4
-    type: MULTIPLE_CHOICE
-    prompt: >
-      Why will pure slaked lime mortar [Ca(OH)2 + sand] fail to set if used to line
-      the submerged interior of an underwater cistern?
-    xp_reward: 50
-    options:
-      - text: "Non-hydraulic lime requires atmospheric CO2 gas to carbonate into solid limestone; submerged underwater, dissolved CO2 is insufficient and the putty remains soft indefinitely"
-        correct: true
-        explanation: "Air lime hardens strictly through carbonation from contact with atmospheric CO2 gas. Underwater, it requires a pozzolan (reactive amorphous silica like volcanic ash) to create hydraulic C-S-H bonds."
-      - text: "Water dissolves all calcium compounds completely within 24 hours"
-        correct: false
-        explanation: "Ca(OH)2 has low solubility (approx. 1.7 g/L at room temp), but it cannot carbonate without CO2."
-      - text: "The sand expands underwater, breaking the mortar joints"
-        correct: false
-        explanation: "Quartz sand is inert and dimensionally stable in water."
-      - text: "Lime mortar must be frozen to trigger crystalline setting"
-        correct: false
-        explanation: "Freezing destroys uncured lime mortar completely."
+    Why the other options are wrong: CaO has a boiling point of 2,850°C and does not evaporate at 1,250°C.
+    High temperature drives CO2 off; carbonation only occurs when temperatures drop below 500°C in the
+    presence of CO2. Reducing CaO to calcium metal requires electrolysis or extreme reducing conditions
+    (e.g., thermal vacuum with aluminium).'
+  correct_answer: b
+- id: chem-d1-q2
+  type: FILL_BLANK
+  prompt: 'The thermal decomposition of limestone begins around 825°C, requiring approximately ___ kJ/mol
+    of endothermic heat, whereas slaking quicklime with water is violently ___, releasing 65.2 kJ/mol
+    of heat.
 
-  - id: chem-d1-q5
-    type: FILL_BLANK
-    prompt: >
-      To formulate ancient Roman hydraulic mortar that cures underwater, lime putty
-      must be blended with a natural pozzolan rich in amorphous silica, such as
-      finely ground volcanic ___ or pulverized red ___ dust.
-    xp_reward: 50
-    correct_answer: "ash; brick"
-    explanation: >
-      Volcanic ash (pozzolana) or crushed baked brick (surkhi) contains amorphous
-      silica and alumina that react with Ca(OH)2 to form water-insoluble calcium silicate hydrates.
+    '
+  xp_reward: 50
+  correct_answer:
+  - '178'
+  - exothermic
+  explanation: 'Calcination is strongly endothermic (requires 178 kJ/mol heat input), while slaking is
+    violently exothermic, boiling water and generating steam.
+
+    '
+- id: chem-d1-q3
+  type: MATCH_PAIRS
+  prompt: Match each stage of the lime cycle to its corresponding chemical compound and reaction.
+  xp_reward: 50
+  pairs:
+  - left:
+      id: l1
+      text: Raw Quarry Limestone
+    right:
+      id: r-fc9843
+      text: Calcium Carbonate (CaCO3)
+  - left:
+      id: l2
+      text: Kiln Output (Quicklime)
+    right:
+      id: r-0838ab
+      text: Calcium Oxide (CaO)
+  - left:
+      id: l3
+      text: Slaked Hydrated Lime Putty
+    right:
+      id: r-61fa6d
+      text: Calcium Hydroxide (Ca(OH)2)
+  - left:
+      id: l4
+      text: Hardened Cured Mortar
+    right:
+      id: r-4845b7
+      text: Recrystallized Calcium Carbonate (CaCO3) via air carbonation
+  correct_answer:
+  - l1=r-fc9843
+  - l2=r-0838ab
+  - l3=r-61fa6d
+  - l4=r-4845b7
+  explanation: 'The classic lime cycle: CaCO3 (stone) -> CaO (quicklime) -> Ca(OH)2 (slaked) -> CaCO3
+    (stone).
+
+    '
+- id: chem-d1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Why will pure slaked lime mortar [Ca(OH)2 + sand] fail to set if used to line the submerged
+    interior of an underwater cistern?
+
+    '
+  xp_reward: 50
+  options:
+  - id: a
+    text: Non-hydraulic lime requires atmospheric CO2 gas to carbonate into solid limestone; submerged
+      underwater, dissolved CO2 is insufficient and the putty remains soft indefinitely
+  - id: b
+    text: Water dissolves all calcium compounds completely within 24 hours
+  - id: c
+    text: The sand expands underwater, breaking the mortar joints
+  - id: d
+    text: Lime mortar must be frozen to trigger crystalline setting
+  explanation: 'Air lime hardens strictly through carbonation from contact with atmospheric CO2 gas. Underwater,
+    it requires a pozzolan (reactive amorphous silica like volcanic ash) to create hydraulic C-S-H bonds.
+
+
+    Why the other options are wrong: Ca(OH)2 has low solubility (approx. 1.7 g/L at room temp), but it
+    cannot carbonate without CO2. Quartz sand is inert and dimensionally stable in water. Freezing destroys
+    uncured lime mortar completely.'
+  correct_answer: a
+- id: chem-d1-q5
+  type: FILL_BLANK
+  prompt: 'To formulate ancient Roman hydraulic mortar that cures underwater, lime putty must be blended
+    with a natural pozzolan rich in amorphous silica, such as finely ground volcanic ___ or pulverized
+    red ___ dust.
+
+    '
+  xp_reward: 50
+  correct_answer:
+  - ash
+  - brick
+  explanation: 'Volcanic ash (pozzolana) or crushed baked brick (surkhi) contains amorphous silica and
+    alumina that react with Ca(OH)2 to form water-insoluble calcium silicate hydrates.
+
+    '

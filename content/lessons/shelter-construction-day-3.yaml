@@ -1,124 +1,166 @@
 id: shelter-construction-day-3
 course_id: shelter-construction
-title: "Earthbag & Superadobe Dome Mechanics"
-title_sw: "Mifuko ya Udongo na Miundo ya Dome"
+title: Earthbag & Superadobe Dome Mechanics
+title_sw: Mifuko ya Udongo na Miundo ya Dome
 week_number: 1
 day_number: 3
 estimated_minutes: 55
 license: CC-BY-SA-4.0
-tags: [shelter, earthbag, superadobe, domes, natural-building, disaster-resilience, kenya]
+tags:
+- shelter
+- earthbag
+- superadobe
+- domes
+- natural-building
+- disaster-resilience
+- kenya
 xp: 90
 exam_domain: Civil & Structural Engineering
+briefing: 'Earthbag construction (pioneered by architect Nader Khalili / Cal-Earth as "Superadobe")
 
-briefing: |
-  Earthbag construction (pioneered by architect Nader Khalili / Cal-Earth as "Superadobe")
   is one of the most disaster-resilient building technologies on Earth. By filling woven
+
   polypropylene sacks with damp subsoil, tamping them into stone-hard compressive layers,
+
   and running 4-point barbed wire between courses for tensile resistance, builders can
+
   construct earthquake-, hurricane-, and bullet-resistant monolithic domes using zero
+
   roof timber, steel rebar, or fired bricks. This day covers bag filling, continuous tamping,
+
   the compass trammel guide, corbelled dome geometry, and natural weatherproofing plasters.
-briefing_sw: |
-  Ujenzi wa mifuko ya udongo (Earthbag / Superadobe) ni moja ya njia imara zaidi duniani
+
+  '
+briefing_sw: 'Ujenzi wa mifuko ya udongo (Earthbag / Superadobe) ni moja ya njia imara zaidi duniani
+
   dhidi ya matetemeko ya ardhi na vimbunga. Kwa kujaza mifuko ya plastiki na udongo wenye unyevu,
+
   kuipiga kwa chuma (tamping), na kuweka nyaya za miiba (barbed wire) kati ya tabaka,
+
   unaweza kujenga kuba (dome) imara bila kuhitaji mbao za paa wala bati.
 
-outline: |
-  1. Superadobe fundamentals: Woven polypropylene tubular bags + damp mineral subsoil
+  '
+outline: '1. Superadobe fundamentals: Woven polypropylene tubular bags + damp mineral subsoil
+
   2. The tensile key: 4-point, 2-strand 12.5 gauge barbed wire between every course
+
   3. Continuous tamping mechanics: Converting loose soil into dense rammed monoliths
+
   4. The Compass Trammel: Using central pivot chains to control circular radius and corbelling
+
   5. Catenary arch vs hemispherical dome: Directing all structural loads into pure compression
+
   6. Opening mechanics: Constructing rigid wooden arch forms for doors and windows
+
   7. Buttresses and shear walls: Stabilizing straight wall segments with intersecting curves
+
   8. Exterior plaster coats: Scratch coat, brown coat, and lime/Opuntia cactus water-shedding finish
 
-content_md: |
-  ## The Superadobe Structural System
-
-  Developed by Nader Khalili for NASA lunar habitat research and UNHCR refugee housing, Superadobe combines three simple, universal materials:
-  1. **Woven polypropylene (PP) bags or continuous tubing** (50 kg grain sacks or 40–45 cm continuous tubular rolls).
-  2. **Damp mineral subsoil** (same composition as for CEB: 70% sand/aggregate, 20% clay, 10% silt).
-  3. **Barbed wire** (two parallel strands of 12.5 gauge, 4-point galvanized barbed wire between every course).
-
-  ### Why It Works:
-  - **Earth handles compression:** Once tamped solid, the contained soil can support tremendous vertical loads (equivalent to unreinforced concrete).
-  - **Barbed wire handles tension:** The sharp steel barbs bite into the woven fabric on both sides, creating a continuous shear key that resists seismic shaking and lateral soil thrust.
-  - **The bag is temporary formwork:** Once the soil cures and is covered by breathable plaster, the earth becomes a monolithic block.
-
-  ## The Compass Trammel (The Builder’s Guide)
-
-  In dome building, there are no vertical plumb bobs. Geometry is maintained with a **central compass pivot**:
-  1. Drive a rigid steel pipe securely into the center of the dome foundation.
-  2. Attach two chains or cables with turnbuckles:
-     - **Radius Compass:** Fixed length from center to the inner face of the base course. Maintains a perfect circle on horizontal courses.
-     - **Height/Curvature Compass:** Telescoping arm or chain that swings vertically to guide the inward slope (corbelling) of each successive ring.
-  3. Every single bag must touch the compass point before and after tamping.
-
-  ## Catenary Arch vs Hemispherical Dome
-
-  - **Hemispherical Dome:** Constant radius from the center point. Generates significant outward lateral hoop stress at the lower third, requiring heavy buttressing or high-tensile wire rings.
-  - **Catenary Arch (Inverted Chain):** The ideal compressive shape. When a loose chain hangs between two points, it forms a pure tension curve. Inverting this shape creates an arch under **pure compression with zero tensile stress**.
-
-  ## Step-by-Step Construction Sequence
-
-  1. **Foundation:** Excavate rubble trench; lay 2 courses of double-bagged gravel below grade to prevent moisture wicking.
-  2. **Barbed wire placement:** Lay two continuous parallel strands of 4-point barbed wire atop the tamped course, weighted with bricks.
-  3. **Bag filling:** Slide open end of tubular roll or 50 kg sack over a metal sheet-metal slider (a clean tin can with top and bottom removed). Pour in soil mix with consistent moisture (OMC).
-  4. **Tamping:** Use a 5–8 kg square steel hand tamper. Tamp rhythmically from the outside edge inward until the hollow thud transitions into a sharp, solid "ring" (indicating maximum compaction).
-  5. **Window and Door Bucks:** Place circular or arched wooden forms at rough openings. Step bags over the arch form; leave form in place until the key bag at the crown is fully tamped and cured.
-  6. **Corbelling:** After reaching 1.2 m wall height, step each successive bag course inward by 2–3 cm guided by the curvature compass until the dome closes at the apex.
-
-  ## Natural Weatherproofing Plasters
-
-  Polypropylene degrades rapidly under tropical UV sunlight. Within 3 weeks of completion, bags must be plastered:
-  - **Scratch coat (1:3 clay:coarse sand):** Applied directly to rough bag fabric with straw/sisal fibers to fill bag valleys.
-  - **Brown coat (1:3 cement:sand or hydraulic lime:sand):** 15 mm structural layer.
-  - **Waterproof Finish Coat:** Slaked lime putty + fine quartz sand + **Opuntia (prickly pear) cactus sap**. Boiling cut cactus pads produces a mucilage rich in pectin that chemically crosslinks with slaked lime, creating a breathable, water-shedding waterproof plaster used across Mexican and Mediterranean traditions.
-
+  '
+content_md: "## The Superadobe Structural System\n\nDeveloped by Nader Khalili for NASA lunar habitat\
+  \ research and UNHCR refugee housing, Superadobe combines three simple, universal materials:\n1. **Woven\
+  \ polypropylene (PP) bags or continuous tubing** (50 kg grain sacks or 40–45 cm continuous tubular rolls).\n\
+  2. **Damp mineral subsoil** (same composition as for CEB: 70% sand/aggregate, 20% clay, 10% silt).\n\
+  3. **Barbed wire** (two parallel strands of 12.5 gauge, 4-point galvanized barbed wire between every\
+  \ course).\n\n### Why It Works:\n- **Earth handles compression:** Once tamped solid, the contained soil\
+  \ can support tremendous vertical loads (equivalent to unreinforced concrete).\n- **Barbed wire handles\
+  \ tension:** The sharp steel barbs bite into the woven fabric on both sides, creating a continuous shear\
+  \ key that resists seismic shaking and lateral soil thrust.\n- **The bag is temporary formwork:** Once\
+  \ the soil cures and is covered by breathable plaster, the earth becomes a monolithic block.\n\n## The\
+  \ Compass Trammel (The Builder’s Guide)\n\nIn dome building, there are no vertical plumb bobs. Geometry\
+  \ is maintained with a **central compass pivot**:\n1. Drive a rigid steel pipe securely into the center\
+  \ of the dome foundation.\n2. Attach two chains or cables with turnbuckles:\n   - **Radius Compass:**\
+  \ Fixed length from center to the inner face of the base course. Maintains a perfect circle on horizontal\
+  \ courses.\n   - **Height/Curvature Compass:** Telescoping arm or chain that swings vertically to guide\
+  \ the inward slope (corbelling) of each successive ring.\n3. Every single bag must touch the compass\
+  \ point before and after tamping.\n\n## Catenary Arch vs Hemispherical Dome\n\n- **Hemispherical Dome:**\
+  \ Constant radius from the center point. Generates significant outward lateral hoop stress at the lower\
+  \ third, requiring heavy buttressing or high-tensile wire rings.\n- **Catenary Arch (Inverted Chain):**\
+  \ The ideal compressive shape. When a loose chain hangs between two points, it forms a pure tension\
+  \ curve. Inverting this shape creates an arch under **pure compression with zero tensile stress**.\n\
+  \n## Step-by-Step Construction Sequence\n\n1. **Foundation:** Excavate rubble trench; lay 2 courses\
+  \ of double-bagged gravel below grade to prevent moisture wicking.\n2. **Barbed wire placement:** Lay\
+  \ two continuous parallel strands of 4-point barbed wire atop the tamped course, weighted with bricks.\n\
+  3. **Bag filling:** Slide open end of tubular roll or 50 kg sack over a metal sheet-metal slider (a\
+  \ clean tin can with top and bottom removed). Pour in soil mix with consistent moisture (OMC).\n4. **Tamping:**\
+  \ Use a 5–8 kg square steel hand tamper. Tamp rhythmically from the outside edge inward until the hollow\
+  \ thud transitions into a sharp, solid \"ring\" (indicating maximum compaction).\n5. **Window and Door\
+  \ Bucks:** Place circular or arched wooden forms at rough openings. Step bags over the arch form; leave\
+  \ form in place until the key bag at the crown is fully tamped and cured.\n6. **Corbelling:** After\
+  \ reaching 1.2 m wall height, step each successive bag course inward by 2–3 cm guided by the curvature\
+  \ compass until the dome closes at the apex.\n\n## Natural Weatherproofing Plasters\n\nPolypropylene\
+  \ degrades rapidly under tropical UV sunlight. Within 3 weeks of completion, bags must be plastered:\n\
+  - **Scratch coat (1:3 clay:coarse sand):** Applied directly to rough bag fabric with straw/sisal fibers\
+  \ to fill bag valleys.\n- **Brown coat (1:3 cement:sand or hydraulic lime:sand):** 15 mm structural\
+  \ layer.\n- **Waterproof Finish Coat:** Slaked lime putty + fine quartz sand + **Opuntia (prickly pear)\
+  \ cactus sap**. Boiling cut cactus pads produces a mucilage rich in pectin that chemically crosslinks\
+  \ with slaked lime, creating a breathable, water-shedding waterproof plaster used across Mexican and\
+  \ Mediterranean traditions.\n"
 exercises:
-  - id: sc3-q1
-    type: MULTIPLE_CHOICE
-    prompt: "Why must two parallel strands of 4-point barbed wire be laid between every course of tamped earthbags in a Superadobe structure?"
-    xp_reward: 35
-    options:
-      - text: "To keep rats and rodents from chewing into the wall"
-        correct: false
-        explanation: "While wire does deter rodents, that is not its primary structural role."
-      - text: "The wire acts as horizontal tensile reinforcement and shear keys, preventing bags from sliding under lateral and seismic forces"
-        correct: true
-        explanation: "Correct! Soil has massive compressive strength but virtually zero tensile strength. Barbed wire bites into the upper and lower polypropylene fabric, locking the courses together against seismic shear and outward dome thrust."
-      - text: "To conduct lightning safely to the earth grounding rod"
-        correct: false
-        explanation: "Lightning protection requires heavy dedicated copper conductors, not interrupted fence wire."
-      - text: "To hold the plaster onto the exterior bags"
-        correct: false
-        explanation: "The wire is sandwiched entirely inside the horizontal course joints and is not exposed on the exterior."
-    correct_answer: "The wire acts as horizontal tensile reinforcement and shear keys, preventing bags from sliding under lateral and seismic forces"
+- id: sc3-q1
+  type: MULTIPLE_CHOICE
+  prompt: Why must two parallel strands of 4-point barbed wire be laid between every course of tamped
+    earthbags in a Superadobe structure?
+  xp_reward: 35
+  options:
+  - id: a
+    text: To keep rats and rodents from chewing into the wall
+  - id: b
+    text: To conduct lightning safely to the earth grounding rod
+  - id: c
+    text: To hold the plaster onto the exterior bags
+  - id: d
+    text: The wire acts as horizontal tensile reinforcement and shear keys, preventing bags from sliding
+      under lateral and seismic forces
+  correct_answer: d
+  explanation: 'Correct! Soil has massive compressive strength but virtually zero tensile strength. Barbed
+    wire bites into the upper and lower polypropylene fabric, locking the courses together against seismic
+    shear and outward dome thrust.
 
-  - id: sc3-q2
-    type: FILL_BLANK
-    prompt: "An inverted hanging chain represents a ___ arch curve, which channels all structural self-weight into pure compression with zero tensile stress."
-    xp_reward: 25
-    correct_answer: catenary
-    explanation: "A catenary curve represents the exact mathematical inversion of tension into compression. Using a catenary profile for earthbag domes prevents outward tensile buckling, making roofs self-supporting without wood or steel beams."
 
-  - id: sc3-q3
-    type: MATCH_PAIRS
-    prompt: "Match each earthbag dome component to its construction function."
-    xp_reward: 30
-    pairs:
-      - left: Compass Trammel
-        right: Central pivoting guide to ensure precise circular radius and inward corbelling
-      - left: Rubble gravel base courses
-        right: Two lowest bag courses filled with stone to break capillary moisture wicking
-      - left: Hand tamper (5-8 kg)
-        right: Compresses loose damp soil into solid, high-density monolithic layers
-      - left: Opuntia cactus mucilage
-        right: Natural waterproofing additive boiled from cactus pads for lime plaster finish
-    correct_answer:
-      - Compass Trammel=Central pivoting guide to ensure precise circular radius and inward corbelling
-      - Rubble gravel base courses=Two lowest bag courses filled with stone to break capillary moisture wicking
-      - Hand tamper (5-8 kg)=Compresses loose damp soil into solid, high-density monolithic layers
-      - Opuntia cactus mucilage=Natural waterproofing additive boiled from cactus pads for lime plaster finish
+    Why the other options are wrong: While wire does deter rodents, that is not its primary structural
+    role. Lightning protection requires heavy dedicated copper conductors, not interrupted fence wire.
+    The wire is sandwiched entirely inside the horizontal course joints and is not exposed on the exterior.'
+- id: sc3-q2
+  type: FILL_BLANK
+  prompt: An inverted hanging chain represents a ___ arch curve, which channels all structural self-weight
+    into pure compression with zero tensile stress.
+  xp_reward: 25
+  correct_answer: catenary
+  explanation: A catenary curve represents the exact mathematical inversion of tension into compression.
+    Using a catenary profile for earthbag domes prevents outward tensile buckling, making roofs self-supporting
+    without wood or steel beams.
+- id: sc3-q3
+  type: MATCH_PAIRS
+  prompt: Match each earthbag dome component to its construction function.
+  xp_reward: 30
+  pairs:
+  - left:
+      id: l1
+      text: Compass Trammel
+    right:
+      id: r-ab8ee5
+      text: Central pivoting guide to ensure precise circular radius and inward corbelling
+  - left:
+      id: l2
+      text: Rubble gravel base courses
+    right:
+      id: r-deff09
+      text: Two lowest bag courses filled with stone to break capillary moisture wicking
+  - left:
+      id: l3
+      text: Hand tamper (5-8 kg)
+    right:
+      id: r-e4c830
+      text: Compresses loose damp soil into solid, high-density monolithic layers
+  - left:
+      id: l4
+      text: Opuntia cactus mucilage
+    right:
+      id: r-7850e4
+      text: Natural waterproofing additive boiled from cactus pads for lime plaster finish
+  correct_answer:
+  - l1=r-ab8ee5
+  - l2=r-deff09
+  - l3=r-e4c830
+  - l4=r-7850e4

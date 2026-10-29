@@ -1,0 +1,175 @@
+id: welding-fabrication-mma-stick-welding-joint-preparation-electrode-selection-current-settings-striking-an-arc-and-bead-runs-lesson
+course_id: welding-fabrication
+title: 'MMA Stick Welding: Joint Preparation, Electrode Selection, Current Settings,
+  Striking an Arc and Bead Runs'
+title_sw: 'Ulehemu wa Fimbo ya MMA: Maandalizi ya Viungo, Uchaguzi wa Elektrodi, Mipangilio
+  ya Sasa, Kuanzisha Arc na Uendeshaji wa Shanga'
+briefing: "This module delves into the foundational principles and practical application\
+  \ of Manual Metal Arc (MMA) or Shielded Metal Arc Welding (SMAW), a versatile process\
+  \ critical for joining various ferrous metals like carbon steel, stainless steel,\
+  \ and cast iron. We will focus on achieving high-quality welds through meticulous\
+  \ joint preparation, informed electrode selection, precise current settings, and\
+  \ mastering arc striking and bead deposition. Equipment typically includes a Constant\
+  \ Current (CC) DC or AC power source; DC+ (DCEP) is generally preferred for deeper\
+  \ penetration and better arc stability with most electrodes like E7018, while AC\
+  \ or DC- (DCEN) might be used for specific applications or electrodes like E6013\
+  \ on thinner materials. Safety is paramount: always wear a welding helmet (shade\
+  \ 10-13), leather gloves, flame-retardant clothing, and ensure adequate ventilation.\
+  \ \n\nJoint preparation is the first critical step. For butt welds on 6-10mm thick\
+  \ carbon steel (e.g., ASTM A36), clean the base metal thoroughly using an angle\
+  \ grinder with a 40-60 grit disc to remove rust, paint, and oil. For a single V-groove,\
+  \ aim for a 60-70 degree included angle, a 2-3mm root gap, and a 1.5-2mm root face\
+  \ to ensure full penetration. Electrode selection depends on material and application:\
+  \ E6013 (rutile, AWS A5.1) is excellent for general purpose, all-position welding\
+  \ on mild steel (3.2mm: 90-130A). E7018 (low hydrogen, AWS A5.1) is for critical\
+  \ structural work requiring high strength and ductility (3.2mm: 100-150A). Set your\
+  \ machine to DC+ for E7018. \n\nTo strike an arc, use either the scratch start (like\
+  \ a match) or tap start method, then lift slightly to maintain an arc length of\
+  \ 3-4mm (1-1.5 times electrode core diameter). For bead runs, maintain a consistent\
+  \ travel speed and a 10-15 degree drag angle. Stringer beads are straight, while\
+  \ weave beads involve a slight side-to-side motion (2-3 times electrode diameter)\
+  \ for wider coverage, pausing briefly at the edges. Quality criteria include uniform\
+  \ bead width, consistent ripple, good penetration, and absence of undercut or excessive\
+  \ spatter. Common faults include porosity (gas entrapment from contamination, excessive\
+  \ arc length, damp electrodes – E7018 requires baking at 250-350°C for 1-2 hours),\
+  \ undercut (excessive current, long arc, fast travel), lack of penetration (low\
+  \ current, fast travel, incorrect joint prep), and slag inclusions (poor interpass\
+  \ cleaning, insufficient current). Corrective actions involve adjusting parameters,\
+  \ improving joint cleanliness, and refining technique."
+briefing_sw: "Moduli hii inachunguza kanuni za msingi na matumizi ya kivitendo ya\
+  \ Ulehemu wa Fimbo ya Chuma (MMA) au Ulehemu wa Arc Uliolindwa (SMAW), mchakato\
+  \ muhimu unaotumika kuunganisha metali mbalimbali za feri kama vile chuma cha kaboni,\
+  \ chuma cha pua, na chuma cha kutupwa. Tutazingatia kufikia weli za hali ya juu\
+  \ kupitia maandalizi makini ya viungo, uchaguzi sahihi wa elektrodi, mipangilio\
+  \ sahihi ya sasa, na ustadi wa kuanzisha arc na kuweka shanga. Vifaa kwa kawaida\
+  \ hujumuisha chanzo cha nguvu cha Sasa Isiyobadilika (CC) DC au AC; DC+ (DCEP) kwa\
+  \ ujumla hupendelewa kwa kupenya zaidi na utulivu bora wa arc na elektrodi nyingi\
+  \ kama E7018, wakati AC au DC- (DCEN) inaweza kutumika kwa matumizi maalum au elektrodi\
+  \ kama E6013 kwenye vifaa vyembamba. Usalama ni muhimu sana: vaa kofia ya kulehemu\
+  \ (kivuli 10-13), glavu za ngozi, nguo zisizoshika moto, na hakikisha kuna uingizaji\
+  \ hewa wa kutosha. \n\nMaandalizi ya viungo ni hatua ya kwanza muhimu. Kwa weli\
+  \ za butt kwenye chuma cha kaboni chenye unene wa 6-10mm (k.m., ASTM A36), safisha\
+  \ chuma cha msingi vizuri kwa kutumia grinder ya pembe yenye diski ya grit 40-60\
+  \ ili kuondoa kutu, rangi, na mafuta. Kwa V-groove moja, lenga pembe iliyojumuishwa\
+  \ ya digrii 60-70, pengo la mizizi la 2-3mm, na uso wa mizizi wa 1.5-2mm ili kuhakikisha\
+  \ kupenya kamili. Uchaguzi wa elektrodi unategemea nyenzo na matumizi: E6013 (rutile,\
+  \ AWS A5.1) ni bora kwa matumizi ya jumla, kulehemu nafasi zote kwenye chuma laini\
+  \ (3.2mm: 90-130A). E7018 (hidrojeni ya chini, AWS A5.1) ni kwa kazi muhimu za kimuundo\
+  \ zinazohitaji nguvu ya juu na unyumbufu (3.2mm: 100-150A). Weka mashine yako kwa\
+  \ DC+ kwa E7018. \n\nIli kuanzisha arc, tumia njia ya kukwaruza (kama kiberiti)\
+  \ au kugonga, kisha inua kidogo ili kudumisha urefu wa arc wa 3-4mm (mara 1-1.5\
+  \ ya kipenyo cha msingi wa elektrodi). Kwa uendeshaji wa shanga, dumisha kasi thabiti\
+  \ ya kusafiri na pembe ya kuvuta ya digrii 10-15. Shanga za stringer ni za moja\
+  \ kwa moja, wakati shanga za weave zinahusisha mwendo mdogo wa upande kwa upande\
+  \ (mara 2-3 ya kipenyo cha elektrodi) kwa kufunika pana, ukisimama kwa muda mfupi\
+  \ kwenye kingo. Vigezo vya ubora ni pamoja na upana wa shanga sare, muundo thabiti\
+  \ wa mawimbi, kupenya vizuri, na kutokuwepo kwa undercut au spatter nyingi. Kasoro\
+  \ za kawaida ni pamoja na porosity (mtego wa gesi kutokana na uchafuzi, urefu wa\
+  \ arc kupita kiasi, elektrodi zenye unyevu – E7018 inahitaji kuokwa kwa 250-350°C\
+  \ kwa saa 1-2), undercut (sasa kupita kiasi, arc ndefu, kusafiri haraka), ukosefu\
+  \ wa kupenya (sasa ndogo, kusafiri haraka, maandalizi mabaya ya viungo), na slag\
+  \ inclusions (usafishaji duni kati ya pasi, sasa ndogo). Hatua za kurekebisha zinahusisha\
+  \ kurekebisha vigezo, kuboresha usafi wa viungo, na kuboresha mbinu."
+estimated_minutes: 60
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/WEL/CR/02/5
+exam_domain: MMA Stick Welding Fundamentals
+media:
+- kind: video
+  url: https://www.youtube.com/watch?v=y_o7h-2e-8o
+  caption: How to Stick Weld - The Basics by Weld.com
+- kind: animation
+  preset: weld
+  caption: Visualizing the MMA welding arc and molten pool.
+exercises:
+- id: welding-fabrication-q1
+  type: MULTIPLE_CHOICE
+  prompt: During a flat position fillet weld on 8mm mild steel using E6013 (3.2mm)
+    at 110A DC+, you observe numerous small, spherical voids on the weld surface and
+    within the weld metal after chipping slag. What is the most likely defect, and
+    what immediate corrective action should you take?
+  options:
+  - id: a
+    text: Undercut; Reduce current and increase travel speed.
+  - id: b
+    text: Porosity; Clean the base metal thoroughly and ensure electrodes are dry.
+  - id: c
+    text: Lack of fusion; Increase current and slow down travel speed.
+  - id: d
+    text: Slag inclusion; Improve interpass cleaning.
+  correct_answer: b
+  hint: Consider the appearance of the defect (spherical voids) and common causes
+    related to gas entrapment during solidification.
+  explanation: Spherical voids indicate porosity, which is typically caused by gas
+    entrapment during solidification. Common culprits include contaminants (rust,
+    oil, paint) on the base metal, excessive arc length allowing atmospheric contamination,
+    or damp electrodes releasing moisture. Cleaning the base metal and ensuring electrodes
+    are dry (especially for low-hydrogen types, but moisture can affect rutile too)
+    are critical corrective actions.
+  xp_reward: 50
+- id: welding-fabrication-q2
+  type: MULTIPLE_CHOICE
+  prompt: You are tasked with welding a critical structural component made of 12mm
+    thick carbon steel (ASTM A36) requiring high strength and good ductility, in a
+    horizontal position. Which electrode type and approximate current range (for 4.0mm
+    diameter) would be most suitable, and what polarity should be used?
+  options:
+  - id: a
+    text: E6013; 130-180A AC.
+  - id: b
+    text: E7018; 140-200A DC+.
+  - id: c
+    text: E6010; 100-150A DC-.
+  - id: d
+    text: E7024; 150-220A AC.
+  correct_answer: b
+  hint: The terms 'critical structural component' and 'high strength, good ductility'
+    point to a specific low-hydrogen electrode type. Consider typical current ranges
+    for 4.0mm electrodes and standard polarity for such applications.
+  explanation: E7018 is a low-hydrogen electrode known for its excellent mechanical
+    properties (high strength, good ductility, crack resistance), making it ideal
+    for critical structural applications. It's typically used with DC+ (DCEP) polarity
+    for deeper penetration and better arc stability. For a 4.0mm E7018 electrode,
+    a current range of 140-200A is appropriate, depending on position and joint configuration.
+  xp_reward: 50
+- id: welding-fabrication-q3
+  type: MULTIPLE_CHOICE
+  prompt: For a full penetration butt weld on two 10mm thick mild steel plates, you
+    decide to use a single V-groove joint. What would be the recommended total included
+    angle for the bevel, and what approximate root gap and root face dimensions should
+    you aim for to ensure good root fusion with an E7018 electrode?
+  options:
+  - id: a
+    text: 45-50 degrees included angle; 0-1mm root gap, 3-4mm root face.
+  - id: b
+    text: 60-70 degrees included angle; 2-3mm root gap, 1.5-2mm root face.
+  - id: c
+    text: 90 degrees included angle; 4-5mm root gap, 0mm root face.
+  - id: d
+    text: 30-40 degrees included angle; 1-2mm root gap, 2-3mm root face.
+  correct_answer: b
+  hint: Consider standard joint preparation for full penetration V-groove welds, balancing
+    electrode access for the root pass with minimizing the overall weld volume.
+  explanation: For a full penetration single V-groove butt weld on 10mm thick plates,
+    an included angle of 60-70 degrees (30-35 degrees per plate) provides good access
+    for the electrode to achieve root fusion. A root gap of 2-3mm allows for proper
+    penetration, while a root face of 1.5-2mm helps prevent burn-through and provides
+    a landing for the root pass, especially with E7018 electrodes.
+  xp_reward: 50
+quality_audit:
+  interactiveness: 65
+  details: 100
+  ease_of_understanding: 100
+  multimedia: 100
+  overall_score: 89
+  metrics:
+    exercise_count: 3
+    exercise_types:
+    - MULTIPLE_CHOICE
+    word_count: 380
+    avg_sentence_words: 15.8
+    has_swahili_translation: true
+    has_video: true
+    has_animation: true
+    cdacc_aligned: true
+status: staged_for_educator_approval

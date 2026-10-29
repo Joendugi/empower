@@ -1,228 +1,182 @@
 id: solar-electronics-day-2
 course_id: solar-electronics
-title: "Battery Systems & Bank Sizing"
-title_sw: "Mifumo ya Betri na Upimaji wa Benki"
+title: Battery Systems & Bank Sizing
+title_sw: Mifumo ya Betri na Upimaji wa Benki
 week_number: 1
 day_number: 2
 estimated_minutes: 55
 license: CC-BY-SA-4.0
-tags: [solar, battery, lead-acid, lithium, off-grid, kenya]
+tags:
+- solar
+- battery
+- lead-acid
+- lithium
+- off-grid
+- kenya
 xp: 90
 exam_domain: Renewable Energy Systems
+briefing: 'The battery bank is the most expensive, most failure-prone, and most misunderstood
 
-briefing: |
-  The battery bank is the most expensive, most failure-prone, and most misunderstood
   component of any off-grid solar system. A 200 Ah lead-acid bank costs KSh 25 000–40 000
+
   and should last 3–5 years with correct use — or 12 months with common mistakes. This day
+
   covers chemistry, depth of discharge, C-rating, state of charge monitoring, and the
+
   arithmetic of sizing a bank for a real Kenyan household.
-briefing_sw: |
-  Benki ya betri ndicho kipande cha gharama zaidi, chenye kushindwa zaidi, na
+
+  '
+briefing_sw: 'Benki ya betri ndicho kipande cha gharama zaidi, chenye kushindwa zaidi, na
+
   kisichoelewa zaidi katika mfumo wowote wa jua nje ya gridi. Benki ya lead-acid
+
   ya 200 Ah inagharimu KSh 25,000–40,000 na inapaswa kudumu miaka 3–5 kwa matumizi
+
   sahihi — au miezi 12 na makosa ya kawaida.
 
-outline: |
-  1. Battery chemistry overview: lead-acid (FLA, AGM, Gel) vs lithium (LiFePO4)
+  '
+outline: '1. Battery chemistry overview: lead-acid (FLA, AGM, Gel) vs lithium (LiFePO4)
+
   2. Key parameters: capacity (Ah), voltage, depth of discharge (DoD), cycle life
+
   3. The C-rating: why a 100 Ah battery is not always 100 Ah
+
   4. State of Charge (SoC): voltage tables, hydrometer readings, coulomb counting
+
   5. Sizing a battery bank: autonomy days, DoD, efficiency losses
+
   6. Worked example: sizing for a typical Kenyan household (lights, phone, radio, TV)
+
   7. Battery wiring: series, parallel, series-parallel; cable sizing to battery terminals
+
   8. Maintenance: equalisation, watering, temperature compensation
 
-content_md: |
-  ## Battery Chemistry Comparison
-
-  | Chemistry | Types | Typical DoD | Cycle life | Cost (KSh/kWh) | Notes |
-  |-----------|-------|------------|------------|----------------|-------|
-  | Flooded Lead-Acid (FLA) | Wet/vented | 50 % | 300–500 @ 50 % DoD | 8 000–12 000 | Cheapest; requires topping up with distilled water; vents hydrogen |
-  | AGM (Absorbent Glass Mat) | Sealed | 50–60 % | 400–600 | 15 000–25 000 | Sealed; no maintenance; can mount at angle; more vibration-tolerant |
-  | Gel | Sealed | 50–80 % | 500–1 000 | 20 000–35 000 | Deep cycle; very heat-tolerant; charge slowly (10 % C rate max) |
-  | LiFePO4 (Lithium Iron Phosphate) | Sealed | 80–90 % | 2 000–5 000 | 35 000–60 000 | Expensive upfront; best lifetime cost; no memory effect; requires BMS |
-
-  **For most Kenyan off-grid systems today: AGM or FLA.**
-  LiFePO4 is becoming cost-competitive by 2025–2026 and is the long-term recommendation
-  where upfront capital is available.
-
-  ## Key Parameters
-
-  ### Capacity (Ampere-hours, Ah)
-  Capacity tells you how much charge a fully charged battery can deliver.
-  A 100 Ah battery can supply:
-  - 10 A for 10 hours, OR
-  - 5 A for 20 hours, OR
-  - 1 A for 100 hours
-
-  But this is only true at the rated discharge rate.
-
-  ### Depth of Discharge (DoD)
-  DoD is how deeply you drain a battery before recharging. Lead-acid batteries are
-  damaged by repeated deep discharge:
-
-  | DoD | Lead-acid cycle life | LiFePO4 cycle life |
-  |-----|---------------------|-------------------|
-  | 30 % | 1 200 cycles | 5 000+ |
-  | 50 % | 500 cycles | 3 500 |
-  | 80 % | 200 cycles | 2 000 |
-  | 100 % | 50–100 cycles | 1 000 |
-
-  **Rule of thumb for lead-acid: never discharge below 50 % SoC (DoD = 50 %).**
-  Discharging to 80 % DoD regularly will destroy a lead-acid bank in under a year.
-
-  ### The C-Rating
-  Batteries are rated at a specific discharge rate, expressed as a C-rating.
-
-  - **C20** (standard): full capacity over 20 hours → discharge current = Ah ÷ 20
-  - **C10**: discharge over 10 hours → higher current → *less* usable capacity
-  - **C100**: very slow discharge → slightly *more* usable capacity
-
-  A **100 Ah (C20) battery** at C10 rate (10 A discharge) typically delivers only
-  **85–90 Ah** — not 100 Ah. At C5 (20 A), it may deliver only **75 Ah**.
-
-  **Practical implication:** if you run a 300 W load (25 A from a 12 V bank) for
-  any significant time, size the bank assuming only 80 % of the rated Ah is available.
-
-  ## State of Charge (SoC) Monitoring
-
-  ### Open-Circuit Voltage (OCV) — most common method
-  Let the battery rest for **at least 2 hours** after charging or discharging, then measure voltage:
-
-  | SoC | 12 V FLA/AGM OCV | 12 V LiFePO4 OCV |
-  |-----|------------------|------------------|
-  | 100 % | 12.70–12.80 V | 13.4–13.6 V |
-  | 75 % | 12.40 V | 13.2 V |
-  | 50 % | 12.20 V | 13.1 V |
-  | 25 % | 12.00 V | 12.8 V |
-  | 0 % (empty) | 11.80 V | 12.0 V |
-
-  **Never use under-load voltage** to estimate SoC — it reads falsely low due to
-  internal resistance voltage drop.
-
-  ### Hydrometer (FLA only)
-  Measures specific gravity (SG) of the electrolyte:
-  - Full charge: SG 1.265–1.280
-  - Half charge: SG 1.190–1.210
-  - Discharged: SG < 1.150 (sulfation risk — charge immediately)
-
-  Correct SG reading for temperature: +0.004 for every 10 °C above 25 °C.
-
-  ## Sizing the Battery Bank
-
-  **Formula:**
-  > Battery bank (Ah) = (Daily load in Wh × Autonomy days) ÷ (System voltage × DoD × Battery efficiency)
-
-  **Variables:**
-  - **Daily load (Wh)**: sum of all load power × hours per day
-  - **Autonomy days**: how many cloudy/rainy days the system must sustain load without solar input
-    (Kenya: 2–3 days for highlands; 1–2 days for coast/drylands)
-  - **System voltage**: 12 V or 24 V
-  - **DoD**: 0.50 for lead-acid; 0.80 for LiFePO4
-  - **Battery efficiency**: 0.85 (lead-acid round-trip); 0.95 (LiFePO4)
-
-  ## Worked Example: Typical Kenyan Household
-
-  | Load | Power (W) | Hours/day | Daily energy (Wh) |
-  |------|-----------|-----------|-------------------|
-  | 4 × LED lights (5 W each) | 20 | 6 | 120 |
-  | Phone charging × 3 | 15 | 2 | 30 |
-  | Radio | 5 | 8 | 40 |
-  | 32" LED TV | 40 | 4 | 160 |
-  | Phone charger standby | 3 | 16 | 48 |
-  | **Total** | | | **398 Wh/day** |
-
-  Sizing for **24 V system, AGM lead-acid, 2 days autonomy**:
-
-  > Bank (Ah) = (398 × 2) ÷ (24 × 0.50 × 0.85)
-  > = 796 ÷ 10.2
-  > = **78 Ah @ 24 V**
-
-  Nearest standard battery: **100 Ah @ 24 V** (two × 12 V 100 Ah batteries in series).
-
-  This leaves a 28 % safety margin — good practice as batteries age and lose capacity.
-
-  ## Battery Wiring
-
-  ### Series (to increase voltage)
-  Connect positive terminal of Battery 1 to negative terminal of Battery 2.
-  Bank voltage doubles; Ah stays the same.
-  → 2 × 12 V 100 Ah in series = 24 V 100 Ah bank
-
-  ### Parallel (to increase Ah)
-  Connect positive to positive, negative to negative.
-  Bank voltage stays; Ah doubles.
-  → 2 × 12 V 100 Ah in parallel = 12 V 200 Ah bank
-
-  ### Series-Parallel (both)
-  → 4 × 12 V 100 Ah = 24 V 200 Ah bank
-  (First make two series pairs; then connect pairs in parallel.)
-
-  **Cable sizing to battery terminals:**
-  Use ≥ 35 mm² welding cable for battery interconnects if total current exceeds 50 A.
-  Undersized cables cause voltage drop, heat, and fire risk.
-
-  ## Maintenance
-
-  ### Flooded Lead-Acid Only — Monthly Checks
-  - Check electrolyte level: plates must be covered by ≥ 10 mm of electrolyte
-  - Top up with **distilled water only** (not tap water — dissolved minerals cause sulfation)
-  - Check SG with hydrometer; all cells should read within 0.030 of each other
-  - If one cell reads significantly lower: that cell may be failing — check for sulfation
-
-  ### Equalisation Charge
-  Every 1–3 months, apply a controlled overcharge (≈ 15.5–16.0 V for a 12 V bank)
-  for 2–4 hours to equalise cell voltages and dissolve sulfation crystals.
-  Only for FLA batteries — never equalise AGM or Gel (will damage them).
-
-  ### Temperature Compensation
-  Lead-acid capacity drops in cold weather and rises slightly in heat, but heat
-  accelerates degradation. Every 8.5 °C rise above 25 °C halves battery life.
-  In Nairobi highlands (cool nights): no concern.
-  In Mombasa/lowlands (hot): shade the battery bank; never enclose in a sealed box.
-
+  '
+content_md: "## Battery Chemistry Comparison\n\n| Chemistry | Types | Typical DoD | Cycle life | Cost\
+  \ (KSh/kWh) | Notes |\n|-----------|-------|------------|------------|----------------|-------|\n| Flooded\
+  \ Lead-Acid (FLA) | Wet/vented | 50 % | 300–500 @ 50 % DoD | 8 000–12 000 | Cheapest; requires topping\
+  \ up with distilled water; vents hydrogen |\n| AGM (Absorbent Glass Mat) | Sealed | 50–60 % | 400–600\
+  \ | 15 000–25 000 | Sealed; no maintenance; can mount at angle; more vibration-tolerant |\n| Gel | Sealed\
+  \ | 50–80 % | 500–1 000 | 20 000–35 000 | Deep cycle; very heat-tolerant; charge slowly (10 % C rate\
+  \ max) |\n| LiFePO4 (Lithium Iron Phosphate) | Sealed | 80–90 % | 2 000–5 000 | 35 000–60 000 | Expensive\
+  \ upfront; best lifetime cost; no memory effect; requires BMS |\n\n**For most Kenyan off-grid systems\
+  \ today: AGM or FLA.**\nLiFePO4 is becoming cost-competitive by 2025–2026 and is the long-term recommendation\n\
+  where upfront capital is available.\n\n## Key Parameters\n\n### Capacity (Ampere-hours, Ah)\nCapacity\
+  \ tells you how much charge a fully charged battery can deliver.\nA 100 Ah battery can supply:\n- 10\
+  \ A for 10 hours, OR\n- 5 A for 20 hours, OR\n- 1 A for 100 hours\n\nBut this is only true at the rated\
+  \ discharge rate.\n\n### Depth of Discharge (DoD)\nDoD is how deeply you drain a battery before recharging.\
+  \ Lead-acid batteries are\ndamaged by repeated deep discharge:\n\n| DoD | Lead-acid cycle life | LiFePO4\
+  \ cycle life |\n|-----|---------------------|-------------------|\n| 30 % | 1 200 cycles | 5 000+ |\n\
+  | 50 % | 500 cycles | 3 500 |\n| 80 % | 200 cycles | 2 000 |\n| 100 % | 50–100 cycles | 1 000 |\n\n\
+  **Rule of thumb for lead-acid: never discharge below 50 % SoC (DoD = 50 %).**\nDischarging to 80 % DoD\
+  \ regularly will destroy a lead-acid bank in under a year.\n\n### The C-Rating\nBatteries are rated\
+  \ at a specific discharge rate, expressed as a C-rating.\n\n- **C20** (standard): full capacity over\
+  \ 20 hours → discharge current = Ah ÷ 20\n- **C10**: discharge over 10 hours → higher current → *less*\
+  \ usable capacity\n- **C100**: very slow discharge → slightly *more* usable capacity\n\nA **100 Ah (C20)\
+  \ battery** at C10 rate (10 A discharge) typically delivers only\n**85–90 Ah** — not 100 Ah. At C5 (20\
+  \ A), it may deliver only **75 Ah**.\n\n**Practical implication:** if you run a 300 W load (25 A from\
+  \ a 12 V bank) for\nany significant time, size the bank assuming only 80 % of the rated Ah is available.\n\
+  \n## State of Charge (SoC) Monitoring\n\n### Open-Circuit Voltage (OCV) — most common method\nLet the\
+  \ battery rest for **at least 2 hours** after charging or discharging, then measure voltage:\n\n| SoC\
+  \ | 12 V FLA/AGM OCV | 12 V LiFePO4 OCV |\n|-----|------------------|------------------|\n| 100 % |\
+  \ 12.70–12.80 V | 13.4–13.6 V |\n| 75 % | 12.40 V | 13.2 V |\n| 50 % | 12.20 V | 13.1 V |\n| 25 % |\
+  \ 12.00 V | 12.8 V |\n| 0 % (empty) | 11.80 V | 12.0 V |\n\n**Never use under-load voltage** to estimate\
+  \ SoC — it reads falsely low due to\ninternal resistance voltage drop.\n\n### Hydrometer (FLA only)\n\
+  Measures specific gravity (SG) of the electrolyte:\n- Full charge: SG 1.265–1.280\n- Half charge: SG\
+  \ 1.190–1.210\n- Discharged: SG < 1.150 (sulfation risk — charge immediately)\n\nCorrect SG reading\
+  \ for temperature: +0.004 for every 10 °C above 25 °C.\n\n## Sizing the Battery Bank\n\n**Formula:**\n\
+  > Battery bank (Ah) = (Daily load in Wh × Autonomy days) ÷ (System voltage × DoD × Battery efficiency)\n\
+  \n**Variables:**\n- **Daily load (Wh)**: sum of all load power × hours per day\n- **Autonomy days**:\
+  \ how many cloudy/rainy days the system must sustain load without solar input\n  (Kenya: 2–3 days for\
+  \ highlands; 1–2 days for coast/drylands)\n- **System voltage**: 12 V or 24 V\n- **DoD**: 0.50 for lead-acid;\
+  \ 0.80 for LiFePO4\n- **Battery efficiency**: 0.85 (lead-acid round-trip); 0.95 (LiFePO4)\n\n## Worked\
+  \ Example: Typical Kenyan Household\n\n| Load | Power (W) | Hours/day | Daily energy (Wh) |\n|------|-----------|-----------|-------------------|\n\
+  | 4 × LED lights (5 W each) | 20 | 6 | 120 |\n| Phone charging × 3 | 15 | 2 | 30 |\n| Radio | 5 | 8\
+  \ | 40 |\n| 32\" LED TV | 40 | 4 | 160 |\n| Phone charger standby | 3 | 16 | 48 |\n| **Total** | | |\
+  \ **398 Wh/day** |\n\nSizing for **24 V system, AGM lead-acid, 2 days autonomy**:\n\n> Bank (Ah) = (398\
+  \ × 2) ÷ (24 × 0.50 × 0.85)\n> = 796 ÷ 10.2\n> = **78 Ah @ 24 V**\n\nNearest standard battery: **100\
+  \ Ah @ 24 V** (two × 12 V 100 Ah batteries in series).\n\nThis leaves a 28 % safety margin — good practice\
+  \ as batteries age and lose capacity.\n\n## Battery Wiring\n\n### Series (to increase voltage)\nConnect\
+  \ positive terminal of Battery 1 to negative terminal of Battery 2.\nBank voltage doubles; Ah stays\
+  \ the same.\n→ 2 × 12 V 100 Ah in series = 24 V 100 Ah bank\n\n### Parallel (to increase Ah)\nConnect\
+  \ positive to positive, negative to negative.\nBank voltage stays; Ah doubles.\n→ 2 × 12 V 100 Ah in\
+  \ parallel = 12 V 200 Ah bank\n\n### Series-Parallel (both)\n→ 4 × 12 V 100 Ah = 24 V 200 Ah bank\n\
+  (First make two series pairs; then connect pairs in parallel.)\n\n**Cable sizing to battery terminals:**\n\
+  Use ≥ 35 mm² welding cable for battery interconnects if total current exceeds 50 A.\nUndersized cables\
+  \ cause voltage drop, heat, and fire risk.\n\n## Maintenance\n\n### Flooded Lead-Acid Only — Monthly\
+  \ Checks\n- Check electrolyte level: plates must be covered by ≥ 10 mm of electrolyte\n- Top up with\
+  \ **distilled water only** (not tap water — dissolved minerals cause sulfation)\n- Check SG with hydrometer;\
+  \ all cells should read within 0.030 of each other\n- If one cell reads significantly lower: that cell\
+  \ may be failing — check for sulfation\n\n### Equalisation Charge\nEvery 1–3 months, apply a controlled\
+  \ overcharge (≈ 15.5–16.0 V for a 12 V bank)\nfor 2–4 hours to equalise cell voltages and dissolve sulfation\
+  \ crystals.\nOnly for FLA batteries — never equalise AGM or Gel (will damage them).\n\n### Temperature\
+  \ Compensation\nLead-acid capacity drops in cold weather and rises slightly in heat, but heat\naccelerates\
+  \ degradation. Every 8.5 °C rise above 25 °C halves battery life.\nIn Nairobi highlands (cool nights):\
+  \ no concern.\nIn Mombasa/lowlands (hot): shade the battery bank; never enclose in a sealed box.\n"
 exercises:
-  - id: se2-q1
-    type: MULTIPLE_CHOICE
-    prompt: "A household has a 200 Ah (C20) FLA battery bank at 12 V. The inverter is running a 500 W load. What is the discharge current and roughly how long before reaching 50% DoD?"
-    xp_reward: 40
-    options:
-      - text: "Current = 41.7 A; usable time ≈ 2.4 hours (using 80% of rated Ah at this high discharge rate)"
-        correct: true
-        explanation: "500 W ÷ 12 V = 41.7 A. At C5 rate (~41 A for a 200 Ah bank), effective capacity drops to ~80% = 160 Ah. 50% DoD = 80 Ah. Time = 80 ÷ 41.7 ≈ 1.9–2.4 hours depending on actual derating."
-      - text: "Current = 41.7 A; usable time = 4.8 hours (half of 200 Ah ÷ 41.7 A)"
-        correct: false
-        explanation: "This calculation ignores C-rate derating. At 41.7 A discharge from a 200 Ah bank (C4.8 rate), actual available capacity is only 75–80% of rated, not 100%."
-      - text: "Current = 500 A; the battery would be damaged immediately"
-        correct: false
-        explanation: "Ohm's law and power: P = V × I, so I = P ÷ V = 500 ÷ 12 = 41.7 A — not 500 A. The 500 W is the power, not the current."
-      - text: "Current = 41.7 A; time = 10 hours because 200 Ah ÷ 20 A = 10 hours"
-        correct: false
-        explanation: "The C20 rate for a 200 Ah bank is 10 A (200 ÷ 20), not 20 A. At the actual discharge rate of 41.7 A (C4.8), the C20 capacity figure does not apply directly."
-    correct_answer: "Current = 41.7 A; usable time ≈ 2.4 hours (using 80% of rated Ah at this high discharge rate)"
+- id: se2-q1
+  type: MULTIPLE_CHOICE
+  prompt: A household has a 200 Ah (C20) FLA battery bank at 12 V. The inverter is running a 500 W load.
+    What is the discharge current and roughly how long before reaching 50% DoD?
+  xp_reward: 40
+  options:
+  - id: a
+    text: Current = 41.7 A; usable time = 4.8 hours (half of 200 Ah ÷ 41.7 A)
+  - id: b
+    text: Current = 500 A; the battery would be damaged immediately
+  - id: c
+    text: Current = 41.7 A; time = 10 hours because 200 Ah ÷ 20 A = 10 hours
+  - id: d
+    text: Current = 41.7 A; usable time ≈ 2.4 hours (using 80% of rated Ah at this high discharge rate)
+  correct_answer: d
+  explanation: '500 W ÷ 12 V = 41.7 A. At C5 rate (~41 A for a 200 Ah bank), effective capacity drops
+    to ~80% = 160 Ah. 50% DoD = 80 Ah. Time = 80 ÷ 41.7 ≈ 1.9–2.4 hours depending on actual derating.
 
-  - id: se2-q2
-    type: FILL_BLANK
-    prompt: "A technician measures 12.05 V on a 12 V FLA battery that has been resting for 3 hours. This indicates the battery is at approximately ___% state of charge."
-    xp_reward: 25
-    correct_answer: "25"
-    explanation: "From the OCV table: 12.00 V = 25% SoC, 12.20 V = 50% SoC. 12.05 V falls just above the 25% mark — battery is nearly empty and should be recharged immediately to prevent sulfation damage."
 
-  - id: se2-q3
-    type: MATCH_PAIRS
-    prompt: "Match each battery term to its correct definition or value."
-    xp_reward: 25
-    pairs:
-      - left: DoD 50% (lead-acid)
-        right: Recommended maximum discharge — preserves 500 cycle life
-      - left: C20 rating
-        right: Capacity when discharged fully over 20 hours
-      - left: SG 1.150 (hydrometer)
-        right: Critically discharged FLA cell — charge immediately
-      - left: Equalisation charge
-        right: Controlled overcharge at 15.5 V to dissolve sulfation (FLA only)
-    correct_answer:
-      - DoD 50% (lead-acid)=Recommended maximum discharge — preserves 500 cycle life
-      - C20 rating=Capacity when discharged fully over 20 hours
-      - SG 1.150 (hydrometer)=Critically discharged FLA cell — charge immediately
-      - Equalisation charge=Controlled overcharge at 15.5 V to dissolve sulfation (FLA only)
+    Why the other options are wrong: This calculation ignores C-rate derating. At 41.7 A discharge from
+    a 200 Ah bank (C4.8 rate), actual available capacity is only 75–80% of rated, not 100%. Ohm''s law
+    and power: P = V × I, so I = P ÷ V = 500 ÷ 12 = 41.7 A — not 500 A. The 500 W is the power, not the
+    current. The C20 rate for a 200 Ah bank is 10 A (200 ÷ 20), not 20 A. At the actual discharge rate
+    of 41.7 A (C4.8), the C20 capacity figure does not apply directly.'
+- id: se2-q2
+  type: FILL_BLANK
+  prompt: A technician measures 12.05 V on a 12 V FLA battery that has been resting for 3 hours. This
+    indicates the battery is at approximately ___% state of charge.
+  xp_reward: 25
+  correct_answer: '25'
+  explanation: 'From the OCV table: 12.00 V = 25% SoC, 12.20 V = 50% SoC. 12.05 V falls just above the
+    25% mark — battery is nearly empty and should be recharged immediately to prevent sulfation damage.'
+- id: se2-q3
+  type: MATCH_PAIRS
+  prompt: Match each battery term to its correct definition or value.
+  xp_reward: 25
+  pairs:
+  - left:
+      id: l1
+      text: DoD 50% (lead-acid)
+    right:
+      id: r-a84df8
+      text: Recommended maximum discharge — preserves 500 cycle life
+  - left:
+      id: l2
+      text: C20 rating
+    right:
+      id: r-1b955e
+      text: Capacity when discharged fully over 20 hours
+  - left:
+      id: l3
+      text: SG 1.150 (hydrometer)
+    right:
+      id: r-e1caae
+      text: Critically discharged FLA cell — charge immediately
+  - left:
+      id: l4
+      text: Equalisation charge
+    right:
+      id: r-c31882
+      text: Controlled overcharge at 15.5 V to dissolve sulfation (FLA only)
+  correct_answer:
+  - l1=r-a84df8
+  - l2=r-1b955e
+  - l3=r-e1caae
+  - l4=r-c31882
