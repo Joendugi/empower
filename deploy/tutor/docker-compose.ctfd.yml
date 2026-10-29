@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  ctfd:
+    image: ctfd/ctfd:3.7.0
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - UPLOAD_FOLDER=/var/uploads
+      - DATABASE_URL=sqlite:////var/data/ctfd.db
+      - REDIS_URL=redis://ctfd-redis:6379
+      - SECRET_KEY=ctfd_secret_dev_key_2031
+      - REVERSE_PROXY=true
+    volumes:
+      - ./data/ctfd:/var/data
+      - ./data/uploads:/var/uploads
+    networks:
+      - cyberlearn-bridge
+    depends_on:
+      - ctfd-redis
+
+  ctfd-redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - ./data/redis:/data
+    networks:
+      - cyberlearn-bridge
+
+networks:
+  cyberlearn-bridge:
+    name: cyberlearn-bridge
+    driver: bridge
