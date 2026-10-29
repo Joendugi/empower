@@ -3,14 +3,12 @@ import {
   X, 
   ChevronLeft, 
   ChevronRight, 
-  Bookmark, 
   Download, 
   CheckCircle, 
   Menu, 
   Sun, 
   Moon, 
-  BookMarked,
-  Sparkles 
+  BookMarked
 } from 'lucide-react';
 import { useBookStore } from '@/store/bookStore';
 import { useLearnerStore } from '@/store/learnerStore';
@@ -34,7 +32,6 @@ export default function BookReaderModal({ book, onClose }: BookReaderModalProps)
 
   const [currentPage, setCurrentPage] = useState(1);
   const [showChapters, setShowChapters] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [xpAwarded, setXpAwarded] = useState(false);
 
   useEffect(() => {

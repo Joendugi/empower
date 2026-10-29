@@ -160,12 +160,16 @@ export interface Lesson {
   briefingSw?: string;
   /** Learner-facing week outline, one item per line. */
   outline?: string;
+  /** Detailed lesson notes in Markdown. Bundled lessons load theirs lazily (see lib/lessonNotes). */
+  contentMd?: string;
   weekNumber?: number;
   dayNumber?: number;
   estimatedMinutes: number;
   exercises: Exercise[];
   cdaccUnitId?: string;
   examDomain?: string;
+  narrativeFrame?: string;
+  storyEpisode?: string;
   xpTotal: number;
   contentVersion?: string;
   license?: string;
@@ -313,4 +317,76 @@ export interface BookShelf {
   reading: BookProgress[];
   savedBookIds: string[];
   offlineBookIds: string[];
+}
+
+// ── Civilization Narrative & Restoration ──────────────────
+export type RebuilderRankId =
+  | 'recruit'
+  | 'technician'
+  | 'engineer'
+  | 'specialist'
+  | 'architect'
+  | 'commander';
+
+export interface RebuilderRank {
+  id: RebuilderRankId;
+  minLevel: number;
+  minXp: number;
+  label: string;
+  labelSw: string;
+}
+
+export interface RestorationEventData {
+  nodeId: string;
+  nodeTitle: string;
+  nodeIcon: string;
+  xpEarned: number;
+  timestamp: string;
+}
+
+export interface StoryEpisodePanel {
+  icon: string;
+  text: string;
+  textSw: string;
+  imageUrl?: string;
+  audioUrl?: string;
+}
+
+export interface StoryEpisodeData {
+  id: string;
+  title: string;
+  titleSw: string;
+  panels: StoryEpisodePanel[];
+}
+
+export type CompassSector = 'power' | 'comms' | 'compute' | 'data' | 'applications';
+export type CompassHeading = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
+
+export interface CivilizationNode {
+  id: string;
+  title: string;
+  titleSw?: string;
+  description: string;
+  icon: string;
+  sector: CompassSector;
+  isRestored: boolean;
+  unlockedAt?: string;
+  /** SVG coordinates on the Civilization Map (0–1000 viewBox) */
+  x?: number;
+  y?: number;
+  /** Compass bearing in degrees (0 = North, 90 = East, 180 = South, 270 = West) */
+  bearing?: number;
+  /** Territory zone or region identifier e.g. "Nairobi Core", "Rift Valley Mesh" */
+  region?: string;
+  regionSw?: string;
+  /** Connected node IDs for transmission lines */
+  connections?: string[];
+  /** Associated skill path or lesson ID */
+  pathId?: string;
+}
+
+export interface CompassBearing {
+  degrees: number;
+  heading: CompassHeading;
+  distanceKm: number;
 }

@@ -1,4 +1,5 @@
 import type { Lesson, SkillPath } from '@cyberlearn/types';
+import { getStaffKey } from '@/lib/adminAccess';
 import { api } from '@/lib/api';
 import { isLocalToken } from '@/lib/localApi';
 import { useAnalyticsStore } from '@/store/analyticsStore';
@@ -37,8 +38,11 @@ export async function syncOfficeCloud() {
   }
 
   const moderation = useModerationStore.getState();
+  // Approvals only take effect on the server when the office staff key is sent.
+  const staffKey = getStaffKey();
   const remoteModeration = await api<ModerationSnapshot>('/moderation/sync', {
     method: 'PUT',
+    headers: staffKey ? { 'X-Staff-Key': staffKey } : undefined,
     body: JSON.stringify({
       applications: moderation.applications,
       proposals: moderation.proposals,

@@ -1,7 +1,7 @@
-import { useEffect, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import BrandMark from '@/components/ui/BrandMark';
-import { ensureOwnerAccount, isStaff } from '@/lib/localAccounts';
+import { isStaff } from '@/lib/localAccounts';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useT } from '@/i18n';
 
@@ -10,10 +10,6 @@ export default function AdminGate({ children }: { children: ReactNode }) {
   const email = useLearnerStore((state) => state.email);
   const token = useLearnerStore((state) => state.token);
   const valid = useLearnerStore((state) => Boolean(state.token && !state.isGuest && state.isSessionValid()));
-
-  useEffect(() => {
-    void ensureOwnerAccount();
-  }, []);
 
   if (valid && token && isStaff(email)) {
     return <>{children}</>;

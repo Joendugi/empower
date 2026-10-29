@@ -28,6 +28,25 @@ import {
 } from './cyberLessons2';
 import { tradeLessons, tradePaths } from './trades/index';
 import {
+  rebuild000_1_1,
+  rebuild000_1_2,
+  rebuild000_1_3,
+  rebuild000_2_1,
+  rebuild000_2_2,
+  rebuild000_2_3,
+  rebuild000_3_1,
+  rebuild000_3_2,
+  rebuild000_3_3,
+  rebuild000_3_4,
+  rebuild000_3_5,
+  rebuild000_4_1,
+  rebuild000_4_2,
+  rebuild000_4_3,
+  rebuild000_4_4,
+  rebuild000_capstone,
+  rebuildProtocolLessons,
+} from './rebuildLessons';
+import {
   tvetDatabaseLessons,
   tvetElectronicsLessons,
   tvetNetSemesterLessons,
@@ -82,6 +101,7 @@ export const allLessons: Lesson[] = [
   ...cyberProgramLessons,
   cyberLawKenya,
   cyberLawKenya2,
+  ...rebuildProtocolLessons,
   ...tradeLessons,
 ];
 
@@ -397,7 +417,68 @@ export const cybersecurityPath: SkillPath = {
   ],
 };
 
-export const builtInSkillPaths: SkillPath[] = [tvetIctPath, cybersecurityPath, ...tradePaths];
+export const theRebuildProtocolPath: SkillPath = {
+  id: 'the-rebuild-protocol',
+  track: 'cybersecurity',
+  contentVersion: '1',
+  title: 'The Rebuild Protocol',
+  titleSw: 'Itifaki ya Ujenzi Mpya',
+  description:
+    'REBUILD-000: The foundational module for all CyberLearn learners. Set in the world of The Blackout — a civilisation-scale cyberattack on East Africa in 2031. Learn how digital infrastructure works, how it fails, and how to defend yourself. No prerequisites. Awards the Rebuilder Initiate badge.',
+  descriptionSw:
+    'Moduli ya msingi kwa wanafunzi wote wa CyberLearn. Hadithi ya Giza Kuu — shambulio la mtandao lililoathiri Afrika Mashariki mwaka 2031. Jifunze miundombinu ya kidijitali na jinsi ya kujilindia. Hakuna mahitaji ya awali.',
+  certificationTarget: 'Rebuilder Initiate Badge · Digital Citizenship',
+  nodes: [
+    nodeFromLessons({
+      id: 'rebuild-unit-1',
+      title: 'The World Before',
+      titleSw: 'Ulimwengu wa Zamani',
+      description: 'Digital infrastructure layers, network dependencies, and lessons from real-world blackouts.',
+      icon: '🌍',
+      prerequisites: [],
+      lessons: [rebuild000_1_1, rebuild000_1_2, rebuild000_1_3],
+    }),
+    nodeFromLessons({
+      id: 'rebuild-unit-2',
+      title: 'The Blackout',
+      titleSw: 'Giza Kuu',
+      description: 'How cyberattacks unfold across four phases, the Nakuru hospital blackout, and why defenders matter.',
+      icon: '⚡',
+      prerequisites: ['rebuild-unit-1'],
+      lessons: [rebuild000_2_1, rebuild000_2_2, rebuild000_2_3],
+    }),
+    nodeFromLessons({
+      id: 'rebuild-unit-3',
+      title: 'Digital Self-Defence',
+      titleSw: 'Ulinzi wa Kidijitali',
+      description: 'The five defences: passwords, phishing triage, software patching, 3-2-1 backups, and two-factor authentication.',
+      icon: '🛡️',
+      prerequisites: ['rebuild-unit-2'],
+      lessons: [rebuild000_3_1, rebuild000_3_2, rebuild000_3_3, rebuild000_3_4, rebuild000_3_5],
+    }),
+    nodeFromLessons({
+      id: 'rebuild-unit-4',
+      title: 'Joining the Corps',
+      titleSw: 'Kujiunga na Kikosi',
+      description: 'Corps ethics under CMCA 2018, reading the Civilization Map, setting study targets, and first deployment.',
+      icon: '🎖️',
+      prerequisites: ['rebuild-unit-3'],
+      lessons: [rebuild000_4_1, rebuild000_4_2, rebuild000_4_3, rebuild000_4_4],
+    }),
+    nodeFromLessons({
+      id: 'rebuild-capstone',
+      title: 'The Initiate Assessment',
+      titleSw: 'Tathmini ya Mwanajeshi Mpya',
+      description: '15-question comprehensive evaluation. Score 70%+ to earn the Rebuilder Initiate badge.',
+      icon: '🏆',
+      prerequisites: ['rebuild-unit-4'],
+      lessons: [rebuild000_capstone],
+    }),
+  ],
+};
+
+export const builtInSkillPaths: SkillPath[] = [theRebuildProtocolPath, tvetIctPath, cybersecurityPath, ...tradePaths];
+
 
 export function getNextLessonId(lessonId: string): string | undefined {
   for (const path of getSkillPaths()) {

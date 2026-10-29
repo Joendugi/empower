@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CheckSquare, Square, Loader2 } from 'lucide-react';
-import { useLearnerStore } from '@/store/learnerStore';
+import { getStaffKey } from '@/lib/adminAccess';
+import { api, ApiError } from '@/lib/api';
 
 interface Criterion {
   id: string;
@@ -18,18 +19,9 @@ interface Rubric {
   createdAt: string;
 }
 
-async function apiFetch<T>(url: string, init?: RequestInit): Promise<T> {
-  const token = useLearnerStore.getState().token;
-  const res = await fetch(`http://127.0.0.1:8000${url}`, {
-    ...init,
-    headers: {
-      'Content-Type': 'application/json',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...(init?.headers ?? {}),
-    },
-  });
-  if (!res.ok) throw new Error(`${res.status}`);
-  return res.json() as Promise<T>;
+async function apiFetch<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const staffKey = getStaffKey();
+  return api<T>(path, { ...init, headers: staffKey ? { 'X-Staff-Key': staffKey } : undefined });
 }
 
 export default function RubricSignOff({
@@ -50,7 +42,7 @@ export default function RubricSignOff({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    apiFetch<Rubric[]>('/api/v1/rubrics')
+    apiFetch<Rubric[]>('/rubrics')
       .then((items) => {
         const found = items.find((r) => r.id === rubricId) ?? null;
         setRubric(found);
@@ -73,7 +65,7 @@ export default function RubricSignOff({
     setError(null);
     try {
       const res = await apiFetch<{ passed: boolean }>(
-        `/api/v1/rubrics/${rubricId}/signoff`,
+        `/rubrics/${rubricId}/signoff`,
         {
           method: 'POST',
           body: JSON.stringify({
@@ -84,8 +76,8 @@ export default function RubricSignOff({
         },
       );
       setResult(res);
-    } catch {
-      setError('Failed to submit sign-off');
+    } catch (err) {
+      setError(err instanceof ApiError && err.status < 500 ? err.message : 'Failed to submit sign-off');
     } finally {
       setSubmitting(false);
     }

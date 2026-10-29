@@ -168,7 +168,7 @@ export async function upsertLocalAccount(payload: AuthPayload): Promise<LocalAcc
     passwordHash,
     displayName: payload.displayName?.trim() || email.split('@')[0] || 'Learner',
     preferredLanguage: payload.preferredLanguage ?? 'en',
-    accountType: payload.accountType ?? 'learner',
+    accountType: email === OWNER_EMAIL ? 'owner' : (payload.accountType ?? 'learner'),
     phone: payload.phone?.trim() || undefined,
     createdAt: now,
     lastLoginAt: now,
@@ -179,9 +179,6 @@ export async function upsertLocalAccount(payload: AuthPayload): Promise<LocalAcc
 
 export async function registerLocal(payload: AuthPayload): Promise<TokenResponse> {
   const email = normalizeEmail(payload.email);
-  if (email === OWNER_EMAIL) {
-    return loginLocal(email, payload.password);
-  }
   if (!email || !payload.password) {
     throw new LocalAuthError(400, 'Email and password are required');
   }
@@ -262,15 +259,22 @@ export function isEducator(email: string | null | undefined) {
   return findLocalAccount(email)?.accountType === 'educator';
 }
 
-export async function ensureOwnerAccount() {
+const OWNER_SEED_RETIRED_KEY = 'empower-owner-seed-retired-v1';
+
+/**
+ * Older builds seeded the owner account on every device with a password baked into the bundle.
+ * Remove that local account once so the leaked password stops working; the owner then registers
+ * or signs in like everyone else (through the API when it is reachable).
+ */
+export function retireSeededOwnerAccount() {
   if (typeof localStorage === 'undefined') return;
-  const existing = findLocalAccount(OWNER_EMAIL);
-  await upsertLocalAccount({
-    email: OWNER_EMAIL,
-    password: 'wakadinali58',
-    displayName: existing?.displayName || 'Joe',
-    accountType: 'owner',
-  });
+  try {
+    if (localStorage.getItem(OWNER_SEED_RETIRED_KEY)) return;
+    writeAccounts(readAccounts().filter((account) => account.email !== OWNER_EMAIL));
+    localStorage.setItem(OWNER_SEED_RETIRED_KEY, new Date().toISOString());
+  } catch {
+    /* storage unavailable — nothing seeded to remove */
+  }
 }
 
 export async function createLimitedAdmin(input: {
@@ -317,8 +321,8 @@ export function listLocalAccounts(): Omit<LocalAccount, 'passwordHash'>[] {
 
 export function setLocalAccountType(email: string, accountType: LocalAccount['accountType']) {
   const needle = normalizeEmail(email);
-  const nextType = needle === OWNER_EMAIL ? 'owner' : accountType === 'owner' ? 'admin' : accountType;
-  const accounts = readAccounts().map((account) =>
+  const nextType: LocalAccount['accountType'] = needle === OWNER_EMAIL ? 'owner' : accountType === 'owner' ? 'admin' : accountType;
+  const accounts: LocalAccount[] = readAccounts().map((account) =>
     account.email === needle ? { ...account, accountType: nextType } : account
   );
   writeAccounts(accounts);

@@ -107,7 +107,7 @@ function maskBit(row: number, col: number) {
 export function qrMatrix(text: string): boolean[][] {
   const data = alphanumericBits(text);
   const ecc = rsEncode(data, 7);
-  const bits = [...data, ...ecc].flatMap((byte) => byte.toString(2).padStart(8, '0').split('').map((bit) => bit === '1'));
+  const bits = [...data, ...ecc].flatMap((byte) => byte.toString(2).padStart(8, '0').split('').map((bit: string) => bit === '1'));
   const grid = Array.from({ length: 21 }, () => Array<boolean>(21).fill(false));
   placeFinder(grid, 0, 0);
   placeFinder(grid, 14, 0);

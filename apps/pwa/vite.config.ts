@@ -29,6 +29,9 @@ export default defineConfig({
       workbox: {
         cacheId: `empower-${buildId}`,
         cleanupOutdatedCaches: true,
+        // The main chunk carries the bundled catalogue (~2 MB); past Workbox's 2 MiB default it would
+        // silently drop out of the offline precache.
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         skipWaiting: true,
         clientsClaim: true,
         navigateFallbackDenylist: [/^\/api\//, /^\/health/, /^\/ready/, /^\/office/],

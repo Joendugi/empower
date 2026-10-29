@@ -1,6 +1,7 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { clsx } from 'clsx';
+import { Map, LayoutGrid } from 'lucide-react';
 import type { ProgrammeTrack } from '@cyberlearn/types';
 import { getLesson, getSkillPaths } from '@/content';
 import CourseCard from '@/components/courses/CourseCard';
@@ -8,6 +9,7 @@ import AppHeader from '@/components/ui/AppHeader';
 import SearchField from '@/components/ui/SearchField';
 import BottomNav from '@/components/ui/BottomNav';
 import XPBar from '@/components/gamification/XPBar';
+import { CivilizationMapView } from '@/components/narrative/CivilizationMapView';
 import { programmeProgress } from '@/lib/progress';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useIsEducator } from '@/lib/roles';
@@ -64,6 +66,8 @@ export default function SkillTreePage() {
 
   const openCourse = (pathId: string) => navigate(`/learn/course/${pathId}`);
 
+  const [viewMode, setViewMode] = useState<'catalogue' | 'map'>('catalogue');
+
   return (
     <div className="min-h-dvh bg-primary-dark pb-24 text-white">
       <AppHeader />
@@ -71,13 +75,62 @@ export default function SkillTreePage() {
         <div className="mb-5">
           <XPBar totalXp={xp} />
         </div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('catalogueKicker')}</p>
-        <h1 className="text-2xl sm:text-3xl font-bold mt-1">{t('chooseCourseTitle')}</h1>
-        <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">
-          {teaching
-            ? 'Browse programmes to grade work and attach library notes. You do not start learner lessons from here.'
-            : t('chooseCourseBody')}
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{t('catalogueKicker')}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold mt-1">
+              {viewMode === 'map'
+                ? (language === 'sw' ? 'Ramani ya Miundombinu' : 'Civilization Map Grid')
+                : t('chooseCourseTitle')}
+            </h1>
+          </div>
+
+          {/* View Mode Toggle Button */}
+          <div className="flex items-center gap-1 bg-surface-dark border border-surface-light/40 p-1 rounded-xl shrink-0 self-start sm:self-auto">
+            <button
+              type="button"
+              onClick={() => setViewMode('catalogue')}
+              className={clsx(
+                'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all',
+                viewMode === 'catalogue' ? 'bg-accent text-primary font-bold shadow-sm' : 'text-muted hover:text-white'
+              )}
+            >
+              <LayoutGrid className="w-3.5 h-3.5" />
+              <span>{language === 'sw' ? 'Orodha' : 'Catalogue'}</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode('map')}
+              className={clsx(
+                'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all',
+                viewMode === 'map' ? 'bg-emerald-500 text-black font-bold shadow-sm' : 'text-muted hover:text-white'
+              )}
+            >
+              <Map className="w-3.5 h-3.5" />
+              <span>{language === 'sw' ? 'Ramani & Dira' : 'Civilization Map'}</span>
+            </button>
+          </div>
+        </div>
+
+        {viewMode === 'map' ? (
+          <div className="mt-6">
+            <CivilizationMapView
+              completedLessonIds={completedLessonIds}
+              language={language}
+              onOpenNode={(node) => {
+                if (node.pathId) {
+                  openCourse(node.pathId);
+                }
+              }}
+            />
+          </div>
+        ) : (
+          <>
+            <p className="text-sm text-muted mt-2 max-w-2xl leading-relaxed">
+              {teaching
+                ? 'Browse programmes to grade work and attach library notes. You do not start learner lessons from here.'
+                : t('chooseCourseBody')}
+            </p>
         {teaching && (
           <Link to="/educator" className="btn-primary mt-4 inline-flex text-sm">
             Open teaching desk
@@ -160,6 +213,8 @@ export default function SkillTreePage() {
             </ul>
           )}
         </section>
+        </>
+        )}
       </main>
       <BottomNav />
     </div>

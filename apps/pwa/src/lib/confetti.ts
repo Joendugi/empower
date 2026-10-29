@@ -23,13 +23,13 @@ export function triggerLevelUpCelebration() {
       colors: ['#e85d04', '#ca8a04', '#f5f5f4', '#dc2626', '#f48c06'],
     };
 
-    function fire(particleRatio: number, opts: confetti.Options) {
+    const fire = (particleRatio: number, opts: confetti.Options) => {
       confetti({
         ...defaults,
         ...opts,
         particleCount: Math.floor(count * particleRatio),
       });
-    }
+    };
 
     fire(0.25, { spread: 26, startVelocity: 55 });
     fire(0.2, { spread: 60 });

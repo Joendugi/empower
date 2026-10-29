@@ -11,15 +11,17 @@ import {
 } from '@/store/educatorStore';
 import CatalogueEditor from '@/components/campus/CatalogueEditor';
 import CampusDesk from '@/components/educator/CampusDesk';
+import DraftReviewPanel from '@/components/educator/DraftReviewPanel';
 import { useLearnerStore } from '@/store/learnerStore';
 
 const field =
   'w-full rounded-xl bg-primary-dark border border-surface-light px-3 py-3 text-white placeholder:text-muted';
 
-type DeskTab = 'grade' | 'notes' | 'methods' | 'quality' | 'catalogue' | 'campus';
+type DeskTab = 'grade' | 'notes' | 'methods' | 'quality' | 'catalogue' | 'campus' | 'drafts';
 
 const tabs: { id: DeskTab; label: string }[] = [
   { id: 'campus', label: 'Campus' },
+  { id: 'drafts', label: 'AI Drafts' },
   { id: 'grade', label: 'Grade work' },
   { id: 'notes', label: 'Library notes' },
   { id: 'methods', label: 'Teaching methods' },
@@ -36,7 +38,7 @@ function lines(value: string) {
 
 export default function TeachingDesk() {
   const [params, setParams] = useSearchParams();
-  const tab = (['grade', 'notes', 'methods', 'quality', 'catalogue', 'campus'] as const).includes(params.get('tab') as DeskTab)
+  const tab = (['grade', 'notes', 'methods', 'quality', 'catalogue', 'campus', 'drafts'] as const).includes(params.get('tab') as DeskTab)
     ? (params.get('tab') as DeskTab)
     : 'campus';
   const programmeFilter = params.get('programme') ?? '';
@@ -155,6 +157,8 @@ export default function TeachingDesk() {
       </div>
 
       {tab === 'campus' && <CampusDesk educatorEmail={email} educatorName={displayName} />}
+
+      {tab === 'drafts' && <DraftReviewPanel />}
 
       {tab === 'grade' && (
         <div className="space-y-4">

@@ -145,6 +145,70 @@ export function draftChecks(draft: CourseDraft) {
   };
 }
 
+export interface PedagogicalQualityMetrics {
+  interactiveness: number;
+  details: number;
+  easeOfUnderstanding: number;
+  multimedia: number;
+  overallScore: number;
+}
+
+export function evaluatePedagogicalQuality(draft: CourseDraft): PedagogicalQualityMetrics {
+  let totalQuizzes = 0;
+  let totalWords = 0;
+  let hasVideoCount = 0;
+  const quizTypes = new Set<string>();
+
+  for (const week of draft.weeks) {
+    const readyQuizzes = week.questions.filter(quizIsReady);
+    totalQuizzes += readyQuizzes.length;
+    for (const q of readyQuizzes) quizTypes.add(q.type);
+    totalWords += wordCount(week.content);
+    if (week.videoUrl.trim()) hasVideoCount++;
+  }
+
+  const avgQuizzesPerWeek = totalQuizzes / Math.max(1, draft.weeks.length);
+  const avgWordsPerWeek = totalWords / Math.max(1, draft.weeks.length);
+
+  // 1. Interactiveness (0-100)
+  const interactiveness = Math.min(
+    100,
+    Math.round((avgQuizzesPerWeek / 3.0) * 60 + (quizTypes.size / 2.0) * 40)
+  );
+
+  // 2. Technical Rigor & Details (0-100)
+  let details = 0;
+  if (avgWordsPerWeek >= 120) details += 50;
+  else if (avgWordsPerWeek >= 60) details += 30;
+  if (draft.certificationTarget.trim()) details += 25;
+  if (draft.description.trim().length >= 40) details += 25;
+  details = Math.min(100, details);
+
+  // 3. Ease of Understanding & Readability (0-100)
+  let ease = 70;
+  if (draft.titleSw.trim()) ease += 30;
+  const easeOfUnderstanding = Math.min(100, ease);
+
+  // 4. Illustrations & Multimedia (0-100)
+  const multimedia = Math.min(
+    100,
+    Math.round((hasVideoCount / Math.max(1, draft.weeks.length)) * 100)
+  );
+
+  // Overall Score
+  const overallScore = Math.round(
+    0.3 * interactiveness + 0.3 * details + 0.2 * easeOfUnderstanding + 0.2 * multimedia
+  );
+
+  return {
+    interactiveness,
+    details,
+    easeOfUnderstanding,
+    multimedia,
+    overallScore,
+  };
+}
+
 function quizToExercise(weekId: string, quiz: QuizDraft, index: number): Exercise | null {
   if (!quizIsReady(quiz)) return null;
   if (quiz.type === 'FILL_BLANK') {

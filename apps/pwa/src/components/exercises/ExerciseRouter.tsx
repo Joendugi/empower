@@ -10,6 +10,7 @@ import DiagramLabel from './DiagramLabel';
 import MediaPrompt from './MediaPrompt';
 import PracticalCapture from './PracticalCapture';
 import MediaBlock from '@/components/media/MediaBlock';
+import { CTFLabRunner } from './CTFLabRunner';
 
 interface ExerciseRouterProps {
   exercise: Exercise;
@@ -29,6 +30,23 @@ export default function ExerciseRouter({ exercise, lessonId, onAnswer }: Exercis
       case 'FILL_BLANK':
         return <FillBlank {...props} />;
       case 'TERMINAL_SIM':
+        if (exercise.id.startsWith('ctf-') || exercise.prompt.toLowerCase().includes('flag{')) {
+          return (
+            <CTFLabRunner
+              challenge={{
+                id: exercise.id,
+                title: exercise.prompt.slice(0, 40),
+                category: 'Cyber Security Lab',
+                difficulty: 'Intermediate',
+                points: exercise.xpReward,
+                description: exercise.prompt,
+              }}
+              onSolve={(flag) => {
+                void onAnswer(flag);
+              }}
+            />
+          );
+        }
         return <TerminalSim {...props} />;
       case 'DRAG_DROP':
         return <DragDrop {...props} />;

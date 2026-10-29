@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Plus, Trash2, ClipboardCheck } from 'lucide-react';
-import { useLearnerStore } from '@/store/learnerStore';
+import { getStaffKey } from '@/lib/adminAccess';
+import { api, ApiError } from '@/lib/api';
 
 interface Criterion {
   id: string;
@@ -9,18 +10,9 @@ interface Criterion {
   required: boolean;
 }
 
-async function apiFetch<T>(url: string, init?: RequestInit): Promise<T> {
-  const token = useLearnerStore.getState().token;
-  const res = await fetch(`http://127.0.0.1:8000${url}`, {
-    ...init,
-    headers: {
-      'Content-Type': 'application/json',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...(init?.headers ?? {}),
-    },
-  });
-  if (!res.ok) throw new Error(`${res.status}`);
-  return res.json() as Promise<T>;
+async function apiFetch<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const staffKey = getStaffKey();
+  return api<T>(path, { ...init, headers: staffKey ? { 'X-Staff-Key': staffKey } : undefined });
 }
 
 const field =
@@ -61,14 +53,14 @@ export default function RubricBuilder({
     setSaving(true);
     setError(null);
     try {
-      const result = await apiFetch<{ id: string }>('/api/v1/rubrics', {
+      const result = await apiFetch<{ id: string }>('/rubrics', {
         method: 'POST',
         body: JSON.stringify({ lessonId, title: title.trim(), criteria }),
       });
       setSaved(true);
       onCreated?.(result.id);
-    } catch {
-      setError('Failed to save rubric — check your connection.');
+    } catch (err) {
+      setError(err instanceof ApiError && err.status === 403 ? err.message : 'Failed to save rubric — check your connection.');
     } finally {
       setSaving(false);
     }

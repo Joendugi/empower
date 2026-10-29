@@ -1,4 +1,4 @@
-import { BookOpen, CheckCircle, Download, Star } from 'lucide-react';
+import { CheckCircle, Star } from 'lucide-react';
 import type { Book, BookProgress } from '@cyberlearn/types';
 
 interface BookCardProps {

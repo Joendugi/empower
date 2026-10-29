@@ -151,3 +151,58 @@ export function playTapClick() {
   osc.start(now);
   osc.stop(now + 0.035);
 }
+
+/** Compass radar contact ping */
+export function playRadarBeep() {
+  if (!isSoundEnabled()) return;
+  triggerHaptic('light');
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  const now = ctx.currentTime;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.type = 'triangle';
+  osc.frequency.setValueAtTime(1400, now);
+  osc.frequency.exponentialRampToValueAtTime(1800, now + 0.08);
+
+  gain.gain.setValueAtTime(0.08, now);
+  gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start(now);
+  osc.stop(now + 0.1);
+}
+
+/** Civilization infrastructure grid power-up restoration sound */
+export function playGridRestored() {
+  if (!isSoundEnabled()) return;
+  triggerHaptic('success');
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  const now = ctx.currentTime;
+  const chords = [220, 277.18, 329.63, 440, 554.37, 659.25]; // A major 7th triumph
+
+  chords.forEach((freq, idx) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now + idx * 0.05);
+
+    gain.gain.setValueAtTime(0, now + idx * 0.05);
+    gain.gain.linearRampToValueAtTime(0.12, now + idx * 0.05 + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.05 + 0.9);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now + idx * 0.05);
+    osc.stop(now + idx * 0.05 + 0.95);
+  });
+}
+

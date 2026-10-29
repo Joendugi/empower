@@ -8,6 +8,14 @@ const GRANT_MS = 4 * 60 * 60 * 1000;
 
 export const OFFICE_PATH = '/office';
 
+// Kept in memory only (never storage) so server calls can prove staff access; lost on reload.
+let unlockedStaffKey: string | null = null;
+
+/** Staff key for the X-Staff-Key header while the office grant is active, else null. */
+export function getStaffKey() {
+  return unlockedStaffKey && hasAdminGrant() ? unlockedStaffKey : null;
+}
+
 export async function hashSecret(value: string) {
   const data = new TextEncoder().encode(`empower-staff-v1:${value.trim()}`);
   const digest = await crypto.subtle.digest('SHA-256', data);
@@ -27,6 +35,7 @@ export async function expectedStaffHash() {
 }
 
 export function clearAdminGrant() {
+  unlockedStaffKey = null;
   if (typeof sessionStorage === 'undefined') return;
   sessionStorage.removeItem(GRANT_KEY);
   sessionStorage.removeItem('empower-admin');
@@ -82,6 +91,7 @@ export async function tryStaffUnlock(passphrase: string, email: string) {
     return 'denied' as const;
   }
   sessionStorage.removeItem(FAIL_KEY);
+  unlockedStaffKey = passphrase.trim();
   sessionStorage.setItem(
     GRANT_KEY,
     JSON.stringify({

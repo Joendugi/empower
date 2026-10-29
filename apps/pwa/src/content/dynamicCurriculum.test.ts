@@ -37,6 +37,7 @@ describe('Dynamic Curriculum System', () => {
           id: 'cloud-node-1',
           title: 'Cloud Node 1',
           lessonIds: ['cloud-lesson-1'],
+          badgeIds: [],
           prerequisites: [],
         },
       ],
@@ -57,6 +58,7 @@ describe('Dynamic Curriculum System', () => {
       courseId: 'cybersecurity',
       title: 'Dynamic Vulnerability Lab',
       estimatedMinutes: 10,
+      xpTotal: 50,
       exercises: [
         {
           id: 'ex-1',

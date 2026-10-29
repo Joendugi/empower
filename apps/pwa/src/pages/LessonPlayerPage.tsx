@@ -24,14 +24,18 @@ import { useT } from '@/i18n';
 import type { GradeResult } from '@/components/exercises/types';
 import ScenarioLabCard from '@/components/lessons/ScenarioLabCard';
 import WeekPreview from '@/components/curriculum/WeekPreview';
+import LessonNotes from '@/components/curriculum/LessonNotes';
 import { triggerConfettiBurst, triggerLevelUpCelebration } from '@/lib/confetti';
 import { playSuccessChime, playIncorrectChime, playLevelUpFanfare } from '@/lib/soundEffects';
 import DiscussionBoard from '@/components/curriculum/DiscussionBoard';
+import RestorationEvent from '@/components/narrative/RestorationEvent';
+import StoryEpisode from '@/components/narrative/StoryEpisode';
 
 export default function LessonPlayerPage() {
   const { lessonId } = useParams<{ lessonId: string }>();
   const t = useT();
   const language = useLearnerStore((s) => s.language);
+  const narrativeTheme = useLearnerStore((s) => s.narrativeTheme ?? true);
   const customLessons = useCurriculumStore((s) => s.lessons);
   const cachedLessons = useLibraryStore((s) => s.lessons);
   const [remoteLesson, setRemoteLesson] = useState<Lesson | null>(null);
@@ -220,16 +224,48 @@ export default function LessonPlayerPage() {
                     <BookOpen className="w-4 h-4" />
                     <h2>{t('studyNotes')}</h2>
                   </div>
-                  {briefing
-                    ? briefing.split(/\n\n+/).map((para, index) => (
-                        <p key={index} className="text-white/90 leading-relaxed text-[15px]">
-                          {para}
-                        </p>
-                      ))
-                    : null}
+                  {(() => {
+                    const MISSION_PREFIX = 'MISSION BRIEFING:';
+                    if (narrativeTheme && briefing?.startsWith(MISSION_PREFIX)) {
+                      const afterPrefix = briefing.slice(MISSION_PREFIX.length);
+                      const splitIdx = afterPrefix.indexOf('\n\n');
+                      const missionText =
+                        splitIdx === -1 ? afterPrefix.trim() : afterPrefix.slice(0, splitIdx).trim();
+                      const restText =
+                        splitIdx === -1 ? '' : afterPrefix.slice(splitIdx).trim();
+                      return (
+                        <>
+                          <div className="border border-amber-500/40 bg-amber-500/5 rounded-xl p-4 mb-4">
+                            <p className="text-[10px] uppercase tracking-wider font-bold text-amber-500 mb-2">
+                              🎯 Mission Briefing
+                            </p>
+                            <p className="text-amber-100 text-[15px] leading-relaxed italic">
+                              {missionText}
+                            </p>
+                          </div>
+                          {restText
+                            ? restText.split(/\n\n+/).map((para, index) => (
+                                <p key={index} className="text-white/90 leading-relaxed text-[15px]">
+                                  {para}
+                                </p>
+                              ))
+                            : null}
+                        </>
+                      );
+                    }
+                    return briefing
+                      ? briefing.split(/\n\n+/).map((para, index) => (
+                          <p key={index} className="text-white/90 leading-relaxed text-[15px]">
+                            {para}
+                          </p>
+                        ))
+                      : null;
+                  })()}
                   <MediaBlock assets={lessonMedia} onComplete={() => setMediaReady(true)} />
                 </>
               )}
+
+              <LessonNotes lesson={lesson} />
 
               <ScenarioLabCard lesson={lesson} />
 
@@ -275,6 +311,15 @@ export default function LessonPlayerPage() {
   );
 }
 
+/** Map from the last lessonId in each rebuild node to its story episode and node info. */
+const REBUILD_NODE_COMPLETIONS: Record<string, { nodeTitle: string; nodeIcon: string; storyEpisodeId?: string }> = {
+  'rebuild-000-1-3': { nodeTitle: 'The World Before',    nodeIcon: '🌍', storyEpisodeId: 'ep-0-the-blackout' },
+  'rebuild-000-2-3': { nodeTitle: 'The Blackout',        nodeIcon: '⚡', storyEpisodeId: 'ep-1-first-signal' },
+  'rebuild-000-3-5': { nodeTitle: 'Digital Self-Defence', nodeIcon: '🛡️' },
+  'rebuild-000-4-4': { nodeTitle: 'Joining the Corps',    nodeIcon: '🎖️' },
+  'rebuild-000-capstone': { nodeTitle: 'The Initiate Assessment', nodeIcon: '🏆' },
+};
+
 function LessonComplete({
   xpEarned,
   incorrectCount,
@@ -286,9 +331,42 @@ function LessonComplete({
 }) {
   const t = useT();
   const navigate = useNavigate();
+  const narrativeTheme = useLearnerStore((s) => s.narrativeTheme ?? true);
   const nextId = getNextLessonId(lesson.id);
   const totalQuestions = Math.max(1, lesson.exercises.length);
   const accuracy = Math.max(0, Math.round(((totalQuestions - incorrectCount) / totalQuestions) * 100));
+
+  const nodeCompletion = REBUILD_NODE_COMPLETIONS[lesson.id];
+  const [showRestoration, setShowRestoration] = useState(Boolean(nodeCompletion && narrativeTheme));
+  const [showEpisode, setShowEpisode] = useState(false);
+
+  const handleRestorationDismiss = () => {
+    setShowRestoration(false);
+    if (nodeCompletion?.storyEpisodeId) {
+      setShowEpisode(true);
+    }
+  };
+
+  if (showRestoration && nodeCompletion) {
+    return (
+      <RestorationEvent
+        nodeTitle={nodeCompletion.nodeTitle}
+        nodeIcon={nodeCompletion.nodeIcon}
+        xpEarned={xpEarned}
+        onDismiss={handleRestorationDismiss}
+      />
+    );
+  }
+
+  if (showEpisode && nodeCompletion?.storyEpisodeId) {
+    return (
+      <StoryEpisode
+        episodeId={nodeCompletion.storyEpisodeId}
+        onComplete={() => setShowEpisode(false)}
+        onSkip={() => setShowEpisode(false)}
+      />
+    );
+  }
 
   return (
     <div className="min-h-dvh bg-primary-dark flex flex-col items-center justify-center px-6 py-12 text-center">

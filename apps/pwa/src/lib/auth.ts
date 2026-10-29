@@ -3,8 +3,6 @@ import { api, ApiError } from '@/lib/api';
 import { cloudRecentlyDown, probeApiHealth } from '@/lib/cloudCircuit';
 import {
   LocalAuthError,
-  ensureOwnerAccount,
-  isOwner,
   loginLocal,
   registerLocal,
   upsertLocalAccount,
@@ -53,9 +51,8 @@ export async function authenticate(input: AuthPayload & { mode: AuthMode }): Pro
     phone: input.phone,
   };
 
-  await ensureOwnerAccount();
   const useLocalOnly =
-    isOwner(email) || shouldStayLocal() || cloudRecentlyDown() || !(await probeApiHealth());
+    shouldStayLocal() || cloudRecentlyDown() || !(await probeApiHealth());
   if (useLocalOnly) {
     try {
       return await localAuth(input.mode, payload, email, password);

@@ -12,6 +12,7 @@ import {
   blankWeek,
   buildCourseFromDraft,
   draftChecks,
+  evaluatePedagogicalQuality,
   type CourseDraft,
   type QuizDraft,
   type QuizKind,
@@ -62,6 +63,7 @@ export default function CurriculumStudioPage() {
   const week = draft?.weeks[weekIndex] ?? draft?.weeks[0];
   const preview = useMemo(() => (draft ? buildCourseFromDraft(draft) : null), [draft]);
   const checks = draft ? draftChecks(draft) : null;
+  const quality = useMemo(() => (draft ? evaluatePedagogicalQuality(draft) : null), [draft]);
   const previewLessons = preview ? Object.fromEntries(preview.lessons.map((lesson) => [lesson.id, lesson])) : {};
   const previewLesson = preview?.lessons[weekIndex] ?? preview?.lessons[0];
 
@@ -281,6 +283,58 @@ export default function CurriculumStudioPage() {
                   />
                 ))}
               </ul>
+            )}
+
+            {quality && (
+              <div className="card space-y-3 bg-white/[0.02] border border-white/[0.08]">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2">
+                    <span>📊</span>
+                    <span>Pedagogical Quality Audit</span>
+                  </h3>
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-accent/20 text-accent">
+                    {quality.overallScore}% Overall Quality
+                  </span>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs pt-1">
+                  <div className="p-3 rounded-lg bg-surface-dark border border-white/[0.06]">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-muted">Interactiveness</span>
+                      <span className="font-semibold text-white">{quality.interactiveness}%</span>
+                    </div>
+                    <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-emerald-400 h-1.5 rounded-full transition-all" style={{ width: `${quality.interactiveness}%` }} />
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-lg bg-surface-dark border border-white/[0.06]">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-muted">Technical Detail</span>
+                      <span className="font-semibold text-white">{quality.details}%</span>
+                    </div>
+                    <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-sky-400 h-1.5 rounded-full transition-all" style={{ width: `${quality.details}%` }} />
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-lg bg-surface-dark border border-white/[0.06]">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-muted">Ease of Understanding</span>
+                      <span className="font-semibold text-white">{quality.easeOfUnderstanding}%</span>
+                    </div>
+                    <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-amber-400 h-1.5 rounded-full transition-all" style={{ width: `${quality.easeOfUnderstanding}%` }} />
+                    </div>
+                  </div>
+                  <div className="p-3 rounded-lg bg-surface-dark border border-white/[0.06]">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-muted">Multimedia & Video</span>
+                      <span className="font-semibold text-white">{quality.multimedia}%</span>
+                    </div>
+                    <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-indigo-400 h-1.5 rounded-full transition-all" style={{ width: `${quality.multimedia}%` }} />
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
 
             <div className="flex flex-wrap gap-2">

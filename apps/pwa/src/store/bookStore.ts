@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Book, BookProgress } from '@cyberlearn/types';
+import { getStaffKey } from '@/lib/adminAccess';
+import { api } from '@/lib/api';
 
 export const SEEDED_BOOKS: Book[] = [
   {
@@ -523,7 +525,7 @@ Tactical outward-facing illumination exposes intruders in stark silhouette while
     title: 'Expedition Cartography, Land Navigation & Geodesy Field Manual',
     titleSw: 'Mwongozo wa Uelekezaji Njia, Upimaji wa Ardhi na Ramani za Topografia',
     author: 'Dr. Joseph Kamau & Survey of Kenya Mapping Corps',
-    description: 'Comprehensive practical field guide to terrestrial navigation, topographical map reading, and surveying without satellites: 1:50,000 contour interpretation and slope percentage calculations, UTM/MGRS coordinate systems, magnetic declination and annual drift calculations, prismatic compass sighting and back-bearing resection (resolving the Triangle of Error), plane table alidade mapping (radiation, intersection, and closed traverse), dead reckoning route navigation, personal pace counting calibration, ranger beads, 90-degree obstacle bypass box method, and emergency celestial orientation via the Southern Cross (Crux) and Orion's Belt.',
+    description: `Comprehensive practical field guide to terrestrial navigation, topographical map reading, and surveying without satellites: 1:50,000 contour interpretation and slope percentage calculations, UTM/MGRS coordinate systems, magnetic declination and annual drift calculations, prismatic compass sighting and back-bearing resection (resolving the Triangle of Error), plane table alidade mapping (radiation, intersection, and closed traverse), dead reckoning route navigation, personal pace counting calibration, ranger beads, 90-degree obstacle bypass box method, and emergency celestial orientation via the Southern Cross (Crux) and Orion's Belt.`,
     descriptionSw: 'Mwongozo kamili wa kusoma ramani za topografia, kutumia dira na kurekebisha mkengeuko wa sumaku, kutambua eneo ulipo kwa pembetatu, upimaji wa jedwali la ndege, na uelekezaji wa njia gizani kwa kuhesabu hatua na nyota.',
     category: 'resilience',
     tradeId: 'surveying-geomatics',
@@ -596,8 +598,8 @@ Consolidation forging under heavy sledges expels trapped liquid fayalite slag, w
     title: 'Pastoral Veterinary Medicine & Herd Health Field Manual',
     titleSw: 'Mwongozo wa Tiba ya Mifugo na Afya ya Mifugo Kijijini',
     author: 'Dr. Amina Abdi (DVM, Kenya Veterinary Board Lead)',
-    description: 'Comprehensive clinical and surgical field manual for maintaining livestock herds in pastoral and rural communities: clinical vital signs and physical examination (rumen motility, mucous membrane pallor/jaundice, lymph node palpation), acute pasture bloat decompression (drenching oils, trocharization), vector-borne diseases (East Coast Fever diagnosis via Koch's blue bodies, Buparvaquone protocols; Trypanosomiasis diagnosis via buffy coat, Diminazene vs Isometamidium chemotherapy, Nzi odor-baited fly traps), vaccine cold chain management (+2°C to +8°C, conditioned icepacks), neck triangle injection routes, safe Anthrax carcass burial with quicklime, livestock obstetrics (correcting dystocia limb flexions, double half-hitch calving chains, caudal epidural anesthesia with lignocaine), traumatic wound debridement and horizontal mattress suturing, myiasis fly-strike treatment, and communal plunge-dip hydraulic engineering (amitraz lime stabilization, stripping phenomenon, field vat titration test kits, and acaricide resistance class rotation).',
-    descriptionSw: 'Mwongozo kamili wa uchunguzi wa mifugo, kutibu ugonjwa wa Ndigana (ECF) na Nagana, usimamizi wa chanjo, kufungua uzazi uliokwama (dystocia), na uendeshaji wa majosho ya kuoshea ng'ombe (plunge dips).',
+    description: `Comprehensive clinical and surgical field manual for maintaining livestock herds in pastoral and rural communities: clinical vital signs and physical examination (rumen motility, mucous membrane pallor/jaundice, lymph node palpation), acute pasture bloat decompression (drenching oils, trocharization), vector-borne diseases (East Coast Fever diagnosis via Koch's blue bodies, Buparvaquone protocols; Trypanosomiasis diagnosis via buffy coat, Diminazene vs Isometamidium chemotherapy, Nzi odor-baited fly traps), vaccine cold chain management (+2°C to +8°C, conditioned icepacks), neck triangle injection routes, safe Anthrax carcass burial with quicklime, livestock obstetrics (correcting dystocia limb flexions, double half-hitch calving chains, caudal epidural anesthesia with lignocaine), traumatic wound debridement and horizontal mattress suturing, myiasis fly-strike treatment, and communal plunge-dip hydraulic engineering (amitraz lime stabilization, stripping phenomenon, field vat titration test kits, and acaricide resistance class rotation).`,
+    descriptionSw: `Mwongozo kamili wa uchunguzi wa mifugo, kutibu ugonjwa wa Ndigana (ECF) na Nagana, usimamizi wa chanjo, kufungua uzazi uliokwama (dystocia), na uendeshaji wa majosho ya kuoshea ng'ombe (plunge dips).`,
     category: 'agriculture',
     tradeId: 'animal-health-production',
     tradeTitle: 'Animal Health & Veterinary Technology',
@@ -633,7 +635,7 @@ Rapid decompression of frothy bloat with non-polar vegetable oils breaks foam su
     title: 'Silviculture, Sustainable Logging & Timber Engineering Manual',
     titleSw: 'Mwongozo wa Misitu, Upasuaji Magogo na Uhandisi wa Mbao Nzito',
     author: 'Forester David Mwangi & African Wood Technology Institute',
-    description: 'Comprehensive engineering field guide to managing community forests, harvesting timber safely, and erecting heavy timber structures: chainsaw kickback zone physics, chain filing geometry (30° crosscut vs 10° ripping chain), directional felling cuts (open-face notch, 10% holding wood hinge, bore-cut trigger release for forward-leaning trees, 45° retreat paths), Smalian's log volume scaling, primary lumber conversion (traditional two-man pit sawing with 3mm kerf vs Alaskan chainsaw mills), plain vs quarter sawing grain dynamics, wood moisture physics (free water vs bound water at Fiber Saturation Point 28%), solar lumber kiln construction with convective heat baffles, chemical and biological wood preservation (diffusion borates for interior framing, pyroligneous wood tar for fence posts, Boucherie gravity sap displacement for green poles, 45° galvanized metal termite shields), and heavy post-and-beam timber joinery (mortise-and-tenon 1/3 rule, draw-boring with offset hardwood pegs, keyed scarf splices, and King Post roof trusses).',
+    description: `Comprehensive engineering field guide to managing community forests, harvesting timber safely, and erecting heavy timber structures: chainsaw kickback zone physics, chain filing geometry (30° crosscut vs 10° ripping chain), directional felling cuts (open-face notch, 10% holding wood hinge, bore-cut trigger release for forward-leaning trees, 45° retreat paths), Smalian's log volume scaling, primary lumber conversion (traditional two-man pit sawing with 3mm kerf vs Alaskan chainsaw mills), plain vs quarter sawing grain dynamics, wood moisture physics (free water vs bound water at Fiber Saturation Point 28%), solar lumber kiln construction with convective heat baffles, chemical and biological wood preservation (diffusion borates for interior framing, pyroligneous wood tar for fence posts, Boucherie gravity sap displacement for green poles, 45° galvanized metal termite shields), and heavy post-and-beam timber joinery (mortise-and-tenon 1/3 rule, draw-boring with offset hardwood pegs, keyed scarf splices, and King Post roof trusses).`,
     descriptionSw: 'Mwongozo kamili wa kuangusha miti kwa usalama, upasuaji wa magogo kwa msumeno wa shimo na chainsaw mill, kukausha mbao kwa jua, kuzuia mchwa na wadudu waharibifu, na kuunda viungio vya mbao nzito vya mortise-and-tenon bila misumari.',
     category: 'engineering',
     tradeId: 'carpentry-joinery',
@@ -700,7 +702,45 @@ Fish breathe, excrete, and live entirely in a single continuous aquatic medium. 
 The diurnal oxygen cycle is critical: phytoplankton produce oxygen during daylight, but from midnight to dawn, respiration drives DO to dangerous minimum levels, requiring emergency aeration capability.
 `,
   },
+  {
+    id: 'book-wind-microhydro',
+    title: 'Wind Energy & Micro-Hydropower Engineering Manual',
+    titleSw: 'Mwongozo wa Uhandisi wa Nishati ya Upepo na Umeme wa Mto Mdogo',
+    author: 'Eng. James Kariuki & African Appropriate Technology Centre',
+    description: 'Complete off-grid renewable energy engineering manual for wind turbines and micro-hydropower: Betz Limit derivation (59.3% theoretical maximum), wind power cube law P = 0.5 × ρ × A × v³, Weibull wind statistics, wind shear power law, turbulence intensity assessment, and micrositing 2H and 10D obstacle clearance rules; Hugh Piggott HAWT construction covering blade aerodynamics (Tip Speed Ratio 5–8 for 3-blade design), aerofoil chord and twist distribution, hardwood blade carving sequence, static balance testing, axial-flux permanent magnet alternator 3-phase star winding calculations, magnet rotor casting in fibreglass resin, and passive furling tail overspeed protection; micro-hydro site survey (P = η × ρ × g × Q × H), V-notch weir flow measurement, Pelton wheel jet velocity and optimal bucket speed (0.46 × Vj), and Darcy-Weisbach penstock friction design; power electronics including dump load controllers, MPPT vs PWM comparison, ELC TRIAC ballast regulation, battery bank sizing, and pure sine wave inverters; and hybrid wind-solar-hydro system integration, DC/AC coupling architecture, wire sizing, commissioning checklists, and community energy co-operative governance.',
+    descriptionSw: 'Mwongozo kamili wa uhandisi wa turbine ya upepo (kikomo cha Betz, TSR, kukata mabawa ya mbao, alternator ya sumaku, mkia wa furling) na umeme wa mto mdogo (kupima kichwa cha maji, mfumo wa Pelton, penstock HDPE, ELC) pamoja na mifumo ya mseto wa upepo-jua-mto na usimamizi wa ushirika wa nishati.',
+    category: 'technology',
+    tradeId: 'renewable-energy',
+    tradeTitle: 'Wind Energy & Micro-Hydropower Systems',
+    coverColor: 'from-sky-600 to-indigo-950',
+    fileFormat: 'markdown',
+    fileSizeMb: 7.1,
+    totalPages: 142,
+    estimatedMinutes: 285,
+    featured: true,
+    rating: 4.9,
+    readersCount: 6340,
+    cdaccUnitId: 'CU/ENG/RE/CR/19/5',
+    publishedYear: 2026,
+    offlineReady: true,
+    chapters: [
+      { id: 'ch1', title: 'Wind Resource Assessment, Betz Limit & Site Selection', pageNumber: 1 },
+      { id: 'ch2', title: 'HAWT Blade Carving, Alternator Winding & Furling Tail', pageNumber: 30 },
+      { id: 'ch3', title: 'Micro-Hydro Survey, Pelton Wheel & Penstock Hydraulics', pageNumber: 62 },
+      { id: 'ch4', title: 'Charge Controllers, Dump Loads & Battery Banks', pageNumber: 96 },
+      { id: 'ch5', title: 'Hybrid System Integration & Community Mini-Grid Design', pageNumber: 122 },
+    ],
+    contentMarkdown: `# Wind Energy & Micro-Hydropower Engineering
+
+## Chapter 1: Wind Resource Assessment & the Betz Limit
+Wind power scales with the cube of velocity: P = 0.5 × ρ × A × v³.
+The Betz Limit (1919) places a hard theoretical ceiling of 59.3% (= 16/27) on power extraction from any free wind stream.
+A well-designed 3-blade HAWT achieves a practical power coefficient (Cp) of 0.35 to 0.45.
+Site selection is the most critical investment: a 6 m/s site produces 3.375 times more power than a 4 m/s site from the same turbine.
+`,
+  },
 ];
+
 
 
 interface BookState {
@@ -782,15 +822,14 @@ export const useBookStore = create<BookState>()(
 
         // Try remote upload first
         try {
-          const res = await fetch('/api/v1/library/upload', {
+          const staffKey = getStaffKey();
+          const newBook = await api<Book>('/library/upload', {
             method: 'POST',
             body: formData,
+            headers: staffKey ? { 'X-Staff-Key': staffKey } : undefined,
           });
-          if (res.ok) {
-            const newBook: Book = await res.json();
-            set((state) => ({ books: [newBook, ...state.books] }));
-            return newBook;
-          }
+          set((state) => ({ books: [newBook, ...state.books] }));
+          return newBook;
         } catch {
           // Backend offline — create client-side book record
         }

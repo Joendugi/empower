@@ -16,7 +16,8 @@ import {
   RotateCcw,
   RefreshCw,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Compass
 } from 'lucide-react';
 import AppHeader from '@/components/ui/AppHeader';
 import BottomNav from '@/components/ui/BottomNav';
@@ -56,6 +57,8 @@ export default function ProfilePage() {
     reset,
     setDisplayName,
     restartOnboarding,
+    narrativeTheme,
+    setNarrativeTheme,
   } = useLearnerStore();
   
   const educatorApproved = useModerationStore((s) =>
@@ -515,8 +518,8 @@ export default function ProfilePage() {
                   )}
                 </section>
 
-                {/* Preference Toggles (Language, Audio, Auto-Logout) */}
-                <div className="grid sm:grid-cols-3 gap-4">
+                {/* Preference Toggles (Language, Audio, Narrative Theme, Auto-Logout) */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   <section className="card space-y-3 border-white/[0.08]">
                     <h2 className="text-xs font-bold uppercase tracking-wider text-muted">{t('language')}</h2>
                     <LanguagePicker />
@@ -542,6 +545,29 @@ export default function ProfilePage() {
                         <span>{soundOn ? 'Active' : 'Muted'}</span>
                       </div>
                       <span className="text-[10px] font-mono uppercase font-bold">{soundOn ? 'ON' : 'OFF'}</span>
+                    </button>
+                  </section>
+
+                  <section className="card space-y-3 border-white/[0.08] flex flex-col justify-between">
+                    <div>
+                      <h2 className="text-xs font-bold uppercase tracking-wider text-muted">Narrative Theme</h2>
+                      <p className="text-xs text-muted mt-1">Immersive 'Rebuilder Corps' storyline vs standard academic.</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setNarrativeTheme(!narrativeTheme)}
+                      className={clsx(
+                        'inline-flex items-center justify-between p-2.5 rounded-xl border text-xs font-semibold transition-all',
+                        narrativeTheme
+                          ? 'bg-amber-500/15 border-amber-500/30 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.15)]'
+                          : 'bg-surface-light border-white/[0.08] text-muted'
+                      )}
+                    >
+                      <div className="flex items-center gap-2">
+                        <Compass className="w-4 h-4" />
+                        <span>{narrativeTheme ? 'Corps Lore' : 'Academic'}</span>
+                      </div>
+                      <span className="text-[10px] font-mono uppercase font-bold">{narrativeTheme ? 'ACTIVE' : 'OFF'}</span>
                     </button>
                   </section>
 

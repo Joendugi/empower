@@ -18,7 +18,6 @@ import {
 import { publicProgrammes, publicStudies } from '@/content/publicStudies';
 import AppHeader from '@/components/ui/AppHeader';
 import SearchField from '@/components/ui/SearchField';
-import { useIsEducator } from '@/lib/roles';
 import { useEducatorStore } from '@/store/educatorStore';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useBookStore } from '@/store/bookStore';
@@ -35,7 +34,6 @@ export default function StudyLibraryPage() {
   const token = useLearnerStore((state) => state.token);
   const isGuest = useLearnerStore((state) => state.isGuest);
   const signedIn = Boolean(token && !isGuest);
-  const teaching = useIsEducator();
   const instructorNotes = useEducatorStore((state) => state.notes);
 
   // Readflix Book Store State

@@ -1,5 +1,6 @@
 import { FormEvent, useMemo, useState } from 'react';
 import { publicProgrammes } from '@/content/publicStudies';
+import { getStaffKey } from '@/lib/adminAccess';
 import { api } from '@/lib/api';
 import { saveAsset } from '@/lib/assetStore';
 import { reminderText } from '@/lib/notify';
@@ -192,8 +193,10 @@ export default function CampusDesk({
     let mailed = false;
     if (noticeForm.channel === 'email') {
       try {
+        const staffKey = getStaffKey();
         await api<{ mailed?: number }>('/notices/email', {
           method: 'POST',
+          headers: staffKey ? { 'X-Staff-Key': staffKey } : undefined,
           body: JSON.stringify({
             subject: noticeForm.title.trim(),
             body: reminderText({

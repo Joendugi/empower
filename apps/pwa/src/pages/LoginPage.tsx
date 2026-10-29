@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Lock, KeyRound, Sparkles } from 'lucide-react';
 import type { TokenResponse } from '@cyberlearn/types';
 import { authenticate } from '@/lib/auth';
-import { ensureOwnerAccount, isEducator, isStaff } from '@/lib/localAccounts';
+import { isEducator, isStaff } from '@/lib/localAccounts';
 import { completePasswordReset, requestPasswordReset } from '@/lib/passwordReset';
 import { phoneError, sanitizePhoneInput } from '@/lib/validate';
 import type { NoticeChannel } from '@/lib/notify';
@@ -32,10 +32,6 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-
-  useEffect(() => {
-    void ensureOwnerAccount();
-  }, []);
 
   useEffect(() => {
     if (!wantsEducator) return;

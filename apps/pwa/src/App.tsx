@@ -28,6 +28,7 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const VerifyCertificatePage = lazy(() => import('@/pages/VerifyCertificatePage'));
 const ScanPage = lazy(() => import('@/pages/ScanPage'));
 const CampusPage = lazy(() => import('@/pages/CampusPage'));
+const PublicProfilePage = lazy(() => import('@/pages/PublicProfilePage'));
 
 export default function App() {
   const hydrated = useHydrated();
@@ -94,6 +95,7 @@ export default function App() {
             }
           />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/u/:username" element={<PublicProfilePage />} />
           <Route
             path="/curriculum"
             element={

@@ -42,13 +42,16 @@ interface LearnerState {
   learnerRole: LearnerRole | null;
   learnerGoal: LearnerGoal | null;
   preferredTrack: ProgrammeTrack | 'all' | null;
+  narrativeTheme: boolean;
 
   applyAuth: (token: string, learner: AuthLearner) => void;
   applyXp: (totalXp: number, level: number) => void;
+  addXp: (amount: number) => void;
   setStreak: (current: number, longest: number, freezeTokens?: number) => void;
   addBadge: (badge: Badge) => void;
   markLessonComplete: (lessonId: string) => void;
   setLanguage: (language: 'en' | 'sw') => void;
+  setNarrativeTheme: (enabled: boolean) => void;
   setDisplayName: (displayName: string) => void;
   choosePath: (pathId: string) => void;
   completeOnboarding: (input: {
@@ -94,6 +97,7 @@ const empty = {
   learnerRole: null as LearnerRole | null,
   learnerGoal: null as LearnerGoal | null,
   preferredTrack: null as ProgrammeTrack | 'all' | null,
+  narrativeTheme: true,
 };
 
 function sessionFields(token: string) {
@@ -135,6 +139,11 @@ export const useLearnerStore = create<LearnerState>()(
       },
 
       applyXp: (totalXp, level) => set({ xp: totalXp, level }),
+      addXp: (amount) =>
+        set((state) => {
+          const nextXp = state.xp + amount;
+          return { xp: nextXp, level: xpToLevel(nextXp) };
+        }),
 
       setStreak: (current, longest, freezeTokens) =>
         set((state) => ({
@@ -166,6 +175,8 @@ export const useLearnerStore = create<LearnerState>()(
         if (email) updateLocalProfile(email, { preferredLanguage: language });
         set({ language });
       },
+
+      setNarrativeTheme: (narrativeTheme) => set({ narrativeTheme }),
 
       setDisplayName: (displayName) => {
         const next = displayName.trim();

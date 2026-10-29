@@ -96,3 +96,29 @@ describe('local accounts', () => {
     await expect(registerLocal(payload)).rejects.toMatchObject({ status: 409 });
   });
 });
+
+describe('seeded owner account', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  it('is removed once from devices that had it, and the owner can then register normally', async () => {
+    const { OWNER_EMAIL, findLocalAccount, retireSeededOwnerAccount, upsertLocalAccount, isStaff } = await import(
+      '@/lib/localAccounts'
+    );
+    await upsertLocalAccount({ email: OWNER_EMAIL, password: 'old-seeded-password', accountType: 'owner' });
+    await upsertLocalAccount({ email: 'learner@poly.ac.ke', password: 'workshop1' });
+
+    retireSeededOwnerAccount();
+    expect(findLocalAccount(OWNER_EMAIL)).toBeUndefined();
+    expect(findLocalAccount('learner@poly.ac.ke')).toBeDefined();
+    await expect(loginLocal(OWNER_EMAIL, 'old-seeded-password')).rejects.toThrow();
+
+    // Runs only once: an account the owner creates afterwards survives later app starts.
+    const session = await registerLocal({ email: OWNER_EMAIL, password: 'a-new-strong-pass', displayName: 'Owner' });
+    expect(session.learner.email).toBe(OWNER_EMAIL);
+    retireSeededOwnerAccount();
+    expect(findLocalAccount(OWNER_EMAIL)?.accountType).toBe('owner');
+    expect(isStaff(OWNER_EMAIL)).toBe(true);
+  });
+});

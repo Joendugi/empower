@@ -54,7 +54,8 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
 
   const headers = new Headers(init.headers);
-  if (!headers.has('Content-Type') && init.body) {
+  // FormData sets its own multipart boundary; only default JSON bodies to application/json.
+  if (!headers.has('Content-Type') && init.body && !(init.body instanceof FormData)) {
     headers.set('Content-Type', 'application/json');
   }
   const sessionOk = useLearnerStore.getState().isSessionValid();

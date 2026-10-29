@@ -52,7 +52,6 @@ export default function DiscussionBoard({ lessonId }: { lessonId: string }) {
 
   useEffect(() => {
     void load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
 
   const submit = async () => {
