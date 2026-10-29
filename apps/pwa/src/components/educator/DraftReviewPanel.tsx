@@ -28,8 +28,8 @@ export default function DraftReviewPanel() {
       const res = await approveDraft(id, staffKey);
       setNotification({ type: 'success', message: res.message });
       setDrafts((prev) => prev.filter((d) => d.id !== id));
-    } catch (err: any) {
-      setNotification({ type: 'error', message: err.message || 'Failed to approve draft' });
+    } catch (err) {
+      setNotification({ type: 'error', message: err instanceof Error ? err.message : 'Failed to approve draft' });
     } finally {
       setProcessingId(null);
     }
@@ -41,8 +41,8 @@ export default function DraftReviewPanel() {
       const res = await rejectDraft(id, staffKey);
       setNotification({ type: 'success', message: res.message });
       setDrafts((prev) => prev.filter((d) => d.id !== id));
-    } catch (err: any) {
-      setNotification({ type: 'error', message: err.message || 'Failed to reject draft' });
+    } catch (err) {
+      setNotification({ type: 'error', message: err instanceof Error ? err.message : 'Failed to reject draft' });
     } finally {
       setProcessingId(null);
     }

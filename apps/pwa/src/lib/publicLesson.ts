@@ -14,7 +14,8 @@ export async function toPublicExercise(exercise: Exercise): Promise<Exercise> {
   const hashes = exercise.answerHashes?.length
     ? exercise.answerHashes
     : await hashesForAnswer(exercise.correctAnswer);
-  const { correctAnswer: _omit, ...rest } = exercise;
+  const rest: Exercise = { ...exercise };
+  delete rest.correctAnswer;
   return { ...rest, answerHashes: hashes };
 }
 

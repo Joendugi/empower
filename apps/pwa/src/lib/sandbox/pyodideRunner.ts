@@ -10,21 +10,32 @@ export interface PythonExecutionResult {
   exitCode: number;
 }
 
+/** The slice of the Pyodide API this runner uses. */
+interface PyodideRuntime {
+  setStdout(options: { batched: (msg: string) => void }): void;
+  setStderr(options: { batched: (msg: string) => void }): void;
+  runPythonAsync(code: string): Promise<unknown>;
+  FS: { writeFile(path: string, data: string): void };
+}
+
+type PyodideWindow = Window & { loadPyodide?: () => Promise<PyodideRuntime> };
+
 // Global reference if Pyodide CDN runtime is fetched
-let pyodideInstance: any = null;
-let pyodideLoadingPromise: Promise<any> | null = null;
+let pyodideInstance: PyodideRuntime | null = null;
+let pyodideLoadingPromise: Promise<PyodideRuntime | null> | null = null;
 
 /** Attempt to load Pyodide from CDN when online */
-export async function loadPyodideRuntime(): Promise<any> {
+export async function loadPyodideRuntime(): Promise<PyodideRuntime | null> {
   if (pyodideInstance) return pyodideInstance;
   if (pyodideLoadingPromise) return pyodideLoadingPromise;
 
   if (typeof window === 'undefined') return null;
 
+  const win = window as PyodideWindow;
   pyodideLoadingPromise = new Promise((resolve) => {
     // Check if script already on page
-    if ((window as any).loadPyodide) {
-      (window as any).loadPyodide().then((py: any) => {
+    if (win.loadPyodide) {
+      win.loadPyodide().then((py) => {
         pyodideInstance = py;
         resolve(py);
       }).catch(() => resolve(null));
@@ -40,8 +51,8 @@ export async function loadPyodideRuntime(): Promise<any> {
     script.async = true;
     script.onload = () => {
       clearTimeout(timer);
-      if ((window as any).loadPyodide) {
-        (window as any).loadPyodide().then((py: any) => {
+      if (win.loadPyodide) {
+        win.loadPyodide().then((py) => {
           pyodideInstance = py;
           resolve(py);
         }).catch(() => resolve(null));
@@ -100,7 +111,6 @@ async function runOfflinePythonFallback(
 
         // Handle mathematical expression or variable
         try {
-          // eslint-disable-next-line no-eval
           const val = Function(`"use strict"; return (${inner});`)();
           stdoutBuffer.push(String(val));
         } catch {
@@ -129,8 +139,8 @@ async function runOfflinePythonFallback(
       stderr: stderrBuffer.join('\n'),
       exitCode: 0,
     };
-  } catch (err: any) {
-    stderrBuffer.push(err?.message || 'Python execution error');
+  } catch (err) {
+    stderrBuffer.push(err instanceof Error ? err.message : 'Python execution error');
     return {
       stdout: stdoutBuffer.join('\n'),
       stderr: stderrBuffer.join('\n'),
@@ -188,10 +198,10 @@ export async function runPythonCode(
         stderr: stderr.trimEnd(),
         exitCode: 0,
       };
-    } catch (err: any) {
+    } catch (err) {
       return {
         stdout: '',
-        stderr: err?.message || String(err),
+        stderr: err instanceof Error ? err.message : String(err),
         exitCode: 1,
       };
     }
