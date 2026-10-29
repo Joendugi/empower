@@ -40,7 +40,7 @@ class TimeoutRateLimitMiddleware(BaseHTTPMiddleware):
 
         try:
             return await asyncio.wait_for(call_next(request), timeout=timeout)
-        except asyncio.TimeoutError:
+        except TimeoutError:
             return JSONResponse(
                 {"detail": "Request timed out"},
                 status_code=504,

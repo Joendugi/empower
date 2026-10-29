@@ -6,6 +6,8 @@ from typing import Any
 
 from app.services.grading import answer_hash, answer_hashes, normalize_answer
 
+MAX_XP_REWARD = 200
+
 _raw_lessons: dict[str, dict[str, Any]] = {}
 _public_lessons: dict[str, dict[str, Any]] = {}
 _paths: dict[str, dict[str, Any]] = {}
@@ -30,7 +32,8 @@ def normalize_exercise(raw: dict[str, Any]) -> dict[str, Any]:
         "prompt": raw.get("prompt"),
         "hint": raw.get("hint"),
         "explanation": raw.get("explanation"),
-        "xp_reward": int(raw.get("xp_reward") or raw.get("xpReward") or 10),
+        # Same 5–200 range the content validator enforces for YAML lessons.
+        "xp_reward": min(max(int(raw.get("xp_reward") or raw.get("xpReward") or 10), 5), MAX_XP_REWARD),
         "options": raw.get("options"),
         "correct_answer": correct,
     }

@@ -5,8 +5,8 @@ import ssl
 from pathlib import Path
 from urllib.parse import urlparse
 
-import certifi
 import asyncpg
+import certifi
 
 
 def db_url() -> str:

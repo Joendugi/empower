@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+
 from httpx import AsyncClient
 
 from tests.conftest import register_user
@@ -40,7 +41,7 @@ async def test_library_book_details(client: AsyncClient) -> None:
     assert "contentMarkdown" in book
 
 
-async def test_library_upload_and_progress(client: AsyncClient) -> None:
+async def test_library_upload_and_progress(client: AsyncClient, as_staff: None) -> None:
     await register_user(client)
 
     # Upload a markdown/text book

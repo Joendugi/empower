@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import Field
 
-from app.deps import get_current_learner
+from app.deps import get_current_educator
 from app.models.learner import Learner
 from app.schemas import CamelModel
 from app.services.mail import mail_configured, send_mail_batch
@@ -25,10 +25,9 @@ class NoticeEmailResponse(CamelModel):
 @router.post("/notices/email", response_model=NoticeEmailResponse)
 async def deliver_notice_email(
     payload: NoticeEmailRequest,
-    learner: Learner = Depends(get_current_learner),
+    # Educators and staff only: otherwise any account could use our SMTP as a relay.
+    learner: Learner = Depends(get_current_educator),
 ) -> NoticeEmailResponse:
-    if learner.is_guest:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Sign in required")
     if not mail_configured():
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,

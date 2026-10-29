@@ -91,6 +91,22 @@ def assert_self(learner: Learner, learner_id: str) -> None:
         )
 
 
+EDUCATOR_ROLES = {"educator", "admin"}
+
+
+def is_staff_request(request: Request) -> bool:
+    return staff_key_matches(request.headers.get("X-Staff-Key") or "")
+
+
+async def get_current_educator(
+    request: Request,
+    learner: Learner = Depends(get_current_registered_learner),
+) -> Learner:
+    if learner.role in EDUCATOR_ROLES or is_staff_request(request):
+        return learner
+    raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Educator access required")
+
+
 def require_staff(request: Request) -> None:
     key = request.headers.get("X-Staff-Key") or request.headers.get("x-staff-key") or ""
     if staff_key_matches(key):

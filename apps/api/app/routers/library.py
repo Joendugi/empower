@@ -1,15 +1,14 @@
 from __future__ import annotations
 
-import json
-from datetime import datetime, timezone
-from pathlib import Path
-from typing import Any, Optional
 import uuid
+from datetime import UTC, datetime
+from typing import Any
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from pydantic import BaseModel, Field
 
-from app.deps import get_current_learner, get_current_learner_optional
+from app.deps import get_current_educator, get_current_learner_optional
+from app.models.learner import Learner
 
 router = APIRouter(prefix="/library", tags=["Library"])
 
@@ -692,12 +691,51 @@ Successful aquaculture is fundamentally water management rather than fish handli
 Fish breathe, excrete, and live entirely in a single continuous aquatic medium. Dissolved oxygen must remain above 5.0 mg/L; un-ionized ammonia (NH3) must stay below 0.05 mg/L; pH must be maintained between 6.5 and 8.5.
 The diurnal oxygen cycle is critical: phytoplankton produce oxygen during daylight, but from midnight to dawn, respiration drives DO to dangerous minimum levels, requiring emergency aeration capability.
 """
+    },
+    {
+        "id": "book-wind-microhydro",
+        "title": "Wind Energy & Micro-Hydropower Engineering Manual",
+        "titleSw": "Mwongozo wa Uhandisi wa Nishati ya Upepo na Umeme wa Mto Mdogo",
+        "author": "Eng. James Kariuki & African Appropriate Technology Centre",
+        "description": "Complete off-grid renewable energy engineering manual for wind turbines and micro-hydropower: Betz Limit derivation (59.3% theoretical maximum), wind power cube law P = 0.5 × ρ × A × v³, Weibull wind statistics, wind shear power law, turbulence intensity assessment, and micrositing 2H and 10D obstacle clearance rules; Hugh Piggott HAWT construction covering blade aerodynamics (Tip Speed Ratio 5–8 for 3-blade design), aerofoil chord and twist distribution, hardwood blade carving sequence, static balance testing, axial-flux permanent magnet alternator 3-phase star winding calculations (turns-per-coil from target voltage), magnet rotor casting in fibreglass resin, and passive furling tail offset hinge overspeed protection; micro-hydro site survey (P = η × ρ × g × Q × H), head measurement by optical level and hose-gauge methods, V-notch weir flow measurement (Q = 1.38h^2.5), flow duration curves, Pelton wheel jet velocity (Vj = Cv√2gH), optimal bucket speed (0.46 × Vj), and Darcy-Weisbach penstock friction design; power electronics including dump load voltage-diversion controllers, MPPT vs PWM controller comparison, Electronic Load Controller TRIAC ballast regulation for AC hydro, battery bank sizing with DoD and autonomy, pure sine wave inverter sizing; and hybrid wind-solar-hydro system integration, load analysis, DC versus AC coupling, wire sizing from voltage drop criterion, commissioning checklists, and community energy co-operative tariff structures.",
+        "descriptionSw": "Mwongozo kamili wa uhandisi wa turbine ya upepo (kikomo cha Betz, aerofoil, TSR, kukata mabawa ya mbao, alternator ya sumaku za kudumu, mkia wa furling) na umeme wa mto mdogo (kupima kichwa cha maji, mfumo wa Pelton, penstock HDPE, ELC) pamoja na mifumo ya mseto wa upepo-jua-mto na usimamizi wa ushirika wa nishati.",
+        "category": "energy",
+        "tradeId": "renewable-energy",
+        "tradeTitle": "Wind Energy & Micro-Hydropower Systems",
+        "coverColor": "from-sky-600 to-indigo-950",
+        "fileFormat": "markdown",
+        "fileSizeMb": 7.1,
+        "totalPages": 142,
+        "estimatedMinutes": 285,
+        "featured": True,
+        "rating": 4.9,
+        "readersCount": 6340,
+        "cdaccUnitId": "CU/ENG/RE/CR/19/5",
+        "publishedYear": 2026,
+        "chapters": [
+            {"id": "ch1", "title": "Wind Resource Assessment, Betz Limit & Site Selection", "pageNumber": 1},
+            {"id": "ch2", "title": "HAWT Blade Carving, Alternator Winding & Furling Tail", "pageNumber": 30},
+            {"id": "ch3", "title": "Micro-Hydro Survey, Pelton Wheel & Penstock Hydraulics", "pageNumber": 62},
+            {"id": "ch4", "title": "Charge Controllers, Dump Loads & Battery Banks", "pageNumber": 96},
+            {"id": "ch5", "title": "Hybrid System Integration & Community Mini-Grid Design", "pageNumber": 122},
+        ],
+        "contentMarkdown": """# Wind Energy & Micro-Hydropower Engineering
+
+## Chapter 1: Wind Resource Assessment & the Betz Limit
+Wind power scales with the cube of velocity: P = 0.5 × ρ × A × v³.
+The Betz Limit (1919) places a hard theoretical ceiling of 59.3% (= 16/27) on power extraction from any free wind stream.
+A well-designed 3-blade HAWT achieves a practical power coefficient (Cp) of 0.35 to 0.45.
+Site selection is the most critical investment: a 6 m/s site produces 3.375 times more power than a 4 m/s site from the same turbine.
+"""
     }
 ]
 
 
+
 # In-memory store for dynamic uploads (persists during runtime)
 DYNAMIC_BOOKS: list[dict[str, Any]] = []
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024
+MAX_DYNAMIC_BOOKS = 200
 # In-memory store for user reading progress keyed by f"{learner_id}:{book_id}"
 READING_PROGRESS: dict[str, dict[str, Any]] = {}
 
@@ -711,9 +749,9 @@ class BookProgressUpdate(BaseModel):
 
 @router.get("/books", response_model=list[dict[str, Any]])
 async def list_books(
-    category: Optional[str] = None,
-    trade: Optional[str] = None,
-    q: Optional[str] = None,
+    category: str | None = None,
+    trade: str | None = None,
+    q: str | None = None,
     featured_only: bool = False,
 ) -> list[dict[str, Any]]:
     """List all available books in the Readflix catalog with optional filtering."""
@@ -762,10 +800,12 @@ async def upload_book(
     title: str = Form(...),
     author: str = Form(...),
     category: str = Form("resilience"),
-    tradeId: Optional[str] = Form(None),
-    tradeTitle: Optional[str] = Form(None),
-    description: Optional[str] = Form(None),
+    tradeId: str | None = Form(None),
+    tradeTitle: str | None = Form(None),
+    description: str | None = Form(None),
     coverColor: str = Form("from-indigo-600 to-purple-900"),
+    # Uploads are shown to every learner, so only educators and staff may add them.
+    _educator: Learner = Depends(get_current_educator),
 ) -> dict[str, Any]:
     """Upload a new book document (PDF, EPUB, or Markdown) to the community library."""
     filename = file.filename or "uploaded-book"
@@ -777,7 +817,9 @@ async def upload_book(
             detail=f"Unsupported format .{extension}. Please upload a PDF, EPUB, or Markdown file.",
         )
 
-    content = await file.read()
+    content = await file.read(MAX_UPLOAD_BYTES + 1)
+    if len(content) > MAX_UPLOAD_BYTES:
+        raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="File is larger than 10 MB")
     file_size_mb = round(len(content) / (1024 * 1024), 2)
     book_id = f"book-{uuid.uuid4().hex[:8]}"
 
@@ -800,15 +842,16 @@ async def upload_book(
         "featured": False,
         "rating": 5.0,
         "readersCount": 1,
-        "publishedYear": datetime.now(timezone.utc).year,
+        "publishedYear": datetime.now(UTC).year,
         "chapters": [
             {"id": "ch1", "title": "Section 1: General Overview", "pageNumber": 1},
             {"id": "ch2", "title": "Section 2: Detailed Technical Procedures", "pageNumber": max(2, int(page_count / 2))},
         ],
-        "contentMarkdown": f"# {title}\n\nBy {author}\n\n*Document uploaded on {datetime.now(timezone.utc).strftime('%Y-%m-%d')}*\n\n---\n\n{content.decode('utf-8', errors='ignore')[:15000]}",
+        "contentMarkdown": f"# {title}\n\nBy {author}\n\n*Document uploaded on {datetime.now(UTC).strftime('%Y-%m-%d')}*\n\n---\n\n{content.decode('utf-8', errors='ignore')[:15000]}",
     }
 
     DYNAMIC_BOOKS.insert(0, new_book)
+    del DYNAMIC_BOOKS[MAX_DYNAMIC_BOOKS:]
     return new_book
 
 
@@ -828,7 +871,7 @@ async def save_progress(
         "totalPages": payload.totalPages,
         "percent": min(100.0, percent),
         "bookmarks": payload.bookmarks,
-        "lastReadAt": datetime.now(timezone.utc).isoformat(),
+        "lastReadAt": datetime.now(UTC).isoformat(),
         "completed": payload.currentPage >= payload.totalPages,
     }
     READING_PROGRESS[key] = record

@@ -91,3 +91,23 @@ async def register_user(
     body = response.json()
     client.headers["Authorization"] = f"Bearer {body['accessToken']}"
     return body
+
+
+STAFF_TEST_KEY = "test-office-staff-key-1234"
+
+
+@pytest.fixture
+def as_staff(client: AsyncClient, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Sign every request from `client` with the office staff key."""
+    from app.config import settings
+
+    monkeypatch.setattr(settings, "ADMIN_STAFF_KEY", STAFF_TEST_KEY)
+    client.headers["X-Staff-Key"] = STAFF_TEST_KEY
+
+
+@pytest.fixture
+def lti_on(as_staff: None, monkeypatch: pytest.MonkeyPatch) -> None:
+    """LTI is off by default; tests that exercise it enable it and act as office staff."""
+    from app.config import settings
+
+    monkeypatch.setattr(settings, "LTI_ENABLED", True)

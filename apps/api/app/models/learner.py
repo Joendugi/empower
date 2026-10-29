@@ -19,6 +19,8 @@ class Learner(Base):
     password_hash: Mapped[str | None] = mapped_column(String(255), nullable=True)
     is_guest: Mapped[bool] = mapped_column(default=False, nullable=False)
     email_verified: Mapped[bool] = mapped_column(default=False, nullable=False)
+    # "learner" | "educator" | "admin" — only staff-key moderation can raise it.
+    role: Mapped[str] = mapped_column(String(20), nullable=False, default="learner", server_default="learner")
     total_xp: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     level: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     created_at: Mapped[datetime] = mapped_column(

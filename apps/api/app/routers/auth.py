@@ -22,9 +22,18 @@ from app.models.learner import Learner
 from app.models.submission import LessonCompletion
 from app.schemas import CamelModel
 from app.security import attach_session_cookie, clear_session_cookie, staff_key_matches
-from app.services.auth import create_access_token, decode_access_token, hash_password, verify_password
+from app.services.auth import (
+    create_access_token,
+    decode_access_token,
+    hash_password,
+    verify_password,
+)
 from app.services.mail import send_mail
-from app.services.rate_limit import clear_auth_failures, enforce_auth_rate_limit, record_auth_failure
+from app.services.rate_limit import (
+    clear_auth_failures,
+    enforce_auth_rate_limit,
+    record_auth_failure,
+)
 
 router = APIRouter()
 _bearer = HTTPBearer(auto_error=False)
@@ -57,6 +66,7 @@ class LearnerPublic(CamelModel):
     level: int
     is_guest: bool
     email_verified: bool = False
+    role: str = "learner"
 
 
 class TokenResponse(CamelModel):
@@ -104,6 +114,7 @@ def _public(learner: Learner) -> LearnerPublic:
         level=learner.level,
         is_guest=learner.is_guest,
         email_verified=bool(getattr(learner, "email_verified", False)),
+        role=learner.role or "learner",
     )
 
 

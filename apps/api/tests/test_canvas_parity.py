@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import pytest
 from httpx import AsyncClient
 
 from tests.conftest import register_user
@@ -37,8 +38,13 @@ async def test_discussion_posts_flow(client: AsyncClient) -> None:
     assert upvote.json()["upvotes"] >= 1
 
 
-async def test_rubric_and_signoff_flow(client: AsyncClient) -> None:
+async def test_rubric_and_signoff_flow(client: AsyncClient, monkeypatch: pytest.MonkeyPatch) -> None:
+    from app.config import settings
+
+    monkeypatch.setattr(settings, "ADMIN_STAFF_KEY", "test-office-staff-key-1234")
+    student = await register_user(client, email="student-123@example.com")
     await register_user(client)
+    client.headers["X-Staff-Key"] = "test-office-staff-key-1234"
     # Create a rubric
     res = await client.post(
         "/api/v1/rubrics",
@@ -60,7 +66,7 @@ async def test_rubric_and_signoff_flow(client: AsyncClient) -> None:
     partial_signoff = await client.post(
         f"/api/v1/rubrics/{rubric_id}/signoff",
         json={
-            "learnerId": "student-123",
+            "learnerId": student["learner"]["id"],
             "evidenceNote": "Only crimped one end so far",
             "criteriaMet": ["crit-1"],
         },
@@ -72,7 +78,7 @@ async def test_rubric_and_signoff_flow(client: AsyncClient) -> None:
     full_signoff = await client.post(
         f"/api/v1/rubrics/{rubric_id}/signoff",
         json={
-            "learnerId": "student-123",
+            "learnerId": student["learner"]["id"],
             "evidenceNote": "All 8 pins validated with cable tester",
             "criteriaMet": ["crit-1", "crit-2"],
         },
@@ -81,7 +87,7 @@ async def test_rubric_and_signoff_flow(client: AsyncClient) -> None:
     assert full_signoff.json()["passed"] is True
 
 
-async def test_lti_endpoints(client: AsyncClient) -> None:
+async def test_lti_endpoints(client: AsyncClient, lti_on: None) -> None:
     # JWKS public key endpoint
     jwks_res = await client.get("/.well-known/jwks.json")
     assert jwks_res.status_code == 200

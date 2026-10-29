@@ -1,11 +1,9 @@
 from __future__ import annotations
 
 import uuid
-from datetime import datetime, timezone
-from typing import Literal
+from datetime import UTC, datetime
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
@@ -92,7 +90,7 @@ async def create_post(
         raise HTTPException(status_code=400, detail="Post body cannot be empty")
 
     post_id = str(uuid.uuid4())
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     author_name = getattr(learner, "display_name", None) or getattr(learner, "email", "Learner")
 
     if await _db_posts_exist(db):

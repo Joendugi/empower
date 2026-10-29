@@ -77,7 +77,7 @@ class Settings(BaseSettings):
         return value
 
     @model_validator(mode="after")
-    def apply_supabase_database_url(self) -> "Settings":
+    def apply_supabase_database_url(self) -> Settings:
         if self.SUPABASE_DB_URL.strip() and "sqlite" not in self.DATABASE_URL:
             source = self.SUPABASE_DB_URL.strip()
         else:
@@ -143,16 +143,34 @@ class Settings(BaseSettings):
     EDX_LMS_URL: str = "http://localhost:8080"
     EDX_API_KEY: str = ""
 
+    # CTFd challenge platform integration
+    CTFD_URL: str = "http://localhost:8000/ctfd"
+    CTFD_API_KEY: str = ""
+    CTFD_WEBHOOK_SECRET: str = ""  # empty = webhook disabled; set 16+ chars to enable
+
+    # Tutor / Open edX LTI Bridge. Off by default: launch id_tokens are not yet signature-verified,
+    # so startup refuses LTI_ENABLED in production (see security.assert_secure_settings).
+    LTI_ENABLED: bool = False
+    TUTOR_LMS_URL: str = "http://local.overhang.io"
+    LTI_TOOL_KEY_ID: str = "cyberlearn-lti-key-1"
+
     # Lesson YAML (repo-root /content by default)
     CONTENT_DIR: str = str(Path(__file__).resolve().parents[3] / "content")
 
     # Rate limiting + timeouts
     AI_HINT_DAILY_LIMIT: int = 10  # free tier
+    RUBRIC_FEEDBACK_DAILY_LIMIT: int = 20  # AI-graded open answers per learner per UTC day; 0 = unlimited
     LAB_HOURS_DAILY_LIMIT: float = 2.0  # hours per learner per day
     REQUEST_TIMEOUT_SECONDS: float = 25.0
     RATE_LIMIT_PER_MINUTE: int = 120
     RATE_LIMIT_AUTH_PER_MINUTE: int = 20
     RATE_LIMIT_WRITE_PER_MINUTE: int = 60
+
+    # LLM & Formative Feedback
+    LLM_PROVIDER: str = "auto"  # "auto" | "gemini" | "openai" | "heuristic"
+    GEMINI_API_KEY: str = ""
+    OPENAI_API_KEY: str = ""
+    LLM_MODEL: str = "gemini-1.5-flash"
 
     # Optional SMTP. Empty host = no send (PWA falls back to free mailto / inbox).
     # Brevo free = 300/day. Amazon SES ≈ $0.10 / 1,000. College Google Workspace = $0 extra.

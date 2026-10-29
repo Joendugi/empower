@@ -29,6 +29,11 @@ def assert_secure_settings() -> None:
     staff = settings.ADMIN_STAFF_KEY.strip()
     if len(staff) < 12:
         raise RuntimeError("ADMIN_STAFF_KEY must be set to 12+ characters in production")
+    ctfd_secret = settings.CTFD_WEBHOOK_SECRET.strip()
+    if ctfd_secret and len(ctfd_secret) < 16:
+        raise RuntimeError("CTFD_WEBHOOK_SECRET must be 16+ characters when set")
+    if settings.LTI_ENABLED:
+        raise RuntimeError("LTI_ENABLED is not production-ready: LTI launch tokens are not signature-verified yet")
     if not settings.CORS_ORIGINS:
         raise RuntimeError("CORS_ORIGINS must be set in production")
     if any(origin.strip() == "*" for origin in settings.CORS_ORIGINS):
@@ -40,7 +45,7 @@ def assert_secure_settings() -> None:
 
 
 def staff_digest(value: str) -> str:
-    payload = f"{STAFF_HASH_PREFIX}:{value.strip()}".encode("utf-8")
+    payload = f"{STAFF_HASH_PREFIX}:{value.strip()}".encode()
     return hashlib.sha256(payload).hexdigest()
 
 

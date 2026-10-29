@@ -1,7 +1,9 @@
 from app.models.auth_challenge import AuthChallenge
 from app.models.badge import Badge
+from app.models.feedback import FormativeFeedback
 from app.models.fsrs_card import FSRSCard
 from app.models.learner import Learner
+from app.models.rubric import Rubric, RubricSignOff
 from app.models.streak import Streak
 from app.models.studio import (
     AnalyticsEventRow,
@@ -23,6 +25,9 @@ __all__ = [
     "FSRSCard",
     "Submission",
     "LessonCompletion",
+    "FormativeFeedback",
+    "Rubric",
+    "RubricSignOff",
     "PublishedLesson",
     "PublishedPath",
     "CurriculumDraftRow",

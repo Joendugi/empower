@@ -9,6 +9,8 @@ Tasks:
 
 from __future__ import annotations
 
+from typing import Any
+
 from celery import Celery
 from celery.schedules import crontab
 
@@ -131,3 +133,77 @@ def reset_monthly_freeze_tokens() -> dict[str, int]:
 
     count = asyncio.run(_run())
     return {"streaks_reset": count}
+
+
+@celery_app.task(name="app.workers.celery_app.evaluate_formative_feedback_task")  # type: ignore[misc]
+def evaluate_formative_feedback_task(feedback_id: str) -> dict[str, Any]:
+    """
+    Background worker task to evaluate a learner's open-ended submission against rubric criteria.
+    Updates FormativeFeedback row with score, criteria breakdown, summary, and completed_at.
+    """
+    import asyncio
+    import json
+    from datetime import UTC, datetime
+
+    from sqlalchemy import select
+
+    async def _run() -> dict[str, Any]:
+        from app.database import AsyncSessionLocal
+        from app.models.feedback import FormativeFeedback
+        from app.services.llm_rubric import evaluate_submission_response
+
+        async with AsyncSessionLocal() as db:
+            fb = await db.scalar(select(FormativeFeedback).where(FormativeFeedback.id == feedback_id))
+            if not fb:
+                return {"status": "error", "message": f"Feedback ID {feedback_id} not found"}
+
+            fb.status = "processing"
+            await db.commit()
+
+            criteria = json.loads(fb.criteria_json) if fb.criteria_json else None
+            result = await evaluate_submission_response(fb.prompt, fb.learner_response, criteria)
+
+            fb.overall_score = result.overall_score
+            fb.passed = result.passed
+            fb.criterion_evaluations = json.dumps([c.model_dump(by_alias=True) for c in result.criterion_evaluations])
+            fb.summary = result.summary
+            fb.strengths = json.dumps(result.strengths)
+            fb.actionable_guidance = json.dumps(result.actionable_guidance)
+            fb.status = "completed"
+            fb.completed_at = datetime.now(UTC)
+            await db.commit()
+
+            return {
+                "status": "completed",
+                "feedback_id": feedback_id,
+                "overall_score": result.overall_score,
+                "passed": result.passed,
+            }
+
+    try:
+        asyncio.get_running_loop()
+        import concurrent.futures
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            return executor.submit(lambda: asyncio.run(_run())).result()
+    except RuntimeError:
+        return asyncio.run(_run())
+
+
+@celery_app.task(name="app.workers.celery_app.sync_ctfd_challenges_task")  # type: ignore[misc]
+def sync_ctfd_challenges_task() -> dict[str, Any]:
+    """
+    Periodically sync and cache available CTFd challenges.
+    """
+    import asyncio
+
+    from app.services.ctfd_sync import fetch_ctfd_challenges_remote
+
+    try:
+        challenges = asyncio.run(fetch_ctfd_challenges_remote())
+        return {"status": "synced", "count": len(challenges)}
+    except Exception as exc:
+        return {"status": "error", "message": str(exc)}
+
+
+

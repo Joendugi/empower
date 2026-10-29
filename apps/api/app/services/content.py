@@ -80,6 +80,7 @@ def _public_lesson(raw: dict[str, Any], path: Path) -> dict[str, Any]:
         "briefing": raw.get("briefing"),
         "briefingSw": raw.get("briefing_sw") or raw.get("briefingSw"),
         "outline": raw.get("outline"),
+        "contentMd": raw.get("content_md") or raw.get("contentMd"),
         "weekNumber": raw.get("week_number") or raw.get("weekNumber"),
         "dayNumber": raw.get("day_number") or raw.get("dayNumber"),
         "estimatedMinutes": raw.get("estimated_minutes") or raw.get("estimatedMinutes", 5),
@@ -111,17 +112,20 @@ def _catalog() -> dict[str, Any]:
     for path in sorted((root / "skill-paths").glob("*.yaml")):
         raw = _load_yaml(path)
         nodes = []
-        for node in raw.get("nodes", []):
+        for idx, node in enumerate(raw.get("nodes", [])):
             lesson_ids = node.get("lesson_ids") or node.get("lessonIds") or []
+            if not lesson_ids and node.get("lessonId"):
+                lesson_ids = [str(node["lessonId"])]
+            node_id = str(node.get("id") or node.get("node_id") or node.get("lessonId") or f"{raw.get('id', 'path')}-node-{idx+1}")
             nodes.append(
                 {
-                    "id": node["id"],
-                    "title": node["title"],
+                    "id": node_id,
+                    "title": node.get("title") or node_id,
                     "titleSw": node.get("title_sw") or node.get("titleSw"),
                     "description": node.get("description"),
                     "outline": node.get("outline"),
-                    "weekNumber": node.get("week_number") or node.get("weekNumber"),
-                    "dayNumber": node.get("day_number") or node.get("dayNumber"),
+                    "weekNumber": node.get("week_number") or node.get("weekNumber") or node.get("day"),
+                    "dayNumber": node.get("day_number") or node.get("dayNumber") or node.get("day"),
                     "prerequisites": node.get("prerequisites") or [],
                     "lessonIds": lesson_ids,
                     "badgeIds": node.get("badge_ids") or node.get("badgeIds") or [],
@@ -155,6 +159,14 @@ def list_skill_paths() -> list[dict[str, Any]]:
 
 def get_skill_path(path_id: str) -> dict[str, Any] | None:
     return _catalog()["paths"].get(path_id) or get_overlay_path(path_id)
+
+
+def is_builtin_lesson(lesson_id: str) -> bool:
+    return lesson_id in _catalog()["raw_lessons"]
+
+
+def is_builtin_path(path_id: str) -> bool:
+    return path_id in _catalog()["paths"]
 
 
 def get_public_lesson(lesson_id: str) -> dict[str, Any] | None:
