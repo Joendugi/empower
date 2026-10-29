@@ -19,6 +19,10 @@ dev = [
 [project.scripts]
 cyberlearn-content = "src.cli:main"
 
+[tool.setuptools]
+# The importable package is literally named `src` (see the console script above).
+packages = ["src"]
+
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
