@@ -1,0 +1,107 @@
+id: cyber-sy0701-d3-w3
+course_id: secplus-architecture
+title: Week 3 — Resilience, backups, and data protection architecture
+title_sw: Wiki 3 — Ustahimilivu, backup, na ulinzi wa data
+briefing: 'Resilience: high availability, clustering, load balancing, UPS/generator, redundant ISPs, and geographic diversity. RTO is how fast you must be back; RPO is how much data you can lose. A college that backs up once a month has a 30-day RPO whether they admit it or not. RAID is availability of a disk, not a backup — ransomware encrypts the array too.
+
+
+  Backups: full, incremental, differential, snapshots, and the 3-2-1 idea (three copies, two media, one off-site/offline). Test restores. Immutable / WORM backups defeat ransomware. Encrypt backup media — stolen tapes are a confidentiality incident. Power: UPS for clean shutdown; generator for long outages. Document the order of recovery: identity, DNS, MIS, then labs.
+
+
+  Data types: regulated (DPA personal data, exam integrity, health in the clinic), public, and intellectual property. Classification labels drive encryption and sharing. Data in use, in transit, at rest — different controls (TLS vs disk vs DLP). Retention and destruction: do not keep student IDs forever “just in case”.
+
+
+  Architecture diagram this week: where backups live, who can write, who can delete, and the offline copy. If the same domain admin can wipe production and backups, ransomware has won.'
+briefing_sw: 'RTO na RPO. RAID si backup. 3-2-1, offline, immutable. Ficha backup. UPS. Data at rest, in transit, in use. DPA: usihifadhi milele. Admin mmoja asifute production na backup.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 3 — Security Architecture (18%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d3-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'RPO measures:'
+  options:
+  - id: a
+    text: How pretty the logo is
+  - id: b
+    text: Maximum tolerable data loss (time since last good backup)
+  - id: c
+    text: CPU temperature
+  - id: d
+    text: Cable length
+  correct_answer: b
+  hint: Point in time.
+  explanation: RTO is downtime. RPO is data loss. Both belong in the DR plan.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'RAID 1 mirrors disks. It is not a backup because:'
+  options:
+  - id: a
+    text: Mirrors cannot fail
+  - id: b
+    text: Malware, fire, and accidental delete hit both sides; backups are independent copies
+  - id: c
+    text: RAID is illegal
+  - id: d
+    text: Mirrors skip CIA
+  correct_answer: b
+  hint: Independence.
+  explanation: Say this in every oral until it sticks.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'An offline backup is valuable against ransomware because:'
+  options:
+  - id: a
+    text: It is slower therefore safer always
+  - id: b
+    text: The attacker cannot encrypt a copy that is not reachable
+  - id: c
+    text: It uses MD5
+  - id: d
+    text: It is a DMZ
+  correct_answer: b
+  hint: Air-gapped / detached.
+  explanation: Online-only sync folders get encrypted too.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Data in transit is primarily protected with:'
+  options:
+  - id: a
+    text: A locked filing cabinet
+  - id: b
+    text: TLS or a VPN
+  - id: c
+    text: A bigger UPS
+  - id: d
+    text: A honeytoken only
+  correct_answer: b
+  hint: Transport encryption.
+  explanation: At rest is disk/file/db encryption. In use may need confidential computing or just least privilege.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w3-fb1
+  type: FILL_BLANK
+  prompt: The maximum acceptable downtime after a disaster is the ___.
+  correct_answer: RTO
+  hint: Recovery Time Objective.
+  explanation: RTO drives whether you need clustering or just a tested restore by tomorrow.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w3-scenario
+  type: SCENARIO
+  prompt: Backups sit on a NAS mapped as a drive for every staff member; no versioning. Ransomware risk?
+  options:
+  - id: a
+    text: None — NAS is magic
+  - id: b
+    text: 'High: encrypts live files and the backup share — use offline/immutable copies and restrict write'
+  - id: c
+    text: Solved by RAID 0
+  - id: d
+    text: Solved by a prettier SSID
+  correct_answer: b
+  hint: Architecture of backup.
+  explanation: This is Domain 3 resilience, not an antivirus popup.
+  xp_reward: 60

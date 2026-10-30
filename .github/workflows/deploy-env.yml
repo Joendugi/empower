@@ -97,9 +97,12 @@ jobs:
           # learners mid-session (or offline with an old service worker) still load.
           aws s3 sync apps/pwa/dist/assets "s3://$BUCKET/assets" \
             --cache-control "public,max-age=31536000,immutable"
-          # Everything else (index.html, sw.js, manifest, icons) must be revalidated,
-          # or learners keep an old app shell.
-          aws s3 sync apps/pwa/dist "s3://$BUCKET" --exclude "assets/*" \
+          # Course packs are named by content hash too; only their manifest changes in place.
+          aws s3 sync apps/pwa/dist/packs "s3://$BUCKET/packs" --exclude manifest.json \
+            --cache-control "public,max-age=31536000,immutable"
+          # Everything else (index.html, sw.js, manifests, icons) must be revalidated,
+          # or learners keep an old app shell or miss new lesson content.
+          aws s3 sync apps/pwa/dist "s3://$BUCKET" --exclude "assets/*" --exclude "packs/*.*.json" \
             --cache-control "public,max-age=0,must-revalidate"
           aws cloudfront create-invalidation \
             --distribution-id "${{ steps.settings.outputs.distributionId }}" --paths "/*" >/dev/null

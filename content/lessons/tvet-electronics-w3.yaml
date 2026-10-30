@@ -1,0 +1,108 @@
+id: tvet-electronics-w3
+course_id: basic-electronics
+title: Week 3 — Number systems, memory classes, and emerging hardware
+title_sw: Wiki 3 — Mifumo ya namba, kumbukumbu, na mwelekeo mpya
+briefing: 'Computers count in binary. You must convert between decimal, binary, octal, and hexadecimal because addresses, MAC values, IPv6 nybbles, and colour codes are hex. One hex digit is four bits (a nybble). 0xA = 10 decimal = 1010 binary. BCD 8421 encodes each decimal digit in four bits — used in some displays and RTC chips. Binary addition carries just as decimal does; overflow is why an 8-bit register wraps from 255 to 0.
+
+
+  Memory in this unit is classified by how it is used, not by brand. RAM is volatile working store. ROM (and its flash descendants) keep firmware when power dies. Magnetic memory (HDD) versus semiconductor (SSD, DRAM). Cache is small and fast; secondary storage is large and slower. “DAM” appears in some CDACC lists as a memory class — treat it as a listed type in oral tests and contrast it with RAM/ROM in practice.
+
+
+  Emerging trends you should be able to name: SoC boards (Raspberry Pi class), NVMe, USB-C power delivery, and denser NAND. Challenges: counterfeit ICs, right-to-repair parts, e-waste, and ESD on finer processes. Coping: buy from reputable distributors, follow JEDEC handling, and recycle boards through licensed e-waste — that links to the environmental literacy basic unit.
+
+
+  Assessment is written conversion plus identification. A typical paper: convert 156₁₀ to hex, state whether DDR is volatile, and name one risk of unbranded RAM. Show working. Do not skip the 16s column in hex.'
+briefing_sw: Binary, octal, hex. Digit moja ya hex = bit 4. RAM ni volatile; ROM/firmware inabaki. SSD ni semiconductor; HDD ni magnetic. SoC, NVMe, USB-C ni mwelekeo. E-waste na ESD ni changamoto.
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CC/1/5
+exam_domain: CDACC ICT L5 — Demonstrate Basic Electronics (IT/CU/ICT/CC/1/5, 100 h)
+xp_total: 310
+exercises:
+- id: tvet-electronics-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: How many bits does one hexadecimal digit represent?
+  options:
+  - id: a
+    text: '1'
+  - id: b
+    text: '4'
+  - id: c
+    text: '10'
+  - id: d
+    text: 16 bits exactly always
+  correct_answer: b
+  hint: Nybble.
+  explanation: Hex 0–F maps to 0000–1111. That is why MAC addresses are written in hex.
+  xp_reward: 50
+- id: tvet-electronics-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: Which memory loses its contents when the PSU is switched off?
+  options:
+  - id: a
+    text: ROM BIOS chip (firmware)
+  - id: b
+    text: DRAM / system RAM
+  - id: c
+    text: A programmed mask ROM in theory forever
+  - id: d
+    text: Stone tablet
+  correct_answer: b
+  hint: Volatile.
+  explanation: RAM is working memory. Storage and firmware persist.
+  xp_reward: 50
+- id: tvet-electronics-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: '156 decimal in hexadecimal is:'
+  options:
+  - id: a
+    text: '0x9C'
+  - id: b
+    text: '0x156'
+  - id: c
+    text: '0xFF'
+  - id: d
+    text: 156h meaning 156 decimal still
+  correct_answer: a
+  hint: 16 × 9 = 144, remainder 12 = C.
+  explanation: 9C₁₆ = 9×16 + 12 = 144 + 12 = 156.
+  xp_reward: 50
+- id: tvet-electronics-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'BCD 8421 stores the decimal number 25 as:'
+  options:
+  - id: a
+    text: 11001 in five bits
+  - id: b
+    text: 0010 0101
+  - id: c
+    text: FF
+  - id: d
+    text: 25 in ASCII only
+  correct_answer: b
+  hint: Each digit gets four bits.
+  explanation: 2 → 0010, 5 → 0101. That is the CDACC binary-codes outcome.
+  xp_reward: 50
+- id: tvet-electronics-w3-fb1
+  type: FILL_BLANK
+  prompt: Base-16 numbering used for memory addresses is called ___.
+  correct_answer: hexadecimal
+  hint: Digits 0–9 and A–F.
+  explanation: Hex is the technician’s shorthand for binary groups of four.
+  xp_reward: 50
+- id: tvet-electronics-w3-scenario
+  type: SCENARIO
+  prompt: A learner writes that an SSD is “RAM because it is semiconductor.” Your assessor comment?
+  options:
+  - id: a
+    text: Correct — all semiconductors are volatile
+  - id: b
+    text: 'Wrong class: NAND flash is non-volatile semiconductor storage, not working RAM'
+  - id: c
+    text: SSDs are magnetic
+  - id: d
+    text: RAM is only magnetic tape
+  correct_answer: b
+  hint: Volatile versus persistent.
+  explanation: Material (semiconductor) is not the same as the role (working memory vs storage).
+  xp_reward: 60

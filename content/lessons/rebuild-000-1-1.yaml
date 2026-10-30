@@ -1,0 +1,72 @@
+id: rebuild-000-1-1
+course_id: the-rebuild-protocol
+title: What is Digital Infrastructure?
+title_sw: Miundombinu ya kidijitali ni nini?
+briefing: 'MISSION BRIEFING: You are a Rebuilder Corps recruit. The Blackout of 2031 showed the world what happens when digital infrastructure collapses. Your first mission is to understand the five invisible layers that modern society depends on — so you know exactly what you are defending.
+
+
+  Modern society runs on five invisible layers: (1) Power grids — electricity is the foundation; without it nothing else works. (2) Communications networks — fibre, satellite, and mobile towers that carry data. (3) Computing systems — the servers, routers, and devices that process information. (4) Databases — the stored records of money, health, identity, and logistics. (5) Applications — the software that citizens and businesses use every day. When any layer fails, everything above it fails too. The Blackout of 2031 proved this in 72 hours: attackers hit the power grid and communications layer simultaneously, and within three days banking, hospitals, and supply chains collapsed across East Africa. Rebuilder Corps exists to prevent it happening again.'
+briefing_sw: 'UJUMBE WA DHAMIRA: Wewe ni mwanachama mpya wa Kikosi cha Wajenzi. Giza Kuu la 2031 lilionyesha nini kinatokea miundombinu ya kidijitali inapoanguka.
+
+
+  Jamii ya kisasa inategemea tabaka tano zisizoonekana: (1) Gridi za umeme — msingi wa kila kitu. (2) Mitandao ya mawasiliano — nyuzi macho, setilaiti, na minara. (3) Mifumo ya kompyuta — seva na vifaa vinavyochakata data. (4) Hifadhidata — kumbukumbu za fedha, afya, na utambulisho. (5) Programu — zinazotumika na raia na biashara kila siku. Tabaka moja likiporomoka, yaliyopo juu yake yanaporomoka pia.'
+estimated_minutes: 10
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-11-q1
+  type: MULTIPLE_CHOICE
+  prompt: How many layers make up modern digital infrastructure according to the Rebuilder Corps model?
+  options:
+  - id: a
+    text: Three
+  - id: b
+    text: Four
+  - id: c
+    text: Five
+  - id: d
+    text: Seven
+  correct_answer: c
+  hint: Think about power, comms, computing, data, and apps.
+  explanation: 'The five layers are: power grids, communications networks, computing systems, databases, and applications. Each layer depends on the one below it.'
+  xp_reward: 50
+- id: r000-11-q2
+  type: MULTIPLE_CHOICE
+  prompt: If a city's communications network goes down completely, which of the following is the MOST likely immediate impact?
+  options:
+  - id: a
+    text: Only social media stops working
+  - id: b
+    text: Computing systems, databases, and applications that rely on that network also stop functioning
+  - id: c
+    text: The power grid automatically shuts down
+  - id: d
+    text: Databases are unaffected because they store data locally
+  correct_answer: b
+  hint: 'Remember: each layer depends on the layers below it.'
+  explanation: Communications sit below computing systems, databases, and applications in the infrastructure stack. When the network layer fails, everything above it that relies on network connectivity fails too.
+  xp_reward: 50
+- id: r000-11-q3
+  type: FILL_BLANK
+  prompt: The Blackout of 2031 caused banking, hospitals, and supply chains to collapse within ___ hours after the initial attack on the power and communications layers.
+  correct_answer: '72'
+  hint: It took three days.
+  explanation: 'The Blackout scenario illustrates cascading failure: the initial attack took down the lowest layers, and within 72 hours (three days) the impact had cascaded up through the entire stack to affect citizens directly.'
+  xp_reward: 50
+- id: r000-11-q4
+  type: SCENARIO
+  prompt: A ransomware group encrypts the central database of a major Kenyan bank. Customers cannot check balances, make payments, or withdraw cash. Which layer of digital infrastructure has been directly attacked?
+  options:
+  - id: a
+    text: The power grid layer
+  - id: b
+    text: The communications network layer
+  - id: c
+    text: The database layer
+  - id: d
+    text: The application layer only
+  correct_answer: c
+  hint: The data itself — stored records — is the target.
+  explanation: Databases are Layer 4 in the infrastructure stack. Encrypting a database directly attacks stored records of money and identity, and causes the applications above it (banking apps, ATMs) to fail even though the network and servers are still running.
+  xp_reward: 60

@@ -1,0 +1,108 @@
+id: tvet-programming-w2
+course_id: computer-programming
+title: 'Week 2 — Structured C: types, control, functions, and headers'
+title_sw: 'Wiki 2 — C: aina, control, functions, na headers'
+briefing: 'C concepts in the curriculum: characteristics, preprocessor directives (`#include`, `#define`), headers (`stdio.h`, `stdlib.h`, `math.h`, `string.h`), data types (`int`, `float`, `char`, arrays, structs), operators, and input/output with `printf`/`scanf` (or safer `fgets` in a security-aware lab). Every complete C program has `main`. Statements end with semicolons. Braces define blocks.
+
+
+  Control: `if/else`, `switch`, `while`, `for`, `do-while`. Trace on paper with a trace table — that is how orals work. Functions: prototype, definition, call, return, and parameters (pass by value in C; pointers when you must change the caller’s data). Scope: local versus global. Avoid globals unless the lesson requires a demo of why they hurt.
+
+
+  Arrays and strings: a string is a `char` array with a `\0` terminator. Off-by-one and buffer overflow are how C programs become cyber incidents. Check lengths. Structures group fields (a `Student` with id, name, grade). File I/O (`fopen`, `fclose`) if the practical stores records.
+
+
+  Lab: a menu-driven program — enter n numbers, compute average, reject invalid input, print a small report. Compile with warnings (`gcc -Wall`). Screenshot of source, compile, and sample run for the portfolio. Style: indent, names that mean something, comments that explain why.'
+briefing_sw: '#include <stdio.h>, main, printf/scanf. if, for, while. Functions na return. String ina \0. -Wall. Programu ya menyu: wastani wa namba, kataa input batili.'
+estimated_minutes: 35
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/5/5
+exam_domain: CDACC ICT L5 — Develop Computer Program (IT/CU/ICT/CR/5/5, 340 h)
+xp_total: 310
+exercises:
+- id: tvet-programming-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: '`#include <stdio.h>` is a:'
+  options:
+  - id: a
+    text: Linker script only
+  - id: b
+    text: Preprocessor directive pulling a standard header
+  - id: c
+    text: BIOS setting
+  - id: d
+    text: Foreign key
+  correct_answer: b
+  hint: Hash at top.
+  explanation: Preprocessor runs before the compiler proper.
+  xp_reward: 50
+- id: tvet-programming-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A `for` loop is most appropriate when:'
+  options:
+  - id: a
+    text: You know how many iterations you need
+  - id: b
+    text: You are drawing an ER diagram
+  - id: c
+    text: You are crimping
+  - id: d
+    text: The program must not repeat
+  correct_answer: a
+  hint: Counted repetition.
+  explanation: '`while` is for unknown counts; `do-while` runs at least once.'
+  xp_reward: 50
+- id: tvet-programming-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'In C, a string is typically:'
+  options:
+  - id: a
+    text: A `char` array terminated by `\0`
+  - id: b
+    text: A SQL table
+  - id: c
+    text: An Ohm value
+  - id: d
+    text: Always 256 RAM chips
+  correct_answer: a
+  hint: Null terminator.
+  explanation: Forgetting `\0` makes `printf("%s")` read off the end of the array.
+  xp_reward: 50
+- id: tvet-programming-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: '`scanf("%d", &x)` needs `&` because:'
+  options:
+  - id: a
+    text: C is object-oriented only
+  - id: b
+    text: '`scanf` must receive the address of `x` to store the value'
+  - id: c
+    text: Ampersands start comments
+  - id: d
+    text: It converts to hex
+  correct_answer: b
+  hint: Pointers.
+  explanation: Pass by value would not update `x`. Address-of is required for scalars.
+  xp_reward: 50
+- id: tvet-programming-w2-fb1
+  type: FILL_BLANK
+  prompt: The function that is the entry point of a hosted C program is ___.
+  correct_answer: main
+  hint: int main(void).
+  explanation: Execution starts at main after the loader and CRT startup.
+  xp_reward: 50
+- id: tvet-programming-w2-scenario
+  type: SCENARIO
+  prompt: Program should average five positive scores but crashes when the user types “nine”. Fix?
+  options:
+  - id: a
+    text: Ignore it — users are the problem
+  - id: b
+    text: Check `scanf` return value / read a line and validate before converting; loop until valid
+  - id: c
+    text: Remove `main`
+  - id: d
+    text: Use a hierarchical DBMS instead of C
+  correct_answer: b
+  hint: Defensive input.
+  explanation: Unvalidated `scanf` leaves the stream dirty and is undefined for wrong types.
+  xp_reward: 60

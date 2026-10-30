@@ -12,6 +12,8 @@ import {
   type LocalAccount,
 } from '@/lib/localAccounts';
 import { useLearnerStore } from '@/store/learnerStore';
+import { useIsFullAdmin } from '@/lib/roles';
+import ServerAccounts from '@/components/admin/ServerAccounts';
 import CatalogueEditor from '@/components/campus/CatalogueEditor';
 import AdminGate from '@/components/admin/AdminGate';
 import CourseAnalytics from '@/components/admin/CourseAnalytics';
@@ -70,8 +72,9 @@ export default function AdminPage() {
   const reviewApplication = useModerationStore((state) => state.reviewApplication);
   const reviewProposal = useModerationStore((state) => state.reviewProposal);
   const staffEmail = useLearnerStore((state) => state.email);
+  const authSource = useLearnerStore((state) => state.authSource);
   const staffName = useLearnerStore((state) => state.displayName) ?? 'Staff';
-  const owner = isOwner(staffEmail);
+  const owner = useIsFullAdmin();
   const queuedApplications = useMemo(
     () =>
       [...applications].sort((a, b) => {
@@ -456,7 +459,7 @@ export default function AdminPage() {
               </>
             ) : tab === 'validation' ? (
               <section className="space-y-8">
-                <StaffAccounts />
+                {authSource === 'cloud' ? <ServerAccounts /> : <StaffAccounts />}
                 <div>
                   <h2 className="text-xl font-semibold">Educator verification</h2>
                   <p className="text-sm text-muted mt-2">

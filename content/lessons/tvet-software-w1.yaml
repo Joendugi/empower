@@ -1,0 +1,108 @@
+id: tvet-software-w1
+course_id: software-install
+title: Week 1 — Classify software, licences, and OS families
+title_sw: Wiki 1 — Aina za programu, leseni, na familia za OS
+briefing: 'Install Computer Software (IT/CU/ICT/CR/2/5, 260 hours) begins with identification, not clicking Next. Software is system (OS, drivers, utilities) or application (office, browser, college MIS). Acquisition is commercial off-the-shelf, open source, site licence, or in-house. Selection criteria: hardware compatibility, licence legality, vendor support, and the college acceptable-use policy. Installing a cracked copy is a CMCA and copyright fail, not a cost-saving tip.
+
+
+  Operating systems are single or multi-user, single or multitasking, batch, real-time, or distributed. Interfaces are CLI, menu, or GUI. OS functions you will be asked: process, memory, device, storage, and security management. Windows, Linux, and mobile OS differ in driver models and update channels, but the install decision is the same: 64-bit vs 32-bit, disk layout, and whether the machine is domain-joined.
+
+
+  Legal requirements: keep licence keys in the inventory, match OEM vs retail vs volume, and do not clone a Windows image onto five lab PCs unless the licence allows it. Data protection: back up user profiles before an OS reload — Kenya Data Protection Act duties apply to student records on that disk.
+
+
+  Deliverable this week: a software specification sheet for a lab PC — OS edition, office suite licence, browser, antivirus, and drivers — with sources. Assessors mark the sheet, not a screenshot of a wallpaper.'
+briefing_sw: Programu ya mfumo dhidi ya programu ya matumizi. Leseni halali, si crack. OS inaweza kuwa multi-user, real-time, au distributed. CLI, menyu, au GUI. Hifadhi data kabla ya kufunga upya. Andika orodha ya programu na leseni.
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/2/5
+exam_domain: CDACC ICT L5 — Install Computer Software (IT/CU/ICT/CR/2/5, 260 h)
+xp_total: 310
+exercises:
+- id: tvet-software-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: Which list is system software rather than an application?
+  options:
+  - id: a
+    text: LibreOffice, Chrome, GIMP
+  - id: b
+    text: Kernel, device drivers, and the file system manager
+  - id: c
+    text: A student game only
+  - id: d
+    text: A PDF of the timetable
+  correct_answer: b
+  hint: Runs the machine.
+  explanation: Applications sit on top of the OS. Drivers and the kernel are system software.
+  xp_reward: 50
+- id: tvet-software-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A real-time OS is chosen when:'
+  options:
+  - id: a
+    text: You need a pretty theme
+  - id: b
+    text: Tasks must meet strict timing (lab instruments, some industrial controllers)
+  - id: c
+    text: You refuse to licence Windows
+  - id: d
+    text: RAM is unlimited
+  correct_answer: b
+  hint: Deadlines.
+  explanation: Batch OS queues jobs. Real-time guarantees timing. Desktop OS is interactive.
+  xp_reward: 50
+- id: tvet-software-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Before reinstalling an OS on a staff PC that holds student marks, you must:'
+  options:
+  - id: a
+    text: Skip backup to save time
+  - id: b
+    text: Back up and protect personal data, then install from legal media
+  - id: c
+    text: Copy a cracked ISO from WhatsApp
+  - id: d
+    text: Format and hope
+  correct_answer: b
+  hint: Data protection plus licence.
+  explanation: CDACC lists existing data protection and legal installation as outcomes.
+  xp_reward: 50
+- id: tvet-software-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A GUI differs from a CLI in that a GUI:'
+  options:
+  - id: a
+    text: Cannot start programs
+  - id: b
+    text: Uses graphical controls; a CLI uses typed commands
+  - id: c
+    text: Is illegal in Kenya
+  - id: d
+    text: Replaces the need for drivers
+  correct_answer: b
+  hint: Interface types in the unit.
+  explanation: Technicians still need CLI for repair (Safe Mode, recovery console, bash).
+  xp_reward: 50
+- id: tvet-software-w1-fb1
+  type: FILL_BLANK
+  prompt: Software you can legally inspect and modify under its licence is called ___ source.
+  correct_answer: open
+  hint: Opposite of closed proprietary.
+  explanation: Open source still has a licence (GPL, MIT). It is not “no rules”.
+  xp_reward: 50
+- id: tvet-software-w1-scenario
+  type: SCENARIO
+  prompt: HOD asks you to image one licensed Windows disk onto 40 lab PCs. Correct professional response?
+  options:
+  - id: a
+    text: Do it — imaging is always allowed
+  - id: b
+    text: Refuse unless a volume/site licence or KMS covers those machines; propose legal options
+  - id: c
+    text: Change the product key sticker only
+  - id: d
+    text: Install and hide the banner
+  correct_answer: b
+  hint: Licence math.
+  explanation: Unlicensed cloning is a fail in industry and in the unit’s legal requirements.
+  xp_reward: 60

@@ -1,0 +1,83 @@
+id: rebuild-000-3-4
+course_id: the-rebuild-protocol
+title: 'Backups: The Rebuild Starts Here'
+title_sw: 'Nakala Teule: Ujenzi Mpya Unaanzia Hapa'
+briefing: 'MISSION BRIEFING: There are two types of computer users: those who have experienced catastrophic data loss, and those who are about to. In the Rebuilder Corps, our rule is simple: data that does not exist in three places does not exist.
+
+
+  The gold standard of resilient digital survival is the 3-2-1 Backup Rule:
+
+  - 3 Copies of all critical data (1 primary operational copy + 2 backup copies).
+
+  - 2 Different Media types (e.g. your computer''s internal drive + an external USB drive, or magnetic tape + cloud storage).
+
+  - 1 Copy stored Offsite or Offline (air-gapped and disconnected from your local network).
+
+
+  Why must one copy be offline? Modern ransomware specifically searches your local network for connected backup drives, shared network folders (NAS), and cloud sync folders — and encrypts them first so you cannot recover. An air-gapped drive kept in a drawer or an immutable cloud vault with write-once protection is immune to ransomware encryption. Backups turn a catastrophic extortion incident into an afternoon of restoration.'
+briefing_sw: 'MISSION BRIEFING: Sheria ya dhahabu ya nakala teule ni 3-2-1:
+
+  Nakala 3 za data yako, kwenye aina 2 tofauti za vifaa, na nakala 1 iliyo mbali au nje ya mtandao (offline).
+
+
+  Ransomware huangamiza pia nakala zilizounganishwa kwenye mtandao mmoja, hivyo nakala iliyotenganishwa (air-gapped) ndiyo kinga ya uhakika.'
+estimated_minutes: 10
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ 3.0 · Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-34-q1
+  type: MULTIPLE_CHOICE
+  prompt: According to the industry-standard 3-2-1 backup strategy, how many copies of your essential data should you maintain?
+  options:
+  - id: a
+    text: 1 copy
+  - id: b
+    text: 2 copies
+  - id: c
+    text: 3 copies
+  - id: d
+    text: 10 copies
+  correct_answer: c
+  hint: The "3" in 3-2-1 stands for the total number of copies.
+  explanation: 'The 3-2-1 rule dictates 3 copies of your data: the live working copy plus two distinct backup copies.'
+  xp_reward: 50
+- id: r000-34-q2
+  type: MULTIPLE_CHOICE
+  prompt: Why is it vital that at least one backup copy is kept "offline" (air-gapped) and disconnected from your computer network?
+  options:
+  - id: a
+    text: Offline drives consume zero electricity and run faster
+  - id: b
+    text: Ransomware and attackers actively search for and encrypt any backup drive connected to the network
+  - id: c
+    text: Data transfers faster when the cable is unplugged
+  - id: d
+    text: Offline storage prevents physical dust from accumulating
+  correct_answer: b
+  hint: Think about how ransomware spreads across connected drives and shared folders.
+  explanation: Ransomware traverses network shares and external drives plugged into infected machines. An air-gapped, disconnected drive cannot be reached or encrypted over the network.
+  xp_reward: 50
+- id: r000-34-q3
+  type: FILL_BLANK
+  prompt: A backup device physically disconnected from all networks and computers is described as being ___-gapped.
+  correct_answer: air
+  hint: A gap of physical air between the device and the network.
+  explanation: An air gap provides physical isolation, preventing remote cyberattacks, malware propagation, and unauthorized network access.
+  xp_reward: 50
+- id: r000-34-q4
+  type: SCENARIO
+  prompt: A microfinance cooperative stores its loan ledger on a single office desktop. The manager plugs in an external hard drive every Friday to back up files, then unplugs it and locks it in a fireproof safe. Is this an effective 3-2-1 practice?
+  options:
+  - id: a
+    text: No, external hard drives should never be stored in safes
+  - id: b
+    text: Yes, it provides an offline, air-gapped copy protected from both network ransomware and physical hazards
+  - id: c
+    text: No, backups should always remain plugged in 24/7
+  - id: d
+    text: No, financial ledgers do not need backups
+  correct_answer: b
+  hint: It creates an isolated, offline copy protected from malware and physical loss.
+  explanation: Unplugging the drive and securing it in a safe creates an authentic air-gapped backup. Even if ransomware infects the office network on Monday, Friday's ledger remains untouched and restorable.
+  xp_reward: 60

@@ -29,13 +29,31 @@ export default defineConfig({
       workbox: {
         cacheId: `empower-${buildId}`,
         cleanupOutdatedCaches: true,
-        // The main chunk carries the bundled catalogue (~2 MB); past Workbox's 2 MiB default it would
-        // silently drop out of the offline precache.
+        // Headroom over Workbox's 2 MiB default so a large chunk never silently drops out of the precache.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         skipWaiting: true,
         clientsClaim: true,
         navigateFallbackDenylist: [/^\/api\//, /^\/health/, /^\/ready/, /^\/office/],
         runtimeCaching: [
+          // Course packs (content/packs.ts). Names carry a content hash, so a cached pack never goes
+          // stale, and the cache name has no build id so packs survive app updates.
+          {
+            urlPattern: /\/packs\/manifest\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'course-pack-manifest',
+              networkTimeoutSeconds: 4,
+            },
+          },
+          {
+            urlPattern: /\/packs\/[^/]+\.[0-9a-f]{12}\.json$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'course-packs',
+              expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheableResponse: { statuses: [200] },
+            },
+          },
           {
             urlPattern: /\/api\/v1\/lessons\//,
             handler: 'NetworkFirst',

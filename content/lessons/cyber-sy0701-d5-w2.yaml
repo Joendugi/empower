@@ -1,0 +1,107 @@
+id: cyber-sy0701-d5-w2
+course_id: secplus-program
+title: Week 2 — Compliance, privacy, and Kenya DPA with Security+
+title_sw: Wiki 2 — Utiifu, faragha, na DPA ya Kenya
+briefing: 'Privacy and compliance sit in Domain 5 and in Kenyan law. The Data Protection Act, 2019 (and regulations) require lawful basis, purpose limitation, minimisation, accuracy, storage limitation, integrity/confidentiality, and accountability. A data protection officer for entities that meet the threshold. Data subject rights: access, correction, deletion where applicable, and complaint to the Office of the Data Protection Commissioner. Cross-border transfer rules apply if the MIS is hosted abroad — contracts and adequacy, not “the cloud is magic”.
+
+
+  Security+ privacy topics: PII, PHI (clinic), data inventory, impact assessments, notices, consent versus other lawful bases (public task, contract, legitimate interest — pick correctly for a public college). Retention schedules. Breach notification duties — know that you may need to inform the ODPC and affected students when the risk is high. Do not wait for the newspaper.
+
+
+  CMCA 2018 still forbids unauthorised access — your pentest needs a letter. PCI is relevant if you take card payments for fees; most campuses should isolate that to a payment processor (reduce scope). Sector regulators (TVETA, CUE, CBK for student loan partners) may add duties.
+
+
+  Semester close: write a one-page processing register for “student admissions data” — purpose, fields, system, retention, sharing, security measures. That is compliance as coursework, not a slogan.'
+briefing_sw: 'DPA 2019: msingi halali, minimisation, haki za mtu. DPO. ODPC. Uhamisho nje ya nchi. CMCA: pentest na barua. PCI ikiwa kadi. Andika rejesta ya usindikaji wa data ya wanafunzi.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 5 — Security Program Management (20%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d5-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Keeping every unsuccessful applicant’s ID copy forever “for convenience” most clearly breaches:'
+  options:
+  - id: a
+    text: Ohm’s law
+  - id: b
+    text: Storage limitation / minimisation under data protection principles
+  - id: c
+    text: WPA3
+  - id: d
+    text: RAID 1
+  correct_answer: b
+  hint: DPA principles.
+  explanation: Purpose and storage limitation are examinable privacy ideas and Kenyan law.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A student asks for a copy of personal data you hold. You should:'
+  options:
+  - id: a
+    text: Ignore them
+  - id: b
+    text: Follow the DPA access process (identity check, scope, lawful exceptions) within the required time
+  - id: c
+    text: Post it on the noticeboard
+  - id: d
+    text: Charge an arbitrary million shillings always
+  correct_answer: b
+  hint: Data subject rights.
+  explanation: Security+ calls this privacy operations; Kenya makes it law.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Hosting the MIS in another country requires extra attention to:'
+  options:
+  - id: a
+    text: HDMI versions
+  - id: b
+    text: Cross-border transfer rules and contracts
+  - id: c
+    text: The canteen menu
+  - id: d
+    text: Electrode shade
+  correct_answer: b
+  hint: Transfers.
+  explanation: Cloud region is a governance decision, not only a latency one.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'An authorised penetration test differs from CMCA-offending hacking because it has:'
+  options:
+  - id: a
+    text: Better malware
+  - id: b
+    text: Written scope and permission from the data/system owner
+  - id: c
+    text: No logs
+  - id: d
+    text: A cooler hoodie
+  correct_answer: b
+  hint: Authorisation.
+  explanation: Your existing cyber-law lessons close this semester loop.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w2-fb1
+  type: FILL_BLANK
+  prompt: Kenya’s 2019 statute on personal data is the Data Protection ___.
+  correct_answer: Act
+  hint: DPA.
+  explanation: Name the Act in orals. Pair it with ODPC as the regulator.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w2-scenario
+  type: SCENARIO
+  prompt: 'Ransomware exposes a database of student IDs and health clinic notes. Program-management first duties include:'
+  options:
+  - id: a
+    text: Only restore and stay silent
+  - id: b
+    text: 'Incident process plus privacy: assess notification duties to ODPC/subjects, contain, preserve, communicate honestly'
+  - id: c
+    text: Email the raw database to all parents
+  - id: d
+    text: Blame Security+
+  correct_answer: b
+  hint: IR + DPA.
+  explanation: Domain 4 handles the incident; Domain 5 handles legal privacy duties. Both are in this course.
+  xp_reward: 60

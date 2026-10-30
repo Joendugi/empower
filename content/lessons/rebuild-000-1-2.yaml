@@ -1,0 +1,95 @@
+id: rebuild-000-1-2
+course_id: the-rebuild-protocol
+title: How Civilisation Depends on Networks
+title_sw: Jinsi Ustaarabu Unavyotegemea Mitandao
+briefing: 'MISSION BRIEFING: Modern life does not just use the internet — it is built on top of it. In this mission, examine what happens when digital connectivity is severed.
+
+
+  Every critical public system in East Africa relies on communications networks to operate: (1) Healthcare — hospitals verify health insurance, retrieve digital laboratory tests, and coordinate emergency ambulances across optical and wireless links. (2) Clean Water & Utilities — municipal water treatment plants and electric substations use telemetry and remote sensors to monitor pressure, chlorination, and load. (3) Commerce & Banking — M-Pesa, debit card terminals, and interbank clearance depend on secure cellular packet data. (4) Supply Chains — food transport, fuel distribution, and cargo tracking through the Port of Mombasa coordinate through digital manifests.
+
+
+  When network infrastructure is disrupted, the impact cascades: if payment systems fail, citizens cannot buy fuel; without fuel, backup hospital generators stop; without power, water pumps run dry. Network defense is not just IT — it is public safety.'
+briefing_sw: 'MISSION BRIEFING: Maisha ya kisasa yamejengwa juu ya mitandao. Katika misheni hii, chunguza kinachotokea miundombinu ya kidijitali inapokatika.
+
+
+  Huduma zote muhimu hutegemea mtandao: hospitali, maji safi, umeme, M-Pesa, na usafirishaji wa mizigo. Mtandao ukikatika, athari huenea kwa kila sekta.'
+estimated_minutes: 10
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-12-match
+  type: MATCH_PAIRS
+  prompt: Match each vital community service to its digital network dependency.
+  pairs:
+  - left:
+      id: hospital
+      text: Hospital Patient Care
+    right:
+      id: dep-ehr
+      text: Cloud medical records & digital prescription verification
+  - left:
+      id: mpesa
+      text: M-Pesa & Mobile Money
+    right:
+      id: dep-telco
+      text: Cellular packet data & encrypted transaction gateway
+  - left:
+      id: water
+      text: Clean Water Pumping Station
+    right:
+      id: dep-scada
+      text: Telemetry sensors & remote valve control signals
+  - left:
+      id: cargo
+      text: Port Logistics & Cargo Fleet
+    right:
+      id: dep-gps
+      text: Digital customs clearance manifests & GPS tracking
+  correct_answer:
+  - hospital=dep-ehr
+  - mpesa=dep-telco
+  - water=dep-scada
+  - cargo=dep-gps
+  hint: Think about what data each service needs to transmit to function.
+  explanation: Every physical service depends on a specific digital communication protocol. When the network link breaks, the service cannot coordinate operations.
+  xp_reward: 50
+- id: r000-12-q2
+  type: MULTIPLE_CHOICE
+  prompt: What is a "cascading failure" in critical infrastructure?
+  options:
+  - id: a
+    text: When an electrical wire falls into running water
+  - id: b
+    text: When the failure of one system (such as communications) triggers failures in multiple dependent systems (like banking, transport, and hospitals)
+  - id: c
+    text: When an antivirus program updates automatically
+  - id: d
+    text: When network speeds gradually decrease over time
+  correct_answer: b
+  hint: Think about dominos falling one after another.
+  explanation: A cascading failure occurs when interconnected systems collapse in sequence. Because water, healthcare, and logistics all depend on communications and power, losing one layer quickly brings down the others.
+  xp_reward: 50
+- id: r000-12-q3
+  type: FILL_BLANK
+  prompt: Mobile payment services like M-Pesa require an encrypted link to the telecom network; if the network goes down, merchants cannot verify transactions, demonstrating digital ___ on communications.
+  correct_answer: dependency
+  hint: The state of relying on something to function.
+  explanation: Digital dependency means modern economic activity cannot easily revert to analog alternatives during outages. Resilient societies design offline fallback mechanisms.
+  xp_reward: 50
+- id: r000-12-q4
+  type: SCENARIO
+  prompt: A rural health centre loses internet access during a regional storm. The power generator is running, but staff cannot access patient medical records hosted in Nairobi. Which defensive design principle was missing?
+  options:
+  - id: a
+    text: Faster optical fibre cables
+  - id: b
+    text: Local offline caching of essential emergency patient records
+  - id: c
+    text: Installing a larger diesel generator
+  - id: d
+    text: Switching from Android phones to laptops
+  correct_answer: b
+  hint: The clinic had power, but no local copy of crucial data.
+  explanation: 'Offline resilience requires local caching: critical data should be synchronised locally so clinics can treat patients safely even when the wider wide-area network is disconnected.'
+  xp_reward: 60

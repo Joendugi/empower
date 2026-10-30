@@ -1,0 +1,148 @@
+id: tvet-electronics-w1
+course_id: basic-electronics
+title: Week 1 — Circuits, quantities, and Ohm’s law
+title_sw: Wiki 1 — Mizunguko, vipimo, na sheria ya Ohm
+briefing: 'CDACC common unit Demonstrate Basic Electronics (IT/CU/ICT/CC/1/5, about 100 hours) starts with electric circuits before you ever open a PC. A circuit is a closed path that lets charge flow: source, conductors, load, and a return. Electromotive force (e.m.f.) is measured in volts, current in amperes, resistance in ohms, power in watts (P = VI), and energy in joules. If you mix those units in an oral, you fail the underpinning knowledge even if you can crimp an RJ45.
+
+
+  Direct current (DC) from a PSU rail or battery is constant polarity. Alternating current (AC) from the wall reverses. Lab work is mostly DC on breadboards, but the PSU still converts AC. Series circuits share one current; voltages add. Parallel circuits share voltage; currents add. A blown series lamp kills the chain; a blown parallel lamp leaves the others on — that is how street lights and PC fans are thought about.
+
+
+  Ohm’s law V = IR is the first calculation. If a 5 V rail feeds a 220 Ω resistor, current is about 23 mA. Power in the resistor is I²R. If you cannot estimate that, you will not size a current-limiting resistor for an LED and you will destroy the diode. Always draw the circuit, label polarity, then measure with the meter in the correct mode — voltage in parallel, current in series, resistance with power off.
+
+
+  Workshop practice: isolate mains, use a current-limited bench supply, and never leave a shorted breadboard on a high-current PSU. Assessors watch meter discipline as much as the answer. A fused lead and a known-good ground are part of the competence, not extras.'
+briefing_sw: Mzunguko una chanzo, mzigo, na njia ya kurudi. Volt, ampere, ohm, watt, na joule. DC ni polarity moja; AC inabadilika. Series hushiriki current; parallel hushiriki voltage. V = IR. Pima voltage sambamba, current mfululizo, resistance umeme ukiwa umezima.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CC/1/5
+exam_domain: CDACC ICT L5 — Demonstrate Basic Electronics (IT/CU/ICT/CC/1/5, 100 h)
+xp_total: 360
+media:
+- kind: animation
+  preset: circuit
+  caption: 'Series vs parallel: current has one path or many.'
+exercises:
+- id: tvet-electronics-w1-match
+  type: MATCH_PAIRS
+  prompt: Match each electrical quantity to its SI unit (CDACC electronics oral).
+  pairs:
+  - left:
+      id: v
+      text: E.m.f. / voltage
+    right:
+      id: volt
+      text: Volt (V)
+  - left:
+      id: i
+      text: Current
+    right:
+      id: amp
+      text: Ampere (A)
+  - left:
+      id: r
+      text: Resistance
+    right:
+      id: ohm
+      text: Ohm (Ω)
+  - left:
+      id: p
+      text: Power
+    right:
+      id: watt
+      text: Watt (W)
+  correct_answer:
+  - v=volt
+  - i=amp
+  - r=ohm
+  - p=watt
+  hint: V I R P.
+  explanation: Volt, ampere, ohm, watt. Energy is the joule — do not call energy “watts”.
+  xp_reward: 50
+- id: tvet-electronics-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: In a series circuit with two resistors, which statement is true?
+  options:
+  - id: a
+    text: Voltage is the same across every resistor
+  - id: b
+    text: The same current flows through both resistors
+  - id: c
+    text: Currents add at every node
+  - id: d
+    text: Ohm’s law does not apply
+  correct_answer: b
+  hint: One path.
+  explanation: Series shares current. Parallel shares voltage.
+  xp_reward: 50
+- id: tvet-electronics-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A 12 V DC rail feeds a 240 Ω load. Approximate current is:'
+  options:
+  - id: a
+    text: 0.05 A (50 mA)
+  - id: b
+    text: 2 A
+  - id: c
+    text: 240 A
+  - id: d
+    text: 12 × 240 A
+  correct_answer: a
+  hint: I = V/R.
+  explanation: 12 / 240 = 0.05 A. Always check the order of magnitude before you connect.
+  xp_reward: 50
+- id: tvet-electronics-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: How must a digital multimeter be connected to measure current?
+  options:
+  - id: a
+    text: In parallel with the load, on the voltage jack
+  - id: b
+    text: In series with the load, on the current jack, circuit powered as specified
+  - id: c
+    text: Across the supply with the resistance range
+  - id: d
+    text: On ohms, while the board is live
+  correct_answer: b
+  hint: Current through, voltage across.
+  explanation: A meter on current is a near short. Parallel current measurement blows the fuse.
+  xp_reward: 50
+- id: tvet-electronics-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Power dissipated in a resistor is:'
+  options:
+  - id: a
+    text: V + I
+  - id: b
+    text: I²R or VI
+  - id: c
+    text: R / V
+  - id: d
+    text: Always 1 W
+  correct_answer: b
+  hint: Watts, not volts.
+  explanation: If power exceeds the resistor rating it burns. That is a workshop safety item.
+  xp_reward: 50
+- id: tvet-electronics-w1-fb1
+  type: FILL_BLANK
+  prompt: Ohm’s law states that voltage equals current multiplied by ___.
+  correct_answer: resistance
+  hint: V = IR.
+  explanation: Resistance is measured in ohms. Do not write “watts”.
+  xp_reward: 50
+- id: tvet-electronics-w1-scenario
+  type: SCENARIO
+  prompt: A trainee measures a live 5 V rail on the ohms range and the meter dies. Root cause?
+  options:
+  - id: a
+    text: Ohm’s law is wrong
+  - id: b
+    text: Resistance is measured only with power removed; the ohms range injects a test current into a live rail
+  - id: c
+    text: The resistor value was too small
+  - id: d
+    text: CDACC forbids multimeters
+  correct_answer: b
+  hint: Mode plus isolation.
+  explanation: Never ohm a live circuit. Isolate, discharge capacitors if needed, then measure.
+  xp_reward: 60

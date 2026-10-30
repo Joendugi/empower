@@ -1,0 +1,144 @@
+id: tvet-database-w1
+course_id: database-systems
+title: Week 1 — Database concepts and models
+title_sw: Wiki 1 — Dhana na modeli za hifadhidata
+briefing: 'Manage Database System (310 hours) starts with concepts. A database is organised, shared, persistent data with a DBMS controlling access. File piles on a desktop are not a database: they lack integrity rules, concurrent access control, and a query language. Merits: less redundancy, consistency, security, and multi-user access. Demerits: cost, skill, and a single point of failure if you never back up.
+
+
+  Models in the unit: hierarchical (tree), network (many-to-many pointers), relational (tables), and ER (design drawing of entities and relationships). Kenya’s college registers, M-Pesa ledgers, and NHIF lists are relational in practice. Hierarchical still appears in exam papers and in some LDAP trees. ER is how you design before you CREATE TABLE.
+
+
+  Key vocabulary: entity, attribute, record, field, primary key, foreign key, schema. Redundancy is storing the same fact twice so it can disagree. Anomalies: insert, update, delete problems when the design is not normalised. You will normalise next week; this week you must explain why a spreadsheet of mixed student-and-course rows will hurt.
+
+
+  Tools listed by CDACC: Microsoft Access for teaching, MySQL and SQL Server in industry. You should be able to say when Access is enough (single-department forms) and when a server DBMS is required (concurrent campus MIS).'
+briefing_sw: 'Hifadhidata ni data iliyopangwa na DBMS. Faida: punguza kurudia, usalama. Hasara: gharama na backup. Modeli: hierarchical, network, relational, ER. Primary key, foreign key. Access, MySQL, SQL Server.'
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/4/5
+exam_domain: CDACC ICT L5 — Manage Database System (IT/CU/ICT/CR/4/5, 310 h)
+xp_total: 360
+exercises:
+- id: tvet-database-w1-match
+  type: MATCH_PAIRS
+  prompt: Match each database model named in CDACC ICT L5 to its idea.
+  pairs:
+  - left:
+      id: rel
+      text: Relational model
+    right:
+      id: tables
+      text: Tables, rows, keys
+  - left:
+      id: hier
+      text: Hierarchical model
+    right:
+      id: tree
+      text: Tree of parent–child records
+  - left:
+      id: er
+      text: ER model
+    right:
+      id: design
+      text: Design diagram of entities and relationships
+  - left:
+      id: net
+      text: Network model
+    right:
+      id: pointers
+      text: Records with many-to-many pointers
+  correct_answer:
+  - rel=tables
+  - hier=tree
+  - er=design
+  - net=pointers
+  hint: Tables vs trees vs diagrams.
+  explanation: Relational is what you will implement in SQL. ER is how you design it.
+  xp_reward: 50
+- id: tvet-database-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'The main advantage of a DBMS over scattered Excel files is:'
+  options:
+  - id: a
+    text: It cannot be backed up
+  - id: b
+    text: Controlled redundancy, integrity rules, and concurrent users
+  - id: c
+    text: It forbids keys
+  - id: d
+    text: It prints only once
+  correct_answer: b
+  hint: Merits in the unit.
+  explanation: Spreadsheets do not enforce foreign keys across a campus.
+  xp_reward: 50
+- id: tvet-database-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A primary key must be:'
+  options:
+  - id: a
+    text: Nullable and duplicated
+  - id: b
+    text: Unique (and not null) for each row
+  - id: c
+    text: The student’s favourite colour
+  - id: d
+    text: Always a long sentence
+  correct_answer: b
+  hint: Identity.
+  explanation: Admission number or a surrogate ID — not “John from Nakuru”.
+  xp_reward: 50
+- id: tvet-database-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'An ER diagram is used to:'
+  options:
+  - id: a
+    text: Replace the need for SQL forever
+  - id: b
+    text: Design entities, attributes, and relationships before creating tables
+  - id: c
+    text: Format the disk
+  - id: d
+    text: Draw the campus map only
+  correct_answer: b
+  hint: Design outcome.
+  explanation: You draw, then you implement. Skipping ER causes messy tables.
+  xp_reward: 50
+- id: tvet-database-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Hierarchical models organise data as:'
+  options:
+  - id: a
+    text: A tree of parent and child records
+  - id: b
+    text: Only JSON files
+  - id: c
+    text: Random bits
+  - id: d
+    text: Ohm’s law
+  correct_answer: a
+  hint: IMS-style trees.
+  explanation: Still in the syllabus even if your lab is MySQL.
+  xp_reward: 50
+- id: tvet-database-w1-fb1
+  type: FILL_BLANK
+  prompt: A key in table B that refers to the primary key of table A is a ___ key.
+  correct_answer: foreign
+  hint: Links tables.
+  explanation: Foreign keys implement relationships and referential integrity.
+  xp_reward: 50
+- id: tvet-database-w1-scenario
+  type: SCENARIO
+  prompt: 'Registry stores student name, unit, and grade in one un-keyed sheet. Two “Mary Wanjiku” rows get mixed. This is:'
+  options:
+  - id: a
+    text: Good hierarchical design
+  - id: b
+    text: Missing unique identifiers and a relational design — identity anomaly
+  - id: c
+    text: A printer fault
+  - id: d
+    text: Required by CDACC
+  correct_answer: b
+  hint: Keys.
+  explanation: Without a student ID as primary key, names collide. That is why we design models.
+  xp_reward: 60

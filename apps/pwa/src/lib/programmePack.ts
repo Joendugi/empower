@@ -1,5 +1,5 @@
 import type { Lesson, MediaAsset, SkillPath } from '@cyberlearn/types';
-import { getLesson, getSkillPaths } from '@/content';
+import { getLesson, getLessonAsync, getSkillPaths, isLessonStub } from '@/content';
 import { api } from '@/lib/api';
 import { collectMedia, isMediaAllowed, resolveMediaUrl } from '@/lib/media';
 import { yieldToUi } from '@/lib/sessionSecurity';
@@ -115,8 +115,11 @@ export function findPathForLesson(lessonId: string, paths = getSkillPaths()): Sk
 }
 
 export async function loadLessonForPack(lessonId: string): Promise<Lesson | undefined> {
-  const local = getLesson(lessonId) ?? (await readCachedLesson(lessonId));
-  if (local) return local;
+  // A bundled stub has no exercises; save the full lesson from its course pack instead.
+  const bundled = getLesson(lessonId);
+  const local = (bundled && !isLessonStub(bundled) ? bundled : await getLessonAsync(lessonId)) ??
+    (await readCachedLesson(lessonId));
+  if (local && !isLessonStub(local)) return local;
   try {
     return await api<Lesson>(`/lessons/${lessonId}`);
   } catch {

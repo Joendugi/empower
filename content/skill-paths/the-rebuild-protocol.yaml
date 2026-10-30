@@ -1,0 +1,69 @@
+id: the-rebuild-protocol
+title: The Rebuild Protocol
+title_sw: Itifaki ya Ujenzi Mpya
+description: 'REBUILD-000: The foundational module for all CyberLearn learners. Set in the world of The Blackout — a civilisation-scale cyberattack on East Africa in 2031. Learn how digital infrastructure works, how it fails, and how to defend yourself. No prerequisites. Awards the Rebuilder Initiate badge.'
+description_sw: Moduli ya msingi kwa wanafunzi wote wa CyberLearn. Hadithi ya Giza Kuu — shambulio la mtandao lililoathiri Afrika Mashariki mwaka 2031. Jifunze miundombinu ya kidijitali na jinsi ya kujilindia. Hakuna mahitaji ya awali.
+certification_target: Rebuilder Initiate Badge · Digital Citizenship
+track: cybersecurity
+content_version: '1'
+nodes:
+- id: rebuild-unit-1
+  title: The World Before
+  title_sw: Ulimwengu wa Zamani
+  description: Digital infrastructure layers, network dependencies, and lessons from real-world blackouts.
+  icon: 🌍
+  prerequisites: []
+  badge_ids: []
+  lesson_ids:
+  - rebuild-000-1-1
+  - rebuild-000-1-2
+  - rebuild-000-1-3
+- id: rebuild-unit-2
+  title: The Blackout
+  title_sw: Giza Kuu
+  description: How cyberattacks unfold across four phases, the Nakuru hospital blackout, and why defenders matter.
+  icon: ⚡
+  prerequisites:
+  - rebuild-unit-1
+  badge_ids: []
+  lesson_ids:
+  - rebuild-000-2-1
+  - rebuild-000-2-2
+  - rebuild-000-2-3
+- id: rebuild-unit-3
+  title: Digital Self-Defence
+  title_sw: Ulinzi wa Kidijitali
+  description: 'The five defences: passwords, phishing triage, software patching, 3-2-1 backups, and two-factor authentication.'
+  icon: 🛡️
+  prerequisites:
+  - rebuild-unit-2
+  badge_ids: []
+  lesson_ids:
+  - rebuild-000-3-1
+  - rebuild-000-3-2
+  - rebuild-000-3-3
+  - rebuild-000-3-4
+  - rebuild-000-3-5
+- id: rebuild-unit-4
+  title: Joining the Corps
+  title_sw: Kujiunga na Kikosi
+  description: Corps ethics under CMCA 2018, reading the Civilization Map, setting study targets, and first deployment.
+  icon: 🎖️
+  prerequisites:
+  - rebuild-unit-3
+  badge_ids: []
+  lesson_ids:
+  - rebuild-000-4-1
+  - rebuild-000-4-2
+  - rebuild-000-4-3
+  - rebuild-000-4-4
+- id: rebuild-capstone
+  title: The Initiate Assessment
+  title_sw: Tathmini ya Mwanajeshi Mpya
+  description: 15-question comprehensive evaluation. Score 70%+ to earn the Rebuilder Initiate badge.
+  icon: 🏆
+  prerequisites:
+  - rebuild-unit-4
+  badge_ids: []
+  lesson_ids:
+  - rebuild-000-capstone

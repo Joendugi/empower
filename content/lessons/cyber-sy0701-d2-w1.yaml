@@ -1,0 +1,107 @@
+id: cyber-sy0701-d2-w1
+course_id: secplus-threats
+title: Week 1 — Threat actors, motivations, and attack surfaces
+title_sw: Wiki 1 — Washambuliaji na motisha
+briefing: 'Domain 2 is 22% of SY0-701. Know actors: nation-state, unskilled attacker, hacktivist, insider (intentional and unintentional), organised crime, shadow IT, and competitor. Attributes: internal vs external, resources, level of sophistication, whether they are funded. Motivations: data exfiltration, espionage, service disruption, blackmail, financial gain, philosophical/political, revenge, chaos, war. In Kenya you will see financial (SIM-swap, M-Pesa social engineering), insider (fee clerk), and opportunistic unskilled attackers using leaked tools.
+
+
+  Targets and surfaces: from the objectives — networks, infrastructure, applications, default credentials, open service ports, default configurations, open permissions, unsecure protocols, shared accounts, and human vectors. An open RDP on a polytechnic firewall is a surface. A default MikroTik password is a surface. WhatsApp “HR internship” is a human surface.
+
+
+  Supply chain and third parties belong here too: vendor laptops, cloned Android APKs, and USB gifts. You cannot patch a threat actor; you reduce their surface and motive payoff.
+
+
+  This week: map three campus surfaces to likely actors. Example: guest Wi-Fi → unskilled / opportunistic; finance PC with USB → insider or crimeware; public WordPress → opportunistic scanners.'
+briefing_sw: 'Nation-state, insider, organised crime, hacktivist, unskilled. Motisha: pesa, upelelezi, kero. Nyuso: RDP wazi, nenosiri chaguomsingi, protocal dhaifu, WhatsApp. Punguza surface.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 2 — Threats, Vulnerabilities, and Mitigations (22%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d2-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'An employee who emails a spreadsheet of students to a personal Gmail “to work at home” is:'
+  options:
+  - id: a
+    text: A nation-state APT
+  - id: b
+    text: An insider (often unintentional) data-exfil risk
+  - id: c
+    text: A honeypot
+  - id: d
+    text: A CA
+  correct_answer: b
+  hint: Inside the trust boundary.
+  explanation: Intentional insiders steal; unintentional ones bypass DLP with convenience.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Organised crime is most often motivated by:'
+  options:
+  - id: a
+    text: Peer-reviewed science
+  - id: b
+    text: Financial gain (ransomware, fraud)
+  - id: c
+    text: Campus Wi-Fi aesthetics
+  - id: d
+    text: Ohm’s law
+  correct_answer: b
+  hint: Money.
+  explanation: Nation-states may want espionage. Hacktivists want a message.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Default credentials on a new CCTV NVR are:'
+  options:
+  - id: a
+    text: A compensating control
+  - id: b
+    text: An attack surface / vulnerability to change at install
+  - id: c
+    text: Required by PKI
+  - id: d
+    text: A type of salt
+  correct_answer: b
+  hint: Objective 2.x surfaces.
+  explanation: Change them in the software-install and operations baselines.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Shadow IT is:'
+  options:
+  - id: a
+    text: The SOC night shift
+  - id: b
+    text: Systems staff deploy outside approved IT — unpatched, unbacked, unmonitored
+  - id: c
+    text: A honeynet
+  - id: d
+    text: A hash algorithm
+  correct_answer: b
+  hint: Unknown assets.
+  explanation: You cannot defend what is not in the inventory. That is Domain 2 and 5 together.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w1-fb1
+  type: FILL_BLANK
+  prompt: A politically motivated attacker who defaces a site to make a statement is a ___.
+  correct_answer: hacktivist
+  hint: Hack + activist.
+  explanation: Different from crime (money) and nation-state (espionage/war).
+  xp_reward: 50
+- id: cyber-sy0701-d2-w1-scenario
+  type: SCENARIO
+  prompt: College WordPress on a public IP, admin/admin still valid, XML-RPC on. Most likely actor to hit first?
+  options:
+  - id: a
+    text: Only a nation-state with a custom implant
+  - id: b
+    text: Unskilled / opportunistic scanners and botnets using default creds and known CMS flaws
+  - id: c
+    text: The canteen
+  - id: d
+    text: TPM vendors
+  correct_answer: b
+  hint: Sophistication vs opportunity.
+  explanation: Internet-wide scanning does not need APT budgets. Close the surface.
+  xp_reward: 60

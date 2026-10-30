@@ -45,8 +45,11 @@ class Settings(BaseSettings):
     # Security
     SECRET_KEY: str = "CHANGE-ME-IN-PRODUCTION-use-openssl-rand-hex-32"
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
+    # Short-lived; the PWA renews it with the refresh token (services/sessions.py).
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 30
     AUTH_COOKIE_NAME: str = "empower_session"
+    REFRESH_COOKIE_NAME: str = "empower_refresh"
     AUTH_COOKIE_SECURE: bool = False
     ADMIN_STAFF_KEY: str = ""
     TRUSTED_HOSTS: list[str] = []

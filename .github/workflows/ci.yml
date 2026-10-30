@@ -139,6 +139,14 @@ jobs:
           pytest tests/ -v
       - name: Validate catalogue
         run: cyberlearn-content validate-catalogue ${{ github.workspace }}/content
+      # The PWA ships generated files (catalogue index + course packs). Fail if YAML changed
+      # without regenerating them.
+      - name: Generated catalogue is up to date
+        working-directory: ${{ github.workspace }}
+        run: |
+          python scripts/generate_catalogue.py
+          git add -N apps/pwa/src/content/generated apps/pwa/public/packs
+          git diff --exit-code --stat -- apps/pwa/src/content/generated apps/pwa/public/packs             || { echo "Run: python scripts/generate_catalogue.py, then commit the result"; exit 1; }
 
   # ── Infrastructure ──────────────────────────────────────────────────
   infra:

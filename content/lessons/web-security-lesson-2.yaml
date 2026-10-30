@@ -1,0 +1,75 @@
+id: web-security-lesson-2
+course_id: web-security
+title: Sessions, cookies, HTTPS, and secrets
+title_sw: Sessions, cookies, HTTPS, na siri
+briefing: 'After injection and XSS, you must understand the session. Cookies that store session IDs need Secure and HttpOnly flags in production thinking. A session in localStorage is easier for XSS to steal. CSRF tokens or SameSite cookies reduce cross-site request forgery.
+
+
+  HTTPS (TLS) protects data in transit from cafe Wi-Fi snooping. It does not fix SQL injection. Mixed content (HTTPS page loading HTTP script) is a downgrade. Certificate warnings exist because someone might be intercepting — do not click through on banking.
+
+
+  Secrets: API keys in a public GitHub repo are live incidents. .env files are not for the frontend bundle. Rotate keys if they leak. Password reset tokens must expire and be single-use.
+
+
+  Auth: default admin/admin on a lab app is a finding. Change it. Lockout / MFA on admin panels is a control, not a nuisance.'
+briefing_sw: Cookie ya session iwe HttpOnly/Secure. HTTPS inalinda njiani, si injection. Usiignore certificate warning kwenye benki. Usiweke API key kwenye GitHub. Badilisha default passwords.
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+exam_domain: OWASP Top 10
+xp_total: 210
+exercises:
+- id: web2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'HttpOnly on a session cookie mainly helps against:'
+  options:
+  - id: a
+    text: SQL injection in the database engine
+  - id: b
+    text: JavaScript on a XSS page reading the cookie
+  - id: c
+    text: Weak Wi-Fi passwords
+  - id: d
+    text: Slow DNS
+  correct_answer: b
+  hint: Cookie theft via XSS.
+  explanation: HttpOnly is not a full XSS fix, but it raises the cost of cookie theft.
+  xp_reward: 50
+- id: web2-q2
+  type: FILL_BLANK
+  prompt: HTTP over TLS is commonly called ___.
+  correct_answer: HTTPS
+  hint: The S is for secure transport.
+  explanation: HTTPS encrypts the path, not the application logic.
+  xp_reward: 50
+- id: web2-q3
+  type: SCENARIO
+  prompt: 'A student commits a .env with the college SMS API key to a public repo. You should:'
+  options:
+  - id: a
+    text: Leave it — Git history is private really
+  - id: b
+    text: Revoke/rotate the key, remove it from git history as policy allows, and treat it as a leak
+  - id: c
+    text: Add more keys to the same file
+  - id: d
+    text: Tweet the key so attackers share it fairly
+  correct_answer: b
+  hint: Assume compromise.
+  explanation: Rotation is mandatory. Deleting the file on HEAD is not enough if history is public.
+  xp_reward: 60
+- id: web2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Clicking through a browser certificate warning on internet banking is risky because:'
+  options:
+  - id: a
+    text: It uses extra ink
+  - id: b
+    text: You may be talking to an interceptor, not the bank
+  - id: c
+    text: HTTPS is illegal in Kenya
+  - id: d
+    text: Certificates only matter on Windows XP
+  correct_answer: b
+  hint: PKI warning.
+  explanation: Stop. Use another network. Call the bank’s published number.
+  xp_reward: 50

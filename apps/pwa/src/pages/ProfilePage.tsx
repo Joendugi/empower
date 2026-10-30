@@ -31,11 +31,11 @@ import { isSoundEnabled, setSoundEnabled, playSuccessChime } from '@/lib/soundEf
 import { scheduleCloudSync } from '@/lib/syncEngine';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useModerationStore } from '@/store/moderationStore';
-import { findLocalAccount, isStaff, updateLocalProfile } from '@/lib/localAccounts';
+import { findLocalAccount, updateLocalProfile } from '@/lib/localAccounts';
 import { phoneError, sanitizePhoneInput } from '@/lib/validate';
 import { classesForLearner } from '@/store/campusHub';
 import { noticesFor, useNoticeStore } from '@/store/noticeStore';
-import { useIsEducator } from '@/lib/roles';
+import { useIsEducator, useIsStaff } from '@/lib/roles';
 import { useT } from '@/i18n';
 import type { StringKey } from '@/i18n/strings';
 import type { BadgeType, SkillPath } from '@cyberlearn/types';
@@ -67,6 +67,7 @@ export default function ProfilePage() {
     )
   );
   const teaching = useIsEducator();
+  const staff = useIsStaff();
   
   const signedIn = Boolean(token);
   const localSession = isLocalToken(token);
@@ -624,7 +625,7 @@ export default function ProfilePage() {
                   </button>
                 </section>
 
-                {isStaff(email) && (
+                {staff && (
                   <Link to="/office" className="card-interactive block !p-5 border-white/[0.08]">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Office</p>
                     <p className="font-bold text-base text-white mt-1">Staff office</p>
@@ -649,7 +650,7 @@ export default function ProfilePage() {
                     </p>
                   </Link>
                 )}
-                {!educatorApproved && !teaching && signedIn && !isStaff(email) && (
+                {!educatorApproved && !teaching && signedIn && !staff && (
                   <Link to="/educator" className="card-interactive block !p-5 border-white/[0.08]">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted">Teach</p>
                     <p className="font-bold text-base text-white mt-1">Apply as an educator</p>

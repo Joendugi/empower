@@ -1,5 +1,5 @@
 import type { LeaderboardEntry, Lesson, TokenResponse } from '@cyberlearn/types';
-import { getLesson, getSkillPaths } from '@/content';
+import { getLesson, getLessonAsync, getSkillPaths, isLessonStub } from '@/content';
 import {
   LocalAuthError,
   isLocalUserToken,
@@ -92,6 +92,7 @@ export async function resolveLocalApi<T>(
     const id = clean.replace('/lessons/', '').replace(/\/complete$/, '');
     if (clean.endsWith('/complete')) return undefined;
     const lesson = getLesson(id);
+    if (lesson && isLessonStub(lesson)) return (await getLessonAsync(id)) as T | undefined;
     return lesson as T | undefined;
   }
   if (verb === 'POST' && clean === '/auth/guest') {

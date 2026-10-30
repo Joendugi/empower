@@ -1,0 +1,107 @@
+id: cyber-sy0701-d4-w1
+course_id: secplus-operations
+title: Week 1 — Baselines, hardening, and vulnerability management
+title_sw: Wiki 1 — Baseline, hardening, na udhaifu
+briefing: 'Domain 4 is 28% — the largest. Operations establish a secure baseline: CIS-style images, disable unused services, firmware updates, default passwords gone, time sync (NTP) so logs match. Given vs established: you receive a vendor image, then you harden it to the college baseline. Configuration management (GPO, Ansible, Intune) keeps drift down. The golden image from the software-install unit belongs here with a version number.
+
+
+  Vulnerability management: asset inventory, scan (authenticated when you can), prioritise (CVSS + exposure), patch or compensate, rescan, report. Do not scan the ICS VLAN with aggressive plugins on production day. Maintenance windows (Domain 1) apply. Tickets must close with evidence.
+
+
+  Application security operations: input validation, WAF, dependency scanning, secrets not in Git. Host security: EDR, host firewall, disk encryption, USB policy. Wireless: WPA3/Enterprise, disable WPS, separate staff/student/IoT SSIDs — that is operations implementing architecture.
+
+
+  This week’s artefact: a baseline checklist for a lab PC (20 items) and a vuln-scan report with three findings, owners, and due dates.'
+briefing_sw: 'Baseline: zima huduma, nenosiri chaguomsingi, NTP. GPO/Intune. Scan, patch, scan tena. EDR, bitlocker. WPA3. Orodha ya asset kwanza.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 4 — Security Operations (28%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d4-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'An authenticated vulnerability scan is better than an unauthenticated one because it:'
+  options:
+  - id: a
+    text: Hacks the domain
+  - id: b
+    text: Sees missing patches from inside the host, not only open ports
+  - id: c
+    text: Disables logging
+  - id: d
+    text: Replaces backups
+  correct_answer: b
+  hint: Visibility.
+  explanation: Still need permission and a window. Do not DoS the MIS.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Time synchronisation (NTP) matters because:'
+  options:
+  - id: a
+    text: It cools the CPU
+  - id: b
+    text: Incident timelines across devices will not correlate if clocks drift
+  - id: c
+    text: It is a type of malware
+  - id: d
+    text: It replaces MFA
+  correct_answer: b
+  hint: Logs.
+  explanation: Operations live and die on timestamps.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Drift from the golden image is controlled by:'
+  options:
+  - id: a
+    text: Hope
+  - id: b
+    text: Configuration management and periodic rebuilds
+  - id: c
+    text: More wallpapers
+  - id: d
+    text: Disabling the SOC
+  correct_answer: b
+  hint: GPO / Ansible / MDM.
+  explanation: Uncontrolled local admin is how labs rot.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'WPS on college APs should be:'
+  options:
+  - id: a
+    text: Enabled for convenience
+  - id: b
+    text: Disabled — it is a known brute-force/weak-enrolment surface
+  - id: c
+    text: Required by PKI
+  - id: d
+    text: A backup method
+  correct_answer: b
+  hint: Wireless hardening.
+  explanation: Use WPA2/3-Enterprise with campus credentials.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w1-fb1
+  type: FILL_BLANK
+  prompt: A known-good hardened OS image used to rebuild labs is a ___ image.
+  correct_answer: golden
+  hint: Gold standard.
+  explanation: Version it. Scan it. Do not let lecturers install random toolbars onto it.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w1-scenario
+  type: SCENARIO
+  prompt: Monthly scan still shows SMBv1 on 12 lab PCs after you “patched”. Next operations step?
+  options:
+  - id: a
+    text: Ignore SMBv1 — it is vintage
+  - id: b
+    text: Confirm the GPO/hardening actually applied, disable SMBv1, rebuild outliers from golden image, rescan
+  - id: c
+    text: Turn off the scanner
+  - id: d
+    text: Publish the finding on Facebook
+  correct_answer: b
+  hint: Close the loop.
+  explanation: Vulnerability management is not a PDF; it is a change that sticks.
+  xp_reward: 60

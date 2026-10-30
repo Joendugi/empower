@@ -1,0 +1,108 @@
+id: tvet-software-w2
+course_id: software-install
+title: Week 2 — Installation types, configuration, and drivers
+title_sw: Wiki 2 — Aina za usakinishaji, usanidi, na driver
+briefing: 'Installation types in the curriculum: attended (you click through), unattended (answer file), headless (no local display), scheduled/automated, clean versus in-place update, and network (PXE, WSUS, apt from a mirror). Choose clean install when the OS is corrupt; choose in-place when you must keep apps. Headless is normal on servers — use SSH or a hypervisor console, not a story about “the screen is off so it cannot install”.
+
+
+  Media: OEM recovery, official ISO on a hashed USB, or a campus repository. Verify SHA256 when the college provides it. Register the product if the licence requires it. Configuration after install: computer name, timezone Africa/Nairobi, updates, local admin vs standard user, and joining the domain only with authority. Disable unused services. Set a restore point or Timeshift snapshot before big driver packs.
+
+
+  Drivers: chipset first, then storage, GPU, NIC, audio. Windows Update is not a substitute for a missing storage driver during setup — have the RAID/AHCI driver on USB. On Linux, check `lsusb` / `lspci` and the distro driver policy. Never mix a random “driver pack” from a blog; they bundle PUPs.
+
+
+  Lab this week: unattended or documented attended install of a legal OS, then office suite, then browser, then endpoint protection. Photograph the activation/licence screen for the portfolio. If activation fails, do not skip it — that is the configuration outcome.'
+briefing_sw: Attended, unattended, headless, network, clean au update. Thibitisha ISO. Chipset kwanza kisha GPU na NIC. Jina la kompyuta, timezone Nairobi, watumiaji wa kawaida si admin wote. Usitumie driver pack ya blogu.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/2/5
+exam_domain: CDACC ICT L5 — Install Computer Software (IT/CU/ICT/CR/2/5, 260 h)
+xp_total: 310
+exercises:
+- id: tvet-software-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'An unattended install is best described as:'
+  options:
+  - id: a
+    text: Leaving the room while a virus installs
+  - id: b
+    text: An installation driven by a prepared answer file / automation so prompts are not clicked by hand
+  - id: c
+    text: Any install after 5 p.m.
+  - id: d
+    text: PXE that skips licences
+  correct_answer: b
+  hint: Answer file.
+  explanation: Unattended is a listed type. It still must be licensed and documented.
+  xp_reward: 50
+- id: tvet-software-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'During Windows setup the disk is missing. Most likely need is:'
+  options:
+  - id: a
+    text: A GPU overclock
+  - id: b
+    text: Storage/RAID/AHCI driver loaded at setup
+  - id: c
+    text: More wallpaper
+  - id: d
+    text: A HDMI cable
+  correct_answer: b
+  hint: Controller, not display.
+  explanation: NVMe or RAID controllers often need a driver the ISO does not ship.
+  xp_reward: 50
+- id: tvet-software-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A headless server install means:'
+  options:
+  - id: a
+    text: The machine has no CPU
+  - id: b
+    text: No local monitor; you use serial, IPMI, SSH, or hypervisor console
+  - id: c
+    text: You must smash the screen
+  - id: d
+    text: Only MS-DOS is allowed
+  correct_answer: b
+  hint: No display.
+  explanation: CDACC lists headless as an installation type. ICT labs use it on servers.
+  xp_reward: 50
+- id: tvet-software-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Best first driver after a clean Windows install on a laptop is usually:'
+  options:
+  - id: a
+    text: A game anti-cheat
+  - id: b
+    text: Chipset / platform drivers from the vendor
+  - id: c
+    text: A toolbar
+  - id: d
+    text: A VPN crack
+  correct_answer: b
+  hint: Platform before gadgets.
+  explanation: Chipset enables USB, power, and other devices to enumerate correctly.
+  xp_reward: 50
+- id: tvet-software-w2-fb1
+  type: FILL_BLANK
+  prompt: Installing an OS over the network from a boot server often uses ___ boot (Preboot eXecution Environment).
+  correct_answer: PXE
+  hint: Pixie boot.
+  explanation: PXE + a campus image is the network installation method.
+  xp_reward: 50
+- id: tvet-software-w2-scenario
+  type: SCENARIO
+  prompt: Install finished but there is no network. Device Manager shows a yellow NIC. Next step?
+  options:
+  - id: a
+    text: Format again
+  - id: b
+    text: Install the correct NIC driver from vendor/OS repo, then test DHCP/static as specified
+  - id: c
+    text: Buy a new motherboard immediately
+  - id: d
+    text: Disable all devices
+  correct_answer: b
+  hint: Configuration outcome includes devices.
+  explanation: Yellow bang = missing or failed driver. That is a software-install fault, not always dead hardware.
+  xp_reward: 60

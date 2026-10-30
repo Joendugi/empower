@@ -4,7 +4,7 @@ import pytest
 from fastapi import Response
 
 from app.config import Settings, normalize_database_url
-from app.security import assert_secure_settings, attach_session_cookie, staff_key_matches
+from app.security import assert_secure_settings, staff_key_matches
 
 
 def test_normalize_upstash_uses_tls() -> None:
@@ -115,9 +115,16 @@ def test_alembic_upgrade_runs_in_child_process(monkeypatch: pytest.MonkeyPatch) 
     assert called["args"][-2:] == ["upgrade", "head"]
 
 
-def test_session_cookie_is_httponly() -> None:
+def test_session_cookies_are_httponly_and_refresh_is_scoped() -> None:
+    from datetime import UTC, datetime
+
+    from app.services.sessions import IssuedSession, attach_session_cookies
+
     response = Response()
-    attach_session_cookie(response, "jwt-token")
-    header = response.headers.get("set-cookie", "")
-    assert "empower_session=" in header
-    assert "HttpOnly" in header
+    attach_session_cookies(response, IssuedSession("jwt-token", "refresh-token", datetime.now(UTC)))
+    cookies = response.headers.getlist("set-cookie")
+    access = next(c for c in cookies if c.startswith("empower_session="))
+    refresh = next(c for c in cookies if c.startswith("empower_refresh="))
+    assert "HttpOnly" in access and "HttpOnly" in refresh
+    assert "Path=/api/v1/auth" in refresh
+    assert "SameSite=strict" in refresh

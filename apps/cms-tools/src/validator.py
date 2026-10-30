@@ -18,7 +18,7 @@ ALLOWED_LICENSES = {
 }
 
 # CDACC Unit format: e.g. CU/ICT/CS/CR/01/6, CU/WEL/CR/01/5, or ENG/OS/EI/CR/04/6
-CDACC_UNIT_REGEX = re.compile(r"^(CU|[A-Z]{2,4}/OS)/[A-Z]{2,4}(/[A-Z]{2,4})?/[A-Z]{2,4}/\d{2}/\d$")
+
 
 DEFAULT_FEATURED_PATH_IDS = ("automotive", "solar-energy", "cybersecurity")
 

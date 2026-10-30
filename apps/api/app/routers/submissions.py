@@ -134,7 +134,11 @@ async def create_submission(
     redis: CacheBackend = Depends(get_redis),
 ) -> SubmissionRead:
     if x_idempotency_key:
-        existing = await db.scalar(select(Submission).where(Submission.idempotency_key == x_idempotency_key))
+        existing = await db.scalar(
+            select(Submission).where(
+                Submission.idempotency_key == x_idempotency_key, Submission.learner_id == learner.id
+            )
+        )
         if existing:
             exercise = get_raw_exercise(existing.lesson_id, existing.exercise_id) or {}
             return SubmissionRead(
@@ -213,7 +217,10 @@ async def complete_lesson(
 
     if x_idempotency_key:
         existing = await db.scalar(
-            select(LessonCompletion).where(LessonCompletion.idempotency_key == x_idempotency_key)
+            select(LessonCompletion).where(
+                LessonCompletion.idempotency_key == x_idempotency_key,
+                LessonCompletion.learner_id == learner.id,
+            )
         )
         if existing:
             return LessonCompleteRead(

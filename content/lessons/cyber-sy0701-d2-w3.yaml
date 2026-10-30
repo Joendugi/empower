@@ -1,0 +1,107 @@
+id: cyber-sy0701-d2-w3
+course_id: secplus-threats
+title: Week 3 — Vulnerability types and mitigations
+title_sw: Wiki 3 — Udhaifu na hatua za kukabiliana
+briefing: 'Vulnerabilities: hardware (firmware, unpatched BIOS, side channel), operating system, virtualisation, cloud, supply chain, cryptographic (obsolete TLS, weak ciphers), misconfiguration, zero-day, and human. CVSS scores help prioritise but context matters — a 9.8 on an air-gapped trainer laptop is not the same as a 9.8 on the public MIS. Patch, but also compensate when you cannot patch a lab instrument.
+
+
+  Mitigations in 2.5: segmentation, access control, encryption, monitoring, hardening/baselines, patching, secure SDLC, awareness, and isolation. Least privilege and disabling unused services close default-config surfaces. Application allow-listing beats endless antivirus theatre on a locked lab image. Isolation: VLAN, air-gap when the risk is real, sandbox for unknown files.
+
+
+  Compensating control example: a vendor device that cannot be patched sits in a firewalled VLAN with no internet and jump-host access only. Document it (Domain 5). Do not hide it.
+
+
+  Week task: take five campus findings (open port, old TLS, shared admin, unencrypted backup disk, no MFA) and write the mitigation that is actually feasible this term.'
+briefing_sw: 'Udhaifu: firmware, OS, wingu, misconfig, zero-day, binadamu. CVSS. Mitigation: segmentation, patch, least privilege, encryption, awareness. Compensating control ikiwa huwezi kupatch.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 2 — Threats, Vulnerabilities, and Mitigations (22%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d2-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A zero-day is:'
+  options:
+  - id: a
+    text: A patch released on Monday
+  - id: b
+    text: A vulnerability without a vendor fix available yet
+  - id: c
+    text: A type of honeypot
+  - id: d
+    text: Always CVSS 0.0
+  correct_answer: b
+  hint: No patch yet.
+  explanation: Mitigate with WAF, isolation, threat intel, and compensating controls.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'The most appropriate mitigation for a public WordPress with unused XML-RPC is:'
+  options:
+  - id: a
+    text: Paint the server
+  - id: b
+    text: Disable the unused service / harden the baseline
+  - id: c
+    text: Buy a bigger UPS only
+  - id: d
+    text: Share the admin password more widely
+  correct_answer: b
+  hint: Attack surface reduction.
+  explanation: Hardening is a Domain 2 mitigation and a Domain 4 operations task.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Segmentation as a mitigation:'
+  options:
+  - id: a
+    text: Puts finance and students on one flat LAN for simplicity
+  - id: b
+    text: Limits blast radius so ransomware in a lab VLAN is less likely to hit finance
+  - id: c
+    text: Replaces backups
+  - id: d
+    text: Is illegal under DPA
+  correct_answer: b
+  hint: Blast radius.
+  explanation: Zero Trust and architecture (Domain 3) implement this idea.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A compensating control is used when:'
+  options:
+  - id: a
+    text: You already meet the requirement perfectly
+  - id: b
+    text: The primary control cannot be applied yet, so an alternative reduces risk
+  - id: c
+    text: You want to skip the exam
+  - id: d
+    text: CIA is repealed
+  correct_answer: b
+  hint: Alternative.
+  explanation: Document residual risk. Compensating is also a Domain 1 control type.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w3-fb1
+  type: FILL_BLANK
+  prompt: The industry score used to rank vulnerability severity is ___.
+  correct_answer: CVSS
+  hint: Common Vulnerability Scoring System.
+  explanation: Prioritise internet-facing high CVSS first, then context.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w3-scenario
+  type: SCENARIO
+  prompt: Lab CNC PC must run an unpatchable Win7 app. Best mitigation set?
+  options:
+  - id: a
+    text: Put it on the student Wi-Fi with a public IP
+  - id: b
+    text: Isolate VLAN/firewall, block internet, jump host, application allow-list, offline AV, documented exception
+  - id: c
+    text: Give every student the local admin password
+  - id: d
+    text: Hash the PLC with MD5 and hope
+  correct_answer: b
+  hint: Compensate.
+  explanation: That is how TVET workshops survive Domain 2 in the real world.
+  xp_reward: 60

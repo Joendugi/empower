@@ -1,0 +1,76 @@
+id: tvet-computer-hardware-2
+course_id: computer-hardware
+title: Storage, displays, and field replacement
+title_sw: Hifadhi, skrini, na kubadilisha sehemu
+briefing: 'After naming parts, you replace them without destroying the board. Storage: HDD is magnetic platters, SSD is flash. Cloning and imaging are how you preserve a lab image; deleting partitions is not “repair”. Know SATA vs NVMe physically so you do not force a drive.
+
+
+  Displays: no picture can be cable, RAM, GPU onboard, or backlight. Test known-good monitor before condemning a motherboard. Laptops add DC jacks, batteries, and thermal paste — service manuals beat guesswork. Do not pry an LCD with a screwdriver through the matrix.
+
+
+  Field path: visual, power rails, POST beeps/codes, then swap the least expensive likely part with evidence. Scatter-gun replacement of RAM, HDD, and PSU at once teaches nothing and costs the college.
+
+
+  Document: serial numbers, what you found, what you fitted. The next duty technician should not start from zero.'
+briefing_sw: 'HDD vs SSD. Usilazimishe NVMe. Jaribu monitor inayojulikana kabla ya kuhukumu board. Path: visual, power, POST, kisha sehemu. Andika serial na kazi uliyofanya.'
+estimated_minutes: 18
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CR/01/5
+exam_domain: CDACC ICT Technician — Computer Repair
+xp_total: 210
+exercises:
+- id: tvet-hw2-q1
+  type: MULTIPLE_CHOICE
+  prompt: A PC posts, fans spin, but the screen is black. Best next evidence-gathering step?
+  options:
+  - id: a
+    text: Format the SSD immediately
+  - id: b
+    text: Try a known-good cable and monitor / onboard video
+  - id: c
+    text: Replace the case screws
+  - id: d
+    text: Install a second operating system in the dark
+  correct_answer: b
+  hint: Display path before storage format.
+  explanation: You cannot even see BIOS yet. Prove the display chain.
+  xp_reward: 50
+- id: tvet-hw2-q2
+  type: FILL_BLANK
+  prompt: The common connector family for many 2.5/3.5 inch drives is ___.
+  correct_answer: SATA
+  hint: Serial ATA.
+  explanation: NVMe M.2 is a different physical and logical interface.
+  xp_reward: 50
+- id: tvet-hw2-q3
+  type: SCENARIO
+  prompt: 'A lab HDD clicks. Students need yesterday’s work. You should:'
+  options:
+  - id: a
+    text: Keep powering it in a loop to “unstick heads”
+  - id: b
+    text: Stop, image if policy allows, replace the drive, restore from backup/image — not hammer the platter
+  - id: c
+    text: Open the platter in dusty air for fun
+  - id: d
+    text: Install the drive as a USB boot without cloning
+  correct_answer: b
+  hint: Clicking is mechanical failure.
+  explanation: Further power cycles can destroy remaining data. Backup strategy should already exist.
+  xp_reward: 60
+- id: tvet-hw2-q4
+  type: MULTIPLE_CHOICE
+  prompt: Why record the replaced part serial on the job card?
+  options:
+  - id: a
+    text: It looks busy
+  - id: b
+    text: Warranty, asset control, and the next technician need a trail
+  - id: c
+    text: Serials slow viruses
+  - id: d
+    text: CDACC bans labels
+  correct_answer: b
+  hint: Traceability.
+  explanation: Workshops are systems, not magic tricks.
+  xp_reward: 50

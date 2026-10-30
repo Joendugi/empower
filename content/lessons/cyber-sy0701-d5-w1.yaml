@@ -1,0 +1,107 @@
+id: cyber-sy0701-d5-w1
+course_id: secplus-program
+title: Week 1 — Governance, policies, risk, and third parties
+title_sw: Wiki 1 — Utawala, sera, hatari, na wauzaji
+briefing: 'Domain 5 (20%) is the management system. Governance: policies, standards, procedures, guidelines. A policy says “backups shall exist”; a procedure says how. Acceptable use, password, remote access, data handling, BYOD, and incident policies are the campus set. Oversight: who owns risk (principal/council), who runs it (ICT/security), who audits. Security roles: administrator, analyst, DPO, auditor — separate where you can.
+
+
+  Risk: identify assets, threats, vulnerabilities, likelihood, impact. Qualitative (high/medium/low) vs quantitative (money). Treatments: avoid, transfer (insurance), mitigate, accept. Residual risk after controls must be accepted by someone named. Risk register is a living document, not a PDF from 2019.
+
+
+  Third parties: vendor assessment, contracts with security clauses, right to audit, least data shared, offboarding. A photocopy vendor who keeps exam papers is a third-party risk. Supply chain: who built the CCTV firmware?
+
+
+  Awareness: phishing simulations, role-based training (finance vs workshop). Metrics: patch %, phishing click %, backup success. If you cannot measure, you cannot govern.'
+briefing_sw: 'Sera, kiwango, taratibu. AUP. Daftari la hatari. Epuka, hamisha, punguza, kubali. Wauzaji: kandarasi na data kidogo. Mafunzo ya phishing. Pima.'
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 5 — Security Program Management (20%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d5-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A guideline differs from a policy in that a guideline is:'
+  options:
+  - id: a
+    text: Always criminal law
+  - id: b
+    text: Recommended practice; a policy is mandatory statement of management intent
+  - id: c
+    text: A firewall rule
+  - id: d
+    text: A hash
+  correct_answer: b
+  hint: Must vs should.
+  explanation: Standards are mandatory technical criteria. Procedures are steps.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Accepting a risk means:'
+  options:
+  - id: a
+    text: Ignoring it secretly
+  - id: b
+    text: Formally living with residual risk after considering treatments, with an owner
+  - id: c
+    text: Deleting the asset
+  - id: d
+    text: Transferring it to students automatically
+  correct_answer: b
+  hint: Named owner.
+  explanation: Silent acceptance is negligence, not Domain 5.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'The best first control on a photocopy vendor handling exam scripts is:'
+  options:
+  - id: a
+    text: Hope
+  - id: b
+    text: Contractual confidentiality, limited data, and return/destruction clauses
+  - id: c
+    text: Giving them domain admin
+  - id: d
+    text: A public S3 bucket of scripts
+  correct_answer: b
+  hint: Third party.
+  explanation: Vendors are in 5.3-style objectives. Assess them.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Quantitative risk analysis expresses impact primarily in:'
+  options:
+  - id: a
+    text: Colours only
+  - id: b
+    text: Numeric terms (often money) such as SLE/ALE
+  - id: c
+    text: SSID names
+  - id: d
+    text: Cable categories
+  correct_answer: b
+  hint: Numbers.
+  explanation: Qualitative uses ratings. Both are valid if consistent.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w1-fb1
+  type: FILL_BLANK
+  prompt: A living list of threats, scores, owners, and treatments is a risk ___.
+  correct_answer: register
+  hint: Also risk log.
+  explanation: No register = no governance, only heroics.
+  xp_reward: 50
+- id: cyber-sy0701-d5-w1-scenario
+  type: SCENARIO
+  prompt: Council asks “are we secure?” You have no policies, no register, 40 local admin passwords. Domain 5 answer?
+  options:
+  - id: a
+    text: Yes — the firewall is expensive
+  - id: b
+    text: No measurable program yet — establish policy, inventory, risk register, and owners first
+  - id: c
+    text: Only if the logo is new
+  - id: d
+    text: Security+ forbids governance
+  correct_answer: b
+  hint: Program.
+  explanation: Tools without governance are Domain 4 activity without Domain 5 purpose.
+  xp_reward: 60

@@ -1,47 +1,132 @@
 id: tvet-ict-technician
 title: TVET ICT Technician
 title_sw: Fundi wa ICT wa TVET
-description: CDACC-aligned technical skills for Kenyan TVET colleges — workshop safety, hardware, operating systems, and computer networks.
-certification_target: CDACC ICT Technician Level 5/6
+description: 'CDACC ICT Technician Level 5 semester path (~2280 hours in the official curriculum including attachment): OSH, basic electronics, hardware, OS, software installation, repair, networking, databases, and programming. Weekly lessons follow published learning outcomes.'
+description_sw: 'Mtaala wa semester wa CDACC ICT L5: usalama, electronics, hardware, OS, usakinishaji, repair, mitandao, hifadhidata, na programu.'
+certification_target: CDACC ICT Technician Level 5 — core units IT/CU/ICT/CR/1–6/5
 track: tvet
-content_version: "1"
+content_version: '1'
 nodes:
-  - id: workshop-safety
-    title: Workshop safety
-    title_sw: Usalama wa warsha
-    description: PPE, electrical isolation, ESD, and incident response in the ICT workshop.
-    icon: "🦺"
-    cdacc_unit_id: CU/ICT/OS/01/5
-    prerequisites: []
-    lesson_ids:
-      - tvet-workshop-safety-1
-  - id: computer-hardware
-    title: Computer hardware
-    title_sw: Vifaa vya kompyuta
-    description: Identify CPU, RAM, storage, and PSU. Follow a POST-based fault path.
-    icon: "🖥️"
-    cdacc_unit_id: CU/ICT/CR/01/5
-    prerequisites:
-      - workshop-safety
-    lesson_ids:
-      - tvet-computer-hardware-1
-  - id: operating-systems
-    title: Operating systems
-    title_sw: Mifumo ya uendeshaji
-    description: Windows and Linux support, least privilege, disks, and troubleshooting tools.
-    icon: "💿"
-    cdacc_unit_id: CU/ICT/OS/LX/01/5
-    prerequisites:
-      - computer-hardware
-    lesson_ids:
-      - tvet-operating-systems-1
-  - id: computer-networks
-    title: Computer networks
-    title_sw: Mitandao ya kompyuta
-    description: Cabling, switches, routers, IPv4, and first-line LAN faults.
-    icon: "🔌"
-    cdacc_unit_id: CU/ICT/CS/CR/01/6
-    prerequisites:
-      - operating-systems
-    lesson_ids:
-      - tvet-computer-networks-1
+- id: workshop-safety
+  title: Workshop safety
+  title_sw: Usalama wa warsha
+  description: PPE, electrical isolation, ESD, and incident response in the ICT workshop.
+  icon: 🦺
+  cdacc_unit_id: IT/CU/ICT/BC/7/5
+  exam_domain: Occupational safety
+  prerequisites: []
+  badge_ids: []
+  lesson_ids:
+  - tvet-workshop-safety-1
+  - tvet-workshop-safety-2
+- id: basic-electronics
+  title: Basic electronics
+  title_sw: Electronics ya msingi
+  description: Circuits, semiconductors, and number systems — IT/CU/ICT/CC/1/5 (~100 hours).
+  icon: 🔋
+  cdacc_unit_id: IT/CU/ICT/CC/1/5
+  exam_domain: Basic electronics
+  prerequisites:
+  - workshop-safety
+  badge_ids: []
+  lesson_ids:
+  - tvet-electronics-w1
+  - tvet-electronics-w2
+  - tvet-electronics-w3
+- id: computer-hardware
+  title: Computer hardware
+  title_sw: Vifaa vya kompyuta
+  description: Identify CPU, RAM, storage, and PSU. Follow a POST-based fault path.
+  icon: 🖥️
+  cdacc_unit_id: IT/CU/ICT/CR/3/5
+  exam_domain: Computer hardware
+  prerequisites:
+  - basic-electronics
+  badge_ids: []
+  lesson_ids:
+  - tvet-computer-hardware-1
+  - tvet-computer-hardware-2
+- id: operating-systems
+  title: Operating systems
+  title_sw: Mifumo ya uendeshaji
+  description: Install and support Windows/Linux, then process, memory, and files — CR/6/5 (~210 hours).
+  icon: 💿
+  cdacc_unit_id: IT/CU/ICT/CR/6/5
+  exam_domain: Manage operating system
+  prerequisites:
+  - computer-hardware
+  badge_ids: []
+  lesson_ids:
+  - tvet-operating-systems-1
+  - tvet-operating-systems-2
+  - tvet-os-w3
+- id: software-install
+  title: Install computer software
+  title_sw: Sakinisha programu
+  description: Licences, attended/unattended install, drivers, testing, and user training — CR/2/5 (~260 hours).
+  icon: 📦
+  cdacc_unit_id: IT/CU/ICT/CR/2/5
+  exam_domain: Install computer software
+  prerequisites:
+  - operating-systems
+  badge_ids: []
+  lesson_ids:
+  - tvet-software-w1
+  - tvet-software-w2
+  - tvet-software-w3
+- id: computer-repair
+  title: Repair and maintenance
+  title_sw: Ukarabati na matengenezo
+  description: Troubleshoot, replace, test, and upgrade — CR/3/5 (~280 hours).
+  icon: 🔧
+  cdacc_unit_id: IT/CU/ICT/CR/3/5
+  exam_domain: Computer repair and maintenance
+  prerequisites:
+  - software-install
+  badge_ids: []
+  lesson_ids:
+  - tvet-repair-w1
+  - tvet-repair-w2
+  - tvet-repair-w3
+- id: computer-networks
+  title: Computer networks
+  title_sw: Mitandao ya kompyuta
+  description: Types, cabling, device config, LAN, and testing — CR/1/5 (~300 hours).
+  icon: 🔌
+  cdacc_unit_id: IT/CU/ICT/CR/1/5
+  exam_domain: Perform computer networking
+  prerequisites:
+  - computer-repair
+  badge_ids: []
+  lesson_ids:
+  - tvet-computer-networks-1
+  - tvet-computer-networks-2
+  - tvet-net-w3
+- id: database-systems
+  title: Database systems
+  title_sw: Hifadhidata
+  description: Models, integrity, SQL objects, and reports — CR/4/5 (~310 hours).
+  icon: 🗄️
+  cdacc_unit_id: IT/CU/ICT/CR/4/5
+  exam_domain: Manage database system
+  prerequisites:
+  - computer-networks
+  badge_ids: []
+  lesson_ids:
+  - tvet-database-w1
+  - tvet-database-w2
+  - tvet-database-w3
+- id: computer-programming
+  title: Computer programming
+  title_sw: Uandaaji programu
+  description: Design tools, structured C, testing, and intro HTML — CR/5/5 (~340 hours).
+  icon: 💻
+  cdacc_unit_id: IT/CU/ICT/CR/5/5
+  exam_domain: Develop computer program
+  prerequisites:
+  - database-systems
+  badge_ids: []
+  lesson_ids:
+  - tvet-programming-w1
+  - tvet-programming-w2
+  - tvet-programming-w3

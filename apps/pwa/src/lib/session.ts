@@ -20,7 +20,7 @@ export async function ensureSession(): Promise<void> {
         preferredLanguage: state.language,
       }),
     });
-    state.applyAuth(created.accessToken || CLOUD_COOKIE_TOKEN, created.learner);
+    state.applyAuth(created.accessToken || CLOUD_COOKIE_TOKEN, created.learner, created.sessionExpiresAt);
   } catch {
     const fallback = localGuestSession();
     state.applyAuth(fallback.accessToken, fallback.learner);

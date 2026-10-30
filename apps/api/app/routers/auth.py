@@ -21,18 +21,22 @@ from app.models.auth_challenge import (
 from app.models.learner import Learner
 from app.models.submission import LessonCompletion
 from app.schemas import CamelModel
-from app.security import attach_session_cookie, clear_session_cookie, staff_key_matches
-from app.services.auth import (
-    create_access_token,
-    decode_access_token,
-    hash_password,
-    verify_password,
-)
+from app.security import staff_key_matches
+from app.services.auth import decode_access_token, hash_password, verify_password
 from app.services.mail import send_mail
 from app.services.rate_limit import (
     clear_auth_failures,
     enforce_auth_rate_limit,
     record_auth_failure,
+)
+from app.services.sessions import (
+    RefreshRejected,
+    attach_session_cookies,
+    clear_session_cookies,
+    issue_session,
+    revoke_all_for_learner,
+    revoke_by_raw_token,
+    rotate_session,
 )
 
 router = APIRouter()
@@ -73,6 +77,8 @@ class TokenResponse(CamelModel):
     access_token: str
     token_type: str = "bearer"
     learner: LearnerPublic
+    # When the refresh token runs out; the PWA treats this as the end of the sign-in.
+    session_expires_at: datetime
 
 
 class OfficeUnlockRequest(CamelModel):
@@ -118,15 +124,20 @@ def _public(learner: Learner) -> LearnerPublic:
     )
 
 
-def _issued_token(learner_id: str) -> str:
-    return create_access_token(learner_id)
+async def _start_session(
+    db: AsyncSession, learner: Learner, request: Request, response: Response
+) -> TokenResponse:
+    session = await issue_session(db, learner, request)
+    attach_session_cookies(response, session)
+    return _session_body(learner, session.access_token, session.refresh_expires_at)
 
 
-def _token_body(learner: Learner, token: str, response: Response) -> TokenResponse:
-    attach_session_cookie(response, token)
+def _session_body(learner: Learner, access_token: str, expires_at: datetime) -> TokenResponse:
     return TokenResponse(
-        access_token="" if settings.is_production else token,
+        # Browsers use the httpOnly cookies; the raw token is only exposed for local tools.
+        access_token="" if settings.is_production else access_token,
         learner=_public(learner),
+        session_expires_at=expires_at,
     )
 
 
@@ -252,7 +263,7 @@ async def register(
     _, verify_raw = await _create_challenge(db, learner_id=learner.id, purpose="verify_email")
     _mail_challenge(learner.email, "verify_email", verify_raw)
     await clear_auth_failures(cache, request, bucket="register")
-    return _token_body(learner, _issued_token(learner.id), response)
+    return await _start_session(db, learner, request, response)
 
 
 @router.post("/auth/login", response_model=TokenResponse)
@@ -269,12 +280,13 @@ async def login(
         await record_auth_failure(cache, request, bucket="login")
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")
     await clear_auth_failures(cache, request, bucket="login")
-    return _token_body(learner, _issued_token(learner.id), response)
+    return await _start_session(db, learner, request, response)
 
 
 @router.post("/auth/guest", response_model=TokenResponse, status_code=status.HTTP_201_CREATED)
 async def guest_session(
     payload: GuestRequest,
+    request: Request,
     response: Response,
     db: AsyncSession = Depends(get_db),
 ) -> TokenResponse:
@@ -287,12 +299,47 @@ async def guest_session(
     )
     db.add(learner)
     await db.flush()
-    return _token_body(learner, _issued_token(learner.id), response)
+    return await _start_session(db, learner, request, response)
+
+
+@router.post("/auth/refresh", response_model=TokenResponse)
+async def refresh_session(
+    request: Request,
+    response: Response,
+    db: AsyncSession = Depends(get_db),
+    cache: CacheBackend = Depends(get_redis),
+) -> TokenResponse:
+    """Swap the refresh cookie for a new access + refresh pair (the old refresh token stops working)."""
+    await enforce_auth_rate_limit(cache, request, bucket="refresh")
+    raw = request.cookies.get(settings.REFRESH_COOKIE_NAME, "")
+    try:
+        if not raw:
+            raise RefreshRejected
+        learner, session = await rotate_session(db, raw, request)
+    except RefreshRejected:
+        await record_auth_failure(cache, request, bucket="refresh")
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Session ended. Sign in again.") from None
+    attach_session_cookies(response, session)
+    return _session_body(learner, session.access_token, session.refresh_expires_at)
 
 
 @router.post("/auth/logout", status_code=status.HTTP_204_NO_CONTENT)
-async def logout(response: Response) -> None:
-    clear_session_cookie(response)
+async def logout(request: Request, response: Response, db: AsyncSession = Depends(get_db)) -> None:
+    raw = request.cookies.get(settings.REFRESH_COOKIE_NAME)
+    if raw:
+        await revoke_by_raw_token(db, raw)
+    clear_session_cookies(response)
+
+
+@router.post("/auth/logout-all", status_code=status.HTTP_204_NO_CONTENT)
+async def logout_everywhere(
+    response: Response,
+    learner: Learner = Depends(get_current_learner),
+    db: AsyncSession = Depends(get_db),
+) -> None:
+    """End every session of this learner, on every device."""
+    await revoke_all_for_learner(db, learner.id)
+    clear_session_cookies(response)
 
 
 @router.post("/auth/office-unlock", response_model=OfficeUnlockResponse)
@@ -345,10 +392,10 @@ async def confirm_password_reset(
         )
     )
     now = datetime.now(UTC)
-    expires = row.expires_at
-    if expires.tzinfo is None:
+    expires = row.expires_at if row else None
+    if expires is not None and expires.tzinfo is None:
         expires = expires.replace(tzinfo=UTC)
-    if not row or row.consumed_at is not None or expires < now:
+    if not row or row.consumed_at is not None or expires is None or expires < now:
         await record_auth_failure(cache, request, bucket="reset")
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired token")
     learner = await db.get(Learner, row.learner_id)
@@ -356,6 +403,8 @@ async def confirm_password_reset(
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired token")
     learner.password_hash = hash_password(payload.password)
     row.consumed_at = now
+    # Whoever knew the old password may hold a session; end them all.
+    await revoke_all_for_learner(db, learner.id)
     await clear_auth_failures(cache, request, bucket="reset")
     return ChallengeIssued(ok=True)
 

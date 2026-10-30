@@ -1,3 +1,4 @@
+import type { TokenResponse } from '@cyberlearn/types';
 import { useLearnerStore } from '@/store/learnerStore';
 import { cloudRecentlyDown, markCloud } from '@/lib/cloudCircuit';
 import { LocalAuthError } from '@/lib/localAccounts';
@@ -22,7 +23,35 @@ function canUseCloud(path: string) {
   return isAuthPath(path) || path.startsWith('/notices/');
 }
 
-export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+let refreshing: Promise<boolean> | null = null;
+
+/**
+ * Trade the refresh cookie for a new access cookie. Concurrent callers share one request,
+ * because the server rotates the refresh token on every use.
+ */
+export function refreshCloudSession(): Promise<boolean> {
+  if (!refreshing) {
+    refreshing = (async () => {
+      try {
+        const apiBase = usePlatformStore.getState().apiBaseUrl.replace(/\/$/, '') || '/api/v1';
+        const res = await fetch(`${apiBase}/auth/refresh`, { method: 'POST', credentials: 'include' });
+        if (!res.ok) return false;
+        const body = (await res.json()) as TokenResponse;
+        useLearnerStore
+          .getState()
+          .applyAuth(body.accessToken || CLOUD_COOKIE_TOKEN, body.learner, body.sessionExpiresAt);
+        return true;
+      } catch {
+        return false;
+      } finally {
+        refreshing = null;
+      }
+    })();
+  }
+  return refreshing;
+}
+
+export async function api<T>(path: string, init: RequestInit = {}, retried = false): Promise<T> {
   const method = (init.method ?? 'GET').toUpperCase();
   const token = useLearnerStore.getState().token;
   const platform = usePlatformStore.getState();
@@ -86,6 +115,10 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     }
 
     if (res.status === 401 && token && token !== OFFLINE_TOKEN && !isLocalToken(token) && !isAuthPath(path)) {
+      // Access tokens last minutes. Renew once and retry; only a failed renewal ends the cloud session.
+      if (!retried && (await refreshCloudSession())) {
+        return api<T>(path, init, true);
+      }
       useLearnerStore.getState().downgradeToLocal();
     }
     if (!res.ok) {

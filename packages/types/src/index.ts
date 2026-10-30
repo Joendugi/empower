@@ -160,8 +160,13 @@ export interface Lesson {
   briefingSw?: string;
   /** Learner-facing week outline, one item per line. */
   outline?: string;
-  /** Detailed lesson notes in Markdown. Bundled lessons load theirs lazily (see lib/lessonNotes). */
+  /** Detailed lesson notes in Markdown. Catalogue lessons carry theirs in the course pack. */
   contentMd?: string;
+  /**
+   * True for the short catalogue entry bundled with the app (titles and outline only).
+   * The full lesson comes from its course pack; see content/packs.ts.
+   */
+  stub?: boolean;
   weekNumber?: number;
   dayNumber?: number;
   estimatedMinutes: number;
@@ -229,6 +234,9 @@ export interface ReviewCard {
   state?: string;
 }
 
+/** Set by the server only (`learners.role`); the app never decides it. */
+export type AccountRole = 'learner' | 'educator' | 'admin';
+
 export interface AuthLearner {
   id: string;
   email: string | null;
@@ -237,12 +245,16 @@ export interface AuthLearner {
   totalXp: number;
   level: number;
   isGuest: boolean;
+  role?: AccountRole;
+  emailVerified?: boolean;
 }
 
 export interface TokenResponse {
   accessToken: string;
   tokenType: string;
   learner: AuthLearner;
+  /** End of the sign-in (refresh token expiry). Absent for device-only sessions. */
+  sessionExpiresAt?: string;
 }
 
 export interface SubmissionResult {

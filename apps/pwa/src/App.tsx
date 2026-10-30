@@ -42,6 +42,16 @@ export default function App() {
     scheduleCloudSync();
   }, [hydrated, token]);
 
+  // Fetch the course packs for the learner's chosen courses so they open instantly and work offline.
+  const chosenPathIds = useLearnerStore((s) => s.chosenPathIds);
+  useEffect(() => {
+    if (!hydrated || !chosenPathIds.length || (typeof navigator !== 'undefined' && !navigator.onLine)) return;
+    const timer = window.setTimeout(() => {
+      void import('@/content').then(({ prefetchPathPacks }) => prefetchPathPacks(chosenPathIds));
+    }, 3000);
+    return () => window.clearTimeout(timer);
+  }, [hydrated, chosenPathIds]);
+
   if (!hydrated) {
     return <LoadingSpinner fullScreen />;
   }

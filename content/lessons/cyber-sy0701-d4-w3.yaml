@@ -1,0 +1,107 @@
+id: cyber-sy0701-d4-w3
+course_id: secplus-operations
+title: Week 3 — Incident response, forensics hygiene, and recovery
+title_sw: Wiki 3 — Majibu ya tukio na urejeshaji
+briefing: 'Incident steps (know the order): preparation; detection and analysis; containment, eradication, recovery; lessons learned. Preparation is playbooks, contacts (KE-CIRT/CC, campus DPO), and tool access before 02:00. Containment may be isolating a VLAN or disabling an account — decide short-term vs long-term. Do not power off a live ransomware host if memory forensics is required and you have the skill; do isolate it. Evidence: chain of custody, hashes of images, volatile then disk.
+
+
+  Legal: Computer Misuse and Cybercrimes Act — you need authorisation to “hack back”. Preservation for police/KE-CIRT may be required. Communication: one spokesperson, no WhatsApp rumours. Recovery: rebuild from golden image, restore from offline backup, rotate credentials, hunt for persistence, then monitor harder.
+
+
+  Lessons learned is a meeting with actions: missing MFA, missing segmentation, missing backup. If the report is only “virus was removed” you will repeat the incident at the next graduation.
+
+
+  Tabletop this week: ransomware on a lab, MIS still up. Who isolates? Who talks to the principal? What is the RTO? Write it as a one-page playbook.'
+briefing_sw: 'Andaa, gundua, zuia, komesha, rejea, funza. KE-CIRT. Usishambulie nyuma. Hash ya picha. Chain of custody. Rejea kutoka backup ya nje. Somo: MFA, segmentation.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 4 — Security Operations (28%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d4-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'The first incident-response phase is:'
+  options:
+  - id: a
+    text: Lessons learned
+  - id: b
+    text: Preparation (before the incident)
+  - id: c
+    text: Press conference
+  - id: d
+    text: Reinstalling every PC blindly
+  correct_answer: b
+  hint: Before detection.
+  explanation: Without prep you invent a process at 02:00.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Chain of custody records:'
+  options:
+  - id: a
+    text: Who handled evidence, when, and why
+  - id: b
+    text: The SSID password
+  - id: c
+    text: Ohm’s law
+  - id: d
+    text: The CA’s favourite colour
+  correct_answer: a
+  hint: Forensics hygiene.
+  explanation: Broken chain makes evidence useless in court or discipline cases.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'After ransomware, the safest recovery of the MIS is usually:'
+  options:
+  - id: a
+    text: Pay and trust the decryptor alone
+  - id: b
+    text: Rebuild/restore from known-good offline backups, rotate secrets, then monitor
+  - id: c
+    text: Format only the wallpaper
+  - id: d
+    text: Ignore persistence
+  correct_answer: b
+  hint: Eradication then recovery.
+  explanation: Decryptors may work; they are not a control strategy.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Hacking the attacker’s C2 server without authority is:'
+  options:
+  - id: a
+    text: Required by Security+
+  - id: b
+    text: Unauthorised access — illegal under Kenyan cybercrime law
+  - id: c
+    text: A type of backup
+  - id: d
+    text: Zero Trust
+  correct_answer: b
+  hint: You already have a cyber-law module — operations must obey it.
+  explanation: Report, contain, cooperate. Do not hack back.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w3-fb1
+  type: FILL_BLANK
+  prompt: Keeping an incident from spreading (e.g. pulling a NIC, disabling an account) is ___.
+  correct_answer: containment
+  hint: After analysis, before eradication.
+  explanation: Short-term containment buys time for a durable fix.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w3-scenario
+  type: SCENARIO
+  prompt: Lecturer forwards a live malware sample to the all-staff list “for awareness”. IR problem?
+  options:
+  - id: a
+    text: Excellent detection
+  - id: b
+    text: Spread the incident — use a sandboxed channel and SOC intake, not all-mail
+  - id: c
+    text: Required by KE-CIRT
+  - id: d
+    text: A salt
+  correct_answer: b
+  hint: Do not amplify.
+  explanation: Operations includes how you communicate during an incident.
+  xp_reward: 60

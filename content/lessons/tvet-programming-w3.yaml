@@ -1,0 +1,108 @@
+id: tvet-programming-w3
+course_id: computer-programming
+title: Week 3 — Testing C programs and basic internet programming
+title_sw: Wiki 3 — Majaribio ya C na programu ya intaneti
+briefing: 'Testing is not “it ran once on my laptop”. Dry-run the flowchart, then unit-test functions with known inputs (average of 2, 4, 6 is 4). Boundary tests: zero items, negative where forbidden, maximum array size. Syntax errors versus logic errors versus runtime (divide by zero, NULL pointer). Use a test table in the portfolio.
+
+
+  Internet programming in this unit is introductory: HTML structure (`html`, `head`, `body`, headings, links, forms), maybe CSS, and a simple client-side or server-side script as the college lab allows (JavaScript validation, or a tiny PHP/Python form that must not concatenate SQL). HTTP is request/response. GET versus POST. Never put passwords in a GET query string.
+
+
+  Connect the tracks: a C program can write a `.html` report; a form can post to a backend that inserts with parameters into MySQL (database unit). That is how a semester project looks: design, C or web module, database, test report.
+
+
+  Industrial attachment (360 hours in the ICT L5 gross total) expects you to have this discipline: requirements, versioned source, tests, and a README. Git is not named in the 2018 PDF but is professional practice — use it if the lab has it.'
+briefing_sw: 'Jaribu mipaka na jedwali la majaribio. HTML, fomu, GET dhidi ya POST. Usitie nywila kwenye URL. Usiunganishe SQL. Mradi wa semester: buni, C au wavuti, hifadhidata, ripoti.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/5/5
+exam_domain: CDACC ICT L5 — Develop Computer Program (IT/CU/ICT/CR/5/5, 340 h)
+xp_total: 310
+exercises:
+- id: tvet-programming-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A program compiles but always prints 0 for average when n=3. This is a:'
+  options:
+  - id: a
+    text: Syntax error
+  - id: b
+    text: Logic error
+  - id: c
+    text: Successful linker
+  - id: d
+    text: HDMI fault
+  correct_answer: b
+  hint: Runs, wrong answer.
+  explanation: Syntax stops compile. Logic is a wrong algorithm (e.g. integer division).
+  xp_reward: 50
+- id: tvet-programming-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'HTML form passwords should be sent with:'
+  options:
+  - id: a
+    text: GET so they appear in history
+  - id: b
+    text: POST over HTTPS, never in the query string
+  - id: c
+    text: ICMP
+  - id: d
+    text: Ohm’s law
+  correct_answer: b
+  hint: Internet programming + cyber.
+  explanation: GET leaks in logs and Referer. POST in cleartext still needs TLS.
+  xp_reward: 50
+- id: tvet-programming-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A boundary test for an array of max 10 scores includes:'
+  options:
+  - id: a
+    text: n=10 and n=11
+  - id: b
+    text: Only n=7
+  - id: c
+    text: Compiling twice
+  - id: d
+    text: Changing the wallpaper
+  correct_answer: a
+  hint: On and over the limit.
+  explanation: Off-by-one lives at the boundary.
+  xp_reward: 50
+- id: tvet-programming-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Client-side JavaScript validation is:'
+  options:
+  - id: a
+    text: Sufficient alone for security
+  - id: b
+    text: Helpful UX but the server must still validate
+  - id: c
+    text: A replacement for C
+  - id: d
+    text: Illegal in Kenya
+  correct_answer: b
+  hint: Never trust the browser.
+  explanation: Users can disable JS. Server-side checks are mandatory.
+  xp_reward: 50
+- id: tvet-programming-w3-fb1
+  type: FILL_BLANK
+  prompt: The markup language of web pages in the internet-programming outcome is ___.
+  correct_answer: HTML
+  hint: HyperText.
+  explanation: HTML structures the page; CSS styles; JS behaves.
+  xp_reward: 50
+- id: tvet-programming-w3-scenario
+  type: SCENARIO
+  prompt: A student web form concatenates the search box into `SELECT * FROM books WHERE title=` and drops the library DB. Cause?
+  options:
+  - id: a
+    text: HTML is deprecated
+  - id: b
+    text: SQL injection from string-built queries — use parameters and least-privilege DB account
+  - id: c
+    text: Too much CSS
+  - id: d
+    text: The C compiler
+  correct_answer: b
+  hint: Same as database week 3.
+  explanation: Internet programming without sanitisation is a cyber incident. That is semester integration.
+  xp_reward: 60

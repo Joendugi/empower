@@ -1,0 +1,147 @@
+id: cyber-sy0701-d1-w1
+course_id: secplus-concepts
+title: Week 1 — CIA, AAA, Zero Trust, and control types
+title_sw: Wiki 1 — CIA, AAA, Zero Trust, na aina za udhibiti
+briefing: 'Security+ SY0-701 Domain 1 is 12% of the exam but it is the vocabulary for the whole semester. Confidentiality is authorised eyes only (encryption, least privilege). Integrity is authorised change only (hashes, signed firmware, backups that detect tampering). Availability is usable when needed (redundancy, backups, DDoS defence). Non-repudiation means a sender cannot credibly deny a signed action. If you mix confidentiality with integrity in a scenario, you lose easy marks.
+
+
+  AAA is authentication (who), authorisation (what they may do), accounting (what they did). You authenticate people (password, passkey, biometrics) and systems (certificates, machine identity). Authorisation models include RBAC, ABAC, MAC, and DAC — Kenyan colleges usually run RBAC (role = registrar, lecturer, student). Gap analysis compares current controls with a required baseline (ISO, CBK, or campus policy).
+
+
+  Zero Trust assumes breach: the control plane (policy engine, policy administrator, adaptive identity, threat-scope reduction) decides; the data plane (policy enforcement point, implicit trust zones) enforces. There is no “inside the LAN therefore trusted”. A student laptop on Wi-Fi is a subject that still needs policy. Physical security remains in 1.2: bollards, access-control vestibules, fences, guards, badges, lighting, and sensors (IR, pressure, microwave, ultrasonic). Deception: honeypot, honeynet, honeyfile, honeytoken.
+
+
+  Control types you must classify: preventive, deterrent, detective, corrective, compensating, directive — and technical, managerial, operational, physical categories. A CCTV that nobody watches is a weak detective control. A locked server cage is physical preventive. Write examples from campus: turnstiles, AUPs, MFA on webmail.'
+briefing_sw: 'CIA: siri, uadilifu, upatikanaji. AAA: thibitisha, ruhusu, kumbuka. Zero Trust: usiamini LAN. RBAC ni majukumu. Honeypot ni udanganyifu. Dhibiti: preventive, detective, physical.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 1 — General Security Concepts (12%)
+xp_total: 360
+media:
+- kind: animation
+  preset: pulse
+  caption: 'Zero Trust: never assume the LAN is friendly.'
+exercises:
+- id: cyber-sy0701-d1-w1-match
+  type: MATCH_PAIRS
+  prompt: Match each SY0-701 security property to its meaning.
+  pairs:
+  - left:
+      id: c
+      text: Confidentiality
+    right:
+      id: eyes
+      text: Only authorised disclosure
+  - left:
+      id: i
+      text: Integrity
+    right:
+      id: change
+      text: Only authorised modification
+  - left:
+      id: a
+      text: Availability
+    right:
+      id: up
+      text: Systems usable when needed
+  - left:
+      id: n
+      text: Non-repudiation
+    right:
+      id: deny
+      text: Cannot credibly deny an action
+  correct_answer:
+  - c=eyes
+  - i=change
+  - a=up
+  - n=deny
+  hint: CIA plus non-repudiation.
+  explanation: These are objective 1.2 terms. Do not swap integrity and confidentiality.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: A hashed payroll file shows a changed digest after the weekend. Which CIA property is in question?
+  options:
+  - id: a
+    text: Confidentiality only
+  - id: b
+    text: Integrity
+  - id: c
+    text: Availability of the canteen
+  - id: d
+    text: Non-repudiation of a badge colour
+  correct_answer: b
+  hint: Unauthorised change.
+  explanation: Hash mismatch is integrity. Confidentiality would be leakage; availability would be downtime.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'RBAC authorises a user based on:'
+  options:
+  - id: a
+    text: Random daily tokens only
+  - id: b
+    text: Assigned role (set of permissions)
+  - id: c
+    text: The colour of the Ethernet cable
+  - id: d
+    text: Ohm’s law
+  correct_answer: b
+  hint: Role.
+  explanation: ABAC uses attributes; MAC uses labels; DAC uses owner discretion.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A honeytoken is:'
+  options:
+  - id: a
+    text: A production student password
+  - id: b
+    text: A decoy secret that should never be used — access to it signals an attacker
+  - id: c
+    text: A type of firewall
+  - id: d
+    text: A Kenyan tax form
+  correct_answer: b
+  hint: Deception technology.
+  explanation: Honeypot is a system; honeyfile is a file; honeytoken is a credential/record.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'In Zero Trust, the Policy Enforcement Point sits on the:'
+  options:
+  - id: a
+    text: Control plane only as a slogan
+  - id: b
+    text: Data plane, enforcing decisions from the policy engine
+  - id: c
+    text: Printer spooler
+  - id: d
+    text: HDMI cable
+  correct_answer: b
+  hint: 1.2 split control vs data plane.
+  explanation: Policy engine decides; PEP enforces. Implicit trust zones are minimised.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w1-fb1
+  type: FILL_BLANK
+  prompt: Authentication, authorisation, and accounting together are abbreviated ___.
+  correct_answer: AAA
+  hint: Triple A.
+  explanation: You can have authentication without authorisation (logged in but denied the share).
+  xp_reward: 50
+- id: cyber-sy0701-d1-w1-scenario
+  type: SCENARIO
+  prompt: Finance Wi-Fi is “trusted” because it is inside the building; guest IoT cameras sit on the same VLAN. Zero Trust response?
+  options:
+  - id: a
+    text: Leave it — buildings are trusted
+  - id: b
+    text: Segment, identify every subject, and enforce policy; cameras are not finance users
+  - id: c
+    text: Hang a honeypot poster and stop
+  - id: d
+    text: Disable CIA
+  correct_answer: b
+  hint: Threat-scope reduction.
+  explanation: Same building is not a trust zone. That is the point of Domain 1.
+  xp_reward: 60

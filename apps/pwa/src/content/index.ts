@@ -1,112 +1,26 @@
 import type { Lesson, SkillPath } from '@cyberlearn/types';
-import { nodeFromLessons } from './helpers';
-import {
-  tvetComputerHardware,
-  tvetComputerNetworks,
-  tvetOperatingSystems,
-  tvetWorkshopSafety,
-} from './tvetLessons';
-import {
-  tvetComputerHardware2,
-  tvetComputerNetworks2,
-  tvetOperatingSystems2,
-  tvetWorkshopSafety2,
-} from './tvetLessons2';
-import {
-  cyberLawKenya,
-  digitalSafety,
-  linuxEssentials,
-  osiModel,
-  webSecurity,
-} from './cyberLessons';
-import {
-  cyberLawKenya2,
-  digitalSafety2,
-  linuxEssentials2,
-  osiModel2,
-  webSecurity2,
-} from './cyberLessons2';
-import { tradeLessons, tradePaths } from './trades/index';
-import {
-  rebuild000_1_1,
-  rebuild000_1_2,
-  rebuild000_1_3,
-  rebuild000_2_1,
-  rebuild000_2_2,
-  rebuild000_2_3,
-  rebuild000_3_1,
-  rebuild000_3_2,
-  rebuild000_3_3,
-  rebuild000_3_4,
-  rebuild000_3_5,
-  rebuild000_4_1,
-  rebuild000_4_2,
-  rebuild000_4_3,
-  rebuild000_4_4,
-  rebuild000_capstone,
-  rebuildProtocolLessons,
-} from './rebuildLessons';
-import {
-  tvetDatabaseLessons,
-  tvetElectronicsLessons,
-  tvetNetSemesterLessons,
-  tvetOsSemesterLessons,
-  tvetProgrammingLessons,
-  tvetRepairLessons,
-  tvetSoftwareLessons,
-} from './tvetSemester';
-import {
-  cyberArchitectureLessons,
-  cyberConceptsLessons,
-  cyberOperationsLessons,
-  cyberProgramLessons,
-  cyberThreatsLessons,
-} from './cyberSemester';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { applyLessonOverlay, applyPathOverlay } from '@/store/campusCatalogue';
 import { toPublicLesson } from '@/lib/publicLesson';
 import generatedCatalogue from './generated/catalogue.json';
+import { loadCoursePack, packedLesson, prefetchCoursePacks } from './packs';
 
 const yamlSkillPaths = (generatedCatalogue.paths ?? []) as SkillPath[];
+/** Stubs: titles and outline only. Full lessons arrive in course packs (./packs). */
 const yamlLessons = (generatedCatalogue.lessons ?? []) as Lesson[];
 
-export const allLessons: Lesson[] = [
-  tvetWorkshopSafety,
-  tvetWorkshopSafety2,
-  ...tvetElectronicsLessons,
-  tvetComputerHardware,
-  tvetComputerHardware2,
-  tvetOperatingSystems,
-  tvetOperatingSystems2,
-  ...tvetOsSemesterLessons,
-  ...tvetSoftwareLessons,
-  ...tvetRepairLessons,
-  tvetComputerNetworks,
-  tvetComputerNetworks2,
-  ...tvetNetSemesterLessons,
-  ...tvetDatabaseLessons,
-  ...tvetProgrammingLessons,
-  digitalSafety,
-  digitalSafety2,
-  ...cyberConceptsLessons,
-  ...cyberThreatsLessons,
-  osiModel,
-  osiModel2,
-  linuxEssentials,
-  linuxEssentials2,
-  ...cyberArchitectureLessons,
-  webSecurity,
-  webSecurity2,
-  ...cyberOperationsLessons,
-  ...cyberProgramLessons,
-  cyberLawKenya,
-  cyberLawKenya2,
-  ...rebuildProtocolLessons,
-  ...tradeLessons,
-];
+export function isLessonStub(lesson: Lesson | undefined): boolean {
+  return Boolean(lesson?.stub);
+}
+
+/**
+ * Every built-in lesson, from content/ YAML (scripts/generate_catalogue.py). These are stubs;
+ * getLesson / getLessonAsync return the full lesson once its course pack is loaded.
+ */
+export const allLessons: Lesson[] = yamlLessons;
 
 export const lessonsById: Record<string, Lesson> = Object.fromEntries(
-  [...allLessons, ...yamlLessons].map((lesson) => [lesson.id, lesson])
+  allLessons.map((lesson) => [lesson.id, lesson])
 );
 
 let publicLessonsById: Record<string, Lesson> | null = null;
@@ -149,11 +63,7 @@ export function getSkillPaths(): SkillPath[] {
   const cloud = store.cloudPaths ?? [];
   const custom = store.paths ?? [];
   const byId = new Map<string, SkillPath>();
-  for (const path of yamlSkillPaths.length ? yamlSkillPaths : builtInSkillPaths) byId.set(path.id, path);
-  for (const path of builtInSkillPaths) {
-    const existing = byId.get(path.id);
-    if (!existing || lessonCount(path) > lessonCount(existing)) byId.set(path.id, path);
-  }
+  for (const path of builtInSkillPaths) byId.set(path.id, path);
   for (const path of cloud) {
     const existing = byId.get(path.id);
     if (existing && !versionWins(path, existing)) continue;
@@ -174,310 +84,47 @@ export function getLesson(id: string): Lesson | undefined {
       : custom;
     return applyLessonOverlay(lesson);
   }
+  const packed = packedLesson(id);
+  if (packed) return applyLessonOverlay(packed);
   if (publicLessonsById?.[id]) return applyLessonOverlay(publicLessonsById[id]);
   const raw = lessonsById[id];
   return raw ? applyLessonOverlay(withoutPlaintextAnswers(raw)) : undefined;
 }
 
+/**
+ * The full lesson, never a stub: loads the lesson's course pack if needed, then falls back to
+ * a copy saved for offline use, then to the API. Undefined when none of those can be reached.
+ */
 export async function getLessonAsync(id: string): Promise<Lesson | undefined> {
   const local = getLesson(id);
-  if (local) return local;
+  if (local && !isLessonStub(local)) return local;
+  if (local && (await loadCoursePack(local.courseId))) {
+    const full = getLesson(id);
+    if (full && !isLessonStub(full)) return full;
+  }
+  const { readCachedLesson } = await import('@/lib/programmePack');
+  const saved = await readCachedLesson(id).catch(() => undefined);
+  if (saved && !isLessonStub(saved)) return applyLessonOverlay(saved);
   const fetched = await useCurriculumStore.getState().fetchLesson(id);
   return fetched ?? undefined;
 }
 
-export const tvetIctPath: SkillPath = {
-  id: 'tvet-ict-technician',
-  track: 'tvet',
-  contentVersion: '1',
-  title: 'TVET ICT Technician',
-  titleSw: 'Fundi wa ICT wa TVET',
-  description:
-    'CDACC ICT Technician Level 5 semester path (~2280 hours in the official curriculum including attachment): OSH, basic electronics, hardware, OS, software installation, repair, networking, databases, and programming. Weekly lessons follow published learning outcomes.',
-  descriptionSw:
-    'Mtaala wa semester wa CDACC ICT L5: usalama, electronics, hardware, OS, usakinishaji, repair, mitandao, hifadhidata, na programu.',
-  certificationTarget: 'CDACC ICT Technician Level 5 — core units IT/CU/ICT/CR/1–6/5',
-  nodes: [
-    nodeFromLessons({
-      id: 'workshop-safety',
-      title: 'Workshop safety',
-      titleSw: 'Usalama wa warsha',
-      description: 'PPE, electrical isolation, ESD, and incident response in the ICT workshop.',
-      icon: '🦺',
-      prerequisites: [],
-      cdaccUnitId: 'IT/CU/ICT/BC/7/5',
-      examDomain: 'Occupational safety',
-      lessons: [tvetWorkshopSafety, tvetWorkshopSafety2],
-    }),
-    nodeFromLessons({
-      id: 'basic-electronics',
-      title: 'Basic electronics',
-      titleSw: 'Electronics ya msingi',
-      description: 'Circuits, semiconductors, and number systems — IT/CU/ICT/CC/1/5 (~100 hours).',
-      icon: '🔋',
-      prerequisites: ['workshop-safety'],
-      cdaccUnitId: 'IT/CU/ICT/CC/1/5',
-      examDomain: 'Basic electronics',
-      lessons: tvetElectronicsLessons,
-    }),
-    nodeFromLessons({
-      id: 'computer-hardware',
-      title: 'Computer hardware',
-      titleSw: 'Vifaa vya kompyuta',
-      description: 'Identify CPU, RAM, storage, and PSU. Follow a POST-based fault path.',
-      icon: '🖥️',
-      prerequisites: ['basic-electronics'],
-      cdaccUnitId: 'IT/CU/ICT/CR/3/5',
-      examDomain: 'Computer hardware',
-      lessons: [tvetComputerHardware, tvetComputerHardware2],
-    }),
-    nodeFromLessons({
-      id: 'operating-systems',
-      title: 'Operating systems',
-      titleSw: 'Mifumo ya uendeshaji',
-      description: 'Install and support Windows/Linux, then process, memory, and files — CR/6/5 (~210 hours).',
-      icon: '💿',
-      prerequisites: ['computer-hardware'],
-      cdaccUnitId: 'IT/CU/ICT/CR/6/5',
-      examDomain: 'Manage operating system',
-      lessons: [tvetOperatingSystems, tvetOperatingSystems2, ...tvetOsSemesterLessons],
-    }),
-    nodeFromLessons({
-      id: 'software-install',
-      title: 'Install computer software',
-      titleSw: 'Sakinisha programu',
-      description: 'Licences, attended/unattended install, drivers, testing, and user training — CR/2/5 (~260 hours).',
-      icon: '📦',
-      prerequisites: ['operating-systems'],
-      cdaccUnitId: 'IT/CU/ICT/CR/2/5',
-      examDomain: 'Install computer software',
-      lessons: tvetSoftwareLessons,
-    }),
-    nodeFromLessons({
-      id: 'computer-repair',
-      title: 'Repair and maintenance',
-      titleSw: 'Ukarabati na matengenezo',
-      description: 'Troubleshoot, replace, test, and upgrade — CR/3/5 (~280 hours).',
-      icon: '🔧',
-      prerequisites: ['software-install'],
-      cdaccUnitId: 'IT/CU/ICT/CR/3/5',
-      examDomain: 'Computer repair and maintenance',
-      lessons: tvetRepairLessons,
-    }),
-    nodeFromLessons({
-      id: 'computer-networks',
-      title: 'Computer networks',
-      titleSw: 'Mitandao ya kompyuta',
-      description: 'Types, cabling, device config, LAN, and testing — CR/1/5 (~300 hours).',
-      icon: '🔌',
-      prerequisites: ['computer-repair'],
-      cdaccUnitId: 'IT/CU/ICT/CR/1/5',
-      examDomain: 'Perform computer networking',
-      lessons: [tvetComputerNetworks, tvetComputerNetworks2, ...tvetNetSemesterLessons],
-    }),
-    nodeFromLessons({
-      id: 'database-systems',
-      title: 'Database systems',
-      titleSw: 'Hifadhidata',
-      description: 'Models, integrity, SQL objects, and reports — CR/4/5 (~310 hours).',
-      icon: '🗄️',
-      prerequisites: ['computer-networks'],
-      cdaccUnitId: 'IT/CU/ICT/CR/4/5',
-      examDomain: 'Manage database system',
-      lessons: tvetDatabaseLessons,
-    }),
-    nodeFromLessons({
-      id: 'computer-programming',
-      title: 'Computer programming',
-      titleSw: 'Uandaaji programu',
-      description: 'Design tools, structured C, testing, and intro HTML — CR/5/5 (~340 hours).',
-      icon: '💻',
-      prerequisites: ['database-systems'],
-      cdaccUnitId: 'IT/CU/ICT/CR/5/5',
-      examDomain: 'Develop computer program',
-      lessons: tvetProgrammingLessons,
-    }),
-  ],
-};
+/** Warm the packs for these skill paths (the learner's chosen courses) in the background. */
+export function prefetchPathPacks(pathIds: string[]): Promise<void> {
+  const wanted = new Set(pathIds);
+  const courseIds = new Set<string>();
+  for (const path of getSkillPaths()) {
+    if (!wanted.has(path.id)) continue;
+    for (const lessonId of path.nodes.flatMap((node) => node.lessonIds)) {
+      const lesson = lessonsById[lessonId];
+      if (lesson && isLessonStub(lesson)) courseIds.add(lesson.courseId);
+    }
+  }
+  return prefetchCoursePacks(courseIds);
+}
 
-export const cybersecurityPath: SkillPath = {
-  id: 'cybersecurity',
-  track: 'cybersecurity',
-  contentVersion: '1',
-  title: 'Cybersecurity Practitioner',
-  titleSw: 'Mtaalamu wa usalama wa mtandao',
-  description:
-    'Semester coursework mapped to CompTIA Security+ SY0-701 (five domains) plus Kenyan practice: digital safety, networks, Linux, web attacks, operations, governance, DPA 2019, and CMCA 2018.',
-  descriptionSw:
-    'Mtaala wa semester wa Security+ SY0-701: dhana, vitisho, usanifu, operesheni, utawala, DPA, na CMCA.',
-  certificationTarget: 'CompTIA Security+ SY0-701 · CMCA 2018 · DPA 2019',
-  nodes: [
-    nodeFromLessons({
-      id: 'digital-safety-101',
-      title: 'Digital safety 101',
-      titleSw: 'Usalama wa kidijitali 101',
-      description: 'Passwords, phishing, MFA, and M-Pesa social engineering.',
-      icon: '🔐',
-      prerequisites: [],
-      examDomain: 'Security+ 1.0 / 2.0',
-      lessons: [digitalSafety, digitalSafety2],
-    }),
-    nodeFromLessons({
-      id: 'secplus-concepts',
-      title: 'General security concepts',
-      titleSw: 'Dhana za usalama',
-      description: 'CIA, AAA, Zero Trust, change management, and cryptography — SY0-701 Domain 1 (12%).',
-      icon: '📘',
-      prerequisites: ['digital-safety-101'],
-      examDomain: 'SY0-701 Domain 1',
-      lessons: cyberConceptsLessons,
-    }),
-    nodeFromLessons({
-      id: 'secplus-threats',
-      title: 'Threats and mitigations',
-      titleSw: 'Vitisho na mitigation',
-      description: 'Actors, malware, application attacks, CVSS, and compensating controls — Domain 2 (22%).',
-      icon: '⚠️',
-      prerequisites: ['secplus-concepts'],
-      examDomain: 'SY0-701 Domain 2',
-      lessons: cyberThreatsLessons,
-    }),
-    nodeFromLessons({
-      id: 'network-fundamentals',
-      title: 'Network fundamentals',
-      titleSw: 'Misingi ya mitandao',
-      description: 'OSI, TCP/IP, and isolating faults by layer.',
-      icon: '🌐',
-      prerequisites: ['secplus-threats'],
-      cdaccUnitId: 'IT/CU/ICT/CR/1/5',
-      examDomain: 'Security+ · Network+',
-      lessons: [osiModel, osiModel2],
-    }),
-    nodeFromLessons({
-      id: 'linux-essentials',
-      title: 'Linux essentials',
-      titleSw: 'Misingi ya Linux',
-      description: 'Shell, permissions, and safe use of sudo.',
-      icon: '🐧',
-      prerequisites: ['network-fundamentals'],
-      cdaccUnitId: 'IT/CU/ICT/CR/6/5',
-      examDomain: 'LPIC-1',
-      lessons: [linuxEssentials, linuxEssentials2],
-    }),
-    nodeFromLessons({
-      id: 'secplus-architecture',
-      title: 'Security architecture',
-      titleSw: 'Usanifu wa usalama',
-      description: 'Segmentation, cloud shared responsibility, RTO/RPO, and backups — Domain 3 (18%).',
-      icon: '🏛️',
-      prerequisites: ['linux-essentials'],
-      examDomain: 'SY0-701 Domain 3',
-      lessons: cyberArchitectureLessons,
-    }),
-    nodeFromLessons({
-      id: 'web-security',
-      title: 'Web security',
-      titleSw: 'Usalama wa wavuti',
-      description: 'SQL injection, XSS, CSRF, and output encoding.',
-      icon: '🕸️',
-      prerequisites: ['secplus-architecture'],
-      examDomain: 'OWASP Top 10',
-      lessons: [webSecurity, webSecurity2],
-    }),
-    nodeFromLessons({
-      id: 'secplus-operations',
-      title: 'Security operations',
-      titleSw: 'Operesheni za usalama',
-      description: 'Baselines, identity, SIEM, and incident response — Domain 4 (28%).',
-      icon: '🛰️',
-      prerequisites: ['web-security'],
-      examDomain: 'SY0-701 Domain 4',
-      lessons: cyberOperationsLessons,
-    }),
-    nodeFromLessons({
-      id: 'secplus-program',
-      title: 'Program management and privacy',
-      titleSw: 'Utawala na faragha',
-      description: 'Policies, risk, vendors, and Kenya DPA 2019 — Domain 5 (20%).',
-      icon: '📋',
-      prerequisites: ['secplus-operations'],
-      examDomain: 'SY0-701 Domain 5 · DPA 2019',
-      lessons: cyberProgramLessons,
-    }),
-    nodeFromLessons({
-      id: 'cyber-law-kenya',
-      title: 'Cyber law & ethics',
-      titleSw: 'Sheria na maadili',
-      description: 'Computer Misuse and Cybercrimes Act, KE-CIRT, and authorised testing.',
-      icon: '⚖️',
-      prerequisites: ['secplus-program'],
-      examDomain: 'CMCA 2018',
-      lessons: [cyberLawKenya, cyberLawKenya2],
-    }),
-  ],
-};
-
-export const theRebuildProtocolPath: SkillPath = {
-  id: 'the-rebuild-protocol',
-  track: 'cybersecurity',
-  contentVersion: '1',
-  title: 'The Rebuild Protocol',
-  titleSw: 'Itifaki ya Ujenzi Mpya',
-  description:
-    'REBUILD-000: The foundational module for all CyberLearn learners. Set in the world of The Blackout — a civilisation-scale cyberattack on East Africa in 2031. Learn how digital infrastructure works, how it fails, and how to defend yourself. No prerequisites. Awards the Rebuilder Initiate badge.',
-  descriptionSw:
-    'Moduli ya msingi kwa wanafunzi wote wa CyberLearn. Hadithi ya Giza Kuu — shambulio la mtandao lililoathiri Afrika Mashariki mwaka 2031. Jifunze miundombinu ya kidijitali na jinsi ya kujilindia. Hakuna mahitaji ya awali.',
-  certificationTarget: 'Rebuilder Initiate Badge · Digital Citizenship',
-  nodes: [
-    nodeFromLessons({
-      id: 'rebuild-unit-1',
-      title: 'The World Before',
-      titleSw: 'Ulimwengu wa Zamani',
-      description: 'Digital infrastructure layers, network dependencies, and lessons from real-world blackouts.',
-      icon: '🌍',
-      prerequisites: [],
-      lessons: [rebuild000_1_1, rebuild000_1_2, rebuild000_1_3],
-    }),
-    nodeFromLessons({
-      id: 'rebuild-unit-2',
-      title: 'The Blackout',
-      titleSw: 'Giza Kuu',
-      description: 'How cyberattacks unfold across four phases, the Nakuru hospital blackout, and why defenders matter.',
-      icon: '⚡',
-      prerequisites: ['rebuild-unit-1'],
-      lessons: [rebuild000_2_1, rebuild000_2_2, rebuild000_2_3],
-    }),
-    nodeFromLessons({
-      id: 'rebuild-unit-3',
-      title: 'Digital Self-Defence',
-      titleSw: 'Ulinzi wa Kidijitali',
-      description: 'The five defences: passwords, phishing triage, software patching, 3-2-1 backups, and two-factor authentication.',
-      icon: '🛡️',
-      prerequisites: ['rebuild-unit-2'],
-      lessons: [rebuild000_3_1, rebuild000_3_2, rebuild000_3_3, rebuild000_3_4, rebuild000_3_5],
-    }),
-    nodeFromLessons({
-      id: 'rebuild-unit-4',
-      title: 'Joining the Corps',
-      titleSw: 'Kujiunga na Kikosi',
-      description: 'Corps ethics under CMCA 2018, reading the Civilization Map, setting study targets, and first deployment.',
-      icon: '🎖️',
-      prerequisites: ['rebuild-unit-3'],
-      lessons: [rebuild000_4_1, rebuild000_4_2, rebuild000_4_3, rebuild000_4_4],
-    }),
-    nodeFromLessons({
-      id: 'rebuild-capstone',
-      title: 'The Initiate Assessment',
-      titleSw: 'Tathmini ya Mwanajeshi Mpya',
-      description: '15-question comprehensive evaluation. Score 70%+ to earn the Rebuilder Initiate badge.',
-      icon: '🏆',
-      prerequisites: ['rebuild-unit-4'],
-      lessons: [rebuild000_capstone],
-    }),
-  ],
-};
-
-export const builtInSkillPaths: SkillPath[] = [theRebuildProtocolPath, tvetIctPath, cybersecurityPath, ...tradePaths];
+/** The official programmes, from content/skill-paths YAML. */
+export const builtInSkillPaths: SkillPath[] = yamlSkillPaths;
 
 
 export function getNextLessonId(lessonId: string): string | undefined {

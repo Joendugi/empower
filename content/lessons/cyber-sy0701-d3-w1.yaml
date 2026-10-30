@@ -1,0 +1,107 @@
+id: cyber-sy0701-d3-w1
+course_id: secplus-architecture
+title: Week 1 — Architecture models, segmentation, and secure design
+title_sw: Wiki 1 — Miundo, segmentation, na usanifu salama
+briefing: 'Domain 3 (18%) is how you place controls in a system. Models: on-premises, cloud, hybrid, and infrastructure concepts such as centralised vs decentralised, containerisation, virtualisation, IoT/ICS, and serverless. A Kenyan polytechnic is usually hybrid: on-prem AD and file servers, cloud mail, SaaS MIS. Design principles: least privilege, defence in depth, fail securely, keep it simple, privacy by design, and secure defaults.
+
+
+  Segmentation: VLANs, subnets, DMZ for public web, air-gaps for ICS/welding-bay PLCs if required, east-west filtering, and micro-segmentation in virtualisation. Screened subnet (DMZ) holds the public website; it must not be a shortcut into finance. Jump servers/bastion hosts for admin. Jumping from student Wi-Fi straight to the domain controller is an architecture fail.
+
+
+  Device placement: firewalls, sensors, WAF, load balancers, proxies, IDS/IPS, NAC. Fail-open versus fail-closed: a fail-open door lock may be a fire code requirement; a fail-open firewall is usually a security fail. Know which you were asked about.
+
+
+  Draw this week: campus zones — students, staff, servers, guests, CCTV, and a DMZ. Label trust boundaries. That drawing is the architecture artefact.'
+briefing_sw: On-prem, wingu, hybrid. DMZ, VLAN, jump server. Defence in depth, least privilege. Firewall fail-closed. ICS ya warsha itengwe. Chora kanda za chuo.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 3 — Security Architecture (18%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d3-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A public college website should typically sit in:'
+  options:
+  - id: a
+    text: The same VLAN as payroll file shares
+  - id: b
+    text: A screened subnet / DMZ with controlled paths inward
+  - id: c
+    text: The welding bay air-gap
+  - id: d
+    text: The printer cartridge
+  correct_answer: b
+  hint: DMZ.
+  explanation: Do not hairpin public traffic through the finance LAN.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Defence in depth means:'
+  options:
+  - id: a
+    text: One expensive firewall and nothing else
+  - id: b
+    text: Overlapping controls so one failure does not end the CIA triad
+  - id: c
+    text: Deleting logs
+  - id: d
+    text: Open RDP
+  correct_answer: b
+  hint: Layers.
+  explanation: Identity + patch + backup + segment + monitor.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A bastion / jump host is used to:'
+  options:
+  - id: a
+    text: Mine cryptocurrency
+  - id: b
+    text: Broker admin access into a sensitive zone instead of exposing RDP to the world
+  - id: c
+    text: Replace TLS
+  - id: d
+    text: Store salts in a GIF
+  correct_answer: b
+  hint: Admin path.
+  explanation: Combine with MFA and session recording if you can.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'ICS/OT on a welding robot should:'
+  options:
+  - id: a
+    text: Browse the web as SYSTEM
+  - id: b
+    text: Be segmented from the campus internet and student Wi-Fi
+  - id: c
+    text: Use admin/admin
+  - id: d
+    text: Share the MIS SQL port
+  correct_answer: b
+  hint: Air-gap or tightly firewalled.
+  explanation: TVET workshops are OT. Treat them as Domain 3 critical architecture.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w1-fb1
+  type: FILL_BLANK
+  prompt: The isolated network zone for public-facing servers is often called a ___.
+  correct_answer: DMZ
+  hint: Demilitarised zone / screened subnet.
+  explanation: SY0-701 still expects you to place services correctly.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w1-scenario
+  type: SCENARIO
+  prompt: 'Architect: students, CCTV, and domain controllers share one /24 with no ACLs. First architecture fix?'
+  options:
+  - id: a
+    text: Buy a new logo
+  - id: b
+    text: Segment VLANs/subnets and default-deny between roles; DCs not on student LAN
+  - id: c
+    text: Disable AAA
+  - id: d
+    text: Put a honeypot sticker on the switch
+  correct_answer: b
+  hint: Segmentation.
+  explanation: Flat networks turn every malware into a campus-wide event.
+  xp_reward: 60

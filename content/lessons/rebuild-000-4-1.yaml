@@ -1,0 +1,95 @@
+id: rebuild-000-4-1
+course_id: the-rebuild-protocol
+title: 'The Rebuilder Corps: Who We Are'
+title_sw: 'Kikosi cha Wajenzi: Sisi Ni Nani'
+briefing: 'MISSION BRIEFING: Before you take the oath of service and step onto the frontlines of the Civilization Map, understand the foundation and principles of the Rebuilder Corps.
+
+
+  The Rebuilder Corps was forged in the aftermath of The Blackout of 2031. When centralized institutions faltered, ordinary citizens — vocational trainees, network technicians, solar electricians, software developers, and university instructors — came together to rebuild East Africa''s infrastructure. We are defined by three core tenets:
+
+
+  1. Sovereign Defense & Civic Service: We protect schools, hospitals, water supplies, and civic institutions. We never use our skills for illegal access, unauthorized hacking, or extortion.
+
+  2. Open Knowledge: Everything we learn is shared. Proprietary gatekeeping leaves communities vulnerable. We train each other, author open-source tools, and publish bilingual guides in English and Swahili.
+
+  3. Ethical & Legal Rigour: We operate strictly within the law — adhering to Kenya''s Computer Misuse and Cybercrimes Act (CMCA 2018) and Data Protection Act (DPA 2019). We do not "hack back"; we defend, harden, and rebuild.
+
+
+  Wear your Corps designation with pride, whether you are a TVET apprentice or a senior systems engineer.'
+briefing_sw: 'MISSION BRIEFING: Kikosi cha Wajenzi kiliundwa baada ya Giza Kuu la 2031 na wataalamu, mafundi wa TVET, na raia wazalendo.
+
+
+  Nguzo zetu: (1) Kulinda miundombinu ya umma, (2) Kusambaza maarifa waziwazi, na (3) Kufanya kazi kwa maadili na kufuata sheria za nchi (CMCA 2018 na DPA 2019).'
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship · CMCA 2018
+xp_total: 210
+exercises:
+- id: r000-41-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Under Kenya''s Computer Misuse and Cybercrimes Act (CMCA 2018), accessing a computer system or network without authorization is:'
+  options:
+  - id: a
+    text: Permitted if you do not download any files
+  - id: b
+    text: A criminal offence punishable by significant fines and imprisonment
+  - id: c
+    text: Allowed as long as you consider yourself a hobbyist
+  - id: d
+    text: Legal if you notify the administrator afterwards on social media
+  correct_answer: b
+  hint: The law requires explicit authorization before testing or accessing systems.
+  explanation: Section 14 of the CMCA 2018 criminalizes unauthorized access to computer systems. Ethical defenders always obtain formal written authorization before performing security audits or penetration testing.
+  xp_reward: 50
+- id: r000-41-match
+  type: MATCH_PAIRS
+  prompt: Match each tenet of the Rebuilder Corps to its commitment.
+  pairs:
+  - left:
+      id: defense
+      text: Civic Defense
+    right:
+      id: com-defense
+      text: Protecting civilian infrastructure and public services from harm
+  - left:
+      id: open
+      text: Open Knowledge
+    right:
+      id: com-open
+      text: Sharing technical skills openly in local languages without paywalls
+  - left:
+      id: ethics
+      text: Legal Integrity
+    right:
+      id: com-ethics
+      text: Complying strictly with cybersecurity legislation and ethical standards
+  correct_answer:
+  - defense=com-defense
+  - open=com-open
+  - ethics=com-ethics
+  hint: Match each core value to its operational practice.
+  explanation: The Corps operates with civic duty, open educational resources, and strict adherence to constitutional and cyber laws.
+  xp_reward: 50
+- id: r000-41-q3
+  type: FILL_BLANK
+  prompt: The principle of "Responsible ___" means reporting a discovered security flaw privately to the vendor so they can fix it before the public or attackers learn about it.
+  correct_answer: Disclosure
+  hint: Disclosing information responsibly to the vendor.
+  explanation: Responsible disclosure protects the community by giving developers time to build and distribute a security patch before malicious actors exploit the vulnerability.
+  xp_reward: 50
+- id: r000-41-q4
+  type: SCENARIO
+  prompt: A friend asks you to "test" the security of their former employer's website because they suspect it has a security bug, but they do not have written permission from the company. What must you do?
+  options:
+  - id: a
+    text: Run an automated attack tool late at night when traffic is low
+  - id: b
+    text: Refuse to scan or access the system, as unauthorized security testing is illegal under CMCA 2018 without explicit owner consent
+  - id: c
+    text: Scan it as long as you promise not to alter any database records
+  - id: d
+    text: Send a fake phishing email to see if their staff click it
+  correct_answer: b
+  hint: Consent and authorization are mandatory for any security assessment.
+  explanation: Scanning or testing without written authorization from the system owner is unauthorized access under cyber law. Ethical cybersecurity professionals always maintain signed Rules of Engagement (RoE).
+  xp_reward: 60

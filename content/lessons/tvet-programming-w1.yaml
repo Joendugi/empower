@@ -1,0 +1,108 @@
+id: tvet-programming-w1
+course_id: computer-programming
+title: Week 1 — Concepts, translators, methodologies, and design tools
+title_sw: Wiki 1 — Dhana, translators, mbinu, na zana za usanifu
+briefing: 'Develop Computer Program (340 hours) starts with concepts. A program is a set of instructions a computer can execute. Programming is writing those instructions. Translators: compiler (whole program to machine code), interpreter (line by line), assembler for low level. Editors, linkers, and loaders complete the tool chain. Mixing “compiler” and “editor” in an oral loses marks.
+
+
+  Approaches: structured/procedural, modular, object-oriented, functional. Methodologies: waterfall, Agile, RAD, spiral — CDACC lists Agile, Crystal, RAD among others. The program development cycle is still: problem, requirements, design, code, test, maintain. Agile repeats that in small increments. For a college practical, a mini waterfall with a test plan is acceptable if you document it.
+
+
+  Design tools: pseudo-code, flowcharts, decision tables/trees, data-flow diagrams. Top-down design decomposes; bottom-up builds from known modules; data-driven starts from the records. Languages: low-level (assembly), high-level (C, Python, Java), 4GL, OOP, visual. Choose by domain, popularity, tools, and the exam — this unit requires basic C and basic internet programming.
+
+
+  This week’s artefact: a problem statement (e.g. compute workshop job-card total), structured English, and a flowchart with start/end, process, decision. No code yet. Assessors want the design, because coding without design is the usual fail.'
+briefing_sw: Compiler dhidi ya interpreter. Linker na loader. Agile, RAD, waterfall. Pseudo-code, flowchart, decision table. C ni high-level structured. Buni kabla ya kuandika msimbo.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/5/5
+exam_domain: CDACC ICT L5 — Develop Computer Program (IT/CU/ICT/CR/5/5, 340 h)
+xp_total: 310
+exercises:
+- id: tvet-programming-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A compiler differs from an interpreter because a compiler:'
+  options:
+  - id: a
+    text: Only colours the editor
+  - id: b
+    text: Translates the whole source to object/machine code before running
+  - id: c
+    text: Cannot produce errors
+  - id: d
+    text: Is a type of RAM
+  correct_answer: b
+  hint: Whole vs line by line.
+  explanation: C is typically compiled. Many scripting languages are interpreted.
+  xp_reward: 50
+- id: tvet-programming-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Pseudo-code is used to:'
+  options:
+  - id: a
+    text: Replace the linker
+  - id: b
+    text: Describe algorithm logic in structured English before syntax
+  - id: c
+    text: Flash the BIOS
+  - id: d
+    text: Crimp cables
+  correct_answer: b
+  hint: Design tool.
+  explanation: If you cannot pseudo-code a loop, you cannot code it in C.
+  xp_reward: 50
+- id: tvet-programming-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'In a flowchart, a diamond typically represents:'
+  options:
+  - id: a
+    text: A decision / condition
+  - id: b
+    text: A magnetic tape only
+  - id: c
+    text: The compiler
+  - id: d
+    text: Ohm’s law
+  correct_answer: a
+  hint: Yes/no.
+  explanation: Parallelogram often I/O, rectangle process, oval start/end.
+  xp_reward: 50
+- id: tvet-programming-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Agile development emphasises:'
+  options:
+  - id: a
+    text: One giant delivery after years with no feedback
+  - id: b
+    text: Short iterations, working software, and responding to change
+  - id: c
+    text: Avoiding tests
+  - id: d
+    text: Only assembly language
+  correct_answer: b
+  hint: Methodology list.
+  explanation: Waterfall is linear. RAD/Agile trade documentation for speed — still test.
+  xp_reward: 50
+- id: tvet-programming-w1-fb1
+  type: FILL_BLANK
+  prompt: The tool that combines object files with libraries into an executable is the ___.
+  correct_answer: linker
+  hint: After compile.
+  explanation: Compile → link → load. The loader places the program in memory.
+  xp_reward: 50
+- id: tvet-programming-w1-scenario
+  type: SCENARIO
+  prompt: 'A trainee opens Dev-C++ and types before writing requirements. For a CDACC portfolio you should:'
+  options:
+  - id: a
+    text: Mark it complete
+  - id: b
+    text: Require problem statement, pseudo-code/flowchart, then code and test evidence
+  - id: c
+    text: Delete the compiler
+  - id: d
+    text: Convert it to hexadecimal by hand
+  correct_answer: b
+  hint: Outcomes 1–3 before 5.
+  explanation: The unit is development methodology, not typing speed.
+  xp_reward: 60

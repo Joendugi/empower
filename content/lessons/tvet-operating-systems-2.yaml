@@ -1,0 +1,89 @@
+id: tvet-operating-systems-2
+course_id: operating-systems
+title: Users, backup, and malware first response
+title_sw: Watumiaji, backup, na malware
+briefing: 'A technician who can install Windows but cannot manage users will fail in a college. Create standard users. Disable unused guest accounts. Share folders with least privilege — not “Everyone: Full control” on exam papers.
+
+
+  Backup: 3-2-1 is the idea (copies, media, offsite/offline). A USB disk left plugged in is eaten by ransomware too. Test a restore once, or you do not have a backup — you have a hope.
+
+
+  Malware first response for a technician (not a forensics lab): isolate the NIC, do not run random “cleaners” from Telegram, capture the symptom, then follow college AV/EDR procedure. Reimage if that is the standard. Changing a password on a still-infected PC is not containment.
+
+
+  Logs: Event Viewer and syslog tell you if a disk is dying. Learn to filter. Guessing is slower.'
+briefing_sw: 'Akaunti za kawaida, si admin kila siku. Backup inajaribiwa kwa restore. Malware: tengeneza mtandao, fuata taratibu, usitumie cleaner ya Telegram. Soma logs.'
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/OS/LX/01/5
+exam_domain: CDACC ICT Technician — Systems Support
+xp_total: 210
+exercises:
+- id: tvet-os2-q1
+  type: MULTIPLE_CHOICE
+  prompt: '“Everyone: Full control” on a shared exams folder is bad because:'
+  options:
+  - id: a
+    text: It makes search slower
+  - id: b
+    text: Any account can alter or delete exam papers
+  - id: c
+    text: Windows forbids shares
+  - id: d
+    text: It uses extra RAM
+  correct_answer: b
+  hint: Least privilege.
+  explanation: Share to the group that must work, with the rights they need.
+  xp_reward: 50
+- id: tvet-os2-q2
+  type: FILL_BLANK
+  prompt: A backup you have never restored should be treated as ___.
+  correct_answer: untested
+  hint: Until you restore, you do not know it works.
+  explanation: Test restores. Untested backups fail on the day you need them.
+  xp_reward: 50
+- id: tvet-os2-q3
+  type: SCENARIO
+  prompt: A staff PC shows ransom text and mapped drives. First useful action?
+  options:
+  - id: a
+    text: Pay from M-Pesa immediately
+  - id: b
+    text: Isolate the machine from the network and escalate; do not encrypt more by “trying files”
+  - id: c
+    text: Open the USB of backups on the same live PC and copy the malware over
+  - id: d
+    text: Post the ransom note on the college Facebook
+  correct_answer: b
+  hint: Contain.
+  explanation: Network isolation reduces spread. Then IR process.
+  xp_reward: 60
+- id: tvet-os2-q4
+  type: MATCH_PAIRS
+  prompt: Match the control to the goal.
+  pairs:
+  - left:
+      id: std
+      text: Standard user account
+    right:
+      id: priv
+      text: Limit daily rights
+  - left:
+      id: bak
+      text: Offline backup
+    right:
+      id: ransom
+      text: Survive ransomware on live disks
+  - left:
+      id: log
+      text: Event logs
+    right:
+      id: ev
+      text: Evidence of disk and auth failures
+  correct_answer:
+  - std=priv
+  - bak=ransom
+  - log=ev
+  hint: Prevent, survive, investigate.
+  explanation: OS support is controls, not only installing Office.
+  xp_reward: 50

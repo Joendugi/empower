@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import BrandMark from '@/components/ui/BrandMark';
-import { isStaff } from '@/lib/localAccounts';
+import { useIsStaff } from '@/lib/roles';
 import { useLearnerStore } from '@/store/learnerStore';
 import { useT } from '@/i18n';
 
 export default function AdminGate({ children }: { children: ReactNode }) {
   const t = useT();
-  const email = useLearnerStore((state) => state.email);
+  const staff = useIsStaff();
   const token = useLearnerStore((state) => state.token);
   const valid = useLearnerStore((state) => Boolean(state.token && !state.isGuest && state.isSessionValid()));
 
-  if (valid && token && isStaff(email)) {
+  if (valid && token && staff) {
     return <>{children}</>;
   }
 
@@ -24,8 +24,8 @@ export default function AdminGate({ children }: { children: ReactNode }) {
         </Link>
         <h1 className="text-2xl font-bold">Staff office</h1>
         <p className="text-sm text-muted mt-3">
-          Sign in with the owner account or a limited staff account created by the owner. Learners cannot open
-          this page.
+          Sign in with an admin account. Admin access is granted on the server by another admin; learners
+          cannot open this page.
         </p>
         <Link to="/login?next=/office" className="btn-primary mt-6 inline-flex">
           Sign in to continue

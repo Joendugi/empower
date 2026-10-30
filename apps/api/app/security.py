@@ -4,8 +4,6 @@ import hashlib
 import hmac
 from urllib.parse import urlparse
 
-from fastapi import Response
-
 from app.config import settings
 
 STAFF_HASH_PREFIX = "empower-staff-v1"
@@ -61,25 +59,3 @@ def staff_key_matches(passphrase: str) -> bool:
     if len(expected) < 12 or len(passphrase.strip()) < 10:
         return False
     return hmac.compare_digest(staff_digest(expected), staff_digest(passphrase))
-
-
-def attach_session_cookie(response: Response, token: str) -> None:
-    response.set_cookie(
-        key=settings.AUTH_COOKIE_NAME,
-        value=token,
-        max_age=settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60,
-        httponly=True,
-        secure=settings.cookie_secure,
-        samesite="lax",
-        path="/",
-    )
-
-
-def clear_session_cookie(response: Response) -> None:
-    response.delete_cookie(
-        key=settings.AUTH_COOKIE_NAME,
-        path="/",
-        secure=settings.cookie_secure,
-        httponly=True,
-        samesite="lax",
-    )

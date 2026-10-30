@@ -1,0 +1,108 @@
+id: tvet-os-w3
+course_id: operating-systems
+title: Week 3 — Process, memory, and file management (OS internals)
+title_sw: Wiki 3 — Mchakato, kumbukumbu, na faili
+briefing: 'Manage Operating System (210 hours) goes beyond installing Windows. Fundamentals: kernel versus shell, system calls, monolithic versus layered versus microkernel/client-server versus virtual-machine structures. Types: batch, time-sharing, real-time, distributed, mobile. Installation you already practised; this week is how the OS shares the machine.
+
+
+  Process management: a process is a program in execution with a process control block (PCB). States: new, ready, running, waiting, terminated. Threads share the process address space. Scheduling (FCFS, SJF, round robin, priority) decides who runs. Concurrency control: race conditions, critical sections, semaphores, monitors, message passing. Deadlock: four Coffman conditions — know prevention versus detection at theory level.
+
+
+  Memory: contiguous allocation, paging, segmentation, virtual memory, and thrashing when the working set does not fit. I/O: device drivers, interrupts, buffering. File systems: directories, allocation (FAT, NTFS, ext4), permissions you met in Linux essentials. Emerging: containers, TPM-backed secure boot, and 64-bit only images.
+
+
+  Practical: use Task Manager / `top` / `ps` to identify a runaway process, `free` for memory, and Event Viewer. Tie a freeze to memory pressure rather than “Windows is bad”. That is the technician translation of this unit.'
+briefing_sw: Kernel dhidi ya shell. PCB, hali za process, threads. Scheduling. Semaphore. Paging na virtual memory. Thrashing. FAT, NTFS, ext4. top/ps na Task Manager.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/6/5
+exam_domain: CDACC ICT L5 — Manage Operating System (IT/CU/ICT/CR/6/5, 210 h)
+xp_total: 310
+exercises:
+- id: tvet-os-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'The kernel is:'
+  options:
+  - id: a
+    text: A user wallpaper
+  - id: b
+    text: The core OS code that runs in privileged mode and handles system calls
+  - id: c
+    text: A type of capacitor
+  - id: d
+    text: Only a GUI theme
+  correct_answer: b
+  hint: Privileged.
+  explanation: The shell is the user interface to the kernel.
+  xp_reward: 50
+- id: tvet-os-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Round-robin scheduling is characterised by:'
+  options:
+  - id: a
+    text: A time quantum / time slice
+  - id: b
+    text: Shortest job only with no preemption ever
+  - id: c
+    text: Random RAM colours
+  - id: d
+    text: One process until the college closes
+  correct_answer: a
+  hint: Fair share of CPU.
+  explanation: FCFS is a queue. SJF picks short jobs. Priority can starve.
+  xp_reward: 50
+- id: tvet-os-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Thrashing means:'
+  options:
+  - id: a
+    text: The disk is full of movies
+  - id: b
+    text: The system spends most of its time paging, not doing useful work
+  - id: c
+    text: A good compile
+  - id: d
+    text: A welding defect
+  correct_answer: b
+  hint: Virtual memory overload.
+  explanation: Add RAM or reduce working set. Reinstalling Office may not help.
+  xp_reward: 50
+- id: tvet-os-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A process control block stores:'
+  options:
+  - id: a
+    text: Only the hexadecimal colour of the window
+  - id: b
+    text: PID, state, registers, memory info, and accounting
+  - id: c
+    text: The HDMI EDID only
+  - id: d
+    text: Ohm’s law
+  correct_answer: b
+  hint: PCB.
+  explanation: Without a PCB the scheduler cannot context-switch.
+  xp_reward: 50
+- id: tvet-os-w3-fb1
+  type: FILL_BLANK
+  prompt: A program in execution is called a ___.
+  correct_answer: process
+  hint: Not just a file on disk.
+  explanation: The same program can have many processes (two Notepads).
+  xp_reward: 50
+- id: tvet-os-w3-scenario
+  type: SCENARIO
+  prompt: Lab PCs freeze when browsers open 80 tabs. `free` shows almost no RAM and high swap. OS diagnosis?
+  options:
+  - id: a
+    text: Need a new compiler
+  - id: b
+    text: Memory pressure / thrashing — add RAM or limit workloads, check for a leak
+  - id: c
+    text: Re-crimp all RJ45
+  - id: d
+    text: Disable the kernel
+  correct_answer: b
+  hint: Week 3 memory outcome.
+  explanation: This is Manage OS, not Install Software. Measure, then act.
+  xp_reward: 60

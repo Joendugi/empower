@@ -1,0 +1,83 @@
+id: rebuild-000-2-2
+course_id: the-rebuild-protocol
+title: 'The Human Cost: Nakuru Hospital'
+title_sw: 'Gharama kwa Binadamu: Hospitali ya Nakuru'
+briefing: 'MISSION BRIEFING: Cyberattacks are not abstract lines of code on a terminal screen. They have real human consequences. Step into the shoes of the medical response team at Nakuru Level 5 Hospital during The Blackout of 2031.
+
+
+  At 14:15 on Day 1 of The Blackout, hospital power flickered and transferred to emergency generators. Simultaneously, external broadband, cellular signals, and the centralized hospital management system went dark. Within 30 minutes:
+
+  - Patient records, allergy histories, and active medication orders were inaccessible.
+
+  - Digital blood bank inventory counts were offline; nurses had to manually count units by flashlight.
+
+  - Vaccine cold-chain refrigerators (+2°C to +8°C) were dependent on limited on-site fuel reserves.
+
+  - Incoming road trauma referrals could not be coordinated by phone or WhatsApp.
+
+
+  The decisions made in those 72 hours saved lives through disciplined emergency procedures, manual triage tags, and analog VHF radio coordination. Security defenders do not protect machines — they protect human life.'
+briefing_sw: 'MISSION BRIEFING: Mashambulizi ya mtandao yanaathiri maisha halisi ya binadamu. Katika misheni hii, jifunze kuhusu changamoto za Hospitali ya Nakuru wakati wa Giza Kuu la 2031.
+
+
+  Mifumo ya kompyuta ilipozimika, madaktari walilazimika kutumia kumbukumbu za karatasi, taa za betri, na redio za mawasiliano ili kuokoa maisha.'
+estimated_minutes: 12
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 220
+exercises:
+- id: r000-22-q1
+  type: SCENARIO
+  prompt: During a network blackout, a patient arrives unconscious at the emergency room with severe trauma. The digital health record system is offline. What is the correct clinical protocol?
+  options:
+  - id: a
+    text: Delay treatment until the network connection is restored so records can be checked
+  - id: b
+    text: Apply emergency universal trauma protocols immediately, log care on paper triage tags, and test blood type manually
+  - id: c
+    text: Try restarting the main server room router before attending to the patient
+  - id: d
+    text: Transfer the patient to another facility without examining them
+  correct_answer: b
+  hint: Life preservation takes precedence over electronic record-keeping.
+  explanation: In a cyber crisis, analog and paper fallback procedures must be second nature. Delaying emergency medical treatment for IT recovery is a catastrophic failure mode.
+  xp_reward: 60
+- id: r000-22-q2
+  type: MULTIPLE_CHOICE
+  prompt: Why is maintaining the cold chain (+2°C to +8°C) critical for hospitals during an extended power and network outage?
+  options:
+  - id: a
+    text: To keep cold drinks chilled for the doctors
+  - id: b
+    text: Because life-saving vaccines, insulin, and blood products spoil rapidly if temperature limits are breached
+  - id: c
+    text: To prevent computer server racks from overheating
+  - id: d
+    text: It is only an aesthetic preference with no medical impact
+  correct_answer: b
+  hint: Think about biological medications and vaccines.
+  explanation: Biological supplies such as antivenom, rabies vaccines, child immunisations, and insulin degrade when temperatures exceed +8°C. Protecting cold-chain power and monitoring is a vital security requirement.
+  xp_reward: 50
+- id: r000-22-q3
+  type: FILL_BLANK
+  prompt: When cellular networks and internet cables fail completely, emergency services rely on analog ___ radio transceivers for long-range voice communication.
+  correct_answer: VHF
+  hint: Very High Frequency two-way radios used by emergency services and park rangers.
+  explanation: VHF and UHF two-way radio systems operate independently of internet infrastructure and cell towers, making them the ultimate emergency communications lifeline.
+  xp_reward: 50
+- id: r000-22-q4
+  type: SCENARIO
+  prompt: You are auditing the cybersecurity posture of a county hospital. What is the MOST critical recommendation to ensure survival during a ransomware attack?
+  options:
+  - id: a
+    text: Buy larger curved computer monitors for all desks
+  - id: b
+    text: Maintain tested, offline air-gapped backups of patient databases and regular paper-triage disaster drill rehearsals
+  - id: c
+    text: Allow doctors to use any personal USB flash drive they bring from home
+  - id: d
+    text: Disable all password requirements to make access faster
+  correct_answer: b
+  hint: Focus on recovery and staff readiness.
+  explanation: Ransomware encrypts active network drives. Only immutable, offline (air-gapped) backups and practiced manual continuity drills allow a hospital to continue saving lives during an active incident.
+  xp_reward: 60

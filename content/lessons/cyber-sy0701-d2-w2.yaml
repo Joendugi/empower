@@ -1,0 +1,107 @@
+id: cyber-sy0701-d2-w2
+course_id: secplus-threats
+title: Week 2 — Malware, application attacks, and indicators
+title_sw: Wiki 2 — Malware, mashambulizi ya programu, na dalili
+briefing: 'Name the families: virus, worm, trojan, ransomware, logic bomb, rootkit, bloatware, spyware, keylogger, botnet/C2, RAT, cryptomalware. Delivery: phishing, USB, drive-by, email, SMS (smishing), voice (vishing), QR (quishing). Kenya: fake KRA/NHIF/Safaricom lures. Indicators: CPU, outbound beaconing, encrypted shares, disabled Defender, new admin users, impossible travel on mail.
+
+
+  Application and injection: SQL injection, XSS (reflected, stored, DOM), CSRF, directory traversal, buffer overflow, race conditions, integer overflow, insecure deserialization, SSRF. You already practised SQLi in web security; here you classify them as vulnerabilities versus the exploit in the wild. Password attacks: spraying, stuffing, brute force, rainbow (hence salts). Replay, session hijack, on-path (MITM), downgrade, DDoS, DNS poisoning, ARP spoofing, VLAN hopping, rogue AP, evil twin.
+
+
+  Physical: tailgating, dumpster diving, shoulder surfing, USB drop. Cryptographic attacks: downgrade, collision (old hashes), birthday, stealing keys from memory. AI-era items in current objectives: prompt injection and malicious AI-assisted social engineering — treat as emerging but examinable.
+
+
+  Lab mindset: you do not run ransomware samples on the production MIS. Indicators go to the SOC playbook (Domain 4). This week is recognition and classification for the exam and for first-line reporting.'
+briefing_sw: Ransomware, trojan, worm, keylogger, botnet. SQL injection, XSS, CSRF. Password spraying. Evil twin. Tailgating. Ripoti dalili; usiendeze sample kwenye MIS.
+estimated_minutes: 35
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 2 — Threats, Vulnerabilities, and Mitigations (22%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d2-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A worm differs from a typical virus in that a worm:'
+  options:
+  - id: a
+    text: Never spreads
+  - id: b
+    text: Can self-propagate over the network without a host file
+  - id: c
+    text: Is always a honeypot
+  - id: d
+    text: Encrypts only TPM
+  correct_answer: b
+  hint: Standalone spread.
+  explanation: Viruses piggyback on files. Worms travel by themselves. Trojans pretend to be useful.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Credential stuffing uses:'
+  options:
+  - id: a
+    text: Brand-new random guesses only
+  - id: b
+    text: Leaked username/password pairs from other breaches
+  - id: c
+    text: ICMP only
+  - id: d
+    text: Bollards
+  correct_answer: b
+  hint: Reuse.
+  explanation: Spraying uses few common passwords across many accounts to avoid lockout.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Stored XSS is dangerous because:'
+  options:
+  - id: a
+    text: It only affects the attacker
+  - id: b
+    text: Malicious script is saved on the server and runs in other users’ browsers
+  - id: c
+    text: It is a type of RAID
+  - id: d
+    text: It is physical only
+  correct_answer: b
+  hint: Persists.
+  explanation: Reflected XSS rides on a crafted URL. Output encoding and CSP mitigate.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'An evil twin is:'
+  options:
+  - id: a
+    text: A second TPM
+  - id: b
+    text: A rogue AP impersonating a trusted SSID
+  - id: c
+    text: A CA
+  - id: d
+    text: A salt
+  correct_answer: b
+  hint: Wireless impersonation.
+  explanation: Users join “Campus_Free” and you on-path their traffic. Prefer 802.1X.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w2-fb1
+  type: FILL_BLANK
+  prompt: Malware that encrypts files and demands payment is ___.
+  correct_answer: ransomware
+  hint: Ransom.
+  explanation: Backups that are offline and tested are the mitigation that actually works.
+  xp_reward: 50
+- id: cyber-sy0701-d2-w2-scenario
+  type: SCENARIO
+  prompt: Helpdesk sees many failed logins for admin from 40 countries, then a success, then mass .encrypted files. Sequence?
+  options:
+  - id: a
+    text: Ignore — exams do that
+  - id: b
+    text: Password attack then ransomware — isolate, preserve logs, restore from offline backup, reset creds
+  - id: c
+    text: Buy more RAM only
+  - id: d
+    text: Disable backups so the attacker cannot find them
+  correct_answer: b
+  hint: Indicators chained.
+  explanation: Domain 2 names the attack; Domain 4 will run the incident. You must still recognise it.
+  xp_reward: 60

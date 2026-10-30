@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 import click
 from rich.console import Console
+from rich.markup import escape
 from rich.table import Table
 
 from src.validator import validate_catalogue, validate_lesson_file
@@ -75,7 +76,8 @@ def validate_catalogue_command(path: Path) -> None:
     res = validate_catalogue(path)
     if res.errors:
         for error in res.errors:
-            console.print(f"[red]{error}[/red]")
+            # Lesson text can contain brackets ("[/<SUB>]") that rich would read as markup.
+            console.print(f"[red]{escape(str(error))}[/red]")
         sys.exit(1)
     console.print(f"[green]Catalogue OK ({len(res.warnings)} warnings).[/green]")
 

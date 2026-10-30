@@ -1,0 +1,76 @@
+id: tvet-computer-networks-2
+course_id: computer-networks
+title: IPv4 sense, Wi-Fi, and first-line tests
+title_sw: IPv4, Wi-Fi, na majaribio ya kwanza
+briefing: 'You do not need to be a CCNP to be useful. You must read an IPv4 address and mask enough to see that 192.168.1.50/24 cannot use gateway 192.168.0.1 without a router. APIPA 169.254.x.x means DHCP failed. ipconfig / ifconfig / ip are the first tools, then ping the gateway, then ping a public IP, then DNS (ping a name).
+
+
+  Wi-Fi: wrong passphrase, hidden SSID confusion, 2.4 vs 5 GHz range, and a crowded channel. A “weak signal” is not always the ISP. Stand at the AP with a known-good client before blaming Safaricom.
+
+
+  Cabling: a link light is not a permission to skip testing. A miswired RJ45 (split pairs) passes a cheap tester and fails under load. Follow T568A or B consistently at both ends.
+
+
+  Document the LAN: who is DHCP, what is the gateway, where is the switch. A drawing on the wall saves hours.'
+briefing_sw: 'Soma mask. 169.254 ni DHCP imeshindwa. Ping gateway, kisha DNS. Wi-Fi: nenosiri, chaneli, bendi. Kebo: T568A/B sawa pande zote. Andika mchoro wa LAN.'
+estimated_minutes: 18
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CS/CR/01/6
+exam_domain: CDACC ICT Technician — Computer Networks
+xp_total: 210
+exercises:
+- id: tvet-net2-q1
+  type: MULTIPLE_CHOICE
+  prompt: A host shows 169.254.32.10. What is the likely issue?
+  options:
+  - id: a
+    text: Perfect static design
+  - id: b
+    text: DHCP failed so the OS assigned APIPA
+  - id: c
+    text: The default gateway is Google
+  - id: d
+    text: Fibre is unplugged at the beach
+  correct_answer: b
+  hint: APIPA.
+  explanation: Check cable, DHCP server, and pool exhaustion.
+  xp_reward: 50
+- id: tvet-net2-q2
+  type: FILL_BLANK
+  prompt: The command-line test that checks whether a host answers ICMP is ___.
+  correct_answer: ping
+  hint: Round-trip.
+  explanation: Ping gateway vs ping 8.8.8.8 vs ping a name splits the fault.
+  xp_reward: 50
+- id: tvet-net2-q3
+  type: SCENARIO
+  prompt: 'Office PCs ping 8.8.8.8 but Chrome cannot load safaricom.co.ke. You should inspect:'
+  options:
+  - id: a
+    text: Only HDMI cables
+  - id: b
+    text: DNS settings / DNS server reachability
+  - id: c
+    text: PSU wattage
+  - id: d
+    text: The office kettle earth
+  correct_answer: b
+  hint: IP works, names fail.
+  explanation: Classic DNS fault. ipconfig /all and nslookup.
+  xp_reward: 60
+- id: tvet-net2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Both ends of a UTP run should use:'
+  options:
+  - id: a
+    text: Random A and B mixed “for security”
+  - id: b
+    text: The same T568A or T568B standard throughout as designed
+  - id: c
+    text: Telephone RJ11 crimps
+  - id: d
+    text: Only four of eight wires always, even for Gigabit
+  correct_answer: b
+  hint: Pair integrity.
+  explanation: A-B mismatch is a crossover. Unintended crossovers break links.
+  xp_reward: 50

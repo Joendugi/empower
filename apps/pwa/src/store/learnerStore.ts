@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { AuthLearner, Badge, ProgrammeTrack } from '@cyberlearn/types';
+import type { AccountRole, AuthLearner, Badge, ProgrammeTrack } from '@cyberlearn/types';
 import { isLocalUserToken, resumeLocalSession, updateLocalProfile } from '@/lib/localAccounts';
 import {
   getDeviceId,
@@ -23,6 +23,8 @@ interface LearnerState {
   displayName: string | null;
   email: string | null;
   isGuest: boolean;
+  /** Role the server sent for a cloud sign-in; null for device-only sessions. Read it through lib/roles. */
+  accountRole: AccountRole | null;
   language: 'en' | 'sw';
   xp: number;
   level: number;
@@ -44,7 +46,7 @@ interface LearnerState {
   preferredTrack: ProgrammeTrack | 'all' | null;
   narrativeTheme: boolean;
 
-  applyAuth: (token: string, learner: AuthLearner) => void;
+  applyAuth: (token: string, learner: AuthLearner, sessionExpiresAt?: string) => void;
   applyXp: (totalXp: number, level: number) => void;
   addXp: (amount: number) => void;
   setStreak: (current: number, longest: number, freezeTokens?: number) => void;
@@ -78,6 +80,7 @@ const empty = {
   displayName: null,
   email: null,
   isGuest: false,
+  accountRole: null as AccountRole | null,
   language: 'en' as const,
   xp: 0,
   level: 1,
@@ -117,25 +120,38 @@ export const useLearnerStore = create<LearnerState>()(
     (set, get) => ({
       ...empty,
 
-      applyAuth: (token, learner) => {
+      applyAuth: (token, learner, sessionExpiresAt) => {
         const cloudJwt =
           token !== 'local-offline' &&
           token !== CLOUD_COOKIE_TOKEN &&
           !isLocalUserToken(token);
         const session = sessionFields(token);
         const stored = cloudJwt ? CLOUD_COOKIE_TOKEN : token;
+        const cloud = session.authSource === 'cloud';
+        const serverExpiry = sessionExpiresAt ? Date.parse(sessionExpiresAt) : Number.NaN;
         writeSessionToken(stored);
-        set((state) => ({
-          token: stored,
-          learnerId: learner.id,
-          displayName: learner.displayName,
-          email: learner.email,
-          isGuest: learner.isGuest,
-          language: learner.preferredLanguage,
-          xp: Math.max(state.xp, learner.totalXp),
-          level: Math.max(state.level, learner.level),
-          ...session,
-        }));
+        set((state) => {
+          if (cloud) {
+            // The access token lasts minutes and is renewed silently; the sign-in lasts as long
+            // as the refresh token. Profile refreshes (/auth/me) keep the expiry they already had.
+            if (Number.isFinite(serverExpiry)) session.sessionExpiresAt = serverExpiry;
+            else if (state.authSource === 'cloud' && state.learnerId === learner.id && state.sessionExpiresAt) {
+              session.sessionExpiresAt = state.sessionExpiresAt;
+            }
+          }
+          return {
+            token: stored,
+            learnerId: learner.id,
+            displayName: learner.displayName,
+            email: learner.email,
+            isGuest: learner.isGuest,
+            accountRole: cloud ? learner.role ?? 'learner' : null,
+            language: learner.preferredLanguage,
+            xp: Math.max(state.xp, learner.totalXp),
+            level: Math.max(state.level, learner.level),
+            ...session,
+          };
+        });
       },
 
       applyXp: (totalXp, level) => set({ xp: totalXp, level }),
@@ -246,6 +262,7 @@ export const useLearnerStore = create<LearnerState>()(
           authSource: null,
           deviceId: state.deviceId,
           isGuest: false,
+          accountRole: null,
         }));
       },
 
@@ -289,6 +306,7 @@ export const useLearnerStore = create<LearnerState>()(
         displayName: state.displayName,
         email: state.email,
         isGuest: state.isGuest,
+        accountRole: state.accountRole,
         language: state.language,
         xp: state.xp,
         level: state.level,

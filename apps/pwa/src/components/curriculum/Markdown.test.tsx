@@ -79,9 +79,19 @@ describe('FillBlank', () => {
   });
 });
 
-describe('bundled lesson notes', () => {
-  it('parse cleanly with well-formed tables', async () => {
-    const notes = (await import('@/content/generated/lessonNotes.json')).default as Record<string, string>;
+const packFiles = import.meta.glob<{ lessons: Array<{ id: string; contentMd?: string }> }>(
+  '../../../public/packs/*.*.json',
+  { eager: true, import: 'default' }
+);
+
+describe('lesson notes in course packs', () => {
+  it('parse cleanly with well-formed tables', () => {
+    const notes = Object.fromEntries(
+      Object.values(packFiles)
+        .flatMap((pack) => pack.lessons)
+        .filter((lesson) => lesson.contentMd)
+        .map((lesson) => [lesson.id, lesson.contentMd as string])
+    );
     const bad: string[] = [];
     for (const [id, source] of Object.entries(notes)) {
       const blocks = parseMarkdown(source);

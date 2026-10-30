@@ -1,0 +1,75 @@
+id: digital-safety-101-lesson-2
+course_id: digital-safety-101
+title: SIM swap, devices, and account recovery
+title_sw: SIM swap, vifaa, na kurejesha akaunti
+briefing: 'M-Pesa and email reset via SMS, so a SIM swap at a shop (social engineering or bribed staff) can drain money and mailboxes. PINs, PUK, and “please register this line” stories need the official channel. Number lock / SIM PIN and alerting Safaricom on sudden loss of service are practical defences.
+
+
+  Device hygiene: screen lock, OS updates, unknown APKs off, and USB charging from a power-only source when possible. A public cyber-cafe PC is hostile — never type a bank password there. Full-disk encryption (phone + laptop) helps if the device is stolen in a matatu.
+
+
+  Account recovery: unique passwords (manager if you can), MFA that is not only SMS where the service allows an authenticator app, and backup codes stored offline. Family WhatsApp groups are not your password manager.
+
+
+  If money has moved: freeze via *334# or app, report to the MNO and police/DCI cyber as advised, and keep SMS evidence. Speed matters more than arguing in the group chat.'
+briefing_sw: SIM swap inaweza kuiba M-Pesa. Funga SIM PIN. Usitype nywila ya benki kwenye cyber. MFA si SMS tu kama inawezekana. Kama pesa zimeenda, froze na ripoti haraka.
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ 1.0 / 2.0
+xp_total: 210
+exercises:
+- id: ds2-q1
+  type: MULTIPLE_CHOICE
+  prompt: You lose signal and then get “your SIM is being registered”. Best first move?
+  options:
+  - id: a
+    text: Give the PUK to the WhatsApp helper
+  - id: b
+    text: Contact the official MNO channel and treat it as possible SIM swap
+  - id: c
+    text: Post your ID both sides for speed
+  - id: d
+    text: Ignore — it is always a network dip
+  correct_answer: b
+  hint: SIM swap pattern.
+  explanation: Official app, shop with ID process, or hotline — not a random text.
+  xp_reward: 50
+- id: ds2-q2
+  type: FILL_BLANK
+  prompt: Using an authenticator app in addition to a password is a form of ___.
+  correct_answer: MFA
+  hint: Multi-factor authentication.
+  explanation: SMS MFA is better than nothing but SIM swap weakens it.
+  xp_reward: 50
+- id: ds2-q3
+  type: SCENARIO
+  prompt: 'A cousin offers to “unlock” your phone with a cracked APK from Telegram. You should:'
+  options:
+  - id: a
+    text: Install it — family is trusted
+  - id: b
+    text: Refuse; sideloaded cracks are a malware path
+  - id: c
+    text: Disable Play Protect and proceed
+  - id: d
+    text: Give them your Google password to help
+  correct_answer: b
+  hint: Trust is not a control.
+  explanation: Family members spread malware with good intentions.
+  xp_reward: 60
+- id: ds2-q4
+  type: MULTIPLE_CHOICE
+  prompt: Why is a cyber-cafe risky for internet banking?
+  options:
+  - id: a
+    text: The chairs are uncomfortable
+  - id: b
+    text: Keyloggers, shared browsers, and shoulder surfing
+  - id: c
+    text: HTTPS does not work in Kenya
+  - id: d
+    text: M-Pesa cannot be used after 6 pm
+  correct_answer: b
+  hint: Shared PCs.
+  explanation: Use your phone on mobile data if you must transact away from home.
+  xp_reward: 50

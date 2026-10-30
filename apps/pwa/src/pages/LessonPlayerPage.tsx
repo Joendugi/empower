@@ -11,7 +11,8 @@ import {
   Layers 
 } from 'lucide-react';
 import type { Lesson } from '@cyberlearn/types';
-import { getLesson, getNextLessonId } from '@/content';
+import { getLesson, getLessonAsync, getNextLessonId, isLessonStub } from '@/content';
+import { usePackStore } from '@/content/packs';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { resolveLesson, useLibraryStore } from '@/store/libraryStore';
 import { usePlatformStore } from '@/store/platformStore';
@@ -41,9 +42,13 @@ export default function LessonPlayerPage() {
   const [remoteLesson, setRemoteLesson] = useState<Lesson | null>(null);
   const [fetchingRemote, setFetchingRemote] = useState(false);
 
-  const localLesson = lessonId
+  // Subscribe so the page re-renders when the course pack arrives and getLesson returns the full lesson.
+  usePackStore((s) => (lessonId ? s.lessons[lessonId] : undefined));
+  const syncLesson = lessonId
     ? (cachedLessons[lessonId] ?? resolveLesson(lessonId) ?? getLesson(lessonId) ?? customLessons[lessonId])
     : undefined;
+  // A stub only has the title and outline; the player needs the full lesson from its pack.
+  const localLesson = syncLesson && !isLessonStub(syncLesson) ? syncLesson : undefined;
 
   const lesson = localLesson ?? remoteLesson ?? undefined;
 
@@ -51,9 +56,7 @@ export default function LessonPlayerPage() {
     if (!lessonId || localLesson) return;
     let cancelled = false;
     setFetchingRemote(true);
-    void useCurriculumStore
-      .getState()
-      .fetchLesson(lessonId)
+    void getLessonAsync(lessonId)
       .then((l) => {
         if (!cancelled && l) setRemoteLesson(l);
       })

@@ -1,0 +1,108 @@
+id: tvet-repair-w3
+course_id: computer-repair
+title: Week 3 — Functional testing and hardware/software upgrades
+title_sw: Wiki 3 — Majaribio ya kazi na uboreshaji
+briefing: 'Testing after repair: power on, POST, BIOS/UEFI sees RAM and disks at expected size, OS boots, device manager/lspci clean, soak test (memtest, disk SMART, GPU stress if relevant). Generate a status report. If you replaced storage, confirm the user data restore. Do not return a machine that POSTs but overheats in twenty minutes.
+
+
+  Upgrades are a separate outcome: reasons (performance, capacity, compatibility, security), procedure, then test. RAM upgrade: check max per slot, dual-channel matching. SSD upgrade: clone or clean install, enable AHCI/NVMe as required, align partitions. GPU/PSU: wattage and physical clearance. Firmware: backup, correct file, do not power-off a BIOS flash.
+
+
+  Software upgrade versus hardware: more RAM will not fix a dying HDD. A new OS will not fix a shorted MOSFET. Choose the upgrade that matches the bottleneck you measured (Task Manager, `free -h`, SMART). Record before/after benchmarks in the portfolio.
+
+
+  Handback: explain what changed, what not to do (warranty stickers, blocked vents), and get sign-off. That closes the 280-hour unit loop: troubleshoot, repair, test, upgrade, report.'
+briefing_sw: 'POST, kiasi cha RAM, SMART, na soak test. Uboreshaji: RAM, SSD, GPU/PSU, firmware. Pima bottleneck kwanza. Usizime umeme wakati wa kusasisha BIOS. Mteja atie sahihi.'
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/3/5
+exam_domain: CDACC ICT L5 — Perform Computer Repair and Maintenance (IT/CU/ICT/CR/3/5, 280 h)
+xp_total: 310
+exercises:
+- id: tvet-repair-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A BIOS flash interrupted by a power cut often results in:'
+  options:
+  - id: a
+    text: Faster boot
+  - id: b
+    text: A bricked firmware image until recovered with vendor SOP
+  - id: c
+    text: More RAM
+  - id: d
+    text: A better GPU
+  correct_answer: b
+  hint: Do not kill power.
+  explanation: Upgrade procedure includes stable power and the correct file for the board revision.
+  xp_reward: 50
+- id: tvet-repair-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'You add a 4 TB HDD but the OS shows ~2 TB. First check is:'
+  options:
+  - id: a
+    text: The RAM colour
+  - id: b
+    text: Partition table (MBR vs GPT) and controller mode
+  - id: c
+    text: Keyboard language
+  - id: d
+    text: The HDMI dummy
+  correct_answer: b
+  hint: MBR cap.
+  explanation: MBR tops out around 2 TiB. GPT is the usual fix on modern OS.
+  xp_reward: 50
+- id: tvet-repair-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Dual-channel RAM works best when:'
+  options:
+  - id: a
+    text: Modules of matched size/speed sit in the correct paired slots
+  - id: b
+    text: One stick is DDR3 and one is DDR5
+  - id: c
+    text: Sticks are different sizes in any slots
+  - id: d
+    text: You tape them together
+  correct_answer: a
+  hint: Manual colour slots.
+  explanation: Wrong slots = single channel. Mismatched kits may run at the slower stick.
+  xp_reward: 50
+- id: tvet-repair-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Soak testing means:'
+  options:
+  - id: a
+    text: Washing the motherboard
+  - id: b
+    text: Running the system under representative load to catch intermittent thermal/power faults
+  - id: c
+    text: A 5-second POST only
+  - id: d
+    text: Ignoring SMART
+  correct_answer: b
+  hint: Time plus load.
+  explanation: Intermittents show up after minutes, not at the bench POST.
+  xp_reward: 50
+- id: tvet-repair-w3-fb1
+  type: FILL_BLANK
+  prompt: Self-Monitoring, Analysis and Reporting Technology for disks is called ___.
+  correct_answer: SMART
+  hint: Reallocated sectors.
+  explanation: SMART is a testing technique for storage before you return the PC.
+  xp_reward: 50
+- id: tvet-repair-w3-scenario
+  type: SCENARIO
+  prompt: College wants “upgrade for speed” on a lab PC with 4 GB RAM and a 5400 RPM HDD. Best justified upgrade path?
+  options:
+  - id: a
+    text: RGB fans only
+  - id: b
+    text: SSD for the OS volume and RAM to the board maximum, then retest boot and app load
+  - id: c
+    text: A 16-core CPU on a board that cannot take it
+  - id: d
+    text: Larger CRT monitor
+  correct_answer: b
+  hint: Bottlenecks you can measure.
+  explanation: Storage and RAM are the cheap, correct theories for “slow office PC”.
+  xp_reward: 60

@@ -1,0 +1,75 @@
+id: rebuild-000-4-3
+course_id: the-rebuild-protocol
+title: Setting Your Learning Goal
+title_sw: Kuweka Lengo Lako la Kujifunza
+briefing: 'MISSION BRIEFING: The Corps does not assign missions. You choose them. But the data is clear: learners who set specific goals complete 3x more content than those who do not.
+
+
+  The most effective learning goals are specific and time-bound: not ''learn cybersecurity'' but ''complete the Digital Safety 101 node by the end of this week — 20 minutes a day, 5 days.'' CyberLearn''s daily goal system lets you set 5, 10, 15, or 20 minutes per day. You choose. The platform adapts the review schedule to your pace.
+
+
+  The Rebuilder Corps uses streaks to track consistency: each day you complete at least one lesson counts as an active day. Missing a day resets your streak — but you have 2 streak freeze tokens per month for emergencies. Consistency beats intensity: 15 minutes every day outperforms a 3-hour session once a week for long-term retention.
+
+
+  Right now: decide your daily goal. Enter it in the app. Your first mission briefing will be calibrated to that pace.'
+briefing_sw: 'MISSION BRIEFING: Kikosi hachagui misheni yako — unachagua wewe mwenyewe. Kujifunza dakika 15 kila siku ni bora kuliko saa 3 mara moja kwa wiki. Weka lengo lako sasa hivi.'
+estimated_minutes: 6
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-43-q1
+  type: MULTIPLE_CHOICE
+  prompt: Research on learning shows that which approach leads to the best long-term retention?
+  options:
+  - id: a
+    text: One intensive 4-hour study session per week
+  - id: b
+    text: Short, consistent daily practice sessions (10–20 minutes)
+  - id: c
+    text: Reading the entire syllabus once before the exam
+  - id: d
+    text: Watching video lectures without pausing
+  correct_answer: b
+  hint: Think about how muscles are built — not in one session.
+  explanation: Spaced repetition and consistent daily practice are proven to create stronger long-term memory than cramming. CyberLearn's FSRS engine schedules review cards based on your individual forgetting curve — daily sessions let it work effectively.
+  xp_reward: 50
+- id: r000-43-q2
+  type: FILL_BLANK
+  prompt: CyberLearn gives you ___ streak freeze tokens per month to protect your streak when life gets in the way.
+  correct_answer: '2'
+  hint: It is a small number — meant for emergencies, not regular use.
+  explanation: Two streak freezes per month prevent anxiety about missing a day during travel, illness, or emergencies. They are not for skipping — the streak system rewards genuine daily engagement.
+  xp_reward: 50
+- id: r000-43-q3
+  type: SCENARIO
+  prompt: You want to pass the CompTIA Security+ exam in 6 months. You can study for 20 minutes per day. Which CyberLearn strategy best fits your goal?
+  options:
+  - id: a
+    text: Complete every lesson on every path regardless of relevance to Security+
+  - id: b
+    text: Focus on the Cybersecurity Practitioner path in order, doing daily 20-minute sessions, and use review sessions to reinforce weak areas
+  - id: c
+    text: Only do CTF challenges because they are more fun
+  - id: d
+    text: Study for 3 hours every Sunday to cover the same total time
+  correct_answer: b
+  hint: Focused, consistent, path-aligned study beats scattered or batched approaches.
+  explanation: The Cybersecurity Practitioner path directly maps to Security+ SY0-701 domains. Daily 20-minute sessions with spaced repetition review gives you 70 hours over 6 months — comparable to a structured exam prep course, with better retention than weekend cramming.
+  xp_reward: 60
+- id: r000-43-q4
+  type: MULTIPLE_CHOICE
+  prompt: What does the CyberLearn FSRS engine do for you automatically?
+  options:
+  - id: a
+    text: Chooses which lessons you must complete in a fixed order
+  - id: b
+    text: Schedules personalised review sessions based on when you are likely to forget each concept
+  - id: c
+    text: Sends reminders to your phone every hour
+  - id: d
+    text: Assigns you a tutor from the Rebuilder Corps
+  correct_answer: b
+  hint: It watches your memory, not your schedule.
+  explanation: FSRS-4.5 (Free Spaced Repetition Scheduler) tracks each concept's stability and difficulty for you individually. It calculates exactly when to show you a review card to catch it just before you would forget — maximising retention per minute of study time.
+  xp_reward: 50

@@ -1,0 +1,89 @@
+id: tvet-workshop-safety-2
+course_id: workshop-safety
+title: Incidents, chemicals, and lock-out in the ICT lab
+title_sw: Ajali, kemikali, na lock-out lab ya ICT
+briefing: 'After basic PPE, the technician’s job is to stop energy: electrical, chemical, and mechanical (printers, shredders). Lock-out / tag-out is not only for electricians. If a photocopier is being serviced, it must not be powered by a helpful classmate. Put a notice, keep the key, and tell the instructor.
+
+
+  Solvents for cleaning flux and plastics have SDS sheets. Do not pour isopropyl into an unmarked water bottle. Skin and eye exposure: rinse, then report. Toner is a fine dust — do not blow it with compressed air toward faces; vacuum with an approved method.
+
+
+  Incident reporting is a competence. Write what happened, who was present, and what you isolated. Hiding a shock “because I am fine” is how the next student repeats it. First-aid kit location and fire exit are part of induction, not trivia.
+
+
+  Waste: batteries and CRTs/PSUs are not general rubbish. Follow college hazardous-waste rules. That is occupational safety at Level 5, not housekeeping extra credit.'
+briefing_sw: Zima nishati kabla ya servisi. Lock-out. SDS kwa kemikali. Usiweke solvent kwenye chupa ya maji. Ripoti mshtuko. Betri na PSU si takataka za kawaida.
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/OS/01/5
+exam_domain: CDACC ICT Technician — Occupational Safety
+xp_total: 210
+exercises:
+- id: tvet-safe2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A copier being repaired should be:'
+  options:
+  - id: a
+    text: Left powered so you can see the error
+  - id: b
+    text: Isolated and tagged so nobody starts it during service
+  - id: c
+    text: Held by two students while a third tests live
+  - id: d
+    text: Sprayed with water to discharge it
+  correct_answer: b
+  hint: Control of energy.
+  explanation: Unexpected start-up injures. Isolate and communicate.
+  xp_reward: 50
+- id: tvet-safe2-q2
+  type: FILL_BLANK
+  prompt: The document that states hazards and first aid for a solvent is the ___.
+  correct_answer: SDS
+  hint: Safety Data Sheet. MSDS is the older name.
+  explanation: SDS is the professional source, not a WhatsApp rumour.
+  xp_reward: 50
+- id: tvet-safe2-q3
+  type: SCENARIO
+  prompt: You get a small shock from a “unplugged” printer that still has an internal PSU capacitor. You feel fine. What do you do?
+  options:
+  - id: a
+    text: Hide it so you are not blamed
+  - id: b
+    text: Stop work, report the incident, and treat residual charge as part of the procedure next time
+  - id: c
+    text: Lick the contact to check again
+  - id: d
+    text: Ask a classmate to confirm by repeating the shock
+  correct_answer: b
+  hint: Report.
+  explanation: Residual charge is a known PSU hazard. Reporting improves the procedure.
+  xp_reward: 60
+- id: tvet-safe2-q4
+  type: MATCH_PAIRS
+  prompt: Match the waste to the handling idea.
+  pairs:
+  - left:
+      id: bat
+      text: Lithium / UPS batteries
+    right:
+      id: haz
+      text: Hazardous — do not bin with paper
+  - left:
+      id: toner
+      text: Toner spill
+    right:
+      id: dust
+      text: Avoid blowing into the air; contain dust
+  - left:
+      id: paper
+      text: Clean office paper
+    right:
+      id: recycle
+      text: Normal recycle if policy allows
+  correct_answer:
+  - bat=haz
+  - toner=dust
+  - paper=recycle
+  hint: Not everything is general waste.
+  explanation: ICT workshops generate mixed hazardous streams.
+  xp_reward: 50

@@ -1,0 +1,108 @@
+id: tvet-software-w3
+course_id: software-install
+title: Week 3 — Testing, user training, and software maintenance
+title_sw: Wiki 3 — Majaribio, mafunzo, na matengenezo ya programu
+briefing: 'Testing is a listed learning outcome: the software must meet the specification, not merely show a desktop. Smoke-test: boots, logs on, prints or exports, opens the curriculum apps, and survives a reboot. Check disk space, activation, Windows Update / apt upgrade, and that a standard user cannot install random .exe. Record results in a test report — date, machine ID, tester, pass/fail, defects.
+
+
+  User training is not optional in the unit. Show the staff member or class captain: login, how to save to the approved folder, how to update, and what not to download. Leave a one-page handout. If antivirus alerts, they must know who to call. Training reduces “the computer has a virus” tickets that are actually toolbar installs.
+
+
+  Maintenance: patch on a schedule, remove unused packages, renew licences, and re-image when drift is cheaper than repair. Use WSUS, Intune, or apt unattended-upgrades as the college standard. Document the golden image version. When a new printer arrives, add the driver to the image so the next 40 installs do not repeat the hunt.
+
+
+  Portfolio: test report + training attendance + maintenance log. That is how 260 hours is evidenced — not a single Next-Next-Finish screenshot.'
+briefing_sw: Jaribu kuingia, kuchapisha, na kuwasha upya. Mtumiaji wa kawaida asiweke .exe. Funza stafu. Patch kwa ratiba. Andika ripoti ya majaribio na logi ya matengenezo.
+estimated_minutes: 28
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/2/5
+exam_domain: CDACC ICT L5 — Install Computer Software (IT/CU/ICT/CR/2/5, 260 h)
+xp_total: 310
+exercises:
+- id: tvet-software-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A software test report should include:'
+  options:
+  - id: a
+    text: Only a selfie with the PC
+  - id: b
+    text: Machine identity, tests run, pass/fail, defects, tester, date
+  - id: c
+    text: The HOD password
+  - id: d
+    text: A poem
+  correct_answer: b
+  hint: Evidence.
+  explanation: CDACC portfolios want repeatable evidence of testing.
+  xp_reward: 50
+- id: tvet-software-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: Why create a standard (non-admin) account for teachers after install?
+  options:
+  - id: a
+    text: To annoy them
+  - id: b
+    text: 'Least privilege: malware and accidental installs need elevation'
+  - id: c
+    text: Windows forbids admin
+  - id: d
+    text: It speeds the GPU
+  correct_answer: b
+  hint: Security management function of the OS.
+  explanation: Admin for technicians, standard for users — unless the role requires more.
+  xp_reward: 50
+- id: tvet-software-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: In-place office update fails halfway. Best maintenance action?
+  options:
+  - id: a
+    text: Leave it broken
+  - id: b
+    text: Restore snapshot/backup, retry from vendor media, then retest the suite
+  - id: c
+    text: Delete System32
+  - id: d
+    text: Install three trial copies
+  correct_answer: b
+  hint: Backout.
+  explanation: Maintenance includes recovery when an update fails — same idea as change management.
+  xp_reward: 50
+- id: tvet-software-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'User training after a lab refresh should at least cover:'
+  options:
+  - id: a
+    text: BIOS overclocking
+  - id: b
+    text: Login, saving work, printing, and who to call for faults
+  - id: c
+    text: How to pirate Adobe
+  - id: d
+    text: Disabling the firewall permanently
+  correct_answer: b
+  hint: Outcome 5.
+  explanation: The unit lists user training as a competence, not a courtesy.
+  xp_reward: 50
+- id: tvet-software-w3-fb1
+  type: FILL_BLANK
+  prompt: A recorded list of patches, image versions, and licence renewals is a software ___ log.
+  correct_answer: maintenance
+  hint: After install comes care.
+  explanation: Maintenance is how labs stay legal and bootable for the next cohort.
+  xp_reward: 50
+- id: tvet-software-w3-scenario
+  type: SCENARIO
+  prompt: Forty PCs pass smoke tests but teachers cannot open the MIS URL. Install was “successful”. What did testing miss?
+  options:
+  - id: a
+    text: Nothing — browsers are optional
+  - id: b
+    text: 'Application acceptance: proxy, DNS, certificates, and the actual MIS workflow'
+  - id: c
+    text: More themes
+  - id: d
+    text: A louder beep on POST
+  correct_answer: b
+  hint: Test against the requirement.
+  explanation: Functionality means the job the college hired the software to do, not a blank desktop.
+  xp_reward: 60

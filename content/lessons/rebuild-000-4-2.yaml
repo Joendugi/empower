@@ -1,0 +1,95 @@
+id: rebuild-000-4-2
+course_id: the-rebuild-protocol
+title: 'Your Skill Tree: Reading the Civilization Map'
+title_sw: 'Mti wako wa ujuzi: Kusoma Ramani ya Ustaarabu'
+briefing: 'MISSION BRIEFING: Every node on the Civilization Map is a real skill. Every skill you unlock lights up a piece of East Africa.
+
+
+  The CyberLearn Civilization Map shows your learning journey as a network of infrastructure nodes. Each node represents a skill cluster that, when mastered, restores a piece of the region''s digital infrastructure. Nodes are connected — you must complete prerequisites before unlocking the next node, just as you must restore power before you can restore communications.
+
+
+  Your map shows three states for each node: (1) Locked — prerequisites not yet complete. (2) In Progress — at least one lesson started. (3) Restored — all lessons complete, badge earned. Your overall progress is measured in Rebuild Points (XP). As your XP grows, your Rebuilder Corps rank increases from Recruit through Technician, Engineer, Specialist, Architect, and ultimately Commander.
+
+
+  Every lesson you complete contributes to a CDACC-recognised competency unit and maps to a real industry certification (CompTIA Security+, LPIC-1, CDACC ICT Technician Level 5). The Civilization Map is not just a game — it is your career roadmap.'
+briefing_sw: 'MISSION BRIEFING: Kila nodi katika Ramani ya Ustaarabu ni ujuzi halisi. Kila ujuzi unaofungua unawasha sehemu ya Afrika Mashariki. Majukumu yako yanalingana na vitengo vya CDACC na vyeti vya tasnia kama CompTIA Security+.'
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-42-q1
+  type: MULTIPLE_CHOICE
+  prompt: What does a "Restored" node on the Civilization Map indicate?
+  options:
+  - id: a
+    text: You have watched the introduction video for that topic
+  - id: b
+    text: All lessons in that skill cluster are complete and the badge has been earned
+  - id: c
+    text: The node is available to start but not yet begun
+  - id: d
+    text: An instructor has manually approved your progress
+  correct_answer: b
+  hint: Think about what full completion means on the map.
+  explanation: A Restored node means every lesson is complete and the associated competency badge has been awarded. It contributes to your CDACC unit portfolio and certification readiness percentage.
+  xp_reward: 50
+- id: r000-42-match
+  type: MATCH_PAIRS
+  prompt: Match each Rebuilder Corps rank to its XP threshold.
+  pairs:
+  - left:
+      id: recruit
+      text: Recruit
+    right:
+      id: xp-0
+      text: 0 – 499 XP
+  - left:
+      id: tech
+      text: Technician
+    right:
+      id: xp-500
+      text: 500 – 1,499 XP
+  - left:
+      id: engineer
+      text: Engineer
+    right:
+      id: xp-1500
+      text: 1,500 – 3,999 XP
+  - left:
+      id: commander
+      text: Commander
+    right:
+      id: xp-15000
+      text: 15,000+ XP
+  correct_answer:
+  - recruit=xp-0
+  - tech=xp-500
+  - engineer=xp-1500
+  - commander=xp-15000
+  hint: Higher ranks require more XP — think about the progression.
+  explanation: 'Corps ranks reflect real skill depth: Recruit starts at 0 XP, Technician at 500, Engineer at 1,500, and Commander requires 15,000+ XP — equivalent to mastering multiple full certification paths.'
+  xp_reward: 50
+- id: r000-42-q3
+  type: FILL_BLANK
+  prompt: The CyberLearn skill path "Cybersecurity Practitioner" maps to the ___ Security+ certification exam code.
+  correct_answer: SY0-701
+  hint: It is the current CompTIA Security+ exam version.
+  explanation: 'CompTIA Security+ SY0-701 covers five domains: General Security Concepts, Threats & Vulnerabilities, Security Architecture, Security Operations, and Program Management. The CyberLearn Cybersecurity Practitioner path follows this structure exactly.'
+  xp_reward: 50
+- id: r000-42-q4
+  type: SCENARIO
+  prompt: You complete a node labelled "Linux Essentials" on the Civilization Map. Which real-world outcomes does this unlock?
+  options:
+  - id: a
+    text: Only a game badge with no real-world value
+  - id: b
+    text: Progress toward CDACC ICT Technician Level 5 unit CR/6/5 and LPIC-1 certification readiness
+  - id: c
+    text: Automatic registration for a CDACC exam
+  - id: d
+    text: Access to a paid subscription tier
+  correct_answer: b
+  hint: Every CyberLearn node maps to something real.
+  explanation: Linux Essentials completion maps to CDACC unit IT/CU/ICT/CR/6/5 (Manage Operating System) and contributes to LPIC-1 exam readiness. CyberLearn certificates are designed to be verifiable proof of learning for employers and academic institutions.
+  xp_reward: 60

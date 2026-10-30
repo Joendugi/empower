@@ -1,0 +1,759 @@
+{
+  "packs": {
+    "agriculture": {
+      "bytes": 25741,
+      "file": "agriculture.afd8b3f42b8d.json",
+      "lessonIds": [
+        "agriculture-business",
+        "agriculture-business-lesson",
+        "agriculture-chemicals-farm",
+        "agriculture-chemicals-farm-lesson",
+        "agriculture-husbandry",
+        "agriculture-husbandry-lesson"
+      ],
+      "version": "afd8b3f42b8d"
+    },
+    "aquaculture-hydroponics": {
+      "bytes": 87303,
+      "file": "aquaculture-hydroponics.4c23a65e3d94.json",
+      "lessonIds": [
+        "aquaculture-hydroponics-day-1",
+        "aquaculture-hydroponics-day-2",
+        "aquaculture-hydroponics-day-3",
+        "aquaculture-hydroponics-day-4",
+        "aquaculture-hydroponics-day-5"
+      ],
+      "version": "4c23a65e3d94"
+    },
+    "automotive": {
+      "bytes": 93038,
+      "file": "automotive.c18b39267f07.json",
+      "lessonIds": [
+        "automotive-brakes",
+        "automotive-brakes-lesson",
+        "automotive-cracked-block",
+        "automotive-cracked-block-lesson",
+        "automotive-radiator-repair",
+        "automotive-radiator-repair-lesson",
+        "automotive-rim-repair",
+        "automotive-rim-repair-lesson",
+        "automotive-safety",
+        "automotive-safety-lesson",
+        "automotive-service",
+        "automotive-service-lesson"
+      ],
+      "version": "c18b39267f07"
+    },
+    "basic-electronics": {
+      "bytes": 17459,
+      "file": "basic-electronics.43d0d91dc013.json",
+      "lessonIds": [
+        "tvet-electronics-w1",
+        "tvet-electronics-w2",
+        "tvet-electronics-w3"
+      ],
+      "version": "43d0d91dc013"
+    },
+    "body-works": {
+      "bytes": 25006,
+      "file": "body-works.60dde43149dd.json",
+      "lessonIds": [
+        "body-works-finish",
+        "body-works-finish-lesson",
+        "body-works-paint",
+        "body-works-paint-lesson",
+        "body-works-prep",
+        "body-works-prep-lesson"
+      ],
+      "version": "60dde43149dd"
+    },
+    "caregiving-assistance": {
+      "bytes": 16720,
+      "file": "caregiving-assistance.7257b2d2e976.json",
+      "lessonIds": [
+        "caregiving-assistance-dignity",
+        "caregiving-assistance-dignity-lesson",
+        "caregiving-assistance-mobility",
+        "caregiving-assistance-mobility-lesson"
+      ],
+      "version": "7257b2d2e976"
+    },
+    "carpentry": {
+      "bytes": 25339,
+      "file": "carpentry.2fcd0a8d3562.json",
+      "lessonIds": [
+        "carpentry-hanging",
+        "carpentry-hanging-lesson",
+        "carpentry-machines",
+        "carpentry-machines-lesson",
+        "carpentry-setout-wood",
+        "carpentry-setout-wood-lesson"
+      ],
+      "version": "2fcd0a8d3562"
+    },
+    "chemical-engineering": {
+      "bytes": 65197,
+      "file": "chemical-engineering.838cc152c569.json",
+      "lessonIds": [
+        "chemical-engineering-day-1",
+        "chemical-engineering-day-2",
+        "chemical-engineering-day-3",
+        "chemical-engineering-day-4",
+        "chemical-engineering-day-5"
+      ],
+      "version": "838cc152c569"
+    },
+    "civil-security-defense": {
+      "bytes": 66572,
+      "file": "civil-security-defense.15b2fa923c29.json",
+      "lessonIds": [
+        "civil-security-defense-day-1",
+        "civil-security-defense-day-2",
+        "civil-security-defense-day-3",
+        "civil-security-defense-day-4",
+        "civil-security-defense-day-5"
+      ],
+      "version": "15b2fa923c29"
+    },
+    "community-health": {
+      "bytes": 57198,
+      "file": "community-health.fbe35b3a8521.json",
+      "lessonIds": [
+        "community-health-day-1",
+        "community-health-day-2",
+        "community-health-day-3",
+        "community-health-day-4",
+        "community-health-day-5"
+      ],
+      "version": "fbe35b3a8521"
+    },
+    "community-health-support": {
+      "bytes": 16725,
+      "file": "community-health-support.47993d536a8b.json",
+      "lessonIds": [
+        "community-health-support-hygiene",
+        "community-health-support-hygiene-lesson",
+        "community-health-support-screen-refer",
+        "community-health-support-screen-refer-lesson"
+      ],
+      "version": "47993d536a8b"
+    },
+    "computer-hardware": {
+      "bytes": 7041,
+      "file": "computer-hardware.2396adc19241.json",
+      "lessonIds": [
+        "tvet-computer-hardware-1",
+        "tvet-computer-hardware-2"
+      ],
+      "version": "2396adc19241"
+    },
+    "computer-networks": {
+      "bytes": 11650,
+      "file": "computer-networks.a5ab205b3a5e.json",
+      "lessonIds": [
+        "tvet-computer-networks-1",
+        "tvet-computer-networks-2",
+        "tvet-net-w3"
+      ],
+      "version": "a5ab205b3a5e"
+    },
+    "computer-programming": {
+      "bytes": 15330,
+      "file": "computer-programming.e8d833c63df3.json",
+      "lessonIds": [
+        "tvet-programming-w1",
+        "tvet-programming-w2",
+        "tvet-programming-w3"
+      ],
+      "version": "e8d833c63df3"
+    },
+    "computer-repair": {
+      "bytes": 15343,
+      "file": "computer-repair.994d815bc91a.json",
+      "lessonIds": [
+        "tvet-repair-w1",
+        "tvet-repair-w2",
+        "tvet-repair-w3"
+      ],
+      "version": "994d815bc91a"
+    },
+    "cyber-law-kenya": {
+      "bytes": 6522,
+      "file": "cyber-law-kenya.c3957793a3c6.json",
+      "lessonIds": [
+        "cyber-law-kenya-1",
+        "cyber-law-kenya-2"
+      ],
+      "version": "c3957793a3c6"
+    },
+    "cybersecurity": {
+      "bytes": 20251,
+      "file": "cybersecurity.0592ca3dbe01.json",
+      "lessonIds": [
+        "cyber-law-kenya",
+        "digital-safety-101",
+        "linux-essentials",
+        "network-fundamentals",
+        "web-security"
+      ],
+      "version": "0592ca3dbe01"
+    },
+    "database-systems": {
+      "bytes": 16283,
+      "file": "database-systems.b4d1aa0a83e6.json",
+      "lessonIds": [
+        "tvet-database-w1",
+        "tvet-database-w2",
+        "tvet-database-w3"
+      ],
+      "version": "b4d1aa0a83e6"
+    },
+    "digital-enterprise": {
+      "bytes": 60831,
+      "file": "digital-enterprise.4903e32dbc2a.json",
+      "lessonIds": [
+        "digital-enterprise-bookkeeping",
+        "digital-enterprise-bookkeeping-lesson",
+        "digital-enterprise-costing",
+        "digital-enterprise-costing-lesson",
+        "digital-enterprise-investment",
+        "digital-enterprise-investment-lesson",
+        "digital-enterprise-loans",
+        "digital-enterprise-loans-lesson",
+        "digital-enterprise-management",
+        "digital-enterprise-management-lesson",
+        "digital-enterprise-market",
+        "digital-enterprise-market-lesson"
+      ],
+      "version": "4903e32dbc2a"
+    },
+    "digital-safety-101": {
+      "bytes": 5578,
+      "file": "digital-safety-101.bbdf5cc1f688.json",
+      "lessonIds": [
+        "digital-safety-101-lesson-1",
+        "digital-safety-101-lesson-2"
+      ],
+      "version": "bbdf5cc1f688"
+    },
+    "ecological-sanitation": {
+      "bytes": 53637,
+      "file": "ecological-sanitation.564ada28b677.json",
+      "lessonIds": [
+        "ecological-sanitation-day-1",
+        "ecological-sanitation-day-2",
+        "ecological-sanitation-day-3",
+        "ecological-sanitation-day-4",
+        "ecological-sanitation-day-5"
+      ],
+      "version": "564ada28b677"
+    },
+    "electrical-installation": {
+      "bytes": 55302,
+      "file": "electrical-installation.8400c1fbe6e8.json",
+      "lessonIds": [
+        "electrical-installation-circuits",
+        "electrical-installation-circuits-lesson",
+        "electrical-installation-earthing",
+        "electrical-installation-earthing-lesson",
+        "electrical-installation-isolation",
+        "electrical-installation-isolation-lesson",
+        "electrical-installation-maintain",
+        "electrical-installation-maintain-lesson",
+        "electrical-installation-plan",
+        "electrical-installation-plan-lesson",
+        "electrical-installation-testing",
+        "electrical-installation-testing-lesson"
+      ],
+      "version": "8400c1fbe6e8"
+    },
+    "electrical-power-systems": {
+      "bytes": 68490,
+      "file": "electrical-power-systems.777d6219c12f.json",
+      "lessonIds": [
+        "electrical-power-systems-day-1",
+        "electrical-power-systems-day-2",
+        "electrical-power-systems-day-3",
+        "electrical-power-systems-day-4",
+        "electrical-power-systems-day-5"
+      ],
+      "version": "777d6219c12f"
+    },
+    "emergency-communications": {
+      "bytes": 45298,
+      "file": "emergency-communications.22e89bd4618d.json",
+      "lessonIds": [
+        "emergency-communications-day-1",
+        "emergency-communications-day-2",
+        "emergency-communications-day-3",
+        "emergency-communications-day-4",
+        "emergency-communications-day-5"
+      ],
+      "version": "22e89bd4618d"
+    },
+    "first-aid-trauma": {
+      "bytes": 47984,
+      "file": "first-aid-trauma.d70788a593cd.json",
+      "lessonIds": [
+        "first-aid-trauma-day-1",
+        "first-aid-trauma-day-2",
+        "first-aid-trauma-day-3",
+        "first-aid-trauma-day-4",
+        "first-aid-trauma-day-5"
+      ],
+      "version": "d70788a593cd"
+    },
+    "food-security": {
+      "bytes": 60024,
+      "file": "food-security.8d9000645a07.json",
+      "lessonIds": [
+        "food-security-day-1",
+        "food-security-day-2",
+        "food-security-day-3",
+        "food-security-day-4",
+        "food-security-day-5"
+      ],
+      "version": "8d9000645a07"
+    },
+    "forestry-timber-technology": {
+      "bytes": 74891,
+      "file": "forestry-timber-technology.13057b6d82ec.json",
+      "lessonIds": [
+        "forestry-timber-technology-day-1",
+        "forestry-timber-technology-day-2",
+        "forestry-timber-technology-day-3",
+        "forestry-timber-technology-day-4",
+        "forestry-timber-technology-day-5"
+      ],
+      "version": "13057b6d82ec"
+    },
+    "hairdressing": {
+      "bytes": 25797,
+      "file": "hairdressing.d3d7e2170a83.json",
+      "lessonIds": [
+        "hairdressing-chemicals",
+        "hairdressing-chemicals-lesson",
+        "hairdressing-finish-salon",
+        "hairdressing-finish-salon-lesson",
+        "hairdressing-hygiene",
+        "hairdressing-hygiene-lesson"
+      ],
+      "version": "d3d7e2170a83"
+    },
+    "hospitality": {
+      "bytes": 25272,
+      "file": "hospitality.0df60b6d623b.json",
+      "lessonIds": [
+        "hospitality-hygiene-food",
+        "hospitality-hygiene-food-lesson",
+        "hospitality-kitchen-safety",
+        "hospitality-kitchen-safety-lesson",
+        "hospitality-service",
+        "hospitality-service-lesson"
+      ],
+      "version": "0df60b6d623b"
+    },
+    "linux-essentials": {
+      "bytes": 4877,
+      "file": "linux-essentials.6e056911ece9.json",
+      "lessonIds": [
+        "linux-essentials-lesson-1",
+        "linux-essentials-lesson-2"
+      ],
+      "version": "6e056911ece9"
+    },
+    "masonry": {
+      "bytes": 25172,
+      "file": "masonry.aa781ccd5d44.json",
+      "lessonIds": [
+        "masonry-first-course",
+        "masonry-first-course-lesson",
+        "masonry-quality",
+        "masonry-quality-lesson",
+        "masonry-setout",
+        "masonry-setout-lesson"
+      ],
+      "version": "aa781ccd5d44"
+    },
+    "mechanical-workshop": {
+      "bytes": 53637,
+      "file": "mechanical-workshop.86e23dbbccca.json",
+      "lessonIds": [
+        "mechanical-workshop-day-1",
+        "mechanical-workshop-day-2",
+        "mechanical-workshop-day-3",
+        "mechanical-workshop-day-4",
+        "mechanical-workshop-day-5"
+      ],
+      "version": "86e23dbbccca"
+    },
+    "metallurgy-foundry": {
+      "bytes": 71671,
+      "file": "metallurgy-foundry.6b7b216daa92.json",
+      "lessonIds": [
+        "metallurgy-foundry-day-1",
+        "metallurgy-foundry-day-2",
+        "metallurgy-foundry-day-3",
+        "metallurgy-foundry-day-4",
+        "metallurgy-foundry-day-5"
+      ],
+      "version": "6b7b216daa92"
+    },
+    "navigation-cartography": {
+      "bytes": 67352,
+      "file": "navigation-cartography.91cea68dc655.json",
+      "lessonIds": [
+        "navigation-cartography-day-1",
+        "navigation-cartography-day-2",
+        "navigation-cartography-day-3",
+        "navigation-cartography-day-4",
+        "navigation-cartography-day-5"
+      ],
+      "version": "91cea68dc655"
+    },
+    "network-fundamentals": {
+      "bytes": 8155,
+      "file": "network-fundamentals.a82a38c87552.json",
+      "lessonIds": [
+        "osi-model-2",
+        "osi-model-intro"
+      ],
+      "version": "a82a38c87552"
+    },
+    "operating-systems": {
+      "bytes": 12037,
+      "file": "operating-systems.3810f83b6d18.json",
+      "lessonIds": [
+        "tvet-operating-systems-1",
+        "tvet-operating-systems-2",
+        "tvet-os-w3"
+      ],
+      "version": "3810f83b6d18"
+    },
+    "plumbing": {
+      "bytes": 62181,
+      "file": "plumbing.2b0fe3aaf5dc.json",
+      "lessonIds": [
+        "plumbing-drainage",
+        "plumbing-drainage-lesson",
+        "plumbing-isolate",
+        "plumbing-isolate-lesson",
+        "plumbing-joints",
+        "plumbing-joints-lesson",
+        "plumbing-rainwater",
+        "plumbing-rainwater-lesson",
+        "plumbing-sanitary",
+        "plumbing-sanitary-lesson",
+        "plumbing-storage",
+        "plumbing-storage-lesson",
+        "plumbing-waste",
+        "plumbing-waste-lesson"
+      ],
+      "version": "2b0fe3aaf5dc"
+    },
+    "potable-water-engineering": {
+      "bytes": 22377,
+      "file": "potable-water-engineering.c7ddd04e9e47.json",
+      "lessonIds": [
+        "water-purification-day-1",
+        "water-purification-day-2",
+        "water-purification-day-3",
+        "water-purification-day-4",
+        "water-purification-day-5"
+      ],
+      "version": "c7ddd04e9e47"
+    },
+    "refrigeration": {
+      "bytes": 26685,
+      "file": "refrigeration.5e88be0bc4f4.json",
+      "lessonIds": [
+        "refrigeration-cycle",
+        "refrigeration-cycle-lesson",
+        "refrigeration-recovery",
+        "refrigeration-recovery-lesson",
+        "refrigeration-service",
+        "refrigeration-service-lesson"
+      ],
+      "version": "5e88be0bc4f4"
+    },
+    "resilient-infrastructure": {
+      "bytes": 4534,
+      "file": "resilient-infrastructure.16035704f9ef.json",
+      "lessonIds": [
+        "potable-water-engineering"
+      ],
+      "version": "16035704f9ef"
+    },
+    "secplus-architecture": {
+      "bytes": 14961,
+      "file": "secplus-architecture.0bebed0b963d.json",
+      "lessonIds": [
+        "cyber-sy0701-d3-w1",
+        "cyber-sy0701-d3-w2",
+        "cyber-sy0701-d3-w3"
+      ],
+      "version": "0bebed0b963d"
+    },
+    "secplus-concepts": {
+      "bytes": 17222,
+      "file": "secplus-concepts.28ddeb4a2fdf.json",
+      "lessonIds": [
+        "cyber-sy0701-d1-w1",
+        "cyber-sy0701-d1-w2",
+        "cyber-sy0701-d1-w3"
+      ],
+      "version": "28ddeb4a2fdf"
+    },
+    "secplus-operations": {
+      "bytes": 14843,
+      "file": "secplus-operations.604ce41e64e3.json",
+      "lessonIds": [
+        "cyber-sy0701-d4-w1",
+        "cyber-sy0701-d4-w2",
+        "cyber-sy0701-d4-w3"
+      ],
+      "version": "604ce41e64e3"
+    },
+    "secplus-program": {
+      "bytes": 10412,
+      "file": "secplus-program.8e6f7230d289.json",
+      "lessonIds": [
+        "cyber-sy0701-d5-w1",
+        "cyber-sy0701-d5-w2"
+      ],
+      "version": "8e6f7230d289"
+    },
+    "secplus-threats": {
+      "bytes": 15512,
+      "file": "secplus-threats.fccff336cc44.json",
+      "lessonIds": [
+        "cyber-sy0701-d2-w1",
+        "cyber-sy0701-d2-w2",
+        "cyber-sy0701-d2-w3"
+      ],
+      "version": "fccff336cc44"
+    },
+    "sewing-garment": {
+      "bytes": 85076,
+      "file": "sewing-garment.b9ed681d1e1e.json",
+      "lessonIds": [
+        "sewing-garment-construction",
+        "sewing-garment-construction-lesson",
+        "sewing-garment-finishing",
+        "sewing-garment-finishing-lesson",
+        "sewing-garment-gents",
+        "sewing-garment-gents-lesson",
+        "sewing-garment-grading",
+        "sewing-garment-grading-lesson",
+        "sewing-garment-ladies",
+        "sewing-garment-ladies-lesson",
+        "sewing-garment-machine",
+        "sewing-garment-machine-lesson",
+        "sewing-garment-pattern",
+        "sewing-garment-pattern-lesson",
+        "sewing-garment-sketching",
+        "sewing-garment-sketching-lesson",
+        "sewing-garment-textiles",
+        "sewing-garment-textiles-lesson"
+      ],
+      "version": "b9ed681d1e1e"
+    },
+    "shelter-construction": {
+      "bytes": 42556,
+      "file": "shelter-construction.b15565e4faa5.json",
+      "lessonIds": [
+        "shelter-construction-day-1",
+        "shelter-construction-day-2",
+        "shelter-construction-day-3",
+        "shelter-construction-day-4",
+        "shelter-construction-day-5"
+      ],
+      "version": "b15565e4faa5"
+    },
+    "software-install": {
+      "bytes": 16264,
+      "file": "software-install.71a6728d9c1f.json",
+      "lessonIds": [
+        "tvet-software-w1",
+        "tvet-software-w2",
+        "tvet-software-w3"
+      ],
+      "version": "71a6728d9c1f"
+    },
+    "solar-electronics": {
+      "bytes": 58212,
+      "file": "solar-electronics.41f9f92a079f.json",
+      "lessonIds": [
+        "solar-electronics-day-1",
+        "solar-electronics-day-2",
+        "solar-electronics-day-3",
+        "solar-electronics-day-4",
+        "solar-electronics-day-5"
+      ],
+      "version": "41f9f92a079f"
+    },
+    "solar-energy": {
+      "bytes": 16744,
+      "file": "solar-energy.a04aeb481c2c.json",
+      "lessonIds": [
+        "solar-energy-install",
+        "solar-energy-install-lesson",
+        "solar-energy-survey",
+        "solar-energy-survey-lesson"
+      ],
+      "version": "a04aeb481c2c"
+    },
+    "sustainable-agriculture": {
+      "bytes": 66615,
+      "file": "sustainable-agriculture.3153f129b8ce.json",
+      "lessonIds": [
+        "sustainable-agriculture-day-1",
+        "sustainable-agriculture-day-2",
+        "sustainable-agriculture-day-3",
+        "sustainable-agriculture-day-4",
+        "sustainable-agriculture-day-5"
+      ],
+      "version": "3153f129b8ce"
+    },
+    "the-rebuild-protocol": {
+      "bytes": 95199,
+      "file": "the-rebuild-protocol.2f62019ed497.json",
+      "lessonIds": [
+        "rebuild-000-1-1",
+        "rebuild-000-1-2",
+        "rebuild-000-1-3",
+        "rebuild-000-2-1",
+        "rebuild-000-2-2",
+        "rebuild-000-2-3",
+        "rebuild-000-3-1",
+        "rebuild-000-3-2",
+        "rebuild-000-3-3",
+        "rebuild-000-3-4",
+        "rebuild-000-3-5",
+        "rebuild-000-4-1",
+        "rebuild-000-4-2",
+        "rebuild-000-4-3",
+        "rebuild-000-4-4",
+        "rebuild-000-capstone"
+      ],
+      "version": "2f62019ed497"
+    },
+    "tvet-ict-technician": {
+      "bytes": 17039,
+      "file": "tvet-ict-technician.4ae1175740b1.json",
+      "lessonIds": [
+        "computer-hardware",
+        "computer-networks",
+        "operating-systems",
+        "workshop-safety"
+      ],
+      "version": "4ae1175740b1"
+    },
+    "vehicle-anatomy": {
+      "bytes": 54185,
+      "file": "vehicle-anatomy.e6d691e83fb4.json",
+      "lessonIds": [
+        "vehicle-anatomy-brakes",
+        "vehicle-anatomy-brakes-lesson",
+        "vehicle-anatomy-cooling",
+        "vehicle-anatomy-cooling-lesson",
+        "vehicle-anatomy-drivetrain",
+        "vehicle-anatomy-drivetrain-lesson",
+        "vehicle-anatomy-electrical",
+        "vehicle-anatomy-electrical-lesson",
+        "vehicle-anatomy-engine",
+        "vehicle-anatomy-engine-lesson",
+        "vehicle-anatomy-overview",
+        "vehicle-anatomy-overview-lesson"
+      ],
+      "version": "e6d691e83fb4"
+    },
+    "veterinary-animal-husbandry": {
+      "bytes": 70291,
+      "file": "veterinary-animal-husbandry.910f360d58af.json",
+      "lessonIds": [
+        "veterinary-animal-husbandry-day-1",
+        "veterinary-animal-husbandry-day-2",
+        "veterinary-animal-husbandry-day-3",
+        "veterinary-animal-husbandry-day-4",
+        "veterinary-animal-husbandry-day-5"
+      ],
+      "version": "910f360d58af"
+    },
+    "waste-recycling": {
+      "bytes": 16439,
+      "file": "waste-recycling.0bddf1b17fdb.json",
+      "lessonIds": [
+        "waste-recycling-recover",
+        "waste-recycling-recover-lesson",
+        "waste-recycling-sort",
+        "waste-recycling-sort-lesson"
+      ],
+      "version": "0bddf1b17fdb"
+    },
+    "water-sanitation-hygiene": {
+      "bytes": 16720,
+      "file": "water-sanitation-hygiene.8b27ef593d8b.json",
+      "lessonIds": [
+        "water-sanitation-hygiene-safe-water",
+        "water-sanitation-hygiene-safe-water-lesson",
+        "water-sanitation-hygiene-sanitation",
+        "water-sanitation-hygiene-sanitation-lesson"
+      ],
+      "version": "8b27ef593d8b"
+    },
+    "web-security": {
+      "bytes": 5949,
+      "file": "web-security.79e1043f674b.json",
+      "lessonIds": [
+        "web-security-lesson-1",
+        "web-security-lesson-2"
+      ],
+      "version": "79e1043f674b"
+    },
+    "welding-fabrication": {
+      "bytes": 69065,
+      "file": "welding-fabrication.172316a66bb4.json",
+      "lessonIds": [
+        "welding-fabrication-defects",
+        "welding-fabrication-defects-lesson",
+        "welding-fabrication-gas-fab",
+        "welding-fabrication-gas-fab-lesson",
+        "welding-fabrication-mig",
+        "welding-fabrication-mig-lesson",
+        "welding-fabrication-mma",
+        "welding-fabrication-mma-lesson",
+        "welding-fabrication-oxy-fuel-cutting-torch-safety-tip-cleaning-lesson",
+        "welding-fabrication-ppe",
+        "welding-fabrication-ppe-lesson",
+        "welding-fabrication-tig",
+        "welding-fabrication-tig-lesson",
+        "welding-fabrication-weld-test",
+        "welding-fabrication-weld-test-lesson"
+      ],
+      "version": "172316a66bb4"
+    },
+    "wind-microhydro": {
+      "bytes": 89431,
+      "file": "wind-microhydro.e53116bd722b.json",
+      "lessonIds": [
+        "wind-microhydro-day-1",
+        "wind-microhydro-day-2",
+        "wind-microhydro-day-3",
+        "wind-microhydro-day-4",
+        "wind-microhydro-day-5"
+      ],
+      "version": "e53116bd722b"
+    },
+    "workshop-safety": {
+      "bytes": 6999,
+      "file": "workshop-safety.7d7edeec4451.json",
+      "lessonIds": [
+        "tvet-workshop-safety-1",
+        "tvet-workshop-safety-2"
+      ],
+      "version": "7d7edeec4451"
+    }
+  },
+  "version": "93b2a1ca6612"
+}

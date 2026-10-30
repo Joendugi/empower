@@ -1,0 +1,108 @@
+id: tvet-repair-w1
+course_id: computer-repair
+title: Week 1 — Troubleshooting method and probable cause
+title_sw: Wiki 1 — Uchunguzi na sababu inayowezekana
+briefing: 'Perform Computer Repair and Maintenance (280 hours) is not “open the PC and guess”. The curriculum outcome is: identify the problem, form a theory of probable cause, test the theory, then act. Gather: what changed, error messages, beep codes, POST LEDs, and whether the fault is hardware, software, or both. Reproduce if safe. A burning smell is not a reproduce-and-hope case — isolate power first (safety unit).
+
+
+  Tools: screwdriver set, anti-static, multimeter, POST card if available, known-good RAM/PSU, boot USB, cable tester. Assemble the kit before you start so you do not walk across the workshop with an open chassis. Document the original configuration — RAM slots, cable routing, and jumper settings — because reassembly is a later outcome.
+
+
+  Theories must be testable and ordered by likelihood and risk. No display: check power, then video cable, then RAM reseat, then GPU, then motherboard. Do not start by replacing the CPU. Test one change at a time. If the theory fails, document and form a new one. That is professional troubleshooting, and it is what CompTIA also expects.
+
+
+  Write a ticket: asset tag, symptoms, theories, tests, result. Assessors mark the method. A lucky reboot without notes is not competence.'
+briefing_sw: 'Tambua tatizo, unda nadharia, jaribu, kisha tengeneza. Nguvu kwanza, kisha POST, RAM, hifadhi. Chombo kimoja kwa wakati. Andika dalili na majaribio. Harufu ya moto: zima umeme.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/3/5
+exam_domain: CDACC ICT L5 — Perform Computer Repair and Maintenance (IT/CU/ICT/CR/3/5, 280 h)
+xp_total: 310
+exercises:
+- id: tvet-repair-w1-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'After identifying symptoms, the next CDACC repair step is to:'
+  options:
+  - id: a
+    text: Replace every chip
+  - id: b
+    text: Establish a theory of probable cause, then test it
+  - id: c
+    text: Format immediately
+  - id: d
+    text: Call the vendor for a new building
+  correct_answer: b
+  hint: Theory then test.
+  explanation: The unit lists troubleshooting as forming and testing probable cause.
+  xp_reward: 50
+- id: tvet-repair-w1-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A PC powers fans but has no beep and no display. Least useful first swap is:'
+  options:
+  - id: a
+    text: Reseat RAM / try known-good RAM
+  - id: b
+    text: The mechanical hard disk of user files
+  - id: c
+    text: Video cable and monitor known-good
+  - id: d
+    text: PSU 24-pin seating
+  correct_answer: b
+  hint: POST happens before the OS disk matters.
+  explanation: Storage faults appear after POST. No POST is power, CPU, RAM, firmware, or video.
+  xp_reward: 50
+- id: tvet-repair-w1-q3
+  type: MULTIPLE_CHOICE
+  prompt: Why change only one variable at a time?
+  options:
+  - id: a
+    text: To slow the exam
+  - id: b
+    text: So you know which action fixed or broke the system
+  - id: c
+    text: NITA bans two screwdrivers
+  - id: d
+    text: RAM must stay dusty
+  correct_answer: b
+  hint: Scientific method.
+  explanation: Swapping PSU, RAM, and HDD together teaches you nothing.
+  xp_reward: 50
+- id: tvet-repair-w1-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A ticket with no asset tag and no tests is:'
+  options:
+  - id: a
+    text: Industry standard
+  - id: b
+    text: Incomplete evidence for the repair portfolio
+  - id: c
+    text: Better for GDPR
+  - id: d
+    text: Required by Ohm’s law
+  correct_answer: b
+  hint: Portfolio of evidence.
+  explanation: CDACC wants written troubleshooting, not folklore.
+  xp_reward: 50
+- id: tvet-repair-w1-fb1
+  type: FILL_BLANK
+  prompt: Power-On Self-Test is abbreviated ___.
+  correct_answer: POST
+  hint: Before the OS loads.
+  explanation: POST checks CPU, RAM, and firmware. Use it to split hardware from OS faults.
+  xp_reward: 50
+- id: tvet-repair-w1-scenario
+  type: SCENARIO
+  prompt: Intermittent shutdowns under load. Trainee immediately reinstalls Windows. Your supervisor says?
+  options:
+  - id: a
+    text: Perfect — OS is always the cause
+  - id: b
+    text: 'Wrong theory order: check temperatures, PSU rails, and event logs before a destructive reload'
+  - id: c
+    text: Skip hardware forever
+  - id: d
+    text: Increase pagefile to 200 GB first always
+  correct_answer: b
+  hint: Heat and power look like software.
+  explanation: Thermal throttle and dying PSUs mimic OS crashes. Test the likely hardware theory.
+  xp_reward: 60

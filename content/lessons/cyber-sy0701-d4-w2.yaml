@@ -1,0 +1,107 @@
+id: cyber-sy0701-d4-w2
+course_id: secplus-operations
+title: Week 2 — Identity, access, monitoring, and automation
+title_sw: Wiki 2 — Utambulisho, ufuatiliaji, na automation
+briefing: 'Identity operations: provisioning, deprovisioning on the day staff leave, MFA, passwordless where you can, privileged access management (no standing domain admin), just-in-time elevation, and reviews of membership in Domain Admins. Federation/SSO (SAML/OIDC) for SaaS. Service accounts with unique creds, not the HOD password pasted into a script. Kenya: disable accounts the day a contractor’s attachment ends.
+
+
+  Monitoring: SIEM, log retention, use cases (failed MFA, new local admin, mass file rename). NetFlow, packet capture when legal, EDR alerts. Alert fatigue is an operations failure — tune. SNMP/syslog from network devices. You cannot detect without collecting, and you cannot collect without NTP and disk for logs.
+
+
+  Firewall/IDS operations: rule reviews, default deny, documented exceptions, IPS in-line versus IDS tap. Automation/orchestration (SOAR) for repetitive containment — disable account, isolate host — with human approval for destructive steps. Scripting is in the objectives: you should read a PowerShell or bash snippet that disables a user.
+
+
+  Access reviews quarterly. Shared “lab” passwords are an operations defect. That is how Domain 4 eats 28% of the exam: lots of small professional habits.'
+briefing_sw: MFA, zima akaunti siku ya kuondoka. PAM, SSO. SIEM, logi, NTP. Default deny. SOAR kwa hatua za kawaida. Usitumie nenosiri moja ya lab.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 4 — Security Operations (28%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d4-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'The day a trainer’s contract ends you should:'
+  options:
+  - id: a
+    text: Leave the account until next year “in case they return”
+  - id: b
+    text: Disable/deprovision access the same day across AD, mail, and SaaS
+  - id: c
+    text: Share their password with the class
+  - id: d
+    text: Email the password to Gmail
+  correct_answer: b
+  hint: Joiner-mover-leaver.
+  explanation: Orphan accounts are insider and credential-stuffing bait.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'SIEM is primarily for:'
+  options:
+  - id: a
+    text: Encrypting disks
+  - id: b
+    text: Aggregating and correlating logs into detections
+  - id: c
+    text: Crimping
+  - id: d
+    text: Issuing CSRs
+  correct_answer: b
+  hint: Monitoring.
+  explanation: Without use cases it is an expensive filing cabinet.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Standing (permanent) domain-admin rights for every technician is:'
+  options:
+  - id: a
+    text: Best practice
+  - id: b
+    text: Excessive privilege — use PAM / just-in-time / separate admin accounts
+  - id: c
+    text: Required by Zero Trust
+  - id: d
+    text: A type of salt
+  correct_answer: b
+  hint: Least privilege operations.
+  explanation: Daily browsing as DA is how one phishing mail owns the forest.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'An IDS in tap/span mode differs from inline IPS because IDS:'
+  options:
+  - id: a
+    text: Always drops packets
+  - id: b
+    text: Observes and alerts; IPS can block in the path
+  - id: c
+    text: Replaces identity
+  - id: d
+    text: Is a backup
+  correct_answer: b
+  hint: Detect vs prevent.
+  explanation: Fail-open/closed matters more for inline IPS.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w2-fb1
+  type: FILL_BLANK
+  prompt: Requiring a second factor such as a phone prompt in addition to a password is ___.
+  correct_answer: MFA
+  hint: Also 2FA.
+  explanation: Phishing-resistant MFA (passkeys, FIDO2) is stronger than SMS OTP.
+  xp_reward: 50
+- id: cyber-sy0701-d4-w2-scenario
+  type: SCENARIO
+  prompt: SIEM shows 2,000 “critical” infos each day; nobody reads them. Operations fix?
+  options:
+  - id: a
+    text: Add 2,000 more rules
+  - id: b
+    text: Tune use cases, severity, and response playbooks so alerts are actionable
+  - id: c
+    text: Delete the SIEM and hope
+  - id: d
+    text: Print every log
+  correct_answer: b
+  hint: Alert fatigue.
+  explanation: Domain 4 is effectiveness, not volume.
+  xp_reward: 60

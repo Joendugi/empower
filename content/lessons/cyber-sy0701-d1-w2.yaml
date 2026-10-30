@@ -1,0 +1,107 @@
+id: cyber-sy0701-d1-w2
+course_id: secplus-concepts
+title: Week 2 — Change management and security impact
+title_sw: Wiki 2 — Usimamizi wa mabadiliko
+briefing: 'Objective 1.3: explain why change management exists. Untracked changes are how “who opened RDP” happens. Business process: request, approval, ownership, stakeholders, impact analysis, test results, backout plan, maintenance window, and SOP. A campus firewall rule at 10 a.m. on a registration day without a window is an availability incident waiting to happen.
+
+
+  Technical implications: allow lists and deny lists, restricted activities, downtime, service/application restart, legacy applications, and dependencies. Updating a TLS certificate may restart a web server — say so in the change ticket. Documentation: update diagrams and policies. Version control for firewall configs and scripts is part of the objective, not a developer hobby.
+
+
+  Kenyan polytechnic translation: the ICT officer who “just changed DNS” without a ticket violates this even if it worked. Security+ will give you a scenario where a change caused an outage because there was no backout. The answer is almost never “try another random change”.
+
+
+  Artefact this week: a change request for enabling WPA3 on student Wi-Fi — impact, test (one AP first), backout (restore WPA2-Enterprise), window (Sunday 05:00), and who approves.'
+briefing_sw: Ombi, idhini, uchambuzi wa athari, majaribio, mpango wa kurejesha, dirisha la matengenezo. Sasisha michoro. Version control. Usibadilishe DNS kimya.
+estimated_minutes: 28
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 1 — General Security Concepts (12%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d1-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A backout plan is used when:'
+  options:
+  - id: a
+    text: The change succeeds and you celebrate only
+  - id: b
+    text: The change fails or causes harm and you restore the last known good state
+  - id: c
+    text: You fire the SOC
+  - id: d
+    text: You disable logging
+  correct_answer: b
+  hint: Undo.
+  explanation: No backout = gambling with availability.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Allow lists / deny lists during a change are:'
+  options:
+  - id: a
+    text: Irrelevant slogans
+  - id: b
+    text: Technical implications that may block or permit traffic/apps
+  - id: c
+    text: Physical bollards
+  - id: d
+    text: Honeytokens
+  correct_answer: b
+  hint: 1.3 technical implications.
+  explanation: A new deny list can break the MIS. Impact-analyse it.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'The best time to restart a student records server is usually:'
+  options:
+  - id: a
+    text: Peak registration without notice
+  - id: b
+    text: An agreed maintenance window with stakeholders told
+  - id: c
+    text: During the exam as a surprise
+  - id: d
+    text: Never, even for patches
+  correct_answer: b
+  hint: Window.
+  explanation: Availability is a CIA pillar. Windows exist to protect it.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'After a network change, diagrams should be:'
+  options:
+  - id: a
+    text: Left stale
+  - id: b
+    text: Updated so the next incident responder is not flying blind
+  - id: c
+    text: Deleted for secrecy
+  - id: d
+    text: Printed in Comic Sans only
+  correct_answer: b
+  hint: Documentation.
+  explanation: Objective 1.3 lists updating diagrams and policies.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w2-fb1
+  type: FILL_BLANK
+  prompt: The scheduled period when a disruptive change is allowed is a maintenance ___.
+  correct_answer: window
+  hint: Not a GUI window.
+  explanation: Changes outside the window need emergency process, not silence.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w2-scenario
+  type: SCENARIO
+  prompt: A technician patches the core switch at 11:00 on a Monday; registration dies; nobody can reverse the IOS upgrade. Missing 1.3 item?
+  options:
+  - id: a
+    text: A honeypot
+  - id: b
+    text: Approved window, test, and backout image/plan
+  - id: c
+    text: More bollards
+  - id: d
+    text: AAA colour scheme
+  correct_answer: b
+  hint: Change management.
+  explanation: This is a Domain 1 operational failure, not a missing firewall brand.
+  xp_reward: 60

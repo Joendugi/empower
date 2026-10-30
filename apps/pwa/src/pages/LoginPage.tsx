@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Lock, KeyRound, Sparkles } from 'lucide-react';
 import type { TokenResponse } from '@cyberlearn/types';
 import { authenticate } from '@/lib/auth';
-import { isEducator, isStaff } from '@/lib/localAccounts';
+import { currentAccountRole } from '@/lib/roles';
 import { completePasswordReset, requestPasswordReset } from '@/lib/passwordReset';
 import { phoneError, sanitizePhoneInput } from '@/lib/validate';
 import type { NoticeChannel } from '@/lib/notify';
@@ -40,13 +40,14 @@ export default function LoginPage() {
   }, [storedEmail, wantsEducator]);
 
   const finish = (body: TokenResponse, registered = false) => {
-    applyAuth(body.accessToken || CLOUD_COOKIE_TOKEN, body.learner);
+    applyAuth(body.accessToken || CLOUD_COOKIE_TOKEN, body.learner, body.sessionExpiresAt);
     const next = params.get('next');
-    if (isStaff(body.learner.email)) {
+    const role = currentAccountRole();
+    if (role === 'admin') {
       navigate(next?.startsWith('/') ? next : '/office');
       return;
     }
-    if (isEducator(body.learner.email) || (registered && accountType === 'educator')) {
+    if (role === 'educator' || (registered && accountType === 'educator')) {
       useLearnerStore.getState().completeOnboarding({
         role: 'trainer',
         goal: 'community',

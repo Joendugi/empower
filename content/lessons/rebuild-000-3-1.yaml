@@ -1,0 +1,78 @@
+id: rebuild-000-3-1
+course_id: the-rebuild-protocol
+title: Your Password Is Your Key
+title_sw: Nywila yako ni ufunguo wako
+briefing: 'Passwords are the first line of defence for every digital account. Most successful attacks exploit weak or reused passwords — not sophisticated zero-days.
+
+
+  What makes a password strong? Length is the single most important factor. A 14-character password takes vastly longer to crack than an 8-character one, even if the shorter one uses symbols. Aim for 14 or more characters. Uniqueness matters just as much: every account must have a different password. If one account is breached, attackers immediately try the same credentials everywhere else — this is called credential stuffing. Passphrases are the practical solution: three or more random words combined with numbers (e.g. "mango-cloud-47-river") are long, memorable, and strong.
+
+
+  Password managers (like Bitwarden, 1Password, or the built-in manager in your phone) store hundreds of unique, randomly generated passwords behind a single master passphrase. You only need to remember one strong passphrase. The manager does the rest.
+
+
+  Never reuse a password. Never share a password. Change a password immediately if you suspect a breach. These three rules would have prevented the Colonial Pipeline attack.'
+briefing_sw: 'Nywila ni ulinzi wa kwanza wa kila akaunti ya kidijitali. Mashambulizi mengi yanafanikiwa kwa sababu ya nywila dhaifu au zinazotumiwa tena.
+
+
+  Nywila nzuri ni ndefu (herufi 14 au zaidi), ya kipekee kwa kila akaunti, na inayochanganya maneno matatu au zaidi ya nasibu. Wasimamizi wa nywila huhifadhi nywila nyingi za kipekee nyuma ya nywila kuu moja. Usiwahi kutumia nywila sawa katika akaunti mbili.'
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-31-q1
+  type: MULTIPLE_CHOICE
+  prompt: Which of the following passwords is the strongest?
+  options:
+  - id: a
+    text: P@ssw0rd!
+  - id: b
+    text: nairobi2024
+  - id: c
+    text: mango-cloud-47-river
+  - id: d
+    text: Abc123!
+  correct_answer: c
+  hint: Length beats complexity. Three random words plus numbers is long and memorable.
+  explanation: '"mango-cloud-47-river" is a passphrase — approximately 20 characters, random words that are hard to predict, and includes a number. The others are short, use common substitutions (P@ssw0rd), or contain dictionary words with predictable patterns.'
+  xp_reward: 50
+- id: r000-31-q2
+  type: SCENARIO
+  prompt: You use the same password for your email, M-Pesa app, and work system. Your email provider suffers a data breach and your password is leaked. What is the MOST likely consequence?
+  options:
+  - id: a
+    text: Only your email is at risk because the breach was limited to the email provider
+  - id: b
+    text: Attackers will try the same password on your M-Pesa app and work system — and probably succeed
+  - id: c
+    text: You are safe as long as you change the email password within 24 hours
+  - id: d
+    text: Password reuse only matters for banking apps, not work systems
+  correct_answer: b
+  hint: Attackers automate credential stuffing across thousands of sites.
+  explanation: 'Credential stuffing is automated: tools take leaked email/password pairs and try them against hundreds of popular services. If you reuse a password, a single breach compromises every account that shares it. Change all reused passwords immediately when any breach occurs.'
+  xp_reward: 60
+- id: r000-31-q3
+  type: MULTIPLE_CHOICE
+  prompt: What is the PRIMARY benefit of using a password manager?
+  options:
+  - id: a
+    text: It makes your passwords shorter and easier to type
+  - id: b
+    text: It allows you to use the same strong password across all sites safely
+  - id: c
+    text: It generates and stores a unique strong password for every account behind one master passphrase
+  - id: d
+    text: It automatically resets your passwords every week
+  correct_answer: c
+  hint: You only need to remember one thing.
+  explanation: Password managers generate random, unique passwords for every site and encrypt them behind a single master passphrase. This eliminates reuse without requiring you to memorise hundreds of passwords.
+  xp_reward: 50
+- id: r000-31-q4
+  type: FILL_BLANK
+  prompt: According to the Rebuilder Corps password standard, the minimum recommended length for a strong password or passphrase is ___ characters.
+  correct_answer: '14'
+  hint: 'Think: longer than a typical short password, but shorter than a sentence.'
+  explanation: Fourteen characters is the Rebuilder standard minimum. At this length, even a simple passphrase of random words becomes computationally expensive to brute-force. Many security frameworks (NIST SP 800-63B) recommend 15+ characters for user-chosen passwords.
+  xp_reward: 50

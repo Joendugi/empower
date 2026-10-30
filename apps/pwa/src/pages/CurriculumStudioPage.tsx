@@ -20,7 +20,7 @@ import {
 } from '@/lib/curriculumDraft';
 import { useCurriculumStore } from '@/store/curriculumStore';
 import { useLearnerStore } from '@/store/learnerStore';
-import { isStaff } from '@/lib/localAccounts';
+import { useIsStaff } from '@/lib/roles';
 import { useT } from '@/i18n';
 
 const field = 'w-full rounded-xl bg-primary-dark border border-surface-light px-3 py-3 text-white placeholder:text-muted';
@@ -35,6 +35,7 @@ export default function CurriculumStudioPage() {
   const publishDraft = useCurriculumStore((state) => state.publishDraft);
   const learnerId = useLearnerStore((state) => state.learnerId) ?? undefined;
   const email = useLearnerStore((state) => state.email) ?? undefined;
+  const staff = useIsStaff();
   const [selectedId, setSelectedId] = useState<string | null>(drafts[0]?.id ?? null);
   const [draft, setDraft] = useState<CourseDraft | null>(drafts[0] ?? null);
   const [weekIndex, setWeekIndex] = useState(0);
@@ -67,7 +68,7 @@ export default function CurriculumStudioPage() {
   const previewLessons = preview ? Object.fromEntries(preview.lessons.map((lesson) => [lesson.id, lesson])) : {};
   const previewLesson = preview?.lessons[weekIndex] ?? preview?.lessons[0];
 
-  if (!isStaff(email)) {
+  if (!staff) {
     return <Navigate to="/educator" replace />;
   }
 

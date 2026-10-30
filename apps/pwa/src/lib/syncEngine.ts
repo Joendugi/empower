@@ -1,5 +1,5 @@
 import { api, ApiError } from '@/lib/api';
-import { listQueue, removeFromQueue } from '@/lib/idbQueue';
+import { listQueue, removeFromQueue, type QueuedEvent } from '@/lib/idbQueue';
 import { isLocalToken } from '@/lib/localApi';
 import { yieldToUi } from '@/lib/sessionSecurity';
 import { useLearnerStore } from '@/store/learnerStore';
@@ -30,10 +30,22 @@ async function pullCloudProgress() {
   }
 }
 
-async function flushQueue() {
-  const token = useLearnerStore.getState().token;
-  if (!token || isLocalToken(token)) return;
-  const items = await listQueue();
+const SYNC_BATCH = 200;
+
+interface SyncResponse {
+  results: Array<{ id: string; status: 'applied' | 'duplicate' | 'rejected'; detail?: string | null }>;
+  state: {
+    totalXp: number;
+    level: number;
+    completedLessonIds: string[];
+    currentStreak: number;
+    longestStreak: number;
+    freezeTokens: number;
+  };
+}
+
+/** Older APIs have no /sync: replay one request per event. */
+async function flushOneByOne(items: QueuedEvent[]) {
   for (const event of items) {
     try {
       const result = await api<{ totalXp?: number; level?: number }>(event.path, {
@@ -56,6 +68,46 @@ async function flushQueue() {
   }
 }
 
+function applyServerState(state: SyncResponse['state']) {
+  const store = useLearnerStore.getState();
+  store.applyXp(state.totalXp, state.level);
+  store.setStreak(state.currentStreak, state.longestStreak, state.freezeTokens);
+  for (const lessonId of state.completedLessonIds) store.markLessonComplete(lessonId);
+}
+
+/** Returns true when the server's progress was applied (so there's no need to pull it separately). */
+async function flushQueue(): Promise<boolean> {
+  const token = useLearnerStore.getState().token;
+  if (!token || isLocalToken(token)) return false;
+  const items = await listQueue();
+  if (!items.length) return false;
+  for (let start = 0; start < items.length; start += SYNC_BATCH) {
+    const batch = items.slice(start, start + SYNC_BATCH);
+    let response: SyncResponse;
+    try {
+      response = await api<SyncResponse>('/sync', {
+        method: 'POST',
+        body: JSON.stringify({
+          deviceId: useLearnerStore.getState().deviceId,
+          events: batch.map((event) => ({ id: event.id, type: event.type, payload: event.payload })),
+        }),
+      });
+    } catch (error) {
+      if (error instanceof ApiError && error.status === 404) {
+        await flushOneByOne(items.slice(start));
+        return false;
+      }
+      throw error;
+    }
+    // Rejected events (an exercise that no longer exists, say) are dropped too, so they
+    // can't block everything queued after them.
+    for (const result of response.results) await removeFromQueue(result.id);
+    applyServerState(response.state);
+    await yieldToUi();
+  }
+  return true;
+}
+
 export async function runCloudSync(): Promise<void> {
   if (flushing) return;
   const platform = usePlatformStore.getState();
@@ -73,8 +125,8 @@ export async function runCloudSync(): Promise<void> {
   flushing = true;
   useSyncStore.getState().setStatus('syncing');
   try {
-    await flushQueue();
-    await pullCloudProgress();
+    const synced = await flushQueue();
+    if (!synced) await pullCloudProgress();
     try {
       const { syncOfficeCloud } = await import('@/lib/officeSync');
       await syncOfficeCloud();

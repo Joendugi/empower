@@ -1,0 +1,75 @@
+id: rebuild-000-1-3
+course_id: the-rebuild-protocol
+title: 'Real Blackouts: 3 Case Studies'
+title_sw: Masimulizi ya kweli ya kukatiwa umeme
+briefing: 'Three real-world cyberattacks prove that infrastructure attacks are not science fiction — they happened, and they will happen again without defenders.
+
+
+  Case Study 1 — Ukraine Power Grid (2016): Attackers from the Sandworm group compromised SCADA (industrial control) systems at three Ukrainian power distribution companies using spear-phishing emails. They then remotely opened circuit breakers, cutting electricity to approximately 230,000 people in winter. The lesson: critical infrastructure control systems are reachable from the internet and must be isolated and monitored.
+
+
+  Case Study 2 — Colonial Pipeline Ransomware (2021): A single compromised VPN password (found in a leaked credentials database) allowed the DarkSide group to access Colonial Pipeline''s IT network. They deployed ransomware that paralysed billing and management systems. Colonial voluntarily shut down its 8,850-km pipeline, disrupting fuel supply to the US East Coast for six days. The lesson: one reused password on an internet-facing system can take down national fuel infrastructure.
+
+
+  Case Study 3 — MOVEit Breaches (2023): The Cl0p ransomware group exploited a zero-day SQL injection vulnerability in the MOVEit file-transfer software used by hundreds of organisations worldwide, including African financial institutions and pension funds. Personal and financial data from millions of people was exfiltrated. The lesson: supply-chain software vulnerabilities affect every organisation that uses the same product — attackers do not need to target you directly.'
+briefing_sw: 'Masimulizi matatu ya kweli yanaonyesha kwamba mashambulizi ya miundombinu si hadithi za kubuni.
+
+
+  Masimulizi 1 — Ukraine 2016: Wavamizi waliathiri mifumo ya SCADA ya gridi ya umeme na kukata umeme kwa watu 230,000 wakati wa baridi. Somo: mifumo ya udhibiti wa miundombinu inaweza kufikiwa kutoka mtandaoni.
+
+
+  Masimulizi 2 — Colonial Pipeline 2021: Nenosiri moja lililokuwa kwenye orodha ya data zilizovuja liliruhusu wavamizi kueneza ransomware na kusimamisha mabomba ya mafuta kwa siku sita.
+
+
+  Masimulizi 3 — MOVEit 2023: Udhaifu wa SQL injection kwenye programu ya MOVEit uliathiri taasisi nyingi za fedha Afrika na kwingineko.'
+estimated_minutes: 12
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 200
+exercises:
+- id: r000-13-q1
+  type: MULTIPLE_CHOICE
+  prompt: In the 2016 Ukraine power grid attack, what type of industrial control system did the attackers compromise to remotely open circuit breakers?
+  options:
+  - id: a
+    text: ERP (Enterprise Resource Planning)
+  - id: b
+    text: SCADA (Supervisory Control and Data Acquisition)
+  - id: c
+    text: DNS (Domain Name System)
+  - id: d
+    text: SIEM (Security Information and Event Management)
+  correct_answer: b
+  hint: It controls physical industrial equipment remotely.
+  explanation: SCADA systems monitor and control industrial processes including power distribution. Compromising them allowed attackers to send real commands to circuit breakers, causing physical power outages.
+  xp_reward: 50
+- id: r000-13-q2
+  type: MULTIPLE_CHOICE
+  prompt: What single security failure allowed DarkSide to access Colonial Pipeline's network in 2021?
+  options:
+  - id: a
+    text: An unpatched operating system on a public web server
+  - id: b
+    text: A compromised VPN password found in a leaked credentials database
+  - id: c
+    text: A malicious USB drive left in the car park
+  - id: d
+    text: A zero-day vulnerability in the pipeline's SCADA software
+  correct_answer: b
+  hint: It was a password — not an exotic exploit.
+  explanation: A single VPN account password, previously leaked in a separate breach and never changed, gave DarkSide their initial foothold. This demonstrates why password reuse and credential monitoring are critical.
+  xp_reward: 50
+- id: r000-13-q3
+  type: FILL_BLANK
+  prompt: The Cl0p group exploited a ___ injection vulnerability in MOVEit to steal data from hundreds of organisations without targeting each one individually.
+  correct_answer: SQL
+  hint: It is a classic web application attack that manipulates database queries.
+  explanation: SQL injection in the MOVEit zero-day allowed Cl0p to query and exfiltrate databases without authentication. This supply-chain attack hit every customer of the vulnerable software simultaneously.
+  xp_reward: 50
+- id: r000-13-q4
+  type: FILL_BLANK
+  prompt: The Colonial Pipeline ransomware attack disrupted fuel supply to the US East Coast for ___ days.
+  correct_answer: '6'
+  hint: Nearly a week.
+  explanation: Colonial voluntarily shut down its 8,850-km pipeline for six days. The disruption caused fuel shortages and price spikes across the US East Coast, demonstrating how a digital attack translates into real-world physical and economic harm.
+  xp_reward: 50

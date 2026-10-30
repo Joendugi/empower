@@ -1,0 +1,89 @@
+id: linux-essentials-lesson-2
+course_id: linux-essentials
+title: Processes, logs, and users on Linux
+title_sw: Processes, logs, na watumiaji Linux
+briefing: 'After pwd/ls/cd, you must see what is running and who is logged in. `ps`, `top`/`htop`, and `journalctl` or `/var/log/syslog` are how you find a runaway process or a failed service. Killing PID 1 is not a joke — know `kill` vs `kill -9` and when a service restart is cleaner.
+
+
+  Users: `id`, `sudo -l`, and not giving sudo to every classmate. Files in `/home` vs `/etc` vs `/var`. Permissions 777 on `/etc/passwd` is vandalism. SUID binaries are a later topic; do not chmod +s randomly.
+
+
+  Disk: `df -h` before the disk fills at 3 a.m. `du` finds the heavy directory. Logs that grow without logrotate will take a server down as surely as malware.
+
+
+  You still do not run curl|sudo bash from a pastebin. Read. Then run, if the instructor approves.'
+briefing_sw: ps/top kuona processes. Logs kwenye journalctl au /var/log. Usitoe sudo kwa kila mtu. df -h. Usitumie chmod 777 kwenye /etc. Usitekeleze script ya mtandao kama root bila kusoma.
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/OS/LX/01/6
+exam_domain: LPIC-1 / CompTIA Linux+
+xp_total: 210
+exercises:
+- id: lx2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'df -h is used to:'
+  options:
+  - id: a
+    text: Hash passwords
+  - id: b
+    text: Show mounted disk space in human-readable form
+  - id: c
+    text: Delete home directories
+  - id: d
+    text: Open a firewall
+  correct_answer: b
+  hint: Disk free.
+  explanation: Full disks make login and logging fail in surprising ways.
+  xp_reward: 50
+- id: lx2-q2
+  type: FILL_BLANK
+  prompt: The command that shows your user and group IDs is ___.
+  correct_answer: id
+  hint: Identity.
+  explanation: id is faster than guessing whether you are root.
+  xp_reward: 50
+- id: lx2-q3
+  type: SCENARIO
+  prompt: 'A lab VM is slow. top shows one process at 99% CPU you do not recognise. You should:'
+  options:
+  - id: a
+    text: kill -9 1 immediately
+  - id: b
+    text: Identify the process, check with the instructor/service docs, then stop that service/PID
+  - id: c
+    text: chmod 777 /
+  - id: d
+    text: Delete /var/log so CPU drops
+  correct_answer: b
+  hint: Do not kill init.
+  explanation: Investigate, then act. PID 1 is the system.
+  xp_reward: 60
+- id: lx2-q4
+  type: MATCH_PAIRS
+  prompt: Match the path to what it usually holds.
+  pairs:
+  - left:
+      id: etc
+      text: /etc
+    right:
+      id: cfg
+      text: Configuration
+  - left:
+      id: var
+      text: /var/log
+    right:
+      id: logs
+      text: Log files
+  - left:
+      id: home
+      text: /home
+    right:
+      id: users
+      text: User home directories
+  correct_answer:
+  - etc=cfg
+  - var=logs
+  - home=users
+  hint: Where things live.
+  explanation: Knowing the tree prevents deleting the wrong folder.
+  xp_reward: 50

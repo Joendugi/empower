@@ -1,19 +1,13 @@
 import type { Lesson } from '@cyberlearn/types';
+import { getLessonAsync } from '@/content';
 
-let bundled: Promise<Record<string, string>> | null = null;
-
-/** Detailed notes for a lesson: from the lesson itself (cloud/custom) or the lazily loaded bundled file. */
+/** Detailed notes for a lesson. Catalogue lessons carry them in their course pack. */
 export async function loadLessonNotes(lesson: Lesson): Promise<string | null> {
   if (lesson.contentMd?.trim()) return lesson.contentMd;
-  if (!bundled) {
-    bundled = import('@/content/generated/lessonNotes.json').then(
-      (mod) => (mod.default ?? mod) as Record<string, string>
-    );
-  }
   try {
-    return (await bundled)[lesson.id] ?? null;
+    const full = await getLessonAsync(lesson.id);
+    return full?.contentMd?.trim() ? full.contentMd : null;
   } catch {
-    bundled = null; // allow a retry once the chunk is reachable
     return null;
   }
 }

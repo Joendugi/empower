@@ -58,8 +58,14 @@ def _public_exercise(raw: dict[str, Any]) -> dict[str, Any]:
         "pairs": raw.get("pairs"),
         "dragItems": raw.get("drag_items") or raw.get("dragItems"),
         "diagramSlots": raw.get("diagram_slots") or raw.get("diagramSlots"),
+        "diagramKind": raw.get("diagram_kind") or raw.get("diagramKind"),
         "terminalResponses": raw.get("terminal_responses") or raw.get("terminalResponses"),
         "answerHashes": answer_hashes(correct) if correct is not None else [],
+        # Same fields the course packs carry (scripts/generate_catalogue.py), so an API-served
+        # lesson renders exactly like a packed one.
+        "media": raw.get("media"),
+        "rubric": raw.get("rubric"),
+        "minSeconds": raw.get("min_seconds") or raw.get("minSeconds"),
     }
     if raw["type"] in {"MATCH_PAIRS", "DIAGRAM_LABEL"} and isinstance(correct, list):
         public["answerHashes"] = [

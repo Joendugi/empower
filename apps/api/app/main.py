@@ -20,6 +20,7 @@ from app.edge import OriginVerifyMiddleware, ProbeAwareTrustedHostMiddleware
 from app.middleware import TimeoutRateLimitMiddleware
 from app.migrate import run_alembic_upgrade
 from app.routers import (
+    accounts,
     analytics,
     auth,
     badges,
@@ -38,6 +39,7 @@ from app.routers import (
     streaks,
     studio,
     submissions,
+    sync,
     xp,
 )
 from app.security import assert_secure_settings
@@ -162,6 +164,7 @@ def create_app(**state: Any) -> FastAPI:
         raise exc
 
     app.include_router(auth.router, prefix="/api/v1", tags=["Auth"])
+    app.include_router(accounts.router, prefix="/api/v1", tags=["Accounts"])
     app.include_router(xp.router, prefix="/api/v1", tags=["XP"])
     app.include_router(streaks.router, prefix="/api/v1", tags=["Streaks"])
     app.include_router(badges.router, prefix="/api/v1", tags=["Badges"])
@@ -170,6 +173,7 @@ def create_app(**state: Any) -> FastAPI:
     app.include_router(review.router, prefix="/api/v1", tags=["Review"])
     app.include_router(content.router, prefix="/api/v1", tags=["Content"])
     app.include_router(submissions.router, prefix="/api/v1", tags=["Submissions"])
+    app.include_router(sync.router, prefix="/api/v1", tags=["Sync"])
     app.include_router(studio.router, prefix="/api/v1", tags=["Studio"])
     app.include_router(moderation.router, prefix="/api/v1", tags=["Moderation"])
     app.include_router(analytics.router, prefix="/api/v1", tags=["Analytics"])

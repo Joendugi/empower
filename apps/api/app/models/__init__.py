@@ -5,6 +5,7 @@ from app.models.feedback import FormativeFeedback
 from app.models.fsrs_card import FSRSCard
 from app.models.learner import Learner
 from app.models.library import LibraryBook, ReadingProgress
+from app.models.refresh_token import RefreshToken
 from app.models.rubric import Rubric, RubricSignOff
 from app.models.streak import Streak
 from app.models.studio import (
@@ -42,4 +43,5 @@ __all__ = [
     "DiscussionVote",
     "LibraryBook",
     "ReadingProgress",
+    "RefreshToken",
 ]

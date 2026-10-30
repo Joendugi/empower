@@ -1,0 +1,108 @@
+id: tvet-database-w2
+course_id: database-systems
+title: Week 2 — Design, integrity, and normalisation
+title_sw: Wiki 2 — Usanifu, uadilifu, na normalisation
+briefing: 'Design concepts in the unit include entity integrity and referential integrity. Entity integrity: primary key unique and not null. Referential integrity: a foreign key must match an existing parent or be null if allowed. If you delete a course that still has enrolments, the DBMS should reject or cascade according to the rule you declared — you must choose on purpose.
+
+
+  Relationships: one-to-one (rarely, citizen ID card), one-to-many (one department, many staff), many-to-many (students and units) which needs a junction table (enrolment). Cardinality belongs on the ER drawing. Attributes have data types: integer, varchar, date, boolean. Do not store “yes” and “Y” and “true” as three conventions.
+
+
+  Normalisation (1NF, 2NF, 3NF) is how you remove repeating groups and partial/transitive dependencies. 1NF: atomic columns, no lists in a cell. 2NF: no partial key dependencies in composite keys. 3NF: no non-key column depending on another non-key (city depending on postal code stored beside a repeating address). College example: do not store lecturer phone on every enrolment row.
+
+
+  Deliverable: ER for a simple library or workshop job-card system, mapped to 3NF tables, with keys marked. That is the design week before SQL next week.'
+briefing_sw: 'Entity integrity: primary key si null. Referential: foreign key ina mzazi. Many-to-many inahitaji jedwali la kiungo. 1NF, 2NF, 3NF. Usiweke simu ya mwalimu kwenye kila mstari wa alama.'
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/4/5
+exam_domain: CDACC ICT L5 — Manage Database System (IT/CU/ICT/CR/4/5, 310 h)
+xp_total: 310
+exercises:
+- id: tvet-database-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Referential integrity means:'
+  options:
+  - id: a
+    text: Passwords are optional
+  - id: b
+    text: Foreign keys must match an existing parent key (or follow the stated null/cascade rule)
+  - id: c
+    text: Tables have no names
+  - id: d
+    text: Print is disabled
+  correct_answer: b
+  hint: Parent must exist.
+  explanation: Orphan enrolment rows are a design fail.
+  xp_reward: 50
+- id: tvet-database-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'Students ↔ units is typically:'
+  options:
+  - id: a
+    text: One-to-one only
+  - id: b
+    text: Many-to-many, implemented with an enrolment/junction table
+  - id: c
+    text: Impossible in SQL
+  - id: d
+    text: A hierarchical mandatory tree
+  correct_answer: b
+  hint: Junction.
+  explanation: That table holds grade and semester as relationship attributes.
+  xp_reward: 50
+- id: tvet-database-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Storing a comma-separated list of units in one student column violates:'
+  options:
+  - id: a
+    text: 1NF (atomic values)
+  - id: b
+    text: Ohm’s law
+  - id: c
+    text: HDMI
+  - id: d
+    text: PXE
+  correct_answer: a
+  hint: Repeating group.
+  explanation: 1NF wants one fact per cell. Lists belong in child rows.
+  xp_reward: 50
+- id: tvet-database-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'ON DELETE CASCADE on a course table would:'
+  options:
+  - id: a
+    text: Prevent all deletes forever
+  - id: b
+    text: Remove child enrolment rows when the course is deleted — dangerous if not intended
+  - id: c
+    text: Print the ER
+  - id: d
+    text: Create RAM
+  correct_answer: b
+  hint: Know your rule.
+  explanation: RESTRICT/NO ACTION is often safer for academic data.
+  xp_reward: 50
+- id: tvet-database-w2-fb1
+  type: FILL_BLANK
+  prompt: A table that exists only to implement a many-to-many relationship is a ___ table.
+  correct_answer: junction
+  hint: Also called a link or associative table.
+  explanation: Enrolment, order_line, and similar tables are junction tables with extra attributes.
+  xp_reward: 50
+- id: tvet-database-w2-scenario
+  type: SCENARIO
+  prompt: 'You store department name and HOD phone on every staff row. HOD changes number; 40 rows stay old. This is:'
+  options:
+  - id: a
+    text: Good 3NF
+  - id: b
+    text: A transitive/redundancy anomaly — department should be its own entity
+  - id: c
+    text: Entity integrity success
+  - id: d
+    text: BCD arithmetic
+  correct_answer: b
+  hint: 3NF.
+  explanation: Non-key facts about the department do not belong repeating on staff.
+  xp_reward: 60

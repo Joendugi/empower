@@ -1,0 +1,106 @@
+id: rebuild-000-3-5
+course_id: the-rebuild-protocol
+title: Two-Factor Authentication
+title_sw: Uthibitishaji wa vipengele viwili
+briefing: 'Two-Factor Authentication (2FA) means that logging in requires BOTH something you know (your password) AND something you have (your phone, an authenticator app, or a hardware key). Even if an attacker steals or guesses your password, they still cannot log in without the second factor.
+
+
+  The three types of 2FA, ordered from weakest to strongest:
+
+
+  1. SMS OTP (One-Time Password) — A code sent to your phone via text message. Weak but still far better than a password alone. Vulnerable to SIM-swap attacks, where an attacker convinces your carrier to transfer your number to their SIM card.
+
+
+  2. Authenticator App — Apps like Google Authenticator, Microsoft Authenticator, or Authy generate time-based codes that change every 30 seconds. These are not sent over SMS, so SIM-swap attacks do not work. Strong.
+
+
+  3. Hardware Key — Physical devices like YubiKey that plug into USB or tap via NFC. Cryptographically verify you are on the real website (preventing phishing). Strongest protection available.
+
+
+  Enable 2FA on: your email (the master key to all accounts), M-Pesa and banking apps, social media accounts, and any work system that supports it. If your email is protected by 2FA, attackers cannot use the "Forgot Password" link to take over your other accounts — even if they know your email password.'
+briefing_sw: 'Uthibitishaji wa Vipengele Viwili (2FA) unahitaji VITU VIWIli: kitu unachojua (nywila) NA kitu unacho (simu, programu ya uthibitishaji, au ufunguo wa vifaa). Hata kama mshambulizi anajua nywila yako, hawezi kuingia bila kipengele cha pili.
+
+
+  Aina tatu za 2FA kwa nguvu inayoongezeka:
+
+  1. OTP ya SMS — Nambari inayotumwa kwa ujumbe mfupi. Dhaifu kidogo lakini bora kuliko nywila peke yake.
+
+  2. Programu ya Uthibitishaji — Kama Google Authenticator. Nambari zinabadilika kila sekunde 30. Nguvu.
+
+  3. Ufunguo wa Vifaa — Kama YubiKey. Inaunganishwa kwenye USB. Yenye nguvu zaidi.
+
+
+  Washa 2FA kwenye: barua pepe, M-Pesa, mitandao ya kijamii, na mifumo ya kazi.'
+estimated_minutes: 8
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-35-q1
+  type: MULTIPLE_CHOICE
+  prompt: What does "2FA" stand for?
+  options:
+  - id: a
+    text: Two-File Authentication
+  - id: b
+    text: Two-Factor Authentication
+  - id: c
+    text: Twice-Failed Authorisation
+  - id: d
+    text: Two-Form Access
+  correct_answer: b
+  hint: It refers to using two separate factors to verify identity.
+  explanation: 2FA stands for Two-Factor Authentication. It combines something you know (password) with something you have (a device or key) or something you are (biometrics), making it much harder for attackers to gain unauthorised access.
+  xp_reward: 50
+- id: r000-35-q2
+  type: MATCH_PAIRS
+  prompt: Order these 2FA types by matching each to its correct strength level, from weakest to strongest.
+  pairs:
+  - left:
+      id: sms
+      text: SMS OTP
+    right:
+      id: weak
+      text: Weakest — vulnerable to SIM-swap
+  - left:
+      id: auth-app
+      text: Authenticator App
+    right:
+      id: strong
+      text: Strong — time-based codes, no SMS
+  - left:
+      id: hardware-key
+      text: Hardware Key (e.g. YubiKey)
+    right:
+      id: strongest
+      text: Strongest — cryptographic, phishing-resistant
+  correct_answer:
+  - sms=weak
+  - auth-app=strong
+  - hardware-key=strongest
+  hint: Think about what attacks each method is vulnerable to.
+  explanation: SMS OTP is the weakest because SIM-swap attacks can redirect your codes. Authenticator apps are stronger because they are tied to your device, not your phone number. Hardware keys are the strongest because they use cryptographic challenge-response and verify the real website URL.
+  xp_reward: 50
+- id: r000-35-q3
+  type: SCENARIO
+  prompt: An attacker obtains your email password from a leaked credentials database. Your email account has 2FA enabled via an authenticator app. What happens when the attacker tries to log in?
+  options:
+  - id: a
+    text: They can log in immediately because they have the correct password
+  - id: b
+    text: They are blocked — they have the password but not the time-based code from your authenticator app
+  - id: c
+    text: They receive an SMS code that they can intercept
+  - id: d
+    text: The account is automatically deleted to prevent unauthorised access
+  correct_answer: b
+  hint: The second factor is on your device, not in the leaked database.
+  explanation: 2FA blocks the attacker even when the password is known. The authenticator app generates a time-based code that changes every 30 seconds and is only accessible on your physical device. Without it, the correct password alone is insufficient to log in.
+  xp_reward: 60
+- id: r000-35-q4
+  type: FILL_BLANK
+  prompt: A SIM-swap attack works against SMS-based 2FA because an attacker can trick your mobile carrier into transferring your phone number to their own ___.
+  correct_answer: SIM
+  hint: Think about the physical card in your phone that identifies your number.
+  explanation: In a SIM-swap attack, the attacker social-engineers the mobile carrier's support staff into believing they are you, then transfers your phone number to a new SIM card in their possession. Once done, all SMS messages — including OTP codes — go to the attacker's phone. This is why authenticator apps and hardware keys are stronger than SMS OTP.
+  xp_reward: 50

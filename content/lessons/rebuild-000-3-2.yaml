@@ -1,0 +1,126 @@
+id: rebuild-000-3-2
+course_id: the-rebuild-protocol
+title: Recognising Phishing
+title_sw: Kutambua ujumbe wa ulaghai
+briefing: 'Phishing is the number one attack vector globally — and the one that started The Blackout. Attackers send fake emails or SMS messages pretending to be trusted organisations: Safaricom, KCB, the Kenya Revenue Authority, government ministries, or employers.
+
+
+  The six warning signs of phishing:
+
+  1. Urgency — "Your account will be closed in 10 minutes unless you act now." Legitimate organisations do not use countdown pressure.
+
+  2. Lookalike domains — rebu1ld.ke (the digit 1 replacing the letter l) vs rebuild.ke. Check the sender address carefully.
+
+  3. Requests for passwords or OTPs — No legitimate bank, telco, or government agency will ask you to send your password or OTP via email or WhatsApp.
+
+  4. Unexpected attachments — A PDF or Word document you did not ask for, especially with a vague name like "salary_slip.pdf".
+
+  5. Generic greetings — "Dear Customer" instead of your name.
+
+  6. Mismatched links — The displayed URL says one thing but hovering shows a different destination.
+
+
+  The Nullers sent 40,000 phishing emails the morning of The Blackout. The messages pretended to be from the Kenya Power emergency maintenance team. Twelve people clicked. That was enough to give the attackers their initial foothold in the power grid control network.'
+briefing_sw: 'Udanganyifu wa phishing ndiyo njia kuu ya shambulio duniani kote — na ile iliyoanzisha Giza Kuu.
+
+
+  Ishara sita za phishing: (1) Haraka — "Akaunti yako itafungwa dakika 10." (2) Vikoa vinavyofanana — rebu1ld.ke badala ya rebuild.ke. (3) Maombi ya nywila au OTP. (4) Viambatisho visivyotarajiwa. (5) Salamu za jumla — "Mteja Mpendwa." (6) Viungo visivyolingana na maandishi.
+
+
+  Nullers walituma barua pepe 40,000 za udanganyifu siku ya Giza Kuu. Watu 12 walibonyeza. Hiyo ilikuwa ya kutosha.'
+estimated_minutes: 10
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship
+xp_total: 260
+exercises:
+- id: r000-32-q1
+  type: SCENARIO
+  prompt: 'You receive an SMS: "URGENT: Your Safaricom line will be permanently suspended in 15 minutes. Tap this link to verify your identity: safar1com-verify.link/ke". What should you do?'
+  options:
+  - id: a
+    text: Tap the link immediately to avoid losing your number
+  - id: b
+    text: Forward it to a friend to check if it is real
+  - id: c
+    text: Delete the SMS and verify your account status by dialling *100# or calling the official Safaricom line
+  - id: d
+    text: Reply with your ID number to prove your identity
+  correct_answer: c
+  hint: Urgency + suspicious domain = phishing. Always use official channels.
+  explanation: 'This SMS has multiple red flags: artificial urgency ("15 minutes"), a lookalike domain ("safar1com" with a digit 1), and a non-official link. Safaricom uses official shortcodes and never suspends lines via SMS link. Always verify through the official app or *100#.'
+  xp_reward: 60
+- id: r000-32-q2
+  type: FILL_BLANK
+  prompt: An attacker registers the domain "rebu1ld.ke" (using the digit 1 instead of the letter l) to trick Rebuilder Corps staff. This technique of creating domains that closely resemble legitimate ones is called domain ___.
+  correct_answer: spoofing
+  hint: The fake domain impersonates the real one visually.
+  explanation: Domain spoofing (also called typosquatting or lookalike domains) is the technique of registering domains that are visually similar to legitimate ones. Users who glance quickly at the URL may not notice the substitution of a digit for a letter.
+  xp_reward: 50
+- id: r000-32-q3
+  type: MULTIPLE_CHOICE
+  prompt: You receive a work email with an attachment called "Q3_Payroll_Final.xlsx" from your HR department. You were NOT expecting any payroll file today. What is the SAFEST action?
+  options:
+  - id: a
+    text: Open the file — it is probably a genuine HR document
+  - id: b
+    text: Open it only if your antivirus is running
+  - id: c
+    text: Contact HR through a separate trusted channel (phone or in-person) to confirm they sent it before opening
+  - id: d
+    text: Save it to your desktop and open it next week
+  correct_answer: c
+  hint: Verify unexpected attachments through a different channel.
+  explanation: Unexpected attachments are a classic phishing vector, especially when they reference high-interest topics like payroll. Verify with the claimed sender through a completely separate channel (a phone call, not a reply to the same email) before opening.
+  xp_reward: 50
+- id: r000-32-q4
+  type: MULTIPLE_CHOICE
+  prompt: Which of the following is a legitimate reason for a bank or mobile money provider to ask you for your PIN or OTP?
+  options:
+  - id: a
+    text: To verify your identity when you call their support line
+  - id: b
+    text: To process a transaction you initiated through their official app
+  - id: c
+    text: There is no legitimate reason — banks and telcos never ask for your PIN or OTP
+  - id: d
+    text: When they send you an SMS with a verification link
+  correct_answer: c
+  hint: If anyone asks for your PIN or OTP, it is a scam.
+  explanation: Legitimate financial institutions and telcos design their systems so that staff never need — and can never ask for — your PIN or OTP. These are your secrets alone. Any request for them, from any channel, is a social-engineering attack.
+  xp_reward: 50
+- id: r000-32-q5
+  type: MATCH_PAIRS
+  prompt: Match each phishing red flag to its correct explanation.
+  pairs:
+  - left:
+      id: urgency
+      text: Artificial urgency
+    right:
+      id: urgency-desc
+      text: Creates panic to prevent careful thinking
+  - left:
+      id: lookalike
+      text: Lookalike domain
+    right:
+      id: lookalike-desc
+      text: Visually similar address designed to deceive
+  - left:
+      id: otp-request
+      text: OTP request
+    right:
+      id: otp-desc
+      text: No legitimate provider ever asks for this
+  - left:
+      id: generic
+      text: Generic greeting
+    right:
+      id: generic-desc
+      text: Shows attacker does not know your real name
+  correct_answer:
+  - urgency=urgency-desc
+  - lookalike=lookalike-desc
+  - otp-request=otp-desc
+  - generic=generic-desc
+  hint: Match the warning sign to why it is suspicious.
+  explanation: 'Each red flag exploits a different human weakness: urgency bypasses rational thought, lookalike domains exploit visual inattention, OTP requests exploit trust in authority, and generic greetings indicate mass targeting.'
+  xp_reward: 50

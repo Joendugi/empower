@@ -1,0 +1,107 @@
+id: cyber-sy0701-d3-w2
+course_id: secplus-architecture
+title: Week 2 — Cloud, virtualisation, and shared responsibility
+title_sw: Wiki 2 — Wingu, virtualisation, na majukumu
+briefing: 'Cloud models: IaaS, PaaS, SaaS, public/private/hybrid/community. Shared responsibility: the vendor secures the cloud; you secure what you put in it. SaaS mail: you still configure MFA and DLP. IaaS VM: you patch the guest OS. Misreading this is a classic fail. Kenya Data Protection Act still applies to student data in EU or US regions — know where the data sits and the contract.
+
+
+  Virtualisation risks: VM escape, snapshot sprawl (sensitive memory on a datastore), stale templates with old patches, and management-plane exposure (vCenter/Hyper-V on the student LAN). Containers share a kernel — isolation is weaker than separate VMs. Serverless still has IAM keys. Infrastructure as code without secrets scanning leaks keys into Git.
+
+
+  Controls: cloud security groups as firewalls, private endpoints, customer-managed keys, CASB, and least-privilege IAM. Disable public S3-style buckets. Turn on provider logging (CloudTrail-like) and send it somewhere you actually watch.
+
+
+  Campus example: Microsoft 365 is SaaS; a rented VPS for Moodle is IaaS. MFA on 365 is your job. Unpatched Moodle is your job.'
+briefing_sw: IaaS, PaaS, SaaS. Muuzaji hulinda wingu; wewe hulinda data na usanidi. MFA ni kazi yako. VM escape, snapshot, IAM. Usiachie ndoo ya umma. DPA bado inatumika.
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 3 — Security Architecture (18%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d3-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Under SaaS, the customer is usually still responsible for:'
+  options:
+  - id: a
+    text: Physical datacenter cameras
+  - id: b
+    text: Identity, access, data classification, and how users behave
+  - id: c
+    text: Replacing failed disks in the provider’s rack
+  - id: d
+    text: The hypervisor source code
+  correct_answer: b
+  hint: Shared responsibility.
+  explanation: Providers do not click MFA for your HODs.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A public object-storage bucket with student IDs is:'
+  options:
+  - id: a
+    text: A good CDN trick
+  - id: b
+    text: An architecture and DPA failure — close public access and review keys
+  - id: c
+    text: Required for OCSP
+  - id: d
+    text: A salt
+  correct_answer: b
+  hint: Misconfiguration.
+  explanation: Cloud misconfig is a Domain 2 vulnerability implemented in Domain 3.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'VM snapshots may be a risk because they can contain:'
+  options:
+  - id: a
+    text: Only wallpapers
+  - id: b
+    text: Memory and disk secrets that are not wiped when you “delete” a VM casually
+  - id: c
+    text: Bollards
+  - id: d
+    text: HDMI EDID only
+  correct_answer: b
+  hint: Sprawl.
+  explanation: Treat snapshot stores as sensitive as backups.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'IaaS differs from SaaS in that IaaS:'
+  options:
+  - id: a
+    text: Removes all customer patching
+  - id: b
+    text: Lets you run VMs/networks you must harden yourself
+  - id: c
+    text: Is illegal in Kenya
+  - id: d
+    text: Is only honeypots
+  correct_answer: b
+  hint: You get infrastructure.
+  explanation: PaaS is in the middle (runtime). SaaS is the finished app.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w2-fb1
+  type: FILL_BLANK
+  prompt: The cloud service model where you rent virtual machines and networks is ___.
+  correct_answer: IaaS
+  hint: Infrastructure as a Service.
+  explanation: IaaS / PaaS / SaaS is required vocabulary.
+  xp_reward: 50
+- id: cyber-sy0701-d3-w2-scenario
+  type: SCENARIO
+  prompt: Moodle on a VPS was left with port 22 open to 0.0.0.0/0 and password SSH. Whose responsibility?
+  options:
+  - id: a
+    text: Only the cloud vendor — they sold IaaS
+  - id: b
+    text: 'Yours: harden the guest, keys/MFA, security group restrict SSH, patch'
+  - id: c
+    text: Students
+  - id: d
+    text: CompTIA
+  correct_answer: b
+  hint: IaaS customer.
+  explanation: Shared responsibility is the exam answer and the operational truth.
+  xp_reward: 60

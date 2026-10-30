@@ -1,0 +1,108 @@
+id: tvet-net-w3
+course_id: computer-networks
+title: Week 3 — Device configuration, LAN types, and network testing
+title_sw: Wiki 3 — Usanidi wa vifaa, LAN, na majaribio
+briefing: 'Perform Computer Networking (300 hours) learning outcomes continue: identify types (LAN, WAN, PAN, MAN), topologies (star, ring, mesh, hybrid, point-to-point), then connect, configure, build a LAN, and test. Devices: hub versus switch versus router, ports, media (copper, fibre, wireless), NICs, gateways. Hubs collide; switches forward by MAC; routers by IP.
+
+
+  Configuration: management IP on a switch, default gateway, DNS, DHCP pool, and wireless SSID/security (WPA2/WPA3, not open lab SSIDs with the password on the blackboard forever). Ethernet and the TCP/IP suite. Document the architecture: which VLAN is staff, which is students, where NAT happens. College LANs usually star out from a core switch — do not invent a ring because it looks exam-fancy if the site is a star.
+
+
+  Testing tools in the curriculum: cable tester, tone/signal tester, clamp meter and voltmeter when you suspect PoE or power issues, plus `ping`, `ipconfig`/`ip`, `tracert`. Write a test plan: what will be tested, expected result, instruments. A link light is not a test report. Split pairs pass some cheap testers and fail under load — use a proper wiremap.
+
+
+  Safety: antistatic, no copper punch-downs on live PoE without knowing the kit, fibre eye safety. Resources: crimp tools, RJ45, punch-down, labelled patch panel. Portfolio: drawing, IP plan, test results. That is 300 hours evidenced, not one successful ping of localhost.'
+briefing_sw: LAN/WAN/PAN, star/mesh. Switch ni MAC; router ni IP. DHCP, gateway, WPA2/WPA3. Cable tester, ping, traceroute. Andika mpango wa majaribio. Usitumie nenosiri la Wi-Fi ubaoni milele.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/1/5
+exam_domain: CDACC ICT L5 — Perform Computer Networking (IT/CU/ICT/CR/1/5, 300 h)
+xp_total: 310
+exercises:
+- id: tvet-net-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A switch primarily forwards frames using:'
+  options:
+  - id: a
+    text: IP addresses only
+  - id: b
+    text: MAC addresses in the CAM/MAC table
+  - id: c
+    text: Ohm’s law
+  - id: d
+    text: Postal codes
+  correct_answer: b
+  hint: Layer 2.
+  explanation: Routers use IP. Hubs flood everything.
+  xp_reward: 50
+- id: tvet-net-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: Which topology is most common for a college computer lab LAN?
+  options:
+  - id: a
+    text: Star (or extended star) on switches
+  - id: b
+    text: A token ring because the exam sheet showed one in 1985
+  - id: c
+    text: Mesh of every PC to every PC with fibre
+  - id: d
+    text: Point-to-point RS-232 only
+  correct_answer: a
+  hint: Practical labs.
+  explanation: You must still be able to define ring and mesh for the paper.
+  xp_reward: 50
+- id: tvet-net-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A cable tester that only checks continuity may miss:'
+  options:
+  - id: a
+    text: Split pairs and NEXT problems
+  - id: b
+    text: Whether the PC is on
+  - id: c
+    text: The SSID name
+  - id: d
+    text: The CDACC unit code
+  correct_answer: a
+  hint: Wiremap quality.
+  explanation: T568A/B consistency both ends is part of connecting devices.
+  xp_reward: 50
+- id: tvet-net-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'APIPA 169.254.x.x on a lab PC usually means:'
+  options:
+  - id: a
+    text: Successful DHCP
+  - id: b
+    text: DHCP failed and the client self-assigned
+  - id: c
+    text: A public Google IP
+  - id: d
+    text: Fibre is up
+  correct_answer: b
+  hint: You already met this in networks 2 — now it is in the test plan.
+  explanation: 'Test: ping gateway. If APIPA, check cable, VLAN, DHCP pool exhaustion.'
+  xp_reward: 50
+- id: tvet-net-w3-fb1
+  type: FILL_BLANK
+  prompt: The protocol suite used on almost all modern LANs and the internet is ___.
+  correct_answer: TCP/IP
+  hint: Not IPX.
+  explanation: Ethernet at layer 2, TCP/IP above. CDACC lists both.
+  xp_reward: 50
+- id: tvet-net-w3-scenario
+  type: SCENARIO
+  prompt: 'New VLAN for guests: they receive IPs but cannot reach the internet. Staff VLAN is fine. Best first theory?'
+  options:
+  - id: a
+    text: Replace every NIC in the college
+  - id: b
+    text: Check guest VLAN SVI/gateway, ACL/firewall, NAT, and DNS — routing/policy, not cabling of staff
+  - id: c
+    text: Install Microsoft Access
+  - id: d
+    text: Change all PCs to ring topology
+  correct_answer: b
+  hint: Configure then test.
+  explanation: 'A test plan isolates: L2 connectivity works (DHCP), L3/policy fails. That is the unit.'
+  xp_reward: 60

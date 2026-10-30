@@ -1,0 +1,107 @@
+id: cyber-sy0701-d1-w3
+course_id: secplus-concepts
+title: Week 3 — Cryptography, PKI, and when to use which control
+title_sw: Wiki 3 — Kriptografia na PKI
+briefing: 'Objective 1.4: appropriate cryptographic solutions. Symmetric (same key, fast, AES) versus asymmetric (key pair, RSA/ECC, for exchange and signatures). Key exchange (Diffie–Hellman and modern variants) lets you agree a session key. Hashing is one-way integrity (SHA-256); salting defends password files; stretching (PBKDF2, bcrypt, scrypt, Argon2) slows guessing. Digital signatures need hashing plus the sender’s private key. Encryption levels: full disk, partition, file, volume, database, record, and transport (TLS).
+
+
+  PKI: public/private keys, CAs, root of trust, CSR, certificates, wildcards, self-signed versus public CA, CRL and OCSP for revocation, key escrow. Tools: TPM (on the motherboard), HSM (appliance), KMS, secure enclave. Obfuscation is not encryption: steganography, tokenization, masking. Blockchain/open ledgers appear as integrity/timestamp use cases — not a substitute for access control on the MIS.
+
+
+  Kenyan practice: HTTPS on student portals, disk encryption on laptops that leave campus, signed mail for finance, and M-Pesa PIN never stored as unsalted MD5. Self-signed certs on public portals train users to click through warnings — that is a program-management failure as well as crypto misuse.
+
+
+  Exam trap: hashing is not encryption; you cannot decrypt a hash. Confidentiality of a file in transit is TLS or a file cipher, not SHA. Integrity of a download is a published hash or a signature.'
+briefing_sw: AES ni symmetric; RSA/ECC ni asymmetric. Hash ni one-way; salt na stretching kwa nywila. TLS ni usafiri. CA, CSR, CRL/OCSP. TPM/HSM. Hash si encryption.
+estimated_minutes: 35
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ SY0-701 Domain 1 — General Security Concepts (12%)
+xp_total: 310
+exercises:
+- id: cyber-sy0701-d1-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: Which provides confidentiality for a file sitting on a stolen laptop?
+  options:
+  - id: a
+    text: A SHA-256 hash of the file name
+  - id: b
+    text: Full-disk or volume encryption with a strong key
+  - id: c
+    text: A honeytoken
+  - id: d
+    text: Open SSID
+  correct_answer: b
+  hint: 'Encryption level: full disk.'
+  explanation: Hashes detect change; they do not hide contents.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'OCSP is used to:'
+  options:
+  - id: a
+    text: Encrypt RAM
+  - id: b
+    text: Check whether a certificate has been revoked, online
+  - id: c
+    text: Replace AES
+  - id: d
+    text: Assign IPv6
+  correct_answer: b
+  hint: Revocation.
+  explanation: CRL is a list; OCSP is a live query. Both are PKI.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A salt in a password database:'
+  options:
+  - id: a
+    text: Makes two identical passwords hash differently and slows precomputed tables
+  - id: b
+    text: Decrypts AES
+  - id: c
+    text: Is a type of firewall
+  - id: d
+    text: Replaces MFA
+  correct_answer: a
+  hint: Store unique salts per user.
+  explanation: Stretching adds CPU cost. MFA is a second factor — still use it.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A TPM is typically:'
+  options:
+  - id: a
+    text: A cloud invoice
+  - id: b
+    text: A hardware chip bound to the device for keys/secure boot
+  - id: c
+    text: A student password
+  - id: d
+    text: A topology
+  correct_answer: b
+  hint: Hardware root.
+  explanation: HSM is a dedicated module/appliance; TPM is onboard.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w3-fb1
+  type: FILL_BLANK
+  prompt: The request a system sends to a CA to obtain a certificate is a ___.
+  correct_answer: CSR
+  hint: Certificate signing request.
+  explanation: You generate a key pair, send the CSR, receive the cert. Protect the private key.
+  xp_reward: 50
+- id: cyber-sy0701-d1-w3-scenario
+  type: SCENARIO
+  prompt: Portal uses HTTP and stores PINs as unsalted MD5. Which Domain 1 fixes are appropriate?
+  options:
+  - id: a
+    text: Add a CCTV only
+  - id: b
+    text: TLS in transit; modern salted stretched hashes (or a proper secret store); never MD5 for PINs
+  - id: c
+    text: Self-signed cert and tell users to ignore warnings forever
+  - id: d
+    text: Disable hashing because it is slow
+  correct_answer: b
+  hint: Transport plus stored secrets.
+  explanation: Wrong crypto is worse than no theatre. This is “appropriate cryptographic solutions”.
+  xp_reward: 60

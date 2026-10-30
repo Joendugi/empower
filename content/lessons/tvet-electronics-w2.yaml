@@ -1,0 +1,108 @@
+id: tvet-electronics-w2
+course_id: basic-electronics
+title: Week 2 — Components, semiconductors, and the P–N junction
+title_sw: Wiki 2 — Vipengele, semiconductor, na P–N junction
+briefing: 'Identify passive and active parts by symbol and body: resistor (colour code or printed value), capacitor (polar electrolytic vs non-polar ceramic), inductor, diode, LED, and transistor. Integrated circuits pack many junctions in one package. The colour code is still assessed: first bands are significant digits, then multiplier, then tolerance. A burnt resistor is often a symptom — find why current was high before you replace it.
+
+
+  Semiconductor theory: silicon (and historically germanium) atoms share electrons in a crystal. Doping with impurities creates N-type (extra electrons) and P-type (holes). A P–N junction diode conducts when forward biased (P more positive than N, about 0.7 V for silicon) and blocks when reverse biased until breakdown. That is why a PSU diode oriented backwards does nothing useful, and why you must check polarity on electrolytics and LEDs.
+
+
+  Bipolar transistors are NPN or PNP sandwiches. They act as switches or amplifiers: a small base current controls a larger collector current. In ICT repair you meet them as regulators, MOSFET switches on motherboards, and optocouplers. You do not need to design an RF amp, but you must know “open diode” versus “shorted MOSFET” on a meter in diode mode.
+
+
+  ESD still applies: MOS inputs are fragile. Use the wrist strap from the safety unit. Store MOSFETs in foam. Assessors may ask you to identify a diode band (cathode) and to state forward voltage. Wrong polarity on a replacement rectifier is a classic fail.'
+briefing_sw: Resistor, capacitor, diode, transistor, IC. Silicon ina P-type na N-type. Diode inapitisha mbele (~0.7 V) na kuzuia nyuma. Transistor ni swichi au amplifier. Band ya diode ni cathode. Polar electrolytic ina polarity.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CC/1/5
+exam_domain: CDACC ICT L5 — Demonstrate Basic Electronics (IT/CU/ICT/CC/1/5, 100 h)
+xp_total: 310
+exercises:
+- id: tvet-electronics-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'A silicon diode is forward biased when:'
+  options:
+  - id: a
+    text: The N-side is more positive than the P-side
+  - id: b
+    text: The P-side is more positive than the N-side, around 0.7 V drop
+  - id: c
+    text: Both sides are at 0 V
+  - id: d
+    text: It is an inductor
+  correct_answer: b
+  hint: P to N, conventional current.
+  explanation: Forward bias lets current flow. Reverse bias blocks until breakdown.
+  xp_reward: 50
+- id: tvet-electronics-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: Which component stores energy in an electric field and is often polarised?
+  options:
+  - id: a
+    text: Carbon resistor
+  - id: b
+    text: Electrolytic capacitor
+  - id: c
+    text: Fuse only
+  - id: d
+    text: RJ45 jack
+  correct_answer: b
+  hint: Stripe or minus mark.
+  explanation: Reverse an electrolytic and it can vent. Ceramics are usually non-polar.
+  xp_reward: 50
+- id: tvet-electronics-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'N-type semiconductor is created by doping that provides extra:'
+  options:
+  - id: a
+    text: Holes only
+  - id: b
+    text: Free electrons
+  - id: c
+    text: Photons
+  - id: d
+    text: Neutrons as current
+  correct_answer: b
+  hint: Negative carriers.
+  explanation: P-type has holes. N-type has electrons. That is the CDACC oral.
+  xp_reward: 50
+- id: tvet-electronics-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Diode mode on a meter across a good silicon diode typically shows:'
+  options:
+  - id: a
+    text: About 0.5–0.8 V one way and open the other way
+  - id: b
+    text: 0 Ω both ways
+  - id: c
+    text: OL both ways always if it is good
+  - id: d
+    text: Exactly 5 V
+  correct_answer: a
+  hint: One way conducts.
+  explanation: Short both ways = dead. Open both ways = open diode (except some LEDs needing more voltage).
+  xp_reward: 50
+- id: tvet-electronics-w2-fb1
+  type: FILL_BLANK
+  prompt: The marked end of a through-hole diode is usually the ___.
+  correct_answer: cathode
+  hint: Band / stripe.
+  explanation: Current in conventional notation enters the anode and leaves the cathode when forward biased.
+  xp_reward: 50
+- id: tvet-electronics-w2-scenario
+  type: SCENARIO
+  prompt: A replacement 7805 regulator runs scalding and the 5 V rail is 1.2 V. First electronics check?
+  options:
+  - id: a
+    text: Increase the wall voltage
+  - id: b
+    text: Look for a shorted load or reversed polar capacitor on the 5 V rail, then confirm the regulator orientation
+  - id: c
+    text: Replace the CPU first
+  - id: d
+    text: Ignore heat — regulators should glow
+  correct_answer: b
+  hint: Heat plus low rail = too much current or wrong part.
+  explanation: A shorted tantalum or backwards electrolytic will cook a regulator. Find the short.
+  xp_reward: 60

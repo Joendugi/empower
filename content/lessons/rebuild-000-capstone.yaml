@@ -1,0 +1,227 @@
+id: rebuild-000-capstone
+course_id: the-rebuild-protocol
+title: The Initiate Assessment
+title_sw: Tathmini ya Mwanajeshi Mpya
+briefing: 'MISSION BRIEFING: This is your final evaluation before the Corps certifies you as a Rebuilder Initiate. Answer 15 questions drawn from all four units. Score 70% or above to earn your badge and unlock the full Civilization Map.
+
+
+  The Corps believes in honest assessment. If you score below 70%, you will receive a personalised report showing which units to revisit — and you can retake the assessment immediately. There is no penalty for retaking. Knowledge, not speed, is the mission.'
+briefing_sw: 'MISSION BRIEFING: Hii ni tathmini yako ya mwisho. Jibu maswali 15 kutoka vitengo vyote vinne. Pata 70% au zaidi ili kupata beji ya Mwanajeshi Mpya na kufungua Ramani ya Ustaarabu yote.'
+estimated_minutes: 30
+license: CC-BY-SA-4.0
+exam_domain: Digital Citizenship · REBUILD-000 Capstone
+xp_total: 790
+exercises:
+- id: r000-cap-q1
+  type: MULTIPLE_CHOICE
+  prompt: Which of the five digital infrastructure layers is the foundation that all others depend on?
+  options:
+  - id: a
+    text: Communications
+  - id: b
+    text: Compute
+  - id: c
+    text: Power
+  - id: d
+    text: Applications
+  correct_answer: c
+  hint: Without this, nothing else runs.
+  explanation: Power (electricity) is the foundation. Without it, communications hardware, servers, databases, and applications all go offline.
+  xp_reward: 50
+- id: r000-cap-q2
+  type: FILL_BLANK
+  prompt: The 2021 Colonial Pipeline attack began with a single ___ credential found in a previous data breach.
+  correct_answer: leaked
+  hint: It was not a sophisticated zero-day — just an old password.
+  explanation: One recycled password gave attackers access to the pipeline network. This demonstrates why unique passwords and credential monitoring are non-negotiable.
+  xp_reward: 50
+- id: r000-cap-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'A zero-day vulnerability is dangerous primarily because:'
+  options:
+  - id: a
+    text: It requires physical access to exploit
+  - id: b
+    text: It is unknown to the vendor so no patch exists yet
+  - id: c
+    text: It only affects older operating systems
+  - id: d
+    text: It is too complex for most attackers to use
+  correct_answer: b
+  hint: The name hints at the timeline.
+  explanation: Zero-day means zero days since the vendor knew about it — no patch exists. Defenders must rely on containment and monitoring rather than patching.
+  xp_reward: 50
+- id: r000-cap-q4
+  type: MULTIPLE_CHOICE
+  prompt: An attacker has gained access to a network and installs a hidden process that connects to an external server every 30 minutes. Which attack phase does this represent?
+  options:
+  - id: a
+    text: Reconnaissance
+  - id: b
+    text: Initial Access
+  - id: c
+    text: Persistence
+  - id: d
+    text: Impact
+  correct_answer: c
+  hint: The attacker is ensuring they can return even if the entry point is closed.
+  explanation: Persistence involves backdoors, scheduled tasks, or modified startup services — so attackers retain control even after the original vulnerability is patched.
+  xp_reward: 50
+- id: r000-cap-q5
+  type: SCENARIO
+  prompt: Your security monitoring shows a user account that logged in at 02:00 from an unfamiliar country, accessed the HR database, and downloaded 500MB of files. The user has never worked night shifts. What is the most likely explanation and correct first response?
+  options:
+  - id: a
+    text: Routine backup — no action needed
+  - id: b
+    text: Compromised credentials — immediately disable the account, preserve logs, and notify the security team
+  - id: c
+    text: VPN anomaly — send the user an email asking about it
+  - id: d
+    text: Hardware failure — restart the database server
+  correct_answer: b
+  hint: Anomalous access + sensitive data + unusual hours = likely compromise.
+  explanation: Immediate containment (disable account) before investigation prevents further data exfiltration. Preserve logs for forensics — do not restart systems as this may destroy evidence.
+  xp_reward: 60
+- id: r000-cap-q6
+  type: MULTIPLE_CHOICE
+  prompt: You use the same strong 20-character password on 10 different websites. One website is breached. How many of your accounts are now at risk?
+  options:
+  - id: a
+    text: Only the breached website account
+  - id: b
+    text: 2 or 3 accounts
+  - id: c
+    text: All 10 accounts
+  - id: d
+    text: None — 20 characters is unbreakable
+  correct_answer: c
+  hint: Reuse means one breach = all breached.
+  explanation: Credential stuffing attacks try a breached password against every other service automatically. All 10 accounts sharing that password are immediately at risk — regardless of the password strength.
+  xp_reward: 50
+- id: r000-cap-q7
+  type: FILL_BLANK
+  prompt: An SMS message claiming to be from your bank asks you to "confirm your identity" by replying with your OTP. This is a ___ attack.
+  correct_answer: phishing
+  hint: It is trying to fish for your one-time code.
+  explanation: SMS phishing (smishing) tricks victims into handing over OTP codes in real time. Legitimate banks never request OTPs via SMS reply.
+  xp_reward: 50
+- id: r000-cap-q8
+  type: MULTIPLE_CHOICE
+  prompt: Which 2FA method is most resistant to SIM-swap attacks?
+  options:
+  - id: a
+    text: SMS one-time password
+  - id: b
+    text: Email one-time password
+  - id: c
+    text: Authenticator app (TOTP)
+  - id: d
+    text: Hardware security key (YubiKey)
+  correct_answer: d
+  hint: This method requires physical possession of a device — impossible to SIM-swap.
+  explanation: Hardware security keys use asymmetric cryptography and require physical presence. They are also phishing-resistant because they cryptographically verify the website domain before signing.
+  xp_reward: 50
+- id: r000-cap-q9
+  type: SCENARIO
+  prompt: A colleague receives an email from "kcb-secure@kcb-bank-alerts.co" asking them to click a link and verify their account to avoid suspension. The link goes to "secure-kcb.verify-now.net". What should they do?
+  options:
+  - id: a
+    text: Click the link — the email mentions KCB and looks official
+  - id: b
+    text: Do not click — report the email as phishing and verify directly via the official KCB app or published number
+  - id: c
+    text: Reply to the email asking for more information
+  - id: d
+    text: Forward it to friends to warn them before deleting
+  correct_answer: b
+  hint: Check the sender domain and the link domain — neither matches kcb.co.ke.
+  explanation: The sender domain (kcb-bank-alerts.co) and link domain (secure-kcb.verify-now.net) are lookalike domains. Report, do not click, verify through official channels only.
+  xp_reward: 60
+- id: r000-cap-q10
+  type: MULTIPLE_CHOICE
+  prompt: What does achieving the "Engineer" rank in the Rebuilder Corps indicate?
+  options:
+  - id: a
+    text: You have completed exactly 10 lessons
+  - id: b
+    text: You have earned 1,500 – 3,999 XP across multiple skill nodes
+  - id: c
+    text: You have passed a CompTIA exam
+  - id: d
+    text: An instructor has manually promoted you
+  correct_answer: b
+  hint: Ranks are XP-based, not lesson-count-based.
+  explanation: Engineer rank (1,500–3,999 XP) reflects meaningful depth across multiple skill areas. It is earned through consistent lesson completion and review sessions.
+  xp_reward: 50
+- id: r000-cap-q11
+  type: MULTIPLE_CHOICE
+  prompt: Why does CyberLearn use the FSRS-4.5 spaced repetition algorithm for review sessions?
+  options:
+  - id: a
+    text: It is the fastest algorithm available
+  - id: b
+    text: It schedules each review card at the optimal moment just before you would forget it, maximising retention per hour of study
+  - id: c
+    text: It randomly selects cards to keep learners surprised
+  - id: d
+    text: It focuses only on cards you have already mastered
+  correct_answer: b
+  hint: The algorithm watches your personal forgetting curve.
+  explanation: FSRS tracks stability, difficulty, and due date per learner per concept. By scheduling review at the moment of near-forgetting, it achieves the same retention as cramming with a fraction of the study time.
+  xp_reward: 50
+- id: r000-cap-q12
+  type: SCENARIO
+  prompt: Your security monitoring shows a threat actor conducting reconnaissance against Nairobi hospital networks — collecting staff email addresses from LinkedIn and the hospital website. Which defensive action is MOST effective at this stage?
+  options:
+  - id: a
+    text: Shut down all hospital websites immediately
+  - id: b
+    text: Remove staff names and roles from public websites, train staff to recognise spear-phishing, and enable 2FA on all email accounts
+  - id: c
+    text: Wait until an actual attack occurs before responding
+  - id: d
+    text: Change all passwords to the same strong password across all systems
+  correct_answer: b
+  hint: Reconnaissance is the first phase — you can make it harder and prepare for the likely next step (spear-phishing).
+  explanation: Reducing the reconnaissance yield, preparing staff for the expected phishing phase, and strengthening authentication are all high-impact, low-cost defences that directly counter the observed threat pattern.
+  xp_reward: 60
+- id: r000-cap-q13
+  type: FILL_BLANK
+  prompt: 'The four phases of a cyberattack in order are: Reconnaissance, Initial Access, ___, and Impact.'
+  correct_answer: Persistence
+  hint: The third phase ensures the attacker can return.
+  explanation: Persistence is when attackers install backdoors or create rogue admin accounts to maintain access — even after the initial vulnerability is patched.
+  xp_reward: 50
+- id: r000-cap-q14
+  type: MULTIPLE_CHOICE
+  prompt: Which of these is the STRONGEST password for a Rebuilder Corps system account?
+  options:
+  - id: a
+    text: Rebuild2031!
+  - id: b
+    text: P@$$w0rd99
+  - id: c
+    text: Corps-Maize-Satellite-Thunder-2031
+  - id: d
+    text: qwerty12345678
+  correct_answer: c
+  hint: Length from random words beats short complexity.
+  explanation: '"Corps-Maize-Satellite-Thunder-2031" is 36 characters using random words. Even at a trillion guesses per second, it would take astronomically longer to crack than any short complex password.'
+  xp_reward: 50
+- id: r000-cap-q15
+  type: SCENARIO
+  prompt: You are assigned to secure a newly restored community health clinic network with shared passwords, no 2FA, unpatched router from 2019, and staff using personal phones for work email. Rank the actions by PRIORITY (first action first).
+  options:
+  - id: a
+    text: Update router firmware → enforce unique passwords → enable 2FA on email → establish BYOD policy
+  - id: b
+    text: Establish BYOD policy → update router firmware → enable 2FA → enforce unique passwords
+  - id: c
+    text: Enable 2FA on email → enforce unique passwords → update router firmware → establish BYOD policy
+  - id: d
+    text: All actions have equal priority and should be done simultaneously
+  correct_answer: a
+  hint: Fix the perimeter first, then authentication, then policy.
+  explanation: An unpatched 2019 router has known critical vulnerabilities — it is the biggest external exposure. Unique passwords prevent credential stuffing. 2FA stops attackers who obtain a password. BYOD policy governance takes longest to enforce and comes last.
+  xp_reward: 60

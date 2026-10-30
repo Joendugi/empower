@@ -1,0 +1,89 @@
+id: osi-model-2
+course_id: network-fundamentals
+title: Ports, firewalls, and isolating by layer
+title_sw: Ports, firewall, na kutenganisha kwa tabaka
+briefing: 'Layer 4 is where ports live. 22 SSH, 53 DNS, 80 HTTP, 443 HTTPS, 25/587 mail — you should recognise these in logs. A firewall that blocks 443 will look like “the internet is down” in a browser while ping still works. That is why ping is a poor only-test.
+
+
+  TCP three-way handshake (SYN, SYN-ACK, ACK) vs UDP’s fire-and-forget explains why some VPNs and voice apps behave differently on bad links. RST means a refusal; timeout means filter or drop.
+
+
+  Troubleshooting map: cable/Wi-Fi (L1–2), IP/gateway (L3), port/firewall (L4), then the app (L7). Jumping to reinstall Windows because a website fails is skipping the map.
+
+
+  Security: a firewall is not optional decoration. Default deny inbound on a campus edge is normal. Opening RDP (3389) to the world is how ransomware arrives.'
+briefing_sw: 'Port 443 ni HTTPS. Ping unaweza kufanya kazi wakati wavuti imezuiwa. Fuata tabaka: kebo, IP, port, programu. Usifungue RDP kwa dunia.'
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+cdacc_unit_id: CU/ICT/CS/CR/01/6
+exam_domain: CompTIA Security+ · Network+
+xp_total: 210
+exercises:
+- id: osi2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'HTTPS commonly uses TCP port:'
+  options:
+  - id: a
+    text: '22'
+  - id: b
+    text: '23'
+  - id: c
+    text: '443'
+  - id: d
+    text: '3389'
+  correct_answer: c
+  hint: Web encryption.
+  explanation: 80 is HTTP; 443 is HTTPS. 3389 is RDP — a favourite attack surface.
+  xp_reward: 50
+- id: osi2-q2
+  type: FILL_BLANK
+  prompt: The first packet of a TCP handshake is a ___ packet.
+  correct_answer: SYN
+  hint: Synchronize.
+  explanation: SYN, SYN-ACK, ACK.
+  xp_reward: 50
+- id: osi2-q3
+  type: MATCH_PAIRS
+  prompt: Match the symptom to the likely layer to inspect first.
+  pairs:
+  - left:
+      id: nolink
+      text: No link light
+    right:
+      id: l1
+      text: Physical / cable / NIC
+  - left:
+      id: nopinggw
+      text: Cannot ping gateway
+    right:
+      id: l3
+      text: IP addressing / VLAN / L3
+  - left:
+      id: pingok
+      text: Ping IP works, website fails
+    right:
+      id: l47
+      text: DNS, port, or application
+  correct_answer:
+  - nolink=l1
+  - nopinggw=l3
+  - pingok=l47
+  hint: Do not skip layers.
+  explanation: This is the practical use of OSI, not reciting pizza mnemonics only.
+  xp_reward: 50
+- id: osi2-q4
+  type: SCENARIO
+  prompt: 'A principal wants RDP on a staff PC forwarded from the college public IP “for working from home”. You should:'
+  options:
+  - id: a
+    text: Do it with no password
+  - id: b
+    text: Refuse naked RDP-to-world; propose VPN or another approved remote method
+  - id: c
+    text: Use port 80 for RDP to hide it
+  - id: d
+    text: Post the IP on the noticeboard
+  correct_answer: b
+  hint: Exposed RDP.
+  explanation: Security architecture is part of networking now.
+  xp_reward: 60

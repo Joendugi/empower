@@ -266,3 +266,11 @@ def test_coverage_report_shows_gap_units() -> None:
     uncovered_ids = {u.unit_id for u in uncovered}
     assert "CU/ICT/CS/EL/01/5" in uncovered_ids  # Cloud security — no lesson yet
     assert "CU/ICT/CS/EL/03/6" in uncovered_ids  # DFIR — no lesson yet
+
+
+def test_cdacc_unit_id_accepts_sector_prefix() -> None:
+    from src.cdacc_database import CDACC_UNIT_REGEX
+
+    assert CDACC_UNIT_REGEX.match("IT/CU/ICT/CR/4/5")
+    assert CDACC_UNIT_REGEX.match("CU/ICT/CS/CR/01/6")
+    assert not CDACC_UNIT_REGEX.match("IT/CU/ICT/CR/444/5")

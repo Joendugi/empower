@@ -18,6 +18,7 @@ Reference:
   KNQA Levels:  1–8  (1=Elementary, 3=Certificate, 5=Diploma, 6=Advanced Diploma, 8=PhD equivalent)
 """
 
+import re
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -345,6 +346,10 @@ class CDACCAlignmentResult:
         return len(self.errors) == 0
 
 
+# CU/ICT/CS/CR/01/6, or with the sector prefix the CDACC ICT curriculum prints: IT/CU/ICT/CR/4/5.
+CDACC_UNIT_REGEX = re.compile(r"^([A-Z]{2,4}/)?(CU|[A-Z]{2,4}/OS)/[A-Z]{2,4}(/[A-Z]{2,4})?/[A-Z]{2,4}/\d{1,2}/\d$")
+
+
 def validate_cdacc_alignment(lesson_id: str, cdacc_unit_id: Optional[str]) -> CDACCAlignmentResult:
     """
     Validate that a CyberLearn lesson's declared CDACC unit ID is:
@@ -352,8 +357,6 @@ def validate_cdacc_alignment(lesson_id: str, cdacc_unit_id: Optional[str]) -> CD
       2. Registered in the CDACC unit database.
       3. Consistent — the unit references the lesson in its suggested_cyberlearn_lessons.
     """
-    import re
-    CDACC_UNIT_REGEX = re.compile(r"^(CU|[A-Z]{2,4}/OS)/[A-Z]{2,4}(/[A-Z]{2,4})?/[A-Z]{2,4}/\d{2}/\d$")
 
     if not cdacc_unit_id:
         return CDACCAlignmentResult(
@@ -368,7 +371,7 @@ def validate_cdacc_alignment(lesson_id: str, cdacc_unit_id: Optional[str]) -> CD
     # Format check
     if not CDACC_UNIT_REGEX.match(cdacc_unit_id):
         result.errors.append(
-            f"CDACC unit ID '{cdacc_unit_id}' does not match standard format CU/<SECTOR>[/<SUB>]/<TYPE>/<NN>/<L>"
+            f"CDACC unit ID '{cdacc_unit_id}' does not match standard format [<SECTOR>/]CU/<SECTOR>[/<SUB>]/<TYPE>/<NN>/<L>"
         )
         return result
 

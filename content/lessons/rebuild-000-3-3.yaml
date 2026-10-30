@@ -1,0 +1,103 @@
+id: rebuild-000-3-3
+course_id: the-rebuild-protocol
+title: Software Updates & Patch Culture
+title_sw: Maboresho ya Programu na Utamaduni wa Kupachika Viraka
+briefing: 'MISSION BRIEFING: Attackers rarely invent brand-new zero-day exploits. The overwhelming majority of real-world breaches exploit known vulnerabilities that vendors had already patched months earlier. Your mission is to master patch management.
+
+
+  When security researchers or software engineers discover a bug in an operating system, app, or router firmware, the vendor creates a "patch" (software update) and assigns it a CVE identifier (Common Vulnerabilities and Exposures, e.g. CVE-2024-38077). Once a patch is announced publicly, malicious actors reverse-engineer the fix and unleash automated scanner bots across the internet, looking for any unpatched device.
+
+
+  If your phone, Wi-Fi router, or server has not installed the update, you become an effortless target. Developing a "patch culture" means:
+
+  1. Enabling automatic updates on your mobile operating system and browser.
+
+  2. Regularly rebooting devices so updates take effect.
+
+  3. Updating firmware on Wi-Fi routers and security cameras, not just phones.
+
+  4. Retiring software that is no longer supported with security updates (End-of-Life).'
+briefing_sw: 'MISSION BRIEFING: Wavamizi wengi hutumia udhaifu unaojulikana ambao viraka vyake tayari vimetolewa. Jifunze umuhimu wa kufanya sasisho za programu mara kwa mara.
+
+
+  Kuweka sasisho kiotomatiki kwenye simu, kompyuta, na vipanga njia vya Wi-Fi (routers) huzuia mashambulizi mengi mtandaoni.'
+estimated_minutes: 10
+license: CC-BY-SA-4.0
+exam_domain: CompTIA Security+ 2.0 · Digital Citizenship
+xp_total: 210
+exercises:
+- id: r000-33-q1
+  type: MULTIPLE_CHOICE
+  prompt: What is a "CVE" in the context of cybersecurity updates?
+  options:
+  - id: a
+    text: Central Video Encoder
+  - id: b
+    text: Common Vulnerabilities and Exposures — a standardized identifier for known security flaws
+  - id: c
+    text: Certified Virtual Ethernet connection
+  - id: d
+    text: Computer Virus Elimination software
+  correct_answer: b
+  hint: It is the public dictionary of known security vulnerabilities.
+  explanation: CVE (Common Vulnerabilities and Exposures) gives every security flaw a unique number (e.g. CVE-2023-34362) so defenders, vendors, and researchers can track and fix it systematically.
+  xp_reward: 50
+- id: r000-33-match
+  type: MATCH_PAIRS
+  prompt: Match each vulnerability lifecycle term to its explanation.
+  pairs:
+  - left:
+      id: zeroday
+      text: Zero-Day Vulnerability
+    right:
+      id: exp-zeroday
+      text: A flaw unknown to the vendor with no public patch available yet
+  - left:
+      id: patch
+      text: Security Patch / Update
+    right:
+      id: exp-patch
+      text: Code released by the vendor to repair a specific software flaw
+  - left:
+      id: eol
+      text: End-of-Life (EOL) Software
+    right:
+      id: exp-eol
+      text: Software no longer supported or patched by the developer
+  - left:
+      id: scanner
+      text: Vulnerability Scanner
+    right:
+      id: exp-scanner
+      text: Automated tool that scans networks to find unpatched software
+  correct_answer:
+  - zeroday=exp-zeroday
+  - patch=exp-patch
+  - eol=exp-eol
+  - scanner=exp-scanner
+  hint: Match each concept with its role in the security lifecycle.
+  explanation: Software progresses from zero-day to patched, and eventually to end-of-life where it must be replaced.
+  xp_reward: 50
+- id: r000-33-q3
+  type: FILL_BLANK
+  prompt: Network equipment like Wi-Fi routers run embedded software called ___ that must be updated periodically to patch remote exploitation vulnerabilities.
+  correct_answer: firmware
+  hint: The permanent software programmed into read-only memory on hardware devices.
+  explanation: Router firmware is frequently overlooked by users, leaving internet-facing gateways vulnerable to botnets and DNS tampering.
+  xp_reward: 50
+- id: r000-33-q4
+  type: SCENARIO
+  prompt: 'Your work computer prompts you: "A critical security update has been downloaded. Restart to complete installation." You are in the middle of writing a non-urgent report. What is the best practice?'
+  options:
+  - id: a
+    text: Click "Remind me in 30 days" and keep working
+  - id: b
+    text: Save your document and restart the computer immediately to apply the patch
+  - id: c
+    text: Disable all future update notifications in settings
+  - id: d
+    text: Turn off the computer and switch to a smartphone
+  correct_answer: b
+  hint: Patches only take effect after a reboot.
+  explanation: Delaying patches leaves the system vulnerable to active exploit bots. Saving your work and performing a 2-minute restart immediately closes known attack vectors.
+  xp_reward: 60

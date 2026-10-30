@@ -1,0 +1,108 @@
+id: tvet-database-w3
+course_id: database-systems
+title: Week 3 — SQL objects, queries, testing, and printables
+title_sw: Wiki 3 — SQL, maswali, majaribio, na print
+briefing: 'Objects: tables, queries/views, forms, reports, indexes, and users. CREATE TABLE with types and keys. INSERT, UPDATE, DELETE, SELECT with WHERE, JOIN, GROUP BY. Access uses QBE grids; MySQL uses the mysql client or Workbench. Parameter queries avoid concatenating user text — that links to the SQL injection lesson in cybersecurity.
+
+
+  Testing: integration (forms write to the right tables), query testing (known input, expected row counts), and referential tests (orphan insert must fail). Generate a test report. Sample data should include the awkward cases: two students with similar names, a unit with zero enrolments, a deleted draft.
+
+
+  Printing: the unit still lists print of tables, queries, reports, and forms. In a modern MIS you export PDF, but for CDACC practicals you produce a readable report with headings, date, and filters (e.g. “failed students in ICT L5 2026”). Page setup, not a screenshot of datasheet chaos.
+
+
+  Security: least-privilege accounts, hashed passwords if you ever store them (you should not store PINs in plaintext), and backups (mysqldump / Access compact and repair plus file copy). A database without a restore test is a rumour.'
+briefing_sw: CREATE TABLE, INSERT, SELECT JOIN. Forms na reports. Jaribu orphan INSERT ishindwe. Chapisha ripoti yenye kichwa na tarehe. Backup na least privilege. Usiunganishe SQL na maandishi ya mtumiaji.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/4/5
+exam_domain: CDACC ICT L5 — Manage Database System (IT/CU/ICT/CR/4/5, 310 h)
+xp_total: 310
+exercises:
+- id: tvet-database-w3-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'SELECT students who scored below 40 in a unit is best done with:'
+  options:
+  - id: a
+    text: Deleting the table
+  - id: b
+    text: SELECT … FROM enrolment JOIN student WHERE grade < 40
+  - id: c
+    text: Printing the ER only
+  - id: d
+    text: Ohm’s law
+  correct_answer: b
+  hint: Query objects.
+  explanation: Filtering is a query, not a new database.
+  xp_reward: 50
+- id: tvet-database-w3-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'A form in Access/MySQL app stacks is for:'
+  options:
+  - id: a
+    text: Controlled data entry onto tables
+  - id: b
+    text: Replacing the DBMS
+  - id: c
+    text: BIOS setup
+  - id: d
+    text: Crimping
+  correct_answer: a
+  hint: Object list.
+  explanation: Forms, tables, queries, reports are the teaching object set.
+  xp_reward: 50
+- id: tvet-database-w3-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'The safest way to put user input into SQL is:'
+  options:
+  - id: a
+    text: String concatenation of whatever they typed
+  - id: b
+    text: Bound parameters / prepared statements
+  - id: c
+    text: Disable the network forever
+  - id: d
+    text: All-caps table names
+  correct_answer: b
+  hint: Injection.
+  explanation: 'CDACC testing plus cyber: never trust concatenated SQL.'
+  xp_reward: 50
+- id: tvet-database-w3-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A backup you have never restored is:'
+  options:
+  - id: a
+    text: Proven
+  - id: b
+    text: Unverified — restore-test it
+  - id: c
+    text: A primary key
+  - id: d
+    text: BCD
+  correct_answer: b
+  hint: Testing outcome.
+  explanation: Database testing includes recoverability, not only SELECT.
+  xp_reward: 50
+- id: tvet-database-w3-fb1
+  type: FILL_BLANK
+  prompt: The SQL command that retrieves rows is ___.
+  correct_answer: SELECT
+  hint: Not INSERT.
+  explanation: SELECT is the core of query testing and reports.
+  xp_reward: 50
+- id: tvet-database-w3-scenario
+  type: SCENARIO
+  prompt: 'Practical: the report of “all ICT L5 females in 2026” prints 0 rows but the table has data. First query test?'
+  options:
+  - id: a
+    text: Drop the database
+  - id: b
+    text: Check JOIN conditions, filters (gender/year codes), and whether the form filter contradicts the query
+  - id: c
+    text: Buy SQL Server immediately
+  - id: d
+    text: Print the ER in landscape
+  correct_answer: b
+  hint: Query testing.
+  explanation: Wrong JOIN or coded values like F versus Female is the usual cause. Prove it with a simpler SELECT.
+  xp_reward: 60

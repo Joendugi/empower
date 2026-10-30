@@ -1,0 +1,108 @@
+id: tvet-repair-w2
+course_id: computer-repair
+title: Week 2 — Disassemble, replace, reassemble, and ESD
+title_sw: Wiki 2 — Bomoa, badilisha, kusanya, na ESD
+briefing: 'Disassembly is a listed outcome with techniques: photograph, bag screws by length, disconnect power, then cables, then cards, then drives, then motherboard last if needed. Do not pry by the PCB. CPU coolers need even torque when they go back. Laptop work: disconnect battery internally before the keyboard/trackpad cable. Use plastic tools near clips.
+
+
+  Replace versus repair: consumer RAM and SSDs are replaced; a dry capacitor on a PSU may be repaired only if you are competent and the PSU is designed to be serviced — many college rules are replace-the-PSU. Match spec: DDR4 is not DDR5; SATA data is not SATA power. Record serials for warranty.
+
+
+  Reassembly is the reverse with cable management so fans are unobstructed and the side panel does not pinch SATA leads. Connect front-panel HD LED correctly or you will chase a “dead HDD” that is only a reversed LED. Ground yourself. Test-fit before all screws.
+
+
+  Component testing: known-good swap, meter on PSU rails (5 V, 12 V), and vendor diagnostics. Write a replace/repair report: what was faulty, part number, and why. Assessors fail messy trays and “extra screws left over with no idea”.'
+briefing_sw: Piga picha, weka skrubu kwenye mifuko. Zima betri ya laptop. DDR4 si DDR5. Kusanya kinyume cha kubomoa. Usibane kebo za SATA. Andika namba ya sehemu iliyobadilishwa.
+estimated_minutes: 32
+license: CC-BY-SA-4.0
+cdacc_unit_id: IT/CU/ICT/CR/3/5
+exam_domain: CDACC ICT L5 — Perform Computer Repair and Maintenance (IT/CU/ICT/CR/3/5, 280 h)
+xp_total: 310
+exercises:
+- id: tvet-repair-w2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Before removing a laptop keyboard ribbon you should:'
+  options:
+  - id: a
+    text: Increase brightness
+  - id: b
+    text: Disconnect internal battery / isolate power as the procedure requires
+  - id: c
+    text: Remove the CPU first always
+  - id: d
+    text: Soak the board
+  correct_answer: b
+  hint: Live CMOS and battery.
+  explanation: Shorting a keyboard cable on a live battery board kills the EC.
+  xp_reward: 50
+- id: tvet-repair-w2-q2
+  type: MULTIPLE_CHOICE
+  prompt: 'DDR4 DIMM in a DDR5 slot:'
+  options:
+  - id: a
+    text: Works if you push harder
+  - id: b
+    text: Will not key in — different generation and notch
+  - id: c
+    text: Doubles speed
+  - id: d
+    text: Is required by CDACC
+  correct_answer: b
+  hint: Physical key.
+  explanation: Match the motherboard spec. Forcing RAM breaks the slot.
+  xp_reward: 50
+- id: tvet-repair-w2-q3
+  type: MULTIPLE_CHOICE
+  prompt: 'Best practice for screws during disassembly:'
+  options:
+  - id: a
+    text: One bowl for the whole class
+  - id: b
+    text: Sorted by location/length, photographed, and accounted for at reassembly
+  - id: c
+    text: Leave them on the antistatic mat mixed with RAM
+  - id: d
+    text: Throw extras away
+  correct_answer: b
+  hint: Portfolio and safety.
+  explanation: A long screw through a laptop board is a new fault you created.
+  xp_reward: 50
+- id: tvet-repair-w2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'A replacement PSU must at least match:'
+  options:
+  - id: a
+    text: Colour of the case only
+  - id: b
+    text: Connector types, wattage/headroom, and 24-pin/CPU/PCIe pinouts
+  - id: c
+    text: The old fan sticker year
+  - id: d
+    text: USB colour
+  correct_answer: b
+  hint: Electrical and mechanical fit.
+  explanation: Under-rated PSUs reboot under GPU load. Wrong pinout lets the magic smoke out.
+  xp_reward: 50
+- id: tvet-repair-w2-fb1
+  type: FILL_BLANK
+  prompt: Wrist straps and mats reduce damage from electrostatic discharge, abbreviated ___.
+  correct_answer: ESD
+  hint: Static.
+  explanation: ESD kills MOSFETs silently. It is still the safety unit, applied in repair.
+  xp_reward: 50
+- id: tvet-repair-w2-scenario
+  type: SCENARIO
+  prompt: After reassembly the PC POSTs but the front power LED is dark and the HDD LED is always on. Likely cause?
+  options:
+  - id: a
+    text: Dead CPU
+  - id: b
+    text: Front-panel LED pins reversed or swapped on the header
+  - id: c
+    text: Need a new operating system licence
+  - id: d
+    text: Ohm’s law failed
+  correct_answer: b
+  hint: Header polarity.
+  explanation: A classic reassembly fault. Check the motherboard silk screen.
+  xp_reward: 60

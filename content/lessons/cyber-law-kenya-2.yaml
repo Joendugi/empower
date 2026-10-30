@@ -1,0 +1,75 @@
+id: cyber-law-kenya-2
+course_id: cyber-law-kenya
+title: Data protection, evidence, and disclosure
+title_sw: Ulinzi wa data, ushahidi, na disclosure
+briefing: 'The Data Protection Act, 2019 sits beside the Computer Misuse and Cybercrimes Act. Personal data (IDs, student marks, health, location) has rules on collection, storage, and sharing. “I found it on an open share so I copied 40,000 rows to study Excel” can still be unlawful processing.
+
+
+  Evidence: if you discover a crime, your job is not to become a hacker detective. Preserve what policy allows (screenshots of URLs, logs), do not alter systems, and hand over to supervisors, police, or KE-CIRT as directed. Imaging someone’s phone “for proof” without authority is another offence stacked on the first.
+
+
+  Disclosure: vendors and government have channels. Public shaming on Twitter with live data dumps harms the people in the database. Coordinated disclosure through the organisation is the professional path.
+
+
+  Workplace: acceptable-use policies, monitoring notices, and not using the college firewall hole you found for personal torrents. Privilege is observed.'
+briefing_sw: 'Data Protection Act 2019. Usiibe data ya watu “kwa ajili ya Excel”. Ushahidi: hifadhi kama policy inavyosema, usibadilishe mifumo. Usichapishe database Twitter. Fuata AUP ya chuo.'
+estimated_minutes: 16
+license: CC-BY-SA-4.0
+exam_domain: Kenya DPA 2019 · CMCA 2018
+xp_total: 210
+exercises:
+- id: law2-q1
+  type: MULTIPLE_CHOICE
+  prompt: 'Copying a spreadsheet of student ID numbers from an open lab share to your USB “to practise Excel” is:'
+  options:
+  - id: a
+    text: Always fine because it was open
+  - id: b
+    text: Likely unlawful / against policy processing of personal data
+  - id: c
+    text: Required by CDACC
+  - id: d
+    text: A type of encryption
+  correct_answer: b
+  hint: Personal data.
+  explanation: Availability is not permission. Use dummy data for practice.
+  xp_reward: 50
+- id: law2-q2
+  type: FILL_BLANK
+  prompt: Kenya’s 2019 law on personal data is the Data ___ Act.
+  correct_answer: protection
+  hint: Data Protection Act.
+  explanation: It sits with CMCA in professional practice.
+  xp_reward: 50
+- id: law2-q3
+  type: SCENARIO
+  prompt: You find live medical records on a misconfigured bucket. Best action?
+  options:
+  - id: a
+    text: Download all of it to prove severity on GitHub
+  - id: b
+    text: Stop access, record the URL per policy, report to supervisor / DPO / KE-CIRT path — do not exfiltrate the records
+  - id: c
+    text: Message patients one by one on WhatsApp
+  - id: d
+    text: Sell access to a journalist only
+  correct_answer: b
+  hint: Minimise data you touch.
+  explanation: Proof of existence ≠ copying the whole population.
+  xp_reward: 60
+- id: law2-q4
+  type: MULTIPLE_CHOICE
+  prompt: 'Changing log timestamps on a college server to “clean” your mistake is:'
+  options:
+  - id: a
+    text: Good hygiene
+  - id: b
+    text: Integrity violation and likely an offence / serious misconduct
+  - id: c
+    text: Required before KE-CIRT calls
+  - id: d
+    text: The same as patching
+  correct_answer: b
+  hint: Evidence tampering.
+  explanation: Report the mistake. Do not forge logs.
+  xp_reward: 50

@@ -107,6 +107,15 @@ async def get_current_educator(
     raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Educator access required")
 
 
+async def get_current_admin(
+    request: Request,
+    learner: Learner = Depends(get_current_registered_learner),
+) -> Learner:
+    if learner.role == "admin" or is_staff_request(request):
+        return learner
+    raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Admin access required")
+
+
 def require_staff(request: Request) -> None:
     key = request.headers.get("X-Staff-Key") or request.headers.get("x-staff-key") or ""
     if staff_key_matches(key):
