@@ -1,7 +1,7 @@
 import asyncio
 from logging.config import fileConfig
 
-from sqlalchemy import pool
+from sqlalchemy import pool, text
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
@@ -35,11 +35,24 @@ def run_migrations_offline() -> None:
         context.run_migrations()
 
 
-def do_run_migrations(connection: Connection) -> None:
-    context.configure(connection=connection, target_metadata=target_metadata)
+# Arbitrary constant: every API pod migrates on startup, and this lock makes them take turns.
+MIGRATION_LOCK_ID = 7_355_608
 
-    with context.begin_transaction():
-        context.run_migrations()
+
+def do_run_migrations(connection: Connection) -> None:
+    is_postgres = connection.dialect.name == "postgresql"
+    if is_postgres:
+        connection.execute(text("SELECT pg_advisory_lock(:id)"), {"id": MIGRATION_LOCK_ID})
+        connection.commit()
+    try:
+        context.configure(connection=connection, target_metadata=target_metadata)
+
+        with context.begin_transaction():
+            context.run_migrations()
+    finally:
+        if is_postgres:
+            connection.execute(text("SELECT pg_advisory_unlock(:id)"), {"id": MIGRATION_LOCK_ID})
+            connection.commit()
 
 
 async def run_async_migrations() -> None:

@@ -42,6 +42,13 @@ def assert_secure_settings() -> None:
         parsed = urlparse(settings.REDIS_URL)
         if not parsed.password:
             raise RuntimeError("REDIS_URL must include a password in production")
+    elif settings.REQUIRE_REDIS:
+        # The memory fallback gives every pod its own rate limits and leaderboard.
+        raise RuntimeError("REDIS_URL is required when REQUIRE_REDIS is on (several API pods)")
+    if settings.STORAGE_BACKEND == "s3" and not settings.UPLOADS_BUCKET:
+        raise RuntimeError("UPLOADS_BUCKET must be set when STORAGE_BACKEND=s3")
+    if settings.STORAGE_BACKEND not in {"local", "s3"}:
+        raise RuntimeError("STORAGE_BACKEND must be local or s3")
 
 
 def staff_digest(value: str) -> str:

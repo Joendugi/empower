@@ -1,0 +1,113 @@
+name: Deploy environment
+
+# Called by deploy.yml once per environment. Everything environment-specific
+# comes from SSM parameters that Terraform writes, so nothing is copied by hand.
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        required: true
+      sha:
+        type: string
+        required: true
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy → ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ steps.settings.outputs.appUrl }}
+    env:
+      ENVIRONMENT: ${{ inputs.environment }}
+      SHA: ${{ inputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.sha }}
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: af-south-1
+
+      - name: Read deploy settings from Terraform
+        id: settings
+        run: |
+          aws ssm get-parameter --name "/cyberlearn/$ENVIRONMENT/helm-values" \
+            --query Parameter.Value --output text > "$RUNNER_TEMP/tf-values.yaml"
+          aws ssm get-parameter --name "/cyberlearn/$ENVIRONMENT/deploy" \
+            --query Parameter.Value --output text > "$RUNNER_TEMP/deploy.json"
+          for key in clusterName namespace webBucket distributionId appUrl mediaUrl; do
+            echo "$key=$(jq -r ".$key" "$RUNNER_TEMP/deploy.json")" >> "$GITHUB_OUTPUT"
+          done
+
+      # --- API, worker and scheduler --------------------------------------------
+
+      - uses: azure/setup-helm@v5
+        with:
+          version: v4.3.1
+
+      - name: Helm upgrade
+        run: |
+          aws eks update-kubeconfig --name "${{ steps.settings.outputs.clusterName }}" --region af-south-1
+          # Pods migrate the database on startup, one at a time. If the new pods
+          # never become ready, Helm rolls the release back.
+          helm upgrade --install cyberlearn infra/helm/cyberlearn \
+            --namespace "${{ steps.settings.outputs.namespace }}" \
+            -f "infra/helm/cyberlearn/values-$ENVIRONMENT.yaml" \
+            -f "$RUNNER_TEMP/tf-values.yaml" \
+            --set image.tag="$SHA" \
+            --wait --timeout 10m --rollback-on-failure
+
+      # --- PWA ------------------------------------------------------------------
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Build PWA
+        env:
+          VITE_API_URL: /api/v1
+          VITE_DEPLOYMENT_MODE: cloud
+          VITE_MEDIA_CDN_URL: ${{ steps.settings.outputs.mediaUrl }}
+          VITE_ADMIN_STAFF_HASH: ${{ secrets.VITE_ADMIN_STAFF_HASH }}
+          VITE_BUILD_ID: ${{ inputs.sha }}
+        run: |
+          test -n "$VITE_ADMIN_STAFF_HASH" || { echo "Set VITE_ADMIN_STAFF_HASH in the $ENVIRONMENT environment"; exit 1; }
+          pnpm install --frozen-lockfile
+          pnpm --filter @cyberlearn/pwa build
+
+      - name: Upload PWA
+        env:
+          BUCKET: ${{ steps.settings.outputs.webBucket }}
+        run: |
+          # Hashed bundles never change: cache them for a year. Old ones are kept so
+          # learners mid-session (or offline with an old service worker) still load.
+          aws s3 sync apps/pwa/dist/assets "s3://$BUCKET/assets" \
+            --cache-control "public,max-age=31536000,immutable"
+          # Everything else (index.html, sw.js, manifest, icons) must be revalidated,
+          # or learners keep an old app shell.
+          aws s3 sync apps/pwa/dist "s3://$BUCKET" --exclude "assets/*" \
+            --cache-control "public,max-age=0,must-revalidate"
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ steps.settings.outputs.distributionId }}" --paths "/*" >/dev/null
+
+      - name: Smoke test
+        env:
+          APP_URL: ${{ steps.settings.outputs.appUrl }}
+        run: |
+          curl -fsS --retry 10 --retry-delay 6 --retry-all-errors "$APP_URL/api/v1/health" | tee /dev/stderr \
+            | jq -e --arg sha "$SHA" '.version == $sha' >/dev/null
+          curl -fsS -o /dev/null "$APP_URL/"

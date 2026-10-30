@@ -37,6 +37,8 @@ coverage/
 *.tfstate.backup
 *.tfvars
 !*.tfvars.example
+# Per-environment settings hold no secrets (those are generated into Secrets Manager).
+!infra/terraform/envs/*.tfvars
 .terraform.lock.hcl
 
 # OS
@@ -63,3 +65,6 @@ certs/
 # Database dumps
 backups/
 *.db
+
+# Local upload storage (STORAGE_BACKEND=local)
+apps/api/.uploads/

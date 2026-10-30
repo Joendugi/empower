@@ -85,6 +85,27 @@ jobs:
       - name: Lint with Ruff
         run: ruff check .
 
+      # Tests build tables with create_all, so apply the real migrations to a fresh
+      # database too. Two at once, like two pods starting: the advisory lock in
+      # alembic/env.py must make them take turns.
+      - name: Apply migrations (two concurrent runs)
+        env:
+          DATABASE_URL: postgresql+asyncpg://cyberlearn:testpassword@localhost:5432/cyberlearn_migrations
+          ENVIRONMENT: production
+        run: |
+          python -c "
+          import asyncio, asyncpg
+          async def main():
+              conn = await asyncpg.connect('postgresql://cyberlearn:testpassword@localhost:5432/cyberlearn_test')
+              await conn.execute('CREATE DATABASE cyberlearn_migrations')
+              await conn.close()
+          asyncio.run(main())
+          "
+          alembic upgrade head & first=$!
+          alembic upgrade head & second=$!
+          wait $first && wait $second
+          alembic current | grep -q "(head)"
+
       - name: Run tests
         env:
           DATABASE_URL: postgresql+asyncpg://cyberlearn:testpassword@localhost:5432/cyberlearn_test
@@ -118,6 +139,57 @@ jobs:
           pytest tests/ -v
       - name: Validate catalogue
         run: cyberlearn-content validate-catalogue ${{ github.workspace }}/content
+
+  # ── Infrastructure ──────────────────────────────────────────────────
+  infra:
+    name: Terraform & Helm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: "1.17.1"
+
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive infra/terraform
+
+      - name: Terraform validate
+        run: |
+          for dir in infra/terraform/bootstrap infra/terraform; do
+            terraform -chdir="$dir" init -backend=false -input=false >/dev/null
+            terraform -chdir="$dir" validate
+          done
+
+      - uses: azure/setup-helm@v5
+        with:
+          version: v4.3.1
+
+      - name: Helm lint and schema check
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.8.0/kubeconform-linux-amd64.tar.gz | tar xz kubeconform
+          cat > /tmp/tf-values.yaml <<'EOF'
+          image:
+            repository: 123456789012.dkr.ecr.af-south-1.amazonaws.com/cyberlearn/api
+          secrets:
+            generated: example/api/generated
+            external: example/api/external
+          targetGroupBinding:
+            targetGroupARN: arn:aws:elasticloadbalancing:af-south-1:123456789012:targetgroup/example/0123456789abcdef
+          config:
+            AWS_REGION: af-south-1
+            UPLOADS_BUCKET: example-uploads
+            PUBLIC_HOST: staging.example.org
+          EOF
+          for env in staging production; do
+            args="-f infra/helm/cyberlearn/values-$env.yaml -f /tmp/tf-values.yaml --set image.tag=ci"
+            helm lint infra/helm/cyberlearn $args
+            helm template cyberlearn infra/helm/cyberlearn $args | ./kubeconform -strict -summary \
+              -kubernetes-version 1.35.0 -schema-location default \
+              -schema-location 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json'
+          done
+          helm lint infra/helm/cluster-config
+          helm template cluster-config infra/helm/cluster-config | ./kubeconform -strict -summary -kubernetes-version 1.35.0
 
   # ── Build ────────────────────────────────────────────────────────────
   build:

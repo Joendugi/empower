@@ -1,13 +1,16 @@
 from __future__ import annotations
 
-import uuid
 from datetime import UTC, datetime
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import Field
+from sqlalchemy import func, select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.database import get_db
 from app.deps import get_current_learner
+from app.models.discussion import DiscussionPost, DiscussionVote
 from app.models.learner import Learner
 from app.schemas import CamelModel
 
@@ -15,7 +18,7 @@ router = APIRouter()
 
 
 class PostCreate(CamelModel):
-    body: str
+    body: str = Field(..., max_length=4000)
     parent_id: str | None = None
 
 
@@ -35,18 +38,17 @@ class UpvoteRead(CamelModel):
     upvotes: int
 
 
-# In-memory store as fallback when table doesn't exist yet
-_posts: dict[str, list[dict]] = {}
-_upvotes: dict[str, set[str]] = {}
-
-
-async def _db_posts_exist(db: AsyncSession) -> bool:
-    try:
-        from sqlalchemy import text
-        await db.execute(text("SELECT 1 FROM discussion_posts LIMIT 1"))
-        return True
-    except Exception:
-        return False
+def _post_read(row: DiscussionPost) -> PostRead:
+    return PostRead(
+        id=row.id,
+        lesson_id=row.lesson_id,
+        learner_id=row.learner_id,
+        author_name=row.author_name,
+        body=row.body,
+        parent_id=row.parent_id,
+        created_at=row.created_at,
+        upvotes=row.upvotes,
+    )
 
 
 @router.get("/lessons/{lesson_id}/posts", response_model=list[PostRead])
@@ -55,28 +57,13 @@ async def list_posts(
     learner: Learner = Depends(get_current_learner),
     db: AsyncSession = Depends(get_db),
 ) -> list[PostRead]:
-    if await _db_posts_exist(db):
-        from sqlalchemy import text
-        rows = await db.execute(
-            text("SELECT id, lesson_id, learner_id, author_name, body, parent_id, created_at, upvotes FROM discussion_posts WHERE lesson_id = :lid ORDER BY created_at ASC"),
-            {"lid": lesson_id},
-        )
-        return [
-            PostRead(
-                id=str(r.id),
-                lesson_id=str(r.lesson_id),
-                learner_id=str(r.learner_id),
-                author_name=r.author_name,
-                body=r.body,
-                parent_id=str(r.parent_id) if r.parent_id else None,
-                created_at=r.created_at,
-                upvotes=r.upvotes,
-            )
-            for r in rows.mappings().all()
-        ]
-    # fallback
-    posts = _posts.get(lesson_id, [])
-    return [PostRead(**p) for p in posts]
+    rows = await db.scalars(
+        select(DiscussionPost)
+        .where(DiscussionPost.lesson_id == lesson_id)
+        .order_by(DiscussionPost.created_at.asc())
+        .limit(500)
+    )
+    return [_post_read(row) for row in rows.all()]
 
 
 @router.post("/lessons/{lesson_id}/posts", response_model=PostRead, status_code=status.HTTP_201_CREATED)
@@ -86,43 +73,26 @@ async def create_post(
     learner: Learner = Depends(get_current_learner),
     db: AsyncSession = Depends(get_db),
 ) -> PostRead:
-    if not payload.body.strip():
+    body = payload.body.strip()
+    if not body:
         raise HTTPException(status_code=400, detail="Post body cannot be empty")
+    if payload.parent_id:
+        parent = await db.get(DiscussionPost, payload.parent_id)
+        if not parent or parent.lesson_id != lesson_id:
+            raise HTTPException(status_code=404, detail="Parent post not found")
 
-    post_id = str(uuid.uuid4())
-    now = datetime.now(UTC)
-    author_name = getattr(learner, "display_name", None) or getattr(learner, "email", "Learner")
-
-    if await _db_posts_exist(db):
-        from sqlalchemy import text
-        await db.execute(
-            text("INSERT INTO discussion_posts (id, lesson_id, learner_id, author_name, body, parent_id, created_at, upvotes) VALUES (:id, :lid, :learner, :author, :body, :parent, :now, 0)"),
-            {"id": post_id, "lid": lesson_id, "learner": str(learner.id), "author": author_name, "body": payload.body, "parent": payload.parent_id, "now": now},
-        )
-        await db.commit()
-    else:
-        entry = {
-            "id": post_id,
-            "lesson_id": lesson_id,
-            "learner_id": str(learner.id),
-            "author_name": author_name,
-            "body": payload.body,
-            "parent_id": payload.parent_id,
-            "created_at": now,
-            "upvotes": 0,
-        }
-        _posts.setdefault(lesson_id, []).append(entry)
-
-    return PostRead(
-        id=post_id,
+    row = DiscussionPost(
         lesson_id=lesson_id,
-        learner_id=str(learner.id),
-        author_name=author_name,
-        body=payload.body,
+        learner_id=learner.id,
+        author_name=learner.display_name or learner.email or "Learner",
+        body=body,
         parent_id=payload.parent_id,
-        created_at=now,
         upvotes=0,
+        created_at=datetime.now(UTC),
     )
+    db.add(row)
+    await db.commit()
+    return _post_read(row)
 
 
 @router.post("/posts/{post_id}/upvote", response_model=UpvoteRead)
@@ -131,21 +101,19 @@ async def upvote_post(
     learner: Learner = Depends(get_current_learner),
     db: AsyncSession = Depends(get_db),
 ) -> UpvoteRead:
-    if await _db_posts_exist(db):
-        from sqlalchemy import text
-        await db.execute(
-            text("UPDATE discussion_posts SET upvotes = upvotes + 1 WHERE id = :id"),
-            {"id": post_id},
+    post = await db.get(DiscussionPost, post_id)
+    if not post:
+        raise HTTPException(status_code=404, detail="Post not found")
+    db.add(DiscussionVote(post_id=post_id, learner_id=learner.id, created_at=datetime.now(UTC)))
+    try:
+        await db.flush()
+    except IntegrityError:
+        await db.rollback()  # already voted; report the current count
+    else:
+        count = await db.scalar(
+            select(func.count()).select_from(DiscussionVote).where(DiscussionVote.post_id == post_id)
         )
+        post.upvotes = int(count or 0)
         await db.commit()
-        row = await db.execute(text("SELECT upvotes FROM discussion_posts WHERE id = :id"), {"id": post_id})
-        result = row.mappings().first()
-        return UpvoteRead(post_id=post_id, upvotes=result["upvotes"] if result else 1)
-    voters = _upvotes.setdefault(post_id, set())
-    voters.add(str(learner.id))
-    for posts in _posts.values():
-        for p in posts:
-            if p["id"] == post_id:
-                p["upvotes"] = len(voters)
-                return UpvoteRead(post_id=post_id, upvotes=p["upvotes"])
-    return UpvoteRead(post_id=post_id, upvotes=1)
+    await db.refresh(post)
+    return UpvoteRead(post_id=post_id, upvotes=post.upvotes)

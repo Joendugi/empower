@@ -20,8 +20,9 @@ if settings.DATABASE_URL.startswith("sqlite"):
     if ":memory:" in settings.DATABASE_URL:
         engine_kwargs["poolclass"] = StaticPool
 else:
-    engine_kwargs["pool_size"] = 10
-    engine_kwargs["max_overflow"] = 20
+    # Total connections = pods × (pool + overflow); keep that under the database's max_connections.
+    engine_kwargs["pool_size"] = settings.DB_POOL_SIZE
+    engine_kwargs["max_overflow"] = settings.DB_MAX_OVERFLOW
     if settings.is_supabase:
         import ssl
 

@@ -16,6 +16,13 @@ SKIP_PREFIXES = ("/health", "/ready", "/api/v1/health")
 
 def client_ip(request: Request) -> str:
     forwarded = request.headers.get("x-forwarded-for")
+    hops = settings.TRUSTED_PROXY_HOPS
+    if forwarded and hops > 0:
+        # Each trusted proxy appends the address it saw, so the client's real IP sits `hops`
+        # from the right. Anything further left was sent by the client and can be forged.
+        parts = [part.strip() for part in forwarded.split(",") if part.strip()]
+        if len(parts) >= hops:
+            return parts[-hops]
     if forwarded:
         return forwarded.split(",")[0].strip() or "unknown"
     if request.client and request.client.host:

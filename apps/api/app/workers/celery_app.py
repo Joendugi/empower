@@ -9,6 +9,7 @@ Tasks:
 
 from __future__ import annotations
 
+import ssl
 from typing import Any
 
 from celery import Celery
@@ -22,7 +23,27 @@ celery_app = Celery(
     backend=settings.REDIS_URL,
 )
 
+if settings.REDIS_URL.startswith("rediss://"):
+    # ElastiCache in-transit encryption; Celery refuses rediss:// without explicit TLS options.
+    celery_app.conf.broker_use_ssl = {"ssl_cert_reqs": ssl.CERT_REQUIRED}
+    celery_app.conf.redis_backend_use_ssl = {"ssl_cert_reqs": ssl.CERT_REQUIRED}
+
+if settings.SENTRY_DSN:
+    import sentry_sdk
+
+    sentry_sdk.init(
+        dsn=settings.SENTRY_DSN,
+        environment=settings.ENVIRONMENT,
+        release=settings.APP_VERSION,
+        traces_sample_rate=settings.SENTRY_TRACES_SAMPLE_RATE,
+        send_default_pii=False,
+    )
+
 celery_app.conf.update(
+    broker_connection_retry_on_startup=True,
+    worker_prefetch_multiplier=1,  # AI grading tasks are slow; don't let one worker hoard them
+    task_acks_late=True,
+    task_reject_on_worker_lost=True,
     task_serializer="json",
     result_serializer="json",
     accept_content=["json"],

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from typing import Any
@@ -11,11 +12,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 import app.models  # noqa: F401 — register models on Base.metadata
 from app.config import settings
 from app.database import AsyncSessionLocal, Base, engine
+from app.edge import OriginVerifyMiddleware, ProbeAwareTrustedHostMiddleware
 from app.middleware import TimeoutRateLimitMiddleware
 from app.migrate import run_alembic_upgrade
 from app.routers import (
@@ -42,6 +43,8 @@ from app.routers import (
 from app.security import assert_secure_settings
 from app.services.published_catalog import load_published_snapshot
 
+logger = logging.getLogger(__name__)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -64,12 +67,23 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
             app.state.redis = MemoryCache()
 
-    if settings.is_production and not settings.DATABASE_URL.startswith("sqlite"):
-        await asyncio.to_thread(run_alembic_upgrade)
-    elif settings.ENVIRONMENT == "development" or settings.DATABASE_URL.startswith("sqlite"):
+    if settings.DATABASE_URL.startswith("sqlite") or settings.ENVIRONMENT == "development":
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
+    elif settings.RUN_MIGRATIONS_ON_STARTUP:
+        await asyncio.to_thread(run_alembic_upgrade)
 
+    await _reload_published()
+    refresher = asyncio.create_task(_refresh_published_forever())
+
+    yield
+
+    refresher.cancel()
+    if started_redis:
+        await app.state.redis.aclose()
+
+
+async def _reload_published() -> None:
     try:
         from sqlalchemy import select
 
@@ -83,15 +97,35 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
                 [{"payload_json": row.payload_json} for row in paths],
             )
     except Exception:
-        pass
+        logger.warning("Could not load published lessons", exc_info=True)
 
-    yield
 
-    if started_redis:
-        await app.state.redis.aclose()
+async def _refresh_published_forever() -> None:
+    """Pick up lessons another pod published. Each pod keeps its own copy in memory."""
+    interval = settings.PUBLISHED_REFRESH_SECONDS
+    if interval <= 0:
+        return
+    while True:
+        await asyncio.sleep(interval)
+        await _reload_published()
+
+
+def _init_sentry() -> None:
+    if not settings.SENTRY_DSN:
+        return
+    import sentry_sdk
+
+    sentry_sdk.init(
+        dsn=settings.SENTRY_DSN,
+        environment=settings.ENVIRONMENT,
+        release=settings.APP_VERSION,
+        traces_sample_rate=settings.SENTRY_TRACES_SAMPLE_RATE,
+        send_default_pii=False,
+    )
 
 
 def create_app(**state: Any) -> FastAPI:
+    _init_sentry()
     docs_enabled = settings.ENVIRONMENT != "production"
     app = FastAPI(
         title="CyberLearn Gamification API",
@@ -115,7 +149,9 @@ def create_app(**state: Any) -> FastAPI:
         allow_headers=["*"],
     )
     if settings.is_production:
-        app.add_middleware(TrustedHostMiddleware, allowed_hosts=settings.allowed_hosts)
+        app.add_middleware(ProbeAwareTrustedHostMiddleware, allowed_hosts=settings.allowed_hosts)
+    if settings.ORIGIN_VERIFY_SECRET:
+        app.add_middleware(OriginVerifyMiddleware, secret=settings.ORIGIN_VERIFY_SECRET)
 
     @app.exception_handler(Exception)
     async def hide_unhandled_errors(_request: Request, exc: Exception) -> JSONResponse:
@@ -146,7 +182,7 @@ def create_app(**state: Any) -> FastAPI:
     app.include_router(lti.router, tags=["LTI"])
 
     def _health() -> dict[str, str]:
-        return {"status": "ok", "version": "0.1.0", "environment": settings.ENVIRONMENT}
+        return {"status": "ok", "version": settings.APP_VERSION, "environment": settings.ENVIRONMENT}
 
     @app.get("/health", tags=["Health"])
     async def health_check() -> dict[str, str]:
@@ -165,7 +201,7 @@ def create_app(**state: Any) -> FastAPI:
             await redis.ping()
         return {
             "status": "ready",
-            "version": "0.1.0",
+            "version": settings.APP_VERSION,
             "database": "ok",
             "cache": "redis" if settings.redis_enabled else "memory",
             "redis": "ok" if settings.redis_enabled and redis is not None else "skipped",

@@ -18,9 +18,9 @@ packages/
 ├── types/      Shared TypeScript type definitions
 └── ui/         Shared React component library (Phase 1+)
 
-infra/
-├── terraform/  AWS infrastructure as code (EKS, RDS, ElastiCache, S3, CloudFront)
-└── helm/       Kubernetes Helm charts for each service
+infra/          AWS on EKS: see infra/README.md for setup and operations
+├── terraform/  VPC, EKS, RDS, ElastiCache, S3, ALB, CloudFront, DNS, secrets, IAM
+└── helm/       API, Celery worker and scheduler charts
 
 docs/
 ├── architecture/decisions/   Architecture Decision Records (ADRs)
@@ -37,7 +37,7 @@ Open edX (via **Tutor**) is the LMS system of record — deployed separately. Th
 | pnpm | ≥ 9 |
 | Python | ≥ 3.12 |
 | Docker + Docker Compose | Latest |
-| Terraform | ≥ 1.8 |
+| Terraform | ≥ 1.10 |
 
 ## Getting Started (Local Dev)
 

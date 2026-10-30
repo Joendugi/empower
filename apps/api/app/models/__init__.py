@@ -1,8 +1,10 @@
 from app.models.auth_challenge import AuthChallenge
 from app.models.badge import Badge
+from app.models.discussion import DiscussionPost, DiscussionVote
 from app.models.feedback import FormativeFeedback
 from app.models.fsrs_card import FSRSCard
 from app.models.learner import Learner
+from app.models.library import LibraryBook, ReadingProgress
 from app.models.rubric import Rubric, RubricSignOff
 from app.models.streak import Streak
 from app.models.studio import (
@@ -36,4 +38,8 @@ __all__ = [
     "AnalyticsEventRow",
     "ErrorEventRow",
     "AuthChallenge",
+    "DiscussionPost",
+    "DiscussionVote",
+    "LibraryBook",
+    "ReadingProgress",
 ]

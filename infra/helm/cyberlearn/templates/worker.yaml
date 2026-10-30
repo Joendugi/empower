@@ -1,0 +1,109 @@
+{{- if .Values.worker.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cyberlearn.fullname" . }}-worker
+  labels:
+    {{- include "cyberlearn.labels" . | nindent 4 }}
+    app.kubernetes.io/component: worker
+spec:
+  replicas: {{ .Values.worker.replicas }}
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      {{- include "cyberlearn.selectorLabels" (list . "worker") | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "cyberlearn.selectorLabels" (list . "worker") | nindent 8 }}
+      annotations:
+        {{- include "cyberlearn.podAnnotations" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      securityContext:
+        {{- include "cyberlearn.podSecurityContext" . | nindent 8 }}
+      # Lets a running AI-grading task finish; tasks are acked late, so a killed one is retried.
+      terminationGracePeriodSeconds: 120
+      containers:
+        - name: worker
+          image: {{ include "cyberlearn.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - celery
+            - -A
+            - app.workers.celery_app
+            - worker
+            - --loglevel=INFO
+            - --concurrency={{ .Values.worker.concurrency }}
+          {{- include "cyberlearn.env" . | nindent 10 }}
+          resources:
+            {{- toYaml .Values.worker.resources | nindent 12 }}
+          livenessProbe:
+            exec:
+              command: ["sh", "-c", "celery -A app.workers.celery_app inspect ping -d celery@$HOSTNAME --timeout 10"]
+            initialDelaySeconds: 30
+            periodSeconds: 60
+            timeoutSeconds: 20
+            failureThreshold: 3
+          securityContext:
+            {{- include "cyberlearn.containerSecurityContext" . | nindent 12 }}
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 256Mi
+{{- end }}
+{{- if .Values.beat.enabled }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cyberlearn.fullname" . }}-beat
+  labels:
+    {{- include "cyberlearn.labels" . | nindent 4 }}
+    app.kubernetes.io/component: beat
+spec:
+  # Two schedulers would queue every scheduled task twice.
+  replicas: 1
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      {{- include "cyberlearn.selectorLabels" (list . "beat") | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "cyberlearn.selectorLabels" (list . "beat") | nindent 8 }}
+      annotations:
+        {{- include "cyberlearn.podAnnotations" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      securityContext:
+        {{- include "cyberlearn.podSecurityContext" . | nindent 8 }}
+      containers:
+        - name: beat
+          image: {{ include "cyberlearn.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - celery
+            - -A
+            - app.workers.celery_app
+            - beat
+            - --loglevel=INFO
+            - --schedule=/tmp/celerybeat-schedule
+          {{- include "cyberlearn.env" . | nindent 10 }}
+          resources:
+            {{- toYaml .Values.beat.resources | nindent 12 }}
+          securityContext:
+            {{- include "cyberlearn.containerSecurityContext" . | nindent 12 }}
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 64Mi
+{{- end }}

@@ -1,14 +1,20 @@
 from __future__ import annotations
 
+import json
 import uuid
 from datetime import UTC, datetime
 from typing import Any
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from pydantic import BaseModel, Field
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.database import get_db
 from app.deps import get_current_educator, get_current_learner_optional
 from app.models.learner import Learner
+from app.models.library import LibraryBook, ReadingProgress
+from app.services.storage import put_object
 
 router = APIRouter(prefix="/library", tags=["Library"])
 
@@ -732,19 +738,42 @@ Site selection is the most critical investment: a 6 m/s site produces 3.375 time
 
 
 
-# In-memory store for dynamic uploads (persists during runtime)
-DYNAMIC_BOOKS: list[dict[str, Any]] = []
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 MAX_DYNAMIC_BOOKS = 200
-# In-memory store for user reading progress keyed by f"{learner_id}:{book_id}"
-READING_PROGRESS: dict[str, dict[str, Any]] = {}
+UPLOAD_CONTENT_TYPES = {
+    "pdf": "application/pdf",
+    "epub": "application/epub+zip",
+    "md": "text/markdown",
+    "txt": "text/plain",
+}
 
 
 class BookProgressUpdate(BaseModel):
-    bookId: str
+    bookId: str = Field(max_length=40)
     currentPage: int = Field(ge=1)
     totalPages: int = Field(ge=1)
-    bookmarks: list[int] = Field(default_factory=list)
+    bookmarks: list[int] = Field(default_factory=list, max_length=500)
+
+
+async def _uploaded_books(db: AsyncSession) -> list[dict[str, Any]]:
+    rows = await db.scalars(
+        select(LibraryBook).order_by(LibraryBook.created_at.desc()).limit(MAX_DYNAMIC_BOOKS)
+    )
+    return [json.loads(row.payload_json) for row in rows.all()]
+
+
+def _progress_record(
+    book_id: str, current_page: int, total_pages: int, bookmarks: list[int], last_read_at: datetime
+) -> dict[str, Any]:
+    return {
+        "bookId": book_id,
+        "currentPage": current_page,
+        "totalPages": total_pages,
+        "percent": min(100.0, round((current_page / total_pages) * 100, 1)),
+        "bookmarks": bookmarks,
+        "lastReadAt": last_read_at.isoformat(),
+        "completed": current_page >= total_pages,
+    }
 
 
 @router.get("/books", response_model=list[dict[str, Any]])
@@ -753,9 +782,10 @@ async def list_books(
     trade: str | None = None,
     q: str | None = None,
     featured_only: bool = False,
+    db: AsyncSession = Depends(get_db),
 ) -> list[dict[str, Any]]:
     """List all available books in the Readflix catalog with optional filtering."""
-    all_books = SEEDED_BOOKS + DYNAMIC_BOOKS
+    all_books = SEEDED_BOOKS + await _uploaded_books(db)
     results = []
 
     for book in all_books:
@@ -786,32 +816,36 @@ async def list_books(
 
 
 @router.get("/books/{book_id}")
-async def get_book(book_id: str) -> dict[str, Any]:
+async def get_book(book_id: str, db: AsyncSession = Depends(get_db)) -> dict[str, Any]:
     """Get full book metadata, chapters, and content."""
-    for book in SEEDED_BOOKS + DYNAMIC_BOOKS:
+    for book in SEEDED_BOOKS:
         if book["id"] == book_id:
             return book
+    row = await db.get(LibraryBook, book_id)
+    if row:
+        return json.loads(row.payload_json)
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Book not found")
 
 
 @router.post("/upload", status_code=status.HTTP_201_CREATED)
 async def upload_book(
     file: UploadFile = File(...),
-    title: str = Form(...),
-    author: str = Form(...),
-    category: str = Form("resilience"),
-    tradeId: str | None = Form(None),
-    tradeTitle: str | None = Form(None),
-    description: str | None = Form(None),
-    coverColor: str = Form("from-indigo-600 to-purple-900"),
+    title: str = Form(..., max_length=300),
+    author: str = Form(..., max_length=200),
+    category: str = Form("resilience", max_length=60),
+    tradeId: str | None = Form(None, max_length=120),
+    tradeTitle: str | None = Form(None, max_length=200),
+    description: str | None = Form(None, max_length=2000),
+    coverColor: str = Form("from-indigo-600 to-purple-900", max_length=80),
     # Uploads are shown to every learner, so only educators and staff may add them.
-    _educator: Learner = Depends(get_current_educator),
+    educator: Learner = Depends(get_current_educator),
+    db: AsyncSession = Depends(get_db),
 ) -> dict[str, Any]:
     """Upload a new book document (PDF, EPUB, or Markdown) to the community library."""
     filename = file.filename or "uploaded-book"
     extension = filename.split(".")[-1].lower()
-    
-    if extension not in ("pdf", "epub", "md", "txt"):
+
+    if extension not in UPLOAD_CONTENT_TYPES:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Unsupported format .{extension}. Please upload a PDF, EPUB, or Markdown file.",
@@ -822,6 +856,7 @@ async def upload_book(
         raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="File is larger than 10 MB")
     file_size_mb = round(len(content) / (1024 * 1024), 2)
     book_id = f"book-{uuid.uuid4().hex[:8]}"
+    file_key = await put_object(f"library/{book_id}.{extension}", content, UPLOAD_CONTENT_TYPES[extension])
 
     # Estimate page count: roughly 1 page per 2 500 characters of text or 50KB of PDF
     page_count = max(10, int(len(content) / 45000)) if extension == "pdf" else max(5, int(len(content) / 3000))
@@ -850,39 +885,68 @@ async def upload_book(
         "contentMarkdown": f"# {title}\n\nBy {author}\n\n*Document uploaded on {datetime.now(UTC).strftime('%Y-%m-%d')}*\n\n---\n\n{content.decode('utf-8', errors='ignore')[:15000]}",
     }
 
-    DYNAMIC_BOOKS.insert(0, new_book)
-    del DYNAMIC_BOOKS[MAX_DYNAMIC_BOOKS:]
+    db.add(
+        LibraryBook(
+            id=book_id,
+            uploaded_by=educator.id,
+            payload_json=json.dumps(new_book),
+            file_key=file_key,
+            created_at=datetime.now(UTC),
+        )
+    )
+    await db.commit()
     return new_book
 
 
 @router.post("/progress")
 async def save_progress(
     payload: BookProgressUpdate,
-    current_user: Any = Depends(get_current_learner_optional),
+    current_user: Learner | None = Depends(get_current_learner_optional),
+    db: AsyncSession = Depends(get_db),
 ) -> dict[str, Any]:
-    """Save learner's current reading page and bookmark state."""
-    user_id = getattr(current_user, "id", "guest")
-    key = f"{user_id}:{payload.bookId}"
-    
-    percent = round((payload.currentPage / payload.totalPages) * 100, 1)
-    record = {
-        "bookId": payload.bookId,
-        "currentPage": payload.currentPage,
-        "totalPages": payload.totalPages,
-        "percent": min(100.0, percent),
-        "bookmarks": payload.bookmarks,
-        "lastReadAt": datetime.now(UTC).isoformat(),
-        "completed": payload.currentPage >= payload.totalPages,
-    }
-    READING_PROGRESS[key] = record
+    """Save learner's current reading page and bookmark state.
+
+    Guests get the computed record back but nothing is stored; their device keeps it.
+    """
+    now = datetime.now(UTC)
+    current_page = min(payload.currentPage, payload.totalPages)
+    record = _progress_record(payload.bookId, current_page, payload.totalPages, payload.bookmarks, now)
+    if current_user is None:
+        return record
+
+    row = await db.scalar(
+        select(ReadingProgress).where(
+            ReadingProgress.learner_id == current_user.id, ReadingProgress.book_id == payload.bookId
+        )
+    )
+    if row is None:
+        row = ReadingProgress(learner_id=current_user.id, book_id=payload.bookId)
+        db.add(row)
+    row.current_page = current_page
+    row.total_pages = payload.totalPages
+    row.bookmarks_json = json.dumps(payload.bookmarks)
+    row.completed = record["completed"]
+    row.last_read_at = now
+    await db.commit()
     return record
 
 
 @router.get("/progress")
 async def get_all_progress(
-    current_user: Any = Depends(get_current_learner_optional),
+    current_user: Learner | None = Depends(get_current_learner_optional),
+    db: AsyncSession = Depends(get_db),
 ) -> list[dict[str, Any]]:
     """Retrieve reading progress for all books opened by the current user."""
-    user_id = getattr(current_user, "id", "guest")
-    prefix = f"{user_id}:"
-    return [v for k, v in READING_PROGRESS.items() if k.startswith(prefix)]
+    if current_user is None:
+        return []
+    rows = await db.scalars(
+        select(ReadingProgress)
+        .where(ReadingProgress.learner_id == current_user.id)
+        .order_by(ReadingProgress.last_read_at.desc())
+    )
+    return [
+        _progress_record(
+            row.book_id, row.current_page, row.total_pages, json.loads(row.bookmarks_json or "[]"), row.last_read_at
+        )
+        for row in rows.all()
+    ]

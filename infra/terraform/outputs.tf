@@ -1,34 +1,50 @@
-output "s3_assets_bucket" {
-  description = "Name of the S3 assets bucket"
-  value       = aws_s3_bucket.assets.bucket
+output "app_url" {
+  value = "https://${var.app_hostname}"
 }
 
-output "github_actions_role_arn" {
-  description = "IAM role ARN for GitHub Actions OIDC. Set as GitHub secret AWS_ROLE_ARN."
-  value       = aws_iam_role.github_actions.arn
+output "github_deploy_role_arn" {
+  description = "Set as the AWS_DEPLOY_ROLE_ARN secret of the matching GitHub environment."
+  value       = aws_iam_role.github_deploy.arn
 }
 
-# Uncomment as modules are enabled:
+output "cluster_name" {
+  value = module.eks.cluster_name
+}
 
-# output "eks_cluster_endpoint" {
-#   description = "EKS cluster API endpoint"
-#   value       = module.eks.cluster_endpoint
-#   sensitive   = true
-# }
+output "kubeconfig_command" {
+  value = "aws eks update-kubeconfig --name ${module.eks.cluster_name} --region ${var.aws_region}"
+}
 
-# output "eks_cluster_name" {
-#   description = "EKS cluster name"
-#   value       = module.eks.cluster_name
-# }
+output "rds_endpoint" {
+  value = aws_db_instance.postgres.address
+}
 
-# output "rds_endpoint" {
-#   description = "RDS PostgreSQL endpoint"
-#   value       = module.rds.db_instance_endpoint
-#   sensitive   = true
-# }
+output "redis_endpoint" {
+  value = aws_elasticache_replication_group.redis.primary_endpoint_address
+}
 
-# output "redis_endpoint" {
-#   description = "ElastiCache Redis endpoint"
-#   value       = aws_elasticache_cluster.redis.cache_nodes[0].address
-#   sensitive   = true
-# }
+output "web_bucket" {
+  value = module.web_bucket.id
+}
+
+output "media_bucket" {
+  value = module.media_bucket.id
+}
+
+output "cloudfront_distribution_id" {
+  value = aws_cloudfront_distribution.app.id
+}
+
+output "secrets" {
+  description = "Secrets Manager names. Add third-party keys to `external`."
+  value = {
+    generated = aws_secretsmanager_secret.api_generated.name
+    external  = aws_secretsmanager_secret.api_external.name
+  }
+}
+
+output "admin_staff_key" {
+  description = "Office staff key. The PWA build needs its hash as VITE_ADMIN_STAFF_HASH (see infra/README.md)."
+  value       = random_password.admin_staff_key.result
+  sensitive   = true
+}

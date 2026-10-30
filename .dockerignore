@@ -1,0 +1,17 @@
+# Keep secrets and local build output out of images (both Dockerfiles build from the repo root).
+**/.env
+**/.env.*
+!**/.env.example
+**/.venv
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+**/.uploads
+**/dist
+**/coverage
+.git
+infra
+certs
+debug_*.txt

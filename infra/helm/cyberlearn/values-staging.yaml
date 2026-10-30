@@ -1,0 +1,10 @@
+config:
+  ENVIRONMENT: staging
+
+api:
+  autoscaling:
+    minReplicas: 2
+    maxReplicas: 3
+
+worker:
+  concurrency: 2

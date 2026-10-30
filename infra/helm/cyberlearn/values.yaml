@@ -1,0 +1,80 @@
+# Defaults for every environment. values-<env>.yaml overrides sizing, and the deploy
+# workflow adds the values Terraform publishes to SSM (/cyberlearn/<env>/helm-values):
+# image.repository, serviceAccount.name, secrets.*, targetGroupBinding.targetGroupARN
+# and the environment-specific config below.
+
+image:
+  repository: ""
+  tag: "" # git SHA, set by the deploy workflow
+  pullPolicy: IfNotPresent
+
+# Terraform links the AWS role (S3 uploads) to this service account through EKS Pod Identity.
+serviceAccount:
+  name: cyberlearn-api
+
+# Plain environment variables. Secrets come from `secrets` below, never from here.
+config:
+  ENVIRONMENT: production
+  CONTENT_DIR: /content
+  STORAGE_BACKEND: s3
+  REQUIRE_REDIS: "true"
+  # CloudFront, then the ALB, each append to X-Forwarded-For.
+  TRUSTED_PROXY_HOPS: "2"
+  DB_POOL_SIZE: "5"
+  DB_MAX_OVERFLOW: "5"
+  AUTH_COOKIE_SECURE: "true"
+
+secrets:
+  # Secrets Manager names. `generated` holds what Terraform creates (database, Redis, keys);
+  # `external` holds what you add by hand (GEMINI_API_KEY, SMTP_*, SENTRY_DSN, ...).
+  generated: ""
+  external: ""
+  refreshInterval: 1h
+
+api:
+  replicas: 2
+  port: 8000
+  resources:
+    requests:
+      cpu: 250m
+      memory: 384Mi
+    limits:
+      memory: 768Mi
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 65
+  podDisruptionBudget:
+    minAvailable: 1
+  # Pods migrate the database on startup (one at a time, via an advisory lock),
+  # so give them up to 5 minutes before liveness checks begin.
+  startupProbe:
+    periodSeconds: 5
+    failureThreshold: 60
+
+worker:
+  enabled: true
+  replicas: 1
+  concurrency: 4
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      memory: 512Mi
+
+# Celery beat runs the nightly review sessions and monthly freeze-token reset. Exactly one copy.
+beat:
+  enabled: true
+  resources:
+    requests:
+      cpu: 25m
+      memory: 128Mi
+    limits:
+      memory: 256Mi
+
+# Registers API pods in the ALB target group Terraform created (aws-load-balancer-controller).
+targetGroupBinding:
+  enabled: true
+  targetGroupARN: ""

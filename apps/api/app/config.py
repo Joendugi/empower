@@ -39,6 +39,8 @@ class Settings(BaseSettings):
 
     # Cache — "off" uses free in-process MemoryCache. Redis/Upstash is optional.
     REDIS_URL: str = "redis://localhost:6379/0"
+    # Set on Kubernetes: production startup then refuses to run without Redis.
+    REQUIRE_REDIS: bool = False
 
     # Security
     SECRET_KEY: str = "CHANGE-ME-IN-PRODUCTION-use-openssl-rand-hex-32"
@@ -53,6 +55,31 @@ class Settings(BaseSettings):
 
     # Environment
     ENVIRONMENT: str = "development"  # development | staging | production
+
+    # Run Alembic on startup. Safe with several pods: env.py takes a Postgres advisory lock.
+    RUN_MIGRATIONS_ON_STARTUP: bool = True
+    DB_POOL_SIZE: int = 10
+    DB_MAX_OVERFLOW: int = 20
+    # How often each pod reloads Studio-published lessons from Postgres (another pod may have published).
+    PUBLISHED_REFRESH_SECONDS: float = 30.0
+
+    # Proxies in front of the API that append to X-Forwarded-For. CloudFront + ALB = 2.
+    # 0 keeps the old behaviour (first entry), which the client controls.
+    TRUSTED_PROXY_HOPS: int = 0
+    # CloudFront adds this secret header to API requests; when set, requests without it are refused
+    # so the load balancer can't be called directly.
+    ORIGIN_VERIFY_SECRET: str = ""
+
+    # Uploaded files: "local" writes to UPLOAD_DIR, "s3" writes to UPLOADS_BUCKET.
+    STORAGE_BACKEND: str = "local"
+    UPLOAD_DIR: str = str(Path(__file__).resolve().parents[1] / ".uploads")
+    UPLOADS_BUCKET: str = ""
+    AWS_REGION: str = ""
+
+    # Error reporting. Empty = off. APP_VERSION is set to the git SHA by the deploy.
+    APP_VERSION: str = "0.1.0"
+    SENTRY_DSN: str = ""
+    SENTRY_TRACES_SAMPLE_RATE: float = 0.05
 
     # CORS — JSON list or comma-separated origins
     CORS_ORIGINS: list[str] = [
